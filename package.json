@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --serve & postcss styles/tailwind.css --o _tmp/style.css --watch",
-    "build": "ELEVENTY_PRODUCTION=true eleventy & NODE_ENV=production postcss styles/tailwind.css --o _site/style.css"
+    "dev:postcss": "postcss styles/tailwind.css --o _tmp/style.css --watch",
+    "dev:eleventy": "eleventy --serve",
+    "build": "cross-env ELEVENTY_PRODUCTION=true eleventy & cross-env NODE_ENV=production postcss styles/tailwind.css --o _site/style.css"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
     "@11ty/eleventy": "^0.11.1",
     "alpinejs": "^2.8.0",
     "autoprefixer": "^10.2.4",
+    "cross-env": "^7.0.3",
     "postcss-cli": "^8.3.1",
     "tailwindcss": "^2.0.3"
   }
