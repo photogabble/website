@@ -48,6 +48,7 @@ body > header input {
     border-radius: .3rem;
     width: 16rem;
     color: var(--dark);
+    border: 1px solid var(--dark-transparent);
 }
 
 body > header a {
