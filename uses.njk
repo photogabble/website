@@ -5,7 +5,7 @@
 {% block body_class %}dark{% endblock %}
 
 {% block content %}
-    <header class="py-12 md:py-36 lg:py-48 grid grid-cols-12">
+    <header class="pt-12 pb-2 md:pb-8 md:pt-36 lg:pt-48 grid grid-cols-12">
         <div class="col-start-2 col-span-10 md:col-start-2 md:col-span-6 lg:col-start-2 lg:col-span-4">
             <h1 class="mb-8 text-6xl md:text-8xl font-bold leading-normal tracking-tighter">
                 Uses
@@ -16,5 +16,41 @@
             </p>
         </div>
     </header>
-    <p>Hello world</p>
+    <section class="mb-12 grid grid-cols-12">
+        <div class="col-start-2 col-end-12">
+            <p>
+                Make sure to check out <a href="https://uses.tech">uses.tech</a> for a list of everyone's <code>/uses</code> pages!
+            </p>
+
+            <h2>
+                Hardware
+            </h2>
+
+            <ul class="list-disc ml-6">
+                <li>
+                    Lenovo x230 ThinkPad
+                    <ul class="list-disc ml-7">
+                        <li><strong>Processor</strong>: Intel i7-3520m @ 2.90Ghz</li>
+                        <li><strong>Memory</strong>: 16GB 1600Mhz DDR3</li>
+                    </ul>
+                </li>
+                <li>
+                    iPhone SE (32GB)
+                </li>
+            </ul>
+
+            <h2>
+                Software
+            </h2>
+
+            <ul class="list-disc ml-6">
+                <li>Chrome</li>
+                <li>intelliJ PHPStorm and Goland</li>
+                <li>Putty</li>
+                <li>WinSCP</li>
+                <li>HeidiSQL</li>
+                <li>Vagrant &amp; VirtualBox</li>
+            </ul>
+        </div>
+    </section>
 {% endblock %}
