@@ -2,9 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {}
+@layer utilities {
+}
 
-:root{
+:root {
     --light: #f9f9f7;
     --light-transparent: #f9f9f7e3;
     --dark: #3f4551;
@@ -15,33 +16,33 @@
     --dark-blue: #3fc2f6;
 }
 
-html{
-    background-color: var(--light);
+html,
+body {
+    background: var(--light);
+    color: var(--dark);
 }
 
-header{
+/*
+ * Body > Header
+ */
+
+body > header.full-fold{
     position: relative;
     height: 100vh;
     min-height: 600px;
     width: 100%;
     overflow: hidden;
     flex-shrink: 0;
-    background: var(--dark);
 }
 
-header h1{
+body > header.full-fold h1{
     width: 600px;
     max-width: 100%;
     text-align: center;
     font-weight: lighter;
-    color: var(--yellow);
 }
 
-header h1 strong{
-    color: var(--light-blue);
-}
-
-header input{
+body > header input {
     height: 2.5rem;
     padding: .3rem .6rem;
     border-radius: .3rem;
@@ -49,122 +50,155 @@ header input{
     color: var(--dark);
 }
 
-header a{
-    color: var(--yellow);
+body > header a {
     border-bottom: 2px solid transparent;
     transition: border-bottom-color 300ms, color 300ms;
 }
 
-header a:hover{
-    color: var(--light-blue);
-    border-bottom-color: var(--yellow);
-}
-
-header a.logo{
+body > header a.logo {
     @apply text-3xl font-bold mr-12;
     color: var(--light);
 }
 
-header a.logo span{
+body > header a.logo span {
     color: var(--red);
 }
 
+main {
+    @apply flex flex-col flex-grow;
+}
+
 /*
- * Header Modifier: Patterned
+ * Body Themes: Dark Theme
  */
-header.dark.patterned{
+
+body.dark{
+    background: var(--dark);
+    color: var(--light);
+}
+
+body.dark > header a {
+    color: var(--yellow);
+}
+
+body.dark > header a.is-current,
+body.dark > header a:hover {
+    color: var(--light-blue);
+    border-bottom-color: var(--yellow);
+}
+
+body.dark > header h1 {
+    color: var(--yellow);
+}
+
+body.dark > header h1 strong {
+    color: var(--light-blue)
+}
+
+/*
+ * Body Header Modifier: Patterned
+ */
+body.dark.patterned {
     background-image: url('images/vectorstock_23549056.png');
 }
 
-header.dark.patterned nav,
-header.dark.patterned h1{
+body.dark.patterned > header nav,
+body.dark.patterned > header h1 {
     background: var(--dark-transparent);
 }
 
 
 /*
- * Header Modifier: Yellow
+ * Body Header Modifier: Yellow
  */
 
-header.yellow{
+body.yellow {
     background: var(--yellow);
 }
 
-header.yellow nav,
-header.yellow h1{
+body.yellow > header nav,
+body.yellow > header h1 {
     background: transparent;
 }
 
-header.yellow a:not(.logo){
+body.yellow > header a:not(.logo) {
     color: var(--dark);
 }
 
-header.yellow a:not(.logo):hover{
+body.yellow > header a.is-current,
+body.yellow > header a:not(.logo):hover {
     color: var(--light);
     border-bottom-color: var(--red);
 }
 
-header.yellow h1{
+body.yellow > header h1 {
     color: var(--dark);
 }
 
 /*
- * Header Modifier: Light
+ * Body Header Modifier: Light
  */
 
-header.light{
+body.light {
     background: var(--light);
-}
-
-header.light a{
     color: var(--dark);
 }
 
-header.light a:not(.logo):hover{
+body.light > header a {
+    color: var(--dark);
+}
+
+body.light > header a.is-current,
+body.light > header a:not(.logo):hover {
     color: var(--red);
     border-bottom-color: var(--yellow);
 }
 
-header.light h1{
+body.light > header h1 {
     color: var(--dark);
 }
 
-header.light.patterned{
+body.light.patterned {
     background-image: url('images/vectorstock_21883560.png');
 }
 
-header.light.patterned nav,
-header.light.patterned h1{
+body.light.patterned > header nav,
+body.light.patterned header > * {
     background: var(--light-transparent);
 }
 
 /*
- * Header Modifier: Red
+ * Body Header Modifier: Red
  */
 
-header.red{
+body.red {
     background: var(--red);
-}
-
-header.red nav,
-header.red h1{
-    background: transparent;
-}
-
-header.red a:not(.logo){
     color: var(--light);
 }
 
-header.red a:not(.logo):hover{
+body.red > header nav,
+body.red > header h1 {
+    background: transparent;
+}
+
+body.red > header a:not(.logo) {
+    color: var(--light);
+}
+
+body.red > header a.is-current,
+body.red > header a:not(.logo):hover {
     color: var(--dark);
     border-bottom-color: var(--yellow);
 }
 
-header.red a.logo span{
+body.red > header a.logo span {
     color: var(--yellow);
 }
 
-footer{
+/*
+ * Body Footer
+ */
+body > footer {
     background: #2161a7;
     color: #f9f9f7;
     min-height: 250px;
