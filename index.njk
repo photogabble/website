@@ -2,8 +2,32 @@
 
 {% block title %}It does work{% endblock %}
 
+{% block header_class %}dark patterned{% endblock %}
+
+{% block header %}
+  <h1 class="px-4 md:px-0 text-2xl md:text-4xl">
+    Hi, I am <strong>Simon</strong>.<br class="hidden md:inline">
+    I'm a full-stack developer specialising<br class="hidden md:inline">
+    in building simulations.
+  </h1>
+{% endblock %}
+
 {% block content %}
-  <div class="fixed inset-0 flex justify-center items-center">
-    <h1 class="change">Hello world...</h1>
-  </div>
+
+    <p>Hello world</p>
+
+{#  <section class="flex flex-col justify-center items-center introduction w-1/2 mx-auto" style="height:1200px;">#}
+{#    <div class="flex-grow">#}
+{#      <a href="http://pravatar.cc" class="block w-24 h-24 rounded-full" style="background-size: contain; background-image: url(http://www.gravatar.com/avatar/452a00b5b50cd993e8648dbc186511b1?s=82)"></a>#}
+
+{#      <h1 class="text-4xl mb-4">Hi, I'm <strong>Simon</strong> and this is my personal blog where I document various things I have learnt or#}
+{#        that are of interest to me.</h1>#}
+{#      <p class="text-xl">The topics I write about here include: <a href="#">programming</a>, <a href="#">games</a>, <a href="#">tutorials</a>,#}
+{#        <a href="#">blogging</a>, <a href="#">pixel art</a> and <a href="#">useful tools and resources</a>.</p>#}
+{#      <p class="text-xl">I maintain the static site generator <a href="https://www.tapestry.cloud">Tapestry</a>, a port of#}
+{#        the Disqus alternative <a href="https://github.com/photogabble/isso-php">isso to PHP</a> and a couple of <a href="./projects.html">less ambitious projects</a>.</p>#}
+{#      <p class="text-xl">Subscribe to <a href="#">RSS</a> or <a href="./elsewhere.html">find me elsewhere</a>.#}
+{#      </p>#}
+{#    </div>#}
+{#  </section>#}
 {% endblock %}
