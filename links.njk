@@ -1,6 +1,6 @@
 {% extends "_includes/default.njk" %}
 
-{% block title %}My Projects{% endblock %}
+{% block title %}Links{% endblock %}
 
 {% block body_class %}light{% endblock %}
 
@@ -17,7 +17,11 @@
     </header>
     <section class="mb-12 grid grid-cols-12">
         <div class="col-start-2 col-end-12">
-            <p>Hello world</p>
+            <ul>
+                {%- for link in links | reverse -%}
+                    <li><a href="{{ link.href }}">{{ link.title }}</a></li>
+                {%- endfor -%}
+            </ul>
         </div>
     </section>
 {% endblock %}
