@@ -49,48 +49,64 @@
 {% endblock %}
 </main>
 
-<footer class="p-4">
-    <div class="grid grid-cols-12 gap-2 font-mono">
-
+<footer class="font-mono">
+    <div class="px-20 pt-20 grid grid-cols-12 gap-2">
         <div class="col-span-6">
+            <span>🌱</span>
             <strong>PhotoGabble.</strong>
             <p class="text-sm">
-                Hello world...
+                Proud father to two incredible little girls. I make things with computers. #golang, #php and #javascript. 🥑
             </p>
         </div>
+
 
         <div class="col-span-2">
             <strong>About</strong>
             <ul>
-                <li><a href="#">Colophon</a></li>
-                <li><a href="#">My Story</a></li>
-                <li><a href="#">History</a></li>
-                <li><a href="#">/uses</a></li>
-                <li><a href="#">Get in touch</a></li>
-            </ul>
-        </div>
-
-        <div class="col-span-2">
-            <strong>Content</strong>
-            <ul>
-                <li><a href="#">Blog Archive</a></li>
-                <li><a href="#">All Categories</a></li>
-                <li><a href="#">Newsroom</a></li>
-                <li><a href="#">Links</a></li>
+                <li><a href="/about">Colophon</a></li>
+                <li><a href="/about/my-story">My Story</a></li>
+                <li><a href="/about/history">History</a></li>
+                <li><a href="/uses">/uses</a></li>
+                <li><a href="/now">/now</a></li>
+                <li><a href="/contact">Get in touch</a></li>
             </ul>
         </div>
 
         <div class="col-span-2">
             <strong>Elsewhere</strong>
             <ul>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Github</a></li>
-                <li><a href="#">Spacehey</a></li>
-                <li><a href="#"><small>More&hellip;</small></a></li>
+                <li><a href="https://www.twitter.com/carbontwelve">Twitter</a></li>
+                <li><a href="https://www.github.com/carbontwelve">Github</a></li>
+                <li><a href="https://spacehey.com/carbontwelve">Spacehey</a></li>
+                <li><a title="Webring" href="https://webring.xxiivv.com/">Webring</a></li>
+                <li><a href="/elsewhere"><small>More&hellip;</small></a></li>
             </ul>
         </div>
 
-
+        <div class="col-span-2">
+            <strong>Content</strong>
+            <ul>
+                <li><a href="/archive">Blog Archive</a></li>
+                <li><a href="/categories">All Categories</a></li>
+                <li><a href="/newsletter/archive">Newsroom</a></li>
+                <li><a href="/links">Links</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="px-20 pt-20 pb-10">
+        <p class="text-xs m-0">&copy; 2021 Simon Dann. Any and all opinions listed here are my own and not
+            representative of my employers; future, past and present. I may earn a portion of sales from
+            products that are purchased through this site as part of Affiliate Partnerships with retailers.
+        </p>
+    </div>
+    <div class="px-20 py-4 grid grid-cols-12 gap-2 text-sm" style="background: #174475;">
+        <div class="col-span-6">
+            <p class="m-0">&copy; 2021 Simon Dann. Unless otherwise noted content is Licensed as MIT.</p>
+        </div>
+        <div class="col-span-6 text-right">
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Cookie Policy 🍪</a>
+        </div>
     </div>
 </footer>
 </body>
