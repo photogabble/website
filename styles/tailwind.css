@@ -182,11 +182,16 @@ body > header.full-fold{
     flex-shrink: 0;
 }
 
-body > header.full-fold h1{
+body > header.full-fold h1,
+body > header.full-fold h2{
     width: 600px;
     max-width: 100%;
-    text-align: center;
+    text-align: left;
     font-weight: lighter;
+}
+
+body > header.full-fold h2{
+    font-weight: normal;
 }
 
 body > header input {
@@ -234,8 +239,12 @@ body.dark code{
     color: var(--dark);
 }
 
-body.dark > header h1 {
+body.dark > header h1{
     color: var(--yellow);
+}
+
+body.dark > header h2{
+    color: var(--red);
 }
 
 body.dark > header h1 strong {
@@ -250,7 +259,8 @@ body.dark.patterned {
 }
 
 body.dark.patterned > header nav,
-body.dark.patterned > header h1 {
+body.dark.patterned > header h1,
+body.dark.patterned > header h2{
     background: var(--dark-transparent);
 }
 
