@@ -1,5 +1,7 @@
 {% extends "_includes/default.njk" %}
 
+{% set postslist = collections.post %}
+
 {% block title %}Blog{% endblock %}
 
 {% block body_class %}dark{% endblock %}
@@ -17,7 +19,9 @@
     </header>
     <section class="mb-12 grid grid-cols-12">
         <div class="col-start-2 col-end-12">
-            <p>Hello world</p>
+            {% for post in postslist | reverse %}
+                {{  post.data.title }}
+            {% endfor %}
         </div>
     </section>
 {% endblock %}
