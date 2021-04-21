@@ -88,21 +88,25 @@
     h3 {
         @apply font-bold;
         @apply text-3xl;
+        @apply font-light;
     }
 
     h4 {
         @apply font-normal;
         @apply text-2xl;
+        @apply font-light;
     }
 
     h5 {
         @apply font-normal;
         @apply text-xl;
+        @apply font-light;
     }
 
     h6 {
         @apply font-light;
         @apply text-lg;
+        @apply font-light;
     }
 
     hr {
@@ -114,12 +118,12 @@
 
     li ul,
     li ol {
-        @apply my-0;
+        @apply my-0 ml-7;
     }
 
     ol,
     ul {
-        @apply my-4;
+        @apply my-4 list-disc ml-6;
     }
 
     p {
