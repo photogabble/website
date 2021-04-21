@@ -1,0 +1,23 @@
+{% extends "_includes/default.njk" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body_class %}dark{% endblock %}
+
+{% block content %}
+    <header class="pt-12 pb-2 md:pb-8 md:pt-36 lg:pt-48 grid grid-cols-12">
+        <div class="col-start-2 col-span-10 md:col-start-2 md:col-span-6 lg:col-start-2 lg:col-span-4">
+            <h1 class="mb-8 text-6xl md:text-8xl font-bold leading-normal tracking-tighter">
+                {{ title }}
+            </h1>
+            <p class="text-2xl mb-2">
+                {{ sub_title | safe }}
+            </p>
+        </div>
+    </header>
+    <section class="mb-12 grid grid-cols-12">
+        <div class="col-start-2 col-end-12 lg:col-end-8">
+            {{ content | safe }}
+        </div>
+    </section>
+{% endblock %}
