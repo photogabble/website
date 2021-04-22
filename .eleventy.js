@@ -1,5 +1,21 @@
+const filters = require('./utils/filters')
+const collections = require('./utils/collections')
+const { slugify } = require('./utils/filters')
+
 module.exports = function (eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false);
+
+    /**
+     * Filters
+     * @link https://www.11ty.io/docs/filters/
+     */
+    Object.keys(filters).forEach((filterName) => {
+        eleventyConfig.addFilter(filterName, filters[filterName])
+    })
+
+    Object.keys(collections).forEach((collectionName) => {
+        eleventyConfig.addCollection(collectionName, collections[collectionName])
+    })
 
     // Merge data instead of overriding
     // https://www.11ty.dev/docs/data-deep-merge/
@@ -14,26 +30,9 @@ module.exports = function (eleventyConfig) {
         "./images" : './images'
     });
 
-    // Filter posts marked as being draft if this is running in production
-    eleventyConfig.addCollection('post', (collection) => {
-        if (process.env.ELEVENTY_ENV !== 'production')
-            return [...collection.getFilteredByGlob('./src/posts/*.md')]
-        else
-            return [...collection.getFilteredByGlob('./src/posts/*.md')].filter((post) => !post.data.draft)
-    })
-
     eleventyConfig.addShortcode("version", function () {
         return String(Date.now())
     });
-
-    const slugify = require("slugify");
-    const slugifyOptions = {
-        replacement: "-",
-        remove: /[&,+()$~%.'":*?<>{}]/g,
-        lower: true
-    };
-
-    eleventyConfig.addFilter('slugify', input => slugify(input, slugifyOptions));
 
     // Markdown libraries
     let markdownIt = require("markdown-it");
@@ -48,7 +47,7 @@ module.exports = function (eleventyConfig) {
         })
         .use(markdownItAnchor, {
             permalink: false,
-            slugify: input => slugify(input, slugifyOptions)
+            slugify: input => slugify(input)
         })
         .use(markdownFootnote)
     );

@@ -224,47 +224,47 @@ main {
  * Body Themes: Dark Theme
  */
 
-body.dark{
+.dark{
     background: var(--dark);
     color: var(--light);
 }
 
-body.dark a {
+.dark a {
     color: var(--yellow);
 }
 
-body.dark a[aria-current],
-body.dark a:hover {
+.dark a[aria-current],
+.dark a:hover {
     color: var(--light-blue);
     border-bottom-color: var(--yellow);
 }
 
-body.dark code{
+.dark code{
     color: var(--dark);
 }
 
-body.dark > header h1{
+.dark > header h1{
     color: var(--yellow);
 }
 
-body.dark > header h2{
+.dark > header h2{
     color: var(--red);
 }
 
-body.dark > header h1 strong {
+.dark > header h1 strong {
     color: var(--light-blue)
 }
 
 /*
  * Body Header Modifier: Patterned
  */
-body.dark.patterned {
+.dark.patterned {
     background-image: url('images/vectorstock_23549056.png');
 }
 
-body.dark.patterned > header nav,
-body.dark.patterned > header h1,
-body.dark.patterned > header h2{
+.dark.patterned > header nav,
+.dark.patterned > header h1,
+.dark.patterned > header h2{
     background: var(--dark-transparent);
 }
 
@@ -273,31 +273,31 @@ body.dark.patterned > header h2{
  * Body Header Modifier: Yellow
  */
 
-body.yellow {
+.yellow {
     background: var(--yellow);
 }
 
-body.yellow ::selection {
+.yellow ::selection {
     background-color: var(--dark);
     color: var(--yellow);
 }
 
-body.yellow > header nav,
-body.yellow > header h1 {
+.yellow > header nav,
+.yellow > header h1 {
     background: transparent;
 }
 
-body.yellow > header a:not(.logo) {
+.yellow > header a:not(.logo) {
     color: var(--dark);
 }
 
-body.yellow > header a[aria-current],
-body.yellow > header a:not(.logo):hover {
+.yellow > header a[aria-current],
+.yellow > header a:not(.logo):hover {
     color: var(--light);
     border-bottom-color: var(--red);
 }
 
-body.yellow > header h1 {
+.yellow > header h1 {
     color: var(--dark);
 }
 
@@ -305,26 +305,32 @@ body.yellow > header h1 {
  * Body Header Modifier: Light
  */
 
-body.light > header a {
+.light{
+    background: var(--light);
     color: var(--dark);
 }
 
-body.light > header a[aria-current],
-body.light > header a:not(.logo):hover {
+body.light > header a.logo,
+.light > header a {
+    color: var(--dark);
+}
+
+.light > header a[aria-current],
+.light > header a:not(.logo):hover {
     color: var(--red);
     border-bottom-color: var(--yellow);
 }
 
-body.light > header h1 {
+.light > header h1 {
     color: var(--dark);
 }
 
-body.light.patterned {
+.light.patterned {
     background-image: url('images/vectorstock_21883560.png');
 }
 
-body.light.patterned > header nav,
-body.light.patterned header > * {
+.light.patterned > header nav,
+.light.patterned header > * {
     background: var(--light-transparent);
 }
 
@@ -332,27 +338,27 @@ body.light.patterned header > * {
  * Body Header Modifier: Red
  */
 
-body.red {
+.red {
     background: var(--red);
     color: var(--light);
 }
 
-body.red > header nav,
-body.red > header h1 {
+.red > header nav,
+.red > header h1 {
     background: transparent;
 }
 
-body.red > header a:not(.logo) {
+.red > header a:not(.logo) {
     color: var(--light);
 }
 
-body.red > header a[aria-current],
-body.red > header a:not(.logo):hover {
+.red > header a[aria-current],
+.red > header a:not(.logo):hover {
     color: var(--dark);
     border-bottom-color: var(--yellow);
 }
 
-body.red > header a.logo span {
+.red > header a.logo span {
     color: var(--yellow);
 }
 
@@ -364,3 +370,9 @@ body > footer {
     color: #f9f9f7;
     min-height: 250px;
 }
+
+/*
+ * Articles
+ */
+
+article section {}

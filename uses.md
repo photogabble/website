@@ -1,5 +1,5 @@
 ---
-layout: dark-page.njk
+layout: layouts/dark-page.njk
 title: "/uses"
 sub_title: "A somewhat complete list of tools, applications, hardware and services that I used on a day to day basis."
 ---

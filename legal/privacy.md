@@ -1,5 +1,5 @@
 ---
-layout: dark-page.njk
+layout: layouts/dark-page.njk
 title: "GDPR/Privacy Policy"
 sub_title: "Effective date: May 15, 2018"
 ---

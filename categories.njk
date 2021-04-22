@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections
+  size: 1
+  alias: category
+  permalink: /blog/{{ category }}/
+  filter:
+    - all
+    - nav
+    - post
+    - posts
+    - categoryList
+eleventyComputed:
+  title: Entries Categorised as "{{ category }}”
+---
+
+{% set postslist = collections[ category ] %}
+
+Categorised {{ category }}
+
+{{ postslist }}
