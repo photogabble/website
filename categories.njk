@@ -1,22 +1,38 @@
 ---
-layout: layouts/base.njk
+layout: layouts/dark-page.njk
 pagination:
-  data: collections
+  data: collections.postByCategories
   size: 1
   alias: category
-  permalink: /blog/{{ category }}/
-  filter:
-    - all
-    - nav
-    - post
-    - posts
-    - categoryList
-eleventyComputed:
-  title: Entries Categorised as "{{ category }}”
+permalink: /blog/{{ category.slug }}/index.html
 ---
+{% block content %}
 
-{% set postslist = collections[ category ] %}
+  <h2>Blog category: {{ category.title }}</h2>
+  {% for post in category.items %}
+    {% if loop.first %}<ul>{% endif %}
+    <li>
+      <article>
+        <p><time datetime="{{ post.date | dateToFormat("yyyy-MM-dd") }}">{{ post.date | dateToFormat("dd LLL yyyy") }}</time></p>
+        <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+      </article>
+    </li>
+    {% if loop.last %}</ul>{% endif %}
+  {% endfor %}
 
-Categorised {{ category }}
+  {% if category.totalPages > 1 %}
+    <ul>
+      {% if category.pageSlugs.previous %}<li><a href="/blog/{{ category.pageSlugs.previous }}/">Previous</a></li>{% endif %}
+      {% if category.pageSlugs.next %}<li><a href="/blog/{{ category.pageSlugs.next }}/">Next</a></li>{% endif %}
+    </ul>
+  {% endif %}
 
-{{ postslist }}
+  <h3>Categories</h3>
+  {% for category in collections.postCategories %}
+    {% if loop.first %}
+      <p><a href="/blog/">All</a></p>
+    {% endif %}
+    <p><a href="/blog/{{ category.slug }}">{{ category.title }}</a></p>
+  {% endfor %}
+
+{% endblock %}
