@@ -1,17 +1,6 @@
-//Source: https://github.com/30-seconds/30-seconds-of-code
-const chunk = (arr, size) => Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
-    arr.slice(i * size, i * size + size)
-);
+const {chunk, toTitleCase} = require('./helpers')
 
-// Source: https://github.com/cassidoo/next-prankz/blob/master/pages/news/%5Barticle%5D.js#L9-L24
-const toTitleCase = (slug) => {
-    return slug
-        .toLowerCase()
-        .split(' ')
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ')
-}
-
+// Main blog collection
 const post = (collection) => {
     if (process.env.ELEVENTY_ENV !== 'production')
         return [...collection.getFilteredByGlob('./posts/*.md')]
@@ -19,10 +8,11 @@ const post = (collection) => {
         return [...collection.getFilteredByGlob('./posts/*.md')].filter((post) => !post.data.draft)
 }
 
+// Collection of all categories found in blog collection
 const postCategories = (collection) => {
     const posts = post(collection)
     return Array.from(posts.reduce((categories, post) => {
-        if (post.data['categories']){
+        if (post.data['categories']) {
             post.data['categories'].forEach(category => categories.add(category.toLowerCase()))
         }
         return categories
@@ -34,9 +24,9 @@ const postCategories = (collection) => {
     })
 }
 
-// For this collection I have taken code from:
-// https://www.webstoemp.com/blog/basic-custom-taxonomies-with-eleventy/ and
-// refactored it into a chained array mutation without need for external libraries.
+// Collection of blog posts segmented by category.
+// I wrote this based upon code found in the following article:
+// https://www.webstoemp.com/blog/basic-custom-taxonomies-with-eleventy/
 const postByCategories = (collection) => {
     const posts = post(collection)
     const postsPerPage = 4
@@ -52,10 +42,10 @@ const postByCategories = (collection) => {
         const chunks = chunk(posts.filter((post) => {
             let postCategories = post.data.categories || []
             return postCategories.includes(category.slug)
-        }),postsPerPage)
+        }), postsPerPage)
 
         for (let i = 0; i < chunks.length; i++) {
-            slugs.push(i  > 0 ? `${category.slug}/${i+1}` : category.slug)
+            slugs.push(i > 0 ? `${category.slug}/${i + 1}` : category.slug)
         }
 
         let pages = [];
