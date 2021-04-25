@@ -127,7 +127,7 @@
     }
 
     p {
-        @apply mt-3;
+        @apply mt-3 text-justify;
     }
 
     @screen md {
@@ -375,6 +375,9 @@ body > footer {
     min-height: 250px;
 }
 
+/*
+ * "pill" styles
+ */
 .pill{
     padding: 0.2rem 0.4rem;
     background: #e56943;
