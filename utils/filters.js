@@ -1,5 +1,6 @@
 const slugify = require('slugify')
 const { DateTime } = require('luxon')
+const { toTitleCase } = require('./helpers');
 
 module.exports = {
     /**
@@ -32,4 +33,19 @@ module.exports = {
             remove: /[&,+()$~%.'":*?<>{}]/g,
         })
     },
+
+    /**
+     * Takes a list of slugs and returns them converted to title case.
+     * @param list
+     * @return array
+     */
+    formatSlugList: (list) => {
+        return list.map((slug) => {
+            return {
+                slug,
+                title: toTitleCase(slug)
+            }
+        })
+
+    }
 }

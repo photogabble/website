@@ -315,13 +315,13 @@ body.light > header a.logo,
     color: var(--dark);
 }
 
-.light > header a[aria-current],
-.light > header a:not(.logo):hover {
+body.light > header a[aria-current],
+body.light > header a:not(.logo):hover {
     color: var(--red);
     border-bottom-color: var(--yellow);
 }
 
-.light > header h1 {
+body.light > header h1 {
     color: var(--dark);
 }
 
@@ -332,6 +332,10 @@ body.light > header a.logo,
 .light.patterned > header nav,
 .light.patterned header > * {
     background: var(--light-transparent);
+}
+
+.light a {
+    color: var(--red);
 }
 
 /*
@@ -371,8 +375,10 @@ body > footer {
     min-height: 250px;
 }
 
-/*
- * Articles
- */
-
-article section {}
+.pill{
+    padding: 0.2rem 0.4rem;
+    background: #e56943;
+    color: #f9f9f7;
+    border-radius: 0.3rem;
+    font-size: 0.75rem;
+}

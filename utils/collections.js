@@ -18,7 +18,7 @@ const postCategories = (collection) => {
         return categories
     }, new Set())).sort().map((category) => {
         return {
-            title: toTitleCase(category.split('-').join(' ')),
+            title: toTitleCase(category),
             slug: category
         }
     })
@@ -28,8 +28,8 @@ const postCategories = (collection) => {
 // I wrote this based upon code found in the following article:
 // https://www.webstoemp.com/blog/basic-custom-taxonomies-with-eleventy/
 const postByCategories = (collection) => {
-    const posts = post(collection)
-    const postsPerPage = 4
+    const posts = post(collection).reverse()
+    const postsPerPage = 6
 
     // Here we use a set to reduce the categories used in our posts into a unique list,
     // that set is then converted into an array and sorted alphabetically before being

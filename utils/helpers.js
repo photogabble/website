@@ -8,6 +8,7 @@ const chunk = (arr, size) => Array.from({ length: Math.ceil(arr.length / size) }
 // Source: https://github.com/cassidoo/next-prankz/blob/master/pages/news/%5Barticle%5D.js#L9-L24
 const toTitleCase = (slug) => {
     return slug
+        .split('-').join(' ')
         .toLowerCase()
         .split(' ')
         .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
