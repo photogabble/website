@@ -12,6 +12,9 @@
                     {{ title }}
                 </h1>
                 <p class="text-2xl mb-2">
+                    {% for category in categories | formatSlugList %}
+                        <a class="pill" href="/blog/{{ category.slug }}">{{ category.title }}</a>
+                    {% endfor %}
                     <time datetime="{{ date | dateToFormat("yyyy-MM-dd") }}">
                         {{ date | dateToFormat("dd LLL yyyy") }}
                     </time>

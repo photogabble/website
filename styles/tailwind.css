@@ -128,6 +128,7 @@
 
     p {
         @apply mt-3 text-justify;
+        line-height: 1.65rem;
     }
 
     @screen md {
@@ -378,10 +379,21 @@ body > footer {
 /*
  * "pill" styles
  */
-.pill{
+.pill, a.pill{
     padding: 0.2rem 0.4rem;
-    background: #e56943;
-    color: #f9f9f7;
+    background: var(--red);
+    color: var(--light);
     border-radius: 0.3rem;
     font-size: 0.75rem;
+}
+
+a.pill{
+    border: 1px solid transparent;
+    transition: border 300ms;
+}
+
+a.pill:hover{
+    background: transparent;
+    border: 1px solid var(--light);
+    color: var(--light);
 }
