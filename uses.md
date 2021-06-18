@@ -1,10 +1,10 @@
 ---
-layout: layouts/dark-page.njk
+layout: layouts/page.njk
 title: "/uses"
-sub_title: "A somewhat complete list of tools, applications, hardware and services that I used on a day to day basis."
+sub_title: "Last updated March 19th, 2021."
 ---
 
-Make sure to check out <a href="https://uses.tech">uses.tech</a> for a list of other peoples <code>/uses</code> pages!
+A somewhat complete list of tools, applications, hardware and services that I used on a day-to-day basis. Make sure to check out <a href="https://uses.tech">uses.tech</a> for a list of other peoples <code>/uses</code> pages!
 
 ## Hardware
 
