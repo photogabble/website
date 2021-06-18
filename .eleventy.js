@@ -26,8 +26,9 @@ module.exports = function (eleventyConfig) {
     // Don't process folders with static assets e.g. images
     eleventyConfig.addPassthroughCopy({
         "./_tmp/style.css": "./style.css",
+        "./_tmp/assets": "./assets",
         "./node_modules/alpinejs/dist/alpine.js": "./js/alpine.js",
-        "./images" : './images'
+        './assets' : './assets'
     });
 
     eleventyConfig.addShortcode("version", function () {

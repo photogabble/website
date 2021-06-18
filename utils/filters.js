@@ -46,6 +46,10 @@ module.exports = {
                 title: toTitleCase(slug)
             }
         })
+    },
 
-    }
+    /**
+     * Takes a list and returns the limit number of items.
+     */
+    limit: (array, limit) => array.slice(0, limit)
 }

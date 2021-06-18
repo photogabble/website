@@ -1,0 +1,32 @@
+@import "../node_modules/tufte-css/tufte.css";
+
+:root {
+    --light: #fffff8;
+    --light-transparent: #f9f9f7e3;
+    --dark: #3f4551;
+    --dark-transparent: #3f4551e3;
+    --yellow: #fbc367;
+    --red: #e56943;
+    --light-blue: #22c4cc;
+    --dark-blue: #3fc2f6;
+}
+
+::selection {
+    background-color: var(--yellow);
+    color: var(--dark);
+}
+
+a:link, a:visited {
+    color: var(--red);
+}
+
+a:hover,
+a[aria-current]{
+    color: var(--yellow);
+}
+
+pre{
+    background: var(--dark);
+    color: var(--light);
+    padding: 1rem 0;
+}

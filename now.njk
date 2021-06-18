@@ -2,39 +2,30 @@
 
 {% block title %}/now{% endblock %}
 
-{% block body_class %}dark{% endblock %}
-
 {% block content %}
-    <header class="pt-12 pb-2 md:pb-8 md:pt-36 lg:pt-48 grid grid-cols-12">
-        <div class="col-start-2 col-span-10 md:col-start-2 md:col-span-6 lg:col-start-2 lg:col-span-4">
-            <h1 class="mb-8 text-6xl md:text-8xl font-bold leading-normal tracking-tighter">
-                /now
-            </h1>
-            <p class="text-2xl mb-2">
-                Last updated March 19th, 2021.
-            </p>
-        </div>
-    </header>
-    <section class="mb-12 grid grid-cols-12">
-        <div class="col-start-2 col-end-12 md:col-end-6">
+    <article>
+        <h1>/now</h1>
+        <p>Last updated March 19th, 2021.</p>
+
+        <section>
             <p>
                 This “now page” offers a big picture glimpse into my what I’m focused on at this point in my life.
                 <a href="http://nownownow.com/about">What is a now page?</a>
             </p>
 
-            <h3>What am I currently focused on?</h3>
+            <h2>What am I currently focused on?</h2>
             <ul>
                 <li>Reinvigorating my blog, there have been many attempts made in the past</li>
                 <li>Fedicast, a federated podcast publishing platform</li>
             </ul>
 
-            <h3>What am I watching?</h3>
+            <h2>What am I watching?</h2>
             <ul>
                 <li><a href="https://www.imdb.com/title/tt3230854/">The Expanse</a> on Amazon Prime</li>
                 <li><a href="https://www.imdb.com/title/tt0060028">Star Trek: The Original Series</a> on Netflix</li>
             </ul>
 
-            <h3>What am I reading?</h3>
+            <h2>What am I reading?</h2>
             <ul>
                 <li>
                     <a href="https://openlibrary.org/books/OL4554882M/Game_playing_with_BASIC">
@@ -51,6 +42,6 @@
                 You can see my bookshelf at <a href="https://bookwyrm.social/user/carbontwelve">bookwyrm.social</a> or
                 at <a href="https://openlibrary.org/people/carbontwelve">openlibrary.org here</a>.
             </p>
-        </div>
-    </section>
+        </section>
+    </article>
 {% endblock %}
