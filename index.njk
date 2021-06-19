@@ -17,7 +17,7 @@
   <section>
     <h3>Recent Articles</h3>
     <ul class="post-list">
-      {% for post in articlesList | reverse | limit(6) %}
+      {% for post in articlesList | excludeCategory('thoughts') | reverse | limit(6) %}
         <li><a href="{{ post.url }}">{{ post.data.title }}</a> &mdash; {{ post.date | dateToFormat("DDD") }}</li>
       {% endfor %}
     </ul>
@@ -30,10 +30,13 @@
   <section>
     <h3>Recent Thoughts</h3>
     <ul class="post-list">
-      <li><a href="#">A focus on birdsite drama and social media in general</a></li>
-      <li><a href="#">On quitting programming for carpentry</a></li>
-      <li><a href="#">If DOS Game Dev is a rabbit hole then call me Alice</a></li>
+      {% for post in articlesList | onlyCategory('thoughts') | reverse | limit(3) %}
+        <li><a href="{{ post.url }}">{{ post.data.title }}</a> &mdash; {{ post.date | dateToFormat("DDD") }}</li>
+      {% endfor %}
     </ul>
+    <p>
+      View <a href="/blog/thoughts/">more thoughts...</a>
+    </p>
   </section>
 </article>
 {% endblock %}

@@ -6,7 +6,8 @@ categories:
 cover_image: /assets/img/rubber-duck-programming.png
 ---
 
-> While Murphy's law says that anything that can go wrong, will go wrong (eventually), Sod's law requires that it always go wrong with the worst possible outcome. &ndash; [Wikipedia](http://en.wikipedia.org/wiki/Sod%27s_law)
+> While Murphy's law says that anything that can go wrong, will go wrong (eventually), Sod's law requires that it always go wrong with the worst possible outcome.
+> &ndash; [Wikipedia](http://en.wikipedia.org/wiki/Sod%27s_law)
 
 Murphy's law[^1] and programming go hand in hand, given that good enough isn't &ndash; unless there is a deadline and deadlines are part and parcel with big software projects then there will always be the chance for bugs, missing functionality and dumb users.
 

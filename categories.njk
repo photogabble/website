@@ -14,55 +14,42 @@ permalink: /blog/{{ category.slug }}/index.html
 
 {% block content %}
 
-  <header class="py-12 md:py-36 lg:py-48 grid grid-cols-12">
-    <div class="col-start-2 col-span-10 md:col-start-2 md:col-span-6 lg:col-start-2 lg:col-span-4">
-      <h1 class="mb-8 text-6xl md:text-8xl font-bold leading-normal tracking-tighter">
-        {{ category.title }}
-      </h1>
-      <p class="text-2xl mb-2">
-        Serialised programming how-to guides.
-      </p>
-    </div>
-  </header>
+  <article>
+    <h1>{{ category.title }}</h1>
+    <p>Serialised programming how-to guides.</p>
 
-  <section class="light pb-12 relative grid grid-cols-12 auto-rows-min">
-    <div class="relative -top-16 grid grid-cols-12 gap-7 col-start-2 col-end-12 row-start-1">
-      {% for post in category.items %}
-
-        <article class="col-span-12 md:col-span-6 lg:col-span-4">
-          <a href="{{ post.url }}">
-            <img class="rounded-md w-full" src="https://picsum.photos/seed/{{ post.data.title | slug }}/300/200" alt="{{ post.data.title }}">
-            <p class="text-xs mt-4 text-black">
-              {% for category in post.data.categories | formatSlugList %}
-              <span class="pill">{{ category.title }}</span>
-              {% endfor %}
-              <time class="ml-4 font-mono" datetime="{{ post.date | dateToFormat("yyyy-MM-dd") }}">{{ post.date | dateToFormat("DDD") }}</time>
-            </p>
-            <h1 class="mt-4 font-semibold" style="font-size: 1.1rem; line-height: 1.2;">{{ post.data.title }}</h1>
-          </a>
-        </article>
-
-      {% endfor %}
-    </div>
+    <section>
+      <ul class="post-list">
+        {% for post in category.items %}
+          <li>
+            <a href="{{ post.url }}" title="Read {{ post.data.title }}">
+              {{ post.data.title }}
+            </a> &mdash; {{ post.date | dateToFormat("DDD") }}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
 
     {% if category.totalPages > 1 %}
-      <nav class="pt-12 row-start-2 col-start-2 col-end-12">
-        {% if category.pageSlugs.previous %}<a href="/blog/{{ category.pageSlugs.previous }}/">Previous</a>{% endif %}
-        {% if category.pageSlugs.next %}<a href="/blog/{{ category.pageSlugs.next }}/">Next</a>{% endif %}
+      <nav>
+        <p>
+          Viewing page {{ category.pageNumber }} of {{ category.totalPages }},
+          {% if category.pageSlugs.previous %}<a href="/blog/{{ category.pageSlugs.previous }}/">Previous Page</a>{% endif %}
+          {% if category.pageSlugs.next %}<a href="/blog/{{ category.pageSlugs.next }}/">Next Page</a>{% endif %}
+        </p>
       </nav>
     {% endif %}
-  </section>
+  </article>
 
-  <footer class="px-4 md:px-20 py-4">
-    <h3>Categories</h3>
-    <div>
+  <nav>
+    <h2>All Categories</h2>
+    <p>
       {% for category in collections.postCategories %}
         {% if loop.first %}
           <a href="/blog/" class="pill">All</a>
         {% endif %}
         <a href="/blog/{{ category.slug }}" class="pill">{{ category.title }}</a>
       {% endfor %}
-    </div>
-  </footer>
-
+    </p>
+  </nav>
 {% endblock %}
