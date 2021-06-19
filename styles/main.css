@@ -11,11 +11,6 @@
     --dark-blue: #3fc2f6;
 }
 
-::selection {
-    background-color: var(--yellow);
-    color: var(--dark);
-}
-
 a:link, a:visited {
     color: var(--red);
 }
@@ -23,6 +18,15 @@ a:link, a:visited {
 a:hover,
 a[aria-current]{
     color: var(--yellow);
+}
+
+::selection {
+    background-color: var(--yellow);
+    color: var(--dark);
+}
+
+a::selection{
+    text-shadow: none;
 }
 
 pre{
