@@ -30,7 +30,7 @@ module.exports = {
         return slugify(string, {
             lower: true,
             replacement: '-',
-            remove: /[&,+()$~%.'":*?<>{}]/g,
+            remove: /[&,+()$~%.'":*?!<>{}]/g,
         })
     },
 
@@ -51,5 +51,25 @@ module.exports = {
     /**
      * Takes a list and returns the limit number of items.
      */
-    limit: (array, limit) => array.slice(0, limit)
+    limit: (array, limit) => array.slice(0, limit),
+
+    excludeCategory: (collection, category) => {
+        if (!category) return collection;
+        return collection.filter(item => {
+            if (!item.data.categories){
+                return false;
+            }
+            return !item.data.categories.includes(category);
+        })
+    },
+
+    onlyCategory: (collection, category) => {
+        if (!category) return collection;
+        return collection.filter(item => {
+            if (!item.data.categories){
+                return false;
+            }
+            return item.data.categories.includes(category);
+        })
+    },
 }

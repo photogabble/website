@@ -30,3 +30,18 @@ pre{
     color: var(--light);
     padding: 1rem 0;
 }
+
+blockquote {
+    border-left: 4px solid var(--red);
+    padding-left: 1rem;
+    margin-left: 0;
+}
+
+ul.post-list{
+    list-style:none;
+    padding-left: 0;
+}
+
+ul.post-list li {
+    margin-bottom: 0.5rem;
+}

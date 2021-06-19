@@ -8,9 +8,11 @@
             {{ title }}
         </h1>
         <p>
+            Posted in:
             {% for category in categories | formatSlugList %}
                 <a class="pill" href="/blog/{{ category.slug }}">{{ category.title }}</a>
             {% endfor %}
+            on
             <time datetime="{{ date | dateToFormat("yyyy-MM-dd") }}">
                 {{ date | dateToFormat("dd LLL yyyy") }}
             </time>
