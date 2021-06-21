@@ -28,7 +28,8 @@ module.exports = function (eleventyConfig) {
     "./_tmp/style.css": "./style.css",
     "./_tmp/assets": "./assets",
     "./node_modules/alpinejs/dist/alpine.js": "./js/alpine.js",
-    './assets': './assets'
+    './assets': './assets',
+    './img': './img'
   });
 
   eleventyConfig.addShortcode("version", function () {
