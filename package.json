@@ -13,6 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.1",
     "@fullhuman/postcss-purgecss": "^4.0.3",
     "alpinejs": "^2.8.2",
     "autoprefixer": "^10.2.5",

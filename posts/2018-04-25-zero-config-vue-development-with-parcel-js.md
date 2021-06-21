@@ -23,7 +23,7 @@ So lets see how to set up ParcelJS for developing a Vue.js app.
 Before we do anything `npm` related, lets go ahead an set up our application directory structure. First create your project directory and then within it create a new directory called `src`.
 
 Once you are done with this tutorial your project folder should have the following structure:
-```bash
+```treeview
 parcel-vue-project/
 ├── .babelrc
 ├── .gitignore
@@ -67,7 +67,7 @@ new Vue({
 
 Followed by the App component file `src/App.vue` with the following content:
 
-```vue
+```javascript
 <template>
   <div id="app">
     <h1>{{ msg }}</h1>
