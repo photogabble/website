@@ -87,11 +87,11 @@ dist/main.js
 
 Next in order to work with how Webpack expects the project to be laid out we need to tweek our directory structure. First rename your `app.js` to `index.js` and move it into a new folder called `src`. Then move `index.html` into a new folder called `dist`. Once done you should have the following directory structure:
 
-```bash
+```treeview
 pixel-editor-project/
 ├── .gitignore
 ├── package.json
-├── dist
+├── dist/
 |   └── index.html
 └── src
     └── app.js

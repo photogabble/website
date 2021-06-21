@@ -21,7 +21,7 @@ In this article I will be documenting details about my implementation of Ferry's
 
 To begin I set up a basic project directory structure as shown below, if you're following along you can obtain this folder state from [this git commit](https://github.com/photogabble/dependency-resolving-tutorial/tree/5446134e97d5891370e11173d1e3b650b78f143c):
 
-```bash
+```treeview
 photogabble/dependency-graph
 ├── .gitignore
 ├── composer.json

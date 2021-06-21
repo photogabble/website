@@ -1,4 +1,6 @@
 @import "../node_modules/tufte-css/tufte.css";
+@import "../node_modules/prismjs/themes/prism.css";
+@import "../node_modules/prismjs/plugins/treeview/prism-treeview.css";
 
 :root {
     --light: #fffff8;
