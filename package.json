@@ -6,7 +6,7 @@
   "scripts": {
     "dev:postcss": "postcss styles/main.css --o _tmp/style.css --watch",
     "dev:eleventy": "eleventy --serve",
-    "build": "cross-env ELEVENTY_PRODUCTION=true eleventy & cross-env NODE_ENV=production postcss styles/main.css --o _site/style.css"
+    "build": "cross-env ELEVENTY_PRODUCTION=true eleventy && cross-env NODE_ENV=production postcss styles/main.css --o _site/style.css"
   },
   "keywords": [],
   "author": "",
