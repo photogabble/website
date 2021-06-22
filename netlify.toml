@@ -1,3 +1,23 @@
 [build]
   publish = "_site"
   command = "npm run build"
+[[headers]]
+    for = "/*.svg"
+    [headers.values]
+        Cache-Control = "public, s-max-age=2592000"
+[[headers]]
+    for = "/*.ttf"
+    [headers.values]
+        Cache-Control = "public, s-max-age=2592000"
+[[headers]]
+    for = "/*.otf"
+    [headers.values]
+        Cache-Control = "public, s-max-age=2592000"
+[[headers]]
+    for = "/*.woff"
+    [headers.values]
+        Cache-Control = "public, s-max-age=2592000"
+[[headers]]
+    for = "/*.woff2"
+    [headers.values]
+        Cache-Control = "public, s-max-age=2592000"
