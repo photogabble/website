@@ -1,27 +1,36 @@
-{% extends "_includes/layouts/base.njk" %}
+{% extends "_includes/layouts/page.njk" %}
 
 {% set postslist = collections.post %}
 
 {% block title %}Blog{% endblock %}
 
-{% block body_class %}dark{% endblock %}
-
 {% block content %}
-    <header class="py-12 md:py-36 lg:py-48 grid grid-cols-12">
-        <div class="col-start-2 col-span-10 md:col-start-2 md:col-span-6 lg:col-start-2 lg:col-span-4">
-            <h1 class="mb-8 text-6xl md:text-8xl font-bold leading-normal tracking-tighter">
-                Blog
-            </h1>
-            <p class="text-2xl mb-2">
-                ...
-            </p>
-        </div>
-    </header>
-    <section class="mb-12 grid grid-cols-12">
-        <div class="col-start-2 col-end-12">
+
+    <article>
+        <h1>Blog Archive</h1>
+        <p>There have been {{ postslist.length }} posts published since April 20, 2007:</p>
+        <section>
+            <ul class="post-list">
             {% for post in postslist | reverse %}
-                {{  post.data.title }}
+                <li>
+                    <a href="{{ post.url }}" title="Read {{ post.data.title }}">
+                        {{ post.data.title }}
+                    </a> &mdash; {{ post.date | dateToFormat("DDD") }}
+                </li>
             {% endfor %}
-        </div>
-    </section>
+            </ul>
+        </section>
+    </article>
+
+    <nav>
+        <h2>All Categories</h2>
+        <p>
+            {% for category in collections.postCategories %}
+                {% if loop.first %}
+                    <a href="/blog/" class="pill">All</a>
+                {% endif %}
+                <a href="/blog/{{ category.slug }}" class="pill">{{ category.title }}</a>
+            {% endfor %}
+        </p>
+    </nav>
 {% endblock %}

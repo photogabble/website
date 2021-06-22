@@ -1,30 +1,88 @@
-{% extends "../_includes/layouts/base.njk" %}
+{% extends "_includes/layouts/base.njk" %}
 
-{% block title %}About{% endblock %}
-
-{% block body_class %}light patterned{% endblock %}
+{% block title %}/now{% endblock %}
 
 {% block content %}
-    <header class="py-12 md:py-36 lg:py-48 grid grid-cols-12">
-        <div class="col-start-2 col-span-10 md:col-start-2 md:col-span-6 lg:col-start-2 lg:col-span-5">
-            <h1 class="mb-8 text-6xl md:text-8xl font-bold leading-normal tracking-tighter">
-                About
-            </h1>
-            <p class="text-2xl mb-2">
-                Proud father to two incredible little girls,<br>
-                I make things with computers.<br>
-                <small>#golang, #php and #javascript</small> 🌱
-            </p>
-        </div>
-    </header>
-    <section class="pb-12 grid grid-cols-12" style="background-color: var(--light-transparent)">
-        <div class="col-start-2 col-end-8 pr-8">
-            <p>
-                I have written a lot of about me pages over the years and it never seems to get easier.
-            </p>
-        </div>
-        <div class="col-span-5" style="margin-top: -15rem;border-radius: 10px 0 0 10px;overflow: hidden;">
-            <img alt="tmp" style="width:100%" src="https://images.unsplash.com/photo-1524293568345-75d62c3664f7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=354&q=80"/>
-        </div>
+<article>
+    <h1>Simon Dann</h1>
+
+    <section>
+        <h2>About me</h2>
+        <p>
+            <span class="marginnote">
+              <img src="/img/headshot.jpg" alt="Headshot of Simon Dann">
+            </span>
+            I'm a "full stack" web developer from the U.K currently building interesting things with Vue.js, PHP, Golang and Node.
+        </p>
+        <p>I started playing with computers on an old Toshiba 386 luggable in the mid nineties and have since been making websites for about 21 years.</p>
+        <p>My interests include macro photography, vintage computing, astrophysics and game development. I enjoy combining my interests, for example: developing a game for MS-DOS in the C programming language so that I can run it on the 8086 computer I bought on eBay on a whim.</p>
+        <p>I can be reached via email but you will likely have better success via either <a href="https://twitter.com/carbontwelve">Twitter</a> or <a href="https://phpc.social/@carbontwelve">Mastodon</a>.</p>
     </section>
+
+    <section>
+        <h2>Work Experience</h2>
+        <ul>
+            <li>
+                Senior Software Developer
+                <br>
+                <small>Achiive Ltd, 2018&ndash;Now</small>
+            </li>
+            <li>
+                Digital Media Developer
+                <br>
+                <small>FCB Halesway, 2013&ndash;2018</small>
+            </li>
+            <li>
+                PHP Software Developer
+                <br>
+                <small>Submission Technology Ltd, 2012&ndash;2013</small>
+            </li>
+            <li>
+                PHP Web Developer
+                <br>
+                <small>Self Employed, 2009&ndash;2012</small>
+            </li>
+            <li>
+                eCommerce Manager
+                <br>
+                <small>Kent Paints &amp; Car Panels Ltd, 2008&ndash;2010</small>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Photography</h2>
+        <p>I have a keen interest in photography, especially Macro, Micro and Landscape photography. Early on in my career between 2008 and 2012 I did Product, Wedding and Event photography professionally. Unfortunately all my photography from that time is locked away on hard drives I have since put in storage. If I ever do get round to digging them out again I will link from here to a gallery of my selected favourites.</p>
+
+        <p>I used to rock a 5D MkII and a 7D MkI with a selection of glass that would impress most photography enthusiasts. Nowerdays I find my iPhone to be good enough for the pot shots I make on a daily basis supplemented with a Canon 70D and 40mm prime lens for family photographs.</p>
+    </section>
+
+    <section>
+        <h2>Folding@Home</h2>
+
+        <p>
+            <span class="marginnote">
+                <a href="http://folding.extremeoverclocking.com/user_summary.php?s=&u=666633">
+                    <img src="http://folding.extremeoverclocking.com/sigs/sigimage.php?u=666633&t=35947" alt="Folding @ Home"/>
+                </a>
+            </span>
+            For about six years staring from November 2014 I donated spare CPU cycles of computers I used to <a href="https://foldingathome.org/">Folding@Home</a> this was largely facilitated through the Folding@Home NaCL web client.
+        </p>
+        <p>Unfortunately the NaCL client was retired in part due to <a href="http://blog.chromium.org/2017/05/goodbye-pnacl-hello-webassembly.html">Google deprecating NaCL</a> and while during it's six year lifespan, the NaCl client contributed 48 million Folding@home work units towards the study of human diseases; the only alternatives to date are installed clients that operate natively.</p>
+        <p>My desktop computer has been packed away since the birth of our second child, and I don't feel comfortable pushing a heavy thermal load onto my laptop, therefore I haven't been able to contribute any folding cores in just over two years. I do hope to be able to do so again in the future.</p>
+    </section>
+
+    <section>
+        <h2>Inspiration</h2>
+        <p>
+            Over the years I have drawn inspiration from many individuals who through their activities have make me want to grow and improve. A handful whom immediately jump to mind are the following:
+        </p>
+        <ul>
+            <li><a href="https://wesbos.com/">Wes Bos</a> <small>(<a href="https://twitter.com/wesbos">@wesbos</a>)</small>
+            <li><a href="https://cassidoo.co/">Cassidy Williams</a> <small>(<a href="https://twitter.com/cassidoo">@cassidoo</a>)</small></li>
+            <li><a href="https://www.kina-ink.com/">Kina Forney</a> <small>(<a href="https://twitter.com/kinaink">@kinaink</a>)</small></li>
+            <li><a href="https://www.kvlly.com/">Kelly Vaughn</a> <small>(<a href="https://twitter.com/kvlly">@kvlly</a>)</small></li>
+        </ul>
+    </section>
+</article>
 {% endblock %}

@@ -29,7 +29,7 @@ const postCategories = (collection) => {
 // https://www.webstoemp.com/blog/basic-custom-taxonomies-with-eleventy/
 const postByCategories = (collection) => {
     const posts = post(collection).reverse()
-    const postsPerPage = 6
+    const postsPerPage = 20
 
     // Here we use a set to reduce the categories used in our posts into a unique list,
     // that set is then converted into an array and sorted alphabetically before being
@@ -55,7 +55,7 @@ const postByCategories = (collection) => {
             pages.push({
                 title: category.title,
                 slug: slugs[idx],
-                pageNumber: idx,
+                pageNumber: idx + 1,
                 totalPages: slugs.length,
                 pageSlugs: {
                     all: slugs,

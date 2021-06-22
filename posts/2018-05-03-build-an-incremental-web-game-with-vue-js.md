@@ -40,7 +40,7 @@ First [download the repository master as a zip](https://github.com/photogabble/p
 
 Once done you will have the following starter project directory structure:
 
-```tree
+```treeview
 parcel-vue-project/
 ├── .babelrc
 ├── .gitignore

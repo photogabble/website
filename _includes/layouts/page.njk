@@ -1,0 +1,12 @@
+{% extends "./base.njk" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <article>
+        <h1>{{ title }}</h1>
+        <p>{{ sub_title | safe }}</p>
+
+        <section>{{ content | safe }}</section>
+    </article>
+{% endblock %}
