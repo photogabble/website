@@ -12,7 +12,8 @@ module.exports = async function() {
         return 1;
       }
 
-      let n = 1;
+      const last = new URL(json.last);
+      return Number(last.searchParams.get('page'));
     })
 
   /**
