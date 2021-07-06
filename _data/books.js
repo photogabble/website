@@ -70,6 +70,15 @@ module.exports = async function() {
     items.every(item => books.push(item));
   }
 
-  return Promise.all(books);
-
+  return Promise.all(books).then(found => {
+    // Filter out duplicates due to https://github.com/bookwyrm-social/bookwyrm/issues/1214
+    let ids = [];
+    return found.filter((book) => {
+      if (ids.includes(book.id)){
+        return false;
+      }
+      ids.push(book.id);
+      return true;
+    })
+  });
 };
