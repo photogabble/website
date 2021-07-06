@@ -10,7 +10,7 @@
         <h1>Blog Archive</h1>
         <p>There have been {{ postslist.length }} posts published since April 20, 2007:</p>
         <section>
-            <ul class="post-list">
+            <ol reversed class="post-list">
             {% for post in postslist | reverse %}
                 <li>
                     <a href="{{ post.url }}" title="Read {{ post.data.title }}">
@@ -18,7 +18,7 @@
                     </a> &mdash; {{ post.date | dateToFormat("DDD") }}
                 </li>
             {% endfor %}
-            </ul>
+            </ol>
         </section>
     </article>
 
