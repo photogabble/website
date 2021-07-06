@@ -1,0 +1,35 @@
+{% extends "_includes/layouts/base.njk" %}
+
+{% block title %}Books{% endblock %}
+
+{% block content %}
+    <article>
+        <h1>Books</h1>
+        <p>What I've been reading:</p>
+
+        {%- for review in books -%}
+        <section>
+            <h2>{{ review.book.title }}</h2>
+            <p>{{ review.book.authors }}</p>
+
+            {% if(review.book.cover) %}
+            <p>
+				<span class="marginnote">
+				    <img height="200px" src="{{ review.book.cover.src }}" alt="{{ review.book.cover.alt }}">
+				</span>
+            </p>
+            {% endif %}
+
+            {{ review.content | safe }}
+
+            <p>
+                Review published {{ review.published | dateToFormat('DDD') }}. <a href="{{ review.id }}">View on bookwyrm.social</a>.
+            </p>
+        </section>
+        {%- endfor -%}
+        <hr/>
+        <section>
+            <p>This books page layout was inspired by <a href="https://www.coxchapman.com/books">Cox Chapman's Books page</a>.</p>
+        </section>
+    </article>
+{% endblock %}

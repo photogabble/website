@@ -3,7 +3,7 @@ module.exports = [
         title: 'Gered\'s Ramblings',
         description: 'Scattered and possibly incoherent thoughts scribbled down in haste.',
         href: 'http://blarg.ca/',
-        tags: ['dos', 'c', 'game-dev'],
+        tags: ['dos', 'c', 'game-dev', 'blog'],
         reason: 'Stumbled upon this blog while researching DOS game dev, stayed for the articles and beautiful aesthetic.',
     },
     {
@@ -23,5 +23,11 @@ module.exports = [
         href: 'https://www.d-hagemeier.com/en/import-tweets-from-twitter-api-in-11ty/',
         tags: ['js', '11ty'],
         reason: '...',
+    },
+    {
+        title: "Tobias Girstmair's Website",
+        href: 'https://gir.st/',
+        tags: ['blog', 'minimalist'],
+        reason: '...'
     }
 ];

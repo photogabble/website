@@ -18,6 +18,7 @@
     "alpinejs": "^2.8.2",
     "autoprefixer": "^10.2.5",
     "cross-env": "^7.0.3",
+    "node-fetch": "^2.6.1",
     "postcss-cli": "^8.3.1",
     "postcss-import": "^14.0.2"
   },
