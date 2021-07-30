@@ -1,9 +1,17 @@
 const fetch = require("node-fetch");
 
 const username = 'carbontwelve';
+let cache = {
+  not_before: 0,
+  items: [],
+}
 
 module.exports = async function() {
   console.log(`Fetching bookwyrm feed for [${username}]…`);
+
+  if (cache.not_before > Math.floor(Date.now() / 1000)) {
+    return cache.items;
+  }
 
   const numberOfPages = await fetch(`https://bookwyrm.social/user/${username}/outbox`)
     .then(res => res.json())
@@ -70,7 +78,7 @@ module.exports = async function() {
     items.every(item => books.push(item));
   }
 
-  return Promise.all(books).then(found => {
+  const items = await Promise.all(books).then(found => {
     // Filter out duplicates due to https://github.com/bookwyrm-social/bookwyrm/issues/1214
     let ids = [];
     return found.filter((book) => {
@@ -81,4 +89,11 @@ module.exports = async function() {
       return true;
     })
   });
+
+  if (items.length > 0) {
+    cache.not_before = Math.floor(Date.now() / 1000) + 300; // 5 minute cache
+    cache.items = items;
+  }
+
+  return items;
 };
