@@ -1,7 +1,5 @@
 ---
-
 title: Pixel Mainframe
-date: 2015-02-15
 categories:
     - pixelart
 cover_image: /assets/img/chickenstreet-iampixeltier-mainframe-1.png

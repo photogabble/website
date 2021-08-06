@@ -1,7 +1,5 @@
 ---
-
 title: Mission Mainframe
-date: 2009-06-10
 categories: [games]
 tags: [revived, dos]
 featured: true

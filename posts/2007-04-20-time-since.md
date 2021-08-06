@@ -1,6 +1,5 @@
 ---
 title: A time_since function for PHP
-date: 2007-04-20
 description: A simple time since function for PHP
 categories: [programming]
 tags: [php, revived]

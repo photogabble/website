@@ -1,5 +1,4 @@
 ---
-
 title: Writing a pixel editor in javascript - Part one
 categories: [tutorials]
 tags: [programming, javascript]

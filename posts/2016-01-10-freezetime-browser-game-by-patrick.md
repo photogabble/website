@@ -1,6 +1,4 @@
 ---
-
-date: 2016-01-10
 title: Freezetime browser based "roguelike"
 cover_image: /assets/img/freezetime-featured-img.png
 categories:

@@ -1,11 +1,9 @@
 ---
-
 title: Dependency Resolving Algorithm
 draft: false
 cover_image: /assets/img/featured-images/dependency-resolving-algorithm.png
 categories:
     - programming
-date: 2018-08-08
 tags:
     - php
     - tapestry
