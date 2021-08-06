@@ -29,5 +29,11 @@ module.exports = [
         href: 'https://gir.st/',
         tags: ['blog', 'minimalist'],
         reason: '...'
+    },
+    {
+        title: "John Mathews Blog",
+        href: 'https://johnmathews.eu/blog.html',
+        tags: ['blog', 'minimalist'],
+        reason: '...'
     }
 ];
