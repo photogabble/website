@@ -1,5 +1,4 @@
 ---
-
 title: Kareltima III The self-beating machine
 date: 2009-06-09
 description: A simple time since function for PHP

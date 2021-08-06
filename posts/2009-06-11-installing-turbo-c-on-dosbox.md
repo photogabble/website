@@ -1,7 +1,5 @@
 ---
-
 title: Installing Turbo C on DOSBOX
-date: 2009-06-11
 categories: [tutorials]
 tags: [revived, dos]
 featured: false

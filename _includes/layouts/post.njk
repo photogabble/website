@@ -13,8 +13,8 @@
                 <a class="pill" href="/blog/{{ category.slug }}">{{ category.title }}</a>
             {% endfor %}
             on
-            <time datetime="{{ date | dateToFormat("yyyy-MM-dd") }}">
-                {{ date | dateToFormat("dd LLL yyyy") }}
+            <time datetime="{{ page.date.toISOString() }}">
+                {{ page.date | dateToFormat("dd LLL yyyy") }}
             </time>
         </p>
         <section>
