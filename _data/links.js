@@ -35,5 +35,11 @@ module.exports = [
         href: 'https://johnmathews.eu/blog.html',
         tags: ['blog', 'minimalist'],
         reason: '...'
+    },
+    {
+        title: "Kyle Shook's Website",
+        href: 'https://www.kyleshook.com/',
+        tags: ['blog', 'minimalist'],
+        reason: '...'
     }
 ];
