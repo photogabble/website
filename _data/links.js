@@ -47,5 +47,11 @@ module.exports = [
         href: 'https://susam.in/blog/',
         tags: ['blog', 'minimalist'],
         reason: '...'
+    },
+    {
+        title: 'e‑basteln',
+        href: 'http://www.e-basteln.de/',
+        tags: ['vintage computing'],
+        reason: ''
     }
 ];
