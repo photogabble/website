@@ -41,5 +41,11 @@ module.exports = [
         href: 'https://www.kyleshook.com/',
         tags: ['blog', 'minimalist'],
         reason: '...'
+    },
+    {
+        title: "Susam's Blog",
+        href: 'https://susam.in/blog/',
+        tags: ['blog', 'minimalist'],
+        reason: '...'
     }
 ];
