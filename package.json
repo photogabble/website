@@ -1,7 +1,7 @@
 {
   "name": "photogabble-2021",
   "version": "1.0.0",
-  "description": "",
+  "description": "Source code for photogabble.co.uk",
   "main": "index.js",
   "scripts": {
     "dev:postcss": "postcss styles/main.css --o _tmp/style.css --watch",
@@ -10,7 +10,7 @@
     "build": "cross-env ELEVENTY_ENV=production eleventy && cross-env NODE_ENV=production postcss styles/main.css --o _site/style.css"
   },
   "keywords": [],
-  "author": "",
+  "author": "Simon Dann",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
