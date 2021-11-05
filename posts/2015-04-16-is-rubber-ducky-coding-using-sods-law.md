@@ -3,7 +3,7 @@
 title: Is rubber ducky debugging using sods law as a debugging tool?
 categories:
     - programming
-cover_image: /assets/img/rubber-duck-programming.png
+cover_image: /img/rubber-duck-programming.png
 ---
 
 > While Murphy's law says that anything that can go wrong, will go wrong (eventually), Sod's law requires that it always go wrong with the worst possible outcome.

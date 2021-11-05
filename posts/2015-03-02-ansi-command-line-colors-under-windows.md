@@ -7,14 +7,14 @@ categories:
 tags:
     - windows
     - command line
-cover_image: /assets/img/ansicon-install-cmd.png
+cover_image: /img/ansicon-install-cmd.png
 ---
 
 Coming from a linux and osx background, the one thing that I missed the most when using windows was ANSI command line colours within the command prompt. ANSI escape sequences are supported in at least in one form or another in most terminal emulators except for the win32 console component of Microsoft Windows. Fortunately there is a project on github [adoxa/ansicon](https://github.com/adoxa/ansicon) that adds support for ANSI escape sequences to the Windows console by wrapping it and adding interpreting the ANSI sequences.
 
 As of writting version 1.66 is the *latest*[^1] release of ANSICON and can be obtained from the [github repository here](https://github.com/adoxa/ansicon/releases). There have been 16 commits to the master repository since the 1.66 release and if you know how to compile the project from source then you will be able to run with version 1.70[^2].
 
-![Installing Ansicon](/assets/img/ansicon-install.png "Installing Ansicon")
+![Installing Ansicon](/img/ansicon-install.png "Installing Ansicon")
 
 To begin download and extract the ansi166.zip from [github](https://github.com/adoxa/ansicon/releases). Then, if you have a 32-bit version of Windows copy the `x86` directory to `C:\` or `x64` if you have 64-bit Windows. Next rename the copied directory to `ansicon` then with it selected in file explorer hold the [shift] key and right click on the `ansicon` directory to bring up the context menu. From the menu click *open command window here*[^3].
 
@@ -24,7 +24,7 @@ Alternatively if you are unable to install ansicon due to restrictions placed up
 
 Once you have completed either of the above methods you should now be able to enjoy coloured output of command line tools, for example composer:
 
-![ANSI escape sequences in Windows command window](/assets/img/ansicon-install-cmd.png "ANSI escape sequences in Windows command window")
+![ANSI escape sequences in Windows command window](/img/ansicon-install-cmd.png "ANSI escape sequences in Windows command window")
 
 [^1]: Version 1.66 of ANSICON was released on the 19th September 2013
 [^2]: Version 1.70 of ANSICON was released on the 26th February 2014 but requires compiling from the supplied source.

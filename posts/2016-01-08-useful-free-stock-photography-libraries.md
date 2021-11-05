@@ -24,7 +24,7 @@ I have listed three good resources below, if you know of any others I would be m
 
 ## [Unsplash.com](https://unsplash.com/)
 
-![Unsplash Stock Archive](/assets/img/really-useful-free-stock-photography-archives-unsplash.png "Unsplash Stock Archive")
+![Unsplash Stock Archive](/img/really-useful-free-stock-photography-archives-unsplash.png "Unsplash Stock Archive")
 
 Unsplash was the first "do what ever you want" stock photo archive that I visited (and to be honest I had it bookmarked for months, just never needed it until now.) The premise of the resource is ten new photos every ten days and there is the facility to subscribe and be alerted via email when new content is added. All photos published on the Unsplashed platform are licensed under creative commons zero as noted in the [Unsplash license](https://unsplash.com/license). The quality of the photos is really good and there are multiple photographers whom are submitting their work. Something that I haven't yet done is register with Unsplash; I am unsure of the benefits of doing so, other than submitting likes to photos. I am thankful that you do not have to join before being able to search or download resources.
 
@@ -32,7 +32,7 @@ The front page of Unsplash displays  the websites featured resources, while you 
 
 ## [stokpic.com](http://stokpic.com/)
 
-![Stockpic Free Stock Archive](/assets/img/really-useful-free-stock-photography-archives-stockpic.png "Stockpic Free Stock Archive")
+![Stockpic Free Stock Archive](/img/really-useful-free-stock-photography-archives-stockpic.png "Stockpic Free Stock Archive")
 
 Unlike Unsplash whom publish under CC0, Stockpic have their own license called the [stokpic photograph license](http://stokpic.com/license/)it would appear that this is similar to CC0 with the caveat that you may not redistribute the content. The quality of the free stock photography provided by Stockpic is just as good as Unsplash and Stockpic has a similar premise in that they publish ten new photos every two weeks with a similar subscription platform. However, unlike Unsplash, Stockpic is quite advert heavy with more than three sponsored listings upon each page; with that said, one can hardly complain given the quality and variety of content being made available.
 
@@ -40,7 +40,7 @@ While not as aesthetically pleasing as Unsplash, Stockpic is just as excellent a
 
 ## [Pexels](https://www.pexels.com/)
 
-![Pexels Free Stock Archive](/assets/img/really-useful-free-stock-photography-archives-pexels.png "Pexels Free Stock Archive")
+![Pexels Free Stock Archive](/img/really-useful-free-stock-photography-archives-pexels.png "Pexels Free Stock Archive")
 
 Funnily enough I discovered Stockpic via Pexels, something which is rather odd given the non-redistribute clause in the Stockpic Photograph License, then again Pexels also includes content from Unsplash (and likely other free stock photo libraries) so it is conceivable they are working together[^3]. All photos published on the Pexels platform are issued with the same CC0 license as both Stockpic and Unsplash so you are free to use them for personal or even commercial use so long as that usage does not place identifiable people in a bad light or in a way that they may find offensive. Unlike Stockpic Pexels only displays one unobtrusive advert from the exclusive [Carbon ads network](http://carbonads.net/) and sponsored photos from Shuttersotck.
 

@@ -6,11 +6,11 @@ categories:
 tags:
     - programming
     - javascript
-cover_image: /assets/img/javascript-pixel-paint-12.png
+cover_image: /img/javascript-pixel-paint-12.png
 draft: false
 ---
 
-![Pixel Editor](/assets/img/javascript-pixel-paint-11.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-11.png "Pixel Editor")
 
 In [part four](/blog/2015/05/08/writing-a-pixel-editor-in-javascript-p4/) we finished adding the pallet and colour selector to our pixel editor. In this, the fifth part, we shall be cleaning up the code, placing it within its own IIFE and making it strict mode compliant followed by adding the ability to save the images that are created with it.
 
@@ -142,7 +142,7 @@ The above code belongs within the `$(document).ready(function(){` block of your 
 
 For security reasons if we do not set the `download` property on the temporary link. Chrome (and likely all other modern browsers) will log the following error _"Not allowed to navigate top frame to data URL:"_.
 
-![Pixel Editor](/assets/img/javascript-pixel-paint-12.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-12.png "Pixel Editor")
 
 Now upon refreshing `index.html` in your browser, you should see the above, and upon clicking the save button your browser should prompt to download a png image.
 

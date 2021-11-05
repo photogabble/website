@@ -6,7 +6,7 @@ categories:
 tags:
     - composer
     - windows 7
-cover_image: /assets/img/windows-environment-variables.png
+cover_image: /img/windows-environment-variables.png
 ---
 
 [Composer](https://getcomposer.org/) is not just amazing at managing PHP project dependencies on a per project level but is also able to install packages at a system wide level enabling you to keep such things as Laravel Installer[^1], PHPUnit[^2] and PHP_CodeSniffer[^3] up-to-date without touching [Pear](http://pear.php.net/).
@@ -21,7 +21,7 @@ The absolute path that you use will be the following, replacing **USERNAME** wit
 
 To add the absolute path to your `%PATH%` variable go to *User Accounts* under your `Control Panel` and then with your user account selected, click on *Change my environment variables*. Doing so will open up a box similar to the one below:
 
-![Windows Environment Variables](/assets/img/windows-environment-variables.png "Windows Environment Variables")
+![Windows Environment Variables](/img/windows-environment-variables.png "Windows Environment Variables")
 
 As you can see I already have a *PATH* variable set up for my user, with the Folding at home client, if you do not already have one set up for your user then you can click New and add it with the variable name being `PATH` and the variable value being the absolute path to your composer bin directory.
 

@@ -5,10 +5,10 @@ categories:
 tags:
     - programming
     - javascript
-cover_image: /assets/img/javascript-pixel-paint-9.png
+cover_image: /img/javascript-pixel-paint-9.png
 ---
 
-![Pixel Editor](/assets/img/javascript-pixel-paint-7.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-7.png "Pixel Editor")
 
 In [part two](/blog/2015/01/28/writing-a-pixel-editor-in-javascript-p2/) we finished the main image canvas and got to the point where you could draw onto the grid of pixels with one mouse button and erase with the other. In this, the third part, we shall be adding the preview to the pixel editor. You can grab all the files from this tutorial series [here at github](https://github.com/photogabble/pixel-editor-tutorial).
 
@@ -83,7 +83,7 @@ if ( ! private.loaded ){ return; }
 context.putImageData( private.cCache, private.offset.x, private.offset.y );
 ```
 
-![Pixel Editor](/assets/img/javascript-pixel-paint-8.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-8.png "Pixel Editor")
 
 Now upon refreshing `index.html` in your browser, you should see the above. As you can see from my doodle, the preview doesn't yet provide an *actual* preview of our drawn pixels; the object that stores our pixel data is privatly held within the `ImageCanvas` object and normally that would mean that it is hidden from access. Fortunatly however our `ImageCanvas` object has a getter that we can use to grab the pixel object from within it as shown in the following code snippet:
 
@@ -106,7 +106,7 @@ for (var y = 1; y <= private.yPixels; y+= 1)
 
 The above code belongs inside your `Preview` objects `update` method, between the line `private.cContext.fillRect( 14, 16, 16, 16);` and `private.cCache = private.cContext.getImageData( 0, 0, 43, 36);`. It is very similar to the double for loop used within the `ImageCanvas` object to output the big representation of the pixel data.
 
-![Pixel Editor](/assets/img/javascript-pixel-paint-9.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-9.png "Pixel Editor")
 
 Upon refreshing `index.html` within your browser and drawing on the image canvas, you should now be able to see a preview of how your drawing looks, just as the above image shows. Now "1-bit" colour depth is all fun and games but what we really want to have is a choice of what colour we draw with.
 

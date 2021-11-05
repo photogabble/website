@@ -6,7 +6,7 @@ categories:
 tags:
     - microsoft
     - browsers
-cover_image: /assets/img/tagged-default/internet-explorer.png
+cover_image: /img/tagged-default/internet-explorer.png
 
 header:
     background:

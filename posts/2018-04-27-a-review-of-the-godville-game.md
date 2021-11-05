@@ -2,7 +2,7 @@
 
 title: A "review" of the GodVille Game
 draft: false
-cover_image: /assets/img/featured-images/a-review-of-the-godville-game.png
+cover_image: /img/featured-images/a-review-of-the-godville-game.png
 categories:
     - games
 
@@ -13,13 +13,13 @@ tags:
 
 [GodVille](https://godvillegame.com) is a weird game, that on the surface feels like a stupid idea that should not work. It falls into what is called the "zero-player" genre of games by being entirely passive and requiring literally no input for events in the game to progress.
 
-![This is it, the whole game in one page](/assets/img/a-review-of-the-godville-game-2.png "This is it, the whole game in one page")
+![This is it, the whole game in one page](/img/a-review-of-the-godville-game-2.png "This is it, the whole game in one page")
  
 I first stumbled upon GodVille soon after it was released into the Apple app store in 2010, at the time I downloaded the game onto my iPod touch and it became a novel play thing that I would interact with in much the same way as with Tamagotchi a number of years prior.
 
 Your role in GodVille is to play the god-character. Watching over your hero whom is able to communicate with you via their diary. Your input is limited to Encouragement, Punishment or sending a message. However quite as with all Deities what you send and what is actually received can differ greatly and I am still not entirely sure that your input does anything beyond granting your character health and reincarnating them when they inevitably die.
 
-![All I want is for you to ride the sea...](/assets/img/a-review-of-the-godville-game-1.png "All I want is for you to ride the sea...")
+![All I want is for you to ride the sea...](/img/a-review-of-the-godville-game-1.png "All I want is for you to ride the sea...")
 
 The game itself is role playing with your hero exploring an expansive map containing a great many places, items, monsters and enemies to interact with. There is so much content that it fills [1,867 pages of the games wiki](https://wiki.godvillegame.com/Main_Page); with much of the content having been suggested by players over the years.
 

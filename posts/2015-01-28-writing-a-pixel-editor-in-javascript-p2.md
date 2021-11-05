@@ -5,10 +5,10 @@ categories:
 tags:
     - programming
     - javascript
-cover_image: /assets/img/javascript-pixel-paint-7.png
+cover_image: /img/javascript-pixel-paint-7.png
 ---
 
-![Pixel Editor](/assets/img/javascript-pixel-paint-3.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-3.png "Pixel Editor")
 
 In [part one](/blog/tutorials/writing-a-pixel-editor-in-javascript-p1/) we set the stage to begin writing our 16x16 pixel editor, if all went well you will hopefully be looking at something very similar to the above, a rather unassuming white square on a grey background. While it may not look like much, it is certainly progress and a excellent foundation on which to continue.
 
@@ -283,7 +283,7 @@ context.fillRect(1,1, (private.cWidth - 2), (private.cHeight - 2));
 
 Pasting the above code into your `ImageCanvas.render` method should result in you seeing something similar to the below image when you refresh `index.html` in your browser. While these four lines of code quickly provide us with the borders that we desire, we shall use the second method to draw the grid lines over the top of this box.
 
-![Pixel Editor](/assets/img/javascript-pixel-paint-4.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-4.png "Pixel Editor")
 
 Drawing the border and all the lines for the grid on each render pass is horribly inefficient, so we shall do it just once when the `ImageCanvas` object is initiated and cache the result so that it is only rendered once in total.
 
@@ -339,7 +339,7 @@ context.putImageData( private.cGrid, 0, 0 );
 
 To see the fruit of our efforts so far, paste the above code into your `ImageCanvas.render` method and refresh `index.html` in your browser and you should see the bellow:
 
-![Pixel Editor](/assets/img/javascript-pixel-paint-5.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-5.png "Pixel Editor")
 
 ####Drawing the pixels
 
@@ -373,7 +373,7 @@ for (var y = 1; y <= private.yPixels; y+= 1)
 
 Appending the above to your `ImageCanvas.render` method and refreshing `index.html` in your browser should now mean that when you place the mouse cursor over a "pixel" within the grid that it will turn light grey and clicking that pixel will switch its state between black (`on`) and white ('off') &ndash; much like the image below.
 
-![Pixel Editor](/assets/img/javascript-pixel-paint-6.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-6.png "Pixel Editor")
 
 ###Bugs!
 You may or may not have noticed three potential bugs in the code above, these are the ones I know about[^3] and were intentionally written in for the purpose of this section. Before continuing you may like to take some time looking for possible bugs yourself and attempt to fix them.
@@ -463,7 +463,7 @@ if ( Mouse.x >= (private.offset.x + currentPixel.x) && Mouse.x <= (private.offse
 
 Doing so should result in you seeing similar[^5] to the below when refreshing `index.html` in your browser and nicely brings us to the end of the second part of this five part tutorial.
 
-![Pixel Editor](/assets/img/javascript-pixel-paint-7.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-7.png "Pixel Editor")
 
 Thank you for reading, next in [part three](/blog/2015/02/04/writing-a-pixel-editor-in-javascript-p3/) we add a live preview to our interface and tidy some of the code up.
 

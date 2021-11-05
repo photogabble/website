@@ -2,7 +2,7 @@
 
 title: The QB64 programming language
 draft: false
-cover_image: /assets/img/featured-images/introducing-the-qb64-programming-language.png
+cover_image: /img/featured-images/introducing-the-qb64-programming-language.png
 categories:
     - programming
 tags:
@@ -16,7 +16,7 @@ header:
 
 Writing my [happy 53rd birthday to BASIC article](/blog/2017/05/02/happy-fiftyth-birthday-basic) brought up fond childhood memories of programming on my Toshiba T3100e. As a teenager I often spent the evenings basking in the orange glow from its plasma display and tapping away at its keyboard, entering programs into my copy of Quick Basic.
 
-![GORILLA.BAS](/assets/img/introducing-the-qb64-programming-3.png "GORILLA.BAS")
+![GORILLA.BAS](/img/introducing-the-qb64-programming-3.png "GORILLA.BAS")
 
 It has been almost fourteen years since I first wrote in BASIC and serendipitously after having published my happy birthday tribute to a language that shaped a large part of my life I stumbled upon the [twitter account](https://twitter.com/QB64team) for a modern revival called QB64.
 
@@ -30,13 +30,13 @@ While that on its own is impressive enough, [QB64](http://www.qb64.org/) goes se
 
 On top of having backwards compatibility with older source code QB64 also provides access to modern features such as TCP/IP, graphics, sound, screen capture, TTF fonts and clipboard access. All while retaining the same look and feel as the original Quick Basic IDE.
 
-[![QB64 GUI by Fellippe Heitor](/assets/img/introducing-the-qb64-programming-2.png "QB64 App by Fellippe Heitor")](https://twitter.com/FellippeHeitor/status/816702804874166276)
+[![QB64 GUI by Fellippe Heitor](/img/introducing-the-qb64-programming-2.png "QB64 App by Fellippe Heitor")](https://twitter.com/FellippeHeitor/status/816702804874166276)
 
 There is an active community of developers both developing for and with QB64. A chap named [Fellippe](https://twitter.com/FellippeHeitor) has even gone so far as to port some of [Daniel Shiffmans](https://twitter.com/shiffman) p5.js code examples to QB64 implementing an impressive GUI with a QB64 tool he also authored called [InForm](https://github.com/FellippeHeitor/InForm).
 
 While on the subject of p5.js, a Github user by the name of AshishKingdom has recently begun porting p5.js to QB64 in the form of [p5js.bas](https://github.com/AshishKingdom/p5js.bas). That repository has a number of samples showing the framework functioning, including some ports of p5js sketches. This is an impressive achievement and goes to show how active the community surrounding QB64 is, further evidenced by the extremely active [forum](http://www.qb64.net/forum/index.php).
 
-[![Racing Game by Kay Lerch](/assets/img/introducing-the-qb64-programming-4.png "Racing Game by Kay Lerch")](https://twitter.com/KayLerch/status/758773390052392960)
+[![Racing Game by Kay Lerch](/img/introducing-the-qb64-programming-4.png "Racing Game by Kay Lerch")](https://twitter.com/KayLerch/status/758773390052392960)
 
 A quick search of twitter provided me with some tasty screenshots for this article, namely the above racing game originally written in 1998 on a 80386 by Kay Lerch.
 
@@ -44,7 +44,7 @@ A quick search of twitter provided me with some tasty screenshots for this artic
 
 The phrase _"...sweet memories and serious teenage expressions..."_ resonates with me and is similar to the sentiment I have when remembering my own BASIC adventures. In providing a modern setting in which to re-experience those moments, QB64 has helped revive that feeling. You can view Kay's car racing code among several other games of his from those formative years in his [Github repository here](https://github.com/KayLerch/qbasic-teenage-masterpieces).
 
-![QB64 - Miss Saigon and Whispers in the Moss (RPG)](/assets/img/introducing-the-qb64-programming-5.png "QB64 - Miss Saigon and Whispers in the Moss (RPG)")
+![QB64 - Miss Saigon and Whispers in the Moss (RPG)](/img/introducing-the-qb64-programming-5.png "QB64 - Miss Saigon and Whispers in the Moss (RPG)")
 
 Aside from rebooting old BASIC and Quick BASIC projects from times of yore, QB64 is also being used to develop relatively recent projects, from games such as [Miss Saigon](https://greaterevil.itch.io/miss-saigon) and [Whispers in the Moss](https://retrowl.wordpress.com/whispers-in-the-moss/) to tools such as [this FTP client](https://github.com/mkilgore/qb64_ftp_client) (which admittedly has not been touched in four years).
 

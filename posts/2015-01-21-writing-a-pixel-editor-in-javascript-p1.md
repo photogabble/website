@@ -2,12 +2,12 @@
 title: Writing a pixel editor in javascript - Part one
 categories: [tutorials]
 tags: [programming, javascript]
-cover_image: /assets/img/javascript-pixel-paint-3.png
+cover_image: /img/javascript-pixel-paint-3.png
 featured: false
 ---
 
-![Pixel Editor](/assets/img/javascript-pixel-paint-2.png "Pixel Editor")
-[![Pixel Editor](/assets/img/github.png "Github")](https://github.com/photogabble/pixel-editor-tutorial)
+![Pixel Editor](/img/javascript-pixel-paint-2.png "Pixel Editor")
+[![Pixel Editor](/img/github.png "Github")](https://github.com/photogabble/pixel-editor-tutorial)
 
 Recently during a conversation with a colleague I was reminded about a small side project that I once maintained called "pixels." It was essentially a 1-bit pallete 16x16 on-line image creator where you could create a tiny image and post it to a gallery. I had written it a number of years ago at a time when I decided that I would start learning JavaScript.
 
@@ -230,7 +230,7 @@ if ( Mouse.previousEvents.mouseButton !== Mouse.events.mouseButton )
 }
 ```
 
-![Pixel Editor Stage 1 Conclusion](/assets/img/pixel-paint-stage-1-conclusion.png "Pixel Editor Stage 1 Conclusion")
+![Pixel Editor Stage 1 Conclusion](/img/pixel-paint-stage-1-conclusion.png "Pixel Editor Stage 1 Conclusion")
 
 If all went well then your console should fill up with messages similar to those depicted above &ndash; if so, congratulations you have now laid the ground work for out pixel editor.
 

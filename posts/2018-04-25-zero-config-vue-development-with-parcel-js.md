@@ -2,7 +2,7 @@
 
 title: Zero config, rapid Vue.js development with Parcel
 draft: false
-cover_image: /assets/img/featured-images/zero-config-vue-development-with-parcel-js.png
+cover_image: /img/featured-images/zero-config-vue-development-with-parcel-js.png
 categories:
     - tutorials
 
@@ -136,4 +136,4 @@ dist
 node_modules
 ```
 
-[![Parcel Zero Config VueJS Project Skeleton](/assets/img/github.png "Github")](https://github.com/photogabble/parcel-vue-js-zero-config-project-skeleton)
+[![Parcel Zero Config VueJS Project Skeleton](/img/github.png "Github")](https://github.com/photogabble/parcel-vue-js-zero-config-project-skeleton)

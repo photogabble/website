@@ -5,11 +5,11 @@ categories:
 tags:
     - programming
     - javascript
-cover_image: /assets/img/javascript-pixel-paint-12.png
+cover_image: /img/javascript-pixel-paint-12.png
 draft: false
 ---
 
-![Pixel Editor](/assets/img/javascript-pixel-paint-12.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-12.png "Pixel Editor")
 
 This part comes three years after the first couple of parts were written and in that time ES6 has become regularly used and tools such as webpack have become synonymous with front end development.
 

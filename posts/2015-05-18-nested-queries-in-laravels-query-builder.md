@@ -1,7 +1,7 @@
 ---
 
 title: Nested queries in Laravels Query Builder
-cover_image: /assets/img/nested-queries-in-laravel-eloquent.png
+cover_image: /img/nested-queries-in-laravel-eloquent.png
 header:
     background:
         src: "/img/header-backgrounds/footer-lodyas.png"

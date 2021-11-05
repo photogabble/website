@@ -5,10 +5,10 @@ categories:
 tags:
     - programming
     - javascript
-cover_image: /assets/img/javascript-pixel-paint-11.png
+cover_image: /img/javascript-pixel-paint-11.png
 ---
 
-![Pixel Editor](/assets/img/javascript-pixel-paint-9.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-9.png "Pixel Editor")
 
 In [part three](/blog/2015/02/04/writing-a-pixel-editor-in-javascript-p3/) we finished adding a preview to our pixel editor. In this, the fourth part, we shall be adding the palette selector. As always, you can grab all the files from this tutorial series [here at github](https://github.com/photogabble/pixel-editor-tutorial).
 
@@ -163,7 +163,7 @@ Paste the following code into your `Palette` objects `render` method:
 
 I have added as many informative comments as I feel are necessary to the above code. We could use the `private.paletteMousePositions.length` property instead of the `private.palette.length` that has ultimately made it into this version; and this is likely something that I will focus on in the last chapter of this series[^2] - with the above pasted into your `Palette` objects public `render` method, refreshing `index.html` in your browser should result in you seeing the below[^3]:
 
-![Pixel Editor](/assets/img/javascript-pixel-paint-10.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-10.png "Pixel Editor")
 
 Currently clicking on the pallet will achieve nothing because the `update` method is not keeping track of user input; to make it do so, paste the following commented code into your `Palette` objects `update` method:
 
@@ -303,7 +303,7 @@ Once the above is complete and upon refreshing `index.html` you will notice that
 ```
 Having inserted the above amend refreshing your `index.html` should now result in you being able to select the current colour from the pallet and draw with that colour on the drawing canvas area. With the preview displaying a true 16x16 pixel representation of your image.
 
-![Pixel Editor](/assets/img/javascript-pixel-paint-11.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-11.png "Pixel Editor")
 
 Thank you for reading, next in [part five](/blog/tutorials/writing-a-pixel-editor-in-javascript-p5/) we shall build in saving images that are created and finally making the JavaScript strict mode compliant before packaging it up as a self contained library dependant only on jQuery. If you have any comments, questions or suggestions please leave them below in the comment form, or drop me a tweet [@carbontwelve](https://twitter.com/carbontwelve).
 
