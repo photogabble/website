@@ -1,6 +1,7 @@
 const filters = require('./utils/filters')
 const collections = require('./utils/collections')
 const {slugify} = require('./utils/filters')
+const shortcodes = require('./utils/shortcodes');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
@@ -32,9 +33,10 @@ module.exports = function (eleventyConfig) {
     './img': './img'
   });
 
-  eleventyConfig.addShortcode("version", function () {
-    return String(Date.now())
-  });
+  for (const shortCode in shortcodes) {
+    eleventyConfig.addShortcode(shortCode, shortcodes[shortCode]);
+    console.log(shortCode);
+  }
 
   const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
