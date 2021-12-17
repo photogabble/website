@@ -1,6 +1,6 @@
 ---
 title: On quitting programming for carpentry
-draft: false
+draft: true
 categories:
     - thoughts
 featured: true
