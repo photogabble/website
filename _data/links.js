@@ -53,5 +53,11 @@ module.exports = [
         href: 'http://www.e-basteln.de/',
         tags: ['vintage computing'],
         reason: ''
+    },
+    {
+        title: 'Xe (Christine Dodrill) Blog',
+        href: 'https://christine.website/',
+        tags: ['blog', 'minimalist'],
+        reason: ''
     }
 ];
