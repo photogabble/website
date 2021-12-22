@@ -66,4 +66,10 @@ module.exports = [
         tags: ['PHP', 'blog', 'medium'],
         reason: ''
     },
+    {
+        title: 'Steve McDougall',
+        href: 'https://www.juststeveking.uk/',
+        tags: ['PHP Developer', 'Laravel', 'blog'],
+        reason: '',
+    }
 ];
