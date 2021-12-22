@@ -83,5 +83,11 @@ module.exports = [
         href: 'https://markllobrera.com/',
         tags: ['blog', 'reading log'],
         reason: 'I found Mark\s blog while looking for design inspiration for a reading log, I reall like how they have done theirs.'
+    },
+    {
+        title: 'Jacques Corby-Tuech',
+        href: 'https://www.jacquescorbytuech.com/',
+        tags: ['blog', 'minimalist', 'marketing'],
+        reason: 'I like their minimalist design and focus on content.'
     }
 ];
