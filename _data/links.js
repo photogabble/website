@@ -89,5 +89,11 @@ module.exports = [
         href: 'https://www.jacquescorbytuech.com/',
         tags: ['blog', 'minimalist', 'marketing'],
         reason: 'I like their minimalist design and focus on content.'
+    },
+    {
+        title: 'Brad Taunt',
+        href: 'https://tdarb.org/',
+        tags: ['blog', 'minimalist', 'tinkerer', 'electronics'],
+        reason: ''
     }
 ];
