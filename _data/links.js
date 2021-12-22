@@ -71,5 +71,11 @@ module.exports = [
         href: 'https://www.juststeveking.uk/',
         tags: ['PHP Developer', 'Laravel', 'blog'],
         reason: '',
+    },
+    {
+        title: 'Andrew Stephens',
+        href: 'https://sheep.horse/',
+        tags: ['tufte.css', 'minimalist', 'blog'],
+        reason: 'Stumbled upon this blog while researching people who use Tufte.css.'
     }
 ];
