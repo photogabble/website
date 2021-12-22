@@ -59,5 +59,11 @@ module.exports = [
         href: 'https://christine.website/',
         tags: ['blog', 'minimalist'],
         reason: ''
-    }
+    },
+    {
+        title: 'Travis Weston',
+        href: 'https://travisweston.com/',
+        tags: ['PHP', 'blog', 'medium'],
+        reason: ''
+    },
 ];
