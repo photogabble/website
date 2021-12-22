@@ -77,5 +77,11 @@ module.exports = [
         href: 'https://sheep.horse/',
         tags: ['tufte.css', 'minimalist', 'blog'],
         reason: 'Stumbled upon this blog while researching people who use Tufte.css.'
+    },
+    {
+        title: 'Mark Llobrera',
+        href: 'https://markllobrera.com/',
+        tags: ['blog', 'reading log'],
+        reason: 'I found Mark\s blog while looking for design inspiration for a reading log, I reall like how they have done theirs.'
     }
 ];
