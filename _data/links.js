@@ -95,5 +95,11 @@ module.exports = [
         href: 'https://tdarb.org/',
         tags: ['blog', 'minimalist', 'tinkerer', 'electronics'],
         reason: ''
+    },
+    {
+        title: 'The Computers are Bad Newsletter',
+        href: 'https://computer.rip/',
+        tags: ['newsletter', 'technology'],
+        reason: 'I read their article titled Coaxial goes to war and was sold.'
     }
 ];
