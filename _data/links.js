@@ -53,5 +53,59 @@ module.exports = [
         href: 'http://www.e-basteln.de/',
         tags: ['vintage computing'],
         reason: ''
+    },
+    {
+        title: 'Xe (Christine Dodrill) Blog',
+        href: 'https://christine.website/',
+        tags: ['blog', 'minimalist'],
+        reason: ''
+    },
+    {
+        title: 'Travis Weston',
+        href: 'https://travisweston.com/',
+        tags: ['PHP', 'blog', 'medium'],
+        reason: ''
+    },
+    {
+        title: 'Steve McDougall',
+        href: 'https://www.juststeveking.uk/',
+        tags: ['PHP Developer', 'Laravel', 'blog'],
+        reason: '',
+    },
+    {
+        title: 'Andrew Stephens',
+        href: 'https://sheep.horse/',
+        tags: ['tufte.css', 'minimalist', 'blog'],
+        reason: 'Stumbled upon this blog while researching people who use Tufte.css.'
+    },
+    {
+        title: 'Mark Llobrera',
+        href: 'https://markllobrera.com/',
+        tags: ['blog', 'reading log'],
+        reason: 'I found Mark\s blog while looking for design inspiration for a reading log, I reall like how they have done theirs.'
+    },
+    {
+        title: 'Jacques Corby-Tuech',
+        href: 'https://www.jacquescorbytuech.com/',
+        tags: ['blog', 'minimalist', 'marketing'],
+        reason: 'I like their minimalist design and focus on content.'
+    },
+    {
+        title: 'Brad Taunt',
+        href: 'https://tdarb.org/',
+        tags: ['blog', 'minimalist', 'tinkerer', 'electronics'],
+        reason: ''
+    },
+    {
+        title: 'The Computers are Bad Newsletter',
+        href: 'https://computer.rip/',
+        tags: ['newsletter', 'technology'],
+        reason: 'I read their article titled Coaxial goes to war and was sold.'
+    },
+    {
+        title: "Jaana Dogan's Blog",
+        href: 'https://rakyll.org/',
+        tags: ['blog', 'minimalist', 'golang', 'developer'],
+        reason: "I found Jaana's blog via a link from lobste.rs and enjoyed several of their posts on Go."
     }
 ];
