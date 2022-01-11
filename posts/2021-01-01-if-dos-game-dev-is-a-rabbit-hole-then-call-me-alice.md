@@ -6,7 +6,7 @@ categories:
 featured: true
 ---
 
-I wrote the title for this thought way back in January, which given that we are now in December of the same year speaks volumes about how hectic the year has been, but I shall leave that retrospective for another posting.
+The title for this article was first written in January 2021 soon after a week long deep dive into vintage computing and retro coding. The fact that I didn't begin writing the body of this article until December 2021 speaks volumes about how hectic 2021 was and how little of what I had aspired to complete in January got done.
 
 ## Seeking Thinking Sand
 
@@ -28,9 +28,15 @@ With the hardware sorted my focus turned to how I was going to program a game us
 
 This actually proved to be the most difficult part of this whole endeavour until now because I didn't really know what I was looking for. After a few weeks of afternoons spent researching I happened upon Open Watcom. 
 
-In case you're unaware, Open Watcom C/C++ is an open source release of the Watcom IDE. Before being released under an open source licence, Watcom C/C++ was commercial software in the time period of when my hardware of choice was a viable compile target. Better still Open Watcom is still being developed by an active community and has builds that run on Windows 10 while retaining its ability to target 16-bit DOS.
+In case you're unaware, Open Watcom C/C++ is an open source release of the Watcom IDE. Before being released under an open source licence, Watcom C/C++ was commercial software during the time period when my hardware of choice was a viable compile target. Better still Open Watcom is still being developed by an active community and has builds that run on Windows 10 while retaining its ability to target 16-bit DOS.
 
-At this point I now have physical hardware to develop for, a modern-ish toolchain to compile with and thanks to DOSBox an easy to use environment to develop within.
+At this point I now have physical hardware to develop for, a modern-ish toolchain and thanks to DOSBox an easy-to-use development environment for quickly testing builds without having to transfer and run on my vintage hardware.
+
+## Unearthing decades old documentation
+
+Now that I had a viable development environment I needed to learn how to draw graphics to the screen and because my target hardware only supports CGA graphics that is what I needed to learn. Except it wasn't all that easy because a lot of the documentation isn't available online, or where it once was it has since been removed. I ended up reading through lecture notes from a university course taught in the 90s which finally helped things click into place.
+
+A lot of the problems I faced in finding out how things worked was not knowing the correct thing to search for.
 
 [^1]: There is something poetic about programming for systems long obsolete where documentation has not been digitised and knowledge has long since been buried in the Earth.
 
