@@ -6,7 +6,7 @@ categories:
 featured: true
 ---
 
-The title for this article was first written in January 2021 soon after a week long deep dive into vintage computing and retro coding. The fact that I didn't begin writing the body of this article until December 2021 speaks volumes about how hectic 2021 was and how little of what I had aspired to complete in January got done.
+The title for this article was first written in January 2021 soon after a week long deep dive into vintage computing and retro coding. The fact that I didn't begin writing the body of this article until December 2021 speaks volumes about how hectic 2021 was and how little of what I had aspired to complete in January of that year got done.
 
 ## Seeking Thinking Sand
 
@@ -18,19 +18,19 @@ This resulted in several long afternoons spent trawling eBay vintage hardware fo
 
 Nothing makes a project more interesting than challenge and if you think developing for vintage hardware using modern day systems isn't challenging enough then hold my double espresso because I went one extra and decided anything 286 and above was too modern.
 
-Within the vintage computing community there are thriving groups of enthusiasts for Commodore, Acorn and ZX Spectrum computers. A result of this is that there are a lot of projects for 6502 and Zilog Z80 processors. While this would have given me a large pool of knowledge to dip into I wanted to do something that fewer people had done before. To that end my focus narrowed tighter still on to the Intel 8080 and 8086 processors.
+Within the vintage computing community there are thriving groups of enthusiasts for Commodore, Acorn and ZX Spectrum computers. A result of this is that there are a lot of projects for 6502 and Zilog Z80 processors. While this would have given me a large pool of knowledge to dip into I wanted to do something that fewer living people had done before. To that end my focus narrowed tighter still on to the Intel 8080 and 8086 processors.
 
-In the end I found the Toshiba T1200 portable to be my ideal hardware platform. It's powered by the 16-bit Intel 8086 with 1MB of RAM, CGA graphics and in the case of the unit I bought, DOS 3.1 loaded from ROM, 1.44 720K floppy drive and a working 30MB hard disk[^2].
+In the end I found the Toshiba T1200 portable to be my ideal hardware platform. It's powered by the 16-bit Intel 8086 with 1MB of RAM, CGA graphics and in the case of the unit I bought, DOS 3.1 loaded from ROM, 1 x 1.44 720K floppy drive and a working 30MB hard disk[^2].
 
 ## Narrowing down the problem
 
-With the hardware sorted my focus turned to how I was going to program a game using my modern Windows 10 computer. I didn't fancy learning ASM and instead began looking for C/C++ compilers that could target 16-bit DOS.
+With the hardware sorted my focus turned to how I was going to program a game using my modern Windows 10 computer. I didn't fancy learning a great deal of 8086 ASM and instead began looking for C/C++ compilers that could target 16-bit DOS.
 
-This actually proved to be the most difficult part of this whole endeavour until now because I didn't really know what I was looking for. After a few weeks of afternoons spent researching I happened upon Open Watcom. 
+This actually proved to be the most difficult part of this whole endeavour until now because I didn't really know _what_ I was looking for. After spending the majority of a few weeks worth of afternoons researching I happened upon Open Watcom.
 
 In case you're unaware, Open Watcom C/C++ is an open source release of the Watcom IDE. Before being released under an open source licence, Watcom C/C++ was commercial software during the time period when my hardware of choice was a viable compile target. Better still Open Watcom is still being developed by an active community and has builds that run on Windows 10 while retaining its ability to target 16-bit DOS.
 
-At this point I now have physical hardware to develop for, a modern-ish toolchain and thanks to DOSBox an easy-to-use development environment for quickly testing builds without having to transfer and run on my vintage hardware.
+At this point I now have physical hardware to develop for, a modern-ish toolchain and thanks to DOSBox an easy-to-use development environment for quickly testing builds without having to constantly transfer and run on my vintage hardware.
 
 ## Unearthing decades old documentation
 
