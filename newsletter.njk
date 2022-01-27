@@ -1,25 +1,17 @@
-{% extends "_includes/layouts/base.njk" %}
+{% extends "_includes/layouts/page.njk" %}
 
 {% block title %}Newsletter{% endblock %}
 
-{% block body_class %}yellow{% endblock %}
-
 {% block content %}
-    <header class="py-12 md:py-36 lg:py-48 grid grid-cols-12">
-        <div class="col-start-2 col-span-10 md:col-start-2 md:col-span-6 lg:col-start-2 lg:col-span-4">
-            <h1 class="mb-8 text-6xl md:text-8xl font-bold leading-normal tracking-tighter">
-                Newsletter
-            </h1>
-            <p class="text-2xl mb-2">
-                Join literally a handful* of other people interested in weekly snapshots of what interested me that week.
-            </p>
-            <p><small>*You could say its a pretty exclusive club 😅</small></p>
-        </div>
-    </header>
+    <h1>Newsletter</h1>
+    <p>
+        Join literally a handful* of other people interested in weekly snapshots of what interested me that week.<br>
+        <small><em>*You could say it's a pretty exclusive club 😅</em></small>
+    </p>
 
-    <section class="mb-12 grid grid-cols-12">
-        <div class="col-start-2 col-end-12">
-            <p>Hello world</p>
-        </div>
-    </section>
+    <hr>
+
+    <p>
+        Hello world..
+    </p>
 {% endblock %}
