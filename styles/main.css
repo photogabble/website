@@ -1,78 +1,57 @@
-@import "../node_modules/tufte-css/tufte.css";
-@import "../node_modules/prismjs/themes/prism.css";
+@import "../node_modules/normalize.css/normalize.css";
+@import "../node_modules/prismjs/themes/prism-tomorrow.min.css";
 @import "../node_modules/prismjs/plugins/treeview/prism-treeview.css";
 
 :root {
-    --light: #fffff8;
-    --light-transparent: #f9f9f7e3;
-    --dark: #3f4551;
-    --dark-transparent: #3f4551e3;
-    --yellow: #fbc367;
-    --red: #e56943;
-    --light-blue: #22c4cc;
-    --dark-blue: #3fc2f6;
+    --background: #18181c;
+    --background-muted: #494f5c;
+    --foreground: #e1dede;
+    --foreground-muted: #a5a1a3;
+    --accent: #fbc367;
 }
 
-/* Links colours */
-
-a:link, a:visited {
-    color: var(--red);
+* {
+    box-sizing: border-box;
 }
 
-a:hover, a[aria-current]{
-    color: var(--yellow);
-}
+body {
+    font-family: monospace, "Courier New", Courier;
+    /*font-family: Fira Code,Monaco,Consolas,Ubuntu Mono,monospace;*/
+    background-color: var(--background);
+    color: var(--foreground);
 
-::selection {
-    background-color: var(--yellow);
-    color: var(--dark);
-}
+    font-size: 1rem;
+    line-height: 1.54;
+    letter-spacing: -.02em;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl", "calt";
+    font-variant-ligatures: contextual;
 
-a::selection{
-    text-shadow: none;
-}
-
-/* Post List Styles */
-
-ul.post-list{
-    list-style:none;
-    padding-left: 0;
-}
-
-ul.post-list li {
-    margin-bottom: 0.5rem;
-}
-
-/* Tufte.css extensions */
-
-pre{
-    background: var(--dark);
-    color: var(--light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 blockquote {
-    border-left: 4px solid var(--red);
-    padding-left: 1rem;
-    margin-left: 0;
-}
-
-.fullwidth {
-    max-width: 90%;
-    clear: both;
-    float: none;
-}
-
-p{
-    line-height: 1.8rem;
-    text-align: justify;
+    margin-inline-start: 0;
+    font-style: italic;
+    border-left: 3px solid var(--foreground-muted);
+    padding-left: 1em;
+    color: var(--foreground-muted);
 }
 
 pre {
-    max-width: 90%;
+    background: var(--background-muted);
+    color: var(--foreground);
     border-radius: 0.5em;
 }
 
-img{
+hr{
+    border-color: var(--background-muted);
+    min-width: 100%;
+}
+
+img {
     max-width: 100%;
     min-width: 100%;
 }
@@ -85,4 +64,68 @@ figure.fullwidth figcaption {
     margin-right: 0;
     max-width: 90%;
     float: none;
+}
+
+a:link, a:visited {
+    color: var(--accent);
+}
+
+::selection, .selected {
+    background-color: var(--accent);
+    color: var(--background);
+}
+
+a.no-underline{
+    text-decoration: none;
+}
+
+.selected {
+    padding: 0 0.2rem;
+}
+
+main, header, footer {
+    padding: 40px;
+    padding-top:0;
+    max-width: 864px;
+    width: 864px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    padding-bottom: 0;
+    padding-top: 80px;
+}
+
+header a{
+    text-decoration: none;
+}
+
+main {
+    font-size: 1.2em;
+    flex-grow: 1;
+}
+
+article p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+footer p {
+    margin: 0.5em 0;
+}
+
+footer p:first-of-type {
+    border-top: 4px double var(--background-muted);
+    padding-top: 20px;
+    margin-top: 0;
+}
+
+.with-sub-title{
+    margin-bottom: 0;
+}
+
+.with-sub-title + p{
+    margin-top:0;
 }
