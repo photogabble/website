@@ -29,6 +29,7 @@ module.exports = function (eleventyConfig) {
     "./_tmp/style.css": "./style.css",
     "./_tmp/assets": "./assets",
     './assets': './assets',
+    './files': './files',
     './img': './img'
   });
 
