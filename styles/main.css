@@ -2,6 +2,9 @@
 @import "../node_modules/prismjs/themes/prism-tomorrow.min.css";
 @import "../node_modules/prismjs/plugins/treeview/prism-treeview.css";
 
+/* DARK THEME
+ * Default
+ */
 :root {
     --background: #18181c;
     --background-muted: #494f5c;
@@ -9,6 +12,41 @@
     --foreground-muted: #a5a1a3;
     --accent: #fbc367;
 }
+
+/* LIGHT THEME
+ * Camel
+ */
+.theme-light-camel {
+    --background: #f5e4bc;
+    --background-muted: #ecc979;
+    --foreground: #292823;
+    --foreground-muted: #19264b;
+    --accent: #ff353f;
+}
+
+
+/* LIGHT THEME II
+ * White + Purple
+ */
+.theme-light-purple {
+    --background: #f3fbfe;
+    --background-muted: #dfecf1;
+    --foreground: #232323;
+    --foreground-muted: #384043;
+    --accent: #7754b0;
+}
+
+/**
+ * LIGHT THEME III
+ */
+.theme-light-blue {
+    --background: #f4f9fc;
+    --background-muted: #aadcec;
+    --foreground: #0f1b61;
+    --foreground-muted: #73bbc5;
+    --accent:#7f00e0;
+}
+
 
 * {
     box-sizing: border-box;
