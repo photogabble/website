@@ -28,7 +28,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "./_tmp/style.css": "./style.css",
     "./_tmp/assets": "./assets",
-    "./node_modules/alpinejs/dist/alpine.js": "./js/alpine.js",
     './assets': './assets',
     './img': './img'
   });
