@@ -5,7 +5,7 @@
 /* DARK THEME
  * Default
  */
-:root {
+html:root {
     --background: #18181c;
     --background-muted: #494f5c;
     --foreground: #e1dede;
@@ -16,7 +16,7 @@
 /* LIGHT THEME
  * Camel
  */
-.theme-light-camel {
+html.theme-light {
     --background: #f5e4bc;
     --background-muted: #ecc979;
     --foreground: #292823;
@@ -68,6 +68,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    transition: background-color 300ms, color 200ms;
 }
 
 blockquote {
@@ -166,4 +167,63 @@ footer p:first-of-type {
 
 .with-sub-title + p{
     margin-top:0;
+}
+
+/* Slider */
+/* The switch - the box around the slider */
+.switch {
+    margin:100px;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 33px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--accent);
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    font-size: 1.15rem;
+    position: absolute;
+    content: "";
+    height: 27px;
+    width: 27px;
+    left: 4px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    transition: 0.4s;
+    box-shadow: 0 0 6px var(--background-muted);
+    border-radius: 50%;
+
+    background-color: var(--background);
+}
+
+input:checked + .slider {
+    background-color: var(--accent);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--accent);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
 }
