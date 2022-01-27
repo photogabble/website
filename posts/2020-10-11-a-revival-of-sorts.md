@@ -1,7 +1,7 @@
 ---
 
 title: A revival of sorts...
-draft: false
+draft: true
 categories:
     - blogging
     

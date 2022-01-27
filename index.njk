@@ -27,6 +27,7 @@
     </p>
   </section>
 
+  {% if (articlesList | onlyCategory('thoughts')).length > 0 %}
   <section>
     <h2>Recent Thoughts</h2>
     <ul class="post-list">
@@ -38,5 +39,6 @@
       View <a href="/blog/thoughts/">more thoughts...</a>
     </p>
   </section>
+  {% endif %}
 </section>
 {% endblock %}
