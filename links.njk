@@ -1,27 +1,18 @@
-{% extends "_includes/layouts/base.njk" %}
+{% extends "_includes/layouts/page.njk" %}
 
 {% block title %}Links{% endblock %}
 
 {% block body_class %}light{% endblock %}
 
 {% block content %}
-    <header class="py-12 md:py-36 lg:py-48 grid grid-cols-12">
-        <div class="col-start-2 col-span-10 md:col-start-2 md:col-span-6 lg:col-start-2 lg:col-span-4">
-            <h1 class="mb-8 text-6xl md:text-8xl font-bold leading-normal tracking-tighter">
-                Links
-            </h1>
-            <p class="text-2xl mb-2">
-                A hand curated index of things I found interesting&hellip;
-            </p>
-        </div>
-    </header>
-    <section class="mb-12 grid grid-cols-12">
-        <div class="col-start-2 col-end-12">
-            <ul>
-                {%- for link in links | reverse -%}
-                    <li><a href="{{ link.href }}">{{ link.title }}</a></li>
-                {%- endfor -%}
-            </ul>
-        </div>
+    <h1>Links</h1>
+    <p>A hand curated index of things I found interesting&hellip;</p>
+
+    <section>
+        <ul>
+            {%- for link in links | reverse -%}
+                <li><a href="{{ link.href }}">{{ link.title }}</a></li>
+            {%- endfor -%}
+        </ul>
     </section>
 {% endblock %}

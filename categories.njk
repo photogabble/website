@@ -6,40 +6,36 @@ pagination:
 permalink: /blog/{{ category.slug }}/index.html
 ---
 
-{% extends "_includes/layouts/base.njk" %}
+{% extends "_includes/layouts/page.njk" %}
 
 {% block title %}{{ category.title }}{% endblock %}
 
-{% block body_class %}dark{% endblock %}
-
 {% block content %}
 
-  <article>
-    <h1>{{ category.title }}</h1>
-    <p>Serialised programming how-to guides.</p>
+  <h1>{{ category.title }}</h1>
+  <p>Serialised programming how-to guides.</p>
 
-    <section>
-      <ul class="post-list">
-        {% for post in category.items %}
-          <li>
-            <a href="{{ post.url }}" title="Read {{ post.data.title }}">
-              {{ post.data.title }}
-            </a> &mdash; {{ post.date | dateToFormat("DDD") }}
-          </li>
-        {% endfor %}
-      </ul>
-    </section>
+  <section>
+    <ul class="post-list">
+      {% for post in category.items %}
+        <li>
+          <a href="{{ post.url }}" title="Read {{ post.data.title }}">
+            {{ post.data.title }}
+          </a> &mdash; {{ post.date | dateToFormat("DDD") }}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
 
-    {% if category.totalPages > 1 %}
-      <nav>
-        <p>
-          Viewing page {{ category.pageNumber }} of {{ category.totalPages }},
-          {% if category.pageSlugs.previous %}<a href="/blog/{{ category.pageSlugs.previous }}/">Previous Page</a>{% endif %}
-          {% if category.pageSlugs.next %}<a href="/blog/{{ category.pageSlugs.next }}/">Next Page</a>{% endif %}
-        </p>
-      </nav>
-    {% endif %}
-  </article>
+  {% if category.totalPages > 1 %}
+    <nav>
+      <p>
+        Viewing page {{ category.pageNumber }} of {{ category.totalPages }},
+        {% if category.pageSlugs.previous %}<a href="/blog/{{ category.pageSlugs.previous }}/">Previous Page</a>{% endif %}
+        {% if category.pageSlugs.next %}<a href="/blog/{{ category.pageSlugs.next }}/">Next Page</a>{% endif %}
+      </p>
+    </nav>
+  {% endif %}
 
   <nav>
     <h2>All Categories</h2>

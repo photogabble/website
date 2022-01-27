@@ -9,10 +9,10 @@
 {% endblock %}
 
 {% block content %}
-    <article>
-        <h1>{{ title }}</h1>
-        <p>{{ sub_title | safe }}</p>
+    <section>
+        {% if title %}<h1 {% if sub_title %}class="with-sub-title"{% endif %}>{{ title }}</h1>{% endif %}
+        {% if sub_title %}<p>{{ sub_title | safe }}</p>{%  endif %}
 
-        <section>{{ content | safe }}</section>
-    </article>
+        {{ content | safe }}
+    </section>
 {% endblock %}

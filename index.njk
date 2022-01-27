@@ -6,8 +6,8 @@
 
 {% block content %}
 
-<article>
-  <h1>Hey, I'm Simon.</h1>
+<section>
+  <h1><span class="selected">Hey</span>, I'm Simon.</h1>
   <section>
     <p>I'm a <a href="https://github.com/carbontwelve">"full stack" web developer</a> and proud father of two. My interests include vintage computing, astrophysics and game development. I currently work as the senior developer for Achiive.</p>
     <p>In my spare time I maintain a number of <a href="projects">Open Source Projects</a> and can be found on <a href="elsewhere">various online platforms &amp; communities</a>.</p>
@@ -15,7 +15,7 @@
   </section>
 
   <section>
-    <h3>Recent Articles</h3>
+    <h2>Recent Articles</h2>
     <ul class="post-list">
       {% for post in articlesList | excludeCategory('thoughts') | reverse | limit(6) %}
         <li><a href="{{ post.url }}">{{ post.data.title }}</a> &mdash; {{ post.date | dateToFormat("DDD") }}</li>
@@ -28,7 +28,7 @@
   </section>
 
   <section>
-    <h3>Recent Thoughts</h3>
+    <h2>Recent Thoughts</h2>
     <ul class="post-list">
       {% for post in articlesList | onlyCategory('thoughts') | reverse | limit(3) %}
         <li><a href="{{ post.url }}">{{ post.data.title }}</a> &mdash; {{ post.date | dateToFormat("DDD") }}</li>
@@ -38,5 +38,5 @@
       View <a href="/blog/thoughts/">more thoughts...</a>
     </p>
   </section>
-</article>
+</section>
 {% endblock %}
