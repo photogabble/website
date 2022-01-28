@@ -39,6 +39,65 @@
 </head>
 <body class="{% block body_class %}{% endblock %}">
 
+<aside class="theme-picker is-open">
+    <h1>Theme Picker</h1>
+    <ul>
+
+        <li class="theme-yellow-in-the-dark">
+            <button>
+                <span>Dark</span>
+                <span class="swatches">
+                    <span class="background"></span>
+                    <span class="background-muted"></span>
+                    <span class="foreground"></span>
+                    <span class="foreground-muted"></span>
+                    <span class="accent"></span>
+                </span>
+            </button>
+        </li>
+
+        <li class="theme-camel-sands">
+            <button>
+                <span>Camel Sands</span>
+                <span class="swatches">
+                    <span class="background"></span>
+                    <span class="background-muted"></span>
+                    <span class="foreground"></span>
+                    <span class="foreground-muted"></span>
+                    <span class="accent"></span>
+                </span>
+            </button>
+        </li>
+
+        <li class="theme-light-blue">
+            <button>
+                <span>Cornflower</span>
+                <span class="swatches">
+                    <span class="background"></span>
+                    <span class="background-muted"></span>
+                    <span class="foreground"></span>
+                    <span class="foreground-muted"></span>
+                    <span class="accent"></span>
+                </span>
+            </button>
+        </li>
+
+        <li class="theme-light-purple">
+            <button>
+                <span>Heather</span>
+                <span class="swatches">
+                    <span class="background"></span>
+                    <span class="background-muted"></span>
+                    <span class="foreground"></span>
+                    <span class="foreground-muted"></span>
+                    <span class="accent"></span>
+                </span>
+            </button>
+        </li>
+
+    </ul>
+</aside>
+
 <header>
     {%  block header %}
         {{  header | safe }}
