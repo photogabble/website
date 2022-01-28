@@ -54,7 +54,6 @@ html.theme-light {
 
 body {
     font-family: monospace, "Courier New", Courier;
-    /*font-family: Fira Code,Monaco,Consolas,Ubuntu Mono,monospace;*/
     background-color: var(--background);
     color: var(--foreground);
 
@@ -135,6 +134,13 @@ main, header, footer {
 header{
     padding-bottom: 0;
     padding-top: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header > *:first-child{
+    flex-grow: 1;
 }
 
 header a{
@@ -172,7 +178,6 @@ footer p:first-of-type {
 /* Slider */
 /* The switch - the box around the slider */
 .switch {
-    margin:100px;
     position: relative;
     display: inline-block;
     width: 60px;
@@ -200,9 +205,9 @@ footer p:first-of-type {
 }
 
 .slider:before {
+    content: "";
     font-size: 1.15rem;
     position: absolute;
-    content: "";
     height: 27px;
     width: 27px;
     left: 4px;
@@ -212,7 +217,6 @@ footer p:first-of-type {
     transition: 0.4s;
     box-shadow: 0 0 6px var(--background-muted);
     border-radius: 50%;
-
     background-color: var(--background);
 }
 
