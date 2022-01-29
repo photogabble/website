@@ -2,10 +2,7 @@
 @import "../node_modules/prismjs/themes/prism-tomorrow.min.css";
 @import "../node_modules/prismjs/plugins/treeview/prism-treeview.css";
 
-/* DARK THEME
- * Default
- */
-html:root, .theme-picker li.theme-yellow-in-the-dark{
+html:root, html.theme-dark, .theme-picker li.theme-dark{
     --background: #18181c;
     --background-muted: #494f5c;
     --foreground: #e1dede;
@@ -13,10 +10,7 @@ html:root, .theme-picker li.theme-yellow-in-the-dark{
     --accent: #fbc367;
 }
 
-/* LIGHT THEME
- * Camel
- */
-html.theme-light, .theme-picker li.theme-camel-sands {
+html.theme-camel-sands, .theme-picker li.theme-camel-sands {
     --background: #f5e4bc;
     --background-muted: #ecc979;
     --foreground: #292823;
@@ -24,10 +18,7 @@ html.theme-light, .theme-picker li.theme-camel-sands {
     --accent: #ff353f;
 }
 
-/* LIGHT THEME II
- * White + Purple
- */
-html.theme-light-purple, .theme-picker li.theme-light-purple{
+html.theme-corn-flower, .theme-picker li.theme-corn-flower{
     --background: #f3fbfe;
     --background-muted: #dfecf1;
     --foreground: #232323;
@@ -35,17 +26,45 @@ html.theme-light-purple, .theme-picker li.theme-light-purple{
     --accent: #7754b0;
 }
 
-/**
- * LIGHT THEME III
- */
-.theme-light-blue, .theme-picker li.theme-light-blue{
-    --background: #f4f9fc;
-    --background-muted: #aadcec;
-    --foreground: #0f1b61;
-    --foreground-muted: #73bbc5;
-    --accent:#7f00e0;
+html.theme-chocolate-thunda, .theme-picker li.theme-chocolate-thunda{
+    --background: #34252F;
+    --background-muted: #3B5249;
+    --foreground: #BEC5AD;
+    --foreground-muted: #A4B494;
+    --accent: #519872;
 }
 
+html.theme-coffee, .theme-picker li.theme-coffee{
+    --background: #54311A;
+    --background-muted: #844F39;
+    --foreground: #F5E7DE;
+    --foreground-muted: #fbc367;
+    --accent: #ffb079;
+}
+
+html.theme-summer, .theme-picker li.theme-summer{
+    --background: #F6F7EB;
+    --background-muted: #C5CBD3;
+    --foreground: #34435E;
+    --foreground-muted: #B57F50;
+    --accent: #FF6392;
+}
+
+html.theme-blush, .theme-picker li.theme-blush{
+    --background: #FFE5D4;
+    --background-muted: #EFC7C2;
+    --foreground: #003459;
+    --foreground-muted: #4E6E5D;
+    --accent:#7D2E68;
+}
+
+html.theme-x, .theme-picker li.theme-x{
+    --background: #234E70;
+    --background-muted: #426682;
+    --foreground: #FBF8BE;
+    --foreground-muted: #bdc5ad;
+    --accent:#FFDB2B;
+}
 
 * {
     box-sizing: border-box;
@@ -124,10 +143,16 @@ main, header, footer {
     padding: 40px;
     padding-top:0;
     max-width: 864px;
-    width: 864px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+}
+
+@media (min-width: 864px) {
+    main, header, footer{
+        width: 864px;
+    }
 }
 
 header{
@@ -186,7 +211,7 @@ footer p:first-of-type {
     height: 0;
     overflow: hidden;
     position: relative;
-    transition: max-height .4s cubic-bezier(.4,0,.2,1);
+    transition: height .4s cubic-bezier(.4,0,.2,1);
 }
 
 .theme-picker.is-open {
@@ -209,10 +234,10 @@ footer p:first-of-type {
     overflow-y: hidden;
     overflow-x: auto;
     text-align: center;
+    width: 100%;
 }
 
 .theme-picker li{
-    box-shadow: 0 0 0 2px var(--accent);
     border-radius: 0.4em;
     min-width: 140px;
     transform: scale(1);
@@ -222,6 +247,10 @@ footer p:first-of-type {
 .theme-picker li:hover{
     box-shadow: 0 0 8px var(--foreground);
     transform: scale(1.05);
+}
+
+.theme-picker li.current{
+    box-shadow: 0 0 0 2px var(--accent);
 }
 
 .theme-picker li + li{
