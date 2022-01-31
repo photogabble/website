@@ -64,7 +64,7 @@
     <h1>Theme Picker</h1>
     <ul>
         {%- for theme in themes -%}
-        <li class="theme-dark current">
+        <li class="theme-{{ theme.id}} current">
             <button class="theme-selector-btn" data-theme="{{ theme.id }}">
                 <span>{{ theme.title }}</span>
                 <span class="swatches">
