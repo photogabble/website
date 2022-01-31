@@ -51,19 +51,19 @@ html.theme-summer, .theme-picker li.theme-summer{
 }
 
 html.theme-blush, .theme-picker li.theme-blush{
-    --background: #FFE5D4;
-    --background-muted: #EFC7C2;
-    --foreground: #003459;
-    --foreground-muted: #4E6E5D;
-    --accent:#7D2E68;
+    --background: #eddad1;
+    --background-muted: #edc8b7;
+    --foreground: #113d6a;
+    --foreground-muted: #bab1b5;
+    --accent:#ab3c61;
 }
 
-html.theme-x, .theme-picker li.theme-x{
+html.theme-blue, .theme-picker li.theme-blue{
     --background: #234E70;
     --background-muted: #426682;
     --foreground: #FBF8BE;
     --foreground-muted: #bdc5ad;
-    --accent:#FFDB2B;
+    --accent:#fbbc55;
 }
 
 * {
