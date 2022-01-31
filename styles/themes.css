@@ -1,0 +1,63 @@
+html:root, html.theme-dark, .theme-picker li.theme-dark {
+    --background: #18181c;
+    --background-muted: #494f5c;
+    --foreground: #e1dede;
+    --foreground-muted: #a5a1a3;
+    --accent: #fbc367;
+}
+
+html.theme-camel-sands, .theme-picker li.theme-camel-sands {
+    --background: #f5e4bc;
+    --background-muted: #ecc979;
+    --foreground: #292823;
+    --foreground-muted: #19264b;
+    --accent: #ff353f;
+}
+
+html.theme-corn-flower, .theme-picker li.theme-corn-flower {
+    --background: #f3fbfe;
+    --background-muted: #dfecf1;
+    --foreground: #232323;
+    --foreground-muted: #384043;
+    --accent: #7754b0;
+}
+
+html.theme-chocolate-thunda, .theme-picker li.theme-chocolate-thunda {
+    --background: #34252F;
+    --background-muted: #3B5249;
+    --foreground: #BEC5AD;
+    --foreground-muted: #A4B494;
+    --accent: #519872;
+}
+
+html.theme-coffee, .theme-picker li.theme-coffee {
+    --background: #54311A;
+    --background-muted: #844F39;
+    --foreground: #F5E7DE;
+    --foreground-muted: #fbc367;
+    --accent: #ffb079;
+}
+
+html.theme-summer, .theme-picker li.theme-summer {
+    --background: #F6F7EB;
+    --background-muted: #C5CBD3;
+    --foreground: #34435E;
+    --foreground-muted: #B57F50;
+    --accent: #FF6392;
+}
+
+html.theme-blush, .theme-picker li.theme-blush {
+    --background: #eddad1;
+    --background-muted: #edc8b7;
+    --foreground: #113d6a;
+    --foreground-muted: #bab1b5;
+    --accent: #ab3c61;
+}
+
+html.theme-blue, .theme-picker li.theme-blue {
+    --background: #234E70;
+    --background-muted: #426682;
+    --foreground: #FBF8BE;
+    --foreground-muted: #bdc5ad;
+    --accent: #fbbc55;
+}
