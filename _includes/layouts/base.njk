@@ -17,6 +17,15 @@
     {% block head %}{% endblock %}
     <script data-goatcounter="https://photogabble.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <script>
+        function toggleThemePicker(){
+            const themePicker = document.querySelector('.theme-picker');
+            if (themePicker.classList.contains('is-open')) {
+                themePicker.classList.remove('is-open');
+            } else {
+                themePicker.classList.add('is-open');
+            }
+        }
+
         function setTheme(themeName) {
             localStorage.setItem('theme', themeName);
             document.documentElement.className = 'theme-'+themeName;
@@ -84,6 +93,8 @@
     {%  block header %}
         {{  header | safe }}
     {% endblock %}
+
+    <button onclick="toggleThemePicker()">Theme Picker</button>
 </header>
 
 <main>
