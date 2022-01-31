@@ -39,7 +39,7 @@
             setTheme(localStorage.getItem('theme') || 'dark');
         })();
 
-        // When document ready add event listners
+        // When document ready add event listeners
         document.addEventListener("DOMContentLoaded", function() {
             const selectTheme = (e) => {
                 const btn = e.currentTarget;
@@ -60,12 +60,13 @@
 </head>
 <body class="{% block body_class %}{% endblock %}">
 
-<aside class="theme-picker is-open">
+<aside class="theme-picker">
     <h1>Theme Picker</h1>
     <ul>
+        {%- for theme in themes -%}
         <li class="theme-dark current">
-            <button class="theme-selector-btn" data-theme="dark">
-                <span>Dark</span>
+            <button class="theme-selector-btn" data-theme="{{ theme.id }}">
+                <span>{{ theme.title }}</span>
                 <span class="swatches">
                     <span class="background"></span>
                     <span class="background-muted"></span>
@@ -75,97 +76,7 @@
                 </span>
             </button>
         </li>
-
-        <li class="theme-camel-sands">
-            <button class="theme-selector-btn" data-theme="camel-sands">
-                <span>Camel Sands</span>
-                <span class="swatches">
-                    <span class="background"></span>
-                    <span class="background-muted"></span>
-                    <span class="foreground"></span>
-                    <span class="foreground-muted"></span>
-                    <span class="accent"></span>
-                </span>
-            </button>
-        </li>
-
-        <li class="theme-corn-flower">
-            <button class="theme-selector-btn" data-theme="corn-flower">
-                <span>Cornflower</span>
-                <span class="swatches">
-                    <span class="background"></span>
-                    <span class="background-muted"></span>
-                    <span class="foreground"></span>
-                    <span class="foreground-muted"></span>
-                    <span class="accent"></span>
-                </span>
-            </button>
-        </li>
-
-        <li class="theme-blush">
-            <button class="theme-selector-btn" data-theme="blush">
-                <span>Blush</span>
-                <span class="swatches">
-                    <span class="background"></span>
-                    <span class="background-muted"></span>
-                    <span class="foreground"></span>
-                    <span class="foreground-muted"></span>
-                    <span class="accent"></span>
-                </span>
-            </button>
-        </li>
-
-        <li class="theme-chocolate-thunda">
-            <button class="theme-selector-btn" data-theme="chocolate-thunda">
-                <span>Chocolate Thunda</span>
-                <span class="swatches">
-                    <span class="background"></span>
-                    <span class="background-muted"></span>
-                    <span class="foreground"></span>
-                    <span class="foreground-muted"></span>
-                    <span class="accent"></span>
-                </span>
-            </button>
-        </li>
-
-        <li class="theme-coffee">
-            <button class="theme-selector-btn" data-theme="coffee">
-                <span>Coffee</span>
-                <span class="swatches">
-                    <span class="background"></span>
-                    <span class="background-muted"></span>
-                    <span class="foreground"></span>
-                    <span class="foreground-muted"></span>
-                    <span class="accent"></span>
-                </span>
-            </button>
-        </li>
-
-        <li class="theme-summer">
-            <button class="theme-selector-btn" data-theme="summer">
-                <span>Summer</span>
-                <span class="swatches">
-                    <span class="background"></span>
-                    <span class="background-muted"></span>
-                    <span class="foreground"></span>
-                    <span class="foreground-muted"></span>
-                    <span class="accent"></span>
-                </span>
-            </button>
-        </li>
-
-        <li class="theme-x">
-            <button class="theme-selector-btn" data-theme="x">
-                <span>X</span>
-                <span class="swatches">
-                    <span class="background"></span>
-                    <span class="background-muted"></span>
-                    <span class="foreground"></span>
-                    <span class="foreground-muted"></span>
-                    <span class="accent"></span>
-                </span>
-            </button>
-        </li>
+        {% endfor %}
     </ul>
 </aside>
 
