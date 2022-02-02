@@ -15,7 +15,8 @@
             on
             <time datetime="{{ page.date.toISOString() }}">
                 {{ page.date | dateToFormat("dd LLL yyyy") }}
-            </time>
+            </time><br/>
+            {{ content | wordStats }}.
         </p>
         <section>
             {{ content | safe }}

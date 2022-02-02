@@ -2,9 +2,12 @@ const filters = require('./utils/filters')
 const collections = require('./utils/collections')
 const {slugify} = require('./utils/filters')
 const shortcodes = require('./utils/shortcodes');
+const wordStats = require('@photogabble/eleventy-plugin-word-stats');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
+
+  eleventyConfig.addPlugin(wordStats);
 
   /**
    * Filters

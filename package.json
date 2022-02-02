@@ -24,6 +24,7 @@
     "postcss-import": "^14.0.2"
   },
   "dependencies": {
+    "@photogabble/eleventy-plugin-word-stats": "^1.0.0",
     "luxon": "^1.26.0",
     "markdown-it": "^12.3.2",
     "markdown-it-anchor": "^7.1.0",
