@@ -2,6 +2,7 @@ const filters = require('./utils/filters')
 const collections = require('./utils/collections')
 const {slugify} = require('./utils/filters')
 const shortcodes = require('./utils/shortcodes');
+const transforms = require('./utils/transforms');
 const wordStats = require('@photogabble/eleventy-plugin-word-stats');
 
 module.exports = function (eleventyConfig) {
@@ -19,6 +20,10 @@ module.exports = function (eleventyConfig) {
 
   Object.keys(collections).forEach((collectionName) => {
     eleventyConfig.addCollection(collectionName, collections[collectionName])
+  })
+
+  Object.keys(transforms).forEach((transformName) => {
+    eleventyConfig.addTransform(transformName, transforms[transformName])
   })
 
   // Merge data instead of overriding
