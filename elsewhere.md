@@ -1,7 +1,6 @@
 ---
 layout: layouts/page.njk
 title: "Elsewhere"
-sub_title: ""
 ---
 
 I can be found in the following online communities:

@@ -1,7 +1,7 @@
 # PhotoGabble Website
 
 ## About this repository
-This repository contains the source code for [www.photogabble.co.uk](https://www.photogabble.co.uk). It is built with [Eleventy](https://www.11ty.dev/), styled with [Tufte CSS](https://github.com/edwardtufte/tufte-css) and deployed on [Netlify](https://www.netlify.com/).
+This repository contains the source code for [www.photogabble.co.uk](https://www.photogabble.co.uk). It is built with [Eleventy](https://www.11ty.dev/) and deployed on [Netlify](https://www.netlify.com/).
 
 ## Getting Started
 You will need to install the required packages using `npm install`. There are three commands for building:

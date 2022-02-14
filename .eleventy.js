@@ -2,9 +2,13 @@ const filters = require('./utils/filters')
 const collections = require('./utils/collections')
 const {slugify} = require('./utils/filters')
 const shortcodes = require('./utils/shortcodes');
+const transforms = require('./utils/transforms');
+const wordStats = require('@photogabble/eleventy-plugin-word-stats');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
+
+  eleventyConfig.addPlugin(wordStats);
 
   /**
    * Filters
@@ -18,6 +22,10 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection(collectionName, collections[collectionName])
   })
 
+  Object.keys(transforms).forEach((transformName) => {
+    eleventyConfig.addTransform(transformName, transforms[transformName])
+  })
+
   // Merge data instead of overriding
   // https://www.11ty.dev/docs/data-deep-merge/
   eleventyConfig.setDataDeepMerge(true);
@@ -28,8 +36,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "./_tmp/style.css": "./style.css",
     "./_tmp/assets": "./assets",
-    "./node_modules/alpinejs/dist/alpine.js": "./js/alpine.js",
     './assets': './assets',
+    './files': './files',
     './img': './img'
   });
 

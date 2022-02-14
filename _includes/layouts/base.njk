@@ -15,80 +15,105 @@
         <link rel="canonical" href="{{ canonical }}" />
     {% endif %}
     {% block head %}{% endblock %}
-    <script src="/js/alpine.js"></script>
     <script data-goatcounter="https://photogabble.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script>
+        function toggleThemePicker(){
+            const themePicker = document.querySelector('.theme-picker');
+            if (themePicker.classList.contains('is-open')) {
+                themePicker.classList.remove('is-open');
+            } else {
+                themePicker.classList.add('is-open');
+            }
+        }
+
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+            document.documentElement.className = 'theme-'+themeName;
+
+            let current = document.querySelector('.theme-picker li.current');
+            if (!current) {return;}
+            current
+                .classList
+                .remove('current');
+
+            current = document.querySelector('.theme-picker li.' + 'theme-'+themeName);
+            if (!current){return;}
+            current
+                .classList
+                .add('current');
+        }
+
+        // Set theme before page renders
+        (function () {
+            setTheme(localStorage.getItem('theme') || 'dark');
+        })();
+
+        // When document ready add event listeners
+        document.addEventListener("DOMContentLoaded", function() {
+            const selectTheme = (e) => {
+                const btn = e.currentTarget;
+                if (!btn.dataset.theme) {
+                    return;
+                }
+                setTheme(btn.dataset.theme);
+            };
+
+            Array.from(document.getElementsByClassName('theme-selector-btn')).forEach((el) => {
+                console.log(el);
+                el.addEventListener('click', selectTheme)
+            });
+
+            setTheme(localStorage.getItem('theme') || 'dark');
+        });
+    </script>
 </head>
 <body class="{% block body_class %}{% endblock %}">
 
-{%  block header %}
-    {{  header | safe }}
-{% endblock %}
+<aside class="theme-picker">
+    <h1>Theme Picker</h1>
+    <ul>
+        {%- for theme in themes -%}
+        <li class="theme-{{ theme.id}} current">
+            <button class="theme-selector-btn" data-theme="{{ theme.id }}">
+                <span>{{ theme.title }}</span>
+                <span class="swatches">
+                    <span class="background"></span>
+                    <span class="background-muted"></span>
+                    <span class="foreground"></span>
+                    <span class="foreground-muted"></span>
+                    <span class="accent"></span>
+                </span>
+            </button>
+        </li>
+        {% endfor %}
+    </ul>
+</aside>
 
-{% block content %}
-    {{ content | safe }}
-{% endblock %}
+<main>
+    <header>
+        {%  block header %}
+            {{  header | safe }}
+        {% endblock %}
 
-<!--
-<footer class="font-mono">
-    <div class="px-20 pt-20 grid grid-cols-12 gap-2">
-        <div class="col-span-6">
-            <span>🌱</span>
-            <strong>PhotoGabble.</strong>
-            <p class="text-sm">
-                Proud father to two incredible little girls. I make things with computers. #golang, #php and #javascript. 🥑
-            </p>
-        </div>
-
-
-        <div class="col-span-2">
-            <strong>About</strong>
-            <ul>
-                <li><a href="/about">Colophon</a></li>
-                <li><a href="/about/my-story">My Story</a></li>
-                <li><a href="/about/history">History</a></li>
-                <li><a href="/uses">/uses</a></li>
-                <li><a href="/now">/now</a></li>
-                <li><a href="/contact">Get in touch</a></li>
-            </ul>
-        </div>
-
-        <div class="col-span-2">
-            <strong>Elsewhere</strong>
-            <ul>
-                <li><a href="https://www.twitter.com/carbontwelve">Twitter</a></li>
-                <li><a href="https://www.github.com/carbontwelve">Github</a></li>
-                <li><a href="https://spacehey.com/carbontwelve">Spacehey</a></li>
-                <li><a title="Webring" href="https://webring.xxiivv.com/">Webring</a></li>
-                <li><a href="/elsewhere"><small>More&hellip;</small></a></li>
-            </ul>
-        </div>
-
-        <div class="col-span-2">
-            <strong>Content</strong>
-            <ul>
-                <li><a href="/archive">Blog Archive</a></li>
-                <li><a href="/categories">All Categories</a></li>
-                <li><a href="/newsletter/archive">Newsroom</a></li>
-                <li><a href="/links">Links</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="px-20 pt-20 pb-10">
-        <p class="text-xs m-0">&copy; 2021 Simon Dann. Any and all opinions listed here are my own and not
-            representative of my employers; future, past and present. I may earn a portion of sales from
-            products that are purchased through this site as part of Affiliate Partnerships with retailers.
+        <button onclick="toggleThemePicker()">Theme Picker</button>
+    </header>
+    {% block content %}
+        {{ content | safe }}
+    {% endblock %}
+    <footer>
+        <p>
+            <a href="/" title="Back to home" class="no-underline">🌱</a> <em><a href="#">rss</a> | <a href="https://webring.xxiivv.com/#random" target="_blank" title="Web Ring">webring</a> | <a href="/legal/privacy">cookies &amp; privacy</a></em>
         </p>
-    </div>
-    <div class="px-20 py-4 grid grid-cols-12 gap-2 text-sm" style="background: #174475;">
-        <div class="col-span-6">
-            <p class="m-0">&copy; 2021 Simon Dann. Unless otherwise noted content is Licensed as MIT.</p>
-        </div>
-        <div class="col-span-6 text-right">
-            <a href="/legal/privacy">Privacy Policy</a> |
-            <a href="/legal/cookies">Cookie Policy 🍪</a>
-        </div>
-    </div>
-</footer>
--->
+
+        <p>
+            &copy; 2022 Simon Dann. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="Licensed CC BY-NC 4.0">CC BY-NC-SA 4.0</a> | <a href="https://github.com/photogabble/website">src</a>.<br/>
+            <small>Any and all opinions listed here are my own and not
+                representative of my employers; future, past and present. I may earn a portion of sales from
+                products that are purchased through this site as part of Affiliate Partnerships with retailers.</small>
+        </p>
+    </footer>
+</main>
+
+
 </body>
 </html>

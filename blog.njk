@@ -1,26 +1,23 @@
-{% extends "_includes/layouts/base.njk" %}
+{% extends "_includes/layouts/page.njk" %}
 
 {% set postslist = collections.post %}
 
-{% block title %}Blog{% endblock %}
+{% block title %}Blog Archive{% endblock %}
 
 {% block content %}
-
-    <article>
-        <h1>Blog Archive</h1>
-        <p>There have been {{ postslist.length }} posts published since April 20, 2007:</p>
-        <section>
-            <ol reversed class="post-list">
-            {% for post in postslist | reverse %}
-                <li>
-                    <a href="{{ post.url }}" title="Read {{ post.data.title }}">
-                        {{ post.data.title }}
-                    </a> &mdash; {{ post.date | dateToFormat("DDD") }}
-                </li>
-            {% endfor %}
-            </ol>
-        </section>
-    </article>
+    <h1>Blog Archive</h1>
+    <p>There have been <strong>{{ postslist.length }}</strong> posts published since April 20, 2007:</p>
+    <section>
+        <ol reversed class="post-list">
+        {% for post in postslist | reverse %}
+            <li>
+                <a href="{{ post.url }}" title="Read {{ post.data.title }}">
+                    {{ post.data.title }}
+                </a> &mdash; {{ post.date | dateToFormat("DDD") }}
+            </li>
+        {% endfor %}
+        </ol>
+    </section>
 
     <nav>
         <h2>All Categories</h2>
