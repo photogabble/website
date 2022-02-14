@@ -37,15 +37,11 @@ pre {
     background: var(--background-muted);
     color: var(--foreground);
     border-radius: 0.5em;
+    overflow: scroll;
 }
 
 hr{
     border-color: var(--background-muted);
-    min-width: 100%;
-}
-
-img {
-    max-width: 100%;
     min-width: 100%;
 }
 
@@ -77,19 +73,29 @@ a.no-underline{
 }
 
 main, header, footer {
-    padding: 40px;
-    padding-top:0;
-    max-width: 864px;
-    width: 100%;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
 
-@media (min-width: 864px) {
-    main, header, footer{
-        width: 864px;
-    }
+main {
+    max-width: 1400px;
+    width: 87.5%;
+    padding-left: 12.5%;
+    font-size: 1.2em;
+    flex-grow: 1;
+}
+
+main > header{
+    margin-bottom: 40px;
+}
+
+main > footer{
+    margin-top: 40px;
+}
+
+main p, main ul {
+    width: 85%;
+    max-width: 864px;
 }
 
 header{
@@ -108,14 +114,14 @@ header a{
     text-decoration: none;
 }
 
-main {
-    font-size: 1.2em;
-    flex-grow: 1;
-}
-
 article p {
     text-align: justify;
     text-justify: inter-word;
+}
+
+article img {
+    max-width: 100%;
+    min-width: 100%;
 }
 
 footer p {
@@ -126,6 +132,16 @@ footer p:first-of-type {
     border-top: 4px double var(--background-muted);
     padding-top: 20px;
     margin-top: 0;
+}
+.margin-note{
+    float: right;
+    clear: right;
+    margin-right: -50%;
+    width: 45%;
+}
+
+.margin-note img{
+    max-width: 100%;
 }
 
 .with-sub-title{
@@ -242,4 +258,15 @@ footer p:first-of-type {
 
 .theme-picker .swatches span.accent{
     background-color: var(--accent);
+}
+
+@media (max-width: 864px) {
+    main{
+        width: 100%;
+        padding: 0 25px;
+    }
+
+    main p, main ul {
+        width: 100%;
+    }
 }
