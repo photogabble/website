@@ -89,31 +89,31 @@
     </ul>
 </aside>
 
-<header>
-    {%  block header %}
-        {{  header | safe }}
-    {% endblock %}
-
-    <button onclick="toggleThemePicker()">Theme Picker</button>
-</header>
-
 <main>
+    <header>
+        {%  block header %}
+            {{  header | safe }}
+        {% endblock %}
+
+        <button onclick="toggleThemePicker()">Theme Picker</button>
+    </header>
     {% block content %}
         {{ content | safe }}
     {% endblock %}
+    <footer>
+        <p>
+            <a href="/" title="Back to home" class="no-underline">🌱</a> <em><a href="#">rss</a> | <a href="https://webring.xxiivv.com/#random" target="_blank" title="Web Ring">webring</a> | <a href="/legal/privacy">cookies &amp; privacy</a></em>
+        </p>
+
+        <p>
+            &copy; 2022 Simon Dann. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="Licensed CC BY-NC 4.0">CC BY-NC-SA 4.0</a> | <a href="https://github.com/photogabble/website">src</a>.<br/>
+            <small>Any and all opinions listed here are my own and not
+                representative of my employers; future, past and present. I may earn a portion of sales from
+                products that are purchased through this site as part of Affiliate Partnerships with retailers.</small>
+        </p>
+    </footer>
 </main>
 
-<footer>
-    <p>
-        <a href="/" title="Back to home" class="no-underline">🌱</a> <em><a href="#">rss</a> | <a href="https://webring.xxiivv.com/#random" target="_blank" title="Web Ring">webring</a> | <a href="/legal/privacy">cookies &amp; privacy</a></em>
-    </p>
 
-    <p>
-        &copy; 2022 Simon Dann. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="Licensed CC BY-NC 4.0">CC BY-NC-SA 4.0</a> | <a href="https://github.com/photogabble/website">src</a>.<br/>
-        <small>Any and all opinions listed here are my own and not
-            representative of my employers; future, past and present. I may earn a portion of sales from
-            products that are purchased through this site as part of Affiliate Partnerships with retailers.</small>
-    </p>
-</footer>
 </body>
 </html>
