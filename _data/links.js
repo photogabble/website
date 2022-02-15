@@ -107,5 +107,11 @@ module.exports = [
         href: 'https://rakyll.org/',
         tags: ['blog', 'minimalist', 'golang', 'developer'],
         reason: "I found Jaana's blog via a link from lobste.rs and enjoyed several of their posts on Go."
+    },
+    {
+        title: "Hugo Daniel's Blog",
+        href: 'https://hugodaniel.com/',
+        tags: ['blog', 'WebGL'],
+        reason: "I stumbled upon Hugo's article on Minimal Color Swatches while researching colour palette creation."
     }
 ];
