@@ -138,4 +138,10 @@ module.exports = [
         tags: ['blog', 'minimalist', 'vintage-computing'],
         reason: null
     },
+    {
+        title: "Carl Johnson's Website",
+        href: 'https://blog.carlmjohnson.net/',
+        tags: ['blog', 'go'],
+        reason: null
+    },
 ];
