@@ -125,5 +125,11 @@ module.exports = [
         href: 'https://stitcher.io/',
         tags: ['blog', 'minimalist', 'PHP'],
         reason: null
-    }
+    },
+    {
+        title: "Lauren Tan's Blog",
+        href: 'https://no.lol/',
+        tags: ['blog'],
+        reason: null
+    },
 ];
