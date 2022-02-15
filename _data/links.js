@@ -10,67 +10,67 @@ module.exports = [
         title: 'WebAssembly Search Tools for Static Sites',
         href: 'https://healeycodes.com/webassembly-search-tools-for-static-websites/',
         tags: ['wasm', 'go'],
-        reason: '...',
+        reason: null,
     },
     {
         title: 'Magazine Website Theme',
         href: 'https://magazine.blot.im/',
         tags: ['design'],
-        reason: '...',
+        reason: null,
     },
     {
         title: 'Import Tweets from Twitter API in 11ty',
         href: 'https://www.d-hagemeier.com/en/import-tweets-from-twitter-api-in-11ty/',
         tags: ['js', '11ty'],
-        reason: '...',
+        reason: null,
     },
     {
         title: "Tobias Girstmair's Website",
         href: 'https://gir.st/',
         tags: ['blog', 'minimalist'],
-        reason: '...'
+        reason: null
     },
     {
         title: "John Mathews Blog",
         href: 'https://johnmathews.eu/blog.html',
         tags: ['blog', 'minimalist'],
-        reason: '...'
+        reason: null
     },
     {
         title: "Kyle Shook's Website",
         href: 'https://www.kyleshook.com/',
         tags: ['blog', 'minimalist'],
-        reason: '...'
+        reason: null
     },
     {
         title: "Susam's Blog",
         href: 'https://susam.in/blog/',
         tags: ['blog', 'minimalist'],
-        reason: '...'
+        reason: null
     },
     {
         title: 'e‑basteln',
         href: 'http://www.e-basteln.de/',
         tags: ['vintage computing'],
-        reason: ''
+        reason: null
     },
     {
         title: 'Xe (Christine Dodrill) Blog',
         href: 'https://christine.website/',
         tags: ['blog', 'minimalist'],
-        reason: ''
+        reason: null
     },
     {
         title: 'Travis Weston',
         href: 'https://travisweston.com/',
         tags: ['PHP', 'blog', 'medium'],
-        reason: ''
+        reason: null
     },
     {
         title: 'Steve McDougall',
         href: 'https://www.juststeveking.uk/',
         tags: ['PHP Developer', 'Laravel', 'blog'],
-        reason: '',
+        reason: null
     },
     {
         title: 'Andrew Stephens',
@@ -94,7 +94,7 @@ module.exports = [
         title: 'Brad Taunt',
         href: 'https://tdarb.org/',
         tags: ['blog', 'minimalist', 'tinkerer', 'electronics'],
-        reason: ''
+        reason: null
     },
     {
         title: 'The Computers are Bad Newsletter',
