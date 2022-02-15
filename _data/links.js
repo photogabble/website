@@ -113,5 +113,11 @@ module.exports = [
         href: 'https://hugodaniel.com/',
         tags: ['blog', 'WebGL'],
         reason: "I stumbled upon Hugo's article on Minimal Color Swatches while researching colour palette creation."
+    },
+    {
+        title: "Benjojo's Blog",
+        href: 'https://blog.benjojo.co.uk',
+        tags: ['blog', 'minimalist', 'technology'],
+        reason: null
     }
 ];
