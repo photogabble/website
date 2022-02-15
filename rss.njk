@@ -1,20 +1,22 @@
 ---
-    permalink: "feed.xml"
+    permalink: "feed.atom"
     eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <title>{{ metadata.title }}</title>
-    <subtitle>{{ metadata.desc }}</subtitle>
-    <language>en-uk</language>
-    <link href="{{ metadata.feedUrl }}" rel="self"/>
-    <link href="{{ metadata.url }}"/>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB">
+    <title type="text">{{ metadata.title }}</title>
+    <subtitle type="text">{{ metadata.subtitle }}</subtitle>
+
+    <id>{{ metadata.feedUrl }}</id>
+    <link rel="alternate" type="text/html" href="{{ metadata.url }}" />
+    <link rel="self" type="application/atom+xml" href="{{ metadata.feedUrl }}" />
+
     <updated>{{ collections.post | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
-    <id>{{ metadata.url }}/</id>
     <author>
         <name>{{ metadata.author.name }}</name>
         <email>{{ metadata.author.email }}</email>
     </author>
+    <generator uri="https://www.11ty.dev/">Eleventy.js</generator>
     {%- for post in collections.post | reverse %}
         {%- if loop.index0 "<" 10 -%}
             {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
@@ -24,7 +26,7 @@
                 <updated>{{ post.date | dateToRfc3339 }}</updated>
                 <id>{{ absolutePostUrl }}</id>
                 <content type="html">
-                    {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}
+                    {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | safe }}
                 </content>
             </entry>
         {%- endif -%}
