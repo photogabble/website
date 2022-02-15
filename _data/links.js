@@ -132,4 +132,10 @@ module.exports = [
         tags: ['blog'],
         reason: null
     },
+    {
+        title: "Fabien Sanglard's Website",
+        href: 'https://fabiensanglard.net/',
+        tags: ['blog', 'minimalist', 'vintage-computing'],
+        reason: null
+    },
 ];
