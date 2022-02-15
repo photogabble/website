@@ -26,7 +26,7 @@
                 <updated>{{ post.date | dateToRfc3339 }}</updated>
                 <id>{{ absolutePostUrl }}</id>
                 <content type="html">
-                    {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | safe }}
+                    {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}
                 </content>
             </entry>
         {%- endif -%}
