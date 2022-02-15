@@ -15,7 +15,7 @@ I have been playing RimWorld Alpha 16 on and off since it was released and seein
 
 ![100 Hours in  RimWorld A16](/img/a-review-of-rimworld-a16-after-100-hours-ingame-1.jpg "100 Hours in RimWorld A16")
 
-Before I bought it, RimWorld had been on my Steam wish list for a number of months due to its similar aesthetic to Prison Architect and my love of base building strategy games. I was however dubious of buying it at its full price of £22.99; with a new born baby that is a lot of money!
+Before I bought it, RimWorld had been on my Steam wish list for a number of months due to its similar aesthetic to Prison Architect and my love of base building strategy games. I was however dubious of buying it at its full price of £22.99; with a newborn baby that is a lot of money!
 
 I was however talked into the purchase by a few friends at work and ended up adding it to my library about a week before it went on sale! Having spent over 100 hours in-game I can now say with absolute conviction that RimWorld is worth every penny I paid. I say this because I have played very few Alpha releases that can match RimWorld in the amount of out-of-the-box content and playability. RimWorld simply does not play nor feel as though it is an early access game and in-fact the developer has stated that:
 
