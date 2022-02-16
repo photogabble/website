@@ -260,6 +260,18 @@ footer p:first-of-type {
     background-color: var(--accent);
 }
 
+.heading-prefix span{
+    background-color: var(--accent);
+    color: var(--background);
+    padding: 2px 3px;
+}
+
+.heading-prefix + h1{
+    margin-top: 0;
+    font-size: 3rem;
+    line-height: 3rem;
+}
+
 @media (max-width: 864px) {
     main{
         width: 100%;
