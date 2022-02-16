@@ -14,14 +14,17 @@
         </ul>
     </section>
 
+    {% set wipProjects = collections.projects | withoutFeatured | onlyCategory('wip') %}
+    {% if wipProjects.length > 0 %}
     <section>
         <h2>Work In Progress / Help appreciated</h2>
         <ul>
-            {% for project in collections.projects | withoutFeatured | onlyCategory('wip') %}
+            {% for project in wipProjects %}
                 <li><a href="{{ project.url }}" title="Read {{ project.data.title }}">{{ project.data.title }}</a></li>
             {% endfor %}
         </ul>
     </section>
+    {% endif %}
 
     <section>
         <h2>Tinkering</h2>
