@@ -72,4 +72,12 @@ module.exports = {
             return item.data.categories.includes(category);
         })
     },
+
+    withoutFeatured: (collection) => collection.filter(item => {
+        return !item.data.featured
+    }),
+
+    onlyFeatured: (collection) => collection.filter(item => {
+        return item.data.featured && item.data.featured === true;
+    })
 }
