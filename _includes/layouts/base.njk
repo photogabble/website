@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>
-        {% block title %}Does it work?{% endblock %}
-    </title>
     <meta charset="UTF-8"/>
-    {% if description %}
-        <meta name="description" content="{{description}}"/>
-    {% endif %}
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
-    <link rel="stylesheet" href="/style.css"/>
-    {% if canonical %}
-        <link rel="canonical" href="{{ canonical }}" />
-    {% endif %}
+
+    <!-- Feeds -->
+    <link rel="alternate" href="{{ metadata.feedUrl }}" type="application/atom+xml" title="Simon Dann&#39;s blog">
+
+    <!-- SEO -->
+    <title>{% block title %}Photogabble{% endblock %}</title>
+    {% if description %}<meta name="description" content="{{description}}"/>{% endif %}
+    {% if canonical %}<link rel="canonical" href="{{ canonical }}" />{% endif %}
     {% block head %}{% endblock %}
+
+    <!-- TODO: Open Graph -->
+    <!-- TODO: Favicon Meta -->
+
+    <!-- Assets, 3rd party scripts, etc -->
+    <link rel="stylesheet" href="/style.css"/>
     <script data-goatcounter="https://photogabble.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <script>
         function toggleThemePicker(){
@@ -102,7 +106,7 @@
     {% endblock %}
     <footer>
         <p>
-            <a href="/" title="Back to home" class="no-underline">🌱</a> <em><a href="/feed.atom">rss</a> | <a href="https://webring.xxiivv.com/#random" target="_blank" title="XXIIVV webring">webring</a> | <a href="/legal/privacy">cookies &amp; privacy</a></em>
+            <a href="/" title="Back to home" class="no-underline">🌱</a> <em><a href="/blog/feed.xml">rss</a> | <a href="https://webring.xxiivv.com/#random" target="_blank" title="XXIIVV webring">webring</a> | <a href="/legal/privacy">cookies &amp; privacy</a></em>
         </p>
 
         <p>
