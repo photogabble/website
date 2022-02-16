@@ -76,7 +76,7 @@ const postByCategories = (collection) => {
 }
 
 const projects = (collection) => {
-    return [...collection.getFilteredByGlob('./projects/*.md')];
+    return [...collection.getFilteredByGlob('./projects/*.md').filter((post) => !post.data.draft)];
 }
 
 module.exports = {

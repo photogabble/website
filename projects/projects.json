@@ -1,4 +1,5 @@
 {
   "featured": false,
+  "draft": false,
   "layout": "layouts/project.njk"
 }
