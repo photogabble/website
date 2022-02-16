@@ -5,6 +5,7 @@ git:
 categories:
     - wip
 draft: true
+language: PHP
 ---
 
 ...

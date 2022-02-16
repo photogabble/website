@@ -5,6 +5,7 @@ git:
 categories:
     - tinkering
 draft: true
+language: PHP
 ---
 
 ...

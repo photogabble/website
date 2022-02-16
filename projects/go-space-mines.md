@@ -4,6 +4,7 @@ description: Command Line Space Mines Simulator Game ported from BASIC to Go
 git: https://github.com/photogabble/go-space-mines
 categories:
     - tinkering
+language: Go
 ---
 
 This is a port to Go of a BASIC strategy/management game called Space Mines. The BASIC code was originally published in 1982 in an Usborne book titled [Computer Space-games](http://www.worldofspectrum.org/infoseek.cgi?regexp=^Computer+Spacegames$&loadpics=1). In the same year the game was released on tape for the ZX Spectrum 16K, [click here](http://www.worldofspectrum.org/infoseekid.cgi?id=0019122) for more information and a download link to the Spectrum tape image.

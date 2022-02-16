@@ -4,6 +4,7 @@ description: A PHP port of vhf/confusable_homoglyphs
 git: https://github.com/photogabble/php-confusable-homoglyphs
 packagist: https://packagist.org/packages/photogabble/php-confusable-homoglyphs
 featured: true
+language: PHP
 ---
 
 > Unicode homoglyphs can be a nuisance on the web. Your most popular client, AlaskaJazz, might be upset to be impersonated by a trickster who deliberately chose the username ΑlaskaJazz. (The A is the greek letter [capital alpha](http://www.amp-what.com/unicode/search/%CE%91))
