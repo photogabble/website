@@ -8,7 +8,7 @@ permalink: /blog/{{ category.slug }}/index.html
 
 {% extends "_includes/layouts/page.njk" %}
 
-{% block title %}{{ category.title }}{% endblock %}
+{% set title = category.title %}
 
 {% block content %}
 
