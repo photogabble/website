@@ -2,6 +2,7 @@
 title: Word Stats Plugin for Eleventy
 description: A lightweight wrapper for making available reading-time to the Eleventy Static Site Generator.
 git: https://github.com/photogabble/eleventy-plugin-word-stats
+npm: https://www.npmjs.com/package/@photogabble/eleventy-plugin-word-stats
 featured: true
 ---
 

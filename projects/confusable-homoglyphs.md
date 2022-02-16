@@ -2,6 +2,7 @@
 title: Confusable Homoglyphs
 description: A PHP port of vhf/confusable_homoglyphs
 git: https://github.com/photogabble/php-confusable-homoglyphs
+packagist: https://packagist.org/packages/photogabble/php-confusable-homoglyphs
 featured: true
 ---
 
