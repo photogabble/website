@@ -75,8 +75,13 @@ const postByCategories = (collection) => {
     }, []);
 }
 
+const projects = (collection) => {
+    return [...collection.getFilteredByGlob('./projects/*.md')];
+}
+
 module.exports = {
     post,
     postCategories,
-    postByCategories
+    postByCategories,
+    projects
 }

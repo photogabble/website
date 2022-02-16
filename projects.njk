@@ -1,0 +1,43 @@
+{% extends "_includes/layouts/page.njk" %}
+
+{% set title = 'Projects' %}
+
+{% block content %}
+    <h1>Projects</h1>
+
+    <section>
+        <h2>Featured</h2>
+        <ul>
+            {% for project in collections.projects | onlyFeatured %}
+                <li><a href="{{ project.url }}" title="Read {{ project.data.title }}">{{ project.data.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section>
+        <h2>Work In Progress / Help appreciated</h2>
+        <ul>
+            {% for project in collections.projects | withoutFeatured | onlyCategory('wip') %}
+                <li><a href="{{ project.url }}" title="Read {{ project.data.title }}">{{ project.data.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section>
+        <h2>Tinkering</h2>
+        <ul>
+            {% for project in collections.projects | withoutFeatured | onlyCategory('tinkering') %}
+                <li><a href="{{ project.url }}" title="Read {{ project.data.title }}">{{ project.data.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section>
+        <h2>Abandoned / Shelved</h2>
+        <ul>
+            {% for project in collections.projects | withoutFeatured | onlyCategory('abandoned') %}
+                <li><a href="{{ project.url }}" title="Read {{ project.data.title }}">{{ project.data.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}
