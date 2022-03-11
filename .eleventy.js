@@ -6,7 +6,11 @@ const transforms = require('./utils/transforms');
 const wordStats = require('@photogabble/eleventy-plugin-word-stats');
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
+const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
+
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(UpgradeHelper);
+
   eleventyConfig.setUseGitIgnore(false);
 
   eleventyConfig.addPlugin(wordStats);
