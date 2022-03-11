@@ -32,10 +32,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addTransform(transformName, transforms[transformName])
   })
 
-  // Merge data instead of overriding
-  // https://www.11ty.dev/docs/data-deep-merge/
-  eleventyConfig.setDataDeepMerge(true);
-
   eleventyConfig.addWatchTarget("./_tmp/style.css");
 
   // Don't process folders with static assets e.g. images
