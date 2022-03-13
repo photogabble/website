@@ -1,5 +1,4 @@
 ---
-
 title: Build an incremental clicker web game with Vue.js - Part One
 draft: false
 cover_image: /img/featured-images/build-an-incremental-web-game-with-vue-js.png
@@ -10,6 +9,7 @@ tags:
     - javascript
     - vue.js
     - game
+templateEngineOverride: md
 ---
 
 For a while now I have had a tingling interest in gamedev, after a few false starts trying to build things too complicated and getting burnt out I thought it would be best to keep things simple and start by building a [incremental](https://www.reddit.com/r/incremental_games/) web game that I can add additional mechanics to as I progress. 
@@ -201,7 +201,7 @@ mounted: function() {
 
 Eventually the amount of food in your mining colony will reduce to zero and we can imagine that all 12 of the colonists hard at work each with empty bellies. This should affect their performance in some way and in the original _BASIC_ game this was conveyed to the player as a _satisfaction_ rating.
 
-![You're colonists are now starving...](/img/build-an-incremental-web-game-with-vue-js-2.png "You're colonists are now starving...")
+![Your colonists are now starving...](/img/build-an-incremental-web-game-with-vue-js-2.png "Your colonists are now starving...")
 
 Our satisfaction rating will be a float with a value between zero and one and for the time being will be influenced by the amount of food in the stores. To begin we add a `satisfaction` variable to our data function like so:
 

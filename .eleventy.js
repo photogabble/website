@@ -6,7 +6,11 @@ const transforms = require('./utils/transforms');
 const wordStats = require('@photogabble/eleventy-plugin-word-stats');
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
+const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
+
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(UpgradeHelper);
+
   eleventyConfig.setUseGitIgnore(false);
 
   eleventyConfig.addPlugin(wordStats);
@@ -27,10 +31,6 @@ module.exports = function (eleventyConfig) {
   Object.keys(transforms).forEach((transformName) => {
     eleventyConfig.addTransform(transformName, transforms[transformName])
   })
-
-  // Merge data instead of overriding
-  // https://www.11ty.dev/docs/data-deep-merge/
-  eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.addWatchTarget("./_tmp/style.css");
 
