@@ -5,11 +5,13 @@ const shortcodes = require('./utils/shortcodes');
 const transforms = require('./utils/transforms');
 const wordStats = require('@photogabble/eleventy-plugin-word-stats');
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const backlinks = require('./utils/backlinks');
 
 const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(UpgradeHelper);
+  eleventyConfig.addPlugin(backlinks);
 
   eleventyConfig.setUseGitIgnore(false);
 
