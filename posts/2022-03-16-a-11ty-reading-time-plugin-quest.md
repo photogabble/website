@@ -7,8 +7,6 @@ tags:
     - 11ty
 ---
 
-# A 11ty Reading Time Plugin Quest
-
 While going through the stages of rebuilding this blog I thought a nice addition would be a measure of reading time presented in each posts header much like how services such as Medium seem to do.
 
 I am using the Eleventy static site generator, therefore my first port of call was its plugin ecosystem. I quickly found [eleventy-plugin-reading-time](https://www.npmjs.com/package/eleventy-plugin-reading-time) which appears to do exactly what it says on the tin. However, at time of writing it's not seen any activity in three years and has a number of unanswered pull requests which appear to add improvements or fix issues people have had.
