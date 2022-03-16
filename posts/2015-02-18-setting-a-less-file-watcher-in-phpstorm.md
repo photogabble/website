@@ -1,5 +1,4 @@
 ---
-
 title: Creating a LESS File watcher in PHPStorm
 categories:
     - tools-and-resources
@@ -7,6 +6,7 @@ tags:
     - less
     - nodejs
 cover_image: /img/lessc-version.png
+growthStage: evergreen
 ---
 
 ![Installing lessc on windows via npm](/img/lessc-version.png "Installing lessc on windows via npm")

@@ -4,6 +4,7 @@ categories: [tutorials]
 tags: [programming, javascript]
 cover_image: /img/javascript-pixel-paint-3.png
 featured: false
+growthStage: evergreen
 ---
 
 ![Pixel Editor](/img/javascript-pixel-paint-2.png "Pixel Editor")

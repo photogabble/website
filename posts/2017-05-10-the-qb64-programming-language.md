@@ -1,5 +1,4 @@
 ---
-
 title: The QB64 programming language
 draft: false
 cover_image: /img/featured-images/introducing-the-qb64-programming-language.png
@@ -9,9 +8,7 @@ tags:
     - basic
     - quick basic
     - retro
-header:
-    background:
-        color: "#000144"
+growthStage: budding
 ---
 
 Writing my [happy 53rd birthday to BASIC article](/blog/2017/05/02/happy-fiftyth-birthday-basic) brought up fond childhood memories of programming on my Toshiba T3100e. As a teenager I often spent the evenings basking in the orange glow from its plasma display and tapping away at its keyboard, entering programs into my copy of Quick Basic.

@@ -1,5 +1,4 @@
 ---
-
 title: Porting BASIC Space Mines Game to Go
 draft: false
 cover_image: /img/featured-images/basic-space-mines-port-to-golang-featured-img.png
@@ -11,9 +10,7 @@ tags:
     - go
     - golang
     - retro
-header:
-    background:
-        color: "#605F5E"
+growthStage: evergreen
 ---
 
 I recently spent a little time going down memory lane and reminiscing about my first experiences with programming. I even wrote a [short article](/blog/2017/05/02/happy-fiftyth-birthday-basic/) of the journey during which I wished BASIC a happy 53rd birthday. 

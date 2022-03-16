@@ -1,11 +1,11 @@
 ---
-
 title: Achieving Public, Private and Privileged members in JavaScript
 categories:
     - tutorials
 tags:
     - programming
     - javascript
+growthStage: budding
 ---
 
 > While [writing my pixel editor tutorial series](/blog/tutorials/writing-a-pixel-editor-in-javascript-p1/) I noticed that I had neglected to explain the structure of the objects I had created and how I was making object members private and public. So here is a little introduction to JavaScript objects and their members.

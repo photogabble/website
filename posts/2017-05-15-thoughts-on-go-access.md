@@ -9,6 +9,7 @@ tags:
     - goaccess
     - sysops
     - server toolchain
+growthStage: budding
 ---
 
 Recently I upgraded PHP on my web server to 7.1 and among the many speed improvements it brought, the upgrade did break the visitor log application [have-a-mint](https://haveamint.com/) that I have been using for many, many years.

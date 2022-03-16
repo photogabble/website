@@ -1,5 +1,4 @@
 ---
-
 title: How to return a random list item by weight
 draft: false
 cover_image: /img/weighted-random-number-picking-featured-image.png

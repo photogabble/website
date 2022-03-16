@@ -9,9 +9,7 @@ tags:
     - google
     - testing
     - website optimisation
-header:
-    background:
-        color: "#4489ff"
+growthStage: evergreen
 ---
 
 Just over a year ago I reviewed [testmysite.withgoogle.com](https://testmysite.withgoogle.com) ([here](/blog/tools-and-resources/think-with-google-test-my-site/)) which was at that time making the rounds around various blogger groups. My conclusion then was that the new "tool" has a distinctively dodgy feel to it and felt as though it was largely a marketing funnel designed to ensnare non-technical savvy middle management types.
