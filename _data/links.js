@@ -144,4 +144,10 @@ module.exports = [
         tags: ['blog', 'go'],
         reason: null
     },
+    {
+        title: "Alejandro's Website",
+        href: 'https://kinduff.com/',
+        tags: ['blog', 'minimalist', 'ruby'],
+        reason: null
+    },
 ];
