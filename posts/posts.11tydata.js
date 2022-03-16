@@ -1,5 +1,6 @@
 module.exports = {
   featured: false,
+  draft: false,
   layout: "layouts/post.njk",
   eleventyComputed: {
     permalink(data) {
