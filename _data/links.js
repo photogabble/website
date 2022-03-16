@@ -162,4 +162,11 @@ module.exports = [
         tags: ['Blog', 'SysAdmin', 'Programmer'],
         reason: null
     },
+    {
+        title: "Humans",
+        href: 'https://humans.fyi/',
+        tags: ['Gallery', 'Inspiration'],
+        reason: null
+    },
+
 ];
