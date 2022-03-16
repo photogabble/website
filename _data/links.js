@@ -174,4 +174,10 @@ module.exports = [
         tags: ['Artist'],
         reason: null
     },
+    {
+        title: "Aditya Athalye’s Blog",
+        href: 'https://www.evalapply.org/',
+        tags: ['Minimalist', 'Blog', 'Programmer'],
+        reason: null
+    },
 ];
