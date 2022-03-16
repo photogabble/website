@@ -168,5 +168,10 @@ module.exports = [
         tags: ['Gallery', 'Inspiration'],
         reason: null
     },
-
+    {
+        title: "Simon Freund’s Website",
+        href: 'https://simonfreund.com/',
+        tags: ['Artist'],
+        reason: null
+    },
 ];
