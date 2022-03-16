@@ -141,13 +141,19 @@ module.exports = [
     {
         title: "Carl Johnson's Website",
         href: 'https://blog.carlmjohnson.net/',
-        tags: ['blog', 'go'],
+        tags: ['Blog', 'Go'],
         reason: null
     },
     {
         title: "Alejandro's Website",
         href: 'https://kinduff.com/',
-        tags: ['blog', 'minimalist', 'ruby'],
+        tags: ['Blog', 'Minimalist', 'Ruby'],
+        reason: null
+    },
+    {
+        title: "Jake Howard's Website",
+        href: 'https://theorangeone.net/',
+        tags: ['Blog', 'Minimalist', 'SysAdmin', 'InfoSec', 'Programmer'],
         reason: null
     },
 ];
