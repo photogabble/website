@@ -1,5 +1,6 @@
 ---
 title: Pixel Mainframe
+updated: 2022-03-17
 categories:
     - pixelart
 cover_image: /img/chickenstreet-iampixeltier-mainframe-1.png
@@ -11,7 +12,7 @@ Five years ago, on the 16th of August 2010 inspired by the incredible works of a
 
 As often is the case, I became distracted with more pressing concerns and The Pixel Mainframe project fell to the wayside and eventually forgotten. That is, it was forgotten; I recently discovered a cache of hard drives that turned out to be backups of data I believed to be lost when my (then ageing) mac died early in 2014.
 
-Above you can see my isometric interpretation of the IBM 360, PRIME 550 Mk II and the Digital VAX 11/780 base units in all their pixel glory. Aside from the now obvious inconstancies in the lighting I am quite proud of these and intend to continue the project. As a little incentive to begin drawing some more of the scene and other mainframe computer systems I decided to put together a little scenery for [@DerNaderer's](https://twitter.com/DerNaderer) [What's beneath the Chicken street](http://iampixeltier.com/chickenstreet/) collaboration.
+Above you can see my isometric interpretation of the IBM 360, PRIME 550 Mk II and the Digital VAX 11/780 base units in all their pixel glory. Aside from the now obvious inconstancies in the lighting I am quite proud of these and intend to continue the project. As a little incentive to begin drawing some more of the scene and other mainframe computer systems I decided to put together a little scenery for [@DerNaderer's](https://twitter.com/DerNaderer) [What's beneath the Chicken street](https://www.thechickenstreetproject.com/) collaboration.
 
 ![Chicken Street Mainframe](/img/chickenstreet-iampixeltier-mainframe-1.png "Chicken Street Mainframe")
 
