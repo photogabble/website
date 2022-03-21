@@ -180,4 +180,10 @@ module.exports = [
         tags: ['Minimalist', 'Blog', 'Programmer'],
         reason: null
     },
+    {
+        title: "Evan Boehs",
+        href: 'https://boehs.org/',
+        tags: ['Minimalist', 'Garden'],
+        reason: null,
+    }
 ];
