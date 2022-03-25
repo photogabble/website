@@ -1,12 +1,11 @@
 ---
-
 title: How to set composer global bin path in Windows
 categories:
     - tools-and-resources
 tags:
-    - composer
-    - windows 7
+    - Composer
 cover_image: /img/windows-environment-variables.png
+growthStage: evergreen
 ---
 
 [Composer](https://getcomposer.org/) is not just amazing at managing PHP project dependencies on a per project level but is also able to install packages at a system wide level enabling you to keep such things as Laravel Installer[^1], PHPUnit[^2] and PHP_CodeSniffer[^3] up-to-date without touching [Pear](http://pear.php.net/).

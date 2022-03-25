@@ -6,6 +6,7 @@ tags:
     - programming
     - javascript
 cover_image: /img/javascript-pixel-paint-11.png
+growthStage: evergreen
 ---
 
 ![Pixel Editor](/img/javascript-pixel-paint-9.png "Pixel Editor")

@@ -1,19 +1,9 @@
 ---
-
 title: Useful free stock photography libraries
 categories:
     - blogging
     - tools-and-resources
-
-header:
-    background:
-        src: "/img/header-backgrounds/person-beach-holiday-vacation.jpg"
-        size: cover
-        mute: true
-        origin :
-            href: http://stokpic.com/project/womans-hand-holdig-vintage-camera-on-sunny-beach/
-            title: Womans Hand Holding Vintage Camera On Sunny Beach, CC0, stockpic.com
-            text: Cover image by Ed Gregory
+growthStage: budding
 ---
 
 With my new 2016 layout for Photogabble containing a grid of articles, each displaying that articles featured image, I suddenly had a minor problem with what to actually display as the featured image. Unlike other types of blog content, programming and tutorial based discussions do not tend to lend themselves to having featured images. I did originally place a colourful rectangle with the posts category within but that began to look weird and boring when there were several within the same grid.

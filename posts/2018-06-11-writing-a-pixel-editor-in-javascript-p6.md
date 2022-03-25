@@ -7,6 +7,7 @@ tags:
     - javascript
 cover_image: /img/javascript-pixel-paint-12.png
 draft: false
+growthStage: budding
 ---
 
 ![Pixel Editor](/img/javascript-pixel-paint-12.png "Pixel Editor")

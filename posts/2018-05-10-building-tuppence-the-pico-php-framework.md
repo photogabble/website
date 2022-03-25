@@ -1,14 +1,13 @@
 ---
-
 title: Why I built a tiny PHP Framework called Tuppence
 draft: false
 cover_image: /img/featured-images/building-tuppence-the-pico-php-framework.png
 categories:
     - programming
-
 tags:
     - php
     - framework
+growthStage: evergreen
 ---
 
 When you tell other developers that you have built your own framework, unless your someone like [Taylor Otwell](https://twitter.com/taylorotwell) most usually roll their eyes and question why you're not using an off the shelf framework like Laravel or Symfony before lecturing you on reinventing the wheel.

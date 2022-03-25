@@ -8,14 +8,16 @@
             {{ title }}
         </h1>
         <p>
-            Posted in:
+            {% include "components/growth.njk" %}
+            planted
+            <time datetime="{{ page.date.toISOString() }}">
+                {{ page.date | dateToFormat("dd LLL yyyy") }}
+            </time>
+            in
             {% for category in categories | formatSlugList %}
                 <a class="pill" href="/blog/{{ category.slug }}">{{ category.title }}</a>
             {% endfor %}
-            on
-            <time datetime="{{ page.date.toISOString() }}">
-                {{ page.date | dateToFormat("dd LLL yyyy") }}
-            </time><br/>
+            <br/>
             {{ content | wordStats }}.
         </p>
         <section>

@@ -6,6 +6,7 @@ categories: [games]
 tags: [revived, dos]
 featured: false
 cover_image: /img/featured-images/kareltima-iii-the-self-beating-machine.png
+growthStage: evergreen
 ---
 
 ![Kareltima III Startup](/img/kareltima-iii-the-self-beating-machine-2.png "Kareltima III Startup")

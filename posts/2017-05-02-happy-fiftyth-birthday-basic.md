@@ -1,5 +1,4 @@
 ---
-
 title: Happy 53rd birthday BASIC
 draft: false
 cover_image: /img/happy-fiftyth-birthday-basic-featured-img.png
@@ -10,9 +9,7 @@ tags:
     - quick basic
     - dos
     - retro
-header:
-    background:
-        color: "#605F5E"
+growthStage: evergreen
 ---
 
 It was 4am in a cold [Dartmouth basement](http://www.dartmouth.edu/basicfifty/) fifty-three years ago that the programming language BASIC was born. With yesterday marking its 53rd year it looks as though BASIC is going strong with a variety of different implementations still being used today.

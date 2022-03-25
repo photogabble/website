@@ -1,5 +1,4 @@
 ---
-
 title: Writing a pixel editor in javascript - Part five
 categories:
     - tutorials
@@ -8,6 +7,7 @@ tags:
     - javascript
 cover_image: /img/javascript-pixel-paint-12.png
 draft: false
+growthStage: budding
 ---
 
 ![Pixel Editor](/img/javascript-pixel-paint-11.png "Pixel Editor")

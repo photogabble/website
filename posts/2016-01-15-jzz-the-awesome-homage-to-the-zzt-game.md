@@ -1,5 +1,4 @@
 ---
-
 title: JZT, an awesome homage to the DOS era adventure game ZZT
 cover_image: /img/zzt-featured-img.png
 categories:
@@ -7,6 +6,7 @@ categories:
 tags:
     - games
     - review
+growthStage: budding
 ---
 
 One of the several games that would result in me spending many an evening staring into the orange gas plasma display of my [Toshiba T3100](https://en.wikipedia.org/wiki/Toshiba_T3100) was a game called [ZZT](https://web.archive.org/web/19980214170034/http://www.epicgames.com/zzt.htm). ZZT is a shareware title written for MS-DOS in 1991 and as it happens, also the debut game from Epic Megagames[^1].

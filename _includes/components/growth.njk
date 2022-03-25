@@ -1,0 +1,14 @@
+{% if growthStage === 'seedling' %}
+    {% set growthIcon = '🌱' %}
+    {% set growthTitle = 'Seedlings are rough and early ideas, they need further work and are likely to change often' %}
+    {% set growthText = 'Seedling' %}
+{% elif growthStage === 'budding' %}
+    {% set growthIcon = '🌿' %}
+    {% set growthTitle = 'Buddings are ideas I\'ve cleaned up and clarified. May still need refinement.' %}
+    {% set growthText = 'Budding' %}
+{% else %}
+    {% set growthIcon = '🌳' %}
+    {% set growthTitle = 'Evergreens are ideas that I have invested a lot of work in. They are in a finished state and unlikely to change over time.' %}
+    {% set growthText = 'Evergreen' %}
+{% endif %}
+{{ growthIcon }} <abbr title="{{ growthTitle }}">{{ growthText }}<sup><a href="/about/growth/">(?)</a></sup></abbr>

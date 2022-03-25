@@ -1,19 +1,11 @@
 ---
-
 title: Nested queries in Laravels Query Builder
 cover_image: /img/nested-queries-in-laravel-eloquent.png
-header:
-    background:
-        src: "/img/header-backgrounds/footer-lodyas.png"
-        tile: true
-        origin :
-            href: http://subtlepatterns.com/dark-sharp-edges/
-            title: Dark Sharp Edges, subtlepatterns.com
-            text: Cover image by Carlos Aguilar
 categories:
     - programming
 tags:
     - PHP
+growthStage: evergreen
 ---
 
 Love them, or hate them: query builders and ORM's are the workhorses of modern web frameworks. Laravel, my framework of choice, comes packaged with the [Fluent](http://laravel.com/docs/4.2/queries) query builder and an ORM called [Eloquent](http://laravel.com/docs/4.2/eloquent). Both are tightly coupled within the framework, with the former being able to transparently hydrate the later.

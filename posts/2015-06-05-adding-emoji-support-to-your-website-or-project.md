@@ -1,13 +1,11 @@
 ---
-
 title: Adding Emoji support to your website or project
-
 categories:
     - programming
 tags:
     - javascript
-
 cover_image: /img/emoji.png
+growthStage: budding
 ---
 
 Back in April this year I came across [this post](http://blog.farrant.me/adding-emoji-support-to-any-website/) by Josh Farrant detailing how to add support to any website for Unicode Emoji characters with [twemoji](https://github.com/twitter/twemoji) and given the [sad state](http://caniemoji.com/) of emoji support in popular browsers at present having a cross-browser polyfill available for the time being is a good thing. However, when writing posts I tend to use sublime text or nano via remote shell and in neither case do I have access to Unicode emoji input so I bookmarked Josh's post and largely forgot about it. 

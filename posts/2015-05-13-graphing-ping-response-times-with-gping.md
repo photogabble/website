@@ -1,9 +1,9 @@
 ---
-
 title: Graphing ping response times in Windows with GPING
 categories:
     - tools-and-resources
 cover_image: /img/gping-graphical-ping-for-windows.png
+growthStage: budding
 ---
 
 ![Graphing ping response times with gping](/img/gping-graphical-ping-for-windows.png "Graphing ping response times with gping")

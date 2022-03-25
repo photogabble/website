@@ -1,5 +1,4 @@
 ---
-
 title: Internet explorer is dead, long live internet explorer
 categories:
     - tools-and-resources
@@ -7,10 +6,7 @@ tags:
     - microsoft
     - browsers
 cover_image: /img/tagged-default/internet-explorer.png
-
-header:
-    background:
-        color: "#3399ff"
+growthStage: evergreen
 ---
 
 So as it turns out[^1], beginning tomorrow January the 12th 2016, Microsoft will no longer provide security updates or technical support for any version of Internet Explorer except for IE11. This effectively means that IE 8, 9 and 10 will be officially obsolete and no longer recieve *any* support from Microsoft.
