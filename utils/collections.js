@@ -79,9 +79,15 @@ const projects = (collection) => {
     return [...collection.getFilteredByGlob('./projects/*.md').filter((post) => !post.data.draft)];
 }
 
+const nowUpdates = (collection) => {
+
+    return [...collection.getFilteredByGlob('./now/*.md').filter((post) => !post.data.draft)];
+}
+
 module.exports = {
     post,
     postCategories,
     postByCategories,
-    projects
+    projects,
+    nowUpdates
 }
