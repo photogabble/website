@@ -53,6 +53,18 @@ module.exports = {
      */
     limit: (array, limit) => array.slice(0, limit),
 
+    excludeType: (collection, type) => {
+        return (!type)
+            ? collection
+            : collection.filter(item => item.data.contentType !== type);
+    },
+
+    onlyType: (collection, type) => {
+        return (!type)
+          ? collection
+          : collection.filter(item => item.data.contentType === type);
+    },
+
     excludeCategory: (collection, category) => {
         if (!category) return collection;
         return collection.filter(item => {

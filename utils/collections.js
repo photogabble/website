@@ -1,7 +1,7 @@
 const {chunk, toTitleCase} = require('./helpers')
 const {slugify} = require("./filters");
 
-const perPage = 2;
+const perPage = 10;
 
 // Filter draft posts when deployed into production
 const post = (collection) => (process.env.ELEVENTY_ENV !== 'production')
@@ -152,6 +152,7 @@ const postByCategories = (collection) => {
   }, []);
 }
 
+// TODO: merge projects and now into contentTypes
 const projects = (collection) => {
   return [...collection.getFilteredByGlob('./projects/*.md').filter((post) => !post.data.draft)];
 }
