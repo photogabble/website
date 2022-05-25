@@ -40,7 +40,7 @@ html.theme-coffee, .theme-picker li.theme-coffee {
 
 html.theme-summer, .theme-picker li.theme-summer {
     --background: #F6F7EB;
-    --background-muted: #C5CBD3;
+    --background-muted: #dde3be;
     --foreground: #34435E;
     --foreground-muted: #B57F50;
     --accent: #FF6392;

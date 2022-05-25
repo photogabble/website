@@ -113,18 +113,37 @@
     {% block content %}
         {{ content | safe }}
     {% endblock %}
-    <footer>
-        <p>
-            <a href="/" title="Back to home" class="no-underline">🌱</a> <em><a href="/blog/feed.xml">rss</a> | <a href="https://webring.xxiivv.com/#random" target="_blank" title="XXIIVV webring">webring</a> | <a href="/legal/privacy">cookies &amp; privacy</a></em>
-        </p>
-
-        <p>
-            &copy; 2022 Simon Dann. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="Licensed CC BY-NC 4.0">CC BY-NC-SA 4.0</a> | <a href="https://github.com/photogabble/website">src</a>.<br/>
-            <small>Any and all opinions listed here are my own and not
-                representative of my employers; future, past and present. I may earn a portion of sales from
-                products that are purchased through this site as part of Affiliate Partnerships with retailers.</small>
-        </p>
-    </footer>
 </main>
+<footer>
+    <dl>
+        <dt><a href="/" title="Back to home" class="no-underline">🌱</a> Simon Dann</dt>
+        <dd><a href="/projects" title="...">Projects</a></dd>
+        <dd><a href="/blog" title="...">Blog</a></dd>
+        <dd><a href="/books" title="...">Bookshelf</a></dd>
+        <dd><a href="/uses" title="...">/uses</a></dd>
+        <dd><a href="/now" title="...">/now</a></dd>
+    </dl>
+
+    <dl>
+        <dt>Writing</dt>
+        <dd><a href="/blog/feed.xml">RSS</a></dd>
+        <dd><a href="/blog/essays/" title="...">Essays</a></dd>
+        <dd><a href="/blog/noteworthy" title="...">Noteworthy</a></dd>
+        <dd><a href="/blog/thoughts" title="...">Thoughts</a></dd>
+        <dd><a href="/blog/tutorials" title="...">Tutorials</a></dd>
+    </dl>
+
+    <dl>
+        <dt>Community</dt>
+        <dd><a href="https://webring.xxiivv.com/#random" target="_blank" title="XXIIVV webring">Webring</a></dd>
+        <dd><a href="/links" title="...">Blogroll</a></dd>
+    </dl>
+
+    <p>
+        &copy; 2022 Simon Dann. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="Licensed CC BY-NC 4.0">CC BY-NC-SA 4.0</a> | <a href="https://github.com/photogabble/website">src</a> | <a href="/legal/privacy">cookies &amp; privacy</a>.<br/>
+        <small>Any and all opinions listed here are my own and not representative of my employers; future, past and present.<br/> I may earn a portion of sales from
+            products that are purchased through this site as part of Affiliate Partnerships with retailers.</small>
+    </p>
+</footer>
 </body>
 </html>
