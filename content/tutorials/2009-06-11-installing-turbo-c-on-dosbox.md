@@ -1,7 +1,7 @@
 ---
 title: Installing Turbo C on DOSBOX
 categories: [tutorials]
-tags: [revived, dos]
+tags: [revived, DOS, C]
 featured: false
 cover_image: /img/featured-images/installing-turbo-c-on-dosbox.png
 growthStage: evergreen

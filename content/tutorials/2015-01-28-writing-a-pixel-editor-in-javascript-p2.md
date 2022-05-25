@@ -4,7 +4,7 @@ categories:
     - tutorials
 tags:
     - programming
-    - javascript
+    - JavaScript
 cover_image: /img/javascript-pixel-paint-7.png
 growthStage: evergreen
 ---

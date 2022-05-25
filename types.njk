@@ -1,0 +1,50 @@
+---
+pagination:
+  data: collections.contentPaginatedByType
+  size: 1
+  alias: category
+permalink: /{{ category.slug }}/index.html
+---
+
+{% extends "_includes/layouts/page.njk" %}
+
+{% set title = category.title %}
+
+{% block content %}
+  <small class="heading-prefix"><span>Writing</span></small>
+  <h1>{{ category.title }}</h1>
+
+  <section>
+    <ul class="post-list">
+      {% for post in category.items %}
+        <li>
+          <a href="{{ post.url }}" title="Read {{ post.data.title }}">
+            {{ post.data.title }}
+          </a> &mdash; {{ post.date | dateToFormat("DDD") }}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  {% if category.totalPages > 1 %}
+    <nav>
+      <p>
+        Viewing page {{ category.pageNumber }} of {{ category.totalPages }},
+        {% if category.pageSlugs.previous %}<a href="/{{ category.pageSlugs.previous }}/">Previous Page</a>{% endif %}
+        {% if category.pageSlugs.next %}<a href="/{{ category.pageSlugs.next }}/">Next Page</a>{% endif %}
+      </p>
+    </nav>
+  {% endif %}
+
+  <nav>
+    <h2>All Categories</h2>
+    <p>
+      {% for category in collections.postCategories %}
+        {% if loop.first %}
+          <a href="/blog/" class="pill">All</a>
+        {% endif %}
+        <a href="/blog/{{ category.slug }}" class="pill">{{ category.title }}</a>
+      {% endfor %}
+    </p>
+  </nav>
+{% endblock %}

@@ -4,6 +4,7 @@ categories:
     - tools-and-resources
 tags:
     - Composer
+    - PHP
 cover_image: /img/windows-environment-variables.png
 growthStage: evergreen
 ---

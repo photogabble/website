@@ -4,7 +4,7 @@ categories:
     - tutorials
 tags:
     - programming
-    - javascript
+    - JavaScript
 growthStage: budding
 ---
 

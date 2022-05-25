@@ -1,7 +1,7 @@
 ---
 title: Writing a pixel editor in javascript - Part one
 categories: [tutorials]
-tags: [programming, javascript]
+tags: [programming, JavaScript]
 cover_image: /img/javascript-pixel-paint-3.png
 featured: false
 growthStage: evergreen

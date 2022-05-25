@@ -6,7 +6,7 @@ categories:
     - tutorials
 
 tags:
-    - javascript
+    - JavaScript
     - vue.js
     - game
 templateEngineOverride: md

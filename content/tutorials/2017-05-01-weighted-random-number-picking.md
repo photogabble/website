@@ -5,7 +5,7 @@ cover_image: /img/weighted-random-number-picking-featured-image.png
 categories:
     - tutorials
 tags:
-    - javascript
+    - JavaScript
     - random numbers
 header:
     background:

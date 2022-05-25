@@ -1,0 +1,13 @@
+<ul>
+    {%- for tag in collections.contentTags %}
+        <li>{{ tag.name }} => {{ tag.slug }} ({{ tag.items.length }})</li>
+    {%- endfor %}
+</ul>
+
+<hr/>
+
+<ul>
+    {%- for t in collections.contentTypes %}
+        <li>{{ t.name }} => {{ t.slug }} ({{ t.items.length }})</li>
+    {%- endfor %}
+</ul>

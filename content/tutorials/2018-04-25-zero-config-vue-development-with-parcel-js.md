@@ -7,7 +7,7 @@ categories:
     - tutorials
 
 tags:
-    - javascript
+    - JavaScript
     - vue.js
     - parcel
 growthStage: budding
