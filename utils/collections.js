@@ -25,7 +25,7 @@ const contentTags = (collection) => Array.from(
     slug: slugify(name),
     items: collection.getFilteredByTag(name).reverse()
   }
-});
+}).sort((a,b) => b.items.length - a.items.length);
 
 const contentTypes = (collection) => Object.values(post(collection).reverse().reduce((types, post) => {
   types[post.data.contentType].items.push(post);
