@@ -1,14 +1,12 @@
-const slugify = require('slugify')
 const { DateTime } = require('luxon')
-const { toTitleCase } = require('./helpers');
+const { toTitleCase, strToSlug } = require('./helpers');
 
+/**
+ * Filters
+ * @link https://www.11ty.dev/docs/filters/
+ * @see https://github.com/11ta/11ta-template/blob/main/utils/filters.js
+ */
 module.exports = {
-    /**
-     * Filters
-     * @link https://www.11ty.dev/docs/filters/
-     * @see https://github.com/11ta/11ta-template/blob/main/utils/filters.js
-     */
-
     /**
      * dateToFormat allows specifying display format at point of use.
      * Example in footer: {{ build.timestamp | dateToFormat('yyyy') }} uses .timestamp
@@ -26,13 +24,7 @@ module.exports = {
     /**
      * Universal slug filter strips unsafe chars from URLs
      */
-    slugify: (string) => {
-        return slugify(string, {
-            lower: true,
-            replacement: '-',
-            remove: /[&,+()$~%.'":*?!<>{}]/g,
-        })
-    },
+    slugify: (string) => strToSlug(string),
 
     /**
      * Takes a list of slugs and returns them converted to title case.
