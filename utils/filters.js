@@ -81,16 +81,6 @@ module.exports = {
           : collection.filter(item => item.data.contentType === type);
     },
 
-    onlyCategory: (collection, category) => {
-        if (!category) return collection;
-        return collection.filter(item => {
-            if (!item.data.categories){
-                return false;
-            }
-            return item.data.categories.includes(category);
-        })
-    },
-
     withoutFeatured: (collection) => collection.filter(item => {
         return !item.data.featured
     }),
