@@ -2,8 +2,7 @@
 title: Go Git Archive
 description: A small command line tool for zipping all files changed between two git commits.
 git: https://github.com/photogabble/go-git-archive
-categories:
-    - tinkering
+status: tinkering
 language: Go
 ---
 

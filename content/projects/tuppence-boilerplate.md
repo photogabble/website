@@ -3,8 +3,7 @@ title: Tuppence Boilerplate
 description: 
 git: https://github.com/photogabble/tuppence-boilerplate
 packagist: https://packagist.org/packages/photogabble/tuppence-boilerplate
-categories:
-    - abandoned
+status: abandoned
 language: PHP
 ---
 

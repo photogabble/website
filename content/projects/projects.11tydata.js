@@ -1,8 +1,11 @@
 module.exports = {
+  layout: "layouts/project.njk",
   contentType: 'project', // thought, noteworthy, essay, tutorial, project
+  language: null,
+  status: null,
   eleventyComputed: {
     permalink(data) {
-      return `projects-2/${this.slugify(data.title)}/`
+      return `projects/${this.slugify(data.title)}/`
     }
   }
 };

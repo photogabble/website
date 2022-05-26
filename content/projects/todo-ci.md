@@ -2,8 +2,7 @@
 title: TodoCI
 description: 
 git: https://github.com/photogabble/todo
-categories:
-    - wip
+status: wip
 draft: true
 language: Node
 ---

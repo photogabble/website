@@ -3,8 +3,7 @@ title: Tuppence
 description: Incredibly small PSR-7 framework
 git: https://github.com/photogabble/tuppence
 packagist: https://packagist.org/packages/photogabble/tuppence
-categories:
-    - abandoned
+status: abandoned
 language: PHP
 ---
 

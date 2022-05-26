@@ -2,8 +2,7 @@
 title: LDPL Space Mines
 description: Command Line Space Mines Simulator Game ported from BASIC to LDPL
 git: https://github.com/photogabble/ldpl-space-mines
-categories:
-    - tinkering
+status: tinkering
 language: LDPL
 ---
 

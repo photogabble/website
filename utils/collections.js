@@ -79,12 +79,12 @@ const contentTypes = (collection) => Object.values(post(collection).reverse().re
     items: []
   }, project: {
     name: 'Projects',
-    slug: 'projects-2',
+    slug: 'projects',
     items: []
   }
 }));
 
-const contentPaginatedByType = (collection) => contentTypes(collection).reduce(paginateContentTaxonomy(), []);
+const contentPaginatedByType = (collection) => contentTypes(collection).filter(type => type.slug !== 'projects').reduce(paginateContentTaxonomy(), []);
 
 const contentPaginatedByTopic = (collection) => contentTags(collection).reduce(paginateContentTaxonomy('topic/'), []);
 

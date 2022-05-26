@@ -1,9 +1,8 @@
 ---
-title: FloppyBOX
+title: PHPurls
 description: 
 git:
-categories:
-    - wip
+status: wip
 draft: true
 language: Node
 ---

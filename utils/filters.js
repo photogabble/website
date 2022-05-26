@@ -40,6 +40,16 @@ module.exports = {
         })
     },
 
+    findBySlug: (collection, slug) => {
+        return (!slug)
+            ? collection
+            : collection.find((item) => item.slug === slug);
+    },
+
+    values: (obj, key) => obj[key],
+
+    whereKeyEquals: (collection, key, value) => collection.filter(item => item.data[key] === value),
+
     /**
      * Takes a list of tags and returns them mapped with url slug.
      * @param list
@@ -69,16 +79,6 @@ module.exports = {
         return (!type)
           ? collection
           : collection.filter(item => item.data.contentType === type);
-    },
-
-    excludeCategory: (collection, category) => {
-        if (!category) return collection;
-        return collection.filter(item => {
-            if (!item.data.categories){
-                return false;
-            }
-            return !item.data.categories.includes(category);
-        })
     },
 
     onlyCategory: (collection, category) => {

@@ -2,8 +2,7 @@
 title: Go Space Mines
 description: Command Line Space Mines Simulator Game ported from BASIC to Go
 git: https://github.com/photogabble/go-space-mines
-categories:
-    - tinkering
+status: tinkering
 language: Go
 ---
 

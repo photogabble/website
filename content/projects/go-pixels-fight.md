@@ -2,8 +2,7 @@
 title: Go Pixels Fight!
 description: A Golang port of pixelsfighting.com
 git: https://github.com/photogabble/go-pixel-fight
-categories:
-    - tinkering
+status: tinkering
 language: Go
 ---
 

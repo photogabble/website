@@ -2,8 +2,7 @@
 title: Basic Server Monitoring using PHP and RRDTools
 description: 
 git:
-categories:
-    - abandoned
+status: abandoned
 draft: true
 language: PHP
 ---

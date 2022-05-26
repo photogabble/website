@@ -1,9 +1,8 @@
 ---
-title: Code Coverage Info
+title: Draughts
 description: 
 git:
-categories:
-    - wip
+status: tinkering
 draft: true
 language: PHP
 ---

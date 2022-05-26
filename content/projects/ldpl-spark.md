@@ -2,8 +2,7 @@
 title: LDPL Spark
 description: ▁▂▃▅▂▇ in your shell, ported from bash to LDPL.
 git:
-categories:
-    - tinkering
+status: tinkering
 language: LDPL
 ---
 
