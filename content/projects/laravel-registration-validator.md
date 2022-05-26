@@ -5,6 +5,9 @@ git: https://github.com/photogabble/laravel-registration-validator
 packagist: https://packagist.org/packages/photogabble/laravel-registration-validator
 featured: true
 language: PHP
+tags:
+  - PHP
+  - Laravel
 ---
 
 > _An all-Latin username containing confusables is probably fine, and an all-Cyrillic username containing confusables is probably fine, but a username containing mostly Latin plus one Cyrillic code point which happens to be confusable with a Latin one… is not._ - [James Bennet](https://www.b-list.org/weblog/2018/feb/11/usernames/)
