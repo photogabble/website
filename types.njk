@@ -1,0 +1,40 @@
+---
+pagination:
+  data: collections.contentPaginatedByType
+  size: 1
+  alias: type
+permalink: /{{ type.slug }}/index.html
+---
+
+{% extends "_includes/layouts/page.njk" %}
+
+{% set title = type.title %}
+
+{% block content %}
+  <small class="heading-prefix"><span>Writing</span></small>
+  <h1>{{ type.title }}</h1>
+
+  <section>
+    <ul class="post-list">
+      {% for post in type.items %}
+        <li>
+          <a href="{{ post.url }}" title="Read {{ post.data.title }}">
+            {{ post.data.title }}
+          </a> &mdash; {{ post.date | dateToFormat("DDD") }}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  {% if type.totalPages > 1 %}
+    <nav>
+      <p>
+        Viewing page {{ type.pageNumber }} of {{ type.totalPages }},
+        {% if type.pageSlugs.previous %}<a href="/{{ type.pageSlugs.previous }}/">Previous Page</a>{% endif %}
+        {% if type.pageSlugs.next %}<a href="/{{ type.pageSlugs.next }}/">Next Page</a>{% endif %}
+      </p>
+    </nav>
+  {% endif %}
+
+  {% include '_includes/components/hot-topics.njk' %}
+{% endblock %}

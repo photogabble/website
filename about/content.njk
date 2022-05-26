@@ -1,0 +1,33 @@
+{% extends "_includes/layouts/page.njk" %}
+
+{% set title = 'Content Types' %}
+
+{% block content %}
+    <article>
+        <h1>Content Types</h1>
+        <p>
+            In converting PhotoGabble into a Digital Garden from being a traditional Blog with taxonomy made up of Categories I have settled
+            upon a few distinct content types:
+        </p>
+        <ul>
+            <li><em><a href="/essays">Essays</a></em>, longform ideas that I am invested in</li>
+            <li><em><a href="/noteworthy">Noteworthy</a></em>, interesting things I have found that I want to share</li>
+            <li><em><a href="/thoughts">Thoughts</a></em>, quick weakly held ideas on things I haven't fully worked out</li>
+            <li><em><a href="/tutorials">Tutorials</a></em>, an attempt at spreading my knowledge</li>
+            <li><em><a href="/projects">Projects</a></em>, things that I have worked on</li>
+            <li><em><a href="/now">/now</a></em>, a monthly updated list of what I am currently doing</li>
+        </ul>
+
+        <p>
+            My <a href="/books">Bookshelf</a> and <a href="/uses">/uses</a> pages are an exception to the above, my reading
+            list is imported from <a href="https://bookwyrm.social/user/carbontwelve" title="@carbontwelve@bookwyrm.social">my bookwyrm.social reviews</a>
+            and the uses page is updated in place as and when I change what technology and devices I use day-to-day.
+        </p>
+
+        <h2>Taxonomy</h2>
+        <p>
+            When PhotoGabble had a Blog structure it was organised around posts belonging to one or more category. Since becoming a Digital Garden,
+            categories have become <a href="/topic">Topics</a> which to my mind describes the taxonomy better.
+        </p>
+    </article>
+{% endblock %}

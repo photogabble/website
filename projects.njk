@@ -1,6 +1,7 @@
 {% extends "_includes/layouts/page.njk" %}
 
 {% set title = 'Projects' %}
+{% set projects = collections.contentTypes | findBySlug('projects') | values('items') %}
 
 {% block content %}
     <h1>Projects</h1>
@@ -8,13 +9,13 @@
     <section>
         <h2>Featured</h2>
         <ul>
-            {% for project in collections.projects | onlyFeatured %}
+            {% for project in projects | whereKeyEquals('featured', true) %}
                 <li><a href="{{ project.url }}" title="Read {{ project.data.title }}">{{ project.data.title }}</a> <small>{{ project.data.language }}</small></li>
             {% endfor %}
         </ul>
     </section>
 
-    {% set wipProjects = collections.projects | withoutFeatured | onlyCategory('wip') %}
+    {% set wipProjects = projects | whereKeyEquals('featured', false) | whereKeyEquals('status', 'wip') %}
     {% if wipProjects.length > 0 %}
     <section>
         <h2>Work In Progress / Help appreciated</h2>
@@ -29,7 +30,7 @@
     <section>
         <h2>Tinkering</h2>
         <ul>
-            {% for project in collections.projects | withoutFeatured | onlyCategory('tinkering') %}
+            {% for project in projects | whereKeyEquals('featured', false) | whereKeyEquals('status', 'tinkering') %}
                 <li><a href="{{ project.url }}" title="Read {{ project.data.title }}">{{ project.data.title }}</a> <small>{{ project.data.language }}</small></li>
             {% endfor %}
         </ul>
@@ -38,7 +39,7 @@
     <section>
         <h2>Abandoned / Shelved</h2>
         <ul>
-            {% for project in collections.projects | withoutFeatured | onlyCategory('abandoned') %}
+            {% for project in projects | whereKeyEquals('featured', false) | whereKeyEquals('status', 'abandoned') %}
                 <li><a href="{{ project.url }}" title="Read {{ project.data.title }}">{{ project.data.title }}</a> <small>{{ project.data.language }}</small></li>
             {% endfor %}
         </ul>

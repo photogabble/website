@@ -1,3 +1,5 @@
+const slugify = require('slugify')
+
 // Array chunking function.
 // Source: https://github.com/30-seconds/30-seconds-of-code
 const chunk = (arr, size) => Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
@@ -15,7 +17,15 @@ const toTitleCase = (slug) => {
         .join(' ')
 }
 
+// Slugifies a string
+const strToSlug = (string) => slugify(string, {
+    lower: true,
+    replacement: '-',
+    remove: /[&,+()$~%.'":*?!<>{}]/g,
+});
+
 module.exports = {
     chunk,
+    strToSlug,
     toTitleCase
 }
