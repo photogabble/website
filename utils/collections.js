@@ -1,7 +1,37 @@
 const {chunk, toTitleCase} = require('./helpers')
 const {slugify} = require("./filters");
 
-const perPage = 10;
+// Written with inspiration from:
+// @see https://www.webstoemp.com/blog/basic-custom-taxonomies-with-eleventy/
+const paginateContentTaxonomy = (baseSlug = '', perPage = 10) => {
+  return (pages, taxonomy) => {
+    const slugs = [];
+    const chunks = chunk(taxonomy.items, perPage);
+    chunks.forEach((content, idx) => {
+      slugs.push(idx > 0
+        ? `${baseSlug}${taxonomy.slug}/${idx + 1}`
+        : `${baseSlug}${taxonomy.slug}`)
+    });
+    const totalPages = slugs.length;
+    chunks.forEach((items, idx) => {
+      pages.push({
+        title: taxonomy.name,
+        slug: slugs[idx],
+        pageNumber: idx+1,
+        totalPages,
+        pageSlugs: {
+          all: slugs,
+          next: slugs[idx + 1] || null,
+          previous: slugs[idx - 1] || null,
+          first: slugs[0] || null,
+          last: slugs[slugs.length - 1] || null
+        },
+        items
+      })
+    });
+    return pages;
+  };
+};
 
 // Filter draft posts when deployed into production
 const post = (collection) => (process.env.ELEVENTY_ENV !== 'production')
@@ -54,36 +84,9 @@ const contentTypes = (collection) => Object.values(post(collection).reverse().re
   }
 }));
 
-// Written with inspiration from:
-// @see https://www.webstoemp.com/blog/basic-custom-taxonomies-with-eleventy/
-const contentPaginatedByType = (collection) => contentTypes(collection).reduce((pages, type) => {
-  const slugs = [];
-  const chunks = chunk(type.items, perPage);
-  chunks.forEach((content, idx) => {
-    slugs.push(idx > 0
-      ? `${type.slug}/${idx + 1}`
-      : type.slug)
-  });
-  const totalPages = slugs.length;
+const contentPaginatedByType = (collection) => contentTypes(collection).reduce(paginateContentTaxonomy(), []);
 
-  chunks.forEach((items, idx) => {
-    pages.push({
-      title: type.name,
-      slug: slugs[idx],
-      pageNumber: idx+1,
-      totalPages,
-      pageSlugs: {
-        all: slugs,
-        next: slugs[idx + 1] || null,
-        previous: slugs[idx - 1] || null,
-        first: slugs[0] || null,
-        last: slugs[slugs.length - 1] || null
-      },
-      items
-    })
-  });
-  return pages;
-}, []);
+const contentPaginatedByTopic = (collection) => contentTags(collection).reduce(paginateContentTaxonomy('topic/'), []);
 
 // Collection of all categories found in blog collection
 const postCategories = (collection) => {
@@ -166,6 +169,7 @@ module.exports = {
   contentTags,
   contentTypes,
   contentPaginatedByType,
+  contentPaginatedByTopic,
   postCategories,
   postByCategories,
   projects,

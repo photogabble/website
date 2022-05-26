@@ -17,16 +17,5 @@
         {% endfor %}
         </ol>
     </section>
-
-    <nav>
-        <h2>All Categories</h2>
-        <p>
-            {% for category in collections.postCategories %}
-                {% if loop.first %}
-                    <a href="/blog/" class="pill">All</a>
-                {% endif %}
-                <a href="/blog/{{ category.slug }}" class="pill">{{ category.title }}</a>
-            {% endfor %}
-        </p>
-    </nav>
+    {% include '_includes/components/hot-topics.njk' %}
 {% endblock %}

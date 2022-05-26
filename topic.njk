@@ -5,7 +5,8 @@
     <h1>All Topics</h1>
     <ul style="display: grid;">
         {%- for tag in collections.contentTags %}
-            <li><a href="/tags/{{ tag.slug }}"> {{ tag.name }} <small>({{ tag.items.length }})</small></a>
+            <li>
+                <a href="/topic/{{ tag.slug }}"> {{ tag.name }} <small>({{ tag.items.length }})</small></a>
             </li>
         {%- endfor %}
     </ul>

@@ -41,6 +41,20 @@ module.exports = {
     },
 
     /**
+     * Takes a list of tags and returns them mapped with url slug.
+     * @param list
+     * @returns array
+     */
+    formatTagList: (list) => {
+        return list.map((tag) => {
+            return {
+                name: tag,
+                slug: strToSlug(tag)
+            }
+        })
+    },
+
+    /**
      * Takes a list and returns the limit number of items.
      */
     limit: (array, limit) => array.slice(0, limit),

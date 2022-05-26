@@ -14,8 +14,8 @@
                 {{ page.date | dateToFormat("dd LLL yyyy") }}
             </time>
             in
-            {% for category in categories | formatSlugList %}
-                <a class="pill" href="/blog/{{ category.slug }}">{{ category.title }}</a>
+            {% for tag in tags | formatTagList %}
+                <a class="pill" href="/topic/{{ tag.slug }}">{{ tag.name }}</a>
             {% endfor %}
             <br/>
             {{ content | wordStats }}.

@@ -36,14 +36,5 @@ permalink: /{{ type.slug }}/index.html
     </nav>
   {% endif %}
 
-  <nav class="tags-list">
-    <h1>Hot Topics</h1>
-    <ul style="display: grid;">
-      {%- for tag in collections.contentTags | limit(7) %}
-        <li><a href="/topic/{{ tag.slug }}"> {{ tag.name }} <small>({{ tag.items.length }})</small></a></li>
-      {%- endfor %}
-      <li><a href="/topic">All Topics</a></li>
-    </ul>
-  </nav>
-
+  {% include '_includes/components/hot-topics.njk' %}
 {% endblock %}
