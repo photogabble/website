@@ -1,8 +1,8 @@
 ---
 title: Keep blogging fun!
-categories:
-    - blogging
 growthStage: evergreen
+tags:
+  - Blogging
 ---
 
 Howdy! It sure is nice to see a visitor to this website. Having registered this domain in 2004 it is a surprise to me that given the grave yard of abandoned blogs and dead links in my favourites bar, I am still writing after a decade of operating this domain; I believe the reason for all the abandoned blogs is that for a lot of people they burn out or lose interest.

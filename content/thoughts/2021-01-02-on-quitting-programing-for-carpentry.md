@@ -1,8 +1,9 @@
 ---
 title: On quitting programming for carpentry
 draft: true
-categories:
-    - thoughts
+tags:
+  - Programming
+  - Carpentry
 featured: true
 ---
 

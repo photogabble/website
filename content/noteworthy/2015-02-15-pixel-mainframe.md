@@ -1,8 +1,9 @@
 ---
 title: Pixel Mainframe
 updated: 2022-03-17
-categories:
-    - pixelart
+tags:
+  - Retro Computing
+  - Pixel Art
 cover_image: /img/chickenstreet-iampixeltier-mainframe-1.png
 growthStage: budding
 ---

@@ -2,13 +2,10 @@
 title: Build an incremental clicker web game with Vue.js - Part One
 draft: false
 cover_image: /img/featured-images/build-an-incremental-web-game-with-vue-js.png
-categories:
-    - tutorials
-
 tags:
-    - JavaScript
-    - vue.js
-    - game
+  - JavaScript
+  - Vue.js
+  - Game Development
 templateEngineOverride: md
 ---
 

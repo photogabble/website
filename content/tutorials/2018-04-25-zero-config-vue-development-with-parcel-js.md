@@ -3,13 +3,11 @@
 title: Zero config, rapid Vue.js development with Parcel
 draft: false
 cover_image: /img/featured-images/zero-config-vue-development-with-parcel-js.png
-categories:
-    - tutorials
-
 tags:
-    - JavaScript
-    - vue.js
-    - parcel
+  - Zero Config
+  - JavaScript
+  - Vue.js
+  - Parcel
 growthStage: budding
 ---
 

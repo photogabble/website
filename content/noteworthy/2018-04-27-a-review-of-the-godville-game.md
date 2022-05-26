@@ -3,12 +3,11 @@
 title: A "review" of the GodVille Game
 draft: false
 cover_image: /img/featured-images/a-review-of-the-godville-game.png
-categories:
-    - games
-
 tags:
-    - browser
-    - idle game
+  - Browser
+  - Games
+  - Review
+  - Idle Game
 growthStage: budding
 ---
 

@@ -1,10 +1,9 @@
 ---
 title: A 11ty Reading Time Plugin Quest
-categories:
-    - tools-and-resources
 tags:
-    - JavaScript
-    - 11ty
+  - Tools and Resources
+  - JavaScript
+  - 11ty
 growthStage: budding
 ---
 

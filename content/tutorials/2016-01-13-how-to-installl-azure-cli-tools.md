@@ -1,15 +1,10 @@
 ---
 title: How to install Azure CLI via node on Windows/Linux and OSX
 cover_image: /img/tagged-default/tutorial.png
-header:
-    background:
-        color: "#675f58"
-categories:
-    - tutorials
 tags:
-    - azure
-    - cloud hosting
-    - windows power shell
+  - Azure
+  - Cloud Hosting
+  - Power Shell
 growthStage: budding
 ---
 

@@ -3,12 +3,12 @@
 title: Think with Google, revisiting Google's website speed testing tool.
 draft: false
 cover_image: /img/featured-images/revisiting-google-page-speed-tool.png
-categories:
-    - tools-and-resources
 tags:
-    - google
-    - testing
-    - website optimisation
+  - Tools and Resources
+  - Review
+  - Google
+  - Testing
+  - Website Optimisation
 growthStage: evergreen
 ---
 

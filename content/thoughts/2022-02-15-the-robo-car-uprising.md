@@ -1,8 +1,8 @@
 ---
 title: The robo car uprising
 draft: false
-categories:
-    - thoughts
+tags:
+  - Future
 featured: false
 ---
 

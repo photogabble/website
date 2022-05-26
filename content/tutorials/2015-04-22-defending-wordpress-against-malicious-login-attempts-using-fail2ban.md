@@ -1,11 +1,10 @@
 ---
 title: Defending WordPress against malicious login attempts using fail2ban
-categories:
-    - blogging
 tags:
-    - PHP
-    - linux
-    - wordpress
+  - Blogging
+  - PHP
+  - Linux
+  - Wordpress
 cover_image: /img/fail2ban-regex.png
 growthStage: budding
 ---

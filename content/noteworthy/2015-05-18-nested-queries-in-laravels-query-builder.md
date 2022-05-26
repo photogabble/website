@@ -1,10 +1,11 @@
 ---
 title: Nested queries in Laravels Query Builder
 cover_image: /img/nested-queries-in-laravel-eloquent.png
-categories:
-    - programming
 tags:
-    - PHP
+  - Programming
+  - Laravel
+  - ORM
+  - PHP
 growthStage: evergreen
 ---
 

@@ -1,9 +1,8 @@
 ---
 title: Adding Emoji support to your website or project
-categories:
-    - programming
 tags:
-    - javascript
+  - JavaScript
+  - Emoji
 cover_image: /img/emoji.png
 growthStage: budding
 ---

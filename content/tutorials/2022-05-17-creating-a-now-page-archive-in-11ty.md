@@ -1,10 +1,8 @@
 ---
 title: Creating a now page archive with 11ty
-categories:
-    - tutorials
 tags:
-    - JavaScript
-    - 11ty
+  - JavaScript
+  - 11ty
 growthStage: budding
 ---
 

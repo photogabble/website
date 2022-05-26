@@ -1,10 +1,8 @@
 ---
-
 title: A revival of sorts...
 draft: true
-categories:
-    - blogging
-    
+tags:
+  - Blogging
 featured: true
 ---
 

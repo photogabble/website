@@ -3,12 +3,11 @@
 title: Thoughts on GoAccess
 draft: false
 cover_image: /img/featured-images/thoughts-on-goaccess.png
-categories:
-    - tools-and-resources
 tags:
-    - goaccess
-    - sysops
-    - server toolchain
+  - Tools and Resources
+  - GoAccess
+  - Sysops
+  - Server Toolchain
 growthStage: budding
 ---
 

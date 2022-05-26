@@ -1,11 +1,11 @@
 ---
 title: JZT, an awesome homage to the DOS era adventure game ZZT
 cover_image: /img/zzt-featured-img.png
-categories:
-    - games
 tags:
-    - games
-    - review
+  - Games
+  - Review
+  - ZZT
+  - DOS
 growthStage: budding
 ---
 

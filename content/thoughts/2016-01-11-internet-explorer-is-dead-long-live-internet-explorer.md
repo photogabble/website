@@ -1,10 +1,9 @@
 ---
 title: Internet explorer is dead, long live internet explorer
-categories:
-    - tools-and-resources
 tags:
-    - microsoft
-    - browsers
+  - Tools and Resources
+  - Microsoft
+  - Browsers
 cover_image: /img/tagged-default/internet-explorer.png
 growthStage: evergreen
 ---

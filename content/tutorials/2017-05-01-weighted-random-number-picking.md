@@ -2,14 +2,9 @@
 title: How to return a random list item by weight
 draft: false
 cover_image: /img/weighted-random-number-picking-featured-image.png
-categories:
-    - tutorials
 tags:
-    - JavaScript
-    - random numbers
-header:
-    background:
-        color: "#488247"
+  - JavaScript
+  - Randomness
 hasCodePen: true
 ---
 

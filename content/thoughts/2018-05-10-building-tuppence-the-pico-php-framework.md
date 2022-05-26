@@ -2,11 +2,10 @@
 title: Why I built a tiny PHP Framework called Tuppence
 draft: false
 cover_image: /img/featured-images/building-tuppence-the-pico-php-framework.png
-categories:
-    - programming
 tags:
-    - php
-    - framework
+  - Programming
+  - PHP
+  - Framework
 growthStage: evergreen
 ---
 

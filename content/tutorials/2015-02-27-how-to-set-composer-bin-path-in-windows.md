@@ -1,10 +1,9 @@
 ---
 title: How to set composer global bin path in Windows
-categories:
-    - tools-and-resources
 tags:
-    - Composer
-    - PHP
+  - Tools and Resources
+  - Composer
+  - PHP
 cover_image: /img/windows-environment-variables.png
 growthStage: evergreen
 ---

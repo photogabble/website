@@ -2,12 +2,11 @@
 title: The QB64 programming language
 draft: false
 cover_image: /img/featured-images/introducing-the-qb64-programming-language.png
-categories:
-    - programming
 tags:
-    - basic
-    - quick basic
-    - retro
+  - Programming
+  - BASIC
+  - Quick BASIC
+  - Retro
 growthStage: budding
 ---
 

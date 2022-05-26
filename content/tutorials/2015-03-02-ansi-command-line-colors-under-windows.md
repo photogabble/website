@@ -1,10 +1,10 @@
 ---
 title: ANSI Command Line Colors under Windows
-categories:
-    - tools-and-resources
 tags:
-    - windows
-    - command line
+  - Tools and Resources
+  - ANSI
+  - Windows
+  - Command Line
 cover_image: /img/ansicon-install-cmd.png
 growthStage: evergreen
 ---

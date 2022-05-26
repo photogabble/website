@@ -1,8 +1,10 @@
 ---
 title: Useful free stock photography libraries
-categories:
-    - blogging
-    - tools-and-resources
+tags:
+  - Blogging
+  - Review
+  - Stock Photography
+  - Tools and Resources
 growthStage: budding
 ---
 

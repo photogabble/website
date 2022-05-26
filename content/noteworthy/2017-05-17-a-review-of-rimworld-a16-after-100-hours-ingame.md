@@ -3,12 +3,11 @@
 title: A review of Rimworld A16 after 100 hours in-game
 draft: false
 cover_image: /img/featured-images/a-review-of-rimworld-a16.png
-categories:
-    - games
-
 tags:
-    - rimworld
-    - steam
+  - Games
+  - Review
+  - RimWorld
+  - Steam
 ---
 
 I have been playing RimWorld Alpha 16 on and off since it was released and seeing as I have managed to clock over 100 hours in game I thought it was about time I wrote a review, especially seeing as Alpha 17 is due to be released soon.

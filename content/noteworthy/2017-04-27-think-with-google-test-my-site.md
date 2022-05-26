@@ -2,12 +2,11 @@
 title: Think with Google, website speed testing tool.
 draft: false
 cover_image: /img/google-mobile-website-speed-testing-tool-featured-img.png
-categories:
-    - tools-and-resources
 tags:
-    - google
-    - testing
-    - website optimisation
+  - Tools and Resources
+  - Google
+  - Testing
+  - Website Optimisation
 growthStage: evergreen
 ---
 

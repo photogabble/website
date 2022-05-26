@@ -1,15 +1,12 @@
 ---
 title: Freezetime browser based "roguelike"
 cover_image: /img/freezetime-featured-img.png
-categories:
-    - pixelart
-    - games
 tags:
-    - games
-    - game dev
-    - pixelart
-    - review
-    - roguelike
+  - Games
+  - Game Development
+  - Pixel Art
+  - Review
+  - Roguelike
 growthStage: budding
 ---
 

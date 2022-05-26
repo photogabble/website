@@ -1,9 +1,7 @@
 ---
 title: Kareltima III The self-beating machine
 date: 2009-06-09
-description: A simple time since function for PHP
-categories: [games]
-tags: [revived, dos]
+tags: [Games, Revived, Review, DOS]
 featured: false
 cover_image: /img/featured-images/kareltima-iii-the-self-beating-machine.png
 growthStage: evergreen

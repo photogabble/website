@@ -1,7 +1,6 @@
 ---
 title: Mission Mainframe
-categories: [games]
-tags: [revived, dos]
+tags: [Games, Revived, Review, DOS]
 featured: true
 cover_image: /img/featured-images/mission-mainframe.png
 growthStage: evergreen

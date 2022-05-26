@@ -3,13 +3,13 @@ title: Porting BASIC Space Mines Game to Go
 draft: false
 cover_image: /img/featured-images/basic-space-mines-port-to-golang-featured-img.png
 categories:
-    - programming
+  - programming
 tags:
-    - basic
-    - quick basic
-    - go
-    - golang
-    - retro
+  - Programming
+  - BASIC
+  - Quick BASIC
+  - Go
+  - Retro
 growthStage: evergreen
 ---
 

@@ -1,10 +1,9 @@
 ---
 title: Creating a LESS File watcher in PHPStorm
-categories:
-    - tools-and-resources
 tags:
-    - less
-    - nodejs
+  - Tools and Resources
+  - LESS
+  - Node JS
 cover_image: /img/lessc-version.png
 growthStage: evergreen
 ---

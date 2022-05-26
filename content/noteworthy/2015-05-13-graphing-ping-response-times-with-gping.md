@@ -1,7 +1,8 @@
 ---
 title: Graphing ping response times in Windows with GPING
-categories:
-    - tools-and-resources
+tags:
+  - Tools and Resources
+  - Graphing
 cover_image: /img/gping-graphical-ping-for-windows.png
 growthStage: budding
 ---

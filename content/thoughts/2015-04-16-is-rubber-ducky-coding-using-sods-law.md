@@ -1,7 +1,7 @@
 ---
 title: Is rubber ducky debugging using sods law as a debugging tool?
-categories:
-    - programming
+tags:
+  - Programming
 cover_image: /img/rubber-duck-programming.png
 growthStage: evergreen
 ---

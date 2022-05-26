@@ -1,10 +1,8 @@
 ---
 title: A revival of Photogabble... the post-mortem
-categories:
-    - blogging
 tags:
-    - blogging
-    - photogabble
+  - Blogging
+  - PhotoGabble
 growthStage: evergreen
 ---
 

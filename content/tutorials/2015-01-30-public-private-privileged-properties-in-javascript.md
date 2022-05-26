@@ -1,10 +1,8 @@
 ---
 title: Achieving Public, Private and Privileged members in JavaScript
-categories:
-    - tutorials
 tags:
-    - programming
-    - JavaScript
+  - Programming
+  - JavaScript
 growthStage: budding
 ---
 

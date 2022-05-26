@@ -1,8 +1,9 @@
 ---
 title: Adding sparklines to your Eleventy.js powered website
 draft: true
-categories:
-    - programming
+tags:
+  - Programming
+  - 11ty
 ---
 
 This should be written after https://github.com/carbontwelve/photogabble-yellow/issues/98 is completed.
