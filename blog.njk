@@ -4,8 +4,8 @@
 {% set title = 'Blog Artchive' %}
 
 {% block content %}
-    <h1>Blog Archive</h1>
-    <p>There have been <strong>{{ postslist.length }}</strong> posts published since April 20, 2007:</p>
+    <h1>Archive</h1>
+    <p>There have been <strong>{{ postslist.length }}</strong> items published since April 20, 2007:</p>
     <section>
         <ol reversed class="post-list">
         {% for post in postslist | reverse %}
