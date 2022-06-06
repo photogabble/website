@@ -1,3 +1,6 @@
+const {backlinks} = require('../utils/helpers')
+
+
 module.exports = {
   featured: false,
   draft: false,
@@ -7,6 +10,9 @@ module.exports = {
   eleventyComputed: {
     permalink(data) {
       return `blog/${data.categories[0]}/${this.slugify(data.title)}/`
+    },
+    backlinks: (data) => {
+      return backlinks(data)
     }
   }
 };
