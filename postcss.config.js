@@ -13,6 +13,9 @@ module.exports = {
                 './**/*.njk',
                 './**/*.js',
                 './**/*.md',
+            ],
+            safelist: [
+              /^theme-/
             ]
         }),
         require('postcss-minify'),
