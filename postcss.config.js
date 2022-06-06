@@ -8,7 +8,13 @@ module.exports = {
         }),
         require('autoprefixer'),
         require('@fullhuman/postcss-purgecss')({
-            content: ['./_site/**/*.html']
-        })
+            content: [
+                './**/*.html',
+                './**/*.njk',
+                './**/*.js',
+                './**/*.md',
+            ]
+        }),
+        require('postcss-minify'),
     ],
 };

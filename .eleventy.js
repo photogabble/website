@@ -5,11 +5,13 @@ const shortcodes = require('./utils/shortcodes');
 const transforms = require('./utils/transforms');
 const wordStats = require('@photogabble/eleventy-plugin-word-stats');
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const PostCSSPlugin = require("eleventy-plugin-postcss");
 
 const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(UpgradeHelper);
+  eleventyConfig.addPlugin(PostCSSPlugin);
 
   eleventyConfig.setUseGitIgnore(false);
 
@@ -32,12 +34,8 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addTransform(transformName, transforms[transformName])
   })
 
-  eleventyConfig.addWatchTarget("./_tmp/style.css");
-
   // Don't process folders with static assets e.g. images
   eleventyConfig.addPassthroughCopy({
-    "./_tmp/style.css": "./style.css",
-    "./_tmp/assets": "./assets",
     './assets': './assets',
     './files': './files',
     './img': './img'
