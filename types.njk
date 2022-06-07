@@ -18,9 +18,7 @@ permalink: /{{ type.slug }}/index.html
     <ul class="post-list">
       {% for post in type.items %}
         <li>
-          <a href="{{ post.url }}" title="Read {{ post.data.title }}">
-            {{ post.data.title }}
-          </a> &mdash; {{ post.date | dateToFormat("DDD") }}
+          <a href="{{ post.url }}" title="Read {{ post.data.title }}">{{ post.data.title }}</a> &mdash; {{ post.date | dateToFormat("DDD") }}
         </li>
       {% endfor %}
     </ul>
