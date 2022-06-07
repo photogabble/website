@@ -4,6 +4,8 @@ tags: [Programming, JavaScript]
 cover_image: /img/javascript-pixel-paint-3.png
 featured: false
 growthStage: evergreen
+aliases:
+  - "Stage one: Setting up the application loop and listening to mouse input"
 ---
 
 ![Pixel Editor](/img/javascript-pixel-paint-2.png "Pixel Editor")
@@ -17,16 +19,16 @@ Due to the amount of detail that I have gone into, the tutorial is quite lengthy
 
 **Contents**
 
-* [Stage one: Setting up the application loop and listening to mouse input](/blog/tutorials/writing-a-pixel-editor-in-javascript-p1/)
-* [Stage two: 1-bit drawing to a 16x16 pixel canvas](/blog/tutorials/writing-a-pixel-editor-in-javascript-p2/)
-* [Stage three: Adding a preview](/blog/tutorials/writing-a-pixel-editor-in-javascript-p3/)
-* [Stage four: Adding a palette selector](/blog/tutorials/writing-a-pixel-editor-in-javascript-p4/)
-* [Stage five: Saving of images](/blog/tutorials/writing-a-pixel-editor-in-javascript-p5/)
-* [Stage six: Webpack, Linting and ES6](/blog/tutorials/writing-a-pixel-editor-in-javascript-p6/)
+* [[Writing a pixel editor in javascript - Part one|Stage one: Setting up the application loop and listening to mouse input]]
+* [[Writing a pixel editor in javascript - Part two|Stage two: 1-bit drawing to a 16x16 pixel canvas]]
+* [[Writing a pixel editor in javascript - Part three|Stage three: Adding a preview]]
+* [[Writing a pixel editor in javascript - Part four|Stage four: Adding a palette selector]]
+* [[Writing a pixel editor in javascript - Part five|Stage five: Saving of images]]
+* [[Writing a pixel editor in javascript - Part six|Stage six: Webpack, Linting and ES6]]
 * Stage seven: Adding a paint bucket tool and undo history
 * Stage eight: Writing a PHP backend to create a public library of images
 
-###To begin
+### To begin
 To begin with you need to create two blank files in your IDE/text editor of choice: `index.html` and `app.js`. The code below is for the `index.html`, it is quite simple and will not change at all throughout the rest of this tutorial simply copy and paste it into your `index.html` file.
 
 ```html
@@ -67,7 +69,7 @@ To begin with you need to create two blank files in your IDE/text editor of choi
 ```
 You will notice that I have included the 1.11.2 version of jQuery into the project. We shall be using jQuery as a short cut for initially selecting the `<canvas>` element[^1] and for initially capturing mouse events.
 
-###The basic application loop
+### The basic application loop
 In one of the first versions of the image editor code I had all the update and render code execute every time a mouse event was fired on the canvas element; this lead to an incredibly slow response time and excessive use of the host computers processor. To aleviate this I utilise the following game loop that uses requestAnimationFrame and attempts to keep the refresh rate of the canvas to 60fps.
 
 ```javascript
@@ -124,7 +126,7 @@ Within the render method we will clear the current `context` and then execute ot
 
 As each of the mentioned objects are added to the application we will investigate each individually, but for now I shall discuss how the user input is handled.
 
-###Mouse input
+### Mouse input
 To store the current mouse input metadata we create a Mouse object for the purpose of storing the current `(x,y)` position of the cursor and the `mouseover`, `mouseout`, `mousedown` and `mousemove` events. You may have noticed within the above example that I use jQuery to discover and pass the canvas DOM object to the `App` object. I like to use jQuery in this way as a nice shortcut library therefore we will use it here to capture mouse events on our canvas DOM object and update the relevant properties of the `Mouse` object as shown below.
 
 ```javascript

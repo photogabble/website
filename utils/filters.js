@@ -75,6 +75,18 @@ module.exports = {
             : collection.filter(item => item.data.contentType !== type);
     },
 
+    excludeTypes: (collection, types = []) => (
+      types.length > 0
+        ? collection.filter(item => types.includes(item.data.contentType) === false)
+        : collection
+    ),
+
+    onlyTypes: (collection, types = []) => (
+      types.length > 0
+        ? collection.filter(item => types.includes(item.data.contentType))
+        : collection
+    ),
+
     onlyType: (collection, type) => {
         return (!type)
           ? collection
