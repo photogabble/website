@@ -148,7 +148,7 @@ footer dd {
 }
 
 footer dd:not(:last-child):after {
-    content: ' | ';
+    content: '\00a0|\00a0';
 }
 
 footer dd a{
