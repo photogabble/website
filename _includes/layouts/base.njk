@@ -144,7 +144,7 @@
         <small>
             Any and all opinions listed here are my own and not representative of my employers; future, past and present.<br/> I may earn a portion of sales from
             products that are purchased through this site as part of Affiliate Partnerships with retailers.<br/>
-            <small>Page built {% metadata.commit.ref %} from <a href="{{ metadata.commit.url }}">{{ metadata.commit.ref }}</a> {% endif %} on {{ build.timestamp | dateToFormat('DDDD') }} at {{ build.timestamp | dateToFormat('TT') }} by <a href="https://www.netlify.com/">Netlify Elves</a>.</small>
+            <small>Page built {% if metadata.commit.ref %} from <a href="{{ metadata.commit.url }}">{{ metadata.commit.ref }}</a> {% endif %} on {{ build.timestamp | dateToFormat('DDDD') }} at {{ build.timestamp | dateToFormat('TT') }} by <a href="https://www.netlify.com/">Netlify Elves</a>.</small>
         </small>
     </p>
 </footer>
