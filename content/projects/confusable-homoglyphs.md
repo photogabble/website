@@ -1,4 +1,5 @@
 ---
+date: 2018-02-12
 title: Confusable Homoglyphs
 description: A PHP port of vhf/confusable_homoglyphs
 git: https://github.com/photogabble/php-confusable-homoglyphs

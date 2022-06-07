@@ -1,4 +1,5 @@
 ---
+date: 2017-10-17
 title: Go Git Archive
 description: A small command line tool for zipping all files changed between two git commits.
 git: https://github.com/photogabble/go-git-archive

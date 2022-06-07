@@ -1,4 +1,5 @@
 ---
+date: 2019-03-26
 title: Colour
 description: A lightweight toolset for colour manipulation, ported from polished.js
 git: https://github.com/photogabble/colour

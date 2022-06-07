@@ -1,4 +1,5 @@
 ---
+date: 2017-03-16
 title: PHP RRDTool Helpers
 description: Basic server monitoring with PHP & RRDTools
 git: https://github.com/photogabble/php-rrdtools-server-monitor

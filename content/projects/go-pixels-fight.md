@@ -1,4 +1,5 @@
 ---
+date: 2019-03-23
 title: Go Pixels Fight!
 description: A Golang port of pixelsfighting.com
 git: https://github.com/photogabble/go-pixel-fight

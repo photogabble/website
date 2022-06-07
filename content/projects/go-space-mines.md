@@ -1,4 +1,5 @@
 ---
+date: 2017-03-02
 title: Go Space Mines
 description: Command Line Space Mines Simulator Game ported from BASIC to Go
 git: https://github.com/photogabble/go-space-mines

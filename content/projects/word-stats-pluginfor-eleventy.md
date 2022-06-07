@@ -1,4 +1,5 @@
 ---
+date: 2022-02-01
 title: Word Stats Plugin for Eleventy
 sub_title: Reading Time + Word Count for 11ty
 description: A lightweight wrapper for making available reading-time to the Eleventy Static Site Generator.

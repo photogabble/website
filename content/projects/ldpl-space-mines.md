@@ -1,4 +1,5 @@
 ---
+date: 2019-03-05
 title: LDPL Space Mines
 description: Command Line Space Mines Simulator Game ported from BASIC to LDPL
 git: https://github.com/photogabble/ldpl-space-mines

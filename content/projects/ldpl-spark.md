@@ -1,7 +1,8 @@
 ---
+date: 2019-03-05
 title: LDPL Spark
 description: ▁▂▃▅▂▇ in your shell, ported from bash to LDPL.
-git:
+git: https://github.com/photogabble/ldpl-spark
 status: tinkering
 language: LDPL
 tags:

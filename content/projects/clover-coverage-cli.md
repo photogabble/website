@@ -1,4 +1,5 @@
 ---
+date: 2018-02-15
 title: Clover Coverage Cli
 description: Command line parser of clover.xml code coverage
 git: https://github.com/photogabble/clover-coverage-cli

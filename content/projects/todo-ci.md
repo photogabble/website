@@ -1,4 +1,5 @@
 ---
+date: 2020-07-13
 title: TodoCI
 description: 
 git: https://github.com/photogabble/todo
