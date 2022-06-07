@@ -1,4 +1,5 @@
 # PhotoGabble Website
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6c8303d1-5395-4372-8359-e346e8896cba/deploy-status)](https://app.netlify.com/sites/photogabble/deploys)
 
 ## About this repository
 This repository contains the source code for [www.photogabble.co.uk](https://www.photogabble.co.uk). It is built with [Eleventy](https://www.11ty.dev/) and deployed on [Netlify](https://www.netlify.com/).
