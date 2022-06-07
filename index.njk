@@ -14,9 +14,9 @@
   </section>
 
   <section>
-    <h2>Recent Articles</h2>
+    <h2>Recent Writing</h2>
     <ul class="post-list">
-      {% for post in articlesList | excludeCategory('thoughts') | reverse | limit(6) %}
+      {% for post in articlesList | excludeTypes(['thought', 'project']) | reverse | limit(6) %}
         <li><a href="{{ post.url }}">{{ post.data.title }}</a> &mdash; {{ post.date | dateToFormat("DDD") }}</li>
       {% endfor %}
     </ul>
@@ -26,16 +26,18 @@
     </p>
   </section>
 
-  {% if (articlesList | onlyCategory('thoughts')).length > 0 %}
+  {% set thoughts = articlesList | onlyTypes(['thought']) %}
+
+  {% if thoughts.length > 0 %}
     <section>
       <h2>Recent Thoughts</h2>
       <ul class="post-list">
-        {% for post in articlesList | onlyCategory('thoughts') | reverse | limit(3) %}
-          <li><a href="{{ post.url }}">{{ post.data.title }}</a> &mdash; {{ post.date | dateToFormat("DDD") }}</li>
+        {% for thought in thoughts | reverse | limit(3) %}
+          <li><a href="{{ thought.url }}">{{ thought.data.title }}</a> &mdash; {{ thought.date | dateToFormat("DDD") }}</li>
         {% endfor %}
       </ul>
       <p>
-        View <a href="/blog/thoughts/">more thoughts...</a>
+        View <a href="/thoughts/">more thoughts...</a>
       </p>
     </section>
   {% endif %}

@@ -4,29 +4,17 @@
 {% set title = 'Blog Artchive' %}
 
 {% block content %}
-    <h1>Blog Archive</h1>
-    <p>There have been <strong>{{ postslist.length }}</strong> posts published since April 20, 2007:</p>
+    <h1>Archive</h1>
+    <p>There have been <strong>{{ postslist.length }}</strong> items published since April 20, 2007:</p>
     <section>
         <ol reversed class="post-list">
         {% for post in postslist | reverse %}
             <li>
-                <a href="{{ post.url }}" title="Read {{ post.data.title }}">
-                    {{ post.data.title }}
-                </a> &mdash; {{ post.date | dateToFormat("DDD") }}
+                <small>{{ post.data.contentType }}</small>
+                <a href="{{ post.url }}" title="Read {{ post.data.title }}">{{ post.data.title }}</a> &mdash; {{ post.date | dateToFormat("DDD") }}
             </li>
         {% endfor %}
         </ol>
     </section>
-
-    <nav>
-        <h2>All Categories</h2>
-        <p>
-            {% for category in collections.postCategories %}
-                {% if loop.first %}
-                    <a href="/blog/" class="pill">All</a>
-                {% endif %}
-                <a href="/blog/{{ category.slug }}" class="pill">{{ category.title }}</a>
-            {% endfor %}
-        </p>
-    </nav>
+    {% include '_includes/components/hot-topics.njk' %}
 {% endblock %}
