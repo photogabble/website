@@ -5,20 +5,22 @@ tags:
   - JavaScript
 cover_image: /img/javascript-pixel-paint-11.png
 growthStage: evergreen
+aliases:
+  - "Stage four: Adding a palette selector"
 ---
 
 ![Pixel Editor](/img/javascript-pixel-paint-9.png "Pixel Editor")
 
-In [part three](/blog/2015/02/04/writing-a-pixel-editor-in-javascript-p3/) we finished adding a preview to our pixel editor. In this, the fourth part, we shall be adding the palette selector. As always, you can grab all the files from this tutorial series [here at github](https://github.com/photogabble/pixel-editor-tutorial).
+In [[Writing a pixel editor in javascript - Part three|part three]] we finished adding a preview to our pixel editor. In this, the fourth part, we shall be adding the palette selector. As always, you can grab all the files from this tutorial series [here at github](https://github.com/photogabble/pixel-editor-tutorial).
 
 **Contents**
 
-* [Stage one: Setting up the application loop and listening to mouse input](/blog/tutorials/writing-a-pixel-editor-in-javascript-p1/)
-* [Stage two: 1-bit drawing to a 16x16 pixel canvas](/blog/tutorials/writing-a-pixel-editor-in-javascript-p2/)
-* [Stage three: Adding a preview](/blog/tutorials/writing-a-pixel-editor-in-javascript-p3/)
-* [Stage four: Adding a palette selector](/blog/tutorials/writing-a-pixel-editor-in-javascript-p4/)
-* [Stage five: Saving of images](/blog/tutorials/writing-a-pixel-editor-in-javascript-p5/)
-* [Stage six: Webpack, Linting and ES6](/blog/tutorials/writing-a-pixel-editor-in-javascript-p6/)
+* [[Writing a pixel editor in javascript - Part one|Stage one: Setting up the application loop and listening to mouse input]]
+* [[Writing a pixel editor in javascript - Part two|Stage two: 1-bit drawing to a 16x16 pixel canvas]]
+* [[Writing a pixel editor in javascript - Part three|Stage three: Adding a preview]]
+* [[Writing a pixel editor in javascript - Part four|Stage four: Adding a palette selector]]
+* [[Writing a pixel editor in javascript - Part five|Stage five: Saving of images]]
+* [[Writing a pixel editor in javascript - Part six|Stage six: Webpack, Linting and ES6]]
 * Stage seven: Adding a paint bucket tool and undo history
 * Stage eight: Writing a PHP backend to create a public library of images
 

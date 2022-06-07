@@ -6,6 +6,7 @@ const transforms = require('./utils/transforms');
 const wordStats = require('@photogabble/eleventy-plugin-word-stats');
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const PostCSSPlugin = require("eleventy-plugin-postcss");
+const linkMapCache = require("./utils/helpers/map");
 
 const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 
@@ -73,7 +74,12 @@ module.exports = function (eleventyConfig) {
   // Markdown libraries
   let markdownIt = require("markdown-it");
   let markdownItAnchor = require("markdown-it-anchor");
-  let markdownFootnote = require("markdown-it-footnote")
+  let markdownFootnote = require("markdown-it-footnote");
+
+  eleventyConfig.on('eleventy.after', async () => {
+    const all = linkMapCache.all();
+    const n = 1;
+  });
 
   eleventyConfig
     .setLibrary("md", markdownIt({
@@ -83,5 +89,27 @@ module.exports = function (eleventyConfig) {
     }).use(markdownItAnchor, {
       permalink: false,
       slugify: input => slugify(input)
-    }).use(markdownFootnote));
+    }).use(markdownFootnote).use(function(md) {
+      // Recognize Mediawiki links ([[text]])
+      md.linkify.add("[[", {
+        validate: /^\s?([^\[\]\|\n\r]+)(\|[^\[\]\|\n\r]+)?\s?\]\]/,
+        normalize: match => {
+          const parts = match.raw.slice(2, -2).split("|");
+          const slug = slugify(parts[0].replace(/.(md|markdown)\s?$/i, "").trim());
+          const found = linkMapCache.get(slug);
+
+          if (!found) {
+            throw new Error(`Unable to find page linked by wikilink slug [${slug}]`)
+          }
+
+          match.text = parts.length === 2
+            ? parts[1]
+            : found.title;
+
+          match.url = found.permalink.substring(0,1) === '/'
+            ? found.permalink
+            : `/${found.permalink}`;
+        }
+      })
+    }));
 };

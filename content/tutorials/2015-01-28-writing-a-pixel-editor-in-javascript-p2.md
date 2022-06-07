@@ -5,24 +5,26 @@ tags:
   - JavaScript
 cover_image: /img/javascript-pixel-paint-7.png
 growthStage: evergreen
+aliases:
+  - "Stage two: 1-bit drawing to a 16x16 pixel canvas"
 ---
 
 ![Pixel Editor](/img/javascript-pixel-paint-3.png "Pixel Editor")
 
-In [part one](/blog/tutorials/writing-a-pixel-editor-in-javascript-p1/) we set the stage to begin writing our 16x16 pixel editor, if all went well you will hopefully be looking at something very similar to the above, a rather unassuming white square on a grey background. While it may not look like much, it is certainly progress and a excellent foundation on which to continue.
+In [[Writing a pixel editor in javascript - Part one|part one]] we set the stage to begin writing our 16x16 pixel editor, if all went well you will hopefully be looking at something very similar to the above, a rather unassuming white square on a grey background. While it may not look like much, it is certainly progress and a excellent foundation on which to continue.
 
 **Contents**
 
-* [Stage one: Setting up the application loop and listening to mouse input](/blog/tutorials/writing-a-pixel-editor-in-javascript-p1/)
-* [Stage two: 1-bit drawing to a 16x16 pixel canvas](/blog/tutorials/writing-a-pixel-editor-in-javascript-p2/)
-* [Stage three: Adding a preview](/blog/tutorials/writing-a-pixel-editor-in-javascript-p3/)
-* [Stage four: Adding a palette selector](/blog/tutorials/writing-a-pixel-editor-in-javascript-p4/)
-* [Stage five: Saving of images](/blog/tutorials/writing-a-pixel-editor-in-javascript-p5/)
-* [Stage six: Webpack, Linting and ES6](/blog/tutorials/writing-a-pixel-editor-in-javascript-p6/)
+* [[Writing a pixel editor in javascript - Part one|Stage one: Setting up the application loop and listening to mouse input]]
+* [[Writing a pixel editor in javascript - Part two|Stage two: 1-bit drawing to a 16x16 pixel canvas]]
+* [[Writing a pixel editor in javascript - Part three|Stage three: Adding a preview]]
+* [[Writing a pixel editor in javascript - Part four|Stage four: Adding a palette selector]]
+* [[Writing a pixel editor in javascript - Part five|Stage five: Saving of images]]
+* [[Writing a pixel editor in javascript - Part six|Stage six: Webpack, Linting and ES6]]
 * Stage seven: Adding a paint bucket tool and undo history
 * Stage eight: Writing a PHP backend to create a public library of images
 
-###Image data structure
+### Image data structure
 Now that we have our basic application framework built, we need a data-store for all the pixels that will make up the 16x16 pixel image, to do this I  have opted for a one dimensional array contained within the following JavaScript object.
 
 ```javascript
@@ -103,7 +105,7 @@ The reset method initiates the `pixels` array and can be used to clear the users
 
 Looking at the way that each pixel is stored you will notice we store six pieces of data, the `(x,y)` position of the pixel on the editable image canvas, each pixels width and height for rendering, a boolean `on` flag for when the pixel is *on* and a boolean `mouseOver` flag for when the mouse is hovering the current pixel. Also looking at the way each pixel is stored you may also notice how trivial it will be to remove the arbitrary 1-bit colour depth limit that I have imposed for the purpose of this tutorial.
 
-###Image Canvas
+### Image Canvas
 
 Don't get the image canvas confused with the HTML `<canvas>` tag as they are two different entities. The *image canvas* is our wrapper for the `Pixels` data-store and will render the content of the pixels to the HTML `<canvas>` via its 2D context.
 
@@ -178,11 +180,11 @@ If you refresh the page you will notice that there is now an "Uncaught Reference
 var iCanvas = new ImageCanvas();
 ```
 
-###Updating the Image Canvas
+### Updating the Image Canvas
 
 Now that we have the `ImageCanvas` object initiated and being updated a least every tick, before we can start rendering the pixels to the `<canvas>` context we need to first write the code to identify if the image canvas has focus, what pixel if any that the cursor has been placed over and if the mouse button has been clicked so that we may update the pixels on/off flag.
 
-####Identifing HasFocus:
+#### Identifing HasFocus:
 
 To begin with we shall first identify if the `ImageCanvas` object has focus. You may have noticed that to do this the `ImageCanvas` is missing three valuable properties, for those of you reading this whom haven't, in order to determine if the mouse `(x,y)` position is within the `ImageCanvas` we need to first know how high and how wide the `ImageCanvas` is. Doing so is a simple case of multiplying the pixel width (`private.pixelW`) by the number of pixels (`private.xPixels`) and the same for the height properties. Finally we need to set a variable for storing the "this has focus" boolean.
 
@@ -220,7 +222,7 @@ Upon refreshing `index.html` you will now notice that the message "ImageCanvas h
 
 >**NOTE**: The additional `(Mouse.x > 0 && Mouse.y > 0)` at the begining of the `if statement` "fixes" the statement evaluating `TRUE` when the mouse is outside the vacinity of the `<canvas>` &ndash; this is known as a "[hammy fix](http://en.wikipedia.org/wiki/Quick-and-dirty)" and is something we will be coming back to later on in the series.
 
-####Identifing which pixel if any that the cursor has been placed over:
+#### Identifing which pixel if any that the cursor has been placed over:
 
 Now that we have identified when our `ImageCanvas` has focus we need to also identify which, if any 20x20px "pixel" has the cursor over it. This is done within the `ImageCanvas.update` method by looping over each pixel within its `private.pixels` object and checking if the `(x,y)` co-ordinate stored within the `Mouse` object are within any of their area.
 
@@ -258,12 +260,12 @@ if (private.hasFocus === true)
 
 Appending your `ImageCanvas.update` method with the above code and reloading `index.html` in your browser will result in the console filling with "Pixel!" every time you place the mouse over a pixel &ndash; you may now remove the line `console.log('Pixel!');` because that will get annoying fast and in any case we want to see the pixel state graphically, this is something we shall do next.
 
-###Rendering the Image Canvas
+### Rendering the Image Canvas
 Now that we have the `update` method of our `ImageCanvas` object finished (*at least for now*) we can focus on updating the `<canvas>` with a graphical representation of the drawable area.
 
 This will require us writing code that will draw a border around the area earmarked for the pixels, followed by writing code that draws a grid within the bordered area to depict each pixel and then finally writing code that loops over each "pixel" within the `private.pixel` property and outputs it within that grid.
 
-####Drawing the border & grid
+#### Drawing the border & grid
 
 There are two methods available to use for drawing a border that will depict the edges of the area claimed by `ImageCanvas`:
 
@@ -340,7 +342,7 @@ To see the fruit of our efforts so far, paste the above code into your `ImageCan
 
 ![Pixel Editor](/img/javascript-pixel-paint-5.png "Pixel Editor")
 
-####Drawing the pixels
+#### Drawing the pixels
 
 We now have everything in place to draw the pixels; we shall be doing this directly to the `context` that we have passed to the `ImageCanvas.render` method, because while caching the grid to `private.cGrid` allows us to reuse the `private.cContext` its simpler for our purposes to draw directly to the main `context`.
 
@@ -374,7 +376,7 @@ Appending the above to your `ImageCanvas.render` method and refreshing `index.ht
 
 ![Pixel Editor](/img/javascript-pixel-paint-6.png "Pixel Editor")
 
-###Bugs!
+### Bugs!
 You may or may not have noticed three potential bugs in the code above, these are the ones I know about[^3] and were intentionally written in for the purpose of this section. Before continuing you may like to take some time looking for possible bugs yourself and attempt to fix them.
 
 The first bug is that when you click a pixel, quite often it will be set and then unset again, this is because the update method gets called around six times per frame working out to be three hundred and sixty times a second if your system hits the targeted 60fps. This means that the update method will be fired more than once during the time it takes you to click, firstly switching the pixel on and secondly switching it off.
@@ -425,7 +427,7 @@ Mouse.events.mousedown   = false;
 
 Having looked over the projects code again, there is a fourth bug; however as it doesn't stop the pixel editor from working I shall leave it for now and return to it at the end of this series when we will be tidying everything up and adding some more browser support.
 
-###`(x,y)` offset
+### `(x,y)` offset
 Fixing the code with the above and refreshing `index.html` will now reveal a working drawing pane. Before I wrap up part two of this tutorial series you may be wondering why we have created a drawing area that is smaller than the HTML `<canavas>` that we are drawing it on to. In later parts we will be filling the additional space with other GUI elements notably a preview and a palette, each element will be positioned relative to the top left of the HTML `<canvas>`
 
 ```javascript
