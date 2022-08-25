@@ -99,7 +99,7 @@ In the BASIC version of the game satisfaction is mutated depending upon how much
 
 I intend to have a similarly simple solution, however food will be a resource that can be stockpiled and therefore my satisfaction modifiers will be based upon people per mines and how much food is in reserve. For simplicity, I will be considering units of food as being meals and each person requiring three meals a day in order to feel satisfied.
 
-To provide gradient of modifier values I will be using linear interpolation to set a value between -0.5 and +1.5 depending upon how many days reserve of meals the colony has on hand:
+To provide gradient of modifier values I will be using linear interpolation to set a value between -1.5 and +1.5 depending upon how many days reserve of meals the colony has on hand:
 
 ```php
 <?php
