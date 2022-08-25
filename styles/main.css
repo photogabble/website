@@ -38,6 +38,7 @@ pre {
     color: var(--foreground);
     border-radius: 0.5em;
     overflow: scroll;
+    padding: 1em;
 }
 
 hr{
