@@ -221,7 +221,7 @@ Satisfaction will be modified every day at midnight so players have plenty of ti
 For the purpose of the MVP version satisfaction will go from -20 to +20 staring at zero being neutral. This gives a large range of values for interesting game mechanics to work on at a future date.
 
 ### Mine Construction
-For the MVP version I will be allowing players to purchase/sell mines instantly, in future additions purchasing mines will have a lead time before they are operational and mines will have the ability to be switched off or sold rather than having to be sold to reduce workload on a dwindling population.
+For the MVP version I will be allowing players to purchase/sell mines instantly, in future additions purchasing mines will have a lead time before they are operational and mines will have the ability to be sold or switched off to reduce workload on a dwindling population.
 
 In the BASIC version of Space Mines the buy/sell price of a mine is calculated at each turn as being between 2,000 and 4,000. For the purpose of the MVP I am going to set the buy price to 4,000 and the sell value to 2,000. Eventually with a global marketplace set up the buy values will be determined by supply and demand, with mines being destroyed at a cost rather than sold.
 
@@ -316,7 +316,7 @@ for ($i = -20; $i <= 20; $i++) {
 This will work for the MVP launch of this game, but it isn't very balanced and should probably take into consideration the available food stocks (e.g. fewer people will want to join if there isn't reliable food source.)
 
 ### End Game Conditions
-Ideally this kind of simulation can be played for as long as the player likes, however for the purpose of the MVP a score will be calculated one the player has been playing for 30 turns (days).
+Ideally this kind of simulation can be played for as long as the player likes, however for the purpose of the MVP a score will be calculated once the player has been playing for 30 turns (days).
 
 The game as a whole will have a public score board showing players who achieved the highest amount of ore mined in 30 days, money made and points scored as calculated by:
 
@@ -342,7 +342,7 @@ In the BASIC version of Space Mines there are a handful of conditions that resul
 - Having less than 10 people per mine ends the game with "you overworked everyone"
 - A satisfaction below 0.6 ends the game with "the people revolted"
 
-The BASiC version isn't very well-balanced and these game over conditions can reduce the fun element of the simulation because they occur too often and at random completely removing any strategy element from the game.
+The BASIC version isn't very well-balanced and these game over conditions can reduce the fun element of the simulation because they occur too often and at random completely removing any strategy element from the game.
 
 I will be implementing conditions similar to those in the BASIC version but not to result in game over, instead there will be warnings that people are overworked and productivity is affected, people will revolt with lower satisfaction ratings (-10 and below) but this will result in zero production for a turn rather than the game being over.
 
