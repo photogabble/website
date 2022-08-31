@@ -210,12 +210,12 @@ module.exports = [
         tags: ['Garden', 'Minimalist'],
         reason: 'This website was one of a few digital gardens that inspired me to rebuild PhotoGabble as one.',
     },
-    // {
-    //     title: "",
-    //     href: '',
-    //     tags: [],
-    //     reason: null,
-    // },
+    {
+        title: "Artemis Everfree's Blog",
+        href: 'https://artemis.sh/',
+        tags: ['Blog', 'Minimalist'],
+        reason: "Read about the time they 10x'd a TI-84 emulator's speed by replacing a switch-case, stayed for more awesome writing.",
+    },
     // {
     //     title: "",
     //     href: '',
