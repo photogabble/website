@@ -189,15 +189,15 @@ module.exports = [
     {
         title: "Jake Seliger's Blog",
         href: 'https://jakeseliger.com/',
-        tags: ['Blog'],
+        tags: ['Blog', 'Author'],
         reason: "I got the idea for my Week in Review from Jake's daily lists of links",
     },
-    // {
-    //     title: "",
-    //     href: '',
-    //     tags: [],
-    //     reason: null,
-    // },
+    {
+        title: "Jimmy Hartzell's Website",
+        href: 'https://www.thecodedmessage.com/',
+        tags: ['Blog', 'Rust', 'Programmer', 'Minimalist'],
+        reason: null,
+    },
     // {
     //     title: "",
     //     href: '',
