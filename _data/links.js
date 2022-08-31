@@ -186,12 +186,12 @@ module.exports = [
         tags: ['Minimalist', 'Garden'],
         reason: null,
     },
-    // {
-    //     title: "",
-    //     href: '',
-    //     tags: [],
-    //     reason: null,
-    // },
+    {
+        title: "Jake Seliger's Blog",
+        href: 'https://jakeseliger.com/',
+        tags: ['Blog'],
+        reason: "I got the idea for my Week in Review from Jake's daily lists of links",
+    },
     // {
     //     title: "",
     //     href: '',
