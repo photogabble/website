@@ -228,12 +228,12 @@ module.exports = [
         tags: ['Minimalist', 'Programmer', 'Tutorials'],
         reason: 'Inigo co-created Shadertoy, they have some very interesting articles on subjects relating to writing 2D/3D shaders',
     },
-    // {
-    //     title: "",
-    //     href: '',
-    //     tags: [],
-    //     reason: null,
-    // },
+    {
+        title: "Connor Rigby's Blog",
+        href: 'https://cone.codes/',
+        tags: ['Embedded', 'Programmer', 'Minimalist', 'Blog'],
+        reason: null,
+    },
     // {
     //     title: "",
     //     href: '',
