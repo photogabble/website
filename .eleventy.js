@@ -39,7 +39,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     './assets': './assets',
     './files': './files',
-    './img': './img'
+    './img': './img',
+    '_redirects': '_redirects'
   });
 
   for (const shortCode in shortcodes) {
