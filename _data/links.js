@@ -204,12 +204,12 @@ module.exports = [
         tags: ['Programmer', 'Data Science', 'Minimalist'],
         reason: "I was originally linked to Yuri's article on Seasonal Spirals which gave me an idea of using the chart for some of my own datasets.",
     },
-    // {
-    //     title: "",
-    //     href: '',
-    //     tags: [],
-    //     reason: null,
-    // },
+    {
+        title: "Tom Critchlow's Digital Garden",
+        href: 'https://tomcritchlow.com/',
+        tags: ['Garden', 'Minimalist'],
+        reason: 'This website was one of a few digital gardens that inspired me to rebuild PhotoGabble as one.',
+    },
     // {
     //     title: "",
     //     href: '',
