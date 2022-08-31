@@ -216,12 +216,12 @@ module.exports = [
         tags: ['Blog', 'Minimalist'],
         reason: "Read about the time they 10x'd a TI-84 emulator's speed by replacing a switch-case, stayed for more awesome writing.",
     },
-    // {
-    //     title: "",
-    //     href: '',
-    //     tags: [],
-    //     reason: null,
-    // },
+    {
+        title: "Simon Hørup Eskildsen's Blog",
+        href: 'https://sirupsen.com/',
+        tags: ['Blog', 'Minimalist'],
+        reason: "I really like the simple yet functional design of Simon's blog. The icons for content categories inspired my design for PhotoGabble.",
+    },
     // {
     //     title: "",
     //     href: '',
