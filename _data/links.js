@@ -170,7 +170,7 @@ module.exports = [
     },
     {
         title: "Simon Freund’s Website",
-        href: 'https://simonfreund.com/',
+        href: 'https://www.simonfreund.xyz/',
         tags: ['Artist'],
         reason: null
     },
