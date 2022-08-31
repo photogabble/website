@@ -1,7 +1,7 @@
 ---
-title: PHP Space Mines Introduction
+title: "PHP Space Mines: Introduction"
 tags:
-  - GameDev
+  - Space Mines
   - Programming
   - BASIC
   - PHP
