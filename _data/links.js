@@ -222,12 +222,12 @@ module.exports = [
         tags: ['Blog', 'Minimalist'],
         reason: "I really like the simple yet functional design of Simon's blog. The icons for content categories inspired my design for PhotoGabble.",
     },
-    // {
-    //     title: "",
-    //     href: '',
-    //     tags: [],
-    //     reason: null,
-    // },
+    {
+        title: "Inigo Quilez's Website",
+        href: 'https://iquilezles.org/',
+        tags: ['Minimalist', 'Programmer', 'Tutorials'],
+        reason: 'Inigo co-created Shadertoy, they have some very interesting articles on subjects relating to writing 2D/3D shaders',
+    },
     // {
     //     title: "",
     //     href: '',
