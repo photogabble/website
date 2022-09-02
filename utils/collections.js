@@ -79,6 +79,10 @@ const contentTypes = (collection) => Object.values(post(collection).reverse().re
     name: 'Projects',
     slug: 'projects',
     items: []
+  }, mirror: {
+    name: 'Mirrored Code Snippets',
+    slug: 'mirrored',
+    items: []
   }
 }));
 
