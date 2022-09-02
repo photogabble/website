@@ -83,6 +83,10 @@ const contentTypes = (collection) => Object.values(post(collection).reverse().re
     name: 'Mirrored Code Snippets',
     slug: 'mirrored',
     items: []
+  }, colophon: {
+    name: 'Colophon',
+    slug: 'colophon/update',
+    items: []
   }
 }));
 
