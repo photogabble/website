@@ -15,14 +15,9 @@ permalink: /{{ topic.slug }}/index.html
   <h1>{{ topic.title }}</h1>
 
   <section>
-    <ul class="post-list">
-      {% for post in topic.items %}
-        <li>
-          <small>{{ post.data.contentType }}</small>
-          <a href="{{ post.url }}" title="Read {{ post.data.title }}">{{ post.data.title }}</a> &mdash; {{ post.date | dateToFormat("DDD") }}
-        </li>
-      {% endfor %}
-    </ul>
+    {% set postsList = topic.items %}
+    {% set displayContentType = true %}
+    {% include "_includes/components/post-list.njk" %}
   </section>
 
   {% if topic.totalPages > 1 %}

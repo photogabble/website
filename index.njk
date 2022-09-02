@@ -15,12 +15,8 @@
 
   <section>
     <h2>Recent Writing</h2>
-    <ul class="post-list">
-      {% for post in articlesList | excludeTypes(['thought', 'project']) | reverse | limit(6) %}
-        <li><a href="{{ post.url }}">{{ post.data.title }}</a> &mdash; {{ post.date | dateToFormat("DDD") }}</li>
-      {% endfor %}
-    </ul>
-    <hr/>
+    {% set postsList = articlesList | excludeTypes(['thought', 'project', 'mirror']) | reverse | limit(6) %}
+    {% include "_includes/components/post-list.njk" %}
     <p>
       Subscribe to the <a href="/blog/feed.xml">RSS Feed</a> or view the entire <a href="/blog">archive</a> for more.
     </p>
@@ -31,11 +27,8 @@
   {% if thoughts.length > 0 %}
     <section>
       <h2>Recent Thoughts</h2>
-      <ul class="post-list">
-        {% for thought in thoughts | reverse | limit(3) %}
-          <li><a href="{{ thought.url }}">{{ thought.data.title }}</a> &mdash; {{ thought.date | dateToFormat("DDD") }}</li>
-        {% endfor %}
-      </ul>
+      {% set postsList = thoughts | reverse | limit(3) %}
+      {% include "_includes/components/post-list.njk" %}
       <p>
         View <a href="/thoughts/">more thoughts...</a>
       </p>
