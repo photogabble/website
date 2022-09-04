@@ -234,6 +234,12 @@ module.exports = [
         tags: ['Embedded', 'Programmer', 'Minimalist', 'Blog'],
         reason: null,
     },
+    {
+        title: "Luke Mitchell's Website",
+        href: 'https://www.interroban.gg/',
+        tags: ['Minimalist', 'Designer', '11ty', 'Blog'],
+        reason: 'A beautiful example of minimalist design, something I endeavour to realise with my own website.',
+    },
     // {
     //     title: "",
     //     href: '',
