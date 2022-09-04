@@ -19,4 +19,4 @@ You will need to install the required packages using `npm install`. There are th
 If you notice something wrong or broken, please let me know by opening an issue, or better yet, a pull request with how you think it should be fixed.
 
 ## License
-Released under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. See [LICENSE](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+Unless otherwise stated the source code is released under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. See [LICENSE](https://creativecommons.org/licenses/by-nc-sa/4.0/). There are certain exemptions to this, explicitly to code snippets I have mirrored, which each contain their license terms where available.
