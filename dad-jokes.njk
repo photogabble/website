@@ -1,0 +1,13 @@
+{% extends "_includes/layouts/page.njk" %}
+
+{% set title = 'Dad Jokes' %}
+
+{% block content %}
+    <h1>Dad Jokes</h1>
+
+    {% for joke in dadjokes | reverse %}
+        <blockquote>
+            <p>{{ joke }}</p>
+        </blockquote>
+    {% endfor %}
+{% endblock %}

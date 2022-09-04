@@ -1,0 +1,16 @@
+{% extends "_includes/layouts/page.njk" %}
+
+{% set title = 'Quotes' %}
+
+{% block content %}
+    <h1>Quotes</h1>
+    <p>List of quotes collected from various sources, mostly used for my weeks in review.</p>
+
+    {% for quote in quotes | reverse %}
+        <blockquote>
+            <p><em>“{{ quote.blockquote }}”</em><br>
+                — {{ quote.cite }}
+            </p>
+        </blockquote>
+    {% endfor %}
+{% endblock %}
