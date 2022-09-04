@@ -3,6 +3,9 @@
 @import "../node_modules/prismjs/themes/prism-tomorrow.min.css";
 @import "../node_modules/prismjs/plugins/treeview/prism-treeview.css";
 
+/* Components */
+@import "./components/post-list.css";
+
 * {
     box-sizing: border-box;
 }
@@ -110,33 +113,6 @@ header > *:first-child{
 
 header a{
     text-decoration: none;
-}
-
-ol.post-list {
-    list-style: none;
-    padding:0;
-}
-
-ol.post-list li{
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
-    margin-bottom: 1em;
-    align-items: center;
-}
-
-ol.post-list hr{
-    flex-grow: 1;
-    margin:0;
-}
-
-ol.post-list .content-type{
-    background: var(--foreground);
-    color: var(--background);
-    padding: 0 6px;
-    display: inline-block;
-    font-size: 70%;
-    opacity: 0.8;
 }
 
 article p {

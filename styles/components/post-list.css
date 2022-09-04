@@ -1,0 +1,36 @@
+ol.post-list {
+    list-style: none;
+    padding:0;
+}
+
+ol.post-list li{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+ol.post-list hr{
+    display: none;
+}
+
+ol.post-list .content-type{
+    background: var(--foreground);
+    color: var(--background);
+    padding: 0 6px;
+    display: inline-block;
+    font-size: 70%;
+    opacity: 0.8;
+}
+
+@media (min-width: 864px) {
+    ol.post-list hr{
+        flex-grow: 1;
+        margin:0;
+        display: block;
+    }
+    ol.post-list li{
+        flex-direction: row;
+        gap: 1em;
+        align-items: center;
+    }
+}
