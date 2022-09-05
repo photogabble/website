@@ -1,27 +1,66 @@
-# Redirects due to url changes
+# Feed
+/atom.xml /blog/feed.xml
+
+# Category Blogging
 /blog/blogging/defending-wordpress-against-malicious-login-attempts-using-fail2ban/ /tutorials/defending-wordpress-against-malicious-login-attempts-using-fail2ban/
-/blog/games/jzt-an-awesome-homage-to-the-dos-era-adventure-game-zzt/ /noteworthy/jzt-an-awesome-homage-to-the-dos-era-adventure-game-zzt/
-/blog/2017/05/02/happy-fiftyth-birthday-basic /essays/happy-53rd-birthday-basic/
-/blog/programming/happy-53rd-birthday-basic/ /essays/happy-53rd-birthday-basic/
-/blog/programming/the-qb64-programming-language/ /noteworthy/the-qb64-programming-language/
+
+# Category Games
 /blog/games/a-review-of-the-godville-game/ /noteworthy/a-review-of-the-godville-game/
 /blog/games/kareltima-iii-the-self-beating-machine/ /noteworthy/kareltima-iii-the-self-beating-machine/
+/blog/games/mission-mainframe/ /noteworthy/mission-mainframe/
+/blog/games/a-review-of-rimworld-a16-after-100-hours-in-game/ /noteworthy/a-review-of-rimworld-a16-after-100-hours-in-game/
+/blog/games/jzt-an-awesome-homage-to-the-dos-era-adventure-game-zzt/ /noteworthy/jzt-an-awesome-homage-to-the-dos-era-adventure-game-zzt/
+
+# Category Programming
+/blog/categories/programming/ /topic/programming/
+/blog/categories/programming/2/ /topic/programming/
+/blog/programming/happy-53rd-birthday-basic/ /essays/happy-53rd-birthday-basic/
+/blog/programming/the-qb64-programming-language/ /noteworthy/the-qb64-programming-language/
+/blog/programming/a-time_since-function-for-php/ /noteworthy/a-time_since-function-for-php/
+/blog/programming/porting-basic-space-mines-game-to-go/ /noteworthy/porting-basic-space-mines-game-to-go/
+
+# Category Tools & Resources
+/blog/categories/tools-and-resources /topic/tools-and-resources/
+/blog/tools-and-resources/how-to-set-composer-global-bin-path-in-windows/ /tutorials/adding-emoji-support-to-your-website-or-project/
+/blog/tools-and-resources/think-with-google-revisiting-googles-website-speed-testing-tool/ /noteworthy/think-with-google-revisiting-googles-website-speed-testing-tool/
+/blog/tools-and-resources/thoughts-on-goaccess/ /noteworthy/thoughts-on-goaccess/
+/blog/tools-and-resources/graphing-ping-response-times-in-windows-with-gping/ /noteworthy/graphing-ping-response-times-in-windows-with-gping/
+
+# Category Blogging
+/blog/categories/blogging/ /topic/blogging/
+/blog/blogging/a-revival-of-sorts/ /essays/keep-blogging-fun/
+/blog/blogging/useful-free-stock-photography-libraries/ /noteworthy/useful-free-stock-photography-libraries/
+
+# Category Pixelart
+/blog/pixelart/pixel-mainframe/ /noteworthy/pixel-mainframe/
+
+# Category Tutorial
 /blog/tutorials/writing-a-pixel-editor-in-javascript-part-one/ /tutorials/writing-a-pixel-editor-in-javascript-part-one/
 /blog/tutorials/writing-a-pixel-editor-in-javascript-part-two/ /tutorials/writing-a-pixel-editor-in-javascript-part-two/
 /blog/tutorials/writing-a-pixel-editor-in-javascript-part-three/ /tutorials/writing-a-pixel-editor-in-javascript-part-three/
-/blog/2015/05/08/writing-a-pixel-editor-in-javascript-p4/ /tutorials/writing-a-pixel-editor-in-javascript-part-four/
 /blog/tutorials/writing-a-pixel-editor-in-javascript-part-four/ /tutorials/writing-a-pixel-editor-in-javascript-part-four/
 /blog/tutorials/writing-a-pixel-editor-in-javascript-part-five/ /tutorials/writing-a-pixel-editor-in-javascript-part-five/
 /blog/tutorials/writing-a-pixel-editor-in-javascript-part-six/ /tutorials/writing-a-pixel-editor-in-javascript-part-six/
-/blog/games/mission-mainframe/ /noteworthy/mission-mainframe/
-/blog/games/a-review-of-rimworld-a16-after-100-hours-in-game/ /noteworthy/a-review-of-rimworld-a16-after-100-hours-in-game/
-/blog/tools-and-resources/how-to-set-composer-global-bin-path-in-windows/ /tutorials/adding-emoji-support-to-your-website-or-project/
-/blog/tools-and-resources/think-with-google-revisiting-googles-website-speed-testing-tool/ /noteworthy/think-with-google-revisiting-googles-website-speed-testing-tool/
+/blog/tutorials/writing-a-pixel-editor-in-javascript-p1/ /tutorials/writing-a-pixel-editor-in-javascript-part-one/
+/blog/tutorials/writing-a-pixel-editor-in-javascript-p2/ /tutorials/writing-a-pixel-editor-in-javascript-part-two/
+/blog/tutorials/writing-a-pixel-editor-in-javascript-p3/ /tutorials/writing-a-pixel-editor-in-javascript-part-three/
+/blog/tutorials/writing-a-pixel-editor-in-javascript-p4/ /tutorials/writing-a-pixel-editor-in-javascript-part-four/
+/blog/tutorials/writing-a-pixel-editor-in-javascript-p5 /tutorials/writing-a-pixel-editor-in-javascript-part-five/
+/blog/tutorials/writing-a-pixel-editor-in-javascript-p6/ /tutorials/writing-a-pixel-editor-in-javascript-part-six/
+
+# By Date
 /blog/2014/12/31/keep-blogging-fun/ /essays/keep-blogging-fun/
 /blog/2015/06/23/a-revival-of-photogabble /thoughts/a-revival-of-photogabble-the-post-mortem/
-/blog/blogging/a-revival-of-sorts/ /essays/keep-blogging-fun/
-/blog/blogging/useful-free-stock-photography-libraries/ /noteworthy/useful-free-stock-photography-libraries/
+/blog/2015/05/18/nested-queries-in-laravels-query-builder /noteworthy/nested-queries-in-laravels-query-builder/
 /blog/2016/01/10/freezetime-browser-game-by-patrick/ /noteworthy/freezetime-browser-based-roguelike/
-/blog/programming/a-time_since-function-for-php/ /noteworthy/a-time_since-function-for-php/
-/blog/programming/porting-basic-space-mines-game-to-go/ /noteworthy/porting-basic-space-mines-game-to-go/
-/blog/tools-and-resources/thoughts-on-goaccess/ /noteworthy/thoughts-on-goaccess/
+/blog/2016/01/13/how-to-installl-azure-cli-tools/ /tutorials/how-to-install-azure-cli-via-node-on-windows/linux-and-osx/
+/blog/2017/05/02/happy-fiftyth-birthday-basic /essays/happy-53rd-birthday-basic/
+/blog/2015/01/28/writing-a-pixel-editor-in-javascript-p2/ /tutorials/writing-a-pixel-editor-in-javascript-part-two/
+/blog/2015/02/04/writing-a-pixel-editor-in-javascript-p3/ /tutorials/writing-a-pixel-editor-in-javascript-part-three/
+/blog/2015/05/08/writing-a-pixel-editor-in-javascript-p4/ /tutorials/writing-a-pixel-editor-in-javascript-part-four/
+
+# Tagged
+/blog/tagged/revived/ /topic/revived/
+
+# Misc Pages
+/bookshelf/ /books/
