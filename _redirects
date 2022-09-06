@@ -35,6 +35,8 @@
 /blog/pixelart/pixel-mainframe/ /noteworthy/pixel-mainframe/
 
 # Category Tutorial
+/blog/tutorials/weighted-random-number-picking/ /tutorials/how-to-return-a-random-list-item-by-weight/
+
 /blog/tutorials/writing-a-pixel-editor-in-javascript-part-one/ /tutorials/writing-a-pixel-editor-in-javascript-part-one/
 /blog/tutorials/writing-a-pixel-editor-in-javascript-part-two/ /tutorials/writing-a-pixel-editor-in-javascript-part-two/
 /blog/tutorials/writing-a-pixel-editor-in-javascript-part-three/ /tutorials/writing-a-pixel-editor-in-javascript-part-three/
