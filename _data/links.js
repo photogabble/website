@@ -246,6 +246,12 @@ module.exports = [
         tags: ['Minimalist', 'Programmer', 'Blog'],
         reason: null,
     },
+    {
+        title: "Aleksandr's Website",
+        href: 'https://www.aleksandrhovhannisyan.com/',
+        tags: ['Minimalist', '11ty', 'Programmer', 'Artist', 'Blog'],
+        reason: 'Aleksandr\'s "16 Shades of Gray" explainer for the grid of greyscale on the homepage drew me into their content.',
+    },
     // {
     //     title: "",
     //     href: '',
