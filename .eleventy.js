@@ -37,8 +37,8 @@ module.exports = function (eleventyConfig) {
 
   // Don't process folders with static assets e.g. images
   eleventyConfig.addPassthroughCopy({
-    './assets': './assets',
-    './files': './files',
+    './_assets/favicon': './',
+    './_assets/files': './files',
     './img': './img',
     '_redirects': '_redirects'
   });
