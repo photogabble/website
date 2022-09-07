@@ -5,6 +5,7 @@
 
 /* Components */
 @import "./components/post-list.css";
+@import "./components/button.css";
 
 * {
     box-sizing: border-box;
