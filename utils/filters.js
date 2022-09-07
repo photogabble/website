@@ -99,5 +99,10 @@ module.exports = {
 
     onlyFeatured: (collection) => collection.filter(item => {
         return item.data.featured && item.data.featured === true;
-    })
+    }),
+
+    debugger: (...args) => {
+        console.log(...args)
+        debugger;
+    },
 }
