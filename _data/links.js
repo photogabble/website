@@ -240,6 +240,12 @@ module.exports = [
         tags: ['Minimalist', 'Designer', '11ty', 'Blog'],
         reason: 'A beautiful example of minimalist design, something I endeavour to realise with my own website.',
     },
+    {
+        title: "Göktuğ's Homepage",
+        href: 'https://www.gkayaalp.com/',
+        tags: ['Minimalist', 'Programmer', 'Blog'],
+        reason: null,
+    },
     // {
     //     title: "",
     //     href: '',
