@@ -258,6 +258,12 @@ module.exports = [
         tags: ['Minimalist', 'Gamedev', 'Artist', 'Programmer', 'Blog'],
         reason: 'I really like the website design, minimalist with the right amount of detail.',
     },
+    {
+        title: "Jacky Alciné's Digital Garden",
+        href: 'https://jacky.wtf/',
+        tags: ['Garden', 'Programmer'],
+        reason: "I discovered Jacky's website via the Fediverse while researching Digital Gardens.",
+    },
     // {
     //     title: "",
     //     href: '',
