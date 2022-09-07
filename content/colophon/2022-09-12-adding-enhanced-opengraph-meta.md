@@ -9,7 +9,7 @@ September seems to be this website's month of catching up with old issues; I hav
 - [#85 Enhance social sharing meta](https://github.com/photogabble/website/issues/85)
 - [#119 Add OpenGraph data for image cards](https://github.com/photogabble/website/issues/119)
 
-I'll focus on the enhanced social sharing meta ([#85](https://github.com/photogabble/website/issues/85)) to begin with. Prior to the changes the opengraph meta was limited to the below: 
+I'll focus on the enhanced social sharing meta ([#85](https://github.com/photogabble/website/issues/85)) to begin with. Previously this websites [opengraph meta](https://ogp.me/) was limited to the below: 
 
 {% raw %}
 ```html
