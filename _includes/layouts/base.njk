@@ -10,19 +10,44 @@
 
     <!-- SEO -->
     <title>{{ title or metadata.title }}</title>
-    <meta name="description" content="{{description or metadata.description}}"/>
-    <link rel="canonical" href="{{ canonical or page.url }}" />
-    <meta name="robots" content="index, follow" />
+    <meta name="description" content="{{ description or metadata.description }}"/>
+    <link rel="canonical" href="{{ canonical or page.url }}"/>
+    <meta name="robots" content="index, follow"/>
     {% block head %}{% endblock %}
 
     <!-- Open Graph -->
-    <meta property="og:title" content="{{ title or metadata.title }}">
-    <meta property="og:type" content="{{ ogtype or 'website' }}">
-    <meta property="og:url" content="{{ metadata.url }}{{ page.url }}" />
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@carbontwelve">
-    <meta name="twitter:creator" content="@carbontwelve">
-    <meta name="twitter:title" content="{{ title or metadata.title }}">
+    <meta property="og:locale" content="en_GB"/>
+    <meta property="og:site_name" content="{{ metadata.title }}"/>
+    <meta property="og:title" content="{{ title or metadata.title }}"/>
+    <meta property="og:type" content="{{ ogtype or 'website' }}"/>
+    <meta property="og:url" content="{{ metadata.url }}{{ page.url }}"/>
+
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="@carbontwelve"/>
+    <meta name="twitter:creator" content="@carbontwelve"/>
+    <meta name="twitter:title" content="{{ title or metadata.title }}"/>
+
+    {% if ogtype === 'article' %}
+        <meta name="twitter:label1" content="Words"/>
+        <meta name="twitter:data1" content="{{ readingTime.words }}"/>
+
+        <meta name="twitter:label2" content="Est. reading time"/>
+        <meta name="twitter:data2" content="{{ readingTime.time }}"/>
+
+        <meta name="article:published_time" content="{{ page.date.toISOString() }}"/>
+{#        TODO: #}
+{#        <meta name="article:modified_time" content=""/>#}
+{#        <meta name="article:expiration_time" content=""/>#}
+
+        {% if contentType %}
+            <meta name="article:section" content="{{ contentType }}"/>
+        {% endif %}
+
+        {% for tag in tags %}
+            <meta name="article:tag" content="{{ tag }}"/>
+        {% endfor %}
+
+    {% endif %}
 
     <!-- Favicon Meta -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -37,54 +62,58 @@
     <link rel="stylesheet" href="/styles/main.css"/>
     <script data-goatcounter="https://photogabble.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <script>
-        function toggleThemePicker(){
-            const themePicker = document.querySelector('.theme-picker');
-            if (themePicker.classList.contains('is-open')) {
-                themePicker.classList.remove('is-open');
-            } else {
-                themePicker.classList.add('is-open');
-            }
+      function toggleThemePicker() {
+        const themePicker = document.querySelector('.theme-picker');
+        if (themePicker.classList.contains('is-open')) {
+          themePicker.classList.remove('is-open');
+        } else {
+          themePicker.classList.add('is-open');
         }
+      }
 
-        function setTheme(themeName) {
-            localStorage.setItem('theme', themeName);
-            document.documentElement.className = 'theme-'+themeName;
+      function setTheme(themeName) {
+        localStorage.setItem('theme', themeName);
+        document.documentElement.className = 'theme-' + themeName;
 
-            let current = document.querySelector('.theme-picker li.current');
-            if (!current) {return;}
-            current
-                .classList
-                .remove('current');
-
-            current = document.querySelector('.theme-picker li.' + 'theme-'+themeName);
-            if (!current){return;}
-            current
-                .classList
-                .add('current');
+        let current = document.querySelector('.theme-picker li.current');
+        if (!current) {
+          return;
         }
+        current
+          .classList
+          .remove('current');
 
-        // Set theme before page renders
-        (function () {
-            setTheme(localStorage.getItem('theme') || 'dark');
-        })();
+        current = document.querySelector('.theme-picker li.' + 'theme-' + themeName);
+        if (!current) {
+          return;
+        }
+        current
+          .classList
+          .add('current');
+      }
 
-        // When document ready add event listeners
-        document.addEventListener("DOMContentLoaded", function() {
-            const selectTheme = (e) => {
-                const btn = e.currentTarget;
-                if (!btn.dataset.theme) {
-                    return;
-                }
-                setTheme(btn.dataset.theme);
-            };
+      // Set theme before page renders
+      (function () {
+        setTheme(localStorage.getItem('theme') || 'dark');
+      })();
 
-            Array.from(document.getElementsByClassName('theme-selector-btn')).forEach((el) => {
-                console.log(el);
-                el.addEventListener('click', selectTheme)
-            });
+      // When document ready add event listeners
+      document.addEventListener("DOMContentLoaded", function () {
+        const selectTheme = (e) => {
+          const btn = e.currentTarget;
+          if (!btn.dataset.theme) {
+            return;
+          }
+          setTheme(btn.dataset.theme);
+        };
 
-            setTheme(localStorage.getItem('theme') || 'dark');
+        Array.from(document.getElementsByClassName('theme-selector-btn')).forEach((el) => {
+          console.log(el);
+          el.addEventListener('click', selectTheme)
         });
+
+        setTheme(localStorage.getItem('theme') || 'dark');
+      });
     </script>
 </head>
 <body class="{% block body_class %}{% endblock %}">
@@ -93,26 +122,26 @@
     <h1>Theme Picker</h1>
     <ul>
         {%- for theme in themes -%}
-        <li class="theme-{{ theme.id}} current">
-            <button class="theme-selector-btn" data-theme="{{ theme.id }}">
-                <span>{{ theme.title }}</span>
-                <span class="swatches">
-                    <span class="background"></span>
-                    <span class="background-muted"></span>
-                    <span class="foreground"></span>
-                    <span class="foreground-muted"></span>
-                    <span class="accent"></span>
-                </span>
-            </button>
-        </li>
+            <li class="theme-{{ theme.id }} current">
+                <button class="theme-selector-btn" data-theme="{{ theme.id }}">
+                    <span>{{ theme.title }}</span>
+                    <span class="swatches">
+                        <span class="background"></span>
+                        <span class="background-muted"></span>
+                        <span class="foreground"></span>
+                        <span class="foreground-muted"></span>
+                        <span class="accent"></span>
+                    </span>
+                </button>
+            </li>
         {% endfor %}
     </ul>
 </aside>
 
 <main>
     <header>
-        {%  block header %}
-            {{  header | safe }}
+        {% block header %}
+            {{ header | safe }}
         {% endblock %}
 
         <button onclick="toggleThemePicker()">Theme Picker</button>
