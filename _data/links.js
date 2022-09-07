@@ -252,6 +252,12 @@ module.exports = [
         tags: ['Minimalist', '11ty', 'Programmer', 'Artist', 'Blog'],
         reason: 'Aleksandr\'s "16 Shades of Gray" explainer for the grid of greyscale on the homepage drew me into their content.',
     },
+    {
+        title: "AksDev's Blog",
+        href: 'https://www.akselmo.dev/',
+        tags: ['Minimalist', 'Gamedev', 'Artist', 'Programmer', 'Blog'],
+        reason: 'I really like the website design, minimalist with the right amount of detail.',
+    },
     // {
     //     title: "",
     //     href: '',
