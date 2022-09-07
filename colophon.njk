@@ -1,7 +1,7 @@
 {% extends "_includes/layouts/page.njk" %}
 
 {% set title = 'Colophon' %}
-{% set postsList = collections.post | onlyTypes(['colophon']) %}
+{% set postsList = collections.post | onlyTypes(['colophon']) | reverse %}
 
 {% block content %}
     <article>
