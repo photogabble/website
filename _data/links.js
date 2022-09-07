@@ -264,12 +264,12 @@ module.exports = [
         tags: ['Garden', 'Programmer'],
         reason: "I discovered Jacky's website via the Fediverse while researching Digital Gardens.",
     },
-    // {
-    //     title: "",
-    //     href: '',
-    //     tags: [],
-    //     reason: null,
-    // },
+    {
+        title: "Wells Riley's Website",
+        href: 'https://wells.ee/',
+        tags: ['Programmer', 'Blog'],
+        reason: null,
+    },
     // {
     //     title: "",
     //     href: '',
