@@ -16,7 +16,15 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setUseGitIgnore(false);
 
-  eleventyConfig.addPlugin(wordStats);
+  eleventyConfig.addPlugin(wordStats, {
+    output: (stats) => {
+      return {
+        words: stats.words,
+        time: stats.text,
+        text: `${stats.words} words, ${stats.text}`
+      };
+    }
+  });
   eleventyConfig.addPlugin(pluginRss);
 
   /**
