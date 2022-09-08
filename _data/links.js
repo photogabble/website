@@ -270,6 +270,13 @@ module.exports = [
         tags: ['Programmer', 'Blog'],
         reason: null,
     },
+    {
+        title: "Michael Harley's Blog",
+        href: 'https://obsolete29.com/',
+        tags: ['Programmer', 'Blog', '11ty'],
+        reason: null,
+    },
+
     // {
     //     title: "",
     //     href: '',
