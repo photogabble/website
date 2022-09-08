@@ -12,8 +12,7 @@
 /blog/games/jzt-an-awesome-homage-to-the-dos-era-adventure-game-zzt/ /noteworthy/jzt-an-awesome-homage-to-the-dos-era-adventure-game-zzt/
 
 # Category Programming
-/blog/categories/programming/ /topic/programming/
-/blog/categories/programming/2/ /topic/programming/
+/blog/categories/programming/* /topic/programming/
 /blog/programming/happy-53rd-birthday-basic/ /essays/happy-53rd-birthday-basic/
 /blog/programming/the-qb64-programming-language/ /noteworthy/the-qb64-programming-language/
 /blog/programming/a-time_since-function-for-php/ /noteworthy/a-time_since-function-for-php/
