@@ -62,3 +62,25 @@ Therefore, for what feels like the fourth time in the history of rebuilding this
 ```
 {% endraw %}
 
+## Dynamic Opengraph images
+
+Closing [#119](https://github.com/photogabble/website/issues/119) took a lot more work than I expected. First I needed to understand how to create dynamic social media share images; there are a lot of tutorials available but, ultimately I took pieces from the following three:
+
+- [Michael Harley's tutorial on automating social sharing images with Eleventy and Puppeteer](https://obsolete29.com/posts/2021/01/09/automated-social-sharing-images-with-eleventy-and-puppeteer/)
+- [Joy of Code: Dynamic Social Share Images](https://joyofcode.xyz/dynamic-social-share-images)
+- [Stephanie Eckles tutorial on automated Social Sharing Images with Puppeteer, 11ty, and Netlify](https://dev.to/5t3ph/automated-social-sharing-images-with-puppeteer-11ty-and-netlify-22ln)
+
+I knew I wanted to have a command that I could run separate from 11ty to generate social share images and to use HTML templating. Both Stephanie and Michael's solutions use [Puppeteer](https://pptr.dev/) to control a headless installation of chrome in order to capture screenshots of html templates. This made most sense to me, and so I followed a combination of their instructions.
+
+I have written up a detailed guide on my solution (see [[Using Puppeteer with 11ty to automate generating social share images]]) but suffice to say it required modifying aforementioned `<head>` code with the below:
+
+{% raw %}
+```html
+{% if ogImageHref %}
+<meta property="og:image" content="{{ ogImageHref }}">
+<meta name="twitter:card" content="summary_large_image"/>
+{% else %}
+<meta name="twitter:card" content="summary"/>
+{% endif %}
+```
+{% endraw %}
