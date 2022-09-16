@@ -232,6 +232,7 @@ module.exports = {
 
 This filter is used in my main template to conditionally add the og-image meta tag if an image is available:
 
+{% raw %}
 ```html
 {% if ogImageHref %}
 <meta property="og:image" content="{{ ogImageHref }}">
@@ -240,6 +241,7 @@ This filter is used in my main template to conditionally add the og-image meta t
 <meta name="twitter:card" content="summary"/>
 {% endif %}
 ```
+{% endraw %}
 
 Finally, because the images are output to the `_assets/og-image` folder, I need to tell 11ty to copy that to `img/og-image` when publishing:
 
