@@ -6,7 +6,7 @@ const makeImage = async (src, dist) => {
   const html = fs.readFileSync(src, 'utf8');
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  page.setContent(html);
+  await page.setContent(html);
   await page.setViewport({
     width: 1280,
     height: 640,
@@ -19,25 +19,36 @@ const makeImage = async (src, dist) => {
   await browser.close();
 };
 
+const fileReadable = (path) => {
+  if (fs.existsSync(path)) return true;
+  console.warn(`Unable to open: ${path}`);
+  return false;
+}
+
 (async () => {
   try {
-    const posts = require("./_posts.json");
+    let posts = require("./_posts.json");
     const promises = [];
 
-    process.setMaxListeners(posts.length + 10);
+    posts = posts.map((post) => {
+      return {
+        ...post,
+        src: path.join(process.cwd(), post.template),
+        dist: path.join(process.cwd(), `_assets/og-image/${post.slug}.jpg`),
+      };
+    }).filter((post) => !(fileReadable(post.dist) === true || fileReadable(post.src) === false))
 
-    posts.forEach((post) => {
-      const src = path.join(process.cwd(), post.template);
-      const dist = path.join(process.cwd(), `_assets/og-image/${post.slug}.jpg`);
+    if (posts.length > 0) {
+      process.setMaxListeners(posts.length + 10);
 
-      if (!fs.existsSync(dist)) {
+      posts.forEach((post) => {
         console.log(`Processing ${post.template}`);
-        promises.push(makeImage(src, dist));
-      }
-    });
+        promises.push(makeImage(post.src, post.dist));
+      });
 
-    await Promise.all(promises);
-    console.log('Complete');
+      await Promise.all(promises);
+    }
+    console.log(`Completed processing ${posts.length} items`);
   } catch (e) {
     console.warn(e.message);
     process.exit(1);

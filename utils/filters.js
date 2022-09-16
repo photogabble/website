@@ -1,6 +1,8 @@
-const { DateTime } = require('luxon')
 const { toTitleCase, strToSlug } = require('./helpers');
-
+const { DateTime } = require('luxon');
+const metadata = require('../_data/metadata');
+const path = require('path');
+const fs = require('fs');
 /**
  * Filters
  * @link https://www.11ty.dev/docs/filters/
@@ -104,5 +106,14 @@ module.exports = {
     debugger: (...args) => {
         console.log(...args)
         debugger;
+    },
+
+    ogImageFromSlug: (slug) => {
+        const filename = `${slug}.jpg`;
+        const filepath = path.join(process.cwd(), `_assets/og-image/${filename}`);
+
+        return fs.existsSync(filepath)
+          ? `${metadata.url}/img/og-image/${filename}`
+          : null;
     },
 }
