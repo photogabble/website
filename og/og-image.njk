@@ -121,12 +121,10 @@ eleventyExcludeFromCollections: true
 </div>
 <script>
   (function () {
-    // const input = document.querySelector('input');
     const output = document.querySelector('.output');
     const outputContainer = document.querySelector('.post-text');
 
     function resize_to_fit() {
-      console.log('resize');
       let fontSize = window.getComputedStyle(output).fontSize;
       output.style.fontSize = (parseFloat(fontSize) - 1) + 'px';
 
@@ -134,7 +132,6 @@ eleventyExcludeFromCollections: true
         resize_to_fit();
       }
     }
-
     resize_to_fit();
   })();
 </script>
