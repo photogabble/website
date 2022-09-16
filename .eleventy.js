@@ -16,7 +16,15 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setUseGitIgnore(false);
 
-  eleventyConfig.addPlugin(wordStats);
+  eleventyConfig.addPlugin(wordStats, {
+    output: (stats) => {
+      return {
+        words: stats.words,
+        time: stats.text,
+        text: `${stats.words} words, ${stats.text}`
+      };
+    }
+  });
   eleventyConfig.addPlugin(pluginRss);
 
   /**
@@ -40,7 +48,8 @@ module.exports = function (eleventyConfig) {
     './_assets/favicon': './',
     './_assets/files': './files',
     './img': './img',
-    '_redirects': '_redirects'
+    '_redirects': '_redirects',
+    './_assets/og-image': './img/og-image',
   });
 
   for (const shortCode in shortcodes) {
