@@ -1,12 +1,17 @@
-module.exports = {
-    plugins: [
-        require('postcss-import'),
-        require('postcss-url')({
-            url: 'copy',
-            assetsPath: 'assets',
-            useHash: true
-        }),
-        require('autoprefixer'),
+let plugins = [
+    require('postcss-import'),
+    require('postcss-url')({
+        url: 'copy',
+        assetsPath: 'assets',
+        useHash: true
+    }),
+    require('autoprefixer'),
+];
+
+if (process.env.ELEVENTY_ENV === 'production') {
+    // These all take time to process and are best done in production only.
+    plugins = [
+      ...plugins,
         require('@fullhuman/postcss-purgecss')({
             content: [
                 './**/*.html',
@@ -15,9 +20,13 @@ module.exports = {
                 './**/*.md',
             ],
             safelist: [
-              /^theme-/
+                /^theme-/
             ]
         }),
         require('postcss-minify'),
-    ],
+    ];
+}
+
+module.exports = {
+    plugins
 };

@@ -1,11 +1,11 @@
-@import "./themes.css";
 @import "../node_modules/normalize.css/normalize.css";
 @import "../node_modules/prismjs/themes/prism-tomorrow.min.css";
 @import "../node_modules/prismjs/plugins/treeview/prism-treeview.css";
 
 /* Components */
-@import "./components/post-list.css";
-@import "./components/button.css";
+@import "components/_themes.css";
+@import "components/_post-list.css";
+@import "components/_button.css";
 
 * {
     box-sizing: border-box;

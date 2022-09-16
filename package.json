@@ -6,7 +6,8 @@
   "scripts": {
     "serve:dev": "rm -rf _site && cross-env ELEVENTY_ENV=development eleventy --serve",
     "serve:prod": "rm -rf _site && cross-env ELEVENTY_ENV=production eleventy --serve",
-    "build": "cross-env ELEVENTY_ENV=production eleventy"
+    "build": "cross-env ELEVENTY_ENV=production eleventy",
+    "og-images": "node functions/create-og-images.js"
   },
   "keywords": [
     "PhotoGabble",
@@ -37,6 +38,7 @@
     "postcss": "^8.4.16",
     "postcss-import": "^15.0.0",
     "postcss-minify": "^1.1.0",
-    "postcss-url": "^10.1.3"
+    "postcss-url": "^10.1.3",
+    "puppeteer": "^17.1.3"
   }
 }

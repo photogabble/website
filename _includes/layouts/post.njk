@@ -1,6 +1,7 @@
 {% extends "./page.njk" %}
 
 {% set ogtype = 'article' %}
+{% set readingTime = content | wordStats %}
 
 {% block content %}
     <article>
@@ -18,7 +19,7 @@
                 <a class="pill" href="/topic/{{ tag.slug }}">{{ tag.name }}</a>
             {% endfor %}
             <br/>
-            {{ content | wordStats }}.
+            {{ readingTime.text }}.
         </p>
         <section>
             {{ content | safe }}

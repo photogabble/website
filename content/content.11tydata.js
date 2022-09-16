@@ -1,4 +1,5 @@
-const {backlinks} = require('../utils/helpers')
+const {backlinks} = require('../utils/helpers');
+const {slugify, ogImageFromSlug} = require('../utils/filters');
 
 module.exports = {
   featured: false,
@@ -8,8 +9,7 @@ module.exports = {
   growthStage: 'seedling', // seedling, budding, evergreen
   contentType: 'thought', // thought, noteworthy, essay, tutorial, project
   eleventyComputed: {
-    backlinks: (data) => {
-      return backlinks(data)
-    }
+    backlinks: (data) => backlinks(data),
+    ogImageHref: (data) => ogImageFromSlug(slugify(data.title)),
   }
 };
