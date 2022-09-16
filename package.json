@@ -1,6 +1,6 @@
 {
   "name": "@photogabble/website",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Source code for photogabble.co.uk",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,6 @@
   "license": "CC BY-NC-SA 4.0",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
-    "@11ty/eleventy-cache-assets": "^2.3.0",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
     "@11ty/eleventy-upgrade-help": "^1.0.1",
@@ -28,6 +27,7 @@
     "autoprefixer": "^10.4.8",
     "cross-env": "^7.0.3",
     "eleventy-plugin-postcss": "^1.0.4",
+    "flat-cache": "^3.0.4",
     "html-minifier": "^4.0.0",
     "luxon": "^3.0.3",
     "markdown-it": "^13.0.1",

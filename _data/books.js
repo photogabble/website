@@ -1,17 +1,21 @@
+const flatCache = require("flat-cache");
 const fetch = require("node-fetch");
-const {AssetCache} = require("@11ty/eleventy-cache-assets");
 
 const username = 'carbontwelve';
 
 module.exports = async function() {
-  let asset = new AssetCache("bookwyrm-social-api");
+  let cache = flatCache.load('bookwyrm-social-api');
 
-  if(asset.isCacheValid("1d")) {
-    console.log(`Loading from cache bookwyrm feed for [${username}]`);
-    return asset.getCachedValue();
+  const cachedItem = cache.getKey('books');
+
+  if (cachedItem) {
+    const ttl = Math.floor(cachedItem.ttl - (Date.now() / 1000));
+
+    if (ttl > 0) {
+      console.log(`Found Cached bookwyrm feed for [${username}]…`);
+      return cachedItem.data;
+    }
   }
-
-  console.log(`Fetching bookwyrm feed for [${username}]…`);
 
   const numberOfPages = await fetch(`https://bookwyrm.social/user/${username}/outbox`)
     .then(res => res.json())
@@ -92,7 +96,12 @@ module.exports = async function() {
 
   // If we have items to cache, then cache them.
   if (items.length > 0) {
-    await asset.save(items, "json");
+    cache.setKey('books', {
+      ttl: Math.floor((Date.now() / 1000) + (30 * 60)),
+      data: items,
+    });
+    cache.save();
+    console.log('cache persisted');
   }
 
   return items;
