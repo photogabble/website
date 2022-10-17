@@ -37,6 +37,33 @@ module.exports = [
     cite: 'Rumi',
   },
 
+  {
+    blockquote: "Imperfection is beauty, madness is genius, and it's better to be absolutely ridiculous than absolutely boring.",
+    cite: 'Marilyn Monroe',
+  },
+
+  {
+    blockquote: "It is better to be hated for what you are than to be loved for what you are not.",
+    cite: 'Andre Gide',
+  },
+
+  {
+    blockquote: "Darkness cannot drive out darkness: only light can do that. Hate cannot drive out hate: only love can do that.",
+    cite: 'Martin Luther King Jr',
+  },
+
+  {
+    blockquote: "Wealth consists not in having great possessions, but in having few wants.",
+    cite: 'Epictetus',
+  },
+
+  {
+    blockquote: "We carry inside us the wonders we seek outside us.",
+    cite: 'Rumi',
+  },
+
+  //
+
   // {
   //   blockquote: "",
   //   cite: '',
