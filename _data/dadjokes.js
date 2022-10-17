@@ -8,4 +8,9 @@ module.exports = [
   'Why did the scarecrow win an award? Because he was the best in his field.',
   'Why didn’t Han Solo enjoy his steak dinner? It was Chewie.',
   'When I was a kid, my dad got fired from his job as a road worker for theft. I refused to believe he could do such a thing, but when I got home, the signs were all there.',
+  'What’s orange and sounds like a parrot? A Carrot.',
+  'I was wondering why this frisbee kept looking bigger and bigger. And then it hit me!',
+  'What do you call an alligator in a vest? An investigator.',
+  'I used to be addicted to the hokey pokey. Then I turned myself around.',
+  'What do you call a fake noodle? An impasta.',
 ];
