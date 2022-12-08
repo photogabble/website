@@ -284,6 +284,13 @@ module.exports = [
         reason: 'I love their National Grid dashboard',
     },
 
+    {
+        title: "Kazy's Website",
+        href: 'https://kazy.in/',
+        tags: ['Programmer'],
+        reason: 'I love their Windows 95 theme.',
+    },
+
     // {
     //     title: "",
     //     href: '',
