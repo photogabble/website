@@ -277,6 +277,13 @@ module.exports = [
         reason: null,
     },
 
+    {
+        title: "Kate Rose Morley's Website",
+        href: 'https://iamkate.com/',
+        tags: ['Programmer', 'Blog', 'Data Visualisation'],
+        reason: 'I love their National Grid dashboard',
+    },
+
     // {
     //     title: "",
     //     href: '',
