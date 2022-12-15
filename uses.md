@@ -11,9 +11,12 @@ A somewhat complete list of tools, applications, hardware and services that I us
 * Lenovo x230 ThinkPad
   * **Processor**: Intel i7-3520m @ 2.90Ghz
   * **Memory**: 16GB 1600Mhz DDR3
-* Apple 2017 MacBook Pro
-  * **Processor**: Intel Core i7 @ 2.8 GHz
-  * **Memory**: 16GB 2133MHz LPDDR3
+* Apple 16" 2019 MacBook Pro
+  * **Processor**: Intel Core i7 @ 2.6 GHz
+  * **Memory**: 16GB 2667MHz DDR4
+* ~~Apple 16" 2017 MacBook Pro~~
+  * ~~**Processor**: Intel Core i7 @ 2.8 GHz~~
+  * ~~**Memory**: 16GB 2133MHz LPDDR3~~
 * ~~iPhone SE (32GB)~~
 * iPhone 12 Mini (64GB)
 
