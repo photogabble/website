@@ -62,6 +62,11 @@ module.exports = [
     cite: 'Rumi',
   },
 
+  {
+    blockquote: "The beginning is the most important part of the work.",
+    cite: 'Plato',
+  },
+
   //
 
   // {
