@@ -67,6 +67,11 @@ module.exports = [
     cite: 'Plato',
   },
 
+  {
+    blockquote: "To me programming is more than an important practical art.",
+    cite: 'Grace Hopper',
+  },
+
   //
 
   // {
