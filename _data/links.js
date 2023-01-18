@@ -305,6 +305,13 @@ module.exports = [
         reason: null,
     },
 
+    {
+        title: "fef's blog",
+        href: 'https://fef.moe/',
+        tags: ['Programmer', 'minimalist'],
+        reason: 'Discovered via the Fediverse, really enjoyed reading their content.',
+    },
+
     // {
     //     title: "",
     //     href: '',
