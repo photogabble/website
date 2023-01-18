@@ -326,6 +326,13 @@ module.exports = [
         reason: null,
     },
 
+    {
+        title: "Solène Rapenne's Blog",
+        href: 'https://dataswamp.org/~solene/index.html',
+        tags: ['Programmer', 'Minimalist'],
+        reason: 'Found via orange sites linking to her post explaining modern server monitoring stacks for self-hosting.',
+    },
+
     // {
     //     title: "",
     //     href: '',
