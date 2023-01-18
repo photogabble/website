@@ -340,6 +340,13 @@ module.exports = [
         reason: 'Inspiration behind adding theme switching functionality to PhotoGabble',
     },
 
+    {
+        title: "Søren Birkemeyer's Blog",
+        href: 'https://annualbeta.com/',
+        tags: ['Programmer', 'Minimalist', 'Blog', 'Blogroll'],
+        reason: 'I very much want to implement their bookmarks page functionality on PhotoGabble',
+    },
+
     // {
     //     title: "",
     //     href: '',
