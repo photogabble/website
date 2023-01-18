@@ -1,0 +1,73 @@
+{% extends "_includes/layouts/page.njk" %}
+
+{% set title = 'Content Stats' %}
+{% set postStats = collections.post | collectionStats %}
+
+{% block content %}
+    <article>
+        <h1>Stats</h1>
+
+        <p>
+            This page is a shameless copy of <a href="https://timharek.no/stats/">Tim Hårek Andreassen's blog stats
+                page</a>.
+        </p>
+
+        <table>
+            <tbody>
+            <tr>
+                <th>Total Words written</th>
+                <td>{{ postStats.totalWords }}</td>
+            </tr>
+            <tr>
+                <th>Total Posts published</th>
+                <td>{{ postStats.totalItems }}</td>
+            </tr>
+            <tr>
+                <th>Average word count</th>
+                <td>~{{ postStats.avgWords }}</td>
+            </tr>
+            <tr>
+                <th>First post</th>
+                <td><a href="{{ postStats.firstItem.url }}"
+                       title="Read {{ postStats.firstItem.data.title }}">{{ postStats.firstItem.data.title }}</a></td>
+            </tr>
+            <tr>
+                <th>Longest Post</th>
+                <td><a href="{{ postStats.longestItem.item.url }}"
+                       title="Read {{ postStats.longestItem.item.data.title }}">{{ postStats.longestItem.item.data.title }}</a>
+                    with {{ postStats.longestItem.wordCount }} words
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <section>
+            <h2>Posts/words per year</h2>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>No. of posts</th>
+                    <th>Words</th>
+                    <th>Avg. words</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for year in postStats.byYear %}
+                    <tr>
+                        <td>{{ year.year }}</td>
+                        <td>{{ year.totalItems }}</td>
+                        <td>{{ year.totalWords }}</td>
+                        <td>{{ year.avgWords }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            {% include '_includes/components/hot-topics.njk' %}
+        </section>
+    </article>
+{% endblock %}
