@@ -299,17 +299,24 @@ module.exports = [
     },
 
     {
-        title: "Ctrl blog by Daniel Aleksandersen",
+        title: "Ctrl Blog by Daniel Aleksandersen",
         href: 'https://www.ctrl.blog/',
         tags: ['Programmer', 'Blog'],
         reason: null,
     },
 
     {
-        title: "fef's blog",
+        title: "fef's Blog",
         href: 'https://fef.moe/',
         tags: ['Programmer', 'minimalist'],
         reason: 'Discovered via the Fediverse, really enjoyed reading their content.',
+    },
+
+    {
+        title: "Dan Kegel's Web Hostel",
+        href: 'http://kegel.com/',
+        tags: ['Minimalist', 'Garden'],
+        reason: 'This is the most basic digital garden I have found so far and I love it!',
     },
 
     // {
