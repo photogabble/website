@@ -333,6 +333,13 @@ module.exports = [
         reason: 'Found via orange sites linking to her post explaining modern server monitoring stacks for self-hosting.',
     },
 
+    {
+        title: "Max Böck's Website",
+        href: 'https://mxb.dev/',
+        tags: ['Programmer', 'Minimalist', 'Blog', 'Blogroll'],
+        reason: 'Inspiration behind adding theme switching functionality to PhotoGabble',
+    },
+
     // {
     //     title: "",
     //     href: '',
