@@ -319,6 +319,13 @@ module.exports = [
         reason: 'This is the most basic digital garden I have found so far and I love it!',
     },
 
+    {
+        title: "Charlie Harrington's Blog",
+        href: 'https://charlieharrington.com/',
+        tags: ['Programmer', 'Minimalist', 'Library'],
+        reason: null,
+    },
+
     // {
     //     title: "",
     //     href: '',
