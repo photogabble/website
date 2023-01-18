@@ -298,6 +298,13 @@ module.exports = [
         reason: 'I really like their post page style.',
     },
 
+    {
+        title: "Ctrl blog by Daniel Aleksandersen",
+        href: 'https://www.ctrl.blog/',
+        tags: ['Programmer', 'Blog'],
+        reason: null,
+    },
+
     // {
     //     title: "",
     //     href: '',
