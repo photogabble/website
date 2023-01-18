@@ -1,6 +1,19 @@
 # Feed
 /atom.xml /blog/feed.xml
 
+# 2022 Weeks in review re-slugging
+/thoughts/week-25-in-review/ /thoughts/2022-week-25-in-review/
+/thoughts/week-26-in-review/ /thoughts/2022-week-26-in-review/
+/thoughts/week-27-in-review/ /thoughts/2022-week-27-in-review/
+/thoughts/week-28-and-29-in-review/ /thoughts/2022-week-28-and-29-in-review/
+/thoughts/week-30-in-review/ /thoughts/2022-week-30-in-review/
+/thoughts/week-31-in-review/ /thoughts/2022-week-31-in-review/
+/thoughts/week-32-in-review/ /thoughts/2022-week-32-in-review/
+/thoughts/week-33-and-34-in-review/ /thoughts/2022-week-33-and-34-in-review/
+/thoughts/week-35-in-review/ /thoughts/2022-week-35-in-review/
+/thoughts/week-36-in-review/ /thoughts/2022-week-36-in-review/
+/thoughts/week-37-in-review/ /thoughts/2022-week-37-in-review/
+
 # Category Blogging
 /blog/blogging/defending-wordpress-against-malicious-login-attempts-using-fail2ban/ /tutorials/defending-wordpress-against-malicious-login-attempts-using-fail2ban/
 
