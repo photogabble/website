@@ -13,4 +13,5 @@ module.exports = [
   'What do you call an alligator in a vest? An investigator.',
   'I used to be addicted to the hokey pokey. Then I turned myself around.',
   'What do you call a fake noodle? An impasta.',
+  'Why did the cat sit on the computer?<br/>To keep an eye on the mouse',
 ];
