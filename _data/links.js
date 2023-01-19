@@ -277,6 +277,76 @@ module.exports = [
         reason: null,
     },
 
+    {
+        title: "Kate Rose Morley's Website",
+        href: 'https://iamkate.com/',
+        tags: ['Programmer', 'Blog', 'Data Visualisation'],
+        reason: 'I love their National Grid dashboard',
+    },
+
+    {
+        title: "Kazy's Website",
+        href: 'https://kazy.in/',
+        tags: ['Programmer'],
+        reason: 'I love their Windows 95 theme.',
+    },
+
+    {
+        title: "David Schütz Blog",
+        href: 'https://xdavidhu.me/',
+        tags: ['Programmer', 'Blog', 'Minimalist'],
+        reason: 'I really like their post page style.',
+    },
+
+    {
+        title: "Ctrl Blog by Daniel Aleksandersen",
+        href: 'https://www.ctrl.blog/',
+        tags: ['Programmer', 'Blog'],
+        reason: null,
+    },
+
+    {
+        title: "fef's Blog",
+        href: 'https://fef.moe/',
+        tags: ['Programmer', 'minimalist'],
+        reason: 'Discovered via the Fediverse, really enjoyed reading their content.',
+    },
+
+    {
+        title: "Dan Kegel's Web Hostel",
+        href: 'http://kegel.com/',
+        tags: ['Minimalist', 'Garden'],
+        reason: 'This is the most basic digital garden I have found so far and I love it!',
+    },
+
+    {
+        title: "Charlie Harrington's Blog",
+        href: 'https://charlieharrington.com/',
+        tags: ['Programmer', 'Minimalist', 'Library'],
+        reason: null,
+    },
+
+    {
+        title: "Solène Rapenne's Blog",
+        href: 'https://dataswamp.org/~solene/index.html',
+        tags: ['Programmer', 'Minimalist'],
+        reason: 'Found via orange sites linking to her post explaining modern server monitoring stacks for self-hosting.',
+    },
+
+    {
+        title: "Max Böck's Website",
+        href: 'https://mxb.dev/',
+        tags: ['Programmer', 'Minimalist', 'Blog', 'Blogroll'],
+        reason: 'Inspiration behind adding theme switching functionality to PhotoGabble',
+    },
+
+    {
+        title: "Søren Birkemeyer's Blog",
+        href: 'https://annualbeta.com/',
+        tags: ['Programmer', 'Minimalist', 'Blog', 'Blogroll'],
+        reason: 'I very much want to implement their bookmarks page functionality on PhotoGabble',
+    },
+
     // {
     //     title: "",
     //     href: '',
