@@ -1,5 +1,5 @@
 name: Add Blogroll Link
-description: Show off your Eleventy site on the Eleventy documentation
+description: Suggest new link to be added to site blogroll
 title: "[Content/link] Add link to ..."
 labels: content/link
 body:
