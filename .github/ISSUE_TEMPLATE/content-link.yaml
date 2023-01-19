@@ -1,0 +1,33 @@
+name: Add Blogroll Link
+description: Show off your Eleventy site on the Eleventy documentation
+title: "[Content/link] Add link to ..."
+labels: content/link
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Only the site URL is required. All other fields are optional.
+  - type: input
+    id: title
+    attributes:
+      label: Site Title
+      description: The home page of the live web site.
+      placeholder: e.g. Autumns Digital Garden
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Site URL
+      description: The home page of the live web site. _[parser:url]_
+      placeholder: e.g. https://www.photogabble.co.uk/
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: "Reason for adding"
+      description: "Optional: _leave this empty if you like_"
+      placeholder: e.g. Discovered via the Fediverse, really enjoyed reading their content.
+    validations:
+      required: false
