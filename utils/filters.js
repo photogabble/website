@@ -71,6 +71,8 @@ module.exports = {
      */
     limit: (array, limit) => array.slice(0, limit),
 
+    excludeStubs: (collection) => collection.filter(item => item.data.growthStage && item.data.growthStage !== 'stub'),
+
     excludeType: (collection, type) => {
         return (!type)
             ? collection
