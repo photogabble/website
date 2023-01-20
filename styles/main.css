@@ -6,6 +6,7 @@
 @import "components/_themes.css";
 @import "components/_post-list.css";
 @import "components/_button.css";
+@import "components/_table.css";
 
 * {
     box-sizing: border-box;
