@@ -1,6 +1,7 @@
 module.exports = function() {
   return {
     "draft": false,
-    "layout": "layouts/now.njk"
+    "layout": "layouts/now.njk",
+    "title": "/now"
   };
 };
