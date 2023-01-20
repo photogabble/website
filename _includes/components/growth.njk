@@ -1,4 +1,8 @@
-{% if growthStage === 'seedling' %}
+{% if growthStage === 'stub' %}
+    {% set growthIcon = '👩‍🌾' %}
+    {% set growthTitle = 'Stubs are placeholders for pages I will be publishing soon.' %}
+    {% set growthText = 'Stub' %}
+{% elif growthStage === 'seedling' %}
     {% set growthIcon = '🌱' %}
     {% set growthTitle = 'Seedlings are rough and early ideas, they need further work and are likely to change often' %}
     {% set growthText = 'Seedling' %}
