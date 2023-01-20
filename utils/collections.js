@@ -17,7 +17,7 @@ const paginateContentTaxonomy = (baseSlug = '', perPage = 10) => {
       pages.push({
         title: taxonomy.name,
         slug: slugs[idx],
-        pageNumber: idx+1,
+        pageNumber: idx + 1,
         totalPages,
         pageSlugs: {
           all: slugs,
@@ -42,21 +42,19 @@ const post = (collection) => (process.env.ELEVENTY_ENV !== 'production')
 // @see https://github.com/photogabble/website/issues/20
 const contentTags = (collection) => Array.from(
   post(collection).reduce((tags, post) => {
-    if (post.data.tags) {
-      post.data.tags.forEach(tag => tags.add(tag))
-    }
+    if (post.data.tags) post.data.tags.forEach(tag => tags.add(tag));
     return tags;
   }, new Set())
 ).map(name => {
   return {
     name,
     slug: slugify(name),
-    items: collection.getFilteredByTag(name).reverse()
+    items: collection.getFilteredByTag(name).filter((item) => item.data.growthStage && item.data.growthStage !== 'stub') .reverse()
   }
-}).sort((a,b) => b.items.length - a.items.length);
+}).sort((a, b) => b.items.length - a.items.length);
 
 const contentTypes = (collection) => Object.values(post(collection).reverse().reduce((types, post) => {
-  types[post.data.contentType].items.push(post);
+  if (post.data.growthStage && post.data.growthStage !== 'stub') types[post.data.contentType].items.push(post);
   return types;
 }, {
   thought: {
