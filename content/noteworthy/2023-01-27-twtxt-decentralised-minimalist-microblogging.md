@@ -37,12 +37,12 @@ Given that `twtxt` appears to be intended as a purely minimalist format to be se
 
 I like the simplicity of the `twtxt` format, yet I also appreciate the existence of Yarn Social and projects like it.
 
-## 0xFF's Microblog interface
-After a few hours of browsing various `twtxt` feeds, using each one I found to discover others, I stumbled upon a [tool for turning twtxt into a html page called Picoblog](https://0xff.nu/picoblog) written by [Paul Glushak](https://0xff.nu/). Much like the `twtxt` format, Picoblog is extremely simple but it gets the job done, at it's core is a [184 LoC picoblog.php file](https://github.com/hxii/picoblog/blob/master/picoblog.php) that parses an input `twtxt` file and renders them to HTML.
+## 0xFF's Picoblog
+After a few hours of browsing various `twtxt` feeds, using each one I found to discover others, I stumbled upon a [tool for turning twtxt into a html page called Picoblog](https://0xff.nu/picoblog) written by [Paul Glushak](https://0xff.nu/). Much like the `twtxt` format, Picoblog is extremely simple, but it gets the job done, at it's core is a [184 LoC picoblog.php file](https://github.com/hxii/picoblog/blob/master/picoblog.php) that parses an input `twtxt` file and renders them to HTML.
 
-It supports the `twtxt` format as well as a `picoblog` format which extends the former with unique ids, I am unsure why.
+It supports the `twtxt` format as well as a `picoblog` format which extends the former with unique ids, I am unsure why, but the [picoblog format specification](http://wiki.0xff.nu/picoblog/spec) details how they are to be generated.
 
-You can see an example of its output in [Paul's Microblog](https://0xff.nu/microblog).
+You can see an example of its HTML output in [Paul's Microblog](https://0xff.nu/microblog).
 
 ## Closing thoughts
 I find it entertaining that the index of https://ferengi.one/twtxt.txt is a blank orange page with an image of Quark from DS9 with nothing to suggest anything else exists at the domain; its `twtxt` file is part of the "dark web", except of course it isn't because [a quick search on Google](https://www.google.com/search?q=ferengi.one%2Ftwtxt.txt) shows it's very much aware it exists.
