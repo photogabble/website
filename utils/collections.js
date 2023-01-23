@@ -1,9 +1,6 @@
 const {chunk} = require('./helpers')
 const {slugify} = require("./filters");
 
-// Regex to find all hashtags in a string: #(...)
-const hashtagRegExp = /#([\w-]+)/g
-
 // Written with inspiration from:
 // @see https://www.webstoemp.com/blog/basic-custom-taxonomies-with-eleventy/
 const paginateContentTaxonomy = (baseSlug = '', perPage = 10) => {
@@ -36,116 +33,43 @@ const paginateContentTaxonomy = (baseSlug = '', perPage = 10) => {
   };
 };
 
-const md = require('markdown-it')();
-md.inline.ruler.after('text', 'hashtag', function replace(state) {
-  const tokens = state.tokens;
-  const Token = state.Token;
-
-  for (let i = tokens.length - 1; i >= 0; i--) {
-    const currentToken = tokens[i];
-
-    // Skip content of markdown links
-    if (currentToken.type === 'link_close') {
-      i--;
-      while (tokens[i].level !== currentToken.level && tokens[i].type !== 'link_open') {
-        i--;
-      }
-      continue;
-    }
-
-    if (currentToken.type === 'html_inline') throw new Error('How interesting...');
-
-    if (currentToken.type !== 'text') continue;
-
-    let text = currentToken.content;
-    const matches = text.match(hashtagRegExp);
-
-    if (matches === null) continue;
-
-    const nodes = [];
-    let level = currentToken.level;
-
-    for (let m = 0; m < matches.length; m++) {
-      const tagName = matches[m].split('#', 2)[1];
-
-      if (tagName.length < 2) continue;
-
-      // find the beginning of the matched text
-      let pos = text.indexOf(matches[m]);
-
-      // find the beginning of the hashtag
-      pos = text.indexOf('#' + tagName, pos);
-
-      let token;
-
-      if (pos > 0) {
-        token = new Token('text', '', 0);
-        token.content = text.slice(0, pos);
-        token.level = level;
-        nodes.push(token);
-      }
-
-      token = new Token('hashtag_open', '', 1);
-      token.content = tagName;
-      token.level = level++;
-      nodes.push(token);
-
-      token = new Token('hashtag_text', '', 0);
-      token.content = md.utils.escapeHtml(tagName);
-      token.level = level;
-      nodes.push(token);
-
-      token = new Token('hashtag_close', '', -1);
-      token.level = --level;
-      nodes.push(token);
-
-      text = text.slice(pos + 1 + tagName.length);
-    }
-
-    if (text.length > 0) {
-      token = new Token('text', '', 0);
-      token.content = text;
-      token.level = level;
-      nodes.push(token);
-    }
-
-    // Replace current node
-    const result = md.utils.arrayReplaceAt(state.tokens, i, nodes);
-    state.tokens = result;
-  }
-});
-
-md.renderer.rules.hashtag_open  = (tokens, idx) => `<a href="/tags/${tokens[idx].content.toLowerCase()}" class="tag">`;
-md.renderer.rules.hashtag_text  = (tokens, idx) => `#${tokens[idx].content}`;
-md.renderer.rules.hashtag_close = () => '</a>';
+const md = require('markdown-it')()
+  .use(require('markdown-it-hashtag'), {
+    hashtagRegExp: '(?!\\d+\\b)\\w{3,}'
+  });
 
 // Filter draft posts when deployed into production
 const post = (collection) => ((process.env.ELEVENTY_ENV !== 'production')
     ? [...collection.getFilteredByGlob('./content/**/*.md')]
     : [...collection.getFilteredByGlob('./content/**/*.md')].filter((post) => !post.data.draft)
 ).map(post => {
-  // Identify Hashtags and append to Tags
-  const tags = new Set(post.data.tags ?? []);
-  let found = [];
+  if (!post.data.hashtagsMapped) {
+    // Identify Hashtags and append to Tags
+    const tags = new Set(post.data.tags ?? []);
+    const found = new Set();
+    const content = post.template?.frontMatter?.content;
 
-  const content = post.template?.frontMatter?.content;
+    // Only do the expensive markdown parse if content contains potential hashtags
+    if (content && content.match(/#([\w-]+)/g)) {
+      const tokens = md.parseInline(content, {});
+      for (const token of tokens) {
+        for (const child of token.children) {
+          if (child.type === 'hashtag_text') found.add(child.content);
+        }
+      }
 
-  // Only do the expensive markdown parse if content contains potential hashtags
-  if (content && content.match(hashtagRegExp)) {
-    const renderedTokens = md.parseInline(content, {});
-    const n = 1;
+      if (found.size > 0) {
+        found.forEach(tag => {
+          tags.add(tag);
+        });
+
+        post.data.tags = Array.from(tags);
+      }
+    }
+    // Mark this post as processed, so we don't do so again each time this collection is requested
+    post.data.hashtagsMapped = true;
   }
 
-
-  // const hashtags = new Set(post.template?.frontMatter?.content?.match(hashtagRegExp) || []);
-  //
-  // hashtags.forEach(tag => {
-  //   const found = tag.match(/#\(([\w-]+)\)/);
-  //   if (found[1] === '...') return;
-  //   tags.add(found[1]);
-  // });
-  //
-  // post.data.tags = Array.from(tags);
   return post;
 });
 
