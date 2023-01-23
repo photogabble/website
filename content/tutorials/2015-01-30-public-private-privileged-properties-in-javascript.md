@@ -12,7 +12,7 @@ Fundamentally JavaScript is a *wonderful* language with an obsession with object
 
 If the value of an given key is a function then we can call it a **method**, otherwise we call it a **property**. Once a method of an object is invoked the `this` variable is set to the object and made available within the methods scope for example, the below code will output `10` to the console.
 
-###Object Constructors
+### Object Constructors
 In JavaScript you can define an object in one of two contexts, with or without a constructor. In the non-constructor context the resulting object behaves identically to `new Object()` as shown in the following code example:
 
 ```javascript
@@ -42,7 +42,7 @@ You can create any number of defined object types by using `new` for example:
 var myShrub = new Plant( 'Ivy Hedera', 3, 'Shrub');
 ```
 
-###Public Members
+### Public Members
 All members of an object are *public*, this means that as well as adding new members to an object &ndash; any function can access, modify or even delete them.
 
 There are several methods of adding and populating public members of an object, taking our non-constructor example above you can amend and add new methods to it like so:
@@ -85,7 +85,7 @@ console.log(myTree.getDetails());
 console.log(myShrub.getDetails());
 ```
 
-###Private Members
+### Private Members
 The inherent public nature of JavaScript object members has lead some to wrongly suggest that JavaScript lacks the property of information hiding. An Object constructor creates the wrapper for the given object Type, when that constructor returns `null` or `undefined`, as those in the above examples do, then the constructor will construct an object equal to `this`, otherwise if the constructor returns an Object, the resulting constructed instance will equal that Object.
 
 Variables defined within the constructors scope are hidden outside of the created object and therefore can be seen as *private* members.
@@ -119,10 +119,10 @@ console.log(myTree.getCommonName());
 
 Because `privateMembers` is defined within the scope of the `Plant` constructor and not as part of `this` it is effectively private and only accessible through the two public members that have been defined. While I have called these private members, they are technically private variables and not members of the object at all. 
 
-###Privileged Members
+### Privileged Members
 A *privileged* member is an invokable object method that has access to private members. In the previous example both `setCommonName` and `getCommonName` are *privileged* members because they have access to the private `privateMembers` variable.
 
-###Further reading
+### Further reading
 I hope that this short foray into JavaScript objects has been worth the time you have taken reading it. If you notice any errors or have questions please get in touch via the comment form below.
 
 For further reading I would suggest you read the Mozilla docs on [Objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) and the [new operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new) followed by a browse of [Douglas Crockfords' writings about JavaScript](http://javascript.crockford.com/javascript.html).

@@ -25,7 +25,7 @@ If you haven't already got [fail2ban](http://www.fail2ban.org/wiki/index.php/MAN
 
 For more detailed information on installing fail2ban (on Debian or derivative thereof) please [visit this link](https://www.digitalocean.com/community/articles/how-to-protect-ssh-with-fail2ban-on-ubuntu-12-04).
 
-##Identifying attacks
+## Identifying attacks
 
 Wordpress, for reasons only known by the core team[^3] will always respond to an invalid authentication attempt with a `200 OK` status code rather than a `403 Forbidden`. What this means is that from looking at your server logs alone you are unable to determine a legitimate log in from a failed attempt; fortunately WordPress has a `wp_login_failed` event that the following simple mu-plugin[^4] code hooks into and changes the status header.
 
@@ -41,7 +41,7 @@ In your `wp-content/mu-plugins` (or where ever you have configured your mu-plugi
 [03/Apr/2015:05:58:01 +0100] "GET /wp-login.php HTTP/1.1" 403 3069 "-" "Mozilla/5.0 (Windows NT 6.1; rv:36.0) Gecko/20100101 Firefox/36.0"
 ```
 
-##Fail2ban Wordpress Definition
+## Fail2ban Wordpress Definition
 
 Now that failed login attempts are easily identified you can define a new filter. In the folder `/etc/fail2ban/filter.d/` create a new file called `wordpress-auth.conf` and paste the following into it:
 
@@ -89,11 +89,11 @@ The length of time that the test takes will be dependant upon the size of the lo
 
 So long as the output finishes with *"Success, the total number of match is"* followed by the number of any matches, then the filter has passed the test. You can always, if you havent already do a failed log in to your wordpress install to see the count of matches increase; however so long as the test finishes with a success there is no need.
 
-##Restart fail2ban and verify
+## Restart fail2ban and verify
 
 Once you are happy that the filter is working you can restart the fail2ban service by executing the command `sudo service fail2ban restart` and check that the fail2ban rule is active in iptables[^7] by executing the command `sudo iptables -vnL`. Within the iptables output under the target column you should see a `fail2ban-wordpress` rule which shows that fail2ban is working correctly with the iptables firewall.
 
-##Caveats
+## Caveats
 
 This method works, and it works well. However you will need to create a jail for each unique access log; meaning if you have ten WordPress installs with ten separate access logs you will need ten fail2ban jails &ndash; something that can get quite monotonous and possibly slow fail2bans performance. This can be easily remedied by creating a shared login access log that all of your WordPress installs write to. In the future I will be writing on how I went about implementing this using [PHP openlog](http://php.net/manual/en/function.openlog.php#refsect1-function.openlog-parameters); until then, if you have any questions or feedback please do leave a comment below.
 
