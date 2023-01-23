@@ -5,7 +5,7 @@ tags: [Programming, PHP, Revived]
 growthStage: budding
 ---
 
-I found it incredibly difficult to find any form of time_since function in php so to save anyone else the trouble to hunting through hundreds of useless websites here is the function you may want to use, written by [Natalie Downe](https://web.archive.org/web/20110424153613/http://natbat.net/2007/Jan/27/timesince/)[^1] (you don't want to know how long it took to hunt it down). It takes the input in the form of the unix time stamp.
+I found it incredibly difficult to find any form of time_since function in #PHP so to save anyone else the trouble to hunting through hundreds of useless websites here is the function you may want to use, written by [Natalie Downe](https://web.archive.org/web/20110424153613/http://natbat.net/2007/Jan/27/timesince/)[^1] (you don't want to know how long it took to hunt it down). It takes the input in the form of the unix time stamp.
 
 ```php
 function time_since($original) {   
