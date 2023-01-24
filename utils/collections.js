@@ -1,5 +1,6 @@
 const {chunk} = require('./helpers')
 const {slugify} = require("./filters");
+const {setupMarkdownIt, parseCollectionHashtags} = require ('./helpers/hashtags');
 
 // Written with inspiration from:
 // @see https://www.webstoemp.com/blog/basic-custom-taxonomies-with-eleventy/
@@ -33,45 +34,13 @@ const paginateContentTaxonomy = (baseSlug = '', perPage = 10) => {
   };
 };
 
-const md = require('markdown-it')()
-  .use(require('markdown-it-hashtag'), {
-    hashtagRegExp: '(?!\\d+\\b)\\w{3,}'
-  });
+const md = setupMarkdownIt(require('markdown-it')());
 
 // Filter draft posts when deployed into production
 const post = (collection) => ((process.env.ELEVENTY_ENV !== 'production')
     ? [...collection.getFilteredByGlob('./content/**/*.md')]
     : [...collection.getFilteredByGlob('./content/**/*.md')].filter((post) => !post.data.draft)
-).map(post => {
-  if (!post.data.hashtagsMapped) {
-    // Identify Hashtags and append to Tags
-    const tags = new Set(post.data.tags ?? []);
-    const found = new Set();
-    const content = post.template?.frontMatter?.content;
-
-    // Only do the expensive markdown parse if content contains potential hashtags
-    if (content && content.match(/#([\w-]+)/g)) {
-      const tokens = md.parseInline(content, {});
-      for (const token of tokens) {
-        for (const child of token.children) {
-          if (child.type === 'hashtag_text') found.add(child.content);
-        }
-      }
-
-      if (found.size > 0) {
-        found.forEach(tag => {
-          tags.add(tag);
-        });
-
-        post.data.tags = Array.from(tags);
-      }
-    }
-    // Mark this post as processed, so we don't do so again each time this collection is requested
-    post.data.hashtagsMapped = true;
-  }
-
-  return post;
-});
+).map(parseCollectionHashtags(md));
 
 // Written for #20, this creates a collection of all tags
 // @see https://github.com/photogabble/website/issues/20
