@@ -4,7 +4,7 @@ tags: ["11ty"]
 growthStage: evergreen
 ---
 
-I use [Obsidian.md](https://obsidian.md/) to draft my posts before they are published on PhotoGabble. One feature of Obsidian that I love is its ability to autolink #hashtags and this is something I want to teach #(11ty) how to do.
+I use [Obsidian.md](https://obsidian.md/) to draft my posts before they are published on PhotoGabble. One feature of Obsidian that I love is its ability to autolink #hashtags and this is something I want to teach #11ty how to do.
 
 ## Preface
 
@@ -18,10 +18,79 @@ In Nicolas [notes collection source (notes.js)](https://github.com/nhoizey/nicol
 
 Unfortunately this method is as noisy as the simple regex approach because it's not _context aware_. If we are going to tech Eleventy how to parse hashtags then the solution used needs to be Markdown aware. With a little more research I found the seven-year-old [markdown-it-hashtag](https://www.npmjs.com/package/markdown-it-hashtag) plugin for the markdown-it library commonly used with Eleventy.
 
-Surprisingly for its age, this library worked although the matching regex it shipped with needed some fine-tuning as it continued to pick up hex numbers and references to GitHub issue numbers (e.g. #123) I had a few goes at formulating a regex that would match any string containing three or more alphanumerics but not all numerics, however, I am not _that_ good at Regex and ended up turning to the "void". Very soon a number of people had a go at solving the problem but [@barubary@infosec.exchange](https://infosec.exchange/@barubary) [response containing a working regex](https://notacult.social/@barubary@infosec.exchange/109740773056932482) was the best solution and they followed up with an even more terse one with `(?!\d+\b)\w{3,}`.  
+Surprisingly for its age, this library worked although the matching regex it shipped with needed some fine-tuning as it continued to pick up hex numbers and references to GitHub issue numbers (e.g. #123) I had a few goes at formulating a regex that would match any string containing three or more alphanumerics but not all numerics, however, I am not _that_ good at Regex and ended up turning to the "void". Very soon a number of people had a go at solving the problem but [@barubary@infosec.exchange](https://infosec.exchange/@barubary) [response containing a working regex](https://notacult.social/@barubary@infosec.exchange/109740773056932482) was the best solution and they followed up with an even more terse one with: 
+
+```regex
+(?!\d+\b)\w{3,}
+```
 
 ## Teaching Eleventy how to parse hashtags
 
 In order to parse hashtags with Eleventy you will need to install [markdown-it-hashtag](https://www.npmjs.com/package/markdown-it-hashtag) using `npm install markdown-it-hashtag --save-dev` or equivalent if you're using `yarn` or `npnp`.
 
 We will be using this Markdown-It plugin in two places, first in your main collection in order to identify hashtags in posts and update the posts tags listing and secondly in your sites main usage of Markdown-It for parsing Markdown into HTML.
+
+```js
+const md = require('markdown-it')()
+  .use(require('markdown-it-hashtag'), {
+    hashtagRegExp: '(?!\\d+\\b)\\w{3,}'
+  });
+
+function parseHashtags(post) {
+  if (!post.data.hashtagsMapped) {
+    // Identify Hashtags and append to Tags
+    const tags = new Set(post.data.tags ?? []);
+    const found = new Set();
+    const content = post.template?.frontMatter?.content;
+
+    // Only do the expensive markdown parse if content contains potential hashtags
+    if (content && content.match(/#([\w-]+)/g)) {
+      const tokens = md.parseInline(content, {});
+      for (const token of tokens) {
+        for (const child of token.children) {
+          if (child.type === 'hashtag_text') found.add(child.content);
+        }
+      }
+
+      if (found.size > 0) {
+        found.forEach(tag => {
+          tags.add(tag);
+        });
+
+        post.data.tags = Array.from(tags);
+      }
+    }
+    // Mark this post as processed, so we don't do so again each time this collection is requested
+    post.data.hashtagsMapped = true;
+  }
+
+  return post;
+}
+```
+
+Usage:
+
+```js
+eleventyConfig.addCollection('post', (collection) => {
+  return [...collection.getFilteredByGlob('./content/**/*.md')].map(parseHashtags)
+});
+```
+
+```js
+const markdownIt = require('markdown-it')()
+  .use(require('markdown-it-hashtag'), {
+      hashtagRegExp: '(?!\\d+\\b)\\w{3,}',
+    });
+
+markdownIt.renderer.rules.hashtag_open = 
+  (tokens, idx) => `<a href="/topic/${tokens[idx].content.toLowerCase()}" class="tag">`;
+
+eleventyConfig.setLibrary("md", markdownIt);
+```
+
+## Normalising Tags
+
+There is [some discussion](https://github.com/11ty/eleventy/issues/2462) regarding case sensitivity with tags. In my opinion tags should be insensitive to case but also presented in a human way. For example "ToolsAndResources" should display as "Tools And Resources", there are exceptions to this: "JavaScript" for example is one word and "PHP" should always remain capitalised. There is also the case where "GameDev" and "GameDevelopment" should be considered the same with both linking to the same destination.
+
+These cases make normalising tags for human readability a difficult problem but not insurmountable.
+
