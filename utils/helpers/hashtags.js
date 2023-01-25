@@ -31,7 +31,7 @@ module.exports = {
         }
 
         if (found.size > 0) {
-          found.forEach(tag => tags.add(tagAtlas.findOrCreateByTitle(tag)));
+          found.forEach(tag => tags.add(tagAtlas.findOrCreateByTitle(tag).title));
           item.data.tags = Array.from(tags);
         }
       }
