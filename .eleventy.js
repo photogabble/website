@@ -36,9 +36,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter(filterName, filters[filterName])
   })
 
-  Object.keys(collections).forEach((collectionName) => {
-    eleventyConfig.addCollection(collectionName, collections[collectionName])
-  })
+  for (const [name, collection] of Object.entries(collections(eleventyConfig))) {
+    eleventyConfig.addCollection(name, collection);
+  }
 
   Object.keys(transforms).forEach((transformName) => {
     eleventyConfig.addTransform(transformName, transforms[transformName])
