@@ -117,10 +117,12 @@ module.exports = function (eleventyConfig) {
 
   setupMarkdownIt(markdownIt);
 
-  eleventyConfig.on('eleventy.after', async () => {
-    const all = linkMapCache.all();
-    const n = 1;
-  });
+  // eleventyConfig.on('eleventy.after', async () => {
+  //   const all = linkMapCache.all();
+  //   const data = eleventyConfig.globalData;
+  //   const x = eleventyConfig;
+  //   const n = 1;
+  // });
 
   eleventyConfig.setLibrary("md", markdownIt);
 };
