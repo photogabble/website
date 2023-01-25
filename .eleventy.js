@@ -12,11 +12,16 @@ const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 const {setupMarkdownIt} = require("./utils/helpers/hashtags");
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.setUseGitIgnore(false);
+  eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-tag-normaliser'), {
+    ignore: ['PHP', 'JavaScript', 'DOScember'],
+    similar: {
+      'Game Development': ['GameDev'],
+    },
+    slugify,
+  });
   eleventyConfig.addPlugin(UpgradeHelper);
   eleventyConfig.addPlugin(PostCSSPlugin);
-
-  eleventyConfig.setUseGitIgnore(false);
-
   eleventyConfig.addPlugin(wordStats, {
     output: (stats) => {
       return {
