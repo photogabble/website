@@ -18,7 +18,7 @@ In Nicolas [notes collection source (notes.js)](https://github.com/nhoizey/nicol
 
 Unfortunately this method is as noisy as the simple regex approach because it's not _context aware_. If we are going to tech Eleventy how to parse hashtags then the solution used needs to be Markdown aware. With a little more research I found the seven-year-old [markdown-it-hashtag](https://www.npmjs.com/package/markdown-it-hashtag) plugin for the markdown-it library commonly used with Eleventy.
 
-Surprisingly for its age, this library worked although the matching regex it shipped with needed some fine-tuning as it continued to pick up hex numbers and references to GitHub issue numbers (e.g. #123) I had a few goes at formulating a regex that would match any string containing three or more alphanumerics but not all numerics, however, I am not _that_ good at Regex and ended up turning to the "void". Very soon a number of people had a go at solving the problem but [@barubary@infosec.exchange](https://infosec.exchange/@barubary) [response containing a working regex](https://notacult.social/@barubary@infosec.exchange/109740773056932482) was the best solution and they followed up with an even more terse one with: 
+Surprisingly for its age, this library worked although the matching regex it shipped with needed some fine-tuning as it continued to pick up hex numbers and references to GitHub issue numbers (e.g. #123) I had a few goes at formulating a regex that would match any string containing three or more alphanumerics but not all numerics, however, I am not _that_ good at Regex and ended up turning to the "void". Very soon a number of people had a go at solving the problem but [@barubary@infosec.exchange](https://infosec.exchange/@barubary) [response containing a working regex](https://notacult.social/@barubary@infosec.exchange/109740773056932482) was the best solution, which after learning the context is hashtags they then followed up with an even more terse one with: 
 
 ```regex
 (?!\d+\b)\w{3,}
@@ -53,10 +53,7 @@ function parseHashtags(post) {
       }
 
       if (found.size > 0) {
-        found.forEach(tag => {
-          tags.add(tag);
-        });
-
+        found.forEach(tag => tags.add(tag));
         post.data.tags = Array.from(tags);
       }
     }
@@ -90,7 +87,7 @@ eleventyConfig.setLibrary("md", markdownIt);
 
 ## Normalising Tags
 
-There is [some discussion](https://github.com/11ty/eleventy/issues/2462) regarding case sensitivity with tags. In my opinion tags should be insensitive to case but also presented in a human way. For example "ToolsAndResources" should display as "Tools And Resources", there are exceptions to this: "JavaScript" for example is one word and "PHP" should always remain capitalised. There is also the case where "GameDev" and "GameDevelopment" should be considered the same with both linking to the same destination.
+There is [some discussion](https://github.com/11ty/eleventy/issues/2462) regarding case sensitivity with tags. In my opinion tags should be insensitive to case but also presented in a human way. For example "ToolsAndResources" should become the slug "tools-and-resources" but display as "Tools And Resources". There are of course exceptions to this: "JavaScript" for example is one word and "PHP" should always remain capitalised. There is also the case where "GameDev" and "GameDevelopment" should be considered the same with both linking to the same destination.
 
 These cases make normalising tags for human readability a difficult problem but not insurmountable.
 
