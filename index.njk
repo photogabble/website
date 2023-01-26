@@ -1,6 +1,6 @@
 {% extends "_includes/layouts/base.njk" %}
 
-{% set articlesList = collections.post %}
+{% set articlesList = collections.post | excludeStubs %}
 
 {% block header %}
   <h1><span class="selected">Hey</span>, I'm Simon.</h1>

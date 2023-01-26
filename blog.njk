@@ -1,6 +1,6 @@
 {% extends "_includes/layouts/page.njk" %}
 
-{% set postsList = collections.post | excludeTypes(['mirror']) | reverse %}
+{% set postsList = collections.post | excludeStubs | excludeTypes(['mirror']) | reverse %}
 {% set title = 'Blog Archive' %}
 
 {% block content %}

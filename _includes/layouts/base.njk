@@ -17,6 +17,7 @@
     <meta name="description" content="{{ description or metadata.description }}"/>
     <link rel="canonical" href="{{ canonical or page.url }}"/>
     <meta name="robots" content="index, follow"/>
+    <meta name="generator" content="Eleventy">
     {% block head %}{% endblock %}
 
     <!-- Open Graph -->
@@ -171,6 +172,7 @@
     <dl>
         <dt>Writing</dt>
         <dd><a href="/blog/feed.xml" title="RSS Feed of all writing content">RSS</a></dd>
+        <dd><a href="/stats/" title="Post stats">Stats</a></dd>
         <dd><a href="/essays/" title="Longform, invested ideas">Essays</a></dd>
         <dd><a href="/noteworthy" title="Short to medium length articles on things I find interesting">Noteworthy</a></dd>
         <dd><a href="/thoughts" title="Thoughts out loud, usually very short, very incomplete musings">Thoughts</a></dd>

@@ -347,6 +347,13 @@ module.exports = [
         reason: 'I very much want to implement their bookmarks page functionality on PhotoGabble',
     },
 
+    {
+        title: "Raphael's Blog",
+        href: 'https://rbaron.net/',
+        tags: ['Minimalist', 'Blog'],
+        reason: 'Read their post on building a Panel out of e-ink Electronic Shelf Labels',
+    },
+
     // {
     //     title: "",
     //     href: '',
