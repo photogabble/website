@@ -54,9 +54,19 @@ const contentTags = (collection) => Array.from(
 }).sort((a, b) => b.items.length - a.items.length);
 
 const contentTypes = (collection) => Object.values(post(collection).reverse().reduce((types, post) => {
-  if (post.data.growthStage && post.data.growthStage !== 'stub') types[post.data.contentType].items.push(post);
+  const section = (post.data.growthStage && post.data.growthStage === 'stub')
+    ? 'stub'
+    : post.data.contentType;
+
+  if (post.data.contentType) types[section].items.push(post);
+
   return types;
 }, {
+  stub: {
+    name: 'Stubs',
+    slug: 'stubs',
+    items: [],
+  },
   thought: {
     name: 'Thoughts',
     slug: 'thoughts',

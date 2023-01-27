@@ -19,21 +19,32 @@
                 <a class="pill" href="/topic/{{ tag.slug }}">{{ tag.name }}</a>
             {% endfor %}
             <br/>
+            {% if readingTime.words > 0 %}
             {{ readingTime.text }}.
+            {% endif %}
         </p>
+
+        {% if growthStage === 'stub' %}
+        <section>
+            <blockquote>
+                <p>Note: This is a stub post to be filled out in the future. It has been created for the purpose of interlinking feel free to check out what links here from the list below to find related pages.</p>
+            </blockquote>
+        </section>
+        {% endif %}
+
         <section>
             {{ content | safe }}
         </section>
 
         {% if backlinks.length > 0 %}
-        <nav>
-            <h3>Linking here</h3>
-            <ul>
-            {%- for link in backlinks %}
-                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-            {%- endfor %}
-            </ul>
-        </nav>
+            <nav>
+                <h3>Linking here</h3>
+                <ul>
+                    {%- for link in backlinks %}
+                        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    {%- endfor %}
+                </ul>
+            </nav>
         {% endif %}
     </article>
 {% endblock %}
