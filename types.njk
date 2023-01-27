@@ -14,6 +14,17 @@ permalink: /{{ type.slug }}/index.html
   <small class="heading-prefix"><span>Writing</span></small>
   <h1>{{ type.title }}</h1>
 
+  {% if type.slug === 'stubs' %}
+    <section>
+      <blockquote>
+        <p><strong>What is a stub post?</strong><br/>
+          These are the precursor to future content often times little more than a collection of ideas and therefore hidden by default from the rest of this digital garden. Most have been created in order to allow interlinking from other pages via backlinks.
+        </p>
+        <p>You can think of this list as a schedule of when new content will come out, it's mostly here for me to be able to see what I am working on next.</p>
+      </blockquote>
+    </section>
+  {% endif %}
+
   <section>
     {% set postsList = type.items %}
     {% include "_includes/components/post-list.njk" %}

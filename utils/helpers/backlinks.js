@@ -31,7 +31,7 @@ module.exports = (data) => {
   // Pages can list aliases in their front matter, if those exist we should map them
   // as well.
 
-  linkMapCache.add(currentSlug, {
+  linkMapCache.set(currentSlug, {
     permalink: data.permalink,
     title: data.title
   });
@@ -39,7 +39,7 @@ module.exports = (data) => {
   if (data.aliases) {
     for(const alias of data.aliases) {
       const aliasSlug = slugify(alias);
-      linkMapCache.add(aliasSlug, {
+      linkMapCache.set(aliasSlug, {
         permalink: data.permalink,
         title: alias
       });
