@@ -19,7 +19,9 @@
                 <a class="pill" href="/topic/{{ tag.slug }}">{{ tag.name }}</a>
             {% endfor %}
             <br/>
+            {% if readingTime.words > 0 %}
             {{ readingTime.text }}.
+            {% endif %}
         </p>
 
         {% if growthStage === 'stub' %}
