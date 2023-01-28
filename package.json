@@ -26,6 +26,7 @@
     "@photogabble/eleventy-plugin-tag-normaliser": "^1.0.0",
     "@photogabble/eleventy-plugin-word-stats": "^1.0.0",
     "autoprefixer": "^10.4.8",
+    "chalk": "^4.1.1",
     "cross-env": "^7.0.3",
     "eleventy-plugin-postcss": "^1.0.4",
     "flat-cache": "^3.0.4",

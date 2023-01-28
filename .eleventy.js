@@ -96,15 +96,15 @@ module.exports = function (eleventyConfig) {
   }).use(require("markdown-it-anchor"), {
     permalink: false,
     slugify: input => slugify(input),
-  }).use(require('./utils/helpers/wikilinks'), linkMapCache)
-  .use(require("markdown-it-footnote"));
+  }).use(require('./utils/helpers/wikilinks'),{
+    linkMapCache,
+    eleventyConfig
+  }).use(require("markdown-it-footnote"));
 
   setupMarkdownIt(markdownIt);
 
   // eleventyConfig.on('eleventy.after', async () => {
   //   const all = linkMapCache.all();
-  //   const data = eleventyConfig.globalData;
-  //   const x = eleventyConfig;
   //   const n = 1;
   // });
 
