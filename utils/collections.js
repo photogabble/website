@@ -67,6 +67,11 @@ const contentTypes = (collection) => Object.values(post(collection).reverse().re
     slug: 'stubs',
     items: [],
   },
+  glossary: {
+    name: 'Glossary',
+    slug: 'glossary',
+    items: [],
+  },
   thought: {
     name: 'Thoughts',
     slug: 'thoughts',
