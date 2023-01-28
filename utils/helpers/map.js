@@ -1,2 +1,2 @@
-let map = new Map([]);
+let map = new Map();
 module.exports = map;
