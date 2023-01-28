@@ -72,6 +72,11 @@ module.exports = [
     cite: 'Grace Hopper',
   },
 
+  {
+    blockquote: "We mature with the damage, not with the years.",
+    cite: 'Mateus Williams',
+  },
+
   //
 
   // {
