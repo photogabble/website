@@ -99,5 +99,8 @@ module.exports = function (eleventyConfig) {
     }).use(markdownItAnchor, {
       permalink: false,
       slugify: input => slugify(input)
-    }).use(markdownFootnote).use(require('./utils/helpers/wikilinks'), linkMapCache));
+    }).use(require('./utils/helpers/wikilinks'), {
+      linkMapCache,
+      eleventyConfig
+    }).use(markdownFootnote));
 };
