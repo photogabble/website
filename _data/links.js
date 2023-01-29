@@ -384,6 +384,14 @@ module.exports = [
         reason: 'Very nice minimalist website built using 11ty.',
     },
 
+    {
+        title: "Trys Mudford's Blog",
+        href: 'https://www.trysmudford.com/',
+        src: null,
+        tags: ['Programmer', 'Blog'],
+        reason: 'I discovered Try\'s website via their Linear Interpolation Functions article. I really like their writing style and the minimalist yet not bare design of their website.',
+    },
+
     // {
     //     title: "",
     //     href: '',
