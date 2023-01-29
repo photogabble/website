@@ -106,7 +106,7 @@ module.exports = {
     return item.data.featured && item.data.featured === true;
   }),
 
-  debugger: (...args) => {
+  debug: (...args) => {
     console.log(...args)
     debugger;
   },
