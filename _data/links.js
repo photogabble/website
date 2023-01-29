@@ -392,6 +392,14 @@ module.exports = [
         reason: 'I discovered Try\'s website via their Linear Interpolation Functions article. I really like their writing style and the minimalist yet not bare design of their website.',
     },
 
+    {
+        title: "Łukasz's Blog",
+        href: 'https://offbeatbits.com/',
+        src: null,
+        tags: ['Programmer', '11ty'],
+        reason: null,
+    },
+
     // {
     //     title: "",
     //     href: '',
