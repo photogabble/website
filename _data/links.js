@@ -354,9 +354,56 @@ module.exports = [
         reason: 'Read their post on building a Panel out of e-ink Electronic Shelf Labels',
     },
 
+    {
+        title: "Nicolas Hoizey's Blog",
+        href: 'https://nicolas-hoizey.com/',
+        tags: ['Programmer', 'Blog', '11ty'],
+        reason: 'I found Nicolas\'s website while researching how to programmatically add tags in 1ty. They have a cool 11ty powered website.',
+    },
+
+    {
+        title: "Deadguy's Website",
+        href: 'https://dgy.fuckup.club/',
+        tags: ['OldWeb', 'Minimalist', 'Hugo'],
+        reason: 'Discovered while researching Webrings, found via https://emreed.net/LowTech_Directory. Really like the simplicity of design and interested by the content.',
+    },
+
+    {
+        title: "Jordan's Blog",
+        href: 'https://simpixelated.com/',
+        src: 'https://github.com/simpixelated/simpixelated.com',
+        tags: ['Programmer', 'Blog', '11ty'],
+        reason: null,
+    },
+
+    {
+        title: "Björn Rust's Website",
+        href: 'https://bjornrust.com/',
+        src: null,
+        tags: ['Blog', 'Minimalist', '11ty'],
+        reason: 'Very nice minimalist website built using 11ty.',
+    },
+
+    {
+        title: "Trys Mudford's Blog",
+        href: 'https://www.trysmudford.com/',
+        src: null,
+        tags: ['Programmer', 'Blog'],
+        reason: 'I discovered Try\'s website via their Linear Interpolation Functions article. I really like their writing style and the minimalist yet not bare design of their website.',
+    },
+
+    {
+        title: "Łukasz's Blog",
+        href: 'https://offbeatbits.com/',
+        src: null,
+        tags: ['Programmer', '11ty'],
+        reason: null,
+    },
+
     // {
     //     title: "",
     //     href: '',
+    //     src: null,
     //     tags: [],
     //     reason: null,
     // },
