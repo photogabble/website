@@ -354,6 +354,13 @@ module.exports = [
         reason: 'Read their post on building a Panel out of e-ink Electronic Shelf Labels',
     },
 
+    {
+        title: "Nicolas Hoizey's Blog",
+        href: 'https://nicolas-hoizey.com/',
+        tags: ['Programmer', 'Blog', '11ty'],
+        reason: 'I found Nicolas\'s website while researching how to programmatically add tags in 1ty. They have a cool 11ty powered website.',
+    },
+
     // {
     //     title: "",
     //     href: '',
