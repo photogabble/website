@@ -376,6 +376,14 @@ module.exports = [
         reason: null,
     },
 
+    {
+        title: "Björn Rust's Website",
+        href: 'https://bjornrust.com/',
+        src: null,
+        tags: ['Blog', 'Minimalist', '11ty'],
+        reason: 'Very nice minimalist website built using 11ty.',
+    },
+
     // {
     //     title: "",
     //     href: '',
