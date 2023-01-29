@@ -361,6 +361,13 @@ module.exports = [
         reason: 'I found Nicolas\'s website while researching how to programmatically add tags in 1ty. They have a cool 11ty powered website.',
     },
 
+    {
+        title: "Deadguy's Website",
+        href: 'https://dgy.fuckup.club/',
+        tags: ['OldWeb', 'Minimalist', 'Hugo'],
+        reason: 'Discovered while researching Webrings, found via https://emreed.net/LowTech_Directory. Really like the simplicity of design and interested by the content.',
+    },
+
     // {
     //     title: "",
     //     href: '',
