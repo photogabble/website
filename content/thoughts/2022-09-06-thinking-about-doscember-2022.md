@@ -35,4 +35,4 @@ If I hadn't made having the program run on actual vintage hardware a requirement
 
 In any case, I need to spend some time over the coming weeks to plan out the theme, and what I ultimately wish to achieve this year in order to consider it a success.
 
-This [seedling](/about/growth/) will be updated in due course with my planning.
+This [[Growth|seedling]] will be updated in due course with my planning.

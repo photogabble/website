@@ -3,6 +3,7 @@
 
 # Movement of pages into glossary
 /about/content/ /glossary/content-types/
+/about/growth/ /glossary/growth/
 
 # 2022 Weeks in review re-slugging
 /thoughts/week-25-in-review/ /thoughts/2022-week-25-in-review/
