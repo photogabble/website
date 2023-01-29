@@ -368,9 +368,18 @@ module.exports = [
         reason: 'Discovered while researching Webrings, found via https://emreed.net/LowTech_Directory. Really like the simplicity of design and interested by the content.',
     },
 
+    {
+        title: "Jordan's Blog",
+        href: 'https://simpixelated.com/',
+        src: 'https://github.com/simpixelated/simpixelated.com',
+        tags: ['Programmer', 'Blog', '11ty'],
+        reason: null,
+    },
+
     // {
     //     title: "",
     //     href: '',
+    //     src: null,
     //     tags: [],
     //     reason: null,
     // },
