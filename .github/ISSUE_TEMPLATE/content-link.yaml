@@ -23,6 +23,14 @@ body:
       placeholder: e.g. https://www.photogabble.co.uk/
     validations:
       required: true
+  - type: input
+    id: source
+    attributes:
+      label: Site Source URL
+      description: If open source, include link to code repository _[parser:url]_
+      placeholder: e.g. https://www.github.com/photogabble/website
+    validations:
+      required: false
   - type: textarea
     id: reason
     attributes:
