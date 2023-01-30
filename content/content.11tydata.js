@@ -8,6 +8,7 @@ module.exports = {
   layout: 'layouts/post.njk',
   growthStage: 'seedling', // seedling, budding, evergreen
   contentType: 'thought', // thought, noteworthy, essay, tutorial, project
+  folder: [ 'writing'],
   eleventyComputed: {
     backlinks: (data) => backlinks(data),
     ogImageHref: (data) => ogImageFromSlug(slugify(data.title)),

@@ -1,7 +1,13 @@
 {% extends "./base.njk" %}
 
 {% block header %}
-    <a href="/">..</a>
+    <nav>
+        {% if breadcrumbs %}
+            {% for crumb in breadcrumbs %}<a href="{{ crumb.href }}" title="{{ crumb.title }}">{{ crumb.text }}</a>/{% endfor %}
+        {% else %}
+            <a href="/">~</a>/
+        {% endif %}
+    </nav>
 {% endblock %}
 
 {% block content %}

@@ -2,6 +2,7 @@
 layout: layouts/page.njk
 title: "/uses"
 sub_title: "Last updated June 21st, 2021."
+folder: about
 ---
 
 A somewhat complete list of tools, applications, hardware and services that I used on a day-to-day basis. Make sure to check out <a href="https://uses.tech">uses.tech</a> for a list of other peoples <code>/uses</code> pages!
