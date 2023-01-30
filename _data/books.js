@@ -1,9 +1,21 @@
 const flatCache = require("flat-cache");
 const fetch = require("node-fetch");
+const chalk = require("chalk");
 
 const username = 'carbontwelve';
+const fetchUrl = async (url, timeout = 8000) => {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), timeout);
+
+  const response = await fetch(url, {signal: controller.signal});
+  clearTimeout(id);
+
+  return response;
+};
 
 module.exports = async function() {
+  console.log(chalk.blue('[@photogabble/bookwyrm]'), 'Fetching bookwrym feed');
+
   let cache = flatCache.load('bookwyrm-social-api');
 
   const cachedItem = cache.getKey('books');
@@ -12,28 +24,28 @@ module.exports = async function() {
     const ttl = Math.floor(cachedItem.ttl - (Date.now() / 1000));
 
     if (ttl > 0) {
-      console.log(`Found Cached bookwyrm feed for [${username}]…`);
+      console.log(chalk.blue('[@photogabble/bookwyrm]'), `Found Cached bookwyrm feed for [${username}]…`);
       return cachedItem.data;
     }
   }
 
-  const numberOfPages = await fetch(`https://bookwyrm.social/user/${username}/outbox`)
+  const numberOfPages = await fetchUrl(`https://bookwyrm.social/user/${username}/outbox`)
     .then(res => res.json())
     .then(json => {
-      if (json.first === json.last) {
-        return 1;
-      }
-
+      if (json.first === json.last) return 1;
       const last = new URL(json.last);
       return Number(last.searchParams.get('page'));
-    })
+    }).catch(e => {
+      console.warn(chalk.blue('[@photogabble/bookwyrm]'), chalk.yellow('WARNING'), 'Upstream has gone away, unable to fetch bookwyrm outbox before timeout');
+      return 0;
+    });
 
   /**
    * @param page {Number}
    * @return {Array}
    */
   const fetchPage = async (page) => {
-    return await fetch(`https://bookwyrm.social/user/${username}/outbox?page=${page}`)
+    return await fetchUrl(`https://bookwyrm.social/user/${username}/outbox?page=${page}`)
       .then(res => res.json())
       .then(json => {
         if (json.type === 'OrderedCollectionPage' && json.orderedItems.length > 0) {
@@ -72,13 +84,17 @@ module.exports = async function() {
           book
         }
       }))
+      .catch(e => {
+        console.warn(chalk.blue('[@photogabble/bookwyrm]'), chalk.yellow('WARNING'), 'Upstream has gone away, unable to fetch bookwyrm outbox before timeout');
+        return [];
+      });
   }
 
   let books = [];
 
   for (let page = 1; page <= numberOfPages; page++) {
-    console.log(`Fetching bookwyrm feed for [${username}] page ${page} of ${numberOfPages}…`);
-    const items = await fetchPage(page);
+    console.log(chalk.blue('[@photogabble/bookwyrm]'), `Fetching bookwyrm feed for [${username}] page ${page} of ${numberOfPages}…`);
+    const items = fetchPage(page);
     items.every(item => books.push(item));
   }
 
@@ -101,7 +117,7 @@ module.exports = async function() {
       data: items,
     });
     cache.save();
-    console.log('cache persisted');
+    console.log(chalk.blue('[@photogabble/bookwyrm]'), 'cache persisted');
   }
 
   return items;
