@@ -68,35 +68,49 @@ module.exports = function loadCollection(eleventyConfig) {
     return types;
   }, {
     stub: {
+      id: 'stub',
       name: 'Stubs',
       slug: 'stubs',
       items: [],
     },
+    glossary: {
+      id: 'glossary',
+      name: 'Glossary',
+      slug: 'glossary',
+      items: [],
+    },
     thought: {
+      id: 'thought',
       name: 'Thoughts',
       slug: 'thoughts',
       items: [],
     }, noteworthy: {
+      id: 'noteworthy',
       name: 'Noteworthy',
       slug: 'noteworthy',
       items: []
     }, essay: {
+      id: 'essay',
       name: 'Essays',
       slug: 'essays',
       items: []
     }, tutorial: {
+      id: 'tutorial',
       name: 'Tutorials',
       slug: 'tutorials',
       items: []
     }, project: {
+      id: 'project',
       name: 'Projects',
       slug: 'projects',
       items: []
     }, mirror: {
+      id: 'mirror',
       name: 'Mirrored Code Snippets',
       slug: 'mirrored',
       items: []
     }, colophon: {
+      id: 'colophon',
       name: 'Colophon',
       slug: 'colophon/update',
       items: []
