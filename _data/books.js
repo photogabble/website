@@ -98,7 +98,7 @@ module.exports = async function() {
 
   for (let page = 1; page <= numberOfPages; page++) {
     console.log(chalk.blue('[@photogabble/bookwyrm]'), `Fetching bookwyrm feed for [${username}] page ${page} of ${numberOfPages}…`);
-    const items = fetchPage(page);
+    const items = await fetchPage(page);
     items.every(item => books.push(item));
   }
 
