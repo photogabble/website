@@ -3,6 +3,7 @@ const fetch = require("node-fetch");
 const chalk = require("chalk");
 
 const username = 'carbontwelve';
+let hasTimedOut = false;
 const fetchUrl = async (url, timeout = 8000) => {
   const controller = new AbortController();
   const id = setTimeout(() => controller.abort(), timeout);
@@ -14,6 +15,11 @@ const fetchUrl = async (url, timeout = 8000) => {
 };
 
 module.exports = async function() {
+  if (hasTimedOut) {
+    console.log(chalk.blue('[@photogabble/bookwyrm]'), chalk.yellow('WARNING'), 'Not re-fetching upstream feed. Restart process to try again');
+    return [];
+  }
+
   console.log(chalk.blue('[@photogabble/bookwyrm]'), 'Fetching bookwrym feed');
 
   let cache = flatCache.load('bookwyrm-social-api');
@@ -37,13 +43,10 @@ module.exports = async function() {
       return Number(last.searchParams.get('page'));
     }).catch(e => {
       console.warn(chalk.blue('[@photogabble/bookwyrm]'), chalk.yellow('WARNING'), 'Upstream has gone away, unable to fetch bookwyrm outbox before timeout');
+      hasTimedOut = true;
       return 0;
     });
 
-  /**
-   * @param page {Number}
-   * @return {Array}
-   */
   const fetchPage = async (page) => {
     return await fetchUrl(`https://bookwyrm.social/user/${username}/outbox?page=${page}`)
       .then(res => res.json())
@@ -86,6 +89,7 @@ module.exports = async function() {
       }))
       .catch(e => {
         console.warn(chalk.blue('[@photogabble/bookwyrm]'), chalk.yellow('WARNING'), 'Upstream has gone away, unable to fetch bookwyrm outbox before timeout');
+        hasTimedOut = true;
         return [];
       });
   }
