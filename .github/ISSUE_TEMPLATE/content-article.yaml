@@ -15,7 +15,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: reason
+    id: premise
     attributes:
       label: "Premise"
       description: "Optional: What's the general idea for this content?"
@@ -23,7 +23,7 @@ body:
     validations:
       required: false
   - type: textarea
-    id: reason
+    id: research
     attributes:
       label: "Research"
       description: "Optional: List of resources found"
