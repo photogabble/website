@@ -1,0 +1,31 @@
+name: Add Article Idea
+description: Suggest a new article to be published
+title: "[Content/article] ..."
+labels: "content/article idea"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Only the site URL is required. All other fields are optional.
+  - type: input
+    id: title
+    attributes:
+      label: Article Title
+      placeholder: e.g. Digital Gardens
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: "Premise"
+      description: "Optional: What's the general idea for this content?"
+      placeholder: e.g. Found this interesting project and want to share it...
+    validations:
+      required: false
+  - type: textarea
+    id: reason
+    attributes:
+      label: "Research"
+      description: "Optional: List of resources found"
+    validations:
+      required: false
