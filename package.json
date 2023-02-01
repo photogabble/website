@@ -24,6 +24,7 @@
     "@11ty/eleventy-upgrade-help": "^1.0.1",
     "@fullhuman/postcss-purgecss": "^4.1.3",
     "@photogabble/eleventy-plugin-tag-normaliser": "^1.0.0",
+    "@photogabble/eleventy-plugin-blogtimes": "^1.0.0",
     "@photogabble/eleventy-plugin-word-stats": "^1.0.0",
     "autoprefixer": "^10.4.8",
     "chalk": "^4.1.1",

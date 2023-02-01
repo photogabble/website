@@ -22,6 +22,11 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addPlugin(UpgradeHelper);
   eleventyConfig.addPlugin(PostCSSPlugin);
+  eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-blogtimes'), {
+    generateHTML: (outputUrl, options) => `<img alt="Blogtimes histogram" width="${options.width}" height="${options.height}" src="${outputUrl}" style="min-width: auto;" />`,
+    lastXDays: 180,
+  });
+  eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addPlugin(wordStats, {
     output: (stats) => {
       return {
