@@ -33,9 +33,12 @@ A somewhat complete list of tools, applications, hardware and services that I us
 ### OSX Specific
 * Table Plus
 * Docker[^1]
+* Homebrew
+  * [shivammathur/php tap for PHP 5.6 to 8.3](https://github.com/shivammathur/homebrew-php)[^2]
+* Z shell (zsh)[^3]
 
 ## Languages
-* PHP[^2]
+* PHP[^4]
 * Node (TypeScript)
 * Golang
 
@@ -57,4 +60,6 @@ For work, in addition to the above (excluding the hosting) I use:
   * S3
 
 [^1]: I don't use Docker on the x230 ThinkPad due to it consuming too many resources
-[^2]: PHP is my primary language
+[^2]: I have a script in my `.zshrc` that creates an alias for each PHP version installed via brew
+[^3]: I should really look into installing [Oh my Zsh](https://ohmyz.sh/)
+[^4]: PHP is my primary language
