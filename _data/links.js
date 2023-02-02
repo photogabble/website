@@ -400,6 +400,54 @@ module.exports = [
         reason: null,
     },
 
+    {
+        title: "David Buchanan's Blog",
+        href: 'https://www.da.vidbuchanan.co.uk/',
+        src: null,
+        tags: ['Minimalist'],
+        reason: 'Very nice minimalist ASCII design.',
+    },
+
+    {
+        title: "Sean Conner's Blog: The Boston Diaries",
+        href: 'https://boston.conman.org/',
+        src: 'https://github.com/spc476/mod_blog',
+        tags: ['Programmer'],
+        reason: null,
+    },
+
+    {
+        title: "Pixel's Website",
+        href: 'https://www.pixouls.xyz/',
+        src: null,
+        tags: ['Minimalist'],
+        reason: null,
+    },
+
+    {
+        title: "Wesley’s Notebook",
+        href: 'https://notebook.wesleyac.com/',
+        src: null,
+        tags: ['Minimalist', 'Blog'],
+        reason: 'Wesley has joined as an admin on bookwyrm.social.',
+    },
+
+    {
+        title: "Florin Lipan's Website",
+        href: 'https://lipanski.com/',
+        src: null,
+        tags: [],
+        reason: 'Found through their docker-static-website project.',
+    },
+
+    {
+        title: "Caleb Hearth's Blog",
+        href: 'https://calebhearth.com',
+        src: null,
+        tags: ['Minimalist', 'Blog', 'TableTop'],
+        reason: 'Found via https://calebhearth.com/the-rescue-cadets-log',
+    },
+
     // {
     //     title: "",
     //     href: '',
