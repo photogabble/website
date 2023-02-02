@@ -15,5 +15,6 @@ module.exports = [
   'What do you call a fake noodle? An impasta.',
   '<strong>Question:</strong> Why did the cat sit on the computer?<br/><strong>Answer:</strong> To keep an eye on the mouse',
   'Autocorrect has become my worst enema.',
-  '<strong>Question:</strong> Why do bees have sticky hair?<br/><strong>Answer:</strong> Because they use a honeycomb.'
+  '<strong>Question:</strong> Why do bees have sticky hair?<br/><strong>Answer:</strong> Because they use a honeycomb.',
+  'There’s a band called 1023MB. They haven’t had any gigs yet.',
 ];

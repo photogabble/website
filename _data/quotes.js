@@ -77,6 +77,11 @@ module.exports = [
     cite: 'Mateus Williams',
   },
 
+  {
+    blockquote: "When a person can't find a deep sense of meaning , they distract themselves with pleasure.",
+    cite: 'Viktor Frankl',
+  },
+
   //
 
   // {
