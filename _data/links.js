@@ -416,6 +416,14 @@ module.exports = [
         reason: null,
     },
 
+    {
+        title: "Pixel's Website",
+        href: 'https://www.pixouls.xyz/',
+        src: null,
+        tags: ['Minimalist'],
+        reason: null,
+    },
+
     // {
     //     title: "",
     //     href: '',
