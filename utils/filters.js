@@ -16,7 +16,11 @@ module.exports = {
    * from the _data/build.js export and formats it via dateToFormat.
    * Another usage example used in layouts: {{ post.date | dateToFormat("LLL dd, yyyy") }}
    * And finally, example used in /src/posts/posts.json to format the permalink
-   * when working with old /yyyy/MM/dd/slug format from Wordpress exports.
+   * when working with old /yyyy/MM/dd/slug format from WordPress exports.
+   *
+   * @param date {Date}
+   * @param format {string}
+   * @returns {string}
    */
   dateToFormat: (date, format) => {
     return DateTime.fromJSDate(date, {
@@ -26,13 +30,17 @@ module.exports = {
 
   /**
    * Universal slug filter strips unsafe chars from URLs
+   *
+   * @param string {string}
+   * @returns {string}
    */
   slugify: (string) => strToSlug(string),
 
   /**
    * Takes a list of slugs and returns them converted to title case.
-   * @param list
-   * @return array
+   *
+   * @param list {Array<string>}
+   * @return array {Array<{slug:string, title:string}>}
    */
   formatSlugList: (list) => {
     return list.map((slug) => {
@@ -55,8 +63,9 @@ module.exports = {
 
   /**
    * Takes a list of tags and returns them mapped with url slug.
-   * @param list
-   * @returns array
+   *
+   * @param list {Array<string>}
+   * @returns {Array<{name:string, slug:string}>}
    */
   formatTagList: (list) => {
     return list.map((tag) => {
@@ -69,6 +78,10 @@ module.exports = {
 
   /**
    * Takes a list and returns the limit number of items.
+   *
+   * @param array {Array<any>}
+   * @param limit {number}
+   * @returns {Array<any>}
    */
   limit: (array, limit) => array.slice(0, limit),
 
@@ -122,6 +135,7 @@ module.exports = {
 
   /**
    * Takes a 11ty collection and returns a stats object for presentation
+   * TODO: turn this into a 11ty plugin...
    */
   collectionStats: (collection) => {
     const numberFormatter = new Intl.NumberFormat('en-GB', {maximumSignificantDigits: 3});
