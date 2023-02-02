@@ -1,7 +1,7 @@
 <nav class="tags-list">
     <h2>Hot Topics</h2>
     <ul style="display: grid;">
-        {%- for tag in collections.contentTags | limit(7) %}
+        {%- for tag in collections.contentTags | limit(8) %}
             <li><a href="/topic/{{ tag.slug }}"> {{ tag.name }} <small>({{ tag.items.length }})</small></a></li>
         {%- endfor %}
         <li><a href="/topic">All Topics</a></li>
