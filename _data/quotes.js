@@ -82,6 +82,11 @@ module.exports = [
     cite: 'Viktor Frankl',
   },
 
+  {
+    blockquote: "Failure is a bruise, not a tattoo",
+    cite: 'Jon Sinclair',
+  },
+
   //
 
   // {
