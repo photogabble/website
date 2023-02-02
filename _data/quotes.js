@@ -87,6 +87,11 @@ module.exports = [
     cite: 'Jon Sinclair',
   },
 
+  {
+    blockquote: "Write it on your heart that every day is the best day in the year.",
+    cite: 'Ralph Waldo',
+  },
+
   //
 
   // {
