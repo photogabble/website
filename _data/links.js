@@ -408,6 +408,14 @@ module.exports = [
         reason: 'Very nice minimalist ASCII design.',
     },
 
+    {
+        title: "Sean Conner's Blog: The Boston Diaries",
+        href: 'https://boston.conman.org/',
+        src: 'https://github.com/spc476/mod_blog',
+        tags: ['Programmer'],
+        reason: null,
+    },
+
     // {
     //     title: "",
     //     href: '',
