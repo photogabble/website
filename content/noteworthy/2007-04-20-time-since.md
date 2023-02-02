@@ -1,7 +1,7 @@
 ---
 title: A time_since function for PHP
 description: A simple time since function for PHP
-tags: [Programming, PHP, Revived]
+tags: [Programming, PHP, Revived, Wayback Machine]
 growthStage: budding
 ---
 

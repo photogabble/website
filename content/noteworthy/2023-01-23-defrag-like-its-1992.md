@@ -1,6 +1,6 @@
 ---
 title: "Defrag like its 1992"
-tags: ["DOS", "Retro Computing"]
+tags: ["DOS", "Retro Computing", Wayback Machine]
 growthStage: budding
 ---
 

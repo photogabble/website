@@ -3,6 +3,7 @@ title: "Mirror of B2BlogTime.php by Sanjay Sheth"
 tags:
   - PHP
   - Blogtimes
+  - Wayback Machine
 ---
 
 Code snippet sourced from this [Wayback Machine copy from the now defunct sastools.com](https://web.archive.org/web/20040815143403/http://sastools.com:80/b2/b2blogtime.php.txt).
