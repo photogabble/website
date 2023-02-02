@@ -92,6 +92,11 @@ module.exports = [
     cite: 'Ralph Waldo',
   },
 
+  {
+    blockquote: "We all have 365 days every year. The difference is what you do with them.",
+    cite: 'Hillary DePiano',
+  },
+
   //
 
   // {

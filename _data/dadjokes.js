@@ -19,4 +19,5 @@ module.exports = [
   'There’s a band called 1023MB. They haven’t had any gigs yet.',
   '"Knock, knock. Who\'s there?"<br/>very long pause...<br/>"Java."',
   'An SEO expert walks into a bar, bars, pub, tavern, public house, Irish pub, drinks, beer, alcohol',
+  'I would tell you a UDP joke, but you might not get it',
 ];
