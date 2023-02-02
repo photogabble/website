@@ -1,6 +1,6 @@
 ---
 title: "Adding statistics to 11ty"
-tags: [Blogging]
+tags: [Blogging, 11ty]
 growthStage: seedling
 ---
 
@@ -40,3 +40,5 @@ interface DataByYear {
 ```
 
 This filter didn't actually end up directly using `@photogabble/eleventy-plugin-word-stats` for obtaining word counts, but it did use the [`reading-time`](https://www.npmjs.com/package/reading-time) library it depends upon so that my statistics all came from the same source.
+
+You can see the live output at [/stats](/stats/).

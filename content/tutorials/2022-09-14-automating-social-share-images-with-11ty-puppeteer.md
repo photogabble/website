@@ -1,8 +1,6 @@
 ---
 title: Using Puppeteer with 11ty to automate generating social share images
-tags:
-    - Programming
-    - JavaScript
+tags: [Programming, JavaScript, 11ty]
 growthStage: evergreen
 ---
 

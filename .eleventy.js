@@ -9,8 +9,17 @@ const PostCSSPlugin = require("eleventy-plugin-postcss");
 const linkMapCache = require("./utils/helpers/map");
 
 const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
+const {setupMarkdownIt} = require("./utils/helpers/hashtags");
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.setUseGitIgnore(false);
+  eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-tag-normaliser'), {
+    ignore: ['PHP', 'JavaScript', 'DOScember'],
+    similar: {
+      'Game Development': ['GameDev'],
+    },
+    slugify,
+  });
   eleventyConfig.addPlugin(UpgradeHelper);
   eleventyConfig.addPlugin(PostCSSPlugin);
   eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-blogtimes'), {
@@ -18,7 +27,6 @@ module.exports = function (eleventyConfig) {
     lastXDays: 180,
   });
   eleventyConfig.setUseGitIgnore(false);
-
   eleventyConfig.addPlugin(wordStats, {
     output: (stats) => {
       return {
@@ -38,9 +46,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter(filterName, filters[filterName])
   })
 
-  Object.keys(collections).forEach((collectionName) => {
-    eleventyConfig.addCollection(collectionName, collections[collectionName])
-  })
+  for (const [name, collection] of Object.entries(collections(eleventyConfig))) {
+    eleventyConfig.addCollection(name, collection);
+  }
 
   Object.keys(transforms).forEach((transformName) => {
     eleventyConfig.addTransform(transformName, transforms[transformName])
@@ -81,29 +89,29 @@ module.exports = function (eleventyConfig) {
       require('prismjs/components/prism-markdown')
       require('prismjs/components/prism-basic')
       require('prismjs/components/prism-go')
+      require('prismjs/components/prism-regex')
     }
   });
 
   // Markdown libraries
-  let markdownIt = require("markdown-it");
-  let markdownItAnchor = require("markdown-it-anchor");
-  let markdownFootnote = require("markdown-it-footnote");
+  const markdownIt = require('markdown-it')({
+    html: true,
+    breaks: true,
+    linkify: true,
+  }).use(require("markdown-it-anchor"), {
+    permalink: false,
+    slugify: input => slugify(input),
+  }).use(require('./utils/helpers/wikilinks'),{
+    linkMapCache,
+    eleventyConfig
+  }).use(require("markdown-it-footnote"));
+
+  setupMarkdownIt(markdownIt);
 
   // eleventyConfig.on('eleventy.after', async () => {
   //   const all = linkMapCache.all();
   //   const n = 1;
   // });
 
-  eleventyConfig
-    .setLibrary("md", markdownIt({
-      html: true,
-      breaks: true,
-      linkify: true
-    }).use(markdownItAnchor, {
-      permalink: false,
-      slugify: input => slugify(input)
-    }).use(require('./utils/helpers/wikilinks'), {
-      linkMapCache,
-      eleventyConfig
-    }).use(markdownFootnote));
+  eleventyConfig.setLibrary("md", markdownIt);
 };
