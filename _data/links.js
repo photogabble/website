@@ -424,6 +424,14 @@ module.exports = [
         reason: null,
     },
 
+    {
+        title: "Wesley’s Notebook",
+        href: 'https://notebook.wesleyac.com/',
+        src: null,
+        tags: ['Minimalist', 'Blog'],
+        reason: 'Wesley has joined as an admin on bookwyrm.social.',
+    },
+
     // {
     //     title: "",
     //     href: '',
