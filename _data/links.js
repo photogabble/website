@@ -432,6 +432,14 @@ module.exports = [
         reason: 'Wesley has joined as an admin on bookwyrm.social.',
     },
 
+    {
+        title: "Florin Lipan's Website",
+        href: 'https://lipanski.com/',
+        src: null,
+        tags: [],
+        reason: 'Found through their docker-static-website project.',
+    },
+
     // {
     //     title: "",
     //     href: '',
