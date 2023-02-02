@@ -400,6 +400,14 @@ module.exports = [
         reason: null,
     },
 
+    {
+        title: "David Buchanan's Blog",
+        href: 'https://www.da.vidbuchanan.co.uk/',
+        src: null,
+        tags: ['Minimalist'],
+        reason: 'Very nice minimalist ASCII design.',
+    },
+
     // {
     //     title: "",
     //     href: '',
