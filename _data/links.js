@@ -440,6 +440,14 @@ module.exports = [
         reason: 'Found through their docker-static-website project.',
     },
 
+    {
+        title: "Caleb Hearth's Blog",
+        href: 'https://calebhearth.com',
+        src: null,
+        tags: ['Minimalist', 'Blog', 'TableTop'],
+        reason: 'Found via https://calebhearth.com/the-rescue-cadets-log',
+    },
+
     // {
     //     title: "",
     //     href: '',
