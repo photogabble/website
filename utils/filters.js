@@ -134,6 +134,15 @@ module.exports = {
   },
 
   /**
+   * Check if a given tag list contains a slug.
+   *
+   * @param tags {Array<string>}
+   * @param slug {string}
+   * @returns {boolean}
+   */
+  includesTag: (tags, slug) => tags.find(tag => tag.toLowerCase() === slug.toLowerCase()) !== undefined,
+
+  /**
    * Takes a 11ty collection and returns a stats object for presentation
    * TODO: turn this into a 11ty plugin...
    */

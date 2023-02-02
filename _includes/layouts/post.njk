@@ -35,6 +35,11 @@
             {{ content | safe }}
         </section>
 
+        {% if tags | includesTag('wayback machine') %}
+            <hr/>
+            {% include "components/wayback-machine.njk" %}
+        {% endif %}
+
         {% if backlinks.length > 0 %}
             <nav>
                 <h3>Linking here</h3>
