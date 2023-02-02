@@ -22,4 +22,5 @@ module.exports = [
   'I would tell you a UDP joke, but you might not get it',
   '8 bytes walk into a bar, the bartenders asks "What will it be?"<br/>One of them says, "Make us a double."',
   'In order to understand recursion you must first understand recursion.',
+  '<strong>Question:</strong>Why do programmers always mix up Halloween and Christmas?<br/><strong>Answer:</strong>Because Oct 31 = Dec 25.'
 ];

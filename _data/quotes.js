@@ -107,6 +107,11 @@ module.exports = [
     cite: 'Dan Salomon',
   },
 
+  {
+    blockquote: "Your children need your presence more than your presents.",
+    cite: 'Jesse Jackson',
+  },
+
   //
 
   // {
