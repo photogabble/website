@@ -15,5 +15,6 @@ jobs:
         run: npm install
       - name: View issue information
         run: |
+          echo "Issue id: ${{ github.event.issue.id }}"
           echo "Issue title: ${{ github.event.issue.title }}"
           echo "Issue body: ${{ github.event.issue.body }}"
