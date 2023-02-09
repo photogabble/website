@@ -1,6 +1,6 @@
 const filters = require('./utils/filters')
-const collections = require('./utils/collections')
-const {slugify} = require('./utils/filters')
+const collections = require('./utils/collections');
+const {slugify} = require('./utils/filters');
 const shortcodes = require('./utils/shortcodes');
 const transforms = require('./utils/transforms');
 const wordStats = require('@photogabble/eleventy-plugin-word-stats');
@@ -63,9 +63,8 @@ module.exports = function (eleventyConfig) {
     './_assets/og-image': './img/og-image',
   });
 
-  for (const shortCode in shortcodes) {
-    eleventyConfig.addShortcode(shortCode, shortcodes[shortCode]);
-    console.log(shortCode);
+  for (const [name, shortCode] of Object.entries(shortcodes(eleventyConfig))) {
+    eleventyConfig.addLiquidShortcode(name, shortCode);
   }
 
   const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
