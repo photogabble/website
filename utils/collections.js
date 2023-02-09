@@ -63,7 +63,7 @@ module.exports = function loadCollection(eleventyConfig) {
       ? 'stub'
       : post.data.contentType;
 
-    if (post.data.contentType) types[section].items.push(post);
+    if (post.data.contentType && types[section]) types[section].items.push(post);
 
     return types;
   }, {
