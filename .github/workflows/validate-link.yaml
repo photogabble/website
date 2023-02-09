@@ -7,14 +7,10 @@ jobs:
     if: contains(github.event.issue.labels.*.name, 'content/link')
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-      - name: Cache/Restore node modules
-        uses: actions/cache@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          path: ~/.npm # npm cache files are stored in `~/.npm` on Linux/macOS
-          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
-
+          node-version: 16
       - name: Install Dependencies
         run: npm install
       - name: View issue information
