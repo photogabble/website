@@ -12,6 +12,7 @@ upon a few distinct content types:
 - _[Thoughts](/thoughts)_, quick weakly held ideas on things I haven't fully worked out
 - _[Tutorials](/tutorials)_, an attempt at spreading my knowledge
 - _[Projects](/projects)_, things that I have worked on
+- _[Glossary](/glossary)_, definitions of phrases as I understand and use them
 - _[/now](/now)_, a monthly updated list of what I am currently doing
 
 My [Bookshelf](/books) and [/uses](/uses) pages are an exception to the above, my reading
