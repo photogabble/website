@@ -15,7 +15,7 @@
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    src: url('../fonts/iosevka-etoile-regular.subset.woff2') format('woff2');
+    src: url('../_assets/fonts/iosevka-etoile-regular.subset.woff2') format('woff2');
 }
 
 @font-face {
@@ -24,7 +24,7 @@
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    src: url('../fonts/iosevka-etoile-bold.subset.woff2') format('woff2');
+    src: url('../_assets/fonts/iosevka-etoile-bold.subset.woff2') format('woff2');
 }
 
 @font-face {
@@ -33,7 +33,7 @@
     font-weight: bold;
     font-stretch: normal;
     font-style: italic;
-    src: url('../fonts/iosevka-etoile-bold.subset.woff2') format('woff2');
+    src: url('../_assets/fonts/iosevka-etoile-bold.subset.woff2') format('woff2');
 }
 
 @font-face {
@@ -42,7 +42,7 @@
     font-weight: normal;
     font-stretch: normal;
     font-style: italic;
-    src: url('../fonts/iosevka-etoile-italic.subset.woff2') format('woff2');
+    src: url('../_assets/fonts/iosevka-etoile-italic.subset.woff2') format('woff2');
 }
 
 * {
