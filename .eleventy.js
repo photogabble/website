@@ -7,8 +7,6 @@ const wordStats = require('@photogabble/eleventy-plugin-word-stats');
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const PostCSSPlugin = require("eleventy-plugin-postcss");
 const linkMapCache = require("./utils/helpers/map");
-
-const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 const {setupMarkdownIt} = require("./utils/helpers/hashtags");
 
 module.exports = function (eleventyConfig) {
@@ -28,7 +26,6 @@ module.exports = function (eleventyConfig) {
     },
     slugify,
   });
-  eleventyConfig.addPlugin(UpgradeHelper);
   eleventyConfig.addPlugin(PostCSSPlugin);
   eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-blogtimes'), {
     generateHTML: (outputUrl, options) => `<img alt="Blogtimes histogram" width="${options.width}" height="${options.height}" src="${outputUrl}" style="min-width: auto;" />`,
@@ -73,7 +70,6 @@ module.exports = function (eleventyConfig) {
 
   for (const shortCode in shortcodes) {
     eleventyConfig.addShortcode(shortCode, shortcodes[shortCode]);
-    console.log(shortCode);
   }
 
   const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
