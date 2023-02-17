@@ -15,10 +15,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addPlugin(require('./utils/font-plugin'), {
     srcFiles: [
-      `${__dirname}/fonts/iosevka-etoile-regular.woff2`,
-      `${__dirname}/fonts/iosevka-etoile-italic.woff2`,
-      `${__dirname}/fonts/iosevka-etoile-bold.woff2`,
-      `${__dirname}/fonts/iosevka-etoile-bolditalic.woff2`,
+      `${__dirname}/_assets/fonts/iosevka-etoile-regular.woff2`,
+      `${__dirname}/_assets/fonts/iosevka-etoile-italic.woff2`,
+      `${__dirname}/_assets/fonts/iosevka-etoile-bold.woff2`,
+      `${__dirname}/_assets/fonts/iosevka-etoile-bolditalic.woff2`,
     ]
   });
   eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-tag-normaliser'), {
