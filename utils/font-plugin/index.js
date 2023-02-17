@@ -1,9 +1,13 @@
-const { spawn } = require("child_process");
-const chalk = require("chalk");
-
-// TODO: could use node-html-parser to find glyph usage by dom element (e.g if I used a different font for headings)
+const ObjectCache = require('../helpers/cache');
+const { spawn } = require('child_process');
+const chalk = require('chalk');
+const path = require('path');
+const fs = require('fs');
 
 /**
+ * Uses the system which command to check if a given command exists in the users' path.
+ * This is of course linux/unix specific and will need updating if this is deployed on
+ * a windows box... or there might be a node built in I am unaware of that does this??
  *
  * @param command {string}
  * @returns {Promise<boolean>}
@@ -16,6 +20,7 @@ function checkCommandExists(command) {
 }
 
 module.exports = function (eleventyConfig, options = {}) {
+  const cache = new ObjectCache('font-subsetting');
   const glyphs = {
     chars: new Set(),
     add(text) {
@@ -36,28 +41,40 @@ module.exports = function (eleventyConfig, options = {}) {
   });
 
   eleventyConfig.on('eleventy.after', async () => {
+    const cachedUnicodeHexRange = cache.get('cs');
+    const CharacterSet = await import('characterset');
+    const cs = new CharacterSet.default(glyphs.getUnique());
+    const unicodeHexRange = cs.toHexRangeString();
+    let srcFiles = options.srcFiles ?? [];
+
+    // If we have a cached unicode hex range that's identical to what has been discovered then we do not need to
+    // rebuild the font files unless a subset font file is missing.
+    if (cachedUnicodeHexRange && cachedUnicodeHexRange === unicodeHexRange) {
+      srcFiles = srcFiles.filter((srcFile) => {
+        const info = path.parse(srcFile);
+        return fs.existsSync( `${info.dir}/${info.name}.subset${info.ext}`) === false;
+      });
+
+      if (srcFiles.length === 0) {
+        console.log(chalk.blue('[@photogabble/glyphs]'), chalk.green('[OK]'), 'Matching cached charset found, not rebuilding fonts');
+        return;
+      }
+    }
+
+    console.log(chalk.blue('[@photogabble/glyphs]'), `Identified ${glyphs.chars.size} unique glyphs in use, creating subset`);
+    console.log(chalk.blue('[@photogabble/glyphs]'), 'Codepoint Range:', unicodeHexRange);
+    console.log(chalk.blue('[@photogabble/glyphs]'), `Subsetting ${srcFiles.length} font files.`);
+
+    // If we must run, first check if pyftsubset is available in our path
     if ((await checkCommandExists('pyftsubset')) === false) {
       console.log(chalk.blue('[@photogabble/glyphs]'), chalk.red('[ERROR]'), 'Unable to locate pyftsubset, please install via "pip install fonttools"');
       return;
     }
 
-    const CharacterSet = await import('characterset');
-    const cs = new CharacterSet.default(glyphs.getUnique());
-
-    // TODO: If the subset font files exist then check if the value of cs.toHexRangeString() has changed from the cached value
-    // TODO: cache cs.toHexRangeString() forever, until its found to change
-
-    console.log(chalk.blue('[@photogabble/glyphs]'), `Identified ${glyphs.chars.size} unique glyphs in use, creating subset`);
-    console.log(chalk.blue('[@photogabble/glyphs]'), 'Codepoint Range:', cs.toHexRangeString());
-
     const promises = [];
-    for (const src of options.srcFiles ?? []) {
-
-      // TODO: workout the subset version of src and check if it exists
-      //       if it does and the cached hex range is current then do not process
-
+    for (const src of srcFiles) {
       promises.push(new Promise((resolve) => {
-        console.log(chalk.blue('[@photogabble/glyphs]'), chalk.yellow('[...]'), `Processing: ${src}`);
+        console.log(chalk.blue('[@photogabble/glyphs]'), chalk.yellow('[..]'), `Processing: ${src}`);
 
         const buildProcess = spawn(
           "pyftsubset",
@@ -79,6 +96,10 @@ module.exports = function (eleventyConfig, options = {}) {
     }
 
     await Promise.all(promises);
+
+    // Cache unicode hex range for 10 years (forever...)
+    cache.set('cs', unicodeHexRange, 86400 * 365 * 10);
+
     console.log(chalk.blue('[@photogabble/glyphs]'), chalk.green('[OK]'), `Complete`);
   });
 };
