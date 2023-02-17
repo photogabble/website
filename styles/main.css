@@ -177,10 +177,6 @@ footer dd:not(:last-child):after {
     content: '\00a0|\00a0';
 }
 
-footer dd a{
-    font-style: italic;
-}
-
 footer p {
     grid-column: 1/-1;
     margin: 0;
