@@ -9,12 +9,48 @@
 @import "components/_table.css";
 @import "components/_figure.css";
 
+@font-face {
+    font-family: 'Iosevka Etoile';
+    font-display: swap;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    src: url('../fonts/iosevka-etoile-regular.subset.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Iosevka Etoile';
+    font-display: swap;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    src: url('../fonts/iosevka-etoile-bold.subset.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Iosevka Etoile';
+    font-display: swap;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: italic;
+    src: url('../fonts/iosevka-etoile-bold.subset.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Iosevka Etoile';
+    font-display: swap;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: italic;
+    src: url('../fonts/iosevka-etoile-italic.subset.woff2') format('woff2');
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: monospace, "Courier New", Courier;
+    font-family: "Iosevka Etoile", monospace;
     background-color: var(--background);
     color: var(--foreground);
 
@@ -22,7 +58,7 @@ body {
     line-height: 1.54;
     letter-spacing: -.02em;
     text-rendering: optimizeLegibility;
-    font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl", "calt";
+    font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
     font-variant-ligatures: contextual;
 
     min-height: 100vh;
