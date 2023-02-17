@@ -42,7 +42,6 @@
     "postcss": "^8.4.16",
     "postcss-import": "^15.0.0",
     "postcss-minify": "^1.1.0",
-    "postcss-url": "^10.1.3",
     "puppeteer": "^17.1.3"
   }
 }

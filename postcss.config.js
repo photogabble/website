@@ -1,9 +1,5 @@
 let plugins = [
     require('postcss-import'),
-    require('postcss-url')({
-        url: 'copy',
-        assetsPath: 'assets'
-    }),
     require('autoprefixer'),
 ];
 
