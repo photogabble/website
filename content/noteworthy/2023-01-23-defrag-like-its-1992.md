@@ -11,7 +11,7 @@ The first computer that I owned was a second hand [[Toshiba T5100]] luggable sav
 
 This didn't stop me from using the [MS-DOS `defrag` command](https://www.computerhope.com/defrag.htm) and spend longer than reasonable watching it do its thing; I did however learn quickly that turning the computer off while its working would corrupt the disk.
 
-I had forgotten that memory until stumbling upon this [hacker news post titled: Defrag like its 1992](https://news.ycombinator.com/item?id=29585654) way back in December of 2021 ()[^1].
+I had forgotten that memory until stumbling upon this [hacker news post titled: Defrag like its 1992](https://news.ycombinator.com/item?id=29585654) way back in December 2021[^1].
 
 {% figure "/img/defrag-like-its-1992-1.png" "Fig 1. A close approximation to the real thing..." "An HTML reproduction of the Text Based UI (TUI) of the MS-DOS Defrag command. It's made up of a selection of ASCII box characters to show sections of the disk that are used/unused. Other characters are used to denote status of disk blocks: r for reading, W for writing, B for bad and X for unmovable." %}
 
