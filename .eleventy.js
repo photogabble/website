@@ -11,17 +11,16 @@ const {setupMarkdownIt} = require("./utils/helpers/hashtags");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
-  if (process.env.ELEVENTY_ENV !== 'production') {
-    eleventyConfig.addPlugin(require('./utils/font-plugin'), {
-      srcFiles: [
-        `./_assets/fonts/iosevka-etoile-regular.woff2`,
-        `./_assets/fonts/iosevka-etoile-italic.woff2`,
-        `./_assets/fonts/iosevka-etoile-bold.woff2`,
-        `./_assets/fonts/iosevka-etoile-bolditalic.woff2`,
-      ],
-      dist: './fonts'
-    });
-  }
+  eleventyConfig.addPlugin(require('./utils/font-plugin'), {
+    srcFiles: [
+      `./_assets/fonts/iosevka-etoile-regular.woff2`,
+      `./_assets/fonts/iosevka-etoile-italic.woff2`,
+      `./_assets/fonts/iosevka-etoile-bold.woff2`,
+      `./_assets/fonts/iosevka-etoile-bolditalic.woff2`,
+    ],
+    dist: './fonts',
+    enabled: process.env.ELEVENTY_ENV !== 'production'
+  });
   eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-tag-normaliser'), {
     ignore: ['PHP', 'JavaScript', 'DOScember'],
     similar: {

@@ -25,6 +25,7 @@ function rootPath(p){
 
 module.exports = function (eleventyConfig, options = {}) {
   if (options.dist) eleventyConfig.addPassthroughCopy(options.dist);
+  if (options.enabled === false) return;
 
   const cache = new ObjectCache('font-subsetting');
   const glyphs = {
