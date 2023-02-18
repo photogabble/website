@@ -48,6 +48,11 @@ pre {
     padding: 1em;
 }
 
+p > code {
+    background: var(--foreground-muted);
+    color: var(--background);
+}
+
 hr{
     border: 0;
     border-bottom: 1px dotted var(--foreground-muted);
