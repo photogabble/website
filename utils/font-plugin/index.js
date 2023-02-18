@@ -1,8 +1,8 @@
 const ObjectCache = require('../helpers/cache');
-const { spawn } = require('child_process');
+const { spawn } = require('node:child_process');
 const chalk = require('chalk');
-const path = require('path');
-const fs = require('fs');
+const path = require('node:path');
+const fs = require('node:fs');
 
 /**
  * Uses the system which command to check if a given command exists in the users' path.
@@ -19,7 +19,13 @@ function checkCommandExists(command) {
   });
 }
 
+function rootPath(p){
+  return path.resolve(process.env.ELEVENTY_ROOT, p);
+}
+
 module.exports = function (eleventyConfig, options = {}) {
+  if (options.dist) eleventyConfig.addPassthroughCopy(options.dist);
+
   const cache = new ObjectCache('font-subsetting');
   const glyphs = {
     chars: new Set(),
@@ -45,15 +51,21 @@ module.exports = function (eleventyConfig, options = {}) {
     const CharacterSet = await import('characterset');
     const cs = new CharacterSet.default(glyphs.getUnique());
     const unicodeHexRange = cs.toHexRangeString();
-    let srcFiles = options.srcFiles ?? [];
+    const rootDist = options.dist ? rootPath(options.dist) : false;
+    let srcFiles = (options.srcFiles ?? []).map((src) => {
+      const info = path.parse(src);
+      const dir = rootDist ? rootDist : info.dir;
+
+      return {
+        src: rootPath(src),
+        dist: `${dir}/${info.name}.subset${info.ext}`
+      }
+    });
 
     // If we have a cached unicode hex range that's identical to what has been discovered then we do not need to
     // rebuild the font files unless a subset font file is missing.
     if (cachedUnicodeHexRange && cachedUnicodeHexRange === unicodeHexRange) {
-      srcFiles = srcFiles.filter((srcFile) => {
-        const info = path.parse(srcFile);
-        return fs.existsSync( `${info.dir}/${info.name}.subset${info.ext}`) === false;
-      });
+      srcFiles = srcFiles.filter((file) => fs.existsSync( file.dist) === false);
 
       if (srcFiles.length === 0) {
         console.log(chalk.blue('[@photogabble/glyphs]'), chalk.green('[OK]'), 'Matching cached charset found, not rebuilding fonts');
@@ -72,14 +84,14 @@ module.exports = function (eleventyConfig, options = {}) {
     }
 
     const promises = [];
-    for (const src of srcFiles) {
+    for (const file of srcFiles) {
       promises.push(new Promise((resolve) => {
-        console.log(chalk.blue('[@photogabble/glyphs]'), chalk.yellow('[..]'), `Processing: ${src}`);
-
+        console.log(chalk.blue('[@photogabble/glyphs]'), chalk.yellow('[..]'), `Processing: ${file.src}`);
         const buildProcess = spawn(
           "pyftsubset",
           [
-            src,
+            file.src,
+            `--output-file=${file.dist}`,
             `--unicodes=${cs.toHexRangeString()}`,
             '--flavor=woff2',
           ],
@@ -89,7 +101,7 @@ module.exports = function (eleventyConfig, options = {}) {
         buildProcess.on('error', (err) => console.error(err));
 
         buildProcess.on("close", () => {
-          console.log(chalk.blue('[@photogabble/glyphs]'), chalk.green('[OK]'), `Processed: ${src}`);
+          console.log(chalk.blue('[@photogabble/glyphs]'), chalk.green('[OK]'), `Saved: ${file.dist}`);
           resolve();
         });
       }));
