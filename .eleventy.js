@@ -14,11 +14,12 @@ module.exports = function (eleventyConfig) {
   if (process.env.ELEVENTY_ENV !== 'production') {
     eleventyConfig.addPlugin(require('./utils/font-plugin'), {
       srcFiles: [
-        `${__dirname}/_assets/fonts/iosevka-etoile-regular.woff2`,
-        `${__dirname}/_assets/fonts/iosevka-etoile-italic.woff2`,
-        `${__dirname}/_assets/fonts/iosevka-etoile-bold.woff2`,
-        `${__dirname}/_assets/fonts/iosevka-etoile-bolditalic.woff2`,
-      ]
+        `./_assets/fonts/iosevka-etoile-regular.woff2`,
+        `./_assets/fonts/iosevka-etoile-italic.woff2`,
+        `./_assets/fonts/iosevka-etoile-bold.woff2`,
+        `./_assets/fonts/iosevka-etoile-bolditalic.woff2`,
+      ],
+      dist: './fonts'
     });
   }
   eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-tag-normaliser'), {
@@ -63,11 +64,11 @@ module.exports = function (eleventyConfig) {
 
   // Don't process folders with static assets e.g. images
   eleventyConfig.addPassthroughCopy({
-    './_assets/favicon': './',
-    './_assets/files': './files',
-    './img': './img',
+    '_assets/favicon': '/',
+    '_assets/files': 'files',
+    'img': './img',
     '_redirects': '_redirects',
-    './_assets/og-image': './img/og-image',
+    '_assets/og-image': 'img/og-image',
   });
 
   for (const shortCode in shortcodes) {
