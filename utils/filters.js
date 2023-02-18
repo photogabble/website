@@ -143,6 +143,21 @@ module.exports = {
   includesTag: (tags, slug) => tags.find(tag => tag.toLowerCase() === slug.toLowerCase()) !== undefined,
 
   /**
+   * Group a collection by year.
+   *
+   * @param collection
+   * @returns {*}
+   */
+  groupByYear: (collection) => collection
+    .reduce((carry, post) => {
+      const year = post.date.getFullYear();
+      const group = carry.get(year) ?? [];
+      group.push(post);
+      carry.set(year, group);
+      return carry;
+    }, new Map()),
+
+  /**
    * Takes a 11ty collection and returns a stats object for presentation
    * TODO: turn this into a 11ty plugin...
    */
