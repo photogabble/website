@@ -1,5 +1,5 @@
 const {chunk} = require('./helpers')
-const {slugify} = require("./filters");
+const {slugify, padStart} = require("./filters");
 const {setupMarkdownIt, parseCollectionHashtags} = require ('./helpers/hashtags');
 
 // Written with inspiration from:
@@ -124,6 +124,24 @@ module.exports = function loadCollection(eleventyConfig) {
   const contentPaginatedByTopic = (collection) => contentTags(collection)
     .reduce(paginateContentTaxonomy('topic/'), []);
 
+  const contentPaginatedByYearMonth = (collection) => Array.from(post(collection)
+    .reduce((carry, post) => {
+      const key = `${post.date.getFullYear()}/${post.date.getMonth()}`;
+      const month = (post.date.getMonth() + 1);
+      const segment = carry.get(key) ?? {
+        title: `Posts published ${month}/${post.date.getFullYear()}`,
+        slug: `${post.date.getFullYear()}/${padStart(month, 2, '0')}`,
+        pageNumber: 1,
+        totalPages: 1,
+        items: [],
+      };
+
+      if (post.data.growthStage && post.data.growthStage !== 'stub') segment.items.push(post);
+
+      carry.set(key, segment);
+      return carry;
+    }, new Map()).values());
+
   const nowUpdates = (collection) => [...collection.getFilteredByGlob('./now/*.md')
     .filter((post) => !post.data.draft)];
 
@@ -133,6 +151,7 @@ module.exports = function loadCollection(eleventyConfig) {
     contentTypes,
     contentPaginatedByType,
     contentPaginatedByTopic,
+    contentPaginatedByYearMonth,
     nowUpdates
   }
 }

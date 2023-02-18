@@ -1,0 +1,20 @@
+---
+pagination:
+  data: collections.contentPaginatedByYearMonth
+  size: 1
+  alias: yearMonth
+permalink: /archive/{{ yearMonth.slug }}/index.html
+---
+
+{% extends "_includes/layouts/page.njk" %}
+
+{% block content %}
+
+  <h1>{{ yearMonth.title }}</h1>
+
+  {% set displayContentType = true %}
+  {% set postsList = yearMonth.items | reverse %}
+  {% include "_includes/components/post-list.njk" %}
+
+{{ yearMonth | debug }}
+{% endblock %}
