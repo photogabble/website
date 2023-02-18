@@ -7,12 +7,20 @@ const wordStats = require('@photogabble/eleventy-plugin-word-stats');
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const PostCSSPlugin = require("eleventy-plugin-postcss");
 const linkMapCache = require("./utils/helpers/map");
-
-const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 const {setupMarkdownIt} = require("./utils/helpers/hashtags");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
+  eleventyConfig.addPlugin(require('./utils/font-plugin'), {
+    srcFiles: [
+      `./_assets/fonts/iosevka-etoile-regular.woff2`,
+      `./_assets/fonts/iosevka-etoile-italic.woff2`,
+      `./_assets/fonts/iosevka-etoile-bold.woff2`,
+      `./_assets/fonts/iosevka-etoile-bolditalic.woff2`,
+    ],
+    dist: './fonts',
+    enabled: process.env.ELEVENTY_ENV !== 'production'
+  });
   eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-tag-normaliser'), {
     ignore: ['PHP', 'JavaScript', 'DOScember'],
     similar: {
@@ -20,7 +28,6 @@ module.exports = function (eleventyConfig) {
     },
     slugify,
   });
-  eleventyConfig.addPlugin(UpgradeHelper);
   eleventyConfig.addPlugin(PostCSSPlugin);
   eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-blogtimes'), {
     generateHTML: (outputUrl, options) => `<img alt="Blogtimes histogram" width="${options.width}" height="${options.height}" src="${outputUrl}" style="min-width: auto;" />`,
@@ -56,16 +63,15 @@ module.exports = function (eleventyConfig) {
 
   // Don't process folders with static assets e.g. images
   eleventyConfig.addPassthroughCopy({
-    './_assets/favicon': './',
-    './_assets/files': './files',
-    './img': './img',
+    '_assets/favicon': '/',
+    '_assets/files': 'files',
+    'img': './img',
     '_redirects': '_redirects',
-    './_assets/og-image': './img/og-image',
+    '_assets/og-image': 'img/og-image',
   });
 
   for (const shortCode in shortcodes) {
     eleventyConfig.addShortcode(shortCode, shortcodes[shortCode]);
-    console.log(shortCode);
   }
 
   const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");

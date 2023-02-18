@@ -3,6 +3,7 @@
 @import "../node_modules/prismjs/plugins/treeview/prism-treeview.css";
 
 /* Components */
+@import "components/_fonts.css";
 @import "components/_themes.css";
 @import "components/_post-list.css";
 @import "components/_button.css";
@@ -14,7 +15,7 @@
 }
 
 body {
-    font-family: monospace, "Courier New", Courier;
+    font-family: "Iosevka Etoile", monospace;
     background-color: var(--background);
     color: var(--foreground);
 
@@ -22,7 +23,7 @@ body {
     line-height: 1.54;
     letter-spacing: -.02em;
     text-rendering: optimizeLegibility;
-    font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl", "calt";
+    font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
     font-variant-ligatures: contextual;
 
     min-height: 100vh;
@@ -175,10 +176,6 @@ footer dd {
 
 footer dd:not(:last-child):after {
     content: '\00a0|\00a0';
-}
-
-footer dd a{
-    font-style: italic;
 }
 
 footer p {
