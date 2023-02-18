@@ -1,14 +1,21 @@
 {% extends "_includes/layouts/page.njk" %}
 
-{% set postsList = collections.post | excludeStubs | excludeTypes(['mirror']) | reverse %}
+{% set allPosts = collections.post | excludeStubs | excludeTypes(['mirror']) | reverse %}
+{% set postsByYear = allPosts | groupByYear %}
 {% set title = 'Blog Archive' %}
 
 {% block content %}
     <h1>Archive</h1>
-    <p>There have been <strong>{{ postsList.length }}</strong> items published since April 20, 2007:</p>
-    <section>
-        {% set displayContentType = true %}
-        {% include "_includes/components/post-list.njk" %}
-    </section>
+    <p>There have been <strong>{{ allPosts.length }}</strong> items published since April 20, 2007:</p>
+
+    {% for year, items in postsByYear %}
+        <section>
+            <h3>{{ year }}</h3>
+            {% set displayContentType = true %}
+            {% set postsList = items %}
+            {% include "_includes/components/post-list.njk" %}
+        </section>
+    {% endfor %}
+
     {% include '_includes/components/hot-topics.njk' %}
 {% endblock %}
