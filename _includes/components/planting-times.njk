@@ -1,0 +1,20 @@
+<nav class="dates-list">
+    <h2>Planted throughout the seasons</h2>
+
+    {% set allPosts = collections.post | excludeStubs | excludeTypes(['mirror']) | reverse %}
+    {% set postsByYear = allPosts | groupByYear %}
+
+    <ol class="post-list">
+    {% for year, items in postsByYear %}
+        <li>
+            <strong>{{ year }}</strong>
+            <hr/>
+            {% set postsByMonth = items | groupByMonth %}
+            {% set year = year %}
+            <small>
+                {% include './months-of-year.njk' %}
+            </small>
+        </li>
+    {% endfor %}
+    </ol>
+</nav>

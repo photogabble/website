@@ -1,6 +1,9 @@
 # Feed
 /atom.xml /blog/feed.xml
 
+# Blog moved to Writing (final vestige of blog to digital garden conversion)
+/blog/ /writing/
+
 # Movement of pages into glossary
 /about/content/ /glossary/content-types/
 /about/growth/ /glossary/growth/
