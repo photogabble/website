@@ -9,7 +9,7 @@ folder: [writing]
     <ul style="display: grid;">
         {%- for tag in collections.contentTags %}
             <li>
-                <a href="/topic/{{ tag.slug }}"> {{ tag.name }} <small>({{ tag.items.length }})</small></a>
+                <a href="/topic/{{ tag.slug }}/"> {{ tag.name }} <small>({{ tag.items.length }})</small></a>
             </li>
         {%- endfor %}
     </ul>
@@ -21,7 +21,7 @@ folder: [writing]
 <h1>All Content</h1>
     <ul>
         {%- for type in collections.contentTypes %}
-            <li><a href="/{{ type.slug }}">{{ type.name }} <small>({{ type.items.length }})</small></a></li>
+            <li><a href="/{{ type.slug }}/">{{ type.name }} <small>({{ type.items.length }})</small></a></li>
         {%- endfor %}
     </ul>
 </nav>
