@@ -10,9 +10,11 @@ folder: writing
 {% extends "_includes/layouts/page.njk" %}
 {% set title = yearMonth.title %}
 {% block content %}
-  <h1>{{ yearMonth.title }}</h1>
+  <section>
+    <h1>{{ yearMonth.title }}</h1>
 
-  {% set displayContentType = true %}
-  {% set postsList = yearMonth.items | reverse %}
-  {% include "_includes/components/post-list.njk" %}
+    {% set displayContentType = true %}
+    {% set postsList = yearMonth.items | reverse %}
+    {% include "_includes/components/post-list.njk" %}
+  </section>
 {% endblock %}
