@@ -129,7 +129,7 @@ module.exports = function loadCollection(eleventyConfig) {
       const key = `${post.date.getFullYear()}/${post.date.getMonth()}`;
       const month = (post.date.getMonth() + 1);
       const segment = carry.get(key) ?? {
-        title: `Posts published ${month}/${post.date.getFullYear()}`,
+        title: `Planted in ${post.date.toLocaleString('en-us', { month: 'long' })}/${post.date.getFullYear()}`,
         slug: `${post.date.getFullYear()}/${padStart(month, 2, '0')}`,
         pageNumber: 1,
         totalPages: 1,
