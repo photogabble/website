@@ -3,11 +3,11 @@ pagination:
   data: collections.contentPaginatedByYearMonth
   size: 1
   alias: yearMonth
-permalink: /archive/{{ yearMonth.slug }}/index.html
+permalink: /writing/{{ yearMonth.slug }}/index.html
 folder: writing
 ---
 
-{% extends "_includes/layouts/page.njk" %}
+{% extends "../_includes/layouts/page.njk" %}
 {% set title = yearMonth.title %}
 {% block content %}
   <section>
@@ -15,6 +15,6 @@ folder: writing
 
     {% set displayContentType = true %}
     {% set postsList = yearMonth.items | reverse %}
-    {% include "_includes/components/post-list.njk" %}
+    {% include "../_includes/components/post-list.njk" %}
   </section>
 {% endblock %}

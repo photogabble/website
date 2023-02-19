@@ -1,4 +1,4 @@
-{% extends "_includes/layouts/page.njk" %}
+{% extends "../_includes/layouts/page.njk" %}
 
 {% set allPosts = collections.post | excludeStubs | excludeTypes(['mirror']) | reverse %}
 {% set postsByYear = allPosts | groupByYear %}
@@ -17,7 +17,7 @@
                     {% for month in range(0, 12) | reverse %}
                         {% set label = (month+1) | padStart(2, '0')  %}
                         {% if postsByMonth.get(month).length > 0 %}
-                            <a href="/archive/{{ year }}/{{ label }}">{{ label }}</a>
+                            <a href="/writing/{{ year }}/{{ label }}">{{ label }}</a>
                         {% else %}
                             {{ label }}
                         {% endif %}
@@ -26,9 +26,9 @@
             </header>
             {% set displayContentType = true %}
             {% set postsList = items %}
-            {% include "_includes/components/post-list.njk" %}
+            {% include "../_includes/components/post-list.njk" %}
         </section>
     {% endfor %}
 
-    {% include '_includes/components/hot-topics.njk' %}
+    {% include '../_includes/components/hot-topics.njk' %}
 {% endblock %}

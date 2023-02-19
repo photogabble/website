@@ -19,7 +19,7 @@ module.exports = {
           crumbs.push({href: '/about/content', text: 'types', title: 'Goto Content Types info page'});
           break;
         case 'writing':
-          crumbs.push({href: '/blog', text: 'writing', title: 'Goto Archive of all posts'});
+          crumbs.push({href: '/writing', text: 'writing', title: 'Goto Archive of all posts'});
           break;
         case 'topic':
           crumbs.push({href: '/topic', text: 'topics', title: 'Goto list of all topics'});
