@@ -14,14 +14,8 @@
                 <h3>{{ year }}</h3>
                 <nav>
                     {% set postsByMonth = items | groupByMonth %}
-                    {% for month in range(0, 12) | reverse %}
-                        {% set label = (month+1) | padStart(2, '0')  %}
-                        {% if postsByMonth.get(month).length > 0 %}
-                            <a href="/writing/{{ year }}/{{ label }}">{{ label }}</a>
-                        {% else %}
-                            {{ label }}
-                        {% endif %}
-                    {% endfor %}
+                    {% set year = year %}
+                    {% include '../_includes/components/months-of-year.njk' %}
                 </nav>
             </header>
             {% set displayContentType = true %}
