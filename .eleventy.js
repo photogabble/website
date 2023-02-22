@@ -61,6 +61,10 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addTransform(transformName, transforms[transformName])
   })
 
+  for (const [name, shortCode] of Object.entries(shortcodes(eleventyConfig))) {
+    eleventyConfig.addShortcode(name, shortCode);
+  }
+
   // Don't process folders with static assets e.g. images
   eleventyConfig.addPassthroughCopy({
     '_assets/favicon': '/',
@@ -69,10 +73,6 @@ module.exports = function (eleventyConfig) {
     '_redirects': '_redirects',
     '_assets/og-image': 'img/og-image',
   });
-
-  for (const shortCode in shortcodes) {
-    eleventyConfig.addShortcode(shortCode, shortcodes[shortCode]);
-  }
 
   const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
