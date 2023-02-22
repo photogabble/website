@@ -1,6 +1,6 @@
 {
   "name": "@photogabble/website",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "description": "Source code for photogabble.co.uk",
   "main": "index.js",
   "scripts": {
