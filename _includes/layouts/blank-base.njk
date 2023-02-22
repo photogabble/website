@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
+
+    <!-- Feeds -->
+    <link rel="alternate" href="{{ metadata.feedUrl }}" type="application/atom+xml" title="Simon Dann&#39;s blog">
+    
+    <!-- Mastodon Verification -->
+    <link rel="me" href="https://notacult.social/@carbontwelve" title="Mastodon: Not A Cult"/>
+    <link rel="me" href="https://phpc.social/@carbontwelve" title="Mastodon: PHPC"/>
+
+    <!-- SEO -->
+    <title>{{ title or metadata.title }}</title>
+    <meta name="description" content="{{ description or metadata.description }}"/>
+    <link rel="canonical" href="{{ canonical or page.url }}"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="generator" content="Eleventy">
+    {% block head %}{% endblock %}
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="en_GB"/>
+    <meta property="og:site_name" content="{{ metadata.title }}"/>
+    <meta property="og:title" content="{{ title or metadata.title }}"/>
+    <meta property="og:type" content="{{ ogtype or 'website' }}"/>
+    <meta property="og:url" content="{{ metadata.url }}{{ page.url }}"/>
+    {% if ogImageHref %}
+    <meta property="og:image" content="{{ ogImageHref }}">
+    <meta name="twitter:card" content="summary_large_image"/>
+    {% else %}
+    <meta name="twitter:card" content="summary"/>
+    {% endif %}
+
+    <meta name="twitter:site" content="@carbontwelve"/>
+    <meta name="twitter:creator" content="@carbontwelve"/>
+    <meta name="twitter:title" content="{{ title or metadata.title }}"/>
+
+    <!-- Favicon Meta -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Assets, 3rd party scripts, etc -->
+    <link rel="preload" href="/fonts/vt323-regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="/styles/blank.css"/>
+    <script data-goatcounter="https://photogabble.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body class="{% block body_class %}{% endblock %}">
+
+<main>
+    {% block content %}
+        {{ content | safe }}
+    {% endblock %}
+</main>
+</body>
+</html>
