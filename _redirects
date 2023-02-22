@@ -1,5 +1,6 @@
 # Feed
 /atom.xml /blog/feed.xml
+/blog/feed.xml /writing/feed.xml
 
 # Blog moved to Writing (final vestige of blog to digital garden conversion)
 /blog/ /writing/
