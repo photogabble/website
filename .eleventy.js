@@ -91,10 +91,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addTransform(transformName, transforms[transformName])
   })
 
-  for (const [name, shortCode] of Object.entries(shortcodes(eleventyConfig))) {
-    eleventyConfig.addShortcode(name, shortCode);
-  }
-
+  Object.keys(shortcodes).forEach((shortCodeName) => {
+    eleventyConfig.addShortcode(shortCodeName, shortcodes[shortCodeName]);
+  })
   //
   // Pass through
   //
