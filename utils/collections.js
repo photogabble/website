@@ -114,6 +114,11 @@ module.exports = function loadCollection(eleventyConfig) {
       name: 'Colophon',
       slug: 'colophon/update',
       items: []
+    }, resource: {
+      id: 'resource',
+      name: 'Resources',
+      slug: 'resources',
+      items: [],
     }
   }));
 
