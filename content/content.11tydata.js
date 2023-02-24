@@ -1,6 +1,4 @@
-const {backlinks} = require('../utils/helpers');
 const {slugify, ogImageFromSlug} = require('../utils/filters');
-const References = require('../utils/helpers/references');
 
 module.exports = {
   featured: false,
