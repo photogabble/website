@@ -1,3 +1,4 @@
+const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const slugify = require("../helpers/strToSlug");
 const chalk = require("chalk");
 
@@ -9,7 +10,9 @@ const chalk = require("chalk");
  * @param {*} options
  */
 module.exports = function (eleventyConfig, options = {}) {
-  // This regex finds all Wikilink style links: [[id|optional text]] as well as wikilink style embeds: ![[id]]
+  const rm = new EleventyRenderPlugin.RenderManager();
+
+  // This regex finds all WikiLink style links: [[id|optional text]] as well as WikiLink style embeds: ![[id]]
   const wikilinkRegExp = /(?<!!)(!?)\[\[([^|]+?)(\|([\s\S]+?))?\]\]/g;
 
   const parseWikiLink = (link) => {
@@ -28,11 +31,38 @@ module.exports = function (eleventyConfig, options = {}) {
 
   const parseWikiLinks = (arr) => arr.map(link => parseWikiLink(link));
 
+  const compileTemplate = async (data) => {
+    if (compiledEmbeds.has(data.inputPath)) return;
+
+    const frontMatter = data.template.frontMatter;
+    const fn = await rm.compile(frontMatter.content, data.page.templateSyntax, {templateConfig, extensionMap});
+    const result = await fn(frontMatter.data);
+
+    compiledEmbeds.set(data.inputPath, result);
+  }
+
   // Set of WikiLinks pointing to non-existent pages
   const deadWikiLinks = new Set();
 
-  // Map of what links to what
+  // Map of what WikiLinks to what
   const linkMapCache = new Map();
+
+  // Map of WikiLinks that have triggered an embed compile
+  const compiledEmbeds = new Map();
+
+  let templateConfig;
+  eleventyConfig.on("eleventy.config", (cfg) => {
+    templateConfig = cfg;
+  });
+
+  let extensionMap;
+  eleventyConfig.on("eleventy.extensionmap", (map) => {
+    extensionMap = map;
+  });
+
+  eleventyConfig.on('eleventy.before', () => {
+    // TODO: reset deadWikiLinks and linkMapCache between runs (useful if using dev server)
+  });
 
   eleventyConfig.on('eleventy.after', () => {
     deadWikiLinks.forEach(
@@ -40,7 +70,7 @@ module.exports = function (eleventyConfig, options = {}) {
     );
   });
 
-  // Teach Markdown-It how to display MediaWiki Links
+  // Teach Markdown-It how to display MediaWiki Links.
   eleventyConfig.amendLibrary('md', (md) => {
     // WikiLink Embed
     md.inline.ruler.push('inline_wikilink_embed', (state, silent) => {
@@ -59,16 +89,19 @@ module.exports = function (eleventyConfig, options = {}) {
 
     md.renderer.rules.inline_wikilink_embed = (tokens, idx) => {
       const token = tokens[idx];
-      const found = linkMapCache.get(token.content);
-      if (!found) {
-        console.error(chalk.blue('[@photogabble/wikilinks]'), chalk.red('ERROR'), `WikiLink Embed found pointing to non-existent [${token.content}], doesn't exist.`)
+      const link = linkMapCache.get(token.content);
+      if (!link) {
+        console.error(chalk.blue('[@photogabble/wikilinks]'), chalk.red('ERROR'), `WikiLink Embed found pointing to non-existent [${token.content}], doesn't exist.`);
         return '[UNABLE TO LOCATE EMBED]';
       }
 
-      // TODO: find source file for embed and either process it directly with liquid using an embed template OR work out how to do so through 11ty. It may be a good idea to use the
-      //       extract feature already supported within 11ty, that way I can actually tag what should be embedded.
+      const templateContent = compiledEmbeds.get(link.page.inputPath);
+      if (!templateContent) {
+        console.error(chalk.blue('[@photogabble/wikilinks]'), chalk.red('ERROR'), `WikiLink Embed found pointing to [${token.content}], has no compiled template.`);
+        return '[UNABLE TO COMPILE EMBED]';
+      }
 
-      return `<aside><p>Hello world</p></aside>`;
+      return templateContent;
     }
 
     // WikiLink via linkify
@@ -91,13 +124,14 @@ module.exports = function (eleventyConfig, options = {}) {
     });
   });
 
-  // Add backlinks computed global data
+  // Add backlinks computed global data, this is executed before the templates are compiled and thus markdown parsed.
   eleventyConfig.addGlobalData('eleventyComputed', {
-    backlinks: (data) => {
+    backlinks: async (data) => {
       // @see https://www.11ty.dev/docs/data-computed/#declaring-your-dependencies
       const dependencies = [data.title, data.page, data.collections.all];
       if (dependencies[0] === undefined || !dependencies[1].fileSlug || dependencies[2].length === 0) return [];
 
+      const compilePromises = [];
       const allPages = data.collections.all;
       const currentSlug = slugify(data.title);
       let backlinks = [];
@@ -123,14 +157,21 @@ module.exports = function (eleventyConfig, options = {}) {
         }
       }
 
-      // Loop over all pages and build their outbound links if they have not already been
-      // parsed, this is being done in a way that is cached between reloads so restarting
-      // the dev server will be required to pick up changes.
+      // Loop over all pages and build their outbound links if they have not already been parsed.
       allPages.forEach(page => {
         if (!page.data.outboundLinks) {
           const pageContent = page.template.frontMatter.content;
           const outboundLinks = (pageContent.match(wikilinkRegExp) || []);
           page.data.outboundLinks = parseWikiLinks(outboundLinks);
+          page.data.outboundLinks
+            .filter(link => link.isEmbed && compiledEmbeds.has(link.slug) === false)
+            .map(link => data.collections.all.find(page => page.fileSlug === link.slug)) // TODO: add OR aliases contains? add OR permalink equals
+            .forEach(link => {
+              if (!link) return; // TODO: Warn developer
+              compilePromises.push(
+                compileTemplate(link)
+              );
+            })
         }
 
         // If the page links to our current page either by its title or by its aliases then
@@ -142,6 +183,9 @@ module.exports = function (eleventyConfig, options = {}) {
           })
         }
       });
+
+      // Block iteration until compilation complete.
+      if (compilePromises.length > 0) await Promise.all(compilePromises);
 
       // The backlinks for the current page.
       return backlinks;
