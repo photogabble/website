@@ -1,5 +1,6 @@
 const {backlinks} = require('../utils/helpers');
 const {slugify, ogImageFromSlug} = require('../utils/filters');
+const References = require('../utils/helpers/references');
 
 module.exports = {
   featured: false,
@@ -8,9 +9,8 @@ module.exports = {
   layout: 'layouts/post.njk',
   growthStage: 'seedling', // seedling, budding, evergreen
   contentType: 'thought', // thought, noteworthy, essay, tutorial, project
-  folder: [ 'writing'],
+  folder: ['writing'],
   eleventyComputed: {
-    backlinks: (data) => backlinks(data),
     ogImageHref: (data) => ogImageFromSlug(slugify(data.title)),
   }
 };
