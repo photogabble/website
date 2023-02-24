@@ -52,20 +52,13 @@ module.exports = function (eleventyConfig, options = {}) {
   });
 
   // Set of WikiLinks pointing to non-existent pages
-  let deadWikiLinks;
+  const deadWikiLinks = new Set();
 
   // Map of what WikiLinks to what
-  let linkMapCache;
+  const linkMapCache = new Map();
 
   // Map of WikiLinks that have triggered an embed compile
-  let compiledEmbeds;
-
-  // Reset compiledEmbeds, deadWikiLinks and linkMapCache between runs (useful if using dev server)
-  eleventyConfig.on('eleventy.before', () => {
-    compiledEmbeds = new Map();
-    linkMapCache = new Map();
-    deadWikiLinks = new Set();
-  });
+  const compiledEmbeds = new Map();
 
   eleventyConfig.on('eleventy.after', () => {
     deadWikiLinks.forEach(
