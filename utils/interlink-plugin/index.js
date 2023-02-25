@@ -13,7 +13,7 @@ module.exports = function (eleventyConfig, options = {}) {
   const rm = new EleventyRenderPlugin.RenderManager();
 
   // This regex finds all WikiLink style links: [[id|optional text]] as well as WikiLink style embeds: ![[id]]
-  const wikilinkRegExp = /(?<!!)(!?)\[\[([^|]+?)(\|([\s\S]+?))?\]\]/g;
+  const wikiLinkRegExp = /(?<!!)(!?)\[\[([^|]+?)(\|([\s\S]+?))?\]\]/g;
 
   const parseWikiLink = (link) => {
     const isEmbed = link.startsWith('!');
@@ -35,8 +35,9 @@ module.exports = function (eleventyConfig, options = {}) {
     if (compiledEmbeds.has(data.inputPath)) return;
 
     const frontMatter = data.template.frontMatter;
-    const fn = await rm.compile(frontMatter.content, data.page.templateSyntax, {templateConfig, extensionMap});
-    const result = await fn(frontMatter.data);
+    const tpl = `{% layout "layouts/embed.liquid" %} {% block content %} ${frontMatter.content} {% endblock %}`;
+    const fn = await rm.compile(tpl, data.page.templateSyntax, {templateConfig, extensionMap});
+    const result = await fn(data.data);
 
     compiledEmbeds.set(data.inputPath, result);
   }
@@ -157,7 +158,7 @@ module.exports = function (eleventyConfig, options = {}) {
       allPages.forEach(page => {
         if (!page.data.outboundLinks) {
           const pageContent = page.template.frontMatter.content;
-          const outboundLinks = (pageContent.match(wikilinkRegExp) || []);
+          const outboundLinks = (pageContent.match(wikiLinkRegExp) || []);
           page.data.outboundLinks = parseWikiLinks(outboundLinks);
           page.data.outboundLinks
             .filter(link => link.isEmbed && compiledEmbeds.has(link.slug) === false)
