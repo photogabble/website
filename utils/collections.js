@@ -130,6 +130,7 @@ module.exports = function loadCollection(eleventyConfig) {
     .reduce(paginateContentTaxonomy('topic/'), []);
 
   const contentPaginatedByYearMonth = (collection) => Array.from(post(collection)
+    .filter(post => ['mirror', 'resource'].includes(post.data.contentType) === false)
     .reduce((carry, post) => {
       const key = `${post.date.getFullYear()}/${post.date.getMonth()}`;
       const month = (post.date.getMonth() + 1);
