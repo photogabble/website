@@ -12,7 +12,9 @@ module.exports = function (eleventyConfig) {
   // Install Plugins
   //
 
-  eleventyConfig.addPlugin(require('./utils/interlink-plugin'));
+  eleventyConfig.addPlugin(require('./utils/interlink-plugin'), {
+    defaultLayout: 'layouts/embed.liquid'
+  });
 
   eleventyConfig.addPlugin(require('./utils/font-plugin'), {
     srcFiles: [
