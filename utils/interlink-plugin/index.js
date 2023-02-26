@@ -1,5 +1,4 @@
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
-const slugify = require("../helpers/strToSlug");
 const chalk = require("chalk");
 
 /**
@@ -13,6 +12,13 @@ module.exports = function (eleventyConfig, options = {}) {
   const opts = Object.assign({
     defaultLayout: null,
     layoutKey: 'embedLayout',
+    unableToLocateEmbedFn: () => '[UNABLE TO LOCATE EMBED]',
+    slugifyFn: (input) => {
+      const slugify = eleventyConfig.getFilter('slugify');
+      if(typeof slugify !== 'function') throw new Error('Unable to load slugify filter.');
+
+      return slugify(input);
+    },
   }, options);
 
   const rm = new EleventyRenderPlugin.RenderManager();
@@ -23,7 +29,7 @@ module.exports = function (eleventyConfig, options = {}) {
   const parseWikiLink = (link) => {
     const isEmbed = link.startsWith('!');
     const parts = link.slice((isEmbed ? 3 : 2), -2).split("|").map(part => part.trim());
-    const slug = slugify(parts[0].replace(/.(md|markdown)\s?$/i, "").trim());
+    const slug = opts.slugifyFn(parts[0].replace(/.(md|markdown)\s?$/i, "").trim());
 
     return {
       title: parts.length === 2 ? parts[1] : null,
@@ -86,7 +92,6 @@ module.exports = function (eleventyConfig, options = {}) {
     md.inline.ruler.push('inline_wikilink_embed', (state, silent) => {
       // Have we found the start of a WikiLink Embed `![[`
       if (state.src.charAt(state.pos) === '!' && state.src.substring(state.pos, state.pos + 3) === '![[') {
-        const wikiLink = parseWikiLink(state.src);
         if (!silent) {
           const token = state.push('inline_wikilink_embed', '', 0)
           const wikiLink = parseWikiLink(state.src);
@@ -102,16 +107,15 @@ module.exports = function (eleventyConfig, options = {}) {
       const link = linkMapCache.get(token.content);
       if (!link) {
         console.error(chalk.blue('[@photogabble/wikilinks]'), chalk.red('ERROR'), `WikiLink Embed found pointing to non-existent [${token.content}], doesn't exist.`);
-        return '[UNABLE TO LOCATE EMBED]';
+        return (typeof opts.unableToLocateEmbedFn === 'function')
+          ? opts.unableToLocateEmbedFn(token.content)
+          : '';
       }
 
       const templateContent = compiledEmbeds.get(link.page.inputPath);
-      if (!templateContent) {
-        console.error(chalk.blue('[@photogabble/wikilinks]'), chalk.red('ERROR'), `WikiLink Embed found pointing to [${token.content}], has no compiled template.`);
-        return '[UNABLE TO COMPILE EMBED]';
-      }
+      if (!templateContent) throw new Error(`WikiLink Embed found pointing to [${token.content}], has no compiled template.`);
 
-      return templateContent;
+      return compiledEmbeds.get(link.page.inputPath);
     }
 
     // WikiLink via linkify
@@ -143,9 +147,10 @@ module.exports = function (eleventyConfig, options = {}) {
 
       const compilePromises = [];
       const allPages = data.collections.all;
-      const currentSlug = slugify(data.title);
+      const currentSlug = opts.slugifyFn(data.title);
       let backlinks = [];
-      let currentSlugs = [currentSlug];
+      let currentSlugs = new Set([currentSlug, data.page.fileSlug]);
+      const currentPage = allPages.find(page => page.inputPath === data.page.inputPath);
 
       // Populate our link map for use later in replacing WikiLinks with page permalinks.
       // Pages can list aliases in their front matter, if those exist we should map them
@@ -156,14 +161,16 @@ module.exports = function (eleventyConfig, options = {}) {
         title: data.title
       });
 
+      // If a page has defined aliases, then add those to the link map. These must be unique.
+
       if (data.aliases) {
         for (const alias of data.aliases) {
-          const aliasSlug = slugify(alias);
+          const aliasSlug = opts.slugifyFn(alias);
           linkMapCache.set(aliasSlug, {
-            page: data.collections.all.find(page => page.inputPath === data.page.inputPath),
+            page: currentPage,
             title: alias
           });
-          currentSlugs.push(aliasSlug)
+          currentSlugs.add(aliasSlug)
         }
       }
 
@@ -173,23 +180,27 @@ module.exports = function (eleventyConfig, options = {}) {
           const pageContent = page.template.frontMatter.content;
           const outboundLinks = (pageContent.match(wikiLinkRegExp) || []);
           page.data.outboundLinks = parseWikiLinks(outboundLinks);
+
           page.data.outboundLinks
             .filter(link => link.isEmbed && compiledEmbeds.has(link.slug) === false)
-            .map(link =>{
-              return  data.collections.all.find(page => page.fileSlug === link.slug)
-              // TODO: fileSlug isn't what I am using elsewhere... im using the title slugified...
-            }) // TODO: add OR aliases contains? add OR permalink equals
-            .forEach(link => {
-              if (!link) return; // TODO: Warn developer
-              compilePromises.push(
-                compileTemplate(link)
-              );
-            })
+            .map(link => allPages.find(page => {
+              const found = (page.fileSlug === link.slug || (page.data.title && opts.slugifyFn(page.data.title) === link.slug));
+              if (found) return true;
+
+              const aliases = (page.aliases ?? []).reduce(function(set, alias){
+                set.add(opts.slugifyFn(alias));
+                return set;
+              }, new Set());
+
+              return aliases.has(link.slug);
+            }))
+            .filter(link => (typeof link !== undefined))
+            .forEach(link => compilePromises.push(compileTemplate(link)))
         }
 
         // If the page links to our current page either by its title or by its aliases then
         // add that page to our current page's backlinks.
-        if (page.data.outboundLinks.some(link => currentSlugs.includes(link.slug))) {
+        if (page.data.outboundLinks.some(link => currentSlugs.has(link.slug))) {
           backlinks.push({
             url: page.url,
             title: page.data.title,
