@@ -7,9 +7,14 @@ const chalk = require("chalk");
  * @see https://git.sr.ht/~boehs/site/tree/master/item/html/pages/garden/garden.11tydata.js
  *
  * @param { import('@11ty/eleventy/src/UserConfig') } eleventyConfig
- * @param {*} options
+ * @param { import('./index').EleventyPluginInterlinkOptions } options
  */
 module.exports = function (eleventyConfig, options = {}) {
+  const opts = Object.assign({
+    defaultLayout: null,
+    layoutKey: 'embedLayout',
+  }, options);
+
   const rm = new EleventyRenderPlugin.RenderManager();
 
   // This regex finds all WikiLink style links: [[id|optional text]] as well as WikiLink style embeds: ![[id]]
@@ -35,7 +40,15 @@ module.exports = function (eleventyConfig, options = {}) {
     if (compiledEmbeds.has(data.inputPath)) return;
 
     const frontMatter = data.template.frontMatter;
-    const tpl = `{% layout "layouts/embed.liquid" %} {% block content %} ${frontMatter.content} {% endblock %}`;
+
+    const layout =  (data.data.hasOwnProperty(opts.layoutKey))
+      ? data.data[opts.layoutKey]
+      : opts.defaultLayout;
+
+    const tpl = layout === null
+      ? frontMatter.content
+      : `{% layout "${layout}" %} {% block content %} ${frontMatter.content} {% endblock %}`;
+
     const fn = await rm.compile(tpl, data.page.templateSyntax, {templateConfig, extensionMap});
     const result = await fn(data.data);
 
@@ -162,7 +175,10 @@ module.exports = function (eleventyConfig, options = {}) {
           page.data.outboundLinks = parseWikiLinks(outboundLinks);
           page.data.outboundLinks
             .filter(link => link.isEmbed && compiledEmbeds.has(link.slug) === false)
-            .map(link => data.collections.all.find(page => page.fileSlug === link.slug)) // TODO: add OR aliases contains? add OR permalink equals
+            .map(link =>{
+              return  data.collections.all.find(page => page.fileSlug === link.slug)
+              // TODO: fileSlug isn't what I am using elsewhere... im using the title slugified...
+            }) // TODO: add OR aliases contains? add OR permalink equals
             .forEach(link => {
               if (!link) return; // TODO: Warn developer
               compilePromises.push(
