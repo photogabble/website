@@ -1,16 +1,21 @@
 const filters = require('./utils/filters')
-const collections = require('./utils/collections')
-const {slugify} = require('./utils/filters')
+const collections = require('./utils/collections');
+const {slugify} = require('./utils/filters');
 const shortcodes = require('./utils/shortcodes');
 const transforms = require('./utils/transforms');
-const wordStats = require('@photogabble/eleventy-plugin-word-stats');
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const PostCSSPlugin = require("eleventy-plugin-postcss");
-const linkMapCache = require("./utils/helpers/map");
 const {setupMarkdownIt} = require("./utils/helpers/hashtags");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
+
+  //
+  // Install Plugins
+  //
+
+  eleventyConfig.addPlugin(require('./utils/interlink-plugin'), {
+    defaultLayout: 'layouts/embed.liquid'
+  });
+
   eleventyConfig.addPlugin(require('./utils/font-plugin'), {
     srcFiles: [
       `./_assets/fonts/iosevka-etoile-regular.woff2`,
@@ -21,6 +26,7 @@ module.exports = function (eleventyConfig) {
     dist: './fonts',
     enabled: process.env.ELEVENTY_ENV !== 'production'
   });
+
   eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-tag-normaliser'), {
     ignore: ['PHP', 'JavaScript', 'DOScember'],
     similar: {
@@ -28,13 +34,15 @@ module.exports = function (eleventyConfig) {
     },
     slugify,
   });
-  eleventyConfig.addPlugin(PostCSSPlugin);
+
+  eleventyConfig.addPlugin(require("eleventy-plugin-postcss"));
+
   eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-blogtimes'), {
     generateHTML: (outputUrl, options) => `<img alt="Blogtimes histogram" width="${options.width}" height="${options.height}" src="${outputUrl}" style="min-width: auto;" />`,
     lastXDays: 180,
   });
-  eleventyConfig.setUseGitIgnore(false);
-  eleventyConfig.addPlugin(wordStats, {
+
+  eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-word-stats'), {
     output: (stats) => {
       return {
         words: stats.words,
@@ -43,41 +51,11 @@ module.exports = function (eleventyConfig) {
       };
     }
   });
-  eleventyConfig.addPlugin(pluginRss);
 
-  /**
-   * Filters
-   * @link https://www.11ty.io/docs/filters/
-   */
-  Object.keys(filters).forEach((filterName) => {
-    eleventyConfig.addFilter(filterName, filters[filterName])
-  })
+  eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"));
 
-  for (const [name, collection] of Object.entries(collections(eleventyConfig))) {
-    eleventyConfig.addCollection(name, collection);
-  }
-
-  Object.keys(transforms).forEach((transformName) => {
-    eleventyConfig.addTransform(transformName, transforms[transformName])
-  })
-
-  // Don't process folders with static assets e.g. images
-  eleventyConfig.addPassthroughCopy({
-    '_assets/favicon': '/',
-    '_assets/files': 'files',
-    'img': './img',
-    '_redirects': '_redirects',
-    '_assets/og-image': 'img/og-image',
-  });
-
-  for (const shortCode in shortcodes) {
-    eleventyConfig.addShortcode(shortCode, shortcodes[shortCode]);
-  }
-
-  const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-
-  eleventyConfig.addPlugin(syntaxHighlight, {
-    init: ({ Prism }) => {
+  eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-syntaxhighlight"), {
+    init: ({Prism}) => {
       require('prismjs/plugins/treeview/prism-treeview.js')
       require('prismjs/components/prism-clike')
       require('prismjs/components/prism-markup')
@@ -99,25 +77,56 @@ module.exports = function (eleventyConfig) {
     }
   });
 
-  // Markdown libraries
-  const markdownIt = require('markdown-it')({
+  //
+  // Filters, Collections, Transformers and Shortcodes
+  //
+
+  Object.keys(filters).forEach((filterName) => {
+    eleventyConfig.addFilter(filterName, filters[filterName])
+  })
+
+  for (const [name, collection] of Object.entries(collections(eleventyConfig))) {
+    eleventyConfig.addCollection(name, collection);
+  }
+
+  Object.keys(transforms).forEach((transformName) => {
+    eleventyConfig.addTransform(transformName, transforms[transformName])
+  })
+
+  Object.keys(shortcodes).forEach((shortCodeName) => {
+    eleventyConfig.addShortcode(shortCodeName, shortcodes[shortCodeName]);
+  })
+  //
+  // Pass through
+  //
+
+  eleventyConfig.addPassthroughCopy({
+    '_assets/favicon': '/',
+    '_assets/files': 'files',
+    'img': './img',
+    '_redirects': '_redirects',
+    '_assets/og-image': 'img/og-image',
+  });
+
+  //
+  // Markdown-It && Plugins
+  //
+
+  eleventyConfig.setLibrary('md', require('markdown-it')({
     html: true,
     breaks: true,
     linkify: true,
-  }).use(require("markdown-it-anchor"), {
-    permalink: false,
-    slugify: input => slugify(input),
-  }).use(require('./utils/helpers/wikilinks'),{
-    linkMapCache,
-    eleventyConfig
-  }).use(require("markdown-it-footnote"));
+  }));
 
-  setupMarkdownIt(markdownIt);
+  eleventyConfig.amendLibrary('md', md => {
+    md.use(require("markdown-it-anchor"), {
+      permalink: false,
+      slugify: input => slugify(input),
+    });
 
-  // eleventyConfig.on('eleventy.after', async () => {
-  //   const all = linkMapCache.all();
-  //   const n = 1;
-  // });
+    md.use(require("markdown-it-footnote"));
 
-  eleventyConfig.setLibrary("md", markdownIt);
+    // TODO: Move hashtags to plugin...
+    setupMarkdownIt(md)
+  });
 };

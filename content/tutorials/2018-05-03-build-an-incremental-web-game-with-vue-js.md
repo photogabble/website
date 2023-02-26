@@ -286,6 +286,7 @@ data () {
 
 Next we need to add a new `.vue` file to our project to contain a reusable Vue component for our transactional resources. To do so create the file `Resource.vue` inside the new folder `src/components` with the following content:
 
+{% raw %}
 ```javascript
 <template>
     <div class="resource">
@@ -360,6 +361,7 @@ Next we need to add a new `.vue` file to our project to contain a reusable Vue c
   }
 </script>
 ```
+{% endraw %}
 
 While it may look like a lot once broken down the above is actually quite a simple component. 
 

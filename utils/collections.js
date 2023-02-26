@@ -63,7 +63,7 @@ module.exports = function loadCollection(eleventyConfig) {
       ? 'stub'
       : post.data.contentType;
 
-    if (post.data.contentType) types[section].items.push(post);
+    if (post.data.contentType && types[section]) types[section].items.push(post);
 
     return types;
   }, {
@@ -114,6 +114,11 @@ module.exports = function loadCollection(eleventyConfig) {
       name: 'Colophon',
       slug: 'colophon/update',
       items: []
+    }, resource: {
+      id: 'resource',
+      name: 'Resources',
+      slug: 'resources',
+      items: [],
     }
   }));
 
@@ -125,6 +130,7 @@ module.exports = function loadCollection(eleventyConfig) {
     .reduce(paginateContentTaxonomy('topic/'), []);
 
   const contentPaginatedByYearMonth = (collection) => Array.from(post(collection)
+    .filter(post => ['mirror', 'resource'].includes(post.data.contentType) === false)
     .reduce((carry, post) => {
       const key = `${post.date.getFullYear()}/${post.date.getMonth()}`;
       const month = (post.date.getMonth() + 1);

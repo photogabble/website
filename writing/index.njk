@@ -1,6 +1,6 @@
 {% extends "../_includes/layouts/page.njk" %}
 
-{% set allPosts = collections.post | excludeStubs | excludeTypes(['mirror']) | reverse %}
+{% set allPosts = collections.post | excludeStubs | excludeTypes(['mirror', 'resource']) | reverse %}
 {% set postsByYear = allPosts | groupByYear %}
 {% set title = 'Blog Archive' %}
 
