@@ -8,7 +8,6 @@ status: abandoned
 language: PHP
 tags:
   - PHP
-  - Abandoned
 ---
 
 Tuppence is a very small unimposing library that brings together a [dependency injection container](http://container.thephpleague.com/), [router](http://route.thephpleague.com/) and [events](http://event.thephpleague.com/2.0/) all provided by _The League of Extraordinary Packages_.
