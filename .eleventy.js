@@ -3,7 +3,6 @@ const collections = require('./utils/collections');
 const {slugify} = require('./utils/filters');
 const shortcodes = require('./utils/shortcodes');
 const transforms = require('./utils/transforms');
-const {setupMarkdownIt} = require("./utils/helpers/hashtags");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
@@ -83,7 +82,7 @@ module.exports = function (eleventyConfig) {
 
   Object.keys(filters).forEach((filterName) => {
     eleventyConfig.addFilter(filterName, filters[filterName])
-  })
+  });
 
   for (const [name, collection] of Object.entries(collections(eleventyConfig))) {
     eleventyConfig.addCollection(name, collection);
@@ -91,11 +90,12 @@ module.exports = function (eleventyConfig) {
 
   Object.keys(transforms).forEach((transformName) => {
     eleventyConfig.addTransform(transformName, transforms[transformName])
-  })
+  });
 
   Object.keys(shortcodes).forEach((shortCodeName) => {
     eleventyConfig.addShortcode(shortCodeName, shortcodes[shortCodeName]);
-  })
+  });
+
   //
   // Pass through
   //
@@ -112,21 +112,6 @@ module.exports = function (eleventyConfig) {
   // Markdown-It && Plugins
   //
 
-  eleventyConfig.setLibrary('md', require('markdown-it')({
-    html: true,
-    breaks: true,
-    linkify: true,
-  }));
+  eleventyConfig.setLibrary('md', require('./utils/helpers/markdown'));
 
-  eleventyConfig.amendLibrary('md', md => {
-    md.use(require("markdown-it-anchor"), {
-      permalink: false,
-      slugify: input => slugify(input),
-    });
-
-    md.use(require("markdown-it-footnote"));
-
-    // TODO: Move hashtags to plugin...
-    setupMarkdownIt(md)
-  });
 };

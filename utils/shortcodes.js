@@ -1,3 +1,5 @@
+const markdown = require('./helpers/markdown');
+
 module.exports = {
 
     /**
@@ -10,7 +12,7 @@ module.exports = {
      */
     figure: (image, caption, alt, className) => {
         const classMarkup = className ? ` class="${className}"` : '';
-        const captionMarkup = caption ? `<figcaption>${caption}</figcaption>` : '';
+        const captionMarkup = caption ? `<figcaption>${markdown.render(caption)}</figcaption>` : '';
         const imgMarkup = alt ? `<img src="${image}" alt="${alt}" />` : `<img src="${image}" />`;
         return `<figure${classMarkup}>${imgMarkup}${captionMarkup}</figure>`;
     },
