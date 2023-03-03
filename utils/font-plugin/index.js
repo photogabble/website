@@ -19,9 +19,7 @@ function checkCommandExists(command) {
   });
 }
 
-function rootPath(p){
-  return path.resolve(process.env.ELEVENTY_ROOT, p);
-}
+const rootPath = (p) => path.resolve(process.env.ELEVENTY_ROOT, p);
 
 module.exports = function (eleventyConfig, options = {}) {
   if (options.dist) eleventyConfig.addPassthroughCopy(options.dist);
