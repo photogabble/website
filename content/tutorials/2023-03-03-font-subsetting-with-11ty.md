@@ -174,11 +174,7 @@ module.exports = function (eleventyConfig, options = {}) {
 
 The above is missing caching to stop it running upon each build, an enable flag for programmatically disabling its runs (e.g only run subsetting in development) and a check for existing subset files, so we only replace missing but essentially that is _all_ there is to automatically subset your fonts based upon your 11ty website's content.
 
-I have tidied this up and published it as an [[Eleventy.js Font Subsetting Plugin]].
-
-## Potential Issues
-
-...
+I have tidied this up and published it as an [[Eleventy.js Font Subsetting Plugin]]. In the [[Near Future|near future]] I shall be updating this tutorial with additional techniques.
 
 [^1]: Some people have suggested not using a monospace font for the longform text due to it being harder to read
 [^2]: For example, [Berkeley Mono Typeface](https://berkeleygraphics.com/typefaces/berkeley-mono/) is $75 for the non-commercial developer license or starting at $295/year for commercial use
