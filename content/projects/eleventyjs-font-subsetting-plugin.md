@@ -16,6 +16,8 @@ After writing that tutorial I continued amending the code and turned it into an 
 
 ## Dependencies
 
+This plugin depends upon [Pythons fonttools library](https://github.com/fonttools/fonttools) specifically its [pyftsubset](https://fonttools.readthedocs.io/en/latest/subset/index.html) tool. Therefore, this plugin depends upon Python and `pyftsubset` being available in your `PATH`.
+
 ## Install
 
 ```
@@ -43,9 +45,6 @@ type EleventyPluginFontSubsettingOptions = {
     // cache is an object able to store and retrieve values with a TTL.
     // If not set then the plugin will default to an in memory cache.
     cache?: CacheInterface
-
-    // cacheKey is the key to be used for caching, defaults to "font-subsetting"
-    cacheKey ?: string
 }
 ```
 
@@ -81,6 +80,10 @@ module.exports = (eleventyConfig) => {
   );
 };
 ```
+
+The above configuration will take two font source files, subset them and output each to `./fonts` where 11ty will then copy them to your build directory. This will only happen when the environment isn't the production build.
+
+I choose to run subsetting in development builds because it's something that infrequently needs to do work and the result can be committed to the code repository.
 
 ## Known Caveats
 - In order to make it most performant the method used for obtaining unique characters is very brute-force and isn't yet aware of [HTML Entities](https://developer.mozilla.org/en-US/docs/Glossary/Entity).

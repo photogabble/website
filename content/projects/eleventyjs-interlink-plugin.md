@@ -3,8 +3,8 @@ date: 2022-02-01
 title: Eleventy.js Interlink Plugin
 sub_title: Obsidian WikiLinks, BackLinks and Embed support for 11ty
 description: A lightweight wrapper for making available reading-time to the Eleventy Static Site Generator.
-git: https://github.com/photogabble/eleventy-plugin-interlink
-npm: https://www.npmjs.com/package/@photogabble/eleventy-plugin-interlink
+git: https://github.com/photogabble/eleventy-plugin-interlinker
+npm: https://www.npmjs.com/package/@photogabble/eleventy-plugin-interlinker
 featured: true
 language: JS
 tags: [11ty, JavaScript]
@@ -14,7 +14,7 @@ tags: [11ty, JavaScript]
 ## Install
 
 ```bash
-npm i @photogabble/eleventy-plugin-interlink
+npm i @photogabble/eleventy-plugin-interlinker
 ```
 
 ## Configuration
@@ -48,7 +48,7 @@ In your Eleventy config file (defaults to .eleventy.js):
 ```js
 module.exports = (eleventyConfig) => {
   eleventyConfig.addPlugin(
-    require('@photogabble/eleventy-plugin-interlink'),
+    require('@photogabble/eleventy-plugin-interlinker'),
     {
       defaultLayout: 'layouts/embed.liquid'
     }
@@ -66,4 +66,4 @@ In addition, being able to add a node graph view to visually show interlinking w
 
 ## License
 
-This 11ty plugin is open-sourced software licensed under the [MIT License](https://github.com/photogabble/eleventy-plugin-interlink/blob/main/LICENSE)
+This 11ty plugin is open-sourced software licensed under the [MIT License](https://github.com/photogabble/eleventy-plugin-interlinker/blob/main/LICENSE)
