@@ -3,6 +3,7 @@ const collections = require('./utils/collections');
 const {slugify} = require('./utils/filters');
 const shortcodes = require('./utils/shortcodes');
 const transforms = require('./utils/transforms');
+const ObjectCache = require("./utils/helpers/cache");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
@@ -15,7 +16,7 @@ module.exports = function (eleventyConfig) {
     defaultLayout: 'layouts/embed.liquid'
   });
 
-  eleventyConfig.addPlugin(require('./utils/font-plugin'), {
+  eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-font-subsetting'), {
     srcFiles: [
       `./_assets/fonts/iosevka-etoile-regular.woff2`,
       `./_assets/fonts/iosevka-etoile-italic.woff2`,
@@ -23,7 +24,8 @@ module.exports = function (eleventyConfig) {
       `./_assets/fonts/iosevka-etoile-bolditalic.woff2`,
     ],
     dist: './fonts',
-    enabled: process.env.ELEVENTY_ENV !== 'production'
+    enabled: process.env.ELEVENTY_ENV !== 'production',
+    cache: new ObjectCache('font-subsetting'),
   });
 
   eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-tag-normaliser'), {

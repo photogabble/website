@@ -1,6 +1,6 @@
 ---
 title: "Adding Wiki Links to 11ty"
-tags: [Blogging, 11ty]
+tags: [Blogging, 11ty, "Wiki Links"]
 aliases: [wiki-links]
 growthStage: seedling
 ---
