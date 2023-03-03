@@ -20,7 +20,7 @@ You can read [[Writing Blogtimes for Eleventy.js]] to find out why this exists, 
 
 ## Install
 
-```
+```bash
 npm i @photogabble/eleventy-plugin-blogtimes
 ```
 
