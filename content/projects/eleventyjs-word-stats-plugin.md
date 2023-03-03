@@ -10,11 +10,31 @@ language: JS
 tags: [11ty, JavaScript]
 ---
 
-A lightweight wrapper for making available [reading-time](https://www.npmjs.com/package/reading-time) to the [Eleventy](https://www.11ty.dev/) Static Site Generator.
+This plugin provides a lightweight wrapper for making available [reading-time](https://www.npmjs.com/package/reading-time) to the [Eleventy](https://www.11ty.dev/) Static Site Generator.
 
 ## Install
-```
+
+```bash
 npm i @photogabble/eleventy-plugin-word-stats
+```
+## Configuration
+```ts
+interface Options {
+  output?: (stats: ReadTimeResults) => string;
+  wordBound?: (char: string) => boolean;
+  wordsPerMinute?: number;
+}
+```
+### Output function
+The function that controls the `wordStats` filter output is provided an object that matches the following interface:
+
+```ts
+interface ReadTimeResults {
+  text: string;
+  time: number;
+  words: number;
+  minutes: number;
+}
 ```
 
 ## Usage
@@ -37,27 +57,6 @@ Which will by default output along the lines of:
 
 ```html
 <p>1244 words, 6 min read</p>
-```
-
-## Configuration
-```ts
-interface Options {
-  output?: (stats: ReadTimeResults) => string;
-  wordBound?: (char: string) => boolean;
-  wordsPerMinute?: number;
-}
-```
-
-### Output
-The function that controls the `wordStats` filter output is provided an object that matches the following interface:
-
-```ts
-interface ReadTimeResults {
-  text: string;
-  time: number;
-  words: number;
-  minutes: number;
-}
 ```
 
 ## Not invented here
