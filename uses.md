@@ -21,7 +21,8 @@ A somewhat complete list of tools, applications, hardware and services that I us
 * iPhone 12 Mini (64GB)
 
 ## Software
-* Chrome
+* Chrome/Firefox/Safari
+* Obsidian.md
 * intelliJ PHPStorm and Goland
 
 ### Windows Specific
@@ -32,6 +33,8 @@ A somewhat complete list of tools, applications, hardware and services that I us
 
 ### OSX Specific
 * Table Plus
+* DBngin
+* [Laravel Valet](https://laravel.com/docs/10.x/valet)
 * Docker[^1]
 * Homebrew
   * [shivammathur/php tap for PHP 5.6 to 8.3](https://github.com/shivammathur/homebrew-php)[^2]
@@ -52,7 +55,7 @@ For personal projects and self-hosting I use:
   * Redis
 * Netlify
 
-For work, in addition to the above (excluding the hosting) I use:
+For work, in addition to the above (excluding the hosting providers) I use:
 * AWS
   * SQS
   * API Gateway
