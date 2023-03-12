@@ -4,7 +4,7 @@ folder: [writing]
 {% extends "_includes/layouts/page.njk" %}
 
 {% set title = 'Content Stats' %}
-{% set postStats = collections.post | excludeStubs | collectionStats %}
+{% set postStats = collections.post | excludeTypes(['mirror', 'resource']) | excludeStubs | collectionStats %}
 
 {% block content %}
     <article>
