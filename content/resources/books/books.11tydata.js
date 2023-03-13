@@ -7,9 +7,10 @@ module.exports = {
       return data.bookwyrm.find(book => book.openlibraryKey === data.page.fileSlug);
     },
     title(data) {
-      const dependencies = data.book;
-      if (!dependencies) return '';
-      return data.book.title;
-    }
+      return (!data.book) ? '' : data.book.title;
+    },
+    permalink(data) {
+      return (!data.page) ? '' : `resources/books/${data.page.fileSlug}/`;
+    },
   }
 }
