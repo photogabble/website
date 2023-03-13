@@ -10,6 +10,7 @@ class ObjectCache {
   hash;
   filenamePrefix;
   cacheDirectory;
+  forever = 86400*365*10; // Ten years is forever in technology
 
   /**
    * @param uniqueKey {string}
@@ -29,7 +30,7 @@ class ObjectCache {
 
     // TODO: check this.cachePath is writable
 
-    this.cache = flatCache.load(this.cacheFilename, this.rootDir)
+    this.cache = flatCache.load(this.cacheFilename, this.rootDir);
   }
 
   /**
@@ -87,7 +88,7 @@ class ObjectCache {
   /**
    * @param key {string}
    * @param data {*}
-   * @param ttl {number}
+   * @param ttl {number} defaults to one day
    */
   set(key, data, ttl = 86400) {
     this.cache.setKey(key, {
@@ -95,7 +96,7 @@ class ObjectCache {
       data,
     });
 
-    this.cache.save();
+    this.cache.save(true);
   }
 
   /**
