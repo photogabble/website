@@ -1,0 +1,32 @@
+---
+pagination:
+  data: collections.resourcesPaginatedByType
+  size: 1
+  alias: type
+permalink: /{{ type.slug }}/index.html
+folder: [resource]
+---
+
+{% extends "_includes/layouts/page.njk" %}
+
+{% set title = type.title %}
+
+{% block content %}
+  <small class="heading-prefix"><span>Resource</span></small>
+  <h1>{{ type.title }}</h1>
+
+  <section>
+    {% set postsList = type.items %}
+    {% include "_includes/components/post-list.njk" %}
+  </section>
+
+  {% if type.totalPages > 1 %}
+    <nav>
+      <p>
+        Viewing page {{ type.pageNumber }} of {{ type.totalPages }},
+        {% if type.pageSlugs.previous %}<a href="/{{ type.pageSlugs.previous }}/">Previous Page</a>{% endif %}
+        {% if type.pageSlugs.next %}<a href="/{{ type.pageSlugs.next }}/">Next Page</a>{% endif %}
+      </p>
+    </nav>
+  {% endif %}
+{% endblock %}
