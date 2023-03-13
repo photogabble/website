@@ -123,7 +123,7 @@ module.exports = function loadCollection(eleventyConfig) {
   }));
 
   const contentPaginatedByType = (collection) => contentTypes(collection)
-    .filter(type => type.slug !== 'projects')
+    .filter(type => ['project', 'resource', 'glossary'].includes(type.id) === false)
     .reduce(paginateContentTaxonomy(), []);
 
   const contentPaginatedByTopic = (collection) => contentTags(collection)

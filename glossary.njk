@@ -1,0 +1,30 @@
+{% extends "_includes/layouts/page.njk" %}
+
+{% set title = 'Glossary' %}
+{% set alphabetSortedTerms = collections.contentTypes | findBySlug('glossary') | values('items') | alphabetSort %}
+
+{% block content %}
+    <h1>Glossary</h1>
+
+    <nav>
+        <ul class="alphabet">
+            {%- for letter, terms in alphabetSortedTerms %}
+                <li><a {{ 'href=#' + letter if terms.length else '' }}>{{ letter }}</a></li>
+            {%- endfor %}
+        </ul>
+    </nav>
+
+    <section>
+        {%- for letter, terms in alphabetSortedTerms -%}
+            {% if terms.length > 0 %}
+                <h4 id="{{ letter }}">{{ letter }}</h4>
+                <ul>
+                    {%- for term in terms %}
+                        <li><a href="{{ term.url }}">{{ term.data.title }} <small>({{ term.data.backlinks.length }})</small></a></li>
+                    {%- endfor %}
+                </ul>
+            {% endif %}
+        {%- endfor %}
+    </section>
+
+{% endblock %}
