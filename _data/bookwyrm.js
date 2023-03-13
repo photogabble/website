@@ -1,6 +1,4 @@
-const JsonSerializer = require("../utils/helpers/json-serialiser");
 const ObjectCache = require("../utils/helpers/cache");
-const serializer = new JsonSerializer();
 const fetch = require("node-fetch");
 const chalk = require("chalk");
 
