@@ -1,4 +1,5 @@
 module.exports = {
+  layout: "layouts/book.njk",
   eleventyComputed: {
     book(data) {
       // @see https://www.11ty.dev/docs/data-computed/#declaring-your-dependencies

@@ -197,6 +197,14 @@ footer p {
 
 .margin-note img{
     max-width: 100%;
+    min-width: auto;
+}
+
+aside.margin-note{
+    width: 85%;
+    max-width: 864px;
+    padding-left: 2em;
+    margin-right: calc(-50% + 2em);
 }
 
 .with-sub-title{
