@@ -15,11 +15,11 @@ growthStage: evergreen
 
 I recently spent a little time going down memory lane and reminiscing about my first experiences with programming. I even wrote a [short article](/blog/2017/05/02/happy-fiftyth-birthday-basic/) of the journey during which I wished BASIC a happy 53rd birthday. 
 
-While writing that article I also sat down and ported a BASIC game called Space Mines to Go. Now I am far from an expert in Golang, and would actually call myself a beginner. However I found it remarkably easy to port the game and wanted to document my thoughts while doing so &ndash; so lets talk about that.
+While writing that article I also sat down and ported a BASIC game called Space Mines to Go. Now I am far from an expert in Golang, and would actually call myself a beginner. However, I found it remarkably easy to port the game and wanted to document my thoughts while doing so &ndash; so lets talk about that.
 
 ![Space Mines BASIC](/img/happy-fiftyth-birthday-basic-4.png "Space Mines BASIC")
 
-Space Mines is a command line strategy/management game. It was published in 1982 by Usborne as BASIC source code within the book [Computer Space-games](http://www.worldofspectrum.org/infoseek.cgi?regexp=%5EComputer+Spacegames$&loadpics=1). In the same year it was also released on tape for the ZX Spectrum 16K, for more information on that release [click here](http://www.worldofspectrum.org/infoseekid.cgi?id=0019122).
+Space Mines is a command line strategy/management game. It was published in 1982 by Usborne as BASIC source code within the book [[Computer spacegames]]. In the same year it was also released on tape for the ZX Spectrum 16K, for more information on that release [click here](http://www.worldofspectrum.org/infoseekid.cgi?id=0019122).
 
 The aim of the game is to survive 10 years in office managing a mining colony in space. While this sounds simple enough the game is somewhat weighted against you with the food mechanic being the worst. It is however possible to win, you just need to pray to the random number gods that they provide numbers in your favour.
 
