@@ -1,0 +1,21 @@
+{% extends "_includes/layouts/page.njk" %}
+
+{% set title = 'Antilibrary' %}
+{% set books = bookwyrm | whereKeyEquals('shelf', 'to-read') %}
+
+{% block content %}
+    <small class="heading-prefix"><span>Reading</span></small>
+    <h1 class="with-sub-title">Antilibrary</h1>
+    <h4>Books that I intend to read eventually.</h4>
+
+    <section>
+        {% for book in books %}
+            {% if book.cover %}
+            <img height="200px" src="{{ book.cover.url }}" alt="{{ book.cover.name }}">
+            {% else %}
+            <span>No Cover Art</span>
+            {% endif %}
+        {% endfor %}
+    </section>
+
+{% endblock %}
