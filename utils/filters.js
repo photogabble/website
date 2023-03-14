@@ -59,7 +59,7 @@ module.exports = {
 
   values: (obj, key) => obj[key],
 
-  whereKeyEquals: (collection, key, value) => collection.filter(item => item.data[key] === value),
+  whereKeyEquals: (collection, key, value) => collection.filter(item => item[key] === value || (item.data && item.data[key] === value)),
 
   /**
    * Takes a list of tags and returns them mapped with url slug.
