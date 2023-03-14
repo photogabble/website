@@ -173,6 +173,11 @@ module.exports = {
 
   padStart: (str, len, filler) => String(str).padStart(len, filler),
 
+  ratingToStars: (rating, max = 5) => {
+    if (rating > max) rating = max;
+    return '★'.repeat(rating).concat(Math.ceil(rating) !== rating ? '½' : '');
+  },
+
   /**
    * Takes a 11ty collection and returns a stats object for presentation
    * TODO: turn this into a 11ty plugin...

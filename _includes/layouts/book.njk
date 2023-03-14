@@ -13,6 +13,9 @@
             <img height="200px" src="{{ book.cover.url }}" alt="{{ book.cover.name }}">
             {% endif %}
             <ul style="list-style: none;padding:0;">
+                {% if rating %}
+                <li>{{ rating | ratingToStars }}</li>
+                {% endif %}
                 {% if progress.obtained %}
                     <li><small>Obtained: {{ progress.obtained | dateToFormat("dd LLL yyyy") }}</small></li>
                 {% endif %}
