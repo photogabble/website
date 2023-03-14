@@ -1,6 +1,6 @@
 ---
 title: "Alphabetising Glossary Terms"
-tags: [Blogging]
+tags: [Blogging, HowTo]
 growthStage: budding
 ---
 
