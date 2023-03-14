@@ -5,7 +5,8 @@
 {% set title = 'Blog Archive' %}
 
 {% block content %}
-    <h1>Archive</h1>
+    <small class="heading-prefix"><span>Index</span></small>
+    <h1>Writing Archive</h1>
     <p>There have been <strong>{{ allPosts.length }}</strong> items published since April 20, 2007:</p>
 
     {% for year, items in postsByYear %}
