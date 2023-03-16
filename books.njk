@@ -1,33 +1,28 @@
 {% extends "_includes/layouts/page.njk" %}
 
 {% set title = 'Bookshelf' %}
+{% set books = bookwyrm | whereKeyEquals('shelf', 'read') %}
+{% set reviews = collections.resources | whereKeyEquals('resourceType', 'books') %}
 
 {% block content %}
+    <small class="heading-prefix"><span>Reading</span></small>
     <h1 class="with-sub-title">On the Bookshelf</h1>
     <p>📖 What I've been reading:</p>
 
-    {%- for review in books -%}
     <section>
-        <h2>{{ review.book.title }}</h2>
-        <p>{{ review.book.authors }}</p>
-
-        {% if(review.book.cover) %}
-        <p>
-            <span class="margin-note">
-                <img height="200px" src="{{ review.book.cover.src }}" alt="{{ review.book.cover.alt }}">
-            </span>
-        </p>
-        {% endif %}
-
-        {{ review.content | safe }}
-
-        <p>
-            Review published {{ review.published | dateToFormat('DDD') }}. <a href="{{ review.id }}">View on bookwyrm.social</a>.
-        </p>
+        {% include "components/book-grid.njk" %}
     </section>
-    {%- endfor -%}
+    <br/>
     <hr/>
     <section>
-        <p>This books page layout was inspired by <a href="https://www.coxchapman.com/books">Cox Chapman's Books page</a>.</p>
+        <p>
+            This books page layout was inspired by the books pages of
+            <a href="https://daverupert.com/bookshelf/">Dave Rupert</a>,
+            <a href="https://www.markllobrera.com/reading/years/2020/">Mark Llobrera</a>,
+            <a href="https://annualbeta.com/bookshelf/">Søren Birkemeyer</a> and
+            <a href="https://derekshirk.com/reads/">Derek Shirk</a>. I originally got the idea for a books page from
+            <a href="https://maggieappleton.com/library">Maggie Appleton</a>. The first version of this page was inspired by
+            <a href="https://www.coxchapman.com/books">Cox Chapman's Books page</a>.
+        </p>
     </section>
 {% endblock %}
