@@ -6,16 +6,15 @@
 {% block content %}
     <small class="heading-prefix"><span>Reading</span></small>
     <h1 class="with-sub-title">Antilibrary</h1>
-    <h4>Books that I intend to read eventually.</h4>
+    <p>{{ books.length }} books that I intend to read eventually.</p>
 
     <section>
-        {% for book in books %}
-            {% if book.cover %}
-            <img height="200px" src="{{ book.cover.url }}" alt="{{ book.cover.name }}">
-            {% else %}
-            <span>No Cover Art</span>
-            {% endif %}
-        {% endfor %}
+        <blockquote>
+            Taleb introduces the Hayekian and almost taoistic metaphor of the anti-library: A library of the books you haven't read, of the things you don't know. A massive collection of <em>unknowledge</em>, the anti-library contains all the books that may still change your life.
+            <br/><small>&mdash; Bjørn Stærk | <a href="https://bearstrong.net/articles/2007/05/17/lessons-from-the-anti-library.html">lessons from the antilibrary</a></small>
+        </blockquote>
+
+        {% include "components/book-grid.njk" %}
     </section>
 
 {% endblock %}

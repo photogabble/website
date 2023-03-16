@@ -1,0 +1,63 @@
+ul.books {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill,minmax(9.25rem,1fr));
+    font-size: .875em;
+}
+
+ul.books li {
+    display: block;
+}
+
+ul.books .info{
+    line-height: 1.125;
+}
+
+ul.books .info h3{
+    font-size: 1rem;
+
+    margin-bottom: 0.5rem;
+}
+
+ul.books .info em{
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom:0.5rem;
+}
+
+ul.books .info p{
+    max-width: 100%;
+    font-size: 0.8rem;
+}
+
+ul.books .img-placeholder{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-muted);
+    height: 235px;
+    padding: 2rem 0.5rem;
+    text-align: center;
+}
+
+ul.books a{
+    display: block;
+    height: 240px;
+}
+
+ul.books img {
+    object-fit: contain;
+    max-width: 100%;
+}
+
+ul.books .title {
+    font-weight: bold;
+}
+
+ul.books .author {
+    margin-top: 1rem;
+    font-weight: 500;
+    font-size: .75em;
+}

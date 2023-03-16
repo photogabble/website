@@ -1,0 +1,42 @@
+<ul class="books">
+    {% for book in books %}
+        {% set review = reviews | whereFileSlugEquals(book.openlibraryKey) %}
+        {% if review %}
+            {% set href = review.url %}
+            {% set label = 'View' + book.title + ' review' %}
+        {% else %}
+            {% set href = book.id %}
+            {% set label = 'View' + book.title + ' on bookwyrm.social' %}
+        {% endif %}
+
+        <li {{ 'class="placeholder"' if not book.cover }}>
+            <a href="{{ href }}" class="no-ext" aria-label="{{ label }}">
+                {% if book.cover %}
+                    <img height="240" src="{{ book.cover.url }}" alt="{{ book.cover.name }}">
+                {% else %}
+                    <div class="img-placeholder" aria-hidden="true">
+                        <div class="title">{{ book.title }}</div>
+                        <div class="author">
+                            {% for author in book.authors %}
+                                {{ author.name }}{{ "," if not loop.last }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+            </a>
+            <div class="info">
+                <h3>{{ book.title }}</h3>
+                <em>{{ book.subtitle }}</em>
+                <p>
+                    {% for author in book.authors %}
+                        {{ author.name }}{{ "," if not loop.last }}
+                    {% endfor %}
+                </p>
+                {% if review %}
+                    <p>{{ review.data.rating | ratingToStars }}</p>
+                    <small>Finished: {{ review.data.progress.finished | dateToFormat("dd LLL yyyy") }}</small>
+                {% endif %}
+            </div>
+        </li>
+    {% endfor %}
+</ul>

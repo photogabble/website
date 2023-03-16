@@ -61,6 +61,12 @@ module.exports = {
 
   whereKeyEquals: (collection, key, value) => collection.filter(item => item[key] === value || (item.data && item.data[key] === value)),
 
+  whereFileSlugEquals: (collection, value) => {
+    return (collection)
+      ? collection.find(item => item.fileSlug === value)
+      : undefined;
+  },
+
   /**
    * Takes a list of tags and returns them mapped with url slug.
    *
