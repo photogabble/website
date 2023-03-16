@@ -2,11 +2,19 @@
 {% set ogtype = 'article' %}
 
 {% block content %}
-<article>
-    <h1>
-        {{ title }}
-    </h1>
-
+<article class="book">
+    <header>
+        <h1>{{ title }}</h1>
+        {% if book.subtitle  %}
+        <h2>{{ book.subtitle }}</h2>
+        {% endif %}
+        <p><small>{% for author in book.authors %}
+            {{ author.name }}{{ "," if not loop.last }}
+        {% endfor %}</small></p>
+    </header>
+    <span>
+        &mdash;
+    </span>
     <section>
         <aside class="margin-note">
             {% if book.cover %}
@@ -16,6 +24,7 @@
                 {% if rating %}
                 <li>{{ rating | ratingToStars }}</li>
                 {% endif %}
+                <li><small>{{ book.pages }} pages</small></li>
                 {% if progress.obtained %}
                     <li><small>Obtained: {{ progress.obtained | dateToFormat("dd LLL yyyy") }}</small></li>
                 {% endif %}
