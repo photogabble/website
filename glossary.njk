@@ -1,11 +1,11 @@
 {% extends "_includes/layouts/page.njk" %}
 
 {% set title = 'Glossary' %}
+{% set titlePrefix = 'Writing' %}
+{% set subTitle = 'Brief descriptions of colloqualisms in use on this website:'%}
 {% set alphabetSortedTerms = collections.contentTypes | findBySlug('glossary') | values('items') | alphabetSort %}
 
-{% block content %}
-    <h1>Glossary</h1>
-
+{% block pageContent %}
     <nav>
         <ul class="alphabet">
             {%- for letter, terms in alphabetSortedTerms %}
