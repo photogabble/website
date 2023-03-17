@@ -341,6 +341,15 @@ aside.margin-note{
     background-color: var(--accent);
 }
 
+ul.alphabet{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 0.5em;
+    flex-wrap: wrap;
+}
+
 @media (max-width: 864px) {
     main{
         width: 100%;

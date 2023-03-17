@@ -254,4 +254,33 @@ module.exports = {
 
     return stats;
   },
+
+  /**
+   * Takes a list of names or pages and returns a map with them sorted into A-Z + #, ? buckets.
+   *
+   * @see https://github.com/benjifs/benji/blob/65e82aade03efde17cb04c31ce4f13d59dbfeff3/.eleventy.js#L71-L85
+   * @param collection
+   * @returns {Map<any, any>}
+   */
+  alphabetSort: (collection) => {
+    const alphabet = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '?']
+
+    const sorted = alphabet.reduce((res, letter) => {
+      res.set(letter, [])
+      return res
+    }, new Map())
+
+    for (let item of collection) {
+      const title = (typeof item === 'string')
+        ? item
+        : item?.data?.title;
+
+      if (!title) continue;
+
+      let key = (title[0] || '?').toUpperCase();
+      key = alphabet.includes(key) ? key : (!isNaN(key) ? '#' : '?');
+      sorted.get(key).push((typeof item === 'string') ? title : item);
+    }
+    return sorted;
+  }
 }
