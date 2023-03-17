@@ -58,8 +58,8 @@ p > code {
 
 hr{
     border: 0;
-    border-bottom: 1px dotted var(--foreground-muted);
-    margin: auto 0 0;
+    border-bottom: 3px double var(--foreground-muted);
+    margin: 2rem 0;
 }
 
 figure.fullwidth img {
