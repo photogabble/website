@@ -146,7 +146,7 @@ main > header a {
 }
 
 article > header {
-    padding: 2rem 0;
+    padding: 2em 0 1em 0;
 }
 
 article > header h1,
@@ -182,6 +182,10 @@ article.writing-index section > header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+
+article section {
+    margin: 2em 0;
 }
 
 article p {

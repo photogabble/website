@@ -1,6 +1,6 @@
 footer {
     background-color: var(--background-muted);
-    margin-top: 40px;
+    margin-top: 2em;
     display:flex;
     flex-direction: column;
 }
