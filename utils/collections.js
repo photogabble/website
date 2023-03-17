@@ -2,8 +2,13 @@ const {chunk} = require('./helpers')
 const {slugify, padStart} = require("./filters");
 const {setupMarkdownIt, parseCollectionHashtags} = require ('./helpers/hashtags');
 
+// This function returns a reducer function for paginating custom taxonomy such as
+// the content types used in this digital garden.
+//
 // Written with inspiration from:
 // @see https://www.webstoemp.com/blog/basic-custom-taxonomies-with-eleventy/
+// @todo make compatible with 11tys official pagination interface
+// @todo add test
 const paginateContentTaxonomy = (baseSlug = '', perPage = 10) => {
   return (pages, taxonomy) => {
     const slugs = [];
@@ -122,6 +127,27 @@ module.exports = function loadCollection(eleventyConfig) {
     }
   }));
 
+  const resources = (collection) => contentTypes(collection)
+    .find(type => type.id === 'resource')
+    .items;
+
+  const resourcesPaginatedByType = (collection) => Array.from(resources(collection).reduce((types, post) => {
+    if (!post.data.resourceType) return types;
+
+    const id = post.data.resourceType;
+    const resourceType = types.get(post.data.resourceType) || {
+      id,
+      name: id,
+      slug: `resources/${id}/`,
+      items: [],
+    };
+
+    resourceType.items.push(post);
+    types.set(id, resourceType);
+
+    return types;
+  }, new Map()).values()).reduce(paginateContentTaxonomy(), []);
+
   const contentPaginatedByType = (collection) => contentTypes(collection)
     .filter(type => ['project', 'resource', 'glossary'].includes(type.id) === false)
     .reduce(paginateContentTaxonomy(), []);
@@ -154,10 +180,12 @@ module.exports = function loadCollection(eleventyConfig) {
   return {
     post,
     contentTags,
-    contentTypes,
-    contentPaginatedByType,
+    contentTypes, // Todo: rename writing
+    contentPaginatedByType, // Todo: rename writingPaginatedBy...
     contentPaginatedByTopic,
     contentPaginatedByYearMonth,
-    nowUpdates
+    nowUpdates,
+    resources,
+    resourcesPaginatedByType
   }
 }

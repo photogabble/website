@@ -9,6 +9,9 @@
 @import "components/_button.css";
 @import "components/_table.css";
 @import "components/_figure.css";
+@import "components/_books.css";
+@import "components/_footer.css";
+@import "components/_review_list.css";
 
 * {
     box-sizing: border-box;
@@ -31,6 +34,7 @@ body {
     flex-direction: column;
     transition: background-color 300ms, color 200ms;
 }
+
 
 blockquote {
     margin-inline-start: 0;
@@ -55,8 +59,8 @@ p > code {
 
 hr{
     border: 0;
-    border-bottom: 1px dotted var(--foreground-muted);
-    margin: auto 0 0;
+    border-bottom: 3px double var(--foreground-muted);
+    margin: 2rem 0;
 }
 
 figure.fullwidth img {
@@ -84,7 +88,7 @@ a[href]:not(:where(
   [href*="//photogabble.co.uk"],
   /* subdomains to exclude */
   [href*="//www.photogabble.co.uk"]
-)):after {
+)):not(.no-ext):after {
     content: '↗️';
     margin-left: 0.25rem;
     vertical-align: super;
@@ -126,7 +130,7 @@ main p, main ul {
     max-width: 864px;
 }
 
-header{
+main > header {
     padding-bottom: 0;
     padding-top: 80px;
     display: flex;
@@ -134,12 +138,55 @@ header{
     align-items: center;
 }
 
-header > *:first-child{
+main > header > *:first-child{
     flex-grow: 1;
 }
 
-header a{
+main > header a {
     text-decoration: none;
+}
+
+article > header {
+    padding: 2em 0 1em 0;
+}
+
+article > header h1,
+article > header h2{
+    margin:0;
+}
+
+article > header h1 + h2 {
+    font-size: 1.1rem;
+    margin-top: 0;
+    font-weight: normal;
+}
+
+article > header small span{
+    background-color: var(--accent);
+    color: var(--background);
+    padding: 2px 5px;
+    border-radius: 2px;
+}
+
+article > header small + h1 {
+    margin: 0.67rem 0;
+    font-size: 3rem;
+    line-height: 3rem;
+}
+
+article.book > header h1 + h2 {
+    font-size: 1.4rem;
+}
+
+article.writing-index section > header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+article section {
+    margin: 2em 0;
 }
 
 article p {
@@ -159,35 +206,6 @@ article img {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-footer{
-    background-color: var(--background-muted);
-    display: grid;
-    gap: 1em;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 40px;
-    padding: 1em;
-    border-top: 4px double var(--background-muted);
-}
-
-footer dt {
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-footer dd {
-    display: inline-block;
-    margin-inline-start:0;
-}
-
-footer dd:not(:last-child):after {
-    content: '\00a0|\00a0';
-}
-
-footer p {
-    grid-column: 1/-1;
-    margin: 0;
-}
-
 .margin-note{
     float: right;
     clear: right;
@@ -197,6 +215,14 @@ footer p {
 
 .margin-note img{
     max-width: 100%;
+    min-width: auto;
+}
+
+aside.margin-note{
+    width: 85%;
+    max-width: 864px;
+    padding-left: 2em;
+    margin-right: calc(-50% + 2em);
 }
 
 .with-sub-title{
@@ -313,18 +339,6 @@ footer p {
 
 .theme-picker .swatches span.accent{
     background-color: var(--accent);
-}
-
-.heading-prefix span{
-    background-color: var(--accent);
-    color: var(--background);
-    padding: 2px 3px;
-}
-
-.heading-prefix + h1{
-    margin-top: 0;
-    font-size: 3rem;
-    line-height: 3rem;
 }
 
 ul.alphabet{

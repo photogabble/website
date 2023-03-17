@@ -5,14 +5,13 @@ pagination:
   alias: yearMonth
 permalink: /writing/{{ yearMonth.slug }}/index.html
 folder: writing
+titlePrefix: Index
 ---
-
-{% extends "../_includes/layouts/page.njk" %}
 {% set title = yearMonth.title %}
-{% block content %}
-  <section>
-    <h1>{{ yearMonth.title }}</h1>
+{% extends "../_includes/layouts/page.njk" %}
 
+{% block pageContent %}
+  <section>
     {% set displayContentType = true %}
     {% set postsList = yearMonth.items | reverse %}
     {% include "../_includes/components/post-list.njk" %}

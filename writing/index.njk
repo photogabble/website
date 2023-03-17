@@ -2,12 +2,12 @@
 
 {% set allPosts = collections.post | excludeStubs | excludeTypes(['mirror', 'resource']) | reverse %}
 {% set postsByYear = allPosts | groupByYear %}
-{% set title = 'Blog Archive' %}
+{% set titlePrefix = 'Index' %}
+{% set title = 'Writing Archive' %}
+{% set subTitle = '<strong>' + allPosts.length +'</strong> items published since April 20, 2007' %}
+{% set headingClass = 'writing-index' %}
 
-{% block content %}
-    <h1>Archive</h1>
-    <p>There have been <strong>{{ allPosts.length }}</strong> items published since April 20, 2007:</p>
-
+{% block pageContent %}
     {% for year, items in postsByYear %}
         <section>
             <header>

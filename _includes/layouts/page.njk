@@ -11,10 +11,19 @@
 {% endblock %}
 
 {% block content %}
-    <section>
-        {% if title %}<h1 {% if sub_title %}class="with-sub-title"{% endif %}>{{ title }}</h1>{% endif %}
-        {% if sub_title %}<p>{{ sub_title | safe }}</p>{%  endif %}
+    <article {{ ('class="'+ headingClass +'"') | safe if headingClass }}>
+        <header>
+        {% block pageHeader %}
+            {% if titlePrefix %}<small><span>{{ titlePrefix | safe }}</span></small>{% endif %}
+            {% if title or headerTitle %}<h1>{{ (title or headerTitle) | safe }}</h1>{% endif %}
+            {% if subTitle %}<h2>{{ subTitle | safe }}</h2>{% endif %}
+        {% endblock %}
+        </header>
 
-        {{ content | safe }}
-    </section>
+        <span>&mdash;</span>
+
+        {% block pageContent %}
+            {{ content | safe }}
+        {% endblock %}
+    </article>
 {% endblock %}

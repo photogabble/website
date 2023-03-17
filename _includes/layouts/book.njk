@@ -1,0 +1,48 @@
+{% extends "./page.njk" %}
+{% set ogtype = 'article' %}
+
+{% block content %}
+<article class="book">
+    <header>
+        <h1>{{ title }}</h1>
+        {% if book.subtitle  %}
+        <h2>{{ book.subtitle }}</h2>
+        {% endif %}
+        <p><small>{% for author in book.authors %}
+            {{ author.name }}{{ "," if not loop.last }}
+        {% endfor %}</small></p>
+    </header>
+    <span>
+        &mdash;
+    </span>
+    <section>
+        <aside class="margin-note">
+            {% if book.cover %}
+            <img height="200px" src="{{ book.cover.url }}" alt="{{ book.cover.name }}">
+            {% endif %}
+            <ul style="list-style: none;padding:0;">
+                {% if rating %}
+                <li>{{ rating | ratingToStars }}</li>
+                {% endif %}
+                <li><small>{{ book.pages }} pages</small></li>
+                {% if progress.obtained %}
+                    <li><small>Obtained: {{ progress.obtained | dateToFormat("dd LLL yyyy") }}</small></li>
+                {% endif %}
+                {% if progress.started %}
+                <li><small>Started: {{ progress.started | dateToFormat("dd LLL yyyy") }}</small></li>
+                {% endif %}
+                {% if progress.finished %}
+                    <li><small>Finished: {{ progress.finished | dateToFormat("dd LLL yyyy") }}</small></li>
+                {% endif %}
+                <li>&mdash;</li>
+                <li><small><a href="{{ book.id }}">View on bookwyrm.social</a></small></li>
+                <li><small><a href="https://openlibrary.org/books/{{ book.openlibraryKey }}">View on Open Library</a></small></li>
+            </ul>
+        </aside>
+        {{ content | safe }}
+    </section>
+
+    {% include "components/backlinks.njk" %}
+</article>
+
+{% endblock %}

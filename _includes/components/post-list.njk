@@ -6,6 +6,12 @@
                 {% if displayContentType %}
                     <small class="content-type">{{ post.data.contentType }}</small>
                 {% endif %}
+                {% if displayResourceType and post.data.contentType == 'resource' %}
+                    <small class="content-type">{{ post.data.resourceType }}</small>
+                {% endif %}
+                {% if post.data.rating %}
+                    {{ post.data.rating | ratingToStars }}
+                {% endif %}
             </span>
             <hr/>
             <small>{{ post.date | dateToFormat("DDD") }}</small>

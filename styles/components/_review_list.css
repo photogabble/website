@@ -1,0 +1,49 @@
+
+.review-list{
+    list-style:none;
+    margin: 0;
+    padding: 0;
+}
+
+.review-list > li {
+    display: grid;
+    grid-template-columns: 150px 3fr;
+    row-gap: 0.5rem;
+    margin: 2em 0;
+    padding-bottom: 2em;
+}
+
+.review-list > li * {
+    grid-column-start: 2;
+}
+
+.review-list > li time {
+    order: -1;
+    grid-column-start: 1;
+}
+
+@media (max-width: 864px) {
+    .review-list > li {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .review-list > li * {
+        grid-column: span 2;
+    }
+
+    .review-list > li time {
+        order: 3;
+        grid-column: span 1;
+        justify-self: end;
+        font-size: .8em;
+    }
+
+    .review-list > li span {
+        order: 2;
+        grid-column: span 1;
+    }
+
+    .review-list > li em {
+        order: 4;
+    }
+}

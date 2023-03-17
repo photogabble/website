@@ -4,87 +4,84 @@ folder: 'about'
 {% extends "_includes/layouts/page.njk" %}
 
 {% set title = 'Colophon' %}
+{% set titlePrefix = 'Info' %}
 {% set postsList = collections.post | onlyTypes(['colophon']) | reverse %}
 
-{% block content %}
-    <article>
-        <h1>Colophon</h1>
+{% block pageContent %}
+    <p>
+        For many years this website used its <em>colophon</em> as an "about me" page, rather than about PhotoGabble. Today the <a href="/about/">about page</a> takes that role leaving this page to its correct intent as an imprint for the publication that is PhotoGabble.
+    </p>
 
+    <section>
+        <h2>Changelog</h2>
+        <p>This is a development blog listing key updates to PhotoGabble as and when I find the time.</p>
+        {% include "_includes/components/post-list.njk" %}
+    </section>
+
+    <section>
+        <h2>Design</h2>
+        <p>Design inspiration for this website has come from many places. The current minimalist layout was initially using <a href="https://github.com/edwardtufte/tufte-css">Tufte CSS</a> and that design approach has remained.</p>
+        <p>A special thanks to:</p>
+        <ul>
+            <li><a href="https://www.piccalil.li">Andy Bell</a> <small>(<a href="https://twitter.com/piccalilli_">@piccalilli_</a>)</small>, for sparking my interest in 11ty and subsequently the reason for my getting back into content creation</li>
+            <li><a href="https://ma.tt">Matt Mullenweg</a> <small>(<a href="https://twitter.com/photomatt">@photomatt</a>)</small>, without whom this website would likely not exist</li>
+            <li><a href="https://maggieappleton.com/">Maggie Appleton</a> <small>(<a href="https://twitter.com/Mappletons">@mappletons</a>)</small>, the very reason for PhotoGabble being a digital garden instead of only a Blog</li>
+            <li><a href="https://www.interroban.gg/">Luke Mitchell</a> <small>(<a href="https://twitter.com/lkemitchll">@lkemitchll</a>)</small>, inspiration behind content list designs and this Colophon</li>
+            <li><a href="https://cassidoo.co/">Cassidy Williams</a> <small>(<a href="https://twitter.com/cassidoo">@cassidoo</a>)</small> and the Discord crew for daily inspiration</li>
+        </ul>
+        <p>The following websites have provided design inspiration:</p>
+        <ul>
+            <li><a href="https://brunchmade.github.io/fomo.email/">fomo.email</a></li>
+            <li><a href="https://piggystack.dev/">piggystack</a></li>
+            <li><a href="http://blarg.ca/">Gered’s Ramblings</a></li>
+            <li><a href="https://johnmathews.is/blog.html">John Mathews Blog</a></li>
+            <li><a href="https://boehs.org/">Evan Boehs</a>: originally sparked the idea of turning PhotoGabble into a Digital Garden</li>
+            <li><a href="https://www.benji.dog/">Benji</a>: their tags page is the source of my <a href="/colophon/update/alphabetising-glossary-terms/">alphabetising glossary terms</a></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Technologies</h2>
+        <p>This website is a static generated site, built using <a href="https://www.11ty.dev/" target="_blank">eleventy</a> (11ty) and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>. Building this website is dependant upon the following third party libraries:</p>
+        <ul>
+            <li>11ty plugins:
+                <ul>
+                    <li><a href="https://www.npmjs.com/package/@11ty/eleventy-cache-assets">@11ty/eleventy-cache-assets</a> <small>MIT</small></li>
+                    <li><a href="https://www.npmjs.com/package/@11ty/eleventy-plugin-rss">@11ty/eleventy-plugin-rss</a> <small>MIT</small></li>
+                    <li><a href="https://www.npmjs.com/package/@11ty/eleventy-plugin-syntaxhighlight">@11ty/eleventy-plugin-syntaxhighlight</a> <small>MIT</small></li>
+                    <li><a href="https://www.npmjs.com/package/eleventy-plugin-postcss">eleventy-plugin-postcss</a> <small>ISC</small></li>
+                    <li><a href="https://www.npmjs.com/package/@photogabble/eleventy-plugin-word-stats">@photogabble/eleventy-plugin-word-stats</a> <small>MIT</small></li>
+                </ul>
+            </li>
+            <li><a href="https://github.com/postcss/postcss">postcss</a> <small>MIT</small> &amp; plugins:
+                <ul>
+                    <li><a href="https://www.npmjs.com/package/postcss-import">postcss-import</a> <small>MIT</small></li>
+                    <li><a href="https://www.npmjs.com/package/postcss-minify">postcss-minify</a> <small>MIT</small></li>
+                    <li><a href="https://www.npmjs.com/package/postcss-url">postcss-url</a> <small>MIT</small></li>
+                </ul>
+            </li>
+            <li><a href="https://github.com/markdown-it/markdown-it">markdown-it</a> <small>MIT</small> &amp; plugins:
+                <ul>
+                    <li><a href="https://www.npmjs.com/package/markdown-it-anchor">markdown-it-anchor</a> <small>Unlicense</small></li>
+                    <li><a href="https://www.npmjs.com/package/markdown-it-footnote">markdown-it-footnote</a> <small>MIT</small></li>
+                </ul>
+
+            </li>
+            <li><a href="https://www.npmjs.com/package/autoprefixer">autoprefixer</a> <small>MIT</small></li>
+            <li><a href="https://www.npmjs.com/package/cross-env">cross-env</a> <small>MIT</small></li>
+            <li><a href="https://github.com/necolas/normalize.css/">normalize.css</a> <small>MIT</small></li>
+            <li><a href="https://www.npmjs.com/package/node-fetch">node-fetch</a> <small>MIT</small></li>
+            <li><a href="https://www.npmjs.com/package/flat-cache">flat-cache</a> <small>MIT</small></li>
+            <li><a href="https://www.npmjs.com/package/html-minifier">html-minifier</a> <small>MIT</small></li>
+            <li><a href="https://moment.github.io/luxon/#/">luxon</a>: <small>MIT</small></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>License</h2>
         <p>
-            For many years this website used its <em>colophon</em> as an "about me" page, rather than about PhotoGabble. Today the <a href="/about/">about page</a> takes that role leaving this page to its correct intent as an imprint for the publication that is PhotoGabble.
+            Unless otherwise stated<sup>&dagger;</sup> this website and content is licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>. It's source code is freely available and hosted on <a href="https://github.com/photogabble/website" target="_blank">GitHub</a>.
         </p>
-
-        <section>
-            <h2>Updates</h2>
-            <p>This is a development blog listing key updates to PhotoGabble as and when I find the time.</p>
-            {% include "_includes/components/post-list.njk" %}
-        </section>
-
-        <section>
-            <h2>Design</h2>
-            <p>Design inspiration for this website has come from many places. The current minimalist layout was initially using <a href="https://github.com/edwardtufte/tufte-css">Tufte CSS</a> and that design approach has remained.</p>
-            <p>A special thanks to:</p>
-            <ul>
-                <li><a href="https://www.piccalil.li">Andy Bell</a> <small>(<a href="https://twitter.com/piccalilli_">@piccalilli_</a>)</small>, for sparking my interest in 11ty and subsequently the reason for my getting back into content creation</li>
-                <li><a href="https://ma.tt">Matt Mullenweg</a> <small>(<a href="https://twitter.com/photomatt">@photomatt</a>)</small>, without whom this website would likely not exist</li>
-                <li><a href="https://maggieappleton.com/">Maggie Appleton</a> <small>(<a href="https://twitter.com/Mappletons">@mappletons</a>)</small>, the very reason for PhotoGabble being a digital garden instead of only a Blog</li>
-                <li><a href="https://www.interroban.gg/">Luke Mitchell</a> <small>(<a href="https://twitter.com/lkemitchll">@lkemitchll</a>)</small>, inspiration behind content list designs and this Colophon</li>
-                <li><a href="https://cassidoo.co/">Cassidy Williams</a> <small>(<a href="https://twitter.com/cassidoo">@cassidoo</a>)</small> and the Discord crew for daily inspiration</li>
-            </ul>
-            <p>The following websites have provided design inspiration:</p>
-            <ul>
-                <li><a href="https://brunchmade.github.io/fomo.email/">fomo.email</a></li>
-                <li><a href="https://piggystack.dev/">piggystack</a></li>
-                <li><a href="http://blarg.ca/">Gered’s Ramblings</a></li>
-                <li><a href="https://johnmathews.is/">John Mathews Blog</a></li>
-                <li><a href="https://boehs.org/">Evan Boehs</a>: originally sparked the idea of turning PhotoGabble into a Digital Garden</li>
-                <li><a href="https://www.benji.dog/">Benji</a>: their tags page is the source of my <a href="/colophon/update/alphabetising-glossary-terms/">alphabetising glossary terms</a></li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Technologies</h2>
-            <p>This website is a static generated site, built using <a href="https://www.11ty.dev/" target="_blank">eleventy</a> (11ty) and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>. Building this website is dependant upon the following third party libraries:</p>
-            <ul>
-                <li>11ty plugins:
-                    <ul>
-                        <li><a href="https://www.npmjs.com/package/@11ty/eleventy-cache-assets">@11ty/eleventy-cache-assets</a> <small>MIT</small></li>
-                        <li><a href="https://www.npmjs.com/package/@11ty/eleventy-plugin-rss">@11ty/eleventy-plugin-rss</a> <small>MIT</small></li>
-                        <li><a href="https://www.npmjs.com/package/@11ty/eleventy-plugin-syntaxhighlight">@11ty/eleventy-plugin-syntaxhighlight</a> <small>MIT</small></li>
-                        <li><a href="https://www.npmjs.com/package/eleventy-plugin-postcss">eleventy-plugin-postcss</a> <small>ISC</small></li>
-                        <li><a href="https://www.npmjs.com/package/@photogabble/eleventy-plugin-word-stats">@photogabble/eleventy-plugin-word-stats</a> <small>MIT</small></li>
-                    </ul>
-                </li>
-                <li><a href="https://github.com/postcss/postcss">postcss</a> <small>MIT</small> &amp; plugins:
-                    <ul>
-                        <li><a href="https://www.npmjs.com/package/postcss-import">postcss-import</a> <small>MIT</small></li>
-                        <li><a href="https://www.npmjs.com/package/postcss-minify">postcss-minify</a> <small>MIT</small></li>
-                        <li><a href="https://www.npmjs.com/package/postcss-url">postcss-url</a> <small>MIT</small></li>
-                    </ul>
-                </li>
-                <li><a href="https://github.com/markdown-it/markdown-it">markdown-it</a> <small>MIT</small> &amp; plugins:
-                    <ul>
-                        <li><a href="https://www.npmjs.com/package/markdown-it-anchor">markdown-it-anchor</a> <small>Unlicense</small></li>
-                        <li><a href="https://www.npmjs.com/package/markdown-it-footnote">markdown-it-footnote</a> <small>MIT</small></li>
-                    </ul>
-
-                </li>
-                <li><a href="https://www.npmjs.com/package/autoprefixer">autoprefixer</a> <small>MIT</small></li>
-                <li><a href="https://www.npmjs.com/package/cross-env">cross-env</a> <small>MIT</small></li>
-                <li><a href="https://github.com/necolas/normalize.css/">normalize.css</a> <small>MIT</small></li>
-                <li><a href="https://www.npmjs.com/package/node-fetch">node-fetch</a> <small>MIT</small></li>
-                <li><a href="https://www.npmjs.com/package/flat-cache">flat-cache</a> <small>MIT</small></li>
-                <li><a href="https://www.npmjs.com/package/html-minifier">html-minifier</a> <small>MIT</small></li>
-                <li><a href="https://moment.github.io/luxon/#/">luxon</a>: <small>MIT</small></li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>License</h2>
-            <p>
-                Unless otherwise stated<sup>&dagger;</sup> this website and content is licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>. It's source code is freely available and hosted on <a href="https://github.com/photogabble/website" target="_blank">GitHub</a>.
-            </p>
-            <p><small>&dagger;exemptions include <a href="/mirrored/">mirrored code snippets</a> which will each display their license terms if available.</small></p>
-        </section>
-    </article>
+        <p><small>&dagger;exemptions include <a href="/mirrored/">mirrored code snippets</a> which will each display their license terms if available.</small></p>
+    </section>
 {% endblock %}

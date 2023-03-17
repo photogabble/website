@@ -11,7 +11,7 @@ tags:
   - Game Development
 ---
 
-This is a port to LDPL of a BASIC strategy/management game called Space Mines. The BASIC code was originally published in 1982 in an Usborne book titled [Computer Space-games](http://www.worldofspectrum.org/infoseek.cgi?regexp=^Computer+Spacegames$&loadpics=1). In the same year the game was released on tape for the ZX Spectrum 16K, [click here](http://www.worldofspectrum.org/infoseekid.cgi?id=0019122) for more information and a download link to the Spectrum tape image.
+This is a port to LDPL of a BASIC strategy/management game called Space Mines. The BASIC code was originally published in 1982 in an Usborne book titled [[Computer spacegames]]. In the same year the game was released on tape for the ZX Spectrum 16K, [click here](http://www.worldofspectrum.org/infoseekid.cgi?id=0019122) for more information and a download link to the Spectrum tape image.
 
 [LDPL](http://ldpl.lartu.net/) is a very simple interpreted programming language that mimics older languages like COBOL. Its author Martín del Río designed it from the ground up to be excessively expressive, readable and easy to learn.
 

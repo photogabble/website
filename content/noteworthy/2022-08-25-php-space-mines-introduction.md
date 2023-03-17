@@ -8,7 +8,7 @@ tags:
 growthStage: evergreen
 ---
 
-I vividly remember first typing into QuickBasic the Space Mines program from a then already old Usborne book titled Computer Space-games. That very BASIC game totals around 100LoC but is able to simulate running a mining colony with the goal being to survive ten turns.
+I vividly remember first typing into QuickBasic the Space Mines program from a then already old Usborne book titled [[Computer spacegames]]. That very BASIC game totals around 100LoC but is able to simulate running a mining colony with the goal being to survive ten turns.
 
 ![Space Mines BASIC](/img/happy-fiftyth-birthday-basic-4.png "Space Mines BASIC")
 

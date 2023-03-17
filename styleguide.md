@@ -1,6 +1,7 @@
 ---
 layout: layouts/page.njk
 title: "Styleguide"
+titlePrefix: Etc
 ---
 
 This page was adopted from the [Poor Man's Styleguide](https://poormansstyleguide.com/) which I discovered through [Branden Higby's website](https://www.higby.io/style-guide/).
@@ -191,3 +192,17 @@ Monospace Text wrapped in "pre" tags:
 | Division 1     | Division 2     | Division 3     |
 | Division 1     | Division 2     | Division 3     |
 | Division 1     | Division 2     | Division 3     |
+
+# Ratings
+
+- 0.0 : {{ 0 | ratingToStars }}
+- 0.5 : {{ 0.5 | ratingToStars }}
+- 1.0 : {{ 1.0 | ratingToStars }}
+- 1.5 : {{ 1.5 | ratingToStars }}
+- 2.0 : {{ 2.0 | ratingToStars }}
+- 2.5 : {{ 2.5 | ratingToStars }}
+- 3.0 : {{ 3.0 | ratingToStars }}
+- 3.5 : {{ 3.5 | ratingToStars }}
+- 4.0 : {{ 4.0 | ratingToStars }}
+- 4.5 : {{ 4.5 | ratingToStars }}
+- 5.0 : {{ 5.0 | ratingToStars }}
