@@ -149,7 +149,7 @@ module.exports = function loadCollection(eleventyConfig) {
   }, new Map()).values()).reduce(paginateContentTaxonomy(), []);
 
   const contentPaginatedByType = (collection) => contentTypes(collection)
-    .filter(type => ['project', 'resource'].includes(type.id) === false)
+    .filter(type => ['project', 'resource', 'glossary'].includes(type.id) === false)
     .reduce(paginateContentTaxonomy(), []);
 
   const contentPaginatedByTopic = (collection) => contentTags(collection)
