@@ -1,7 +1,8 @@
 ---
 layout: layouts/page.njk
 title: "/uses"
-sub_title: "Last updated June 21st, 2021."
+titlePrefix: "Me"
+subTitle: "Last updated June 21st, 2021."
 folder: about
 ---
 

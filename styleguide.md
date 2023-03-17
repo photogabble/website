@@ -1,6 +1,7 @@
 ---
 layout: layouts/page.njk
 title: "Styleguide"
+titlePrefix: Etc
 ---
 
 This page was adopted from the [Poor Man's Styleguide](https://poormansstyleguide.com/) which I discovered through [Branden Higby's website](https://www.higby.io/style-guide/).

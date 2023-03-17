@@ -1,13 +1,10 @@
 {% extends "_includes/layouts/page.njk" %}
 
 {% set title = 'Links' %}
+{% set titlePrefix = 'Community' %}
+{% set subTitle = 'A hand curated index of things I found interesting&hellip;' %}
 
-{% block body_class %}light{% endblock %}
-
-{% block content %}
-    <h1>Links</h1>
-    <p>A hand curated index of things I found interesting&hellip;</p>
-
+{% block pageContent %}
     <section>
         <ul>
             {%- for link in links | reverse -%}

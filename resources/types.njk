@@ -7,14 +7,12 @@ permalink: /{{ type.slug }}/index.html
 folder: [resource]
 ---
 
-{% extends "_includes/layouts/page.njk" %}
+{% extends "../_includes/layouts/page.njk" %}
 
 {% set title = type.title %}
+{% set titlePrefix = 'Resource' %}
 
-{% block content %}
-  <small class="heading-prefix"><span>Resource</span></small>
-  <h1>{{ type.title }}</h1>
-
+{% block pageContent %}
   <section>
     {% set postsList = type.items %}
     {% include "_includes/components/post-list.njk" %}

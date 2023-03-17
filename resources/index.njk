@@ -9,10 +9,9 @@ permalink: "resources/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber
 {% extends "../_includes/layouts/page.njk" %}
 
 {% set title = 'Resources' %}
+{% set titlePrefix = 'Index' %}
 
-{% block content %}
-  <small class="heading-prefix"><span>Index</span></small>
-  <h1>Resources</h1>
+{% block pageContent %}
 
   <section>
     {% set displayResourceType = true %}
