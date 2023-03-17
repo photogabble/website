@@ -159,6 +159,19 @@ article > header h1 + h2 {
     font-weight: normal;
 }
 
+article > header small span{
+    background-color: var(--accent);
+    color: var(--background);
+    padding: 2px 5px;
+    border-radius: 2px;
+}
+
+article > header small + h1 {
+    margin: 0.67rem 0;
+    font-size: 3rem;
+    line-height: 3rem;
+}
+
 article.book > header h1 + h2 {
     font-size: 1.4rem;
 }
@@ -389,18 +402,6 @@ aside.margin-note{
 
 .theme-picker .swatches span.accent{
     background-color: var(--accent);
-}
-
-.heading-prefix span{
-    background-color: var(--accent);
-    color: var(--background);
-    padding: 2px 3px;
-}
-
-.heading-prefix + h1{
-    margin-top: 0;
-    font-size: 3rem;
-    line-height: 3rem;
 }
 
 @media (max-width: 864px) {
