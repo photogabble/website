@@ -144,19 +144,30 @@ main > header a {
     text-decoration: none;
 }
 
-article.book header {
-
+article > header {
+    padding: 2rem 0;
 }
 
-article.book h1,
-article.book h2{
+article > header h1,
+article > header h2{
     margin:0;
 }
 
-article.book h1 + h2 {
-    font-size: 1.4rem;
+article > header h1 + h2 {
+    font-size: 1.1rem;
     margin-top: 0;
     font-weight: normal;
+}
+
+article.book > header h1 + h2 {
+    font-size: 1.4rem;
+}
+
+article.writing-index section > header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 article p {
