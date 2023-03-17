@@ -1,7 +1,7 @@
 ---
 date: 2022-01-31
 title: Eleventy.js Font Subsetting Plugin
-sub_title: Font Subsetting made easier...
+subTitle: Font Subsetting made easier...
 description: 
 git: https://github.com/photogabble/eleventy-plugin-font-subsetting
 npm: https://www.npmjs.com/package/@photogabble/eleventy-plugin-font-subsetting

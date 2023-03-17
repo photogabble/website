@@ -7,7 +7,7 @@
         <h1 class="with-sub-title">
             {{ title }}
         </h1>
-        <p>{{ sub_title or description }}</p>
+        <p>{{ subTitle or description }}</p>
         {% if git %}<a href="{{ git }}" title="Visit git repository for {{ title }}" target="_blank">git</a>{% endif %}
         {% if packagist %}<a href="{{ packagist }}" title="Visit on packagist" target="_blank">packagist</a>{% endif %}
         {% if npm %}<a href="{{ npm }}" title="Visit on npm" target="_blank">npm</a>{% endif %}
