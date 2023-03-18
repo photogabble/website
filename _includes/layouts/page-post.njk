@@ -10,10 +10,6 @@
     planted on <time datetime="{{ page.date.toISOString() }}">{{ page.date | dateToFormat("DDD") }}</time> in: {% for tag in tags | formatTagList %}<a href="/topic/{{ tag.slug }}" title="Visit {{ tag.name }} index">{{ tag.name }}</a>{{ ' and ' if loop.revindex == 2 }}{{ ', ' if loop.revindex > 2 }}{% endfor %}.<br/>{{ readingTime.text if readingTime.words > 0 }}.
 {% endset %}
 
-{% block pageHeader %}
-
-{% endblock %}
-
 {% block pageContent %}
     {% if growthStage === 'stub' %}
     <section>
