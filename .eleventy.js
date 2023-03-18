@@ -43,12 +43,15 @@ module.exports = function (eleventyConfig) {
     lastXDays: 180,
   });
 
+  const numberFormat = new Intl.NumberFormat('en-GB');
+
   eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-word-stats'), {
     output: (stats) => {
+      const words = numberFormat.format(stats.words);
       return {
         words: stats.words,
         time: stats.text,
-        text: `${stats.words} words, ${stats.text}`
+        text: `~${words} words, about a ${stats.text}`
       };
     }
   });

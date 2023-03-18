@@ -146,10 +146,20 @@ main > header > *:first-child{
 
 main > header a {
     text-decoration: none;
+    padding: 0 0.25rem;
+}
+
+main > header a:first-child {
+    padding-left: 0;
 }
 
 article > header {
     padding: 2em 0 1em 0;
+
+}
+
+article > header h1 {
+    line-height: 1.1;
 }
 
 article > header h1,
@@ -173,7 +183,10 @@ article > header small span{
 article > header small + h1 {
     margin: 0.67rem 0;
     font-size: 3rem;
-    line-height: 3rem;
+}
+
+article.note > header h1 {
+    font-size: 6rem;
 }
 
 article.book > header h1 + h2 {

@@ -1,20 +1,15 @@
 {% extends "./page.njk" %}
 {% set ogtype = 'article' %}
+{% set headingClass = 'book' %}
+{% set title = book.title %}
+{% set titlePrefix = 'Book' %}
+{% set subTitle = book.subtitle %}
 
-{% block content %}
-<article class="book">
-    <header>
-        <h1>{{ title }}</h1>
-        {% if book.subtitle  %}
-        <h2>{{ book.subtitle }}</h2>
-        {% endif %}
-        <p><small>{% for author in book.authors %}
-            {{ author.name }}{{ "," if not loop.last }}
-        {% endfor %}</small></p>
-    </header>
-    <span>
-        &mdash;
-    </span>
+{% block pageHeader %}
+    <p><small>{% for author in book.authors %}{{ author.name }}{{ "," if not loop.last }}{% endfor %}</small></p>
+{% endblock %}
+
+{% block pageContent %}
     <section>
         <aside class="margin-note">
             {% if book.cover %}
@@ -41,8 +36,5 @@
         </aside>
         {{ content | safe }}
     </section>
-
     {% include "components/backlinks.njk" %}
-</article>
-
 {% endblock %}
