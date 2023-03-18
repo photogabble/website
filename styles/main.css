@@ -146,6 +146,11 @@ main > header > *:first-child{
 
 main > header a {
     text-decoration: none;
+    padding: 0 0.25rem;
+}
+
+main > header a:first-child {
+    padding-left: 0;
 }
 
 article > header {
