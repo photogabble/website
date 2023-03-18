@@ -55,6 +55,8 @@ pre {
 p > code {
     background: var(--foreground-muted);
     color: var(--background);
+    padding: 0 3px;
+    border-radius: 3px;
 }
 
 hr{
