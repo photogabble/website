@@ -3,7 +3,7 @@
 {% set readingTime = content | wordStats %}
 {% set headingClass = 'note' %}
 {% set titlePrefix %}
-    {% include "../components/growth.njk" %}
+    {% include "../components/growth.njk" %} {{ contentType }}
 {% endset %}
 
 {% set subTitle %}
