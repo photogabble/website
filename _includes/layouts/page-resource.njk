@@ -1,7 +1,7 @@
 {% extends "./page.njk" %}
 {% set ogtype = 'article' %}
 {% set subTitle %}
-    planted on <time datetime="{{ page.date.toISOString() }}">{{ page.date | dateToFormat("DDD") }}</time>
+    planted on <time datetime="{{ page.date.toISOString() }}">{{ page.date | dateToFormat("DDD") }}</time> in: {% include "../components/tag-list.njk" %}.
 {% endset %}
 
 {% block pageContent %}
