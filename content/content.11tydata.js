@@ -4,7 +4,7 @@ module.exports = {
   featured: false,
   draft: false,
   excludeFromFeed: false,
-  layout: 'layouts/post.njk',
+  layout: 'layouts/page-post.njk',
   growthStage: 'seedling', // seedling, budding, evergreen
   contentType: 'thought', // thought, noteworthy, essay, tutorial, project
   folder: ['writing'],
