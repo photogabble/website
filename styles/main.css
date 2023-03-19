@@ -185,6 +185,20 @@ article > header small + h1 {
     font-size: 3rem;
 }
 
+article section {
+    margin: 2em 0;
+}
+
+article p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+article img {
+    max-width: 100%;
+    min-width: 100%;
+}
+
 article.note > header h1 {
     font-size: 6rem;
 }
@@ -200,18 +214,26 @@ article.writing-index section > header {
     justify-content: space-between;
 }
 
-article section {
-    margin: 2em 0;
+article.resource.bookmark > aside {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
-article p {
-    text-align: justify;
-    text-justify: inter-word;
+article.resource.bookmark > section img {
+    float: right;
+    max-width: 40%;
+    min-width: auto;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    border: 2px solid var(--background-muted);
+    border-radius: 3px;
 }
 
-article img {
-    max-width: 100%;
-    min-width: 100%;
+article.resource.bookmark > section > p {
+    font-size: 1.4em;
 }
 
 .tags-list ul {
