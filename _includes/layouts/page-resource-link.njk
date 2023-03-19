@@ -1,5 +1,6 @@
 {% extends "./page.njk" %}
 {% set ogtype = 'article' %}
+{% set author = people | whereKeyEquals('name', cite.name) | values(0) %}
 {% set subTitle %}
     planted on <time datetime="{{ page.date.toISOString() }}">{{ page.date | dateToFormat("DDD") }}</time> in: {% include "../components/tag-list.njk" %}.
 {% endset %}
@@ -8,6 +9,13 @@
     <aside>
         <small><span>{{ titlePrefix | safe }}</span></small>
         {{ cite.name }}
+        {% if author %}
+        <ul>
+            {% for name, social in author.socials %}
+            <li><a href="{{ social.href }}" aria-label="{{ social.nick }} on {{ name }}">{{ name }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
     </aside>
 {% endblock %}
 

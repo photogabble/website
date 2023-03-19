@@ -222,6 +222,16 @@ article.resource.bookmark header > aside {
     column-gap: 0.5rem;
 }
 
+article.resource.bookmark header > aside ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+article.resource.bookmark header > aside li {
+    display: inline-block;
+}
+
 article.resource.bookmark > section img {
     float: right;
     max-width: 40%;
