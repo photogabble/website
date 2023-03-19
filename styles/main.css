@@ -242,7 +242,7 @@ article.resource.bookmark > section img {
     border-radius: 3px;
 }
 
-article.resource.bookmark > section > p {
+article.resource.bookmark > section > p:first-of-type {
     font-size: 1.4em;
 }
 
