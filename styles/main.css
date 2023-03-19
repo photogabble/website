@@ -180,7 +180,8 @@ article > header small span{
     border-radius: 2px;
 }
 
-article > header small + h1 {
+article > header small + h1,
+article.resource.bookmark aside + h1 {
     margin: 0.67rem 0;
     font-size: 3rem;
 }
@@ -214,12 +215,11 @@ article.writing-index section > header {
     justify-content: space-between;
 }
 
-article.resource.bookmark > aside {
+article.resource.bookmark header > aside {
     display: flex;
     flex-direction: row;
     align-items: center;
     column-gap: 0.5rem;
-    margin-bottom: 0.5rem;
 }
 
 article.resource.bookmark > section img {
