@@ -12,6 +12,8 @@ module.exports = function (eleventyConfig) {
   // Install Plugins
   //
 
+  eleventyConfig.addPlugin(require('./utils/helpers/screenshot'));
+
   eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-interlinker'), {
     defaultLayout: 'layouts/embed.liquid'
   });

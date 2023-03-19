@@ -21,7 +21,7 @@
 
 {% block pageContent %}
     <section>
-        <img src="#" aria-hidden="true" alt="Screenshot of web page." />
+        <img src="{% screenshot cite.href, page.fileSlug %}" aria-hidden="true" alt="Screenshot of web page." />
         <p><a href="{{ cite.href }}">{{ cite.href }}</a></p>
         {{ content | safe }}
         <small>&mdash; {{ cite.name }} | <a href="{{ cite.href }}">link</a></small>
