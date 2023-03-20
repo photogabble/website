@@ -34,6 +34,8 @@ module.exports = function (eleventyConfig) {
     ignore: ['PHP', 'JavaScript', 'DOScember'],
     similar: {
       'Game Development': ['GameDev'],
+      'Retro Computing': ['RetroComputing'],
+      'Node JS': ['Node']
     },
     slugify,
   });
