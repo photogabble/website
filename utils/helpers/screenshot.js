@@ -1,21 +1,44 @@
 const puppeteer = require('puppeteer');
-const fs = require('fs');
-const path = require('path');
+const crypto = require('node:crypto');
+const path = require('node:path');
+const fs = require('node:fs');
+
+// Initialization Vector
+const IV = Buffer.from('068f7bb47896981d6c8b3f9a186591ae', 'hex');
+/**
+ * @see https://gist.github.com/timargra/016f247dd83dbc97ea1d8f71dea38c3f
+ * @param {*} data
+ * @param {number} size
+ * @param {BufferEncoding} encoding
+ * @returns {string}
+ */
+const variableHash = (data, size = 5, encoding = 'hex') => {
+  let output = Buffer.alloc(size);
+  let hash = crypto.createHash('sha256');
+  hash.update(data);
+
+  let cipher = crypto.createCipheriv('aes256', hash.digest(), IV);
+  let offset = output.write(cipher.update(output).toString('binary'));
+  output.write(cipher.final().toString('binary'), offset);
+  return output.toString(encoding);
+}
 
 /**
  * @param { import('@11ty/eleventy/src/UserConfig') } eleventyConfig
  * @param { * } customOptions
  */
 module.exports = function (eleventyConfig, customOptions = {}) {
-
   const distFolder = path.join(process.cwd(), `img/bookmarks`);
+  const viewport = [1200, 630];
+  const timeout = 8500;
 
   eleventyConfig.addAsyncShortcode('screenshot', async (url, filename) => {
-    const filePathName = path.join(distFolder, `${filename}.jpeg`);
-    if (fs.existsSync(filePathName)) return `/img/bookmarks/${filename}.jpeg`;
+    const hash = variableHash(url, 12);
+    const filePathName = path.join(distFolder, `${filename}.${hash}.jpeg`);
+    const src = `/img/bookmarks/${filename}.${hash}.jpeg`;
 
-    const timeout = 8500;
-    const viewport = [1200, 630];
+    if (fs.existsSync(filePathName)) return src;
+
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
@@ -58,7 +81,7 @@ module.exports = function (eleventyConfig, customOptions = {}) {
 
     await browser.close();
 
-    return `/img/bookmarks/${filename}.jpeg`
+    return src;
   });
 
 }
