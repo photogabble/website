@@ -8,8 +8,8 @@
 {% block pageHeaderBefore %}
     <aside>
         <small><span>{{ titlePrefix | safe }}</span></small>
-        {{ cite.name }}
-        {% if author %}
+        <span>{{ cite.name }}</span>
+        {% if author and author.socials %}
         <ul>
             {% for name, social in author.socials %}
             <li><a href="{{ social.href }}" aria-label="{{ social.nick }} on {{ name }}">{{ name }}</a></li>
@@ -24,7 +24,6 @@
         <img src="{% screenshot cite.href, page.fileSlug %}" aria-hidden="true" alt="Screenshot of web page." />
         <p><a href="{{ cite.href }}">{{ cite.href }}</a></p>
         {{ content | safe }}
-        <small>&mdash; {{ cite.name }} | <a href="{{ cite.href }}">link</a></small>
     </section>
 
     {% include "components/backlinks.njk" %}
