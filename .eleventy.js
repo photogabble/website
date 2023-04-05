@@ -12,6 +12,8 @@ module.exports = function (eleventyConfig) {
   // Install Plugins
   //
 
+  eleventyConfig.addPlugin(require('./utils/helpers/screenshot'));
+
   eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-interlinker'), {
     defaultLayout: 'layouts/embed.liquid'
   });
@@ -32,6 +34,8 @@ module.exports = function (eleventyConfig) {
     ignore: ['PHP', 'JavaScript', 'DOScember'],
     similar: {
       'Game Development': ['GameDev'],
+      'Retro Computing': ['RetroComputing'],
+      'Node JS': ['Node']
     },
     slugify,
   });

@@ -1,0 +1,14 @@
+{% extends "./page.njk" %}
+{% set ogtype = 'article' %}
+{% set subTitle %}
+    planted on <time datetime="{{ page.date.toISOString() }}">{{ page.date | dateToFormat("DDD") }}</time> in: {% include "../components/tag-list.njk" %}.
+{% endset %}
+
+{% block pageContent %}
+    <section>
+        {{ content | safe }}
+        <small>&mdash; {{ cite.name }} | <a href="{{ cite.href }}">link</a></small>
+    </section>
+
+    {% include "components/backlinks.njk" %}
+{% endblock %}

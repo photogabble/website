@@ -6,7 +6,9 @@ const getPageFolders = (page) => page.filePathStem.substring(
 const getPageResourceType = (page) => getPageFolders(page).split('/')[0];
 
 module.exports = {
-  layout: "layouts/resource.njk",
+  layout: "layouts/page-resource.njk",
+  titlePrefix: 'Resource',
+  headingClass: 'resource',
   contentType: 'resource',
   excludeFromFeed: true,
   eleventyComputed: {

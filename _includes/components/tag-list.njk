@@ -1,0 +1,1 @@
+{% for tag in tags | formatTagList %}<a href="/topic/{{ tag.slug }}" title="Visit {{ tag.name }} index">{{ tag.name }}</a>{{ ' and ' if loop.revindex == 2 }}{{ ', ' if loop.revindex > 2 }}{% endfor %}

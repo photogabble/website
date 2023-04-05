@@ -1,0 +1,30 @@
+{% extends "./page.njk" %}
+{% set ogtype = 'article' %}
+{% set author = people | whereKeyEquals('name', cite.name) | values(0) %}
+{% set subTitle %}
+    planted on <time datetime="{{ page.date.toISOString() }}">{{ page.date | dateToFormat("DDD") }}</time> in: {% include "../components/tag-list.njk" %}.
+{% endset %}
+
+{% block pageHeaderBefore %}
+    <aside>
+        <small><span>{{ titlePrefix | safe }}</span></small>
+        <span>{{ cite.name }}</span>
+        {% if author and author.socials %}
+        <ul>
+            {% for name, social in author.socials %}
+            <li><a href="{{ social.href }}" aria-label="{{ social.nick }} on {{ name }}">{{ name }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </aside>
+{% endblock %}
+
+{% block pageContent %}
+    <section>
+        <img src="{% screenshot cite.href, page.fileSlug %}" aria-hidden="true" alt="Screenshot of web page." />
+        <p><a href="{{ cite.href }}">{{ cite.href }}</a></p>
+        {{ content | safe }}
+    </section>
+
+    {% include "components/backlinks.njk" %}
+{% endblock %}

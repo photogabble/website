@@ -1,5 +1,6 @@
 ---
 title: "awk command line for concatenating certificate file into string"
+tags: [awk]
 cite:
     name: Ed Morton via Stackoverflow
     href: https://stackoverflow.com/a/38674872/1225977

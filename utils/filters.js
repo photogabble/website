@@ -74,12 +74,14 @@ module.exports = {
    * @returns {Array<{name:string, slug:string}>}
    */
   formatTagList: (list) => {
-    return list.map((tag) => {
-      return {
-        name: tag,
-        slug: strToSlug(tag)
-      }
-    })
+    return (list)
+      ? list.map((tag) => {
+        return {
+          name: tag,
+          slug: strToSlug(tag)
+        }
+      })
+      : [];
   },
 
   /**

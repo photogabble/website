@@ -1,5 +1,6 @@
 ---
 title: "Bash script for pruning stale local Git branches"
+tags: [bash, git]
 cite:
     name: Henry
     href: https://intellij-support.jetbrains.com/hc/en-us/community/posts/360006539480-How-can-I-refresh-already-deleted-Git-remote-branches-?page=1#community_comment_360002698740

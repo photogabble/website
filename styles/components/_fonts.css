@@ -22,7 +22,7 @@
     font-weight: bold;
     font-stretch: normal;
     font-style: italic;
-    src: url('/fonts/iosevka-etoile-bold.subset.woff2') format('woff2');
+    src: url('/fonts/iosevka-etoile-bolditalic.subset.woff2') format('woff2');
 }
 
 @font-face {
