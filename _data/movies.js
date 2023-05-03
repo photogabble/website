@@ -139,7 +139,36 @@ const movies = [
     rating: 4,
     imdb: 'https://www.imdb.com/title/tt0379786/'
   },
-  //
+
+  {
+    title: 'Deadpool 2',
+    year: 2018,
+    watchedDate: '2023-04-28',
+    reWatch: false,
+    review: 'A good guy in red',
+    rating: 4,
+    imdb: 'https://www.imdb.com/title/tt5463162/'
+  },
+
+  {
+    title: 'Extraction',
+    year: 2020,
+    watchedDate: '2023-05-02',
+    reWatch: false,
+    review: 'Angry Thor is angry',
+    rating: 4,
+    imdb: 'https://www.imdb.com/title/tt8936646/'
+  },
+
+  {
+    title: '13 Hours: The Secret Soldiers of Benghazi',
+    year: 2016,
+    watchedDate: '2023-05-03',
+    reWatch: false,
+    review: 'I liked this more than I expected to',
+    rating: 4,
+    imdb: 'https://www.imdb.com/title/tt4172430/'
+  },
 
   // {
   //   title: '',
