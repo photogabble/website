@@ -2,8 +2,8 @@
 title: "Weekly Quote #35"
 tags: Quote
 cite:
-    name: Unknown
+    name: Osho
     href: #
 ---
 
-> TBD
+> The less people know, the more stubbornly they know it
