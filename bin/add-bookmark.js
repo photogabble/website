@@ -48,7 +48,7 @@ const fetchUrl = async (url) => {
         initial: ''
       });
 
-      title = await prompt.run();
+      title = (await prompt.run()).trim();
     }
 
     const authorPrompt = new Select({
@@ -65,7 +65,7 @@ const fetchUrl = async (url) => {
         initial: ''
       });
 
-      author = await prompt.run();
+      author = (await prompt.run()).trim();
     }
 
     const topicPrompt = new Select({
