@@ -2,6 +2,7 @@
 
 const {Select, Input, Confirm} = require('enquirer');
 const {slugify} = require("../utils/filters");
+const {DateTime} = require('luxon');
 const fetch = require("node-fetch");
 const cheerio = require('cheerio');
 const yaml = require('js-yaml');
@@ -31,6 +32,8 @@ const fetchUrl = async (url) => {
       $('meta[name="article:author"]').attr('content')
     ].filter(Boolean)), selectYourOwn];
 
+    const topics = ['Nifty Show and Tell', 'Notable Articles'];
+
     const titlePrompt = new Select({
       name: 'title',
       message: 'Pick a title',
@@ -45,7 +48,7 @@ const fetchUrl = async (url) => {
         initial: ''
       });
 
-      title = await prompt.run();
+      title = (await prompt.run()).trim();
     }
 
     const authorPrompt = new Select({
@@ -62,11 +65,18 @@ const fetchUrl = async (url) => {
         initial: ''
       });
 
-      author = await prompt.run();
+      author = (await prompt.run()).trim();
     }
 
-    const now = new Date();
-    const filename = `${now.getFullYear()}-${String(now.getMonth()).padStart(2, '0')}-${String(now.getDay()).padStart(2, '0')}-${slugify(title)}.md`;
+    const topicPrompt = new Select({
+      name: 'topic',
+      message: 'Pick a Main Topic',
+      choices: topics
+    });
+
+    const topic = await topicPrompt.run();
+
+    const filename = `${DateTime.now().toFormat('yyyy-LL-dd')}-${slugify(title)}.md`;
     const pathname = `${__dirname}/../content/resources/bookmarks/${filename}`;
 
     if (fs.existsSync(pathname)) {
@@ -76,7 +86,7 @@ const fetchUrl = async (url) => {
 
     const frontMatter = {
       title,
-      tags: [],
+      tags: [topic],
       cite: {
         name: author,
         href: url,
