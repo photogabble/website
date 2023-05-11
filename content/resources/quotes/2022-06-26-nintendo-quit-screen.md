@@ -1,5 +1,5 @@
 ---
-title: "Weekly Quote 1"
+title: "Weekly Quote #1"
 tags: Quote
 cite:
     name: Nintendo Quit Screen

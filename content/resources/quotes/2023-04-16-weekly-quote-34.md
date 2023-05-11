@@ -1,5 +1,5 @@
 ---
-title: "Weekly Quote 34"
+title: "Weekly Quote #34"
 tags: Quote
 cite:
     name: Neil Gaiman & G.K. Chesterton

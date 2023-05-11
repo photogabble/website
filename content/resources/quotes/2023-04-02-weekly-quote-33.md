@@ -1,5 +1,5 @@
 ---
-title: "Weekly Quote 33"
+title: "Weekly Quote #33"
 tags: Quote
 cite:
     name: W. E. Deming
