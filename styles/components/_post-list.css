@@ -22,6 +22,14 @@ ol.post-list .content-type{
     opacity: 0.8;
 }
 
+ol.post-list li.indent {
+    display: block;
+}
+
+ol.post-list li ol {
+    margin-top: 1em;
+}
+
 @media (min-width: 864px) {
     ol.post-list hr{
         flex-grow: 1;

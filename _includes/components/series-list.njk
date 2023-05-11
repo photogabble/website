@@ -1,0 +1,25 @@
+<ol class="post-list">
+    {% set group = '' %}
+    {% for post in postsList %}
+        {% if post.data.group and post.data.group !== group %}
+            {% if group != '' %}
+                </ol></li>
+            {% endif %}
+            {% set group = post.data.group %}
+
+            <li class="indent">{{ post.data.group }}:<ol>
+        {% endif %}
+
+        {% if post.data.group == '' %}
+            {% set group = '' %}
+            </ol></li>
+        {% endif %}
+
+        {% include "./post-list-line.njk" %}
+
+        {% if loop.last and group != '' %}
+            </ol></li>
+        {% endif %}
+
+    {% endfor %}
+</ol>
