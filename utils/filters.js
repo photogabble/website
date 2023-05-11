@@ -197,7 +197,18 @@ module.exports = {
   seriesPosts: (collection, name) => {
     const key = `series:${name}`;
     if (!collection.hasOwnProperty(key)) return undefined;
-    return collection[key];
+    const posts = collection[key] ?? [];
+
+    const collator = new Intl.Collator('en');
+
+    return posts.sort((a, b) => {
+      if (a.data.group && b.data.group) return collator.compare(a.data.group, b.data.group);
+
+      if (!a.data.group && b.data.group) return -1;
+      if (a.data.group && !b.data.group) return 1;
+
+      return 0;
+    });
   },
 
   /**
