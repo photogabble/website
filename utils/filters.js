@@ -186,6 +186,12 @@ module.exports = {
     return '★'.repeat(rating).concat(Math.ceil(rating) !== rating ? '½' : '');
   },
 
+  seriesPosts: (collection, name) => {
+    const key = `series:${name}`;
+    if (!collection.hasOwnProperty(key)) return undefined;
+    return collection[key];
+  },
+
   /**
    * Takes a 11ty collection and returns a stats object for presentation
    * TODO: turn this into a 11ty plugin...

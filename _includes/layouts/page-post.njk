@@ -20,6 +20,14 @@
     </section>
     {% endif %}
 
+    {% if series %}
+        {% set postsList = collections | seriesPosts(series) %}
+    <section>
+        <h3>Series Listing</h3>
+        {% include "_includes/components/post-list.njk" %}
+    </section>
+    {% endif %}
+
     <section>
         {{ content | safe }}
     </section>
