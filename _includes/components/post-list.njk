@@ -14,7 +14,10 @@
                 {% endif %}
             </span>
             <hr/>
-            <small>{{ post.date | dateToFormat("DDD") }}</small>
+            <small>
+                {% if post.data.growthStage === 'stub' %}Due {% endif %}
+                {{ post.date | dateToFormat("DDD") }}
+            </small>
         </li>
     {% endfor %}
 </ol>
