@@ -35,6 +35,10 @@ body {
     transition: background-color 300ms, color 200ms;
 }
 
+details summary {
+    cursor: pointer;
+}
+
 blockquote {
     margin-inline-start: 0;
     font-style: italic;
