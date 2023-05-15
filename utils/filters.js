@@ -151,6 +151,14 @@ module.exports = {
   includesTag: (tags, slug) => tags.find(tag => tag.toLowerCase() === slug.toLowerCase()) !== undefined,
 
   /**
+   * Excludes special tags denoted by `:`
+   *
+   * @param tags
+   * @returns {*}
+   */
+  excludeSpecialTags: (tags) => tags.filter(tag => tag.includes(':') === false),
+
+  /**
    * Group a collection by year.
    *
    * @param collection
@@ -184,6 +192,23 @@ module.exports = {
   ratingToStars: (rating, max = 5) => {
     if (rating > max) rating = max;
     return '★'.repeat(rating).concat(Math.ceil(rating) !== rating ? '½' : '');
+  },
+
+  seriesPosts: (collection, name) => {
+    const key = `series:${name}`;
+    if (!collection.hasOwnProperty(key)) return undefined;
+    const posts = collection[key] ?? [];
+
+    const collator = new Intl.Collator('en');
+
+    return posts.sort((a, b) => {
+      if (a.data.group && b.data.group) return collator.compare(a.data.group, b.data.group);
+
+      if (!a.data.group && b.data.group) return -1;
+      if (a.data.group && !b.data.group) return 1;
+
+      return 0;
+    });
   },
 
   /**

@@ -61,7 +61,8 @@ module.exports = function loadCollection(eleventyConfig) {
       slug: slugify(name),
       items: collection.getFilteredByTag(name).filter((item) => item.data.growthStage && item.data.growthStage !== 'stub').reverse()
     }
-  }).filter(name => name.items.length > 0).sort((a, b) => b.items.length - a.items.length);
+  }).filter(name => name.items.length > 0 && !name.name.includes(':'))
+    .sort((a, b) => b.items.length - a.items.length);
 
   const contentTypes = (collection) => Object.values(post(collection).reverse().reduce((types, post) => {
     const section = (post.data.growthStage && post.data.growthStage === 'stub')

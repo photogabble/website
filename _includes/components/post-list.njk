@@ -1,20 +1,5 @@
 <ol class="post-list">
     {% for post in postsList %}
-        <li>
-            <span>
-                <a href="{{ post.url }}" title="Read {{ post.data.title }}">{{ post.data.title }}</a>
-                {% if displayContentType %}
-                    <small class="content-type">{{ post.data.contentType }}</small>
-                {% endif %}
-                {% if displayResourceType and post.data.contentType == 'resource' %}
-                    <small class="content-type">{{ post.data.resourceType }}</small>
-                {% endif %}
-                {% if post.data.rating %}
-                    {{ post.data.rating | ratingToStars }}
-                {% endif %}
-            </span>
-            <hr/>
-            <small>{{ post.date | dateToFormat("DDD") }}</small>
-        </li>
+        {% include "./post-list-line.njk" %}
     {% endfor %}
 </ol>

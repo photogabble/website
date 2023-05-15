@@ -7,7 +7,8 @@
 {% endset %}
 
 {% set subTitle %}
-    planted on <time datetime="{{ page.date.toISOString() }}">{{ page.date | dateToFormat("DDD") }}</time> in: {% include "../components/tag-list.njk" %}.<br/>{{ readingTime.text if readingTime.words > 0 }}.
+    {% if growthStage === 'stub' %}scheduled for {% else %}planted on {% endif %}
+    <time datetime="{{ page.date.toISOString() }}">{{ page.date | dateToFormat("DDD") }}</time> in: {% include "../components/tag-list.njk" %}.<br/>{{ readingTime.text if readingTime.words > 0 }}.
 {% endset %}
 
 {% block pageContent %}
@@ -16,6 +17,14 @@
         <blockquote>
             <p>Note: This is a stub post to be filled out in the future. It has been created for the purpose of interlinking feel free to check out what links here from the list below to find related pages.</p>
         </blockquote>
+    </section>
+    {% endif %}
+
+    {% if series %}
+        {% set postsList = collections | seriesPosts(series) %}
+    <section>
+        <h3>Series Listing</h3>
+        {% include "_includes/components/series-list.njk" %}
     </section>
     {% endif %}
 
