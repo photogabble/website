@@ -22,10 +22,12 @@
 
     {% if series %}
         {% set postsList = collections | seriesPosts(series) %}
-    <section>
-        <h3>Series Listing</h3>
-        {% include "_includes/components/series-list.njk" %}
-    </section>
+        <section>
+            <details>
+                <summary>Series Listing <small>(click to open)</small></summary>
+                {% include "_includes/components/series-list.njk" %}
+            </details>
+        </section>
     {% endif %}
 
     <section>
