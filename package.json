@@ -4,8 +4,9 @@
   "description": "Source code for photogabble.co.uk",
   "main": "index.js",
   "scripts": {
-    "serve:dev": "rm -rf _site && cross-env ELEVENTY_ENV=development eleventy --serve",
-    "serve:prod": "rm -rf _site && cross-env ELEVENTY_ENV=production eleventy --serve",
+    "clean": "node ./bin/rmdir.js _site",
+    "serve:dev": "npm run clean && cross-env ELEVENTY_ENV=development eleventy --serve",
+    "serve:prod": "npm run clean && cross-env ELEVENTY_ENV=production eleventy --serve",
     "build": "cross-env ELEVENTY_ENV=production eleventy",
     "build:dev": "cross-env ELEVENTY_ENV=development eleventy",
     "og-images": "node functions/create-og-images.js",
