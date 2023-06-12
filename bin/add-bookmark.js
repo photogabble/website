@@ -11,7 +11,7 @@ const fs = require('fs');
 
 let added = [];
 
-const fetchUrl = async (url) => {
+const fetchUrl = async (url, date) => {
   try {
     const response = await fetch(url);
     const html = await response.text();
@@ -76,7 +76,7 @@ const fetchUrl = async (url) => {
 
     const topic = await topicPrompt.run();
 
-    const filename = `${DateTime.now().toFormat('yyyy-LL-dd')}-${slugify(title)}.md`;
+    const filename = `${date}-${slugify(title)}.md`;
     const pathname = `${__dirname}/../content/resources/bookmarks/${filename}`;
 
     if (fs.existsSync(pathname)) {
@@ -106,6 +106,13 @@ const main = async (argv) => {
   let code = -1;
   let {url} = argv;
 
+  const datePrompt = new Input({
+    message: 'Date (YYYY-MM-DD)',
+    initial: DateTime.now().toFormat('yyyy-LL-dd')
+  });
+
+  const date = await datePrompt.run();
+
   while(code === -1) {
     if (!url) {
       const prompt = new Input({
@@ -116,7 +123,7 @@ const main = async (argv) => {
       url = await prompt.run()
     }
 
-    code = await fetchUrl(url);
+    code = await fetchUrl(url, date);
     const prompt = new Confirm({
       name: 'question',
       message: 'Want to add more bookmarks?'
