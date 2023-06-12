@@ -1,5 +1,5 @@
 ---
-title: "Weekly Quote 37"
+title: "Weekly Quote #37"
 tags: Quote
 cite:
     name: John A. Shedd

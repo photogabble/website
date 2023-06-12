@@ -1,5 +1,5 @@
 ---
-title: "Weekly Quote 39"
+title: "Weekly Quote #39"
 tags: Quote
 cite:
     name: Philip Stanhope

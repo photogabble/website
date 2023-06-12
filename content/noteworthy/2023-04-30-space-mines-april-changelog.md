@@ -1,5 +1,5 @@
 ---
-title: "Space Mines, April Devlog"
+title: "Space Mines, 2023 April Devlog"
 tags: [Space Mines, Devlog, "series:Space Mines Build"]
 growthStage: evergreen
 series: Space Mines Build
