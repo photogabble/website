@@ -1,5 +1,5 @@
 ---
-title: "Weekly Quote 38"
+title: "Weekly Quote #38"
 tags: Quote
 cite:
     name: Thomas Sowell
