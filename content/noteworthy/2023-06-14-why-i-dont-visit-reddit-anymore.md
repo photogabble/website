@@ -20,7 +20,6 @@ A result of this is that alternatives such as Lemmy powered [Beehaw](https://bee
 
 {% figure "/img/why-i-dont-visit-reddit-anymore-01.png" "Sad fail whale song" "Screenshot of the Reddit homepage saying something went wrong and asking if you would like to retry" %}
 
-
 Interestingly, while writing this note on the 12th June I attempted to visit the Reddit homepage and was surprised to see it fail to load the home feed with the Reddit request returning `429 : Too Many Requests` due to the upstream error `StatusCode.RESOURCE_EXHAUSTED : limit exceeded for limiter=GetSubreddits-ua_graphql`. It would make quite the coincidence if this outage was unrelated to the protest, I suspect their backend was struggling under the load of so many subreddits going private and needing to reload caches.
 
 —
