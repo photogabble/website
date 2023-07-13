@@ -76,7 +76,7 @@ const movies = [
     watchedDate: '2022-05-12',
     reWatch: false,
     review: "I didn't not like this film, just was not what I was expecting",
-    rating: 2,
+    rating: 1.5,
     imdb: 'https://www.imdb.com/title/tt2005151/'
   },
 
@@ -115,7 +115,7 @@ const movies = [
     year: 2020,
     watchedDate: '2020-09-22',
     reWatch: false,
-    review: 'Not just a female Sherlock Holmes',
+    review: 'Much more than just a female Sherlock Holmes',
     rating: 5,
     imdb: 'https://www.imdb.com/title/tt7846844/'
   },
@@ -135,7 +135,7 @@ const movies = [
     year: 2005,
     watchedDate: '2019-10-09',
     reWatch: false,
-    review: 'I am like a leaf on the wind',
+    review: 'I am a leaf on the wind',
     rating: 4,
     imdb: 'https://www.imdb.com/title/tt0379786/'
   },
@@ -156,7 +156,7 @@ const movies = [
     watchedDate: '2023-05-02',
     reWatch: false,
     review: 'Angry Thor is angry',
-    rating: 4,
+    rating: 3.5,
     imdb: 'https://www.imdb.com/title/tt8936646/'
   },
 
@@ -166,9 +166,59 @@ const movies = [
     watchedDate: '2023-05-03',
     reWatch: false,
     review: 'I liked this more than I expected to',
-    rating: 4,
+    rating: 3,
     imdb: 'https://www.imdb.com/title/tt4172430/'
   },
+
+  {
+    title: 'Extraction II',
+    year: 2023,
+    watchedDate: '2023-07-10',
+    reWatch: false,
+    review: 'Silly, predictable yet entertaining',
+    rating: 3.5,
+    imdb: 'https://www.imdb.com/title/tt12263384/'
+  },
+
+  {
+    title: 'A Fistful of Dollars',
+    year: 1964,
+    watchedDate: '2023-07-12',
+    reWatch: false,
+    review: 'Thee pioneering Western',
+    rating: 3,
+    imdb: 'https://www.imdb.com/title/tt0058461/'
+  },
+
+  {
+    title: 'For a Few Dollars More',
+    year: 1965,
+    watchedDate: '2023-07-12',
+    reWatch: false,
+    review: 'A time when life was cheap',
+    rating: 3,
+    imdb: 'https://www.imdb.com/title/tt0059578/'
+  },
+
+  // {
+  //   title: 'The Good, the Bad and the Ugly',
+  //   year: 1966,
+  //   watchedDate: '2023-03-17',
+  //   reWatch: false,
+  //   review: 'The way back to town is only 70 miles...',
+  //   rating: 3,
+  //   imdb: 'https://www.imdb.com/title/tt0060196/'
+  // },
+
+  // {
+  //   title: 'Everything Everywhere All at Once',
+  //   year: 2022,
+  //   watchedDate: '2023-03-17',
+  //   reWatch: false,
+  //   review: '',
+  //   rating: 5,
+  //   imdb: 'https://www.imdb.com/title/tt6710474/'
+  // },
 
   // {
   //   title: '',
