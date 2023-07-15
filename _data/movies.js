@@ -200,15 +200,15 @@ const movies = [
     imdb: 'https://www.imdb.com/title/tt0059578/'
   },
 
-  // {
-  //   title: 'The Good, the Bad and the Ugly',
-  //   year: 1966,
-  //   watchedDate: '2023-03-17',
-  //   reWatch: false,
-  //   review: 'The way back to town is only 70 miles...',
-  //   rating: 3,
-  //   imdb: 'https://www.imdb.com/title/tt0060196/'
-  // },
+  {
+    title: 'The Good, the Bad and the Ugly',
+    year: 1966,
+    watchedDate: '2023-03-14',
+    reWatch: false,
+    review: 'The way back to town is only 70 miles...',
+    rating: 3,
+    imdb: 'https://www.imdb.com/title/tt0060196/'
+  },
 
   // {
   //   title: 'Everything Everywhere All at Once',
