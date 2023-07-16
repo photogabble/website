@@ -5,6 +5,6 @@ tags:
   - Web Directory
 cite:
   name: '@ramokromok@retrochat.online'
+  title_only: true
   href: https://boing.directory/
-
 ---

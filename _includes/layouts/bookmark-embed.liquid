@@ -1,1 +1,5 @@
-<a href="{{ cite.href }}">{% if cite.name %}<strong>{{ cite.name }}</strong>: {% endif %}{{ title }}</a>
+{% if cite.title_only %}
+    <a href="{{ cite.href }}">{{ title }}</a>
+{% else %}
+    <a href="{{ cite.href }}">{% if cite.name %}<strong>{{ cite.name }}</strong>: {% endif %}{{ title }}</a>
+{% endif %}

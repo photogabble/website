@@ -5,5 +5,6 @@ tags:
   - Browser Game
 cite:
   name: Pardus
+  title_only: true
   href: https://www.pardus.at/
 ---

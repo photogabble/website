@@ -5,5 +5,6 @@ tags:
   - Web Directory
 cite:
   name: RetroTech News
+  title_only: true
   href: https://retrotech.news/
 ---
