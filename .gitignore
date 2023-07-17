@@ -2,7 +2,6 @@ _site/
 _tmp/
 .DS_Store
 node_modules/
-package-lock.json
 .idea
 .cache
 functions/_posts.json
