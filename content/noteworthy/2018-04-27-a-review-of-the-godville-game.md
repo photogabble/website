@@ -4,7 +4,7 @@ title: A "review" of the GodVille Game
 draft: false
 cover_image: /img/featured-images/a-review-of-the-godville-game.png
 tags:
-  - Browser
+  - Browser Game
   - Games
   - Review
   - Idle Game
