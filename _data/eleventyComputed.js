@@ -28,6 +28,9 @@ module.exports = {
           case 'resource':
             crumbs.push({href: '/resources/', text: 'resources', title: 'Goto Archive of all resources'});
             break;
+          case 'lists':
+            crumbs.push({href: '/lists/', text: 'lists', title: 'Goto Archive of all lists'});
+            break;
         }
       } else {
         crumbs.push(folder);
