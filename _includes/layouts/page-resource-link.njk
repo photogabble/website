@@ -23,7 +23,7 @@
     <section>
         <div>
             <img src="{% screenshot cite.href, page.fileSlug %}" aria-hidden="true" alt="Screenshot of web page." />
-            {% if feed or src %}
+            {% if feed or src or pages %}
             <nav>
                 <ul>
                 {% if feed and feed.rss %}
@@ -31,6 +31,18 @@
                 {% endif %}
                 {% if src %}
                     <li><a href="{{ src.href }}" target="_blank" rel="noopener">{{ src.name }}</a></li>
+                {% endif %}
+                {% if pages and pages.bookmarks %}
+                    <li><a href="{{ pages.bookmarks }}" target="_blank" rel="noopener">Bookmarks</a></li>
+                {% endif %}
+                {% if pages and pages.blogroll %}
+                    <li><a href="{{ pages.blogroll }}" target="_blank" rel="noopener">Blogroll</a></li>
+                {% endif %}
+                {% if pages and pages.uses %}
+                    <li><a href="{{ pages.uses }}" target="_blank" rel="noopener">/uses</a></li>
+                {% endif %}
+                {% if pages and pages.now %}
+                    <li><a href="{{ pages.now }}" target="_blank" rel="noopener">/now</a></li>
                 {% endif %}
                 </ul>
             </nav>
