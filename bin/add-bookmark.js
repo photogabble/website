@@ -32,7 +32,12 @@ const fetchUrl = async (url, date) => {
       $('meta[name="article:author"]').attr('content')
     ].filter(Boolean)), selectYourOwn];
 
-    const topics = ['Nifty Show and Tell', 'Notable Articles', 'list/blogroll'];
+    const topics = [
+      'Nifty Show and Tell',
+      'Notable Articles',
+      'list/blogroll',
+      'list/webring',
+    ];
 
     const titlePrompt = new Select({
       name: 'title',
