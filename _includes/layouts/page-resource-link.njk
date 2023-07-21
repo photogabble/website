@@ -12,7 +12,7 @@
         {% if author and author.socials %}
         <ul>
             {% for name, social in author.socials %}
-            <li><a href="{{ social.href }}" aria-label="{{ social.nick }} on {{ name }}">{{ name }}</a></li>
+            <li><a href="{{ social.href }}" aria-label="{{ social.nick }} on {{ name }}" rel="noopener">{{ name }}</a></li>
             {% endfor %}
         </ul>
         {% endif %}
@@ -21,7 +21,21 @@
 
 {% block pageContent %}
     <section>
-        <img src="{% screenshot cite.href, page.fileSlug %}" aria-hidden="true" alt="Screenshot of web page." />
+        <div>
+            <img src="{% screenshot cite.href, page.fileSlug %}" aria-hidden="true" alt="Screenshot of web page." />
+            {% if feed or src %}
+            <nav>
+                <ul>
+                {% if feed and feed.rss %}
+                    <li><a href="{{ feed.rss }}" target="_blank" rel="noopener">RSS</a></li>
+                {% endif %}
+                {% if src %}
+                    <li><a href="{{ src.href }}" target="_blank" rel="noopener">{{ src.name }}</a></li>
+                {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
+        </div>
         <p><a href="{{ cite.href }}">{{ cite.href }}</a></p>
         {{ content | safe }}
     </section>
