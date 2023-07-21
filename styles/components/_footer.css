@@ -66,3 +66,13 @@ footer p {
     grid-column: 1/-1;
     margin: 0;
 }
+
+footer a.icon {
+    display: flex;
+    align-items: center;
+}
+
+footer a.icon img {
+    height: 20px;
+    width: auto;
+}
