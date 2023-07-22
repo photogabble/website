@@ -2,7 +2,7 @@
 title: "Weekly Quote #48"
 tags: [Quote]
 cite:
-    name: TODO
+    name: Isaac Newton
 ---
 
-> TODO
+> Nature is pleased with simplicity.
