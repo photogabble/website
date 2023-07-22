@@ -1,6 +1,7 @@
+const {setupMarkdownIt, parseCollectionHashtags} = require ('./helpers/hashtags');
 const {chunk} = require('./helpers')
 const {slugify, padStart} = require("./filters");
-const {setupMarkdownIt, parseCollectionHashtags} = require ('./helpers/hashtags');
+const listData = require('../_data/lists-meta');
 
 // This function returns a reducer function for paginating custom taxonomy such as
 // the content types used in this digital garden.
@@ -52,7 +53,7 @@ module.exports = function loadCollection(eleventyConfig) {
 // @see https://github.com/photogabble/website/issues/20
   const contentTags = (collection) => Array.from(
     post(collection).reduce((tags, post) => {
-      if (post.data.tags) post.data.tags.forEach(tag => tags.add(tag));
+      if (post.data.tags) post.data.tags.forEach(tag => !tag.includes('list/') && tags.add(tag));
       return tags;
     }, new Set())
   ).map(name => {
@@ -178,6 +179,31 @@ module.exports = function loadCollection(eleventyConfig) {
   const nowUpdates = (collection) => [...collection.getFilteredByGlob('./now/*.md')
     .filter((post) => !post.data.draft)];
 
+  const lists = (collection) => Array.from(
+    post(collection).reduce((lists, post) => {
+      if (post.data.tags) {
+        for (const tag of post.data.tags) {
+          if (!tag.includes('list/')) continue;
+          lists.add(tag);
+        }
+      }
+      return lists;
+    }, new Set(),)
+  ).map(list => {
+    const idx = list.lastIndexOf('/');
+    const name = list.substring(idx + 1);
+    const slug = slugify(name);
+
+    const meta = listData[list] ?? {title: name, description: ''};
+
+    return {
+      ...meta,
+      name,
+      slug,
+      items: collection.getFilteredByTag(list).reverse(),
+    };
+  });
+
   return {
     post,
     contentTags,
@@ -187,6 +213,7 @@ module.exports = function loadCollection(eleventyConfig) {
     contentPaginatedByYearMonth,
     nowUpdates,
     resources,
-    resourcesPaginatedByType
+    resourcesPaginatedByType,
+    lists,
   }
 }
