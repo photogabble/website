@@ -2,6 +2,7 @@
 title: Rach Smith's digital garden
 tags:
   - list/blogroll
+  - list/digital-garden
 cite:
   name: Rach Smith
   href: https://rachsmith.com/
