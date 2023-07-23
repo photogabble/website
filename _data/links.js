@@ -36,24 +36,6 @@ module.exports = [
         reason: "I stumbled upon Hugo's article on Minimal Color Swatches while researching colour palette creation."
     },
     {
-        title: "Alejandro’s Website",
-        href: 'https://kinduff.com/',
-        tags: ['Blog', 'Minimalist', 'Ruby'],
-        reason: null
-    },
-    {
-        title: "Jake Howard’s Website",
-        href: 'https://theorangeone.net/',
-        tags: ['Blog', 'Minimalist', 'SysAdmin', 'InfoSec', 'Programmer'],
-        reason: null
-    },
-    {
-        title: "Simon Willison’s Weblog",
-        href: 'https://simonwillison.net/',
-        tags: ['Blog', 'SysAdmin', 'Programmer'],
-        reason: null
-    },
-    {
         title: "Humans",
         href: 'https://humans.fyi/',
         tags: ['Gallery', 'Inspiration'],
@@ -70,12 +52,6 @@ module.exports = [
         href: 'https://www.evalapply.org/',
         tags: ['Minimalist', 'Blog', 'Programmer'],
         reason: null
-    },
-    {
-        title: "Evan Boehs",
-        href: 'https://boehs.org/',
-        tags: ['Minimalist', 'Garden'],
-        reason: null,
     },
     {
         title: "Jake Seliger's Blog",
