@@ -66,12 +66,6 @@ module.exports = [
         reason: null,
     },
     {
-        title: "Yuri Vishnevsky's Website",
-        href: 'https://yuri.is/',
-        tags: ['Programmer', 'Data Science', 'Minimalist'],
-        reason: "I was originally linked to Yuri's article on Seasonal Spirals which gave me an idea of using the chart for some of my own datasets.",
-    },
-    {
         title: "Tom Critchlow's Digital Garden",
         href: 'https://tomcritchlow.com/',
         tags: ['Garden', 'Minimalist'],
