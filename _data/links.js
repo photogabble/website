@@ -30,58 +30,10 @@ module.exports = [
         reason: null
     },
     {
-        title: 'Brad Taunt',
-        href: 'https://tdarb.org/',
-        tags: ['blog', 'minimalist', 'tinkerer', 'electronics'],
-        reason: null
-    },
-    {
-        title: 'The Computers are Bad Newsletter',
-        href: 'https://computer.rip/',
-        tags: ['newsletter', 'technology'],
-        reason: 'I read their article titled Coaxial goes to war and was sold.'
-    },
-    {
-        title: "Jaana Dogan’s Blog",
-        href: 'https://rakyll.org/',
-        tags: ['blog', 'minimalist', 'golang', 'developer'],
-        reason: "I found Jaana's blog via a link from lobste.rs and enjoyed several of their posts on Go."
-    },
-    {
         title: "Hugo Daniel’s Blog",
         href: 'https://hugodaniel.com/',
         tags: ['blog', 'WebGL'],
         reason: "I stumbled upon Hugo's article on Minimal Color Swatches while researching colour palette creation."
-    },
-    {
-        title: "Benjojo’s Blog",
-        href: 'https://blog.benjojo.co.uk',
-        tags: ['blog', 'minimalist', 'technology'],
-        reason: null
-    },
-    {
-        title: "Brent’s Blog",
-        href: 'https://stitcher.io/',
-        tags: ['blog', 'minimalist', 'PHP'],
-        reason: null
-    },
-    {
-        title: "Lauren Tan’s Blog",
-        href: 'https://no.lol/',
-        tags: ['blog'],
-        reason: null
-    },
-    {
-        title: "Fabien Sanglard’s Website",
-        href: 'https://fabiensanglard.net/',
-        tags: ['blog', 'minimalist', 'vintage-computing'],
-        reason: null
-    },
-    {
-        title: "Carl Johnson’s Website",
-        href: 'https://blog.carlmjohnson.net/',
-        tags: ['Blog', 'Go'],
-        reason: null
     },
     {
         title: "Alejandro’s Website",

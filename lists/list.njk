@@ -17,8 +17,7 @@ folder: lists
   <section>
     <ul>
       {%- for item in list.items -%}
-        {{ item | debug }}
-      <li><a href="{{ item.data.cite.href }}" rel="noopener">{{ item.data.title }}</a></li>
+        <li><a href="{{ item.data.cite.href }}" rel="noopener" title="Visit {{ item.data.title }}">{{ item.data.title }}</a> [<a href="{{ item.url }}" title="My notes on {{ item.data.title }}">My Notes</a>]</li>
       {%- endfor -%}
     </ul>
   </section>

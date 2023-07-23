@@ -15,6 +15,11 @@ module.exports = {
     description: 'The OG method of discovering interesting websites',
   },
 
+  'list/www-club': {
+    title: 'WWW Clubs',
+    description: 'List of clubs that group together websites under a single banner',
+  },
+
   'list/button-board': {
     title: 'Button Board',
     prefix: 'Community',
