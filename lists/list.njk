@@ -14,11 +14,15 @@ folder: lists
 {% set subTitle = list.description %}
 
 {% block pageContent %}
-  <section>
-    <ul>
-      {%- for item in list.items -%}
-        <li><a href="{{ item.data.cite.href }}" rel="noopener" title="Visit {{ item.data.title }}">{{ item.data.title }}</a> [<a href="{{ item.url }}" title="My notes on {{ item.data.title }}">My Notes</a>]</li>
-      {%- endfor -%}
-    </ul>
-  </section>
+    {% if list.name == 'button-board' %}
+      {% include "_includes/components/list-button-board.njk" %}
+    {% else %}
+      <section>
+        <ul>
+          {%- for item in list.items -%}
+            <li><a href="{{ item.data.cite.href }}" rel="noopener" title="Visit {{ item.data.title }}">{{ item.data.title }}</a> [<a href="{{ item.url }}" title="My notes on {{ item.data.title }}">My Notes</a>]</li>
+          {%- endfor -%}
+        </ul>
+      </section>
+    {% endif %}
 {% endblock %}
