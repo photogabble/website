@@ -66,12 +66,6 @@ module.exports = [
         reason: null,
     },
     {
-        title: "Tom Critchlow's Digital Garden",
-        href: 'https://tomcritchlow.com/',
-        tags: ['Garden', 'Minimalist'],
-        reason: 'This website was one of a few digital gardens that inspired me to rebuild PhotoGabble as one.',
-    },
-    {
         title: "Artemis Everfree's Blog",
         href: 'https://artemis.sh/',
         tags: ['Blog', 'Minimalist'],
