@@ -288,14 +288,6 @@ module.exports = [
     },
 
     {
-        title: "Florin Lipan's Website",
-        href: 'https://lipanski.com/',
-        src: null,
-        tags: [],
-        reason: 'Found through their docker-static-website project.',
-    },
-
-    {
         title: "Caleb Hearth's Blog",
         href: 'https://calebhearth.com',
         src: null,
