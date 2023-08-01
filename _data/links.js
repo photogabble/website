@@ -287,14 +287,6 @@ module.exports = [
         reason: 'Wesley has joined as an admin on bookwyrm.social.',
     },
 
-    {
-        title: "Caleb Hearth's Blog",
-        href: 'https://calebhearth.com',
-        src: null,
-        tags: ['Minimalist', 'Blog', 'TableTop'],
-        reason: 'Found via https://calebhearth.com/the-rescue-cadets-log',
-    },
-
     // {
     //     title: "",
     //     href: '',
