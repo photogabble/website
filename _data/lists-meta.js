@@ -29,5 +29,20 @@ module.exports = {
   'list/digital-garden': {
     title: 'Digital Gardens',
     description: 'List of digital gardens',
-  }
+  },
+
+  'list/inspiration': {
+    title: 'Inspiration',
+    description: 'Websites and People who have inspired me',
+  },
+
+  'list/week-in-review': {
+    title: 'Week In Review',
+    description: 'Weekly round up of that weeks events',
+  },
+
+  'list/365-writing': {
+    title: '365 day writing project',
+    description: 'My attempt at writing a thought a day for a year',
+  },
 };
