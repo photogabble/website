@@ -1,6 +1,7 @@
 module.exports = {
   layout: "layouts/project.njk",
-  contentType: 'project', // thought, noteworthy, essay, tutorial, project
+  contentType: 'project',
+  permalinkBase: 'projects',
   language: null,
   status: null,
   eleventyComputed: {
