@@ -14,15 +14,9 @@ folder: lists
 {% set subTitle = list.description %}
 
 {% block pageContent %}
-    {% if list.name == 'button-board' %}
-      {% include "_includes/components/list-button-board.njk" %}
+    {% if list.layout %}
+        {% include list.layout %}
     {% else %}
-      <section>
-        <ul>
-          {%- for item in list.items -%}
-            <li><a href="{{ item.data.cite.href }}" rel="noopener" title="Visit {{ item.data.title }}">{{ item.data.title }}</a> [<a href="{{ item.url }}" title="My notes on {{ item.data.title }}">My Notes</a>]</li>
-          {%- endfor -%}
-        </ul>
-      </section>
+        {% include "_includes/layouts/list-default.njk" %}
     {% endif %}
 {% endblock %}

@@ -24,6 +24,7 @@ module.exports = {
     title: 'Button Board',
     prefix: 'Community',
     description: 'Like a blogroll but via the medium of 88x21 gifs',
+    layout: '_includes/layouts/list-button-board.njk',
   },
 
   'list/digital-garden': {
@@ -44,5 +45,6 @@ module.exports = {
   'list/365-writing': {
     title: '365 day writing project',
     description: 'My attempt at writing a thought a day for a year',
+    layout: '_includes/layouts/list-posts.njk',
   },
 };
