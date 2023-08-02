@@ -1,7 +1,8 @@
 const {toTitleCase, strToSlug} = require('./helpers');
-const {DateTime} = require('luxon');
 const metadata = require('../_data/metadata');
+const listData = require('../_data/lists-meta');
 const readingTime = require('reading-time');
+const {DateTime} = require('luxon');
 const path = require('path');
 const fs = require('fs');
 /**
@@ -9,305 +10,374 @@ const fs = require('fs');
  * @link https://www.11ty.dev/docs/filters/
  * @see https://github.com/11ta/11ta-template/blob/main/utils/filters.js
  */
-module.exports = {
-  /**
-   * dateToFormat allows specifying display format at point of use.
-   * Example in footer: {{ build.timestamp | dateToFormat('yyyy') }} uses .timestamp
-   * from the _data/build.js export and formats it via dateToFormat.
-   * Another usage example used in layouts: {{ post.date | dateToFormat("LLL dd, yyyy") }}
-   * And finally, example used in /src/posts/posts.json to format the permalink
-   * when working with old /yyyy/MM/dd/slug format from WordPress exports.
-   *
-   * @param date {Date}
-   * @param format {string}
-   * @returns {string}
-   */
-  dateToFormat: (date, format) => {
-    return DateTime.fromJSDate(date, {
-      zone: 'utc',
-    }).toFormat(String(format))
-  },
 
-  /**
-   * Universal slug filter strips unsafe chars from URLs
-   *
-   * @param string {string}
-   * @returns {string}
-   */
-  slugify: (string) => strToSlug(string),
+/**
+ * dateToFormat allows specifying display format at point of use.
+ * Example in footer: {{ build.timestamp | dateToFormat('yyyy') }} uses .timestamp
+ * from the _data/build.js export and formats it via dateToFormat.
+ * Another usage example used in layouts: {{ post.date | dateToFormat("LLL dd, yyyy") }}
+ * And finally, example used in /src/posts/posts.json to format the permalink
+ * when working with old /yyyy/MM/dd/slug format from WordPress exports.
+ *
+ * @param date {Date}
+ * @param format {string}
+ * @returns {string}
+ */
+const dateToFormat = (date, format) => {
+  return DateTime.fromJSDate(date, {
+    zone: 'utc',
+  }).toFormat(String(format))
+};
 
-  /**
-   * Takes a list of slugs and returns them converted to title case.
-   *
-   * @param list {Array<string>}
-   * @return array {Array<{slug:string, title:string}>}
-   */
-  formatSlugList: (list) => {
-    return list.map((slug) => {
+/**
+ * Universal slug filter strips unsafe chars from URLs
+ *
+ * @param string {string}
+ * @returns {string}
+ */
+const slugify = (string) => strToSlug(string);
+
+/**
+ * Takes a list of slugs and returns them converted to title case.
+ *
+ * @param list {Array<string>}
+ * @return array {Array<{slug:string, title:string}>}
+ */
+const formatSlugList = (list) => {
+  return list.map((slug) => {
+    return {
+      slug,
+      title: toTitleCase(slug)
+    }
+  })
+};
+
+const findBySlug = (collection, slug) => {
+  return (!slug)
+    ? collection
+    : collection.find((item) => item.slug === slug);
+};
+
+const values = (obj, key) => obj[key];
+
+const whereKeyEquals = (collection, key, value) => collection.filter(item => item[key] === value || (item.data && item.data[key] === value));
+
+const whereFileSlugEquals = (collection, value) => {
+  return (collection)
+    ? collection.find(item => item.fileSlug === value)
+    : undefined;
+};
+
+/**
+ * Is the given tag a special tag? Special tags are used to denote content that belongs to a list
+ * or series with the prefix: list/ or series/. Other special tags might exist in-future, but
+ * at time of writing only the aforementioned are used.
+ *
+ * @param tag {string}
+ * @return {boolean}
+ */
+const isSpecialTag = (tag) => tag.includes('/');
+
+/**
+ * Takes a special tag and returns its meta-data.
+ *
+ * @todo make this work for all tags...
+ * @param list {string}
+ * @return {{title: string, description: string, name: string, slug: string, url: string }}
+ */
+const specialTagMeta = (list) => {
+  const idx = list.lastIndexOf('/');
+  const name = list.substring(idx + 1);
+  const slug = strToSlug(name);
+  const meta = listData[list] ?? {title: name, description: ''};
+
+  return {
+    ...meta,
+    name,
+    slug,
+    url: `/lists/${slug}`
+  };
+};
+
+/**
+ * Takes a list of tags and returns them mapped as topic or list items.
+ *
+ * @param list {Array<string>}
+ * @returns {Array<{title: string, description: string, slug:string, url: string}>}
+ */
+const formatTagList = (list) => {
+  return (list)
+    ? list.map((tag) => {
+
+      if (isSpecialTag(tag)) {
+        return specialTagMeta(tag);
+      }
+
+      const slug = strToSlug(tag);
+
       return {
+        title: tag,
+        description: '',
         slug,
-        title: toTitleCase(slug)
+        url: `/topic/${slug}`,
       }
     })
-  },
+    : [];
+};
 
-  findBySlug: (collection, slug) => {
-    return (!slug)
-      ? collection
-      : collection.find((item) => item.slug === slug);
-  },
+/**
+ * Takes a list and returns the limit number of items.
+ *
+ * @param array {Array<any>}
+ * @param limit {number}
+ * @returns {Array<any>}
+ */
+const limit = (array, limit) => array.slice(0, limit);
 
-  values: (obj, key) => obj[key],
+const excludeStubs = (collection) => collection.filter(item => item.data.growthStage && item.data.growthStage !== 'stub');
 
-  whereKeyEquals: (collection, key, value) => collection.filter(item => item[key] === value || (item.data && item.data[key] === value)),
+const excludeType = (collection, type) => {
+  return (!type)
+    ? collection
+    : collection.filter(item => item.data.contentType !== type);
+};
 
-  whereFileSlugEquals: (collection, value) => {
-    return (collection)
-      ? collection.find(item => item.fileSlug === value)
-      : undefined;
-  },
+const excludeTypes = (collection, types = []) => (
+  types.length > 0
+    ? collection.filter(item => types.includes(item.data.contentType) === false)
+    : collection
+);
 
-  /**
-   * Takes a list of tags and returns them mapped with url slug.
-   *
-   * @param list {Array<string>}
-   * @returns {Array<{name:string, slug:string}>}
-   */
-  formatTagList: (list) => {
-    return (list)
-      ? list.map((tag) => {
-        return {
-          name: tag,
-          slug: strToSlug(tag)
-        }
-      })
-      : [];
-  },
+const onlyTypes = (collection, types = []) => (
+  types.length > 0
+    ? collection.filter(item => types.includes(item.data.contentType))
+    : collection
+);
 
-  /**
-   * Takes a list and returns the limit number of items.
-   *
-   * @param array {Array<any>}
-   * @param limit {number}
-   * @returns {Array<any>}
-   */
-  limit: (array, limit) => array.slice(0, limit),
+const onlyType = (collection, type) => {
+  return (!type)
+    ? collection
+    : collection.filter(item => item.data.contentType === type);
+};
 
-  excludeStubs: (collection) => collection.filter(item => item.data.growthStage && item.data.growthStage !== 'stub'),
+const withoutFeatured = (collection) => collection.filter(item => {
+  return !item.data.featured
+});
 
-  excludeType: (collection, type) => {
-    return (!type)
-      ? collection
-      : collection.filter(item => item.data.contentType !== type);
-  },
+const onlyFeatured = (collection) => collection.filter(item => {
+  return item.data.featured && item.data.featured === true;
+});
 
-  excludeTypes: (collection, types = []) => (
-    types.length > 0
-      ? collection.filter(item => types.includes(item.data.contentType) === false)
-      : collection
-  ),
+const debug = (...args) => {
+  console.log(...args)
+  debugger;
+};
 
-  onlyTypes: (collection, types = []) => (
-    types.length > 0
-      ? collection.filter(item => types.includes(item.data.contentType))
-      : collection
-  ),
+const ogImageFromSlug = (slug) => {
+  const filename = `${slug}.jpg`;
+  const filepath = path.join(process.cwd(), `_assets/og-image/${filename}`);
 
-  onlyType: (collection, type) => {
-    return (!type)
-      ? collection
-      : collection.filter(item => item.data.contentType === type);
-  },
+  return fs.existsSync(filepath)
+    ? `${metadata.url}/img/og-image/${filename}`
+    : null;
+};
 
-  withoutFeatured: (collection) => collection.filter(item => {
-    return !item.data.featured
-  }),
+/**
+ * Check if a given tag list contains a slug.
+ *
+ * @param tags {Array<string>}
+ * @param slug {string}
+ * @returns {boolean}
+ */
+const includesTag = (tags, slug) => tags.find(tag => tag.toLowerCase() === slug.toLowerCase()) !== undefined;
 
-  onlyFeatured: (collection) => collection.filter(item => {
-    return item.data.featured && item.data.featured === true;
-  }),
+/**
+ * Excludes special tags denoted by `:`
+ *
+ * @param tags
+ * @returns {*}
+ */
+const excludeSpecialTags = (tags) => tags.filter(tag => tag.includes(':') === false);
 
-  debug: (...args) => {
-    console.log(...args)
-    debugger;
-  },
+/**
+ * Group a collection by year.
+ *
+ * @param collection
+ * @returns {*}
+ */
+const groupByYear = (collection) => collection.reduce((carry, post) => {
+  const year = post.date.getFullYear();
+  const group = carry.get(year) ?? [];
+  group.push(post);
+  carry.set(year, group);
+  return carry;
+}, new Map());
 
-  ogImageFromSlug: (slug) => {
-    const filename = `${slug}.jpg`;
-    const filepath = path.join(process.cwd(), `_assets/og-image/${filename}`);
+/**
+ * Group a collection by month.
+ * @param collection
+ * @returns {*}
+ */
+const groupByMonth = (collection) => collection.reduce((carry, post) => {
+  const month = post.date.getMonth();
+  const group = carry.get(month) ?? [];
+  group.push(post);
+  carry.set(month, group);
+  return carry;
+}, new Map());
 
-    return fs.existsSync(filepath)
-      ? `${metadata.url}/img/og-image/${filename}`
-      : null;
-  },
+const padStart = (str, len, filler) => String(str).padStart(len, filler);
 
-  /**
-   * Check if a given tag list contains a slug.
-   *
-   * @param tags {Array<string>}
-   * @param slug {string}
-   * @returns {boolean}
-   */
-  includesTag: (tags, slug) => tags.find(tag => tag.toLowerCase() === slug.toLowerCase()) !== undefined,
+const ratingToStars = (rating, max = 5) => {
+  if (rating > max) rating = max;
+  return '★'.repeat(rating).concat(Math.ceil(rating) !== rating ? '½' : '');
+};
 
-  /**
-   * Excludes special tags denoted by `:`
-   *
-   * @param tags
-   * @returns {*}
-   */
-  excludeSpecialTags: (tags) => tags.filter(tag => tag.includes(':') === false),
+const seriesPosts = (collection, name) => {
+  const key = `series:${name}`;
+  if (!collection.hasOwnProperty(key)) return undefined;
+  const posts = collection[key] ?? [];
 
-  /**
-   * Group a collection by year.
-   *
-   * @param collection
-   * @returns {*}
-   */
-  groupByYear: (collection) => collection
-    .reduce((carry, post) => {
-      const year = post.date.getFullYear();
-      const group = carry.get(year) ?? [];
-      group.push(post);
-      carry.set(year, group);
-      return carry;
-    }, new Map()),
+  const collator = new Intl.Collator('en');
 
-  /**
-   * Group a collection by month.
-   * @param collection
-   * @returns {*}
-   */
-  groupByMonth: (collection) => collection
-    .reduce((carry, post) => {
-      const month = post.date.getMonth();
-      const group = carry.get(month) ?? [];
-      group.push(post);
-      carry.set(month, group);
-      return carry;
-    }, new Map()),
+  return posts.sort((a, b) => {
+    if (a.data.group && b.data.group) return collator.compare(a.data.group, b.data.group);
 
-  padStart: (str, len, filler) => String(str).padStart(len, filler),
+    if (!a.data.group && b.data.group) return -1;
+    if (a.data.group && !b.data.group) return 1;
 
-  ratingToStars: (rating, max = 5) => {
-    if (rating > max) rating = max;
-    return '★'.repeat(rating).concat(Math.ceil(rating) !== rating ? '½' : '');
-  },
+    return 0;
+  });
+};
 
-  seriesPosts: (collection, name) => {
-    const key = `series:${name}`;
-    if (!collection.hasOwnProperty(key)) return undefined;
-    const posts = collection[key] ?? [];
+/**
+ * Takes a 11ty collection and returns a stats object for presentation
+ * TODO: turn this into a 11ty plugin...
+ */
+const collectionStats = (collection) => {
+  const numberFormatter = new Intl.NumberFormat('en-GB', {maximumSignificantDigits: 3});
 
-    const collator = new Intl.Collator('en');
+  const stats = collection.reduce((stats, item) => {
+    stats.totalItems++;
+    if (stats.firstItem === null) stats.firstItem = item;
 
-    return posts.sort((a, b) => {
-      if (a.data.group && b.data.group) return collator.compare(a.data.group, b.data.group);
+    const itemStats = readingTime(item.templateContent)
+    const wordCount = itemStats.words;
 
-      if (!a.data.group && b.data.group) return -1;
-      if (a.data.group && !b.data.group) return 1;
+    if (wordCount > stats.longestItem.wordCount) {
+      stats.longestItem.wordCount = wordCount;
+      stats.longestItem.item = item;
+    }
 
-      return 0;
-    });
-  },
+    stats.totalWords += wordCount;
 
-  /**
-   * Takes a 11ty collection and returns a stats object for presentation
-   * TODO: turn this into a 11ty plugin...
-   */
-  collectionStats: (collection) => {
-    const numberFormatter = new Intl.NumberFormat('en-GB', {maximumSignificantDigits: 3});
-
-    const stats = collection.reduce((stats, item) => {
-      stats.totalItems++;
-      if (stats.firstItem === null) stats.firstItem = item;
-
-      const itemStats = readingTime(item.templateContent)
-      const wordCount = itemStats.words;
-
-      if (wordCount > stats.longestItem.wordCount) {
-        stats.longestItem.wordCount = wordCount;
-        stats.longestItem.item = item;
-      }
-
-      stats.totalWords += wordCount;
-
-      // Year stats
-      const year = item.date.getFullYear();
-      const yearStats = stats.byYear.get(year) ?? {
-        year,
-        totalWords: 0,
-        totalItems: 0,
-      };
-
-      yearStats.totalItems++;
-      yearStats.totalWords += wordCount;
-
-      stats.byYear.set(year, yearStats);
-
-      return stats;
-    }, {
+    // Year stats
+    const year = item.date.getFullYear();
+    const yearStats = stats.byYear.get(year) ?? {
+      year,
       totalWords: 0,
       totalItems: 0,
-      firstItem: null,
-      longestItem: {
-        wordCount: 0,
-        item: null,
-      },
-      byYear: new Map()
-    });
+    };
 
-    // Number formatting
+    yearStats.totalItems++;
+    yearStats.totalWords += wordCount;
 
-    stats.avgWords = stats.totalItems > 0
-      ? numberFormatter.format(stats.totalWords / stats.totalItems)
-      : 0;
-
-    stats.totalWords = numberFormatter.format(stats.totalWords);
-    stats.totalItems = numberFormatter.format(stats.totalItems);
-    stats.longestItem.wordCount = numberFormatter.format(stats.longestItem.wordCount);
-
-    stats.byYear = Array.from(stats.byYear.values())
-      .map(year => {
-        return {
-          ...year,
-          totalWords: numberFormatter.format(year.totalWords),
-          totalItems: numberFormatter.format(year.totalItems),
-          avgWords: year.totalItems > 0
-            ? numberFormatter.format(year.totalWords / year.totalItems)
-            : 0
-        }
-      }).sort((a, b) => a.year - b.year);
+    stats.byYear.set(year, yearStats);
 
     return stats;
-  },
+  }, {
+    totalWords: 0,
+    totalItems: 0,
+    firstItem: null,
+    longestItem: {
+      wordCount: 0,
+      item: null,
+    },
+    byYear: new Map()
+  });
 
-  /**
-   * Takes a list of names or pages and returns a map with them sorted into A-Z + #, ? buckets.
-   *
-   * @see https://github.com/benjifs/benji/blob/65e82aade03efde17cb04c31ce4f13d59dbfeff3/.eleventy.js#L71-L85
-   * @param collection
-   * @returns {Map<any, any>}
-   */
-  alphabetSort: (collection) => {
-    const alphabet = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '?']
+  // Number formatting
 
-    const sorted = alphabet.reduce((res, letter) => {
-      res.set(letter, [])
-      return res
-    }, new Map())
+  stats.avgWords = stats.totalItems > 0
+    ? numberFormatter.format(stats.totalWords / stats.totalItems)
+    : 0;
 
-    for (let item of collection) {
-      const title = (typeof item === 'string')
-        ? item
-        : item?.data?.title;
+  stats.totalWords = numberFormatter.format(stats.totalWords);
+  stats.totalItems = numberFormatter.format(stats.totalItems);
+  stats.longestItem.wordCount = numberFormatter.format(stats.longestItem.wordCount);
 
-      if (!title) continue;
+  stats.byYear = Array.from(stats.byYear.values())
+    .map(year => {
+      return {
+        ...year,
+        totalWords: numberFormatter.format(year.totalWords),
+        totalItems: numberFormatter.format(year.totalItems),
+        avgWords: year.totalItems > 0
+          ? numberFormatter.format(year.totalWords / year.totalItems)
+          : 0
+      }
+    }).sort((a, b) => a.year - b.year);
 
-      let key = (title[0] || '?').toUpperCase();
-      key = alphabet.includes(key) ? key : (!isNaN(key) ? '#' : '?');
-      sorted.get(key).push((typeof item === 'string') ? title : item);
-    }
-    return sorted;
+  return stats;
+};
+
+/**
+ * Takes a list of names or pages and returns a map with them sorted into A-Z + #, ? buckets.
+ *
+ * @see https://github.com/benjifs/benji/blob/65e82aade03efde17cb04c31ce4f13d59dbfeff3/.eleventy.js#L71-L85
+ * @param collection
+ * @returns {Map<any, any>}
+ */
+const alphabetSort = (collection) => {
+  const alphabet = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '?']
+
+  const sorted = alphabet.reduce((res, letter) => {
+    res.set(letter, [])
+    return res
+  }, new Map())
+
+  for (let item of collection) {
+    const title = (typeof item === 'string')
+      ? item
+      : item?.data?.title;
+
+    if (!title) continue;
+
+    let key = (title[0] || '?').toUpperCase();
+    key = alphabet.includes(key) ? key : (!isNaN(key) ? '#' : '?');
+    sorted.get(key).push((typeof item === 'string') ? title : item);
   }
-}
+  return sorted;
+};
+
+module.exports = {
+  dateToFormat,
+  slugify,
+  isSpecialTag,
+  specialTagMeta,
+  formatSlugList,
+  findBySlug,
+  values,
+  whereKeyEquals,
+  whereFileSlugEquals,
+  formatTagList,
+  limit,
+  excludeStubs,
+  excludeType,
+  excludeTypes,
+  onlyTypes,
+  onlyType,
+  withoutFeatured,
+  onlyFeatured,
+  debug,
+  ogImageFromSlug,
+  includesTag,
+  excludeSpecialTags,
+  groupByYear,
+  groupByMonth,
+  padStart,
+  ratingToStars,
+  seriesPosts,
+  collectionStats,
+  alphabetSort,
+};

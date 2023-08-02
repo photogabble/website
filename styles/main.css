@@ -236,14 +236,27 @@ article.resource.bookmark header > aside li {
     display: inline-block;
 }
 
-article.resource.bookmark > section img {
+article.resource.bookmark > section div {
     float: right;
     max-width: 40%;
     min-width: auto;
     margin-left: 2rem;
     margin-bottom: 2rem;
+}
+
+article.resource.bookmark > section div > img {
     border: 2px solid var(--background-muted);
     border-radius: 3px;
+    margin-bottom: 1rem;
+}
+
+article.resource.bookmark > section div > nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    gap: 1rem;
 }
 
 article.resource.bookmark > section > p:first-of-type {

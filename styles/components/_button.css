@@ -31,3 +31,9 @@
     right: 0;
     bottom: 0;
 }
+
+.btn-88x31 img{
+    max-width: 88px;
+    min-width: 88px;
+    max-height: 31px;
+}

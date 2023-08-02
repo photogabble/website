@@ -4,30 +4,33 @@ titlePrefix: Index
 ---
 {% extends "../_includes/layouts/page.njk" %}
 
+{% set allLists = collections.lists %}
+
 {% block pageContent %}
     <section>
         <header>
             <h2>Media</h2>
         </header>
-        <p><a href="/books/">My Bookshelf</a>: A list of books that I have read and written a review about</p>
-        <p><a href="/antilibrary/">The Antilibrary</a>: A list of books that I intend to read</p>
-        <p><a href="/lists/film-and-tv/">Films/TV Series</a>: A somewhat complete list of films and TV shows I have watched with minimalist reviews</p>
-        <p><a href="/lists/listened-to/">Listened To</a>: A list of music I have recently listened to (if I get last.fm integration working)</p>
-    </section>
-
-    <section>
-        <header>
-            <h2>Community</h2>
-        </header>
-        <p><a href="/links/">Blogroll</a>: Hand curated list of websites and blogs I find interesting</p>
-        <p><a href="/button-board/">Button Board</a>: Like a blogroll but via the medium of 88x21 gifs</p>
+        <nav>
+            <p><a href="/books/">My Bookshelf</a>: A list of books that I have read and written a review about</p>
+            <p><a href="/antilibrary/">The Antilibrary</a>: A list of books that I intend to read</p>
+            <p><a href="/lists/film-and-tv/">Films/TV Series</a>: A somewhat complete list of films and TV shows I have watched with minimalist reviews</p>
+            <p><a href="/lists/listened-to/">Listened To</a>: A list of music I have recently listened to (if I get last.fm integration working)</p>
+        </nav>
     </section>
 
     <section>
         <header>
             <h2>Collections</h2>
         </header>
-        <p>No collections found.</p>
+        {% if allLists|length %}
+            <nav>
+            {% for list in allLists %}
+                <p><a href="/lists/{{ list.slug }}">{{ list.title }}</a>: {{ list.description }}</p>
+            {% endfor %}
+            </nav>
+        {% else %}
+            <p>No collections found.</p>
+        {% endif %}
     </section>
-
 {% endblock %}

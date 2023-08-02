@@ -1,0 +1,22 @@
+---
+pagination:
+  data: collections.lists
+  size: 1
+  alias: list
+permalink: /lists/{{ list.slug }}/index.html
+folder: lists
+---
+
+{% extends "_includes/layouts/page.njk" %}
+
+{% set title = list.title %}
+{% set titlePrefix = list.prefix or 'List' %}
+{% set subTitle = list.description %}
+
+{% block pageContent %}
+    {% if list.layout %}
+        {% include list.layout %}
+    {% else %}
+        {% include "_includes/layouts/list-default.njk" %}
+    {% endif %}
+{% endblock %}

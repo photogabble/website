@@ -15,7 +15,7 @@ A while back I brought that functionality over to PhotoGabble and with it the co
 
 ## Teaching 11ty Wikilinks
 
-This solution borrows from [Evan Boeh's Digital Garden](https://boehs.org/), specifically the source of their [garden.11tydata.js](https://git.sr.ht/~boehs/site/tree/master/item/html/pages/garden/garden.11tydata.js). In order to parse content for backlinks and relevant page metadata this solution is made up of two parts:
+This solution borrows from [[Evan Boehs Digital Garden]], specifically the source of their [garden.11tydata.js](https://git.sr.ht/~boehs/site/tree/master/item/html/pages/garden/garden.11tydata.js). In order to parse content for backlinks and relevant page metadata this solution is made up of two parts:
 
 - A computed data function for calculating backlinks and filling a `Map()` with useful page metadata
 - A [Markdown It](https://github.com/markdown-it/markdown-it) plugin for parsing wikilink syntax and replacing with `<a>` tags based upon lookup of aforementioned `Map()`

@@ -1,9 +1,5 @@
 module.exports = {
-  contentType: 'colophon', // thought, noteworthy, essay, tutorial, project, mirror
+  contentType: 'colophon',
+  permalinkBase: 'colophon/update',
   excludeFromFeed: true,
-  eleventyComputed: {
-    permalink(data) {
-      return `colophon/update/${this.slugify(data.title)}/`
-    }
-  }
 };

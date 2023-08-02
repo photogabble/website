@@ -1,9 +1,5 @@
 module.exports = {
-  contentType: 'mirror', // thought, noteworthy, essay, tutorial, project, mirror
+  contentType: 'mirror',
+  permalinkBase: 'mirrored',
   excludeFromFeed: true,
-  eleventyComputed: {
-    permalink(data) {
-      return `mirrored/${this.slugify(data.title)}/`
-    }
-  }
 };
