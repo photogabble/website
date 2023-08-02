@@ -38,6 +38,7 @@ const fetchUrl = async (url, date) => {
       'list/blogroll',
       'list/webring',
       'list/www-club',
+      'list/games',
     ];
 
     const titlePrompt = new Select({
