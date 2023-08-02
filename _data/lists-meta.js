@@ -4,6 +4,9 @@
 // by the lists collection for each list in use.
 //
 module.exports = {
+
+  // Collections of things
+
   'list/blogroll': {
     title: 'Blogroll',
     prefix: 'Community',
@@ -36,6 +39,18 @@ module.exports = {
     title: 'Inspiration',
     description: 'Websites and People who have inspired me',
   },
+
+  'list/games': {
+    title: 'My Games Library',
+    description: 'List of games that I would like to one day play',
+  },
+
+  'list/youtube-channel': {
+    title: 'YouTube Channels',
+    description: 'List of channels I enjoy watching',
+  },
+
+  // Continuous Writing Projects
 
   'list/week-in-review': {
     title: 'Week In Review',
