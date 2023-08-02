@@ -12,7 +12,7 @@ module.exports = {
     permalink(data) {
       const path = data?.permalinkBase ?? data.contentType;
       const slug = data?.slug ?? this.slugify(data.title);
-      return `${path}/${slug}`;
+      return `${path}/${slug}/`;
     },
     ogImageHref: (data) => ogImageFromSlug(slugify(data.title)),
   }
