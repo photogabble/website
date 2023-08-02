@@ -1,6 +1,6 @@
 const {setupMarkdownIt, parseCollectionHashtags} = require ('./helpers/hashtags');
 const {chunk} = require('./helpers')
-const {slugify, padStart} = require("./filters");
+const {slugify, padStart, specialTagMeta} = require("./filters");
 const listData = require('../_data/lists-meta');
 
 // This function returns a reducer function for paginating custom taxonomy such as
@@ -179,30 +179,54 @@ module.exports = function loadCollection(eleventyConfig) {
   const nowUpdates = (collection) => [...collection.getFilteredByGlob('./now/*.md')
     .filter((post) => !post.data.draft)];
 
-  const lists = (collection) => Array.from(
+  const collectSpecialTaggedContent = (prefix, collection) => Array.from(
     post(collection).reduce((lists, post) => {
       if (post.data.tags) {
         for (const tag of post.data.tags) {
-          if (!tag.includes('list/')) continue;
+          if (!tag.includes(prefix)) continue;
           lists.add(tag);
         }
       }
       return lists;
     }, new Set(),)
   ).map(list => {
-    const idx = list.lastIndexOf('/');
-    const name = list.substring(idx + 1);
-    const slug = slugify(name);
-
-    const meta = listData[list] ?? {title: name, description: ''};
-
     return {
-      ...meta,
-      name,
-      slug,
+      ...specialTagMeta(list),
       items: collection.getFilteredByTag(list).reverse(),
     };
   });
+
+  /**
+   * Lists and Collections of posts into a special grouping.
+   *
+   * This is used for displaying special pages such as the blog roll which is essentially
+   * a special view on bookmark posts tagged with list/blogroll. Week in Review and my
+   * 365-Day project's also have special views for their output.
+   *
+   * Lists are canonically different to topics, while topics are groupings of different posts that
+   * are taxonomically similar, lists and collections are groupings of different posts
+   * that might never have overlapping topics.
+   *
+   * @param collection
+   * @return {{name: string, description: string, title: string, items: *, slug: string, url: string}[]}
+   */
+  const lists = (collection) => collectSpecialTaggedContent('list/', collection);
+
+  /**
+   * Post Series.
+   *
+   * This is used for grouping tightly coupled posts into a series. It's similar to lists,
+   * however while a list might include a lot of different posts under one banner, a
+   * series is one giant post that has been split over several pages. This is
+   * useful for long-running tutorial series and dev-logs.
+   *
+   * Posts within a series can display their Series Listing for quick navigation
+   * between series posts.
+   *
+   * @param collection
+   * @return {{name: string, description: string, title: string, items: *, slug: string, url: string}[]}
+   */
+  const series = (collection) => collectSpecialTaggedContent('series/', collection);
 
   return {
     post,
@@ -215,5 +239,6 @@ module.exports = function loadCollection(eleventyConfig) {
     resources,
     resourcesPaginatedByType,
     lists,
+    series,
   }
 }
