@@ -1,8 +1,8 @@
 <aside>
     {% block content %}{% endblock %}
     {% if cite.href %}
-        <small>&mdash; <a href="{{ cite.href }}">{{ cite.name }}</a> | <a href="{{ page.url }}">link</a></small>
+        <small>&mdash; <a href="{{ cite.href }}">{{ cite.name }}</a> | <a href="{{ page.url }}">notes</a></small>
     {% else %}
-        <small>&mdash; {{ cite.name }} | <a href="{{ page.url }}">link</a></small>
+        <small>&mdash; {{ cite.name }} | <a href="{{ page.url }}">notes</a></small>
     {% endif %}
 </aside>
