@@ -210,6 +210,16 @@ const movies = [
     imdb: 'https://www.imdb.com/title/tt0060196/'
   },
 
+  {
+    title: 'The Magnificent Seven',
+    year: 2016,
+    watchedDate: '2023-08-06',
+    reWatch: false,
+    review: 'Righteous vengeance',
+    rating: 4,
+    imdb: 'https://www.imdb.com/title/tt2404435/'
+  },
+
   // {
   //   title: 'Everything Everywhere All at Once',
   //   year: 2022,
