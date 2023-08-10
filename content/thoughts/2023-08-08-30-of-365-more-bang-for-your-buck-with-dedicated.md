@@ -12,7 +12,7 @@ This is day thirty of my attempt to write something, anything, every day for 365
 
 I seek simplicity in most things and following the path of least resistance lead me to host my projects on dedicated servers (currently with [Hetzner](https://www.hetzner.com/) in Finland.) My experience in doing so has been that I get more bang for my buck.
 
-For example I have had for the past two years a AX51-NVMe server hosted with Hetzner that provides 8C/16T, 64GB RAM, 1TB NVMe storage *and* unrestricted traffic through a single 1 Gbit/s port for just €57.60 a month! I actually found that to be more than I needed and was in the process of migrating to [AX41-NVME](https://www.hetzner.com/dedicated-rootserver/ax41-nvme) server which provides 6C/12T, 64GB RAM, 512GB NVMe storage and unrestricted traffic through a single 1 Gbit/s port for just €35.60 a month before I had reboot issues with Debian 12 on their hardware and decided to look elsewhere.
+For example, I have had for the past two years a AX51-NVMe server hosted with Hetzner that provides 8C/16T, 64GB RAM, 1TB NVMe storage *and* unrestricted traffic through a single 1 Gbit/s port for just €57.60 a month! I actually found that to be more than I needed and was in the process of migrating to [AX41-NVME](https://www.hetzner.com/dedicated-rootserver/ax41-nvme) server which provides 6C/12T, 64GB RAM, 512GB NVMe storage and unrestricted traffic through a single 1 Gbit/s port for just €35.60 a month before I had reboot issues with Debian 12 on their hardware and decided to look elsewhere.
 
 Both prices are excluding VAT which in my country adds 20%; however the cost of both servers running concurrently plus two IPv4 addresses including tax is still *just* €115.92/mo.
 
@@ -24,7 +24,7 @@ The aforementioned issues with rebooting Debian 12 on Hetzner's dedicated hardwa
 
 —
 
-There are benefits to cloud computing, high availability, automated scaling, zero downtime (when done *right*) and a whole rolodex of interconnectable services that can act as jigsaw pieces for building cloud based applications. However, in the majority of cases I have personally seen: companies that move into the cloud do so by spinning up a handful of EC2 containers and maybe migrate their database's to RDS then call it a day.
+There are benefits to cloud computing, high availability, automated scaling, zero downtime (when done *right*) and a whole rolodex of interconnecting services that can act as jigsaw pieces for building cloud based applications. However, in the majority of cases I have personally seen: companies that move into the cloud do so by spinning up a handful of EC2 containers and maybe migrate their database's to RDS then call it a day.
 
 From a finance point of view this doesn't make sense. AWS's `m6g.4xlarge` seems to be the closest I could find to Hetzner's AX51-NVMe offering in that it comes with 16vCPUs and 64GB RAM for $282.07/mo if reserved for a year, even if reserved for three years, at $195.49/mo it is still more expensive than Hetzner and that's not including bandwidth or storage which are changed extra at AWS.
 
@@ -37,4 +37,4 @@ There *are* obvious benefits in going with cloud offerings and this post isn't a
 🌻
 
 [^1]: New to me since I last logged into their dashboard
-[^2]: This was during the pandemic induced lockdown, we where a physicals events company that had to pivot to be 100% online in as short a time as possible; it took a lot of blood, sweat and tears but we did it
+[^2]: This was during the pandemic induced lockdown, we where a physicals events company that had to pivot to be 100% online in as short a time as possible; it took a lot of blood, sweat and tears, but we did it
