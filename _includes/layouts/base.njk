@@ -133,22 +133,24 @@
 
 <aside class="theme-picker">
     <h1>Theme Picker</h1>
-    <ul>
-        {%- for theme in themes -%}
-            <li class="theme-{{ theme.id }} current">
-                <button class="theme-selector-btn" data-theme="{{ theme.id }}">
-                    <span>{{ theme.title }}</span>
-                    <span class="swatches">
-                        <span class="background"></span>
-                        <span class="background-muted"></span>
-                        <span class="foreground"></span>
-                        <span class="foreground-muted"></span>
-                        <span class="accent"></span>
-                    </span>
-                </button>
-            </li>
-        {% endfor %}
-    </ul>
+    <nav>
+      <ul>
+          {%- for theme in themes -%}
+              <li class="theme-{{ theme.id }} current">
+                  <button class="theme-selector-btn" data-theme="{{ theme.id }}">
+                      <span>{{ theme.title }}</span>
+                      <span class="swatches">
+                          <span class="background"></span>
+                          <span class="background-muted"></span>
+                          <span class="foreground"></span>
+                          <span class="foreground-muted"></span>
+                          <span class="accent"></span>
+                      </span>
+                  </button>
+              </li>
+          {% endfor %}
+      </ul>
+    </nav>
 </aside>
 
 <main>
