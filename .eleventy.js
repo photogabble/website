@@ -25,7 +25,7 @@ module.exports = function (eleventyConfig) {
       `./public/fonts/iosevka-etoile-bold.woff2`,
       `./public/fonts/iosevka-etoile-bolditalic.woff2`,
     ],
-    dist: './fonts',
+    dist: './src/fonts',
     enabled: process.env.ELEVENTY_ENV !== 'production',
     cache: new ObjectCache('font-subsetting'),
   });
@@ -35,7 +35,8 @@ module.exports = function (eleventyConfig) {
     similar: {
       'Game Development': ['GameDev'],
       'Retro Computing': ['RetroComputing'],
-      'Node JS': ['Node']
+      'Node JS': ['Node'],
+      '365 Day Project': ['365DayProject']
     },
     slugify,
   });
@@ -123,5 +124,12 @@ module.exports = function (eleventyConfig) {
   //
 
   eleventyConfig.setLibrary('md', require('./lib/helpers/markdown'));
+
+  return {
+    dir: {
+      input: "src",
+      output: "_site"
+    }
+  };
 
 };

@@ -1,6 +1,6 @@
-@import "../node_modules/normalize.css/normalize.css";
-@import "../node_modules/prismjs/themes/prism-tomorrow.min.css";
-@import "../node_modules/prismjs/plugins/treeview/prism-treeview.css";
+@import "../../node_modules/normalize.css/normalize.css";
+@import "../../node_modules/prismjs/themes/prism-tomorrow.min.css";
+@import "../../node_modules/prismjs/plugins/treeview/prism-treeview.css";
 
 /* Components */
 @import "components/_fonts.css";
@@ -45,6 +45,16 @@ blockquote {
     border-left: 3px solid var(--foreground-muted);
     padding-left: 1em;
     color: var(--foreground-muted);
+}
+
+aside.citation {
+    border-left: 3px solid var(--foreground-muted);
+    padding-left: 1em;
+}
+
+aside.citation blockquote {
+    border-left: none;
+    padding-left: 0;
 }
 
 pre {
