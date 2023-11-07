@@ -8,11 +8,12 @@
     "serve:prod": "rm -rf _site && cross-env ELEVENTY_ENV=production eleventy --serve",
     "build": "cross-env ELEVENTY_ENV=production eleventy",
     "build:dev": "cross-env ELEVENTY_ENV=development eleventy",
-    "og-images": "node functions/create-og-images.js",
+    "og-images": "node ./bin/create-og-images.js",
     "make:bookmark": "node ./bin/add-bookmark.js"
   },
   "bin": {
-    "add-bookmark": "./bin/add-bookmark.js"
+    "add-bookmark": "./bin/add-bookmark.js",
+    "gen-og-images": "./bin/create-og-images.js"
   },
   "keywords": [
     "PhotoGabble",

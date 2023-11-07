@@ -1,7 +1,7 @@
 ---
 folder: 'about'
 ---
-{% extends "_includes/layouts/page.njk" %}
+{% extends "layouts/page.njk" %}
 
 {% set title = 'Colophon' %}
 {% set titlePrefix = 'Info' %}
@@ -15,7 +15,7 @@ folder: 'about'
     <section>
         <h2>Changelog</h2>
         <p>This is a development blog listing key updates to PhotoGabble as and when I find the time.</p>
-        {% include "_includes/components/post-list.njk" %}
+        {% include "components/post-list.njk" %}
     </section>
 
     <section>

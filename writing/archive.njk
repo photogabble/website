@@ -8,14 +8,14 @@ folder: writing
 titlePrefix: Index
 ---
 {% set title = yearMonth.title %}
-{% extends "../_includes/layouts/page.njk" %}
+{% extends "layouts/page.njk" %}
 
 {% block pageContent %}
   <section>
     {% set displayContentType = true %}
     {% set postsList = yearMonth.items | reverse %}
-    {% include "../_includes/components/post-list.njk" %}
+    {% include "components/post-list.njk" %}
   </section>
 
-  {% include '../_includes/components/planting-times.njk' %}
+  {% include 'components/planting-times.njk' %}
 {% endblock %}

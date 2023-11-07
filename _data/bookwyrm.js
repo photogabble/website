@@ -1,4 +1,4 @@
-const ObjectCache = require("../utils/helpers/cache");
+const ObjectCache = require("../lib/helpers/cache");
 const fetch = require("node-fetch");
 const chalk = require("chalk");
 

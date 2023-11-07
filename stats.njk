@@ -1,7 +1,7 @@
 ---
 folder: [writing]
 ---
-{% extends "./_includes/layouts/page.njk" %}
+{% extends "layouts/page.njk" %}
 
 {% set title = 'Content Stats' %}
 {% set titlePrefix = 'Writing' %}
@@ -68,6 +68,6 @@ folder: [writing]
     </section>
 
     <section>
-        {% include '_includes/components/hot-topics.njk' %}
+        {% include 'components/hot-topics.njk' %}
     </section>
 {% endblock %}

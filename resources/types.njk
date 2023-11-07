@@ -7,7 +7,7 @@ permalink: /{{ type.slug }}/index.html
 folder: [resource]
 ---
 
-{% extends "../_includes/layouts/page.njk" %}
+{% extends "layouts/page.njk" %}
 
 {% set title = type.title %}
 {% set titlePrefix = 'Resource' %}
@@ -15,7 +15,7 @@ folder: [resource]
 {% block pageContent %}
   <section>
     {% set postsList = type.items %}
-    {% include "_includes/components/post-list.njk" %}
+    {% include "components/post-list.njk" %}
   </section>
 
   {% if type.totalPages > 1 %}

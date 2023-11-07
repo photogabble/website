@@ -27,14 +27,14 @@ const fileReadable = (path) => {
 
 (async () => {
   try {
-    let posts = require("./_posts.json");
+    let posts = require("../.cache/_posts.json");
     const promises = [];
 
     posts = posts.map((post) => {
       return {
         ...post,
         src: path.join(process.cwd(), post.template),
-        dist: path.join(process.cwd(), `_assets/og-image/${post.slug}.jpg`),
+        dist: path.join(process.cwd(), `public/og-image/${post.slug}.jpg`),
       };
     }).filter((post) => !(fileReadable(post.dist) === true || fileReadable(post.src) === false))
 

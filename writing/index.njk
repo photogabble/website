@@ -1,4 +1,4 @@
-{% extends "../_includes/layouts/page.njk" %}
+{% extends "layouts/page.njk" %}
 
 {% set allPosts = collections.post | excludeStubs | excludeTypes(['mirror', 'resource']) | reverse %}
 {% set postsByYear = allPosts | groupByYear %}
@@ -15,14 +15,14 @@
                 <nav>
                     {% set postsByMonth = items | groupByMonth %}
                     {% set year = year %}
-                    {% include '../_includes/components/months-of-year.njk' %}
+                    {% include 'components/months-of-year.njk' %}
                 </nav>
             </header>
             {% set displayContentType = true %}
             {% set postsList = items %}
-            {% include "../_includes/components/post-list.njk" %}
+            {% include "components/post-list.njk" %}
         </section>
     {% endfor %}
 
-    {% include '../_includes/components/hot-topics.njk' %}
+    {% include 'components/hot-topics.njk' %}
 {% endblock %}

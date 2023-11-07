@@ -1,8 +1,7 @@
 _site/
+dist/
 _tmp/
 .DS_Store
 node_modules/
 .idea
 .cache
-functions/_posts.json
-functions/_posts

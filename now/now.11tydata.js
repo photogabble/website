@@ -1,4 +1,4 @@
-const {dateToFormat} = require("../utils/filters");
+const {dateToFormat} = require("../lib/filters");
 
 module.exports = {
   "draft": false,

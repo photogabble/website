@@ -1,4 +1,4 @@
-const {slugify, ogImageFromSlug} = require('../utils/filters');
+const {slugify, ogImageFromSlug} = require('../lib/filters');
 
 module.exports = {
   featured: false,

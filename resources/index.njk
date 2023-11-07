@@ -6,7 +6,7 @@ pagination:
 permalink: "resources/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
 ---
 
-{% extends "../_includes/layouts/page.njk" %}
+{% extends "layouts/page.njk" %}
 
 {% set title = 'Resources' %}
 {% set titlePrefix = 'Index' %}
@@ -15,7 +15,7 @@ permalink: "resources/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber
 
   <section>
     {% set displayResourceType = true %}
-    {% include "../_includes/components/post-list.njk" %}
+    {% include "components/post-list.njk" %}
   </section>
 
   {% if pagination.pages.length > 1 %}

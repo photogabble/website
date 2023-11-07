@@ -7,7 +7,7 @@ permalink: /lists/{{ list.slug }}/index.html
 folder: lists
 ---
 
-{% extends "_includes/layouts/page.njk" %}
+{% extends "layouts/page.njk" %}
 
 {% set title = list.title %}
 {% set titlePrefix = list.prefix or 'List' %}
@@ -17,6 +17,6 @@ folder: lists
     {% if list.layout %}
         {% include list.layout %}
     {% else %}
-        {% include "_includes/layouts/list-default.njk" %}
+        {% include "layouts/list-default.njk" %}
     {% endif %}
 {% endblock %}

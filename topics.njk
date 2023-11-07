@@ -7,7 +7,7 @@ permalink: /{{ topic.slug }}/index.html
 folder: [writing, topic]
 ---
 
-{% extends "_includes/layouts/page.njk" %}
+{% extends "layouts/page.njk" %}
 
 {% set title = topic.title %}
 {% set titlePrefix = 'Topic' %}
@@ -16,7 +16,7 @@ folder: [writing, topic]
   <section>
     {% set postsList = topic.items %}
     {% set displayContentType = true %}
-    {% include "_includes/components/post-list.njk" %}
+    {% include "components/post-list.njk" %}
   </section>
 
   {% if topic.totalPages > 1 %}
@@ -29,5 +29,5 @@ folder: [writing, topic]
     </nav>
   {% endif %}
 
-  {% include '_includes/components/hot-topics.njk' %}
+  {% include 'components/hot-topics.njk' %}
 {% endblock %}
