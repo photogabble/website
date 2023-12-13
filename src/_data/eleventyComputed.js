@@ -1,7 +1,4 @@
-const { getChanges } = require("../functions/get-git-changes");
-
 module.exports = {
-  changes: async data => await getChanges(data),
   breadcrumbs: (data) => {
     if (!data.collections.all || data.collections.all.length === 0) return [];
     const crumbs = [

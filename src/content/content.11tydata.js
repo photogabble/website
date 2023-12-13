@@ -1,3 +1,4 @@
+const {getChanges} = require("../../lib/helpers/get-git-changes");
 const {slugify, ogImageFromSlug} = require('../../lib/filters');
 
 module.exports = {
@@ -9,6 +10,7 @@ module.exports = {
   contentType: 'thought', // thought, noteworthy, essay, tutorial, project
   folder: ['writing'],
   eleventyComputed: {
+    changes: data => getChanges(data),
     permalink(data) {
       const path = data?.permalinkBase ?? data.contentType;
       const slug = data?.slug ?? this.slugify(data.title);
