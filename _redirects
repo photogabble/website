@@ -9,6 +9,10 @@
 /about/content/ /glossary/content-types/
 /about/growth/ /glossary/growth/
 
+# Updates moved to changelog
+/colophon/update/ /changelog/
+/colophon/update/* /changelog/:splat
+
 # 2022 Weeks in review re-slugging
 /thoughts/week-25-in-review/ /thoughts/2022-week-25-in-review/
 /thoughts/week-26-in-review/ /thoughts/2022-week-26-in-review/
