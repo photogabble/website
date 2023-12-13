@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
+
+    <!-- Feeds -->
+    <link rel="alternate" href="{{ metadata.feedUrl }}" type="application/atom+xml" title="Simon Dann's Digital Garden">
+    
+    <!-- Mastodon Verification -->
+    <link rel="me" href="https://notacult.social/@carbontwelve" title="Mastodon: Not A Cult"/>
+    <link rel="me" href="https://phpc.social/@carbontwelve" title="Mastodon: PHPC"/>
+
+    <!-- SEO -->
+    <title>{{ title or metadata.title }}</title>
+    <meta name="description" content="{{ description or metadata.description }}"/>
+    <link rel="canonical" href="{{ canonical or page.url }}"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="generator" content="Eleventy">
+    {% block head %}{% endblock %}
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="en_GB"/>
+    <meta property="og:site_name" content="{{ metadata.title }}"/>
+    <meta property="og:title" content="{{ title or metadata.title }}"/>
+    <meta property="og:type" content="{{ ogtype or 'website' }}"/>
+    <meta property="og:url" content="{{ metadata.url }}{{ page.url }}"/>
+    {% if ogImageHref %}
+    <meta property="og:image" content="{{ ogImageHref }}">
+    <meta name="twitter:card" content="summary_large_image"/>
+    {% else %}
+    <meta name="twitter:card" content="summary"/>
+    {% endif %}
+
+    <meta name="twitter:site" content="@carbontwelve"/>
+    <meta name="twitter:creator" content="@carbontwelve"/>
+    <meta name="twitter:title" content="{{ title or metadata.title }}"/>
+
+    {% if ogtype === 'article' %}
+        <meta name="twitter:label1" content="Words"/>
+        <meta name="twitter:data1" content="{{ readingTime.words }}"/>
+
+        <meta name="twitter:label2" content="Est. reading time"/>
+        <meta name="twitter:data2" content="{{ readingTime.time }}"/>
+
+        <meta name="article:published_time" content="{{ page.date.toISOString() }}"/>
+{#        TODO: #}
+{#        <meta name="article:modified_time" content=""/>#}
+{#        <meta name="article:expiration_time" content=""/>#}
+
+        {% if contentType %}
+            <meta name="article:section" content="{{ contentType }}"/>
+        {% endif %}
+
+        {% for tag in tags %}
+            <meta name="article:tag" content="{{ tag }}"/>
+        {% endfor %}
+    {% endif %}
+
+    <!-- Favicon Meta -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Assets, 3rd party scripts, etc -->
+    <link rel="preload" href="/fonts/iosevka-etoile-regular.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/iosevka-etoile-bold.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/iosevka-etoile-bolditalic.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/iosevka-etoile-italic.subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/styles/main.css"/>
+    <script data-goatcounter="https://photogabble.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+    <script src="/main.js"></script>
+</head>
+<body>
+
+<aside class="theme-picker">
+    <h1>Theme Picker</h1>
+    <nav>
+      <ul>
+          {%- for theme in themes -%}
+              <li class="theme-{{ theme.id }} current">
+                  <button class="theme-selector-btn" data-theme="{{ theme.id }}">
+                      <span>{{ theme.title }}</span>
+                      <span class="swatches">
+                          <span class="background"></span>
+                          <span class="background-muted"></span>
+                          <span class="foreground"></span>
+                          <span class="foreground-muted"></span>
+                          <span class="accent"></span>
+                      </span>
+                  </button>
+              </li>
+          {% endfor %}
+      </ul>
+    </nav>
+</aside>
+
+<main>
+    <header>
+        {% block header %}
+            {{ header | safe }}
+        {% endblock %}
+
+        <button class="btn" onclick="toggleThemePicker()">Theme Picker</button>
+    </header>
+    {% block content %}
+        {{ content | safe }}
+    {% endblock %}
+</main>
+<footer>
+    <nav>
+        <div>
+            <dl>
+                <dt><a href="/" title="Back to home" class="no-underline">🌱</a> Simon Dann</dt>
+                <dd><a href="/topic" title="All topics in use">Topics</a></dd>
+                <dd><a href="/projects" title="My Current and past projects">Projects</a></dd>
+                <dd><a href="/writing" title="The Digital Garden Archive">Writing</a></dd>
+                <dd><a href="/about" title="About me">About</a></dd>
+                <dd><a href="/colophon" title="About this website">Colophon</a></dd>
+            </dl>
+
+            <dl>
+                <dd><a href="/elsewhere" title="Other places on the internet you can find me">Elsewhere</a></dd>
+                <dd><a href="https://github.com/carbontwelve">GitHub</a></dd>
+                <dd><a href="https://notacult.social/@carbontwelve">Mastodon</a></dd>
+            </dl>
+        </div>
+    </nav>
+
+    <nav>
+        <dl>
+            <dt>Me</dt>
+            <dd><a href="/about/" title="About me">About Me</a></dd>
+            <dd><a href="/projects/" title="My Current and past projects">My Projects</a></dd>
+            <dd><a href="/books/" title="What I have been reading">My Bookshelf</a></dd>
+            <dd><a href="/antilibrary/" title="What I have every intention of reading..."><em>The</em> Antilibrary</a></dd>
+            <dd><a href="/elsewhere/" title="Other places on the internet you can find me">Elsewhere</a></dd>
+            <dd><a href="/uses/" title="A somewhat complete list of tools, applications, hardware and services that I used on a day-to-day basis.">/uses</a></dd>
+            <dd><a href="/now/" title="A big picture glimpse into my what I’m focused on now">/now</a></dd>
+        </dl>
+
+        <dl>
+            <dt>Writing</dt>
+            <dd><a href="/writing/" title="Archive of all my writing">All Writing</a></dd>
+            <dd><a href="/essays/" title="Longform, invested ideas">Essays</a></dd>
+            <dd><a href="/tutorials/" title="Sharing the knowledge as best I can">Tutorials</a></dd>
+            <dd><a href="/noteworthy/" title="Short to medium length articles on things I find interesting">Noteworthy</a></dd>
+            <dd><a href="/thoughts/" title="Thoughts out loud, usually very short, very incomplete musings">Thoughts</a></dd>
+            <dd><a href="/glossary" title="Brief descriptions of terms and colloquialisms in use on this website">Glossary</a></dd>
+            <dd><a href="/writing/feed.xml" title="RSS Feed of all writing content">RSS</a></dd>
+            <dd><a href="/stats/" title="Post stats">Stats</a></dd>
+        </dl>
+
+        <dl>
+            <dt>Resources</dt>
+            <dd><a href="/resources/" title="Archive of all resources">All Resources</a></dd>
+            <dd><a href="/resources/bookmarks/" title="Links to webpages I have found useful or interesting">Bookmarks</a></dd>
+            <dd><a href="/resources/snippets/" title="Snippets of code or console commands that I would like to remember/reuse">Snippets</a></dd>
+            <dd><a href="/resources/quotes/" title="Referenced Quotes">Quotes</a></dd>
+            <dd><a href="/resources/jokes/" title="Mostly terrible Dad jokes">Jokes</a></dd>
+            <dd><a href="/resources/books/" title="All books I have read, or intend to read">Books</a></dd>
+        </dl>
+
+        <dl>
+            <dt>Lists/Collections</dt>
+            <dd><a href="/lists/" title="All Lists">List of Lists</a></dd>
+            <dd><a href="/topic/week-in-review/" title="Review of the week just past">Week In Review</a></dd>
+            <dd><a href="/lists/film-and-tv/" title="List of Films and TV Series I have watched">Films/TV Series</a></dd>
+            <dd><a href="/lists/listened-to/" title="What I have been listening to">Listened To</a></dd>
+        </dl>
+
+        <dl>
+            <dt>Community</dt>
+            <dd><a href="https://webring.xxiivv.com/#random" target="_blank" title="XXIIVV webring" class="icon" rel="noopener"><img src="/img/xxiivv.black.svg" alt="XXIIVV webring"/> Webring</a></dd>
+            <dd><a href="https://notacult.social/explore" target="_blank" title="Not A Cult, Mastodon Instance" rel="noopener">notacult.social</a></dd>
+            <dd><a href="/button-board/" title="Ye Ole Button Board">Button Board</a></dd>
+            <dd><a href="/links/" title="Links to websites I have found interesting">Blogroll</a></dd>
+        </dl>
+
+        <dl>
+            <dt>Etc.</dt>
+            <dd><a href="/special-thanks/" title="List of special people">Special Thanks</a></dd>
+            <dd><a href="/colophon/" title="About this website">Colophon</a></dd>
+            <dd><a href="/colophon/update/" title="Website Changelog">Changelog</a></dd>
+            <dd><a href="/styleguide/" title="The styleguide page, a demo of the stylesheet">Styleguide</a></dd>
+            <dd><a href="/blank" title="Blank Page">Blank page</a></dd>
+        </dl>
+    </nav>
+
+    <nav>
+        <p>
+            © {{ build.timestamp | dateToFormat('yyyy') }} Simon Dann. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="Licensed CC BY-NC 4.0">CC BY-NC-SA 4.0</a> | <a href="https://github.com/photogabble/website">src</a> | <a href="/legal/privacy">cookies &amp; privacy</a>.<br/>
+            <small>
+                Any and all opinions listed here are my own and not representative of my employers; future, past and present.<br/> I may earn a portion of sales from
+                products that are purchased through this site as part of <a href="/legal/affiliate-partnerships/" title="Disclosure of affiliate partnerships">Affiliate Partnerships</a> with retailers.<br/>
+                <small>Page built {% if metadata.commit.ref %} from <a href="{{ metadata.commit.url }}/commit/{{ metadata.commit.ref }}">{{ metadata.commit.ref | limit(7) }}</a> {% endif %} on {{ build.timestamp | dateToFormat('DDDD') }} at {{ build.timestamp | dateToFormat('TT') }} by <a href="https://www.netlify.com/">Netlify Elves</a>.</small>
+            </small>
+        </p>
+    </nav>
+</footer>
+</body>
+</html>

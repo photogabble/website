@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const {Select, Input, Confirm} = require('enquirer');
-const {slugify} = require("../utils/filters");
+const {slugify} = require("../lib/filters");
 const {DateTime} = require('luxon');
 const fetch = require("node-fetch");
 const cheerio = require('cheerio');

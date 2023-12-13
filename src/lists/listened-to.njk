@@ -1,0 +1,32 @@
+---
+title: Listened To
+titlePrefix: List
+folder: lists
+subTitle: What I have been listening to recently
+---
+{% extends "layouts/page.njk" %}
+
+{% block pageContent %}
+    <section>
+        <header><h2>Podcasts</h2></header>
+        <ul>
+            <li>
+                <a href="https://atp.fm/" rel="noopener">Accidental Tech Podcast</a> a very long time ago I used to chat to Marco on IRC. I stumbled upon this podcast after remembering they built Tumblr and wondering what they were up to now.
+            </li>
+            <li>
+                <a href="https://developertea.com/" rel="noopener">Developer Tea</a> I began listening to Jonathan's words of wisdom with his very first episode in 2015. I can't say I have listened to them all, but I still dip in from time to time.
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <header><h2>Music</h2></header>
+        <p>Coming <em>soon</em> with a last.fm integration...</p>
+    </section>
+
+    <hr/>
+
+    <section>
+        <p><small>This music list layout is inspired from <a href="https://www.higby.io/library/music/" title="Visit Branden Higby's music library">Branden Higby's music library</a> in their digital garden.</small></p>
+    </section>
+{% endblock %}

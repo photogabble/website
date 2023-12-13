@@ -1,0 +1,9 @@
+---
+folder: 'about'
+---
+{% extends "layouts/now.njk" %}
+
+{% set title = '/now' %}
+{% set isNow = true %}
+{% set page = collections.nowUpdates | reverse | first %}
+{% set content = page.templateContent %}

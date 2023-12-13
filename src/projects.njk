@@ -1,0 +1,47 @@
+{% extends "layouts/page.njk" %}
+
+{% set title = 'Projects' %}
+{% set projects = collections.contentTypes | findBySlug('projects') | values('items') %}
+
+{% block content %}
+    <h1>Projects</h1>
+
+    <section>
+        <h2>Featured</h2>
+        <ul>
+            {% for project in projects | whereKeyEquals('featured', true) %}
+                <li><a href="{{ project.url }}" title="Read {{ project.data.title }}">{{ project.data.title }}</a> <small>{{ project.data.language }}</small></li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    {% set wipProjects = projects | whereKeyEquals('featured', false) | whereKeyEquals('status', 'wip') %}
+    {% if wipProjects.length > 0 %}
+    <section>
+        <h2>Work In Progress / Help appreciated</h2>
+        <ul>
+            {% for project in wipProjects %}
+                <li><a href="{{ project.url }}" title="Read {{ project.data.title }}">{{ project.data.title }}</a> <small>{{ project.data.language }}</small></li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% endif %}
+
+    <section>
+        <h2>Tinkering</h2>
+        <ul>
+            {% for project in projects | whereKeyEquals('featured', false) | whereKeyEquals('status', 'tinkering') %}
+                <li><a href="{{ project.url }}" title="Read {{ project.data.title }}">{{ project.data.title }}</a> <small>{{ project.data.language }}</small></li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section>
+        <h2>Abandoned / Shelved</h2>
+        <ul>
+            {% for project in projects | whereKeyEquals('featured', false) | whereKeyEquals('status', 'abandoned') %}
+                <li><a href="{{ project.url }}" title="Read {{ project.data.title }}">{{ project.data.title }}</a> <small>{{ project.data.language }}</small></li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

@@ -1,12 +1,12 @@
 ---
 title: "Open Graph: posts.json"
-permalink: functions/_posts.json
+permalink: .cache/_posts.json
 permalinkBypassOutputDir: true
 eleventyExcludeFromCollections: true
 ---
 [{% for post in collections.post %}
     {
         "slug":"{{ post.data.title | slugify }}",
-        "template":"functions/_posts/{{ post.data.title | slugify }}/og-image.html"
+        "template":".cache/_posts/{{ post.data.title | slugify }}/og-image.html"
     }{% if not loop.last %},{% endif %}
 {% endfor %}]

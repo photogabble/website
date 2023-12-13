@@ -1,9 +1,9 @@
-const filters = require('./utils/filters')
-const collections = require('./utils/collections');
-const {slugify} = require('./utils/filters');
-const shortcodes = require('./utils/shortcodes');
-const transforms = require('./utils/transforms');
-const ObjectCache = require("./utils/helpers/cache");
+const filters = require('./lib/filters')
+const collections = require('./lib/collections');
+const {slugify} = require('./lib/filters');
+const shortcodes = require('./lib/shortcodes');
+const transforms = require('./lib/transforms');
+const ObjectCache = require("./lib/helpers/cache");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
@@ -12,7 +12,7 @@ module.exports = function (eleventyConfig) {
   // Install Plugins
   //
 
-  eleventyConfig.addPlugin(require('./utils/helpers/screenshot'));
+  eleventyConfig.addPlugin(require('./lib/helpers/screenshot'));
 
   eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-interlinker'), {
     defaultLayout: 'layouts/embed.liquid',
@@ -20,12 +20,12 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-font-subsetting'), {
     srcFiles: [
-      `./_assets/fonts/iosevka-etoile-regular.woff2`,
-      `./_assets/fonts/iosevka-etoile-italic.woff2`,
-      `./_assets/fonts/iosevka-etoile-bold.woff2`,
-      `./_assets/fonts/iosevka-etoile-bolditalic.woff2`,
+      `./public/fonts/iosevka-etoile-regular.woff2`,
+      `./public/fonts/iosevka-etoile-italic.woff2`,
+      `./public/fonts/iosevka-etoile-bold.woff2`,
+      `./public/fonts/iosevka-etoile-bolditalic.woff2`,
     ],
-    dist: './fonts',
+    dist: './src/fonts',
     enabled: process.env.ELEVENTY_ENV !== 'production',
     cache: new ObjectCache('font-subsetting'),
   });
@@ -35,7 +35,8 @@ module.exports = function (eleventyConfig) {
     similar: {
       'Game Development': ['GameDev'],
       'Retro Computing': ['RetroComputing'],
-      'Node JS': ['Node']
+      'Node JS': ['Node'],
+      '365 Day Project': ['365DayProject']
     },
     slugify,
   });
@@ -110,17 +111,25 @@ module.exports = function (eleventyConfig) {
   //
 
   eleventyConfig.addPassthroughCopy({
-    '_assets/favicon': '/',
-    '_assets/files': 'files',
-    'img': './img',
+    'public/favicon': '/',
+    'public/files': 'files',
+    'public/img': 'img',
     '_redirects': '_redirects',
-    '_assets/og-image': 'img/og-image',
+    'public/og-image': 'img/og-image',
+    'public/main.js': 'main.js',
   });
 
   //
   // Markdown-It && Plugins
   //
 
-  eleventyConfig.setLibrary('md', require('./utils/helpers/markdown'));
+  eleventyConfig.setLibrary('md', require('./lib/helpers/markdown'));
+
+  return {
+    dir: {
+      input: "src",
+      output: "_site"
+    }
+  };
 
 };

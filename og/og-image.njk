@@ -3,7 +3,7 @@ pagination:
     data: collections.post
     size: 1
     alias: article
-permalink: functions/_posts/{{ article.data.title | slugify }}/og-image.html
+permalink: .cache/_posts/{{ article.data.title | slugify }}/og-image.html
 permalinkBypassOutputDir: true
 eleventyExcludeFromCollections: true
 ---

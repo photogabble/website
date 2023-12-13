@@ -1,0 +1,21 @@
+---
+pagination:
+  data: collections.contentPaginatedByYearMonth
+  size: 1
+  alias: yearMonth
+permalink: /writing/{{ yearMonth.slug }}/index.html
+folder: writing
+titlePrefix: Index
+---
+{% set title = yearMonth.title %}
+{% extends "layouts/page.njk" %}
+
+{% block pageContent %}
+  <section>
+    {% set displayContentType = true %}
+    {% set postsList = yearMonth.items | reverse %}
+    {% include "components/post-list.njk" %}
+  </section>
+
+  {% include 'components/planting-times.njk' %}
+{% endblock %}
