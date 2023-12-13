@@ -1,0 +1,39 @@
+{% if changes %}
+  <h2>Git History</h2>
+  <ol class="changes" id="changesList">
+    {% for c in changes %}
+      <li class="change" style="{% if loop.index0 >= 5 %}display: none;{% endif %}">
+        <a href="{{ c.url }}">
+          <span class="change__title">{{ c.message }}</span>
+        </a>
+        <hr/>
+        <time>{{ c.date }}</time>
+      </li>
+    {% endfor %}
+  </ol>
+
+  {% if changes.length > 5 %}
+    <button id="showMoreButton" onclick="showMoreChanges()">Show All</button>
+  {% endif %}
+{% endif %}
+
+<script>
+let showAll = true;
+function showMoreChanges() {
+  const changesList = document.getElementById('changesList');
+  const showMoreButton = document.getElementById('showMoreButton');
+
+  Array.from(changesList.children).forEach((entry, index) => {
+    if(showAll) {
+      entry.style.display = 'flex';
+    } else if(!showAll && index >= 5) {
+      entry.style.display = 'none';
+    }
+  });
+
+  if(showAll) showMoreButton.innerHTML = 'Show Less'
+  else showMoreButton.innerHTML = 'Show All'
+
+  showAll = !showAll
+}
+</script>
