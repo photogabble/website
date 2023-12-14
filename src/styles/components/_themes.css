@@ -4,6 +4,12 @@ html:root, html.theme-dark, .theme-picker li.theme-dark {
     --foreground: #e1dede;
     --foreground-muted: #a5a1a3;
     --accent: #fbc367;
+
+    --nav-pulldown-background-color: #001d21;
+    --nav-pulldown-text-color: white;
+    --nav-pulldown-accent-color: rgb(205 203 255);
+    --nav-pulldown-anchor-color: rgb(205 203 255);
+    --nav-pulldown-anchor-hover-color: #ff353f;
 }
 
 html.theme-camel-sands, .theme-picker li.theme-camel-sands {

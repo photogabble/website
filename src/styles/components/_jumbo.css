@@ -1,0 +1,66 @@
+.jumbo-nav {
+    background: var(--nav-pulldown-background-color);
+}
+
+.jumbo-nav nav {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+    color: var(--nav-pulldown-text-color);
+    font-size: 1.1rem;
+    margin-top:2em;
+    margin-bottom: 2em;
+}
+
+.jumbo-nav dt {
+    text-transform: uppercase;
+    font-size: 80%;
+}
+
+.jumbo-nav dd {
+    margin: 0;
+}
+
+.jumbo-nav dd a {
+    text-decoration: none;
+    color: var(--nav-pulldown-text-color);
+}
+
+.jumbo-nav dd span:first-child {
+    color: var(--nav-pulldown-anchor-color);
+    margin-right: 0.3rem;
+    font-size: smaller;
+}
+
+.jumbo-nav dd span:nth-child(2) {
+    border-bottom: 1px solid var(--nav-pulldown-anchor-color);
+}
+
+.jumbo-nav dd a:hover span:first-child {
+    color: var(--nav-pulldown-anchor-hover-color);
+}
+
+.jumbo-nav dd a:hover span:nth-child(2) {
+    border-bottom-color: var(--nav-pulldown-anchor-hover-color);
+}
+
+.jumbo-nav div:last-child {
+    grid-column-end: span 2;
+}
+
+.jumbo-nav div:last-child a {
+    color: var(--nav-pulldown-anchor-color);
+    text-decoration: underline;
+}
+
+@media(max-width: 1024px) {
+    .jumbo-nav nav {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 425px) {
+    .jumbo-nav nav {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

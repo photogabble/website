@@ -1,0 +1,63 @@
+{% set buttonBoard = collections.lists | whereKeyEquals('slug', 'button-board') | first %}
+
+<section class="jumbo-nav">
+    <nav class="container">
+        <dl>
+            <dt>Writing</dt>
+            <dd><a href="/essays"><span>2</span><span>Essays</span></a></dd>
+            <dd><a href="/tutorials"><span>8</span><span>Tutorials</span></a></dd>
+            <dd><a href="/noteworthy"><span>87</span><span>Noteworthy</span></a></dd>
+            <dd><a href="/thoughts"><span>144</span><span>Thoughts</span></a></dd>
+            <dd><a href="/glossary"><span>8</span><span>Glossary</span></a></dd>
+            <dd><a href="/notes"><span>124</span><span>Notes</span></a></dd>
+            <dd><a href="/writing" title="View all Writing (archive)"><small>View all <span aria-hidden="true">→</span></small></a></dd>
+        </dl>
+        <dl>
+            <dt>Lists/Collections</dt>
+            <dd><a href="/topic/week-in-review/"><span>1,819</span><span>Week In Review</span></a></dd>
+            <dd><a href="/lists/film-and-tv/"><span>91</span><span>Films & TV Series</span></a></dd>
+            <dd><a href="/lists/listened-to/"><span>87</span><span>Listened To</span></a></dd>
+            <dd><a href="/books"><span>3</span><span>My Bookshelf</span></a></dd>
+            <dd><a href="/antilibrary"><span>81</span><span><em>The</em> Antilibrary</span></a></dd>
+            <dd><a href="/lists" title="View all lists and collections (archive)"><small>View all <span aria-hidden="true">→</span></small></a></dd>
+        </dl>
+        <dl>
+            <dt>Resources</dt>
+            <dd><a href="/resources/bookmarks"><span>1,819</span><span>Bookmarks</span></a></dd>
+            <dd><a href="/resources/quotes"><span>91</span><span>Quotes</span></a></dd>
+            <dd><a href="/resources/jokes"><span>87</span><span>Jokes</span></a></dd>
+            <dd><a href="/resources" title="View all Resources (archive)"><small>View all <span aria-hidden="true">→</span></small></a></dd>
+        </dl>
+        <dl>
+            <dt>Personal</dt>
+            <dd><a href="/about"><span>About</span></a></dd>
+            <dd><a href="/elsewhere"><span>Elsewhere</span></a></dd>
+            <dd><a href="/projects"><span>My Projects</span></a></dd>
+            <dd><a href="/now"><span>/now</span></a></dd>
+            <dd><a href="/uses"><span>/uses</span></a></dd>
+        </dl>
+        <div>
+            <dl>
+                <dt>Button Board</dt>
+                <dd>
+                    <small>A random selection from my <a href="/button-board">Button Board</a>:</small>
+                </dd>
+                <dd>
+                    {%- for item in buttonBoard.items | randomItems(4) -%}
+                        <a href="{{ item.data.cite.href }}" class="no-ext btn-88x31" rel="noopener" title="Visit {{ item.data.title }}">
+                            <img width="88" height="31" src="/img/88x31/{{ item.data.button }}" alt="88x31 button for {{ item.data.title }}" aria-hidden="true" />
+                        </a>
+                    {%- endfor -%}
+                </dd>
+            </dl>
+            <dl>
+                <dt>Community</dt>
+                <dd>
+                    <a href="/links"><span>Blogroll</span></a>
+                    <a href="https://webring.xxiivv.com/"><span>WebRing</span></a>
+                    <a href="https://notacult.social"><span>notacult.social</span></a>
+                </dd>
+            </dl>
+        </div>
+    </nav>
+</section>

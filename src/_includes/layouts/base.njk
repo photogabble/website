@@ -100,7 +100,9 @@
     </nav>
 </aside>
 
-<main>
+{% include "../components/jumbo-nav.njk" %}
+
+<main class="container">
     <header>
         {% block header %}
             {{ header | safe }}
