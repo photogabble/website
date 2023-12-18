@@ -100,16 +100,21 @@
     </nav>
 </aside>
 
-{% include "../components/jumbo-nav.njk" %}
-
-<main class="container">
-    <header>
+<header class="jumbo-nav__open">
+    <div class="container">
         {% block header %}
             {{ header | safe }}
         {% endblock %}
+    </div>
+    {% include "../components/jumbo-nav.njk" %}
+</header>
 
-        <button class="btn" onclick="toggleThemePicker()">Theme Picker</button>
-    </header>
+<main class="container">
+{#    <header>#}
+
+
+{#        <button class="btn" onclick="toggleThemePicker()">Theme Picker</button>#}
+{#    </header>#}
     {% block content %}
         {{ content | safe }}
     {% endblock %}

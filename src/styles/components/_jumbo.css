@@ -1,5 +1,14 @@
 .jumbo-nav {
+    display: none;
+}
+
+.jumbo-nav__open, .jumbo-nav {
     background: var(--nav-pulldown-background-color);
+
+}
+
+.jumbo-nav__open .jumbo-nav {
+    display: block;
 }
 
 .jumbo-nav nav {

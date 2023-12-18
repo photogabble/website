@@ -1,31 +1,37 @@
 {% set buttonBoard = collections.lists | whereKeyEquals('slug', 'button-board') | first %}
+{% set grouped = collections.post | excludeStubs | groupByKey('contentType') %}
+{% set stubs = collections.post | onlyGrowthStages('stub') %}
+{% set weekInReview = collections.contentTags | whereKeyEquals('slug', 'week-in-review') | first | values('items') %}
+{% set antilibrary = bookwyrm | whereKeyEquals('shelf', 'to-read') %}
+{% set read = bookwyrm | whereKeyEquals('shelf', 'read') %}
+{% set resources = collections.resources | groupByKey('resourceType') %}
 
 <section class="jumbo-nav">
     <nav class="container">
         <dl>
             <dt>Writing</dt>
-            <dd><a href="/essays"><span>2</span><span>Essays</span></a></dd>
-            <dd><a href="/tutorials"><span>8</span><span>Tutorials</span></a></dd>
-            <dd><a href="/noteworthy"><span>87</span><span>Noteworthy</span></a></dd>
-            <dd><a href="/thoughts"><span>144</span><span>Thoughts</span></a></dd>
-            <dd><a href="/glossary"><span>8</span><span>Glossary</span></a></dd>
-            <dd><a href="/notes"><span>124</span><span>Notes</span></a></dd>
+            <dd><a href="/essays"><span>{{ grouped.get('essay').length }}</span><span>Essays</span></a></dd>
+            <dd><a href="/tutorials"><span>{{ grouped.get('tutorial').length }}</span><span>Tutorials</span></a></dd>
+            <dd><a href="/noteworthy"><span>{{ grouped.get('noteworthy').length }}</span><span>Noteworthy</span></a></dd>
+            <dd><a href="/thoughts"><span>{{ grouped.get('thought').length }}</span><span>Thoughts</span></a></dd>
+            <dd><a href="/glossary"><span>{{ grouped.get('glossary').length }}</span><span>Glossary</span></a></dd>
+            <dd><a href="/stubs"><span>{{ stubs.length }}</span><span>Stubs</span></a></dd>
             <dd><a href="/writing" title="View all Writing (archive)"><small>View all <span aria-hidden="true">→</span></small></a></dd>
         </dl>
         <dl>
             <dt>Lists/Collections</dt>
-            <dd><a href="/topic/week-in-review/"><span>1,819</span><span>Week In Review</span></a></dd>
-            <dd><a href="/lists/film-and-tv/"><span>91</span><span>Films & TV Series</span></a></dd>
-            <dd><a href="/lists/listened-to/"><span>87</span><span>Listened To</span></a></dd>
-            <dd><a href="/books"><span>3</span><span>My Bookshelf</span></a></dd>
-            <dd><a href="/antilibrary"><span>81</span><span><em>The</em> Antilibrary</span></a></dd>
+            <dd><a href="/topic/week-in-review/"><span>{{ weekInReview.length }}</span><span>Week In Review</span></a></dd>
+            <dd><a href="/lists/film-and-tv/"><span>{{ movies.length }}</span><span>Films & TV Series</span></a></dd>
+            <dd><a href="/lists/listened-to/"><span>*</span><span>Listened To</span></a></dd>
+            <dd><a href="/books"><span>{{ read.length }}</span><span>My Bookshelf</span></a></dd>
+            <dd><a href="/antilibrary"><span>{{ antilibrary.length }}</span><span><em>The</em> Antilibrary</span></a></dd>
             <dd><a href="/lists" title="View all lists and collections (archive)"><small>View all <span aria-hidden="true">→</span></small></a></dd>
         </dl>
         <dl>
             <dt>Resources</dt>
-            <dd><a href="/resources/bookmarks"><span>1,819</span><span>Bookmarks</span></a></dd>
-            <dd><a href="/resources/quotes"><span>91</span><span>Quotes</span></a></dd>
-            <dd><a href="/resources/jokes"><span>87</span><span>Jokes</span></a></dd>
+            <dd><a href="/resources/bookmarks"><span>{{ resources.get('bookmarks').length }}</span><span>Bookmarks</span></a></dd>
+            <dd><a href="/resources/quotes"><span>{{ resources.get('quotes').length }}</span><span>Quotes</span></a></dd>
+            <dd><a href="/resources/jokes"><span>{{ resources.get('jokes').length }}</span><span>Jokes</span></a></dd>
             <dd><a href="/resources" title="View all Resources (archive)"><small>View all <span aria-hidden="true">→</span></small></a></dd>
         </dl>
         <dl>

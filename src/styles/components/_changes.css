@@ -14,6 +14,10 @@
   gap: 0.5rem;
 }
 
+.change a {
+  overflow: hidden;
+}
+
 .change hr {
   flex-grow: 1;
   margin: 0;
