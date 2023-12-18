@@ -1,12 +1,10 @@
-{% extends "layouts/base.njk" %}
+{% extends "layouts/page.njk" %}
 
 {% set articlesList = collections.post | excludeStubs %}
 
-{% block header %}
-  <h1><span class="selected">Hey</span>, I'm Simon.</h1>
-{% endblock %}
-
 {% block content %}
+  <h1><span class="selected">Hello</span>, I'm Simon.</h1>
+
   <section>
     <p>I'm a <a href="https://github.com/carbontwelve">"full stack" web developer</a> and proud father of two. My interests include vintage computing, astrophysics and game development. I currently work as a senior developer for Wefix.</p>
     <p>In my spare time I maintain a number of <a href="/projects/">Open Source Projects</a> and can be found on <a href="/elsewhere/">various online platforms &amp; communities</a>.</p>
