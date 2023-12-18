@@ -220,6 +220,16 @@ const movies = [
     imdb: 'https://www.imdb.com/title/tt2404435/'
   },
 
+  {
+    title: 'The Mother',
+    year: 2023,
+    watchedDate: '2023-07-30',
+    reWatch: false,
+    review: '',
+    rating: 4,
+    imdb: 'https://www.imdb.com/title/tt6968614/'
+  },
+
   // {
   //   title: 'Everything Everywhere All at Once',
   //   year: 2022,
