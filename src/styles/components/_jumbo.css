@@ -1,10 +1,71 @@
+body > header {
+    margin-bottom: 40px;
+}
+
+body > header > div {
+    padding-top: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+body > header > div > *:first-child {
+    flex-grow: 1;
+}
+
+body > header > div a {
+    text-decoration: none;
+    padding: 0 0.25rem;
+}
+
+body > header > div a:first-child {
+    padding-left: 0;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1em;
+}
+
+.action-buttons button {
+    width: auto;
+    border-radius: 1em;
+    font-size: 0.7em;
+    padding: 0 15px;
+
+    height: 30px;
+    background: transparent;
+    border: 2px solid var(--nav-pulldown-text-color);
+    color: var(--nav-pulldown-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.action-buttons button:hover {
+    background: var(--nav-pulldown-text-color);
+    color: var(--nav-pulldown-background-color);
+}
+
+.action-buttons svg {
+    width: 20px;
+    height: 20px;
+}
+
+.action-buttons button.icon {
+    width: 30px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
 .jumbo-nav {
     display: none;
 }
 
 .jumbo-nav__open, .jumbo-nav {
     background: var(--nav-pulldown-background-color);
-
 }
 
 .jumbo-nav__open .jumbo-nav {

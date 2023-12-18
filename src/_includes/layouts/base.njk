@@ -100,7 +100,7 @@
     </nav>
 </aside>
 
-<header class="jumbo-nav__open">
+<header id="jumbo-nav">
     <div class="container">
         {% block header %}
             {{ header | safe }}
@@ -110,11 +110,6 @@
 </header>
 
 <main class="container">
-{#    <header>#}
-
-
-{#        <button class="btn" onclick="toggleThemePicker()">Theme Picker</button>#}
-{#    </header>#}
     {% block content %}
         {{ content | safe }}
     {% endblock %}

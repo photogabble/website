@@ -135,33 +135,6 @@ a.no-underline {
   padding: 0 0.2rem;
 }
 
-/* Main Header */
-body > header {
-  margin-bottom: 40px;
-}
-
-body > header > div {
-  padding-top: 80px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-size: 1.2em;
-}
-
-body > header > div > *:first-child {
-  flex-grow: 1;
-}
-
-body > header > div a {
-  text-decoration: none;
-  padding: 0 0.25rem;
-}
-
-body > header > div a:first-child {
-  padding-left: 0;
-}
-
-
 main,
 header {
   display: flex;
@@ -178,33 +151,6 @@ main ul {
   width: 85%;
   max-width: 864px;
 }
-
-/*
-main > header {
-  margin-bottom: 40px;
-}
-
-main > header {
-  padding-bottom: 0;
-  padding-top: 80px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-main > header > *:first-child {
-  flex-grow: 1;
-}
-
-main > header a {
-  text-decoration: none;
-  padding: 0 0.25rem;
-}
-
-main > header a:first-child {
-  padding-left: 0;
-}
-*/
 
 article > header {
   padding: 2em 0 1em 0;
@@ -485,6 +431,10 @@ p.down-the-rabbit-hole .margin-note img {
     margin: 0;
     width: 100%;
     padding: 0 1em;
+  }
+
+  body > header > div.container{
+    margin-top: 40px;
   }
 
   main p,
