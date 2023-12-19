@@ -1,0 +1,38 @@
+{% extends "layouts/blank-base.njk" %}
+
+{% set title = 'Return to the Forrest' %}
+
+{% block stylesheet %}
+    <style>
+        body {
+            background-image: url(/img/backgrounds/forrestfromskybk.gif);
+            font-family: monospace;
+            color: #ffd93b;
+            font-size: 3vw;
+            line-height: 1.25;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        blockquote{
+            background: #0b212c8c;
+            padding: 1em;
+        }
+        cite{
+            font-size: 2vw;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <blockquote>
+        And into the<br/>
+        forrest I go,<br/>
+        to lose my<br/>
+        mind and<br/>
+        gain my soul.<br/>
+        <cite>— John Muir</cite>
+    </blockquote>
+{% endblock %}
