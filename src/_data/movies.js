@@ -226,8 +226,18 @@ const movies = [
     watchedDate: '2023-07-30',
     reWatch: false,
     review: '',
-    rating: 4,
+    rating: 3.5,
     imdb: 'https://www.imdb.com/title/tt6968614/'
+  },
+
+  {
+    title: 'Gods of Egypt',
+    year: 2016,
+    watchedDate: '2023-12-19',
+    reWatch: false,
+    review: 'I am a man of many talents',
+    rating: 4,
+    imdb: 'https://www.imdb.com/title/tt2404233/'
   },
 
   // {
