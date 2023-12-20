@@ -3,10 +3,18 @@
     grid-template-columns: 1fr 1fr;
     gap: 1em;
 }
-.stats__post-graphs h2 {
+.stats__post-graphs header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
     grid-column: span 2;
     margin-bottom: 0;
 }
+.stats__post-graphs header h2 {
+    flex-grow: 1;
+}
+
 
 @media (min-width: 864px){
     .stats__header > header {
@@ -27,7 +35,7 @@
         grid-template-columns: 1fr;
     }
 
-    .stats__post-graphs h2 {
+    .stats__post-graphs header {
         grid-column: 1;
     }
 

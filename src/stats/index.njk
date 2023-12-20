@@ -46,8 +46,11 @@ folder: [writing]
     </section>
 
     <section class="stats__post-graphs">
-        <h2>Activity: This Year Vs Previous</h2>
-        {% postGraph collections.post, {only: [2022, 2023]} %}
+        <header>
+            <h2>Activity: This Year Vs Previous</h2>
+            <a href="/stats/all-time">View all years</a>
+        </header>
+        {% postGraph collections.post, {sort: 'desc', limit: 2} %}
     </section>
 
     <section>
