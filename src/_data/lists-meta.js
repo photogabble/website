@@ -50,6 +50,11 @@ module.exports = {
     description: 'List of channels I enjoy watching',
   },
 
+  'list/forum': {
+    title: 'Forums',
+    description: 'List of Forums'
+  },
+
   // Continuous Writing Projects
 
   'list/week-in-review': {

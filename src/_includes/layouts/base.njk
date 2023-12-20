@@ -100,21 +100,23 @@
     </nav>
 </aside>
 
-<main>
-    <header>
+<header id="jumbo-nav">
+    <div class="container">
         {% block header %}
             {{ header | safe }}
         {% endblock %}
+    </div>
+    {% include "../components/jumbo-nav.njk" %}
+</header>
 
-        <button class="btn" onclick="toggleThemePicker()">Theme Picker</button>
-    </header>
+<main class="container">
     {% block content %}
         {{ content | safe }}
     {% endblock %}
 </main>
 <footer>
     <nav>
-        <div>
+        <div class="container">
             <dl>
                 <dt><a href="/forrest" title="Return to the forrest" class="no-underline">🌱</a> Simon Dann</dt>
                 <dd><a href="/topic" title="All topics in use">Topics</a></dd>
@@ -132,7 +134,7 @@
         </div>
     </nav>
 
-    <nav>
+    <nav class="container">
         <dl>
             <dt>Me</dt>
             <dd><a href="/about/" title="About me">About Me</a></dd>
@@ -192,7 +194,7 @@
         </dl>
     </nav>
 
-    <nav>
+    <nav class="container">
         <p>
             © {{ build.timestamp | dateToFormat('yyyy') }} Simon Dann. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="Licensed CC BY-NC 4.0">CC BY-NC-SA 4.0</a> | <a href="https://github.com/photogabble/website">src</a> | <a href="/legal/privacy">cookies &amp; privacy</a>.<br/>
             <small>

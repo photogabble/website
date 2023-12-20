@@ -6,17 +6,21 @@ titlePrefix: "Me"
 
 I can be found in the following online communities:
 
-* <a href="https://www.polywork.com/dann">Polywork</a>,
+* <a href="https://basementcommunity.com/">Basement Community Forum</a>,
 * <a href="https://notacult.social/@carbontwelve">Mastodon (notacult.social)</a>,
 * <a href="https://phpc.social/@carbontwelve">Mastodon (phpc.social)</a>,
 * <a href="https://spacehey.com/carbontwelve">SpaceHey</a>,
 * <a href="https://lobste.rs/u/c12">Lobste.rs</a>,
 * <a href="https://news.ycombinator.com/user?id=c12">Hacker News</a>,
-* <a href="https://www.youtube.com/channel/UCgyw5PRS1DAhL8fk4_he6fQ">Youtube</a>,
-* <a href="https://github.com/carbontwelve">Github</a>.
+* <a href="https://www.youtube.com/channel/UCgyw5PRS1DAhL8fk4_he6fQ">YouTube</a>,
+* <a href="https://github.com/carbontwelve">GitHub</a>,
+* <a href="https://mltshp.com/">Mltshop</a>.
 
 I have accounts on the following platforms, but I <em>infrequently</em> visit them:
 
+* <a href="https://basementcommunity.com/">Basement Community Forum</a>,
+* <a href="http://www.yayhooray.com/">YayHooray</a>,
+* <a href="https://www.qbn.com/">QBN</a>,
 * <a href="https://keybase.io/carbontwelve">Keybase</a>,
 * <a href="https://en.gravatar.com/carbontwelve">Gravatar</a>,
 * <a href="https://twitter.com/carbontwelve">Twitter</a>,

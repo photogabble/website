@@ -13,9 +13,17 @@
 @import "components/_footer.css";
 @import "components/_review_list.css";
 @import "components/_changes.css";
+@import "components/_jumbo.css";
 
 * {
   box-sizing: border-box;
+}
+
+.container {
+  max-width: 1440px;
+  width: 75%;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
 }
 
 body {
@@ -77,6 +85,7 @@ hr {
   border: 0;
   border-bottom: 3px double var(--foreground-muted);
   margin: 2rem 0;
+  min-width: 1em;
 }
 
 figure.fullwidth img {
@@ -133,42 +142,14 @@ header {
 }
 
 main {
-  max-width: 1400px;
-  width: 87.5%;
-  padding-left: 12.5%;
   font-size: 1.2em;
   flex-grow: 1;
-}
-
-main > header {
-  margin-bottom: 40px;
 }
 
 main p,
 main ul {
   width: 85%;
   max-width: 864px;
-}
-
-main > header {
-  padding-bottom: 0;
-  padding-top: 80px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-main > header > *:first-child {
-  flex-grow: 1;
-}
-
-main > header a {
-  text-decoration: none;
-  padding: 0 0.25rem;
-}
-
-main > header a:first-child {
-  padding-left: 0;
 }
 
 article > header {
@@ -446,9 +427,14 @@ p.down-the-rabbit-hole .margin-note img {
 }
 
 @media (max-width: 864px) {
-  main {
+  .container {
+    margin: 0;
     width: 100%;
-    padding: 0 25px;
+    padding: 0 1em;
+  }
+
+  body > header > div.container{
+    margin-top: 40px;
   }
 
   main p,

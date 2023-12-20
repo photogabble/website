@@ -37,6 +37,7 @@ const fetchUrl = async (url, date) => {
       'Notable Articles',
       'list/blogroll',
       'list/webring',
+      'list/forum',
       'list/www-club',
       'list/games',
     ];
@@ -84,7 +85,7 @@ const fetchUrl = async (url, date) => {
     const topic = await topicPrompt.run();
 
     const filename = `${date}-${slugify(title)}.md`;
-    const pathname = `${__dirname}/../content/resources/bookmarks/${filename}`;
+    const pathname = `${__dirname}/../src/content/resources/bookmarks/${filename}`;
 
     if (fs.existsSync(pathname)) {
       console.log(`File exists at [${pathname}]`);

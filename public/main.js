@@ -7,6 +7,15 @@ function toggleThemePicker() {
   }
 }
 
+function toggleJumboMenu() {
+  const jumboMenu = document.querySelector('#jumbo-nav');
+  if (jumboMenu.classList.contains('jumbo-nav__open')) {
+    jumboMenu.classList.remove('jumbo-nav__open');
+  } else {
+    jumboMenu.classList.add('jumbo-nav__open');
+  }
+}
+
 function setTheme(themeName) {
   localStorage.setItem('theme', themeName);
   document.documentElement.className = 'theme-' + themeName;
