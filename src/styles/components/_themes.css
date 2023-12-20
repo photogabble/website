@@ -1,15 +1,20 @@
 html:root, html.theme-dark, .theme-picker li.theme-dark {
+    /* Base Palette */
     --background: #18181c;
     --background-muted: #494f5c;
     --foreground: #e1dede;
     --foreground-muted: #a5a1a3;
     --accent: #fbc367;
 
-    --nav-pulldown-background-color: #001d21;
-    --nav-pulldown-text-color: white;
-    --nav-pulldown-accent-color: rgb(205 203 255);
-    --nav-pulldown-anchor-color: rgb(205 203 255);
-    --nav-pulldown-anchor-hover-color: #ff353f;
+    /* Jumbo Nav Colours */
+    --jumbo-nav-background-color: #001d21;
+    --jumbo-nav-text-color: white;
+    --jumbo-nav-accent-color: rgb(205 203 255);
+    --jumbo-nav-anchor-color: rgb(205 203 255);
+    --jumbo-nav-anchor-hover-color: #ff353f;
+
+    /* Footer Colours */
+
 }
 
 html.theme-camel-sands, .theme-picker li.theme-camel-sands {
@@ -18,6 +23,11 @@ html.theme-camel-sands, .theme-picker li.theme-camel-sands {
     --foreground: #292823;
     --foreground-muted: #19264b;
     --accent: #ff353f;
+
+    --jumbo-nav-background-color: #45312b;
+    --jumbo-nav-accent-color: var(--background-muted);
+    --jumbo-nav-anchor-color: var(--background-muted);
+    --jumbo-nav-anchor-hover-color: var(--accent);
 }
 
 html.theme-corn-flower, .theme-picker li.theme-corn-flower {
@@ -26,6 +36,8 @@ html.theme-corn-flower, .theme-picker li.theme-corn-flower {
     --foreground: #232323;
     --foreground-muted: #384043;
     --accent: #7754b0;
+
+    --jumbo-nav-background-color: #0B0026;
 }
 
 html.theme-chocolate-thunda, .theme-picker li.theme-chocolate-thunda {
@@ -42,6 +54,10 @@ html.theme-coffee, .theme-picker li.theme-coffee {
     --foreground: #F5E7DE;
     --foreground-muted: #fbc367;
     --accent: #ffb079;
+
+    --jumbo-nav-background-color: #2b190d;
+    --jumbo-nav-accent-color: var(--accent);
+    --jumbo-nav-anchor-color: var(--accent);
 }
 
 html.theme-summer, .theme-picker li.theme-summer {

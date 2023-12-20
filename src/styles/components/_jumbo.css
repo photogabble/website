@@ -19,6 +19,10 @@ body > header > div a {
     padding: 0 0.25rem;
 }
 
+body > header > div a:hover{
+    text-decoration: underline;
+}
+
 body > header > div a:first-child {
     padding-left: 0;
 }
@@ -36,8 +40,8 @@ body > header > div a:first-child {
 
     height: 30px;
     background: transparent;
-    border: 2px solid var(--nav-pulldown-text-color);
-    color: var(--nav-pulldown-text-color);
+    border: 2px solid var(--foreground);
+    color: var(--foreground);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,8 +49,8 @@ body > header > div a:first-child {
 }
 
 .action-buttons button:hover {
-    background: var(--nav-pulldown-text-color);
-    color: var(--nav-pulldown-background-color);
+    background: var(--foreground);
+    color: var(--background);
 }
 
 .action-buttons svg {
@@ -65,18 +69,32 @@ body > header > div a:first-child {
 }
 
 .jumbo-nav__open, .jumbo-nav {
-    background: var(--nav-pulldown-background-color);
+    background: var(--jumbo-nav-background-color);
+}
+
+.jumbo-nav__open {
+    color: var(--jumbo-nav-text-color);
 }
 
 .jumbo-nav__open .jumbo-nav {
     display: block;
 }
 
+.jumbo-nav__open .action-buttons button {
+    border: 2px solid var(--jumbo-nav-text-color);
+    color: var(--jumbo-nav-text-color);
+}
+
+.jumbo-nav__open .action-buttons button:hover {
+    background: var(--jumbo-nav-text-color);
+    color: var(--jumbo-nav-background-color);
+}
+
 .jumbo-nav nav {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
 
-    color: var(--nav-pulldown-text-color);
+    color: var(--jumbo-nav-text-color);
     font-size: 1.1rem;
     margin-top:2em;
     margin-bottom: 2em;
@@ -93,25 +111,25 @@ body > header > div a:first-child {
 
 .jumbo-nav dd a {
     text-decoration: none;
-    color: var(--nav-pulldown-text-color);
+    color: var(--jumbo-nav-text-color);
 }
 
 .jumbo-nav dd span:first-child {
-    color: var(--nav-pulldown-anchor-color);
+    color: var(--jumbo-nav-anchor-color);
     margin-right: 0.3rem;
     font-size: smaller;
 }
 
 .jumbo-nav dd span:nth-child(2) {
-    border-bottom: 1px solid var(--nav-pulldown-anchor-color);
+    border-bottom: 1px solid var(--jumbo-nav-anchor-color);
 }
 
 .jumbo-nav dd a:hover span:first-child {
-    color: var(--nav-pulldown-anchor-hover-color);
+    color: var(--jumbo-nav-anchor-hover-color);
 }
 
 .jumbo-nav dd a:hover span:nth-child(2) {
-    border-bottom-color: var(--nav-pulldown-anchor-hover-color);
+    border-bottom-color: var(--jumbo-nav-anchor-hover-color);
 }
 
 .jumbo-nav div:last-child {
@@ -119,7 +137,7 @@ body > header > div a:first-child {
 }
 
 .jumbo-nav div:last-child a {
-    color: var(--nav-pulldown-anchor-color);
+    color: var(--jumbo-nav-anchor-color);
     text-decoration: underline;
 }
 
