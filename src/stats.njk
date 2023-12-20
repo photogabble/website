@@ -7,40 +7,48 @@ folder: [writing]
 {% set titlePrefix = 'Writing' %}
 {% set postStats = collections.post | excludeTypes(['mirror', 'resource']) | excludeStubs | collectionStats %}
 {% set subTitle = 'A shameless copy of <a href="https://timharek.no/stats/">Tim Hårek Andreassen\'s blog stats page</a>' %}
+{% set headingClass = 'stats__header' %}
+
+{% block pageHeaderAfter %}
+    {% blogtimes %}
+{% endblock %}
 
 {% block pageContent %}
     <section>
-        {% blogtimes %}
+        <table>
+            <tbody>
+            <tr>
+                <th>Total Words written</th>
+                <td>{{ postStats.totalWords }}</td>
+            </tr>
+            <tr>
+                <th>Total Posts published</th>
+                <td>{{ postStats.totalItems }}</td>
+            </tr>
+            <tr>
+                <th>Average word count</th>
+                <td>~{{ postStats.avgWords }}</td>
+            </tr>
+            <tr>
+                <th>First post</th>
+                <td><a href="{{ postStats.firstItem.url }}"
+                       title="Read {{ postStats.firstItem.data.title }}">{{ postStats.firstItem.data.title }}</a></td>
+            </tr>
+            <tr>
+                <th>Longest Post</th>
+                <td><a href="{{ postStats.longestItem.item.url }}"
+                       title="Read {{ postStats.longestItem.item.data.title }}">{{ postStats.longestItem.item.data.title }}</a>
+                    with {{ postStats.longestItem.wordCount }} words
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </section>
 
-    <table>
-        <tbody>
-        <tr>
-            <th>Total Words written</th>
-            <td>{{ postStats.totalWords }}</td>
-        </tr>
-        <tr>
-            <th>Total Posts published</th>
-            <td>{{ postStats.totalItems }}</td>
-        </tr>
-        <tr>
-            <th>Average word count</th>
-            <td>~{{ postStats.avgWords }}</td>
-        </tr>
-        <tr>
-            <th>First post</th>
-            <td><a href="{{ postStats.firstItem.url }}"
-                   title="Read {{ postStats.firstItem.data.title }}">{{ postStats.firstItem.data.title }}</a></td>
-        </tr>
-        <tr>
-            <th>Longest Post</th>
-            <td><a href="{{ postStats.longestItem.item.url }}"
-                   title="Read {{ postStats.longestItem.item.data.title }}">{{ postStats.longestItem.item.data.title }}</a>
-                with {{ postStats.longestItem.wordCount }} words
-            </td>
-        </tr>
-        </tbody>
-    </table>
+    <section class="stats__post-graphs">
+        <h2>Activity: This Year Vs Previous</h2>
+        {% postGraph collections.post, {only: [2022, 2023]} %}
+    </section>
 
     <section>
         <h2>Posts/words per year</h2>

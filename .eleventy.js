@@ -12,6 +12,12 @@ module.exports = function (eleventyConfig) {
   // Install Plugins
   //
 
+  eleventyConfig.addPlugin(require('@rknightuk/eleventy-plugin-post-graph'), {
+    boxColor: 'var(--background-muted)',
+    highlightColor: 'var(--accent)',
+    textColor: 'var(--foreground)',
+  });
+
   eleventyConfig.addPlugin(require('./lib/helpers/screenshot'));
 
   eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-interlinker'), {

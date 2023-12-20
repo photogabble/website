@@ -21,12 +21,14 @@
 {% block content %}
     <article {{ ('class="'+ headingClass +'"') | safe if headingClass }}>
         <header>
-        {% block pageHeaderBefore %}
-            {% if titlePrefix %}<small><span>{{ titlePrefix | safe }}</span></small>{% endif %}
-        {% endblock %}
-        {% if title or headerTitle %}<h1>{{ (title or headerTitle) }}</h1>{% endif %}
-        {% if subTitle %}<h2>{{ subTitle | safe }}</h2>{% endif %}
-        {% block pageHeader %}{% endblock %}
+            <div>
+                {% block pageHeaderBefore %}
+                    {% if titlePrefix %}<small><span>{{ titlePrefix | safe }}</span></small>{% endif %}
+                {% endblock %}
+                {% if title or headerTitle %}<h1>{{ (title or headerTitle) }}</h1>{% endif %}
+                {% if subTitle %}<h2>{{ subTitle | safe }}</h2>{% endif %}
+            </div>
+            {% block pageHeaderAfter %}{% endblock %}
         </header>
 
         <span>&mdash;</span>
