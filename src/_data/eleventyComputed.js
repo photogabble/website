@@ -31,6 +31,9 @@ module.exports = {
           case 'lists':
             crumbs.push({href: '/lists/', text: 'lists', title: 'Goto Archive of all lists'});
             break;
+          case 'stats':
+            crumbs.push({href: '/stats/', text: 'stats', title: 'Goto writing stats'});
+            break;
         }
       } else {
         crumbs.push(folder);
