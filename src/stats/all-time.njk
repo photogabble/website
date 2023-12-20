@@ -1,0 +1,19 @@
+---
+folder: [writing, stats]
+---
+{% extends "layouts/page.njk" %}
+
+{% set title = 'Content Stats, all time' %}
+{% set titlePrefix = 'Writing' %}
+{% set subTitle = 'Day by day breakdown of when I published' %}
+{% set headingClass = 'stats__header' %}
+
+{% block pageHeaderAfter %}
+    {% blogtimes %}
+{% endblock %}
+
+{% block pageContent %}
+    <section class="stats__post-graphs">
+        {% postGraph collections.post, {sort: 'desc'} %}
+    </section>
+{% endblock %}
