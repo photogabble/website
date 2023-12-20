@@ -28,6 +28,7 @@ module.exports = {
     prefix: 'Community',
     description: 'Like a blogroll but via the medium of 88x21 gifs',
     layout: 'layouts/list-button-board.njk',
+    permalink: '/button-board/',
   },
 
   'list/digital-garden': {

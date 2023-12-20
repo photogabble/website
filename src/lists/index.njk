@@ -26,7 +26,7 @@ titlePrefix: Index
         {% if allLists|length %}
             <nav>
             {% for list in allLists %}
-                <p><a href="/lists/{{ list.slug }}">{{ list.title }}</a>: {{ list.description }}</p>
+                <p><a href="{{ list.permalink }}">{{ list.title }}</a>: {{ list.description }}</p>
             {% endfor %}
             </nav>
         {% else %}
