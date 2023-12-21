@@ -1,1 +1,1 @@
-{% for tag in tags | excludeSpecialTags | formatTagList %}<a href="{{ tag.url }}" title="Visit {{ tag.title }} index">{{ tag.title }}</a>{{ ' and ' if loop.revindex == 2 }}{{ ', ' if loop.revindex > 2 }}{% endfor %}
+{% for tag in tags | excludeSpecialTags | formatTagList %}<a href="{{ tag.permalink }}" title="Visit {{ tag.title }} index">{{ tag.title }}</a>{{ ' and ' if loop.revindex == 2 }}{{ ', ' if loop.revindex > 2 }}{% endfor %}
