@@ -8,3 +8,5 @@ cite:
   href: https://tinydiorama.neocities.org/
 button: tinydiorama.neocities.gif
 ---
+
+Hosted on [[Neocities]].

@@ -8,3 +8,5 @@ cite:
   href: https://lazybones.neocities.org/
 button: lazybones.neocities.png
 ---
+
+Hosted on [[Neocities]].

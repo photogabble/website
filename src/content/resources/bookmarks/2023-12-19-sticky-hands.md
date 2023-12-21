@@ -7,3 +7,5 @@ cite:
   href: https://meyyebs.neocities.org/
 button: meyyebs.neocities.gif
 ---
+
+Hosted on [[Neocities]].

@@ -10,3 +10,5 @@ pages:
   bookmarks: https://hedgehogofspades.neocities.org/links
 button: hedgehogofspades.neocities.gif
 ---
+
+Hosted on [[Neocities]].

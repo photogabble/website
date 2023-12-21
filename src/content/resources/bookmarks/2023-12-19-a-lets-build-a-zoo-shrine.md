@@ -8,4 +8,4 @@ cite:
 button: enrichment-tinydiorama.neocities.png
 ---
 
-[[Online Shrine]] to Tiny Zoo by [[tinydiorama]].
+[[Online Shrine]] to Tiny Zoo by [[tinydiorama]], hosted on [[Neocities]].

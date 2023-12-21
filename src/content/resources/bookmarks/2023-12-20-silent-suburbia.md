@@ -10,3 +10,4 @@ pages:
 button: silentsuburbia.neocities.gif
 ---
 
+Hosted on [[Neocities]].
