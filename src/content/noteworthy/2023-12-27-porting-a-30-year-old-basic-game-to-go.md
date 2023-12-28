@@ -11,7 +11,7 @@ growthStage: evergreen
 
 Many years ago I found a copy of the Usborne book [Computer Space-games](https://archive.org/details/Computer_Space_Games), first published in 1982 this book contained a number of space themed games written in #BASIC. One of these, "Space Mines" found on pages 24 and 25 of the book stuck with me and six years ago I [[Porting BASIC Space Mines Game to Go|ported it to Golang]].
 
-Last year I bought a copy of [Stimulating Simulations 2nd Revised edition by Engel, C.W](https://bookwyrm.social/book/50763/s/stimulating-simulations) first published in 1979, this book contains a number of simulations written in BASIC alongside block diagrams (flowcharts) that describe their execution order. Of the programs in the book one stood out to me as being similar to Space Mines: "Business Management."
+Last year I bought a copy of [[Stimulating simulations|Stimulating Simulations 2nd Revised edition by Engel, C.W]] first published in 1979, this book contains a number of simulations written in BASIC alongside block diagrams (flowcharts) that describe their execution order. Of the programs in the book one stood out to me as being similar to Space Mines: "Business Management."
 
 <figure class="three">
   <div>
