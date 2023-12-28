@@ -2,3 +2,18 @@ figcaption p {
     font-size: 80%;
     margin-top: 0;
 }
+
+figure.three div{
+    display: flex;
+    gap: 4em;
+    background: #e3e3e3;
+    padding: 4em 1em;
+    justify-content: center;
+}
+
+figure.three img {
+    max-width: 33%;
+    min-width: auto;
+    max-height: 450px;
+    box-shadow: 0px 0px 10px #a2a2a2;
+}
