@@ -1,5 +1,6 @@
 ---
 title: "PHP multi-version install with Homebrew"
+modified: 2023-12-15
 tags: ["PHP", "Homebrew"]
 growthStage: budding
 ---
@@ -49,7 +50,18 @@ Which checked with `alias | grep php` yields (for me):
 The downside of this is that this aliasing happens upon every new terminal and so you have to wait a few seconds before its usable. However, I have yet to find a better dynamic solution.
 
 ## Installing xDebug with pecl
-For each PHP install I use pecl for installing xDebug, however for some reason it gets confused when homebrew updates the default PHP install. For example I installed xDebug using `pecl install xdebug`  against the default *8.1* install of PHP. Homebrew later updated that to *8.2* uninstalling *8.1*. Attempting to install xdebug again would result in pecl returning:
+
+Before using `pecl` to install xDebug check it has the correct path set for `php_ini`:
+
+```
+$ pecl config-get php_ini
+```
+
+If it's incorrect or blank set it with `config-set`, you can use `php -i | grep php.ini` to obtain the config path for your version of PHP. If this isn't set `pecl` will install successfully, but it will inform you that you need to update your ini file to enable the plugin.
+
+—
+
+For each PHP install I use pecl for installing xDebug, however for some reason it gets confused when homebrew updates the default PHP install. For example, I installed xDebug using `pecl install xdebug`  against the default *8.1* installation of PHP. Homebrew later updated that to *8.2* uninstalling *8.1*. Attempting to install xdebug again would result in pecl returning:
 
 ```
 pecl/xdebug is already installed and is the same as the released version 3.2.0
@@ -62,6 +74,16 @@ It's likely that pecl has some central cache somewhere but the only way I could 
 
 ```
 $ pecl install --force xdebug
+```
+
+Upon completion, you should have output similar to the below, if your `php_ini` wasn't set before running `pecl` will tell you what to add to your `php.ini` file.
+
+```
+Build process completed successfully
+Installing '/usr/local/Cellar/php/8.3.0/pecl/20230831/xdebug.so'
+install ok: channel://pecl.php.net/xdebug-3.3.1
+configuration option "php_ini" is not set to php.ini location
+You should add "zend_extension=/usr/local/Cellar/php/8.3.0/pecl/20230831/xdebug.so" to php.ini
 ```
 
 [^1]: Currently ongoing and due to be completed this year
