@@ -1,5 +1,8 @@
 <li>
     <span>
+        {% if post.data.draft %}
+        <span style="color: red">(D)</span>
+        {% endif %}
         <a href="{{ post.url }}" title="Read {{ post.data.title }}">{{ post.data.title }}</a>
         {% if displayContentType %}
             <small class="content-type">{{ post.data.contentType }}</small>
