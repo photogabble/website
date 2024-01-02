@@ -8,7 +8,12 @@
 
 {% set subTitle %}
     {% if growthStage === 'stub' %}scheduled for {% else %}planted on {% endif %}
-    <time datetime="{{ page.date.toISOString() }}">{{ page.date | dateToFormat("DDD") }}</time> in: {% include "../components/tag-list.njk" %}.<br/>{{ readingTime.text if readingTime.words > 0 }}.
+    <time datetime="{{ page.date.toISOString() }}">{{ page.date | dateToFormat("DDD") }}</time>
+    in: {% include "../components/tag-list.njk" %}.
+    {% if modified %}
+    modified on <time datetime="{{ modified.toISOString() }}">{{ modified | dateToFormat("DDD") }}</time>
+    {% endif %}
+    <br/>{{ readingTime.text if readingTime.words > 0 }}.
 {% endset %}
 
 {% block pageContent %}
