@@ -9,6 +9,17 @@ const yaml = require('js-yaml');
 const yargs = require("yargs");
 const fs = require('fs');
 
+/**
+ * Add Bookmark Tool
+ *
+ * A quick and dirty script that allows for adding bookmarks to the
+ * content folder of this repository.
+ *
+ * @todo support adding multiple topics to a bookmark
+ * @todo check that a link has not already been added
+ * @todo remember author details per domain so no need to re-enter if bookmarking another page
+ */
+
 let added = [];
 
 const fetchUrl = async (url, date) => {
@@ -105,7 +116,7 @@ const fetchUrl = async (url, date) => {
 
     added.push(frontMatter);
   } catch (e) {
-    console.error(e);
+    console.error(e.message);
     return 1;
   }
 }
@@ -124,11 +135,17 @@ const main = async (argv) => {
   while(code === -1) {
     if (!url) {
       const prompt = new Input({
-        message: 'Website URL',
+        message: 'Website URL (or Q to quit)',
         initial: ''
       });
 
-      url = await prompt.run()
+      url = (await prompt.run()).trim();
+      if (!url) {
+        console.warn('[!] Please enter a valid url, or Q to quit')
+        continue;
+      } else if (url.toUpperCase() === 'Q') {
+        break;
+      }
     }
 
     code = await fetchUrl(url, date);
@@ -144,7 +161,10 @@ const main = async (argv) => {
     }
   }
 
-  added.forEach(a => console.log(`![[ ${a.title} ]]`));
+  if (added.length > 0) {
+    console.log('Added Bookmark Wikilinks:')
+    added.forEach(a => console.log(`![[ ${a.title} ]]`));
+  }
 
   return code;
 }
