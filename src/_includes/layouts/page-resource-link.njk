@@ -29,6 +29,9 @@
                 {% if feed and feed.rss %}
                     <li><a href="{{ feed.rss }}" target="_blank" rel="noopener">RSS</a></li>
                 {% endif %}
+                {% if feed and feed.atom %}
+                    <li><a href="{{ feed.atom }}" target="_blank" rel="noopener">Atom</a></li>
+                {% endif %}
                 {% if src %}
                     <li><a href="{{ src.href }}" target="_blank" rel="noopener">{{ src.name }}</a></li>
                 {% endif %}
@@ -38,11 +41,17 @@
                 {% if pages and pages.blogroll %}
                     <li><a href="{{ pages.blogroll }}" target="_blank" rel="noopener">Blogroll</a></li>
                 {% endif %}
+                {% if pages and pages.books %}
+                    <li><a href="{{ pages.books }}" target="_blank" rel="noopener">Bookshelf</a></li>
+                {% endif %}
                 {% if pages and pages.uses %}
                     <li><a href="{{ pages.uses }}" target="_blank" rel="noopener">/uses</a></li>
                 {% endif %}
                 {% if pages and pages.now %}
                     <li><a href="{{ pages.now }}" target="_blank" rel="noopener">/now</a></li>
+                {% endif %}
+                {% if pages and pages.stats %}
+                    <li><a href="{{ pages.stats }}" target="_blank" rel="noopener">Stats</a></li>
                 {% endif %}
                 </ul>
             </nav>
