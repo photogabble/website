@@ -28,6 +28,10 @@ module.exports = {
     description: 'List of digital magazines that interest me',
   },
 
+  'list/internet-palls': {
+    title: 'Internet Palls',
+    description: 'Being [[terminally online]] I meet countless wonderful people in various corners of the Internet. These are the ones with whom I sometimes have the pleasure of interacting.',
+  },
 
   'list/button-board': {
     title: 'Button Board',
