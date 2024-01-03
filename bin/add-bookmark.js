@@ -51,6 +51,7 @@ const fetchUrl = async (url, date) => {
       'list/forum',
       'list/www-club',
       'list/games',
+      'list/e-magazine'
     ];
 
     const titlePrompt = new Select({

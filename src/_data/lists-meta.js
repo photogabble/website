@@ -23,6 +23,12 @@ module.exports = {
     description: 'List of clubs that group together websites under a single banner',
   },
 
+  'list/e-magazine': {
+    title: 'Online Magazines',
+    description: 'List of digital magazines that interest me',
+  },
+
+
   'list/button-board': {
     title: 'Button Board',
     prefix: 'Community',
