@@ -6,6 +6,9 @@
 {% endset %}
 
 {% block pageHeaderBefore %}
+    {% if dead %}
+        {% set titlePrefix = 'Dead Link' %}
+    {% endif %}
     <aside>
         <small><span>{{ titlePrefix | safe }}</span></small>
         <span>{{ cite.name }}</span>
@@ -22,7 +25,12 @@
 {% block pageContent %}
     <section>
         <div>
+            {% if dead and wayback %}
+                <img src="{% screenshot wayback, page.fileSlug %}" aria-hidden="true" alt="Screenshot of web page." />
+            {% endif %}
+            {% if not dead %}
             <img src="{% screenshot cite.href, page.fileSlug %}" aria-hidden="true" alt="Screenshot of web page." />
+            {% endif %}
             {% if feed or src or pages %}
             <nav>
                 <ul>
