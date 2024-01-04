@@ -11,9 +11,23 @@ figure.three div{
     justify-content: center;
 }
 
-figure.three img {
+figure.three + img{
     max-width: 33%;
     min-width: auto;
     max-height: 450px;
-    box-shadow: 0px 0px 10px #a2a2a2;
+    box-shadow: 0 0 10px #a2a2a2;
+}
+
+figure.three picture {
+    max-width: 33%;
+    min-width: auto;
+    max-height: 450px;
+}
+
+figure.three picture img {
+    max-width: 100%;
+    width: auto;
+    height: fit-content;
+    max-height: 450px;
+    box-shadow: 0 0 10px #a2a2a2;
 }

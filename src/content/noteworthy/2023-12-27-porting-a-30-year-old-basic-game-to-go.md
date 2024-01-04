@@ -15,9 +15,9 @@ Last year I bought a copy of [[Stimulating simulations|Stimulating Simulations 2
 
 <figure class="three">
   <div>
-    <img src="/img/porting-a-30-year-old-basic-game-to-go-1.png" alt="Business Management: First page, introduction to the scenario">
-    <img src="/img/porting-a-30-year-old-basic-game-to-go-2.png" alt="Business Management: Second page, flowchart of program execution">
-    <img src="/img/porting-a-30-year-old-basic-game-to-go-3.png" alt="Business Management: Third page, variables listing and first page of BASIC code">
+    {% image "public/img/porting-a-30-year-old-basic-game-to-go-1.png", "Business Management: First page, introduction to the scenario" %}
+    {% image "public/img/porting-a-30-year-old-basic-game-to-go-2.png", "Business Management: Second page, flowchart of program execution" %}
+    {% image "public/img/porting-a-30-year-old-basic-game-to-go-3.png", "Business Management: Third page, variables listing and first page of BASIC code" %}
   </div>
   <figcaption>I love to see a good flowchart</figcaption>
 </figure>
