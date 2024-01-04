@@ -1,7 +1,7 @@
 ---
 title: Status Cafe
 tags:
-  - Nifty Show and Tell
+  - list/forum
   - list/button-board
 cite:
   href: https://status.cafe/
