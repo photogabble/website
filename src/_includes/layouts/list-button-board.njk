@@ -1,8 +1,37 @@
+<p>
+    Welcome to my button board, below is a list of websites from my <a href="/resources/bookmarks/">bookmarks</a> which have pretty buttons.
+</p>
+
 <nav>
     {%- for item in list.items -%}
-        {% set href = item.data.cite.href or item.url %}
-        <a href="{{ href }}" class="no-ext btn-88x31" rel="noopener" title="Visit {{ item.data.title }}">
-            <img width="88" height="31" src="/img/88x31/{{ item.data.button }}" alt="88x31 button for {{ item.data.title }}" aria-hidden="true" />
-        </a>
+        {% if not item.data.dead %}
+            {% set href = item.data.cite.href or item.url %}
+            {% set title = item.data.title %}
+            {% set button = item.data.button %}
+            {% include "../components/88x31-button-list.njk" %}
+        {% endif %}
     {%- endfor -%}
 </nav>
+
+<p>
+    —
+</p>
+
+<p>
+    When I first added this button board it was primarily to include the buttons of websites I had added to my <a href="/resources/bookmarks/">bookmarks</a>; however being the digital magpie that I am I quickly began collecting buttons of long since dead websites, or buttons that don't have a webpage to link to.
+</p>
+
+<p>
+    Some of the below link through to a note giving details of what they used to belong to.
+</p>
+
+<nav>
+    {%- for item in list.items | whereKeyEquals('dead', true) -%}
+        {% set href = item.url %}
+        {% set title = item.data.title %}
+        {% set button = item.data.button %}
+        {% include "../components/88x31-button-list.njk" %}
+    {%- endfor -%}
+</nav>
+
+{# TODO: filter list.items by those with deadlink: true for inclusion below #}

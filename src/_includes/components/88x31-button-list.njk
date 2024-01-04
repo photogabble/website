@@ -1,0 +1,19 @@
+{% if button | isArray %}
+    {%- for src in button -%}
+        {% if href %}
+        <a href="{{ href }}" class="no-ext btn-88x31" rel="noopener" title="Visit {{ title }}">
+            <img width="88" height="31" src="/img/88x31/{{ src }}" alt="88x31 button for {{ title }}" aria-hidden="true" />
+        </a>
+        {% else %}
+            <img class="btn-88x31" width="88" height="31" src="/img/88x31/{{ src }}" alt="88x31 button for {{ title }}" aria-hidden="true" />
+        {% endif %}
+    {%- endfor -%}
+{% else %}
+    {% if href %}
+        <a href="{{ href }}" class="no-ext btn-88x31" rel="noopener" title="Visit {{ title }}">
+            <img width="88" height="31" src="/img/88x31/{{ button }}" alt="88x31 button for {{ title }}" aria-hidden="true" />
+        </a>
+    {% else %}
+        <img class="btn-88x31" width="88" height="31" src="/img/88x31/{{ button }}" alt="88x31 button for {{ title }}" aria-hidden="true" />
+    {% endif %}
+{% endif %}
