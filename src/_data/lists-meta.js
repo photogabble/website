@@ -33,6 +33,11 @@ module.exports = {
     description: 'Being [[terminally online]] I meet countless wonderful people in various corners of the Internet. These are the ones with whom I sometimes have the pleasure of interacting.',
   },
 
+  'list/digital-graveyard': {
+    title: 'Digital Graveyard',
+    description: 'List of things that once were.'
+  },
+
   'list/button-board': {
     title: 'Button Board',
     prefix: 'Community',
@@ -62,8 +67,8 @@ module.exports = {
   },
 
   'list/forum': {
-    title: 'Forums',
-    description: 'List of Forums'
+    title: 'Forums & Communities',
+    description: 'List of Forums, communities and online hubs'
   },
 
   // Continuous Writing Projects
