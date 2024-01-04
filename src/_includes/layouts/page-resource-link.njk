@@ -49,6 +49,9 @@
                 {% if pages and pages.blogroll %}
                     <li><a href="{{ pages.blogroll }}" target="_blank" rel="noopener">Blogroll</a></li>
                 {% endif %}
+                {% if pages and pages.links %}
+                    <li><a href="{{ pages.links }}" target="_blank" rel="noopener">Links</a></li>
+                {% endif %}
                 {% if pages and pages.books %}
                     <li><a href="{{ pages.books }}" target="_blank" rel="noopener">Bookshelf</a></li>
                 {% endif %}
