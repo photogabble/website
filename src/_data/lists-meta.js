@@ -46,6 +46,21 @@ module.exports = {
     permalink: '/button-board/',
   },
 
+  'list/windows-interface': {
+    title: 'Windows98 Aesthetic',
+    description: 'Websites designed with a Windows aesthetic in mind, mostly windows 98 but some 3.11 too!',
+  },
+
+  'list/digital-pets': {
+    title: "Digital Pets & Adoptables",
+    description: 'List of virtual pets and adoptables',
+  },
+
+  'list/internet-archivers': {
+    title: 'Internet Archiving Projects',
+    description: 'List of projects with the purpose of preserving the internets history'
+  },
+
   'list/digital-garden': {
     title: 'Digital Gardens',
     description: 'List of digital gardens',
