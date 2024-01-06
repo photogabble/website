@@ -2,6 +2,7 @@
 title: Foreverliketh
 tags:
   - list/blogroll
+  - list/button-board
 cite:
   name: '@henkverlinde'
   href: https://foreverliketh.is
