@@ -2,6 +2,7 @@
 title: JAKE.MUSEUM
 tags:
   - Nifty Show and Tell
+  - list/internet-archivers
 cite:
   name: Jake Lazaroff
   href: https://jake.museum/
