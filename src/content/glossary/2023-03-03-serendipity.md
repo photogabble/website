@@ -1,5 +1,7 @@
 ---
 title: Serendipity
+aliases:
+  - serendipitously
 tags: ["DigitalGarden"]
 growthStage: seedling
 ---
