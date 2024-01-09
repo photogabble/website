@@ -4,6 +4,7 @@ aliases:
   - ichigo directory
 tags:
   - list/button-board
+  - list/88x31-collection
 cite:
   name: Cinni
   href: https://directory.cinni.net/

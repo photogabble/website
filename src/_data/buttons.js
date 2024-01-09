@@ -21,5 +21,28 @@ module.exports = [
   'drpepper.gif',
 
   // Found via https://10kph.neocities.org/
-  'trn.png'
+  'trn.png',
+
+  // FOund via https://cyber.dabamos.de/88x31/index2.html
+  'dmoz.org.gif',
+  'dos.gif',
+  'doomrl.gif',
+  'esheep.gif',
+  'freesite.gif',
+  'gbc.gif',
+  'hair.gif',
+  'linkexchange.gif',
+  'mircnow.gif',
+  'stop-microsoft.gif',
+  'mutt.gif',
+  '1-neocities.org.gif',
+  'sublime.gif',
+  'the-largest-88x31-collection.gif',
+  'come.to.gif',
+
+  // Sourced from https://mincerafter42.github.io/
+  'svg.svg',
+
+  // Sourced from https://onio.cafe/
+  'stardew-valley.gif'
 ];

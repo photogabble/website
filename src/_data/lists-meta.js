@@ -61,6 +61,11 @@ module.exports = {
     description: 'List of projects with the purpose of preserving the internets history'
   },
 
+  'list/88x31-collection': {
+    title: '88x31 Button Collections',
+    description: 'List of sites specifically for archiving 88x31 button banners',
+  },
+
   'list/digital-garden': {
     title: 'Digital Gardens',
     description: 'List of digital gardens',
