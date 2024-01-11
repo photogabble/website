@@ -8,6 +8,7 @@ const cheerio = require('cheerio');
 const yaml = require('js-yaml');
 const yargs = require("yargs");
 const fs = require('fs');
+const lists = require('../src/_data/lists-meta');
 
 /**
  * Add Bookmark Tool
@@ -46,14 +47,7 @@ const fetchUrl = async (url, date) => {
     const topics = [
       'Nifty Show and Tell',
       'Notable Articles',
-      'list/blogroll',
-      'list/webring',
-      'list/forum',
-      'list/www-club',
-      'list/games',
-      'list/e-magazine',
-      'list/digital-pets',
-      'list/button-board',
+      ...Object.keys(lists),
     ];
 
     const titlePrompt = new Select({
