@@ -38,6 +38,11 @@ module.exports = {
     description: 'List of things that once were.'
   },
 
+  'list/web-cliques': {
+    title: 'Web Cliques',
+    description: 'List of web cliques.'
+  },
+
   'list/button-board': {
     title: 'Button Board',
     prefix: 'Community',
