@@ -3,6 +3,7 @@ title: Travis Shears Personal Site
 tags:
   - list/blogroll
   - list/digital-garden
+  - list/inspiration
 cite:
   name: Travis Shears
   href: https://travisshears.com/
