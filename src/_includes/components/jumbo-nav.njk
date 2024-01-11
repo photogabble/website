@@ -52,7 +52,7 @@
                     {%- for item in buttonBoard.items | randomItems(4) -%}
                         {% set href = item.data.cite.href or item.url %}
                         <a href="{{ href }}" class="no-ext btn-88x31" rel="noopener" title="Visit {{ item.data.title }}">
-                            <img width="88" height="31" src="/img/88x31/{{ item.data.button }}" alt="88x31 button for {{ item.data.title }}" aria-hidden="true" />
+                            <img width="88" height="31" src="/img/88x31/{{ item.data.button | firstBtn }}" alt="88x31 button for {{ item.data.title }}" aria-hidden="true" />
                         </a>
                     {%- endfor -%}
                 </dd>

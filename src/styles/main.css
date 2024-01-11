@@ -194,9 +194,8 @@ article p {
   text-justify: inter-word;
 }
 
-article img {
+article img:not(.btn-88x31) {
   max-width: 100%;
-  min-width: 100%;
 }
 
 article.note > header h1 {
@@ -232,7 +231,7 @@ article.resource.bookmark header > aside li {
   display: inline-block;
 }
 
-article.resource.bookmark > section div {
+article.resource.bookmark > section > div {
   float: right;
   max-width: 40%;
   min-width: auto;
@@ -240,10 +239,9 @@ article.resource.bookmark > section div {
   margin-bottom: 2rem;
 }
 
-article.resource.bookmark > section div > img {
+article.resource.bookmark img.preview {
   border: 2px solid var(--background-muted);
   border-radius: 3px;
-  margin-bottom: 1rem;
 }
 
 article.resource.bookmark > section div > nav ul {
@@ -259,6 +257,33 @@ article.resource.bookmark > section > p:first-of-type {
   font-size: 1.4em;
   line-break: anywhere;
 }
+
+article.resource.bookmark .btn-list {
+  padding: 1em;
+  background: var(--background-muted);
+  margin: 1em 0;
+}
+
+article.resource.bookmark .btn-list h4 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-size: 0.9em;
+}
+
+article.resource.bookmark .btn-list ul {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+article.resource.bookmark .btn-list li {
+  height: 31px;
+}
+
 
 .tags-list ul {
   display: grid;

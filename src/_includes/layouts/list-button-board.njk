@@ -7,7 +7,7 @@
         {% if not item.data.dead %}
             {% set href = item.data.cite.href or item.url %}
             {% set title = item.data.title %}
-            {% set button = item.data.button %}
+            {% set button = item.data.button | firstBtn %}
             {% include "../components/88x31-button-list.njk" %}
         {% endif %}
     {%- endfor -%}
@@ -29,7 +29,7 @@
     {%- for item in list.items | whereKeyEquals('dead', true) -%}
         {% set href = item.url %}
         {% set title = item.data.title %}
-        {% set button = item.data.button %}
+        {% set button = item.data.button | firstBtn %}
         {% include "../components/88x31-button-list.njk" %}
     {%- endfor -%}
 </nav>

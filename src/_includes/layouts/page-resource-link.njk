@@ -26,11 +26,28 @@
     <section>
         <div>
             {% if dead and wayback %}
-                <img src="{% screenshot wayback, page.fileSlug %}" aria-hidden="true" alt="Screenshot of web page." />
+                <img class="preview" src="{% screenshot wayback, page.fileSlug %}" aria-hidden="true" alt="Screenshot of web page." />
             {% endif %}
+
             {% if not dead %}
-            <img src="{% screenshot cite.href, page.fileSlug %}" aria-hidden="true" alt="Screenshot of web page." />
+            <img class="preview" src="{% screenshot cite.href, page.fileSlug %}" aria-hidden="true" alt="Screenshot of web page." />
             {% endif %}
+
+            {% if button %}
+                <div class="btn-list" aria-hidden="true">
+                    <h4>88x31 buttons</h4>
+                    <ul>
+                        {% if button | isArray %}
+                            {% for single in button %}
+                                <li><img class="btn-88x31" width="88" height="31" src="/img/88x31/{{ single }}" alt="88x31 button for {{ title }}" /></li>
+                            {% endfor %}
+                        {% else %}
+                            <li><img class="btn-88x31" width="88" height="31" src="/img/88x31/{{ button }}" alt="88x31 button for {{ title }}" /></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            {% endif %}
+
             {% if feed or src or pages %}
             <nav>
                 <ul>
