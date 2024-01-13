@@ -196,6 +196,7 @@ article p {
 
 article img:not(.btn-88x31) {
   max-width: 100%;
+  height: auto;
 }
 
 article.note > header h1 {
