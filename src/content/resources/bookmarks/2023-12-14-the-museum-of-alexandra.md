@@ -10,7 +10,9 @@ pages:
   now: https://xandra.cc/now
   bookmarks: https://xandra.cc/links
   buttons: https://xandra.cc/buttonwall
-button: xandra.cc.png
+button:
+  - xandra.cc.png
+  - xandra.cc.2.png
 button_cite:
   name: RoseDryad 
   href: https://rosedryad.com/

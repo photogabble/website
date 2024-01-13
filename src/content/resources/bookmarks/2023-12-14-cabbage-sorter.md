@@ -6,7 +6,9 @@ tags:
 cite:
   name: '@fermentedcabbage'
   href: https://cabbagesorter.neocities.org/
-button: cabbagesorter.neocities.gif
+button: 
+  - cabbagesorter.neocities.gif
+  - cabbagesorter.neocities.2.gif
 pages:
   bookmarks: https://cabbagesorter.neocities.org/buttons
 ---

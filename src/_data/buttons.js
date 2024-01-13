@@ -44,5 +44,12 @@ module.exports = [
   'svg.svg',
 
   // Sourced from https://onio.cafe/
-  'stardew-valley.gif'
+  'stardew-valley.gif',
+
+  // Sourced from https://displayman.neocities.org/
+  'hotmail.gif',
+  'insert-picture.gif',
+
+  // Sourced from https://zeusofthecrows.neocities.org
+  'train.png',
 ];
