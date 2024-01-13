@@ -5,6 +5,7 @@ aliases:
 tags:
   - list/button-board
   - list/88x31-collection
+  - list/internet-archivers
 cite:
   name: Cinni
   href: https://directory.cinni.net/
