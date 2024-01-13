@@ -1,10 +1,13 @@
 ---
 title: EVIL DUNGEON (C64) by Gregor Schillinger
+aliases:
+  - "EVIL DUNGEON (C64)"
 tags:
   - list/games
 cite:
   name: Gregor Schillinger
   href: https://retroarts.itch.io/evil-dungeon
+  title_only: true
 ---
 
 In this C64 fantasy dungeon crawler you play as Alrik, a young adventurer who has to master his first quest. Fight against monsters, search for treasure and plan your next steps to escape the **Evil Dungeon** labyrinth.
