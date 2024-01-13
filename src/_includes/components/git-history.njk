@@ -1,5 +1,5 @@
-{% if changes %}
-  <h2>Git History</h2>
+{% if changes and changes.length > 0 %}
+  <h3>Git History</h3>
   <ol class="changes" id="changesList">
     {% for c in changes %}
       <li class="change" style="{% if loop.index0 >= 5 %}display: none;{% endif %}">
