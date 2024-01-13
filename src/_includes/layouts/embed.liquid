@@ -1,5 +1,5 @@
 <aside class="citation">
-    {% block content %}{% endblock %}
+    {{ content }}
     {% if cite.href %}
         <small>&mdash; <a href="{{ cite.href }}">{{ cite.name }}</a> | <a href="{{ page.url }}">notes</a></small>
     {% else %}
