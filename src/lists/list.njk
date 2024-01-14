@@ -3,13 +3,15 @@ pagination:
   data: collections.lists
   size: 1
   alias: list
+  addAllPagesToCollections: true
 permalink: "{{ list.permalink }}"
 folder: lists
+eleventyComputed:
+  title: "{{ list.title }}"
 ---
 
 {% extends "layouts/page.njk" %}
 
-{% set title = list.title %}
 {% set titlePrefix = list.prefix or 'List' %}
 {% set subTitle = list.description %}
 
