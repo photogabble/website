@@ -43,6 +43,11 @@ module.exports = {
     description: 'List of web cliques.'
   },
 
+  'list/search-engines': {
+    title: 'Search Engines',
+    description: 'List of off-brand search engines of varying degrees of usefulness.'
+  },
+
   'list/button-board': {
     title: 'Button Board',
     prefix: 'Community',
