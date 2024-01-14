@@ -1,0 +1,60 @@
+---
+title: Froge
+tags:
+    - list/button-board
+button: powered-by-the-void.gif
+---
+
+{% extends "layouts/blank-base.njk" %}
+
+{% set title = 'VOID' %}
+
+{% block stylesheet %}
+<style>
+    body{
+        background: rgb(50 35 30);
+        color: #1c1c1c;
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    img {
+        cursor: pointer;
+    }
+
+    img.clone {
+        position: absolute;
+    }
+</style>
+<script>
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
+  // https://orangefreesounds.com/frog-sound-ribbit/
+  const audio = new Audio('/sounds/ribbit.mp3');
+
+  function duplicate() {
+    const img = document.createElement("img");
+    img.src = "/img/gif/32-bit-cafe-froge.png";
+    img.alt = "Frog emoji, named Froge"
+    img.classList.add('clone');
+    img.style.top = `${getRandomInt(100)}vh`;
+    img.style.left = `${getRandomInt(100)}vw`;
+    img.onclick = duplicate;
+    document.getElementsByTagName('body')[0].appendChild(img);
+    audio.play();
+  }
+</script>
+{% endblock %}
+
+{% block content %}
+    <!-- Hurrah, you found an easter egg page. -->
+    <img onclick="duplicate()" src="/img/gif/32-bit-cafe-froge.png" alt="Frog emoji, named Froge" />
+{% endblock %}
+

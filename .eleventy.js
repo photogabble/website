@@ -120,6 +120,7 @@ module.exports = function (eleventyConfig) {
     'public/favicon': '/',
     'public/files': 'files',
     'public/img': 'img',
+    'public/sounds': 'sounds',
     '_redirects': '_redirects',
     'public/og-image': 'img/og-image',
     'public/main.js': 'main.js',
