@@ -25,6 +25,9 @@ button: powered-by-the-void.gif
 
     img {
         cursor: pointer;
+        image-rendering: pixelated;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: crisp-edges;
     }
 
     img.clone {
@@ -36,17 +39,26 @@ button: powered-by-the-void.gif
     return Math.floor(Math.random() * max);
   }
 
+  function randomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
   // https://orangefreesounds.com/frog-sound-ribbit/
   const audio = new Audio('/sounds/ribbit.mp3');
 
   function duplicate() {
     const img = document.createElement("img");
+    const size = randomInteger(16, 128);
+
     img.src = "/img/gif/32-bit-cafe-froge.png";
     img.alt = "Frog emoji, named Froge"
     img.classList.add('clone');
     img.style.top = `${getRandomInt(100)}vh`;
     img.style.left = `${getRandomInt(100)}vw`;
+    img.height = size;
+    img.width = size;
     img.onclick = duplicate;
+
     document.getElementsByTagName('body')[0].appendChild(img);
     audio.play();
   }
