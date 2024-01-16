@@ -273,6 +273,7 @@ article.resource.bookmark .btn-list h4 {
 
 article.resource.bookmark .btn-list ul {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.5em;
   width: 100%;
