@@ -52,4 +52,10 @@ module.exports = [
 
   // Sourced from https://zeusofthecrows.neocities.org
   'train.png',
+
+  // Sourced from https://lobre.neocities.org/
+  'support-wikipedia.gif',
+
+  // Sourced from https://transrats.neocities.org/links
+  'tetris.gif',
 ];
