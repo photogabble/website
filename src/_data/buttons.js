@@ -58,4 +58,8 @@ module.exports = [
 
   // Sourced from https://transrats.neocities.org/links
   'tetris.gif',
+
+  // Sourced from https://dead.garden/
+  'clickhereforfree.png',
+  'naptime.png',
 ];
