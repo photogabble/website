@@ -194,7 +194,7 @@ article p {
   text-justify: inter-word;
 }
 
-article img:not(.btn-88x31) {
+article.note img:not(.btn-88x31) {
   max-width: 100%;
   height: auto;
 }
@@ -243,6 +243,8 @@ article.resource.bookmark > section > div {
 article.resource.bookmark img.preview {
   border: 2px solid var(--background-muted);
   border-radius: 3px;
+  max-width: 100%;
+  height: auto;
 }
 
 article.resource.bookmark > section div > nav ul {

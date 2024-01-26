@@ -50,6 +50,7 @@ ul.books a{
 ul.books img {
     object-fit: contain;
     max-width: 100%;
+    height: auto;
 }
 
 ul.books .title {
