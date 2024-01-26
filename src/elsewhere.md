@@ -6,6 +6,7 @@ titlePrefix: "Me"
 
 I can be found in the following online communities:
 
+* <a href="https://discuss.32bit.cafe/">32-bit Cafe Forum</a>,
 * <a href="https://basementcommunity.com/">Basement Community Forum</a>,
 * <a href="https://notacult.social/@carbontwelve">Mastodon (notacult.social)</a>,
 * <a href="https://phpc.social/@carbontwelve">Mastodon (phpc.social)</a>,
