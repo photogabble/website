@@ -3,6 +3,7 @@
 @import "../../node_modules/prismjs/plugins/treeview/prism-treeview.css";
 
 /* Components */
+@import "components/_content-grid.css";
 @import "components/_fonts.css";
 @import "components/_themes.css";
 @import "components/_post-list.css";
