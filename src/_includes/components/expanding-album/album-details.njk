@@ -1,0 +1,36 @@
+{% set colours = item.image | imgColours %}
+<style>
+    .folder#{{ item.id }}::after {
+        border-bottom-color: rgb({{ colours.primary.join(',') }});
+    }
+    .folderContent.{{ item.id }} {
+        --album-background-colour: rgb({{ colours.primary.join(',') }});
+        --album-primary-colour: rgb({{ colours.inverse.primary.join(',') }});
+        --album-secondary-colour: rgb({{ colours.inverse.secondary.join(',') }});
+    }
+    .folderContent.{{ item.id }} .art-wrap {
+        box-shadow: inset 12px 15px 20px rgb({{ colours.primary.join(',') }}), inset -1px -1px 150px rgb({{ colours.primary.join(',') }});
+    }
+</style>
+<div id="{{ item.id }}-details" class="folderContent {{ item.id }} full-width">
+    <div class="jaf-container content-grid">
+        <div>
+            <div class="art-wrap"><img width="250" height="250" src="{{ item.image }}"></div>
+            <h2><a href="{{ item.url }}" target="_blank" rel="noopener" class="primary-color">{{ item.name | safe }}</a></h2>
+            <h3 class="secondary-color">{{ item.artist.name }} {% if item.year %}({{ item.year }}){% endif %}</h3>
+            {% if item.description %}
+            <p class="primary-color">{{ item.description }}</p>
+            {% endif %}
+            <div class="multi">
+                <ol class="secondary-color">
+                    {% for track in item.tracks %}
+                        <li><a href="{{ track.url }}" target="_blank" class="primary-color">{{ track.name }}</a></li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+        <br class="clear">
+
+    </div>
+    <a href="#" class="close">&times;</a>
+</div>

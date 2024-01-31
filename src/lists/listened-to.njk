@@ -9,14 +9,332 @@ subTitle: What I have been listening to recently
 {% block pageContent %}
     <section>
         <header><h2>Podcasts</h2></header>
-        <ul>
-            <li>
-                <a href="https://atp.fm/" rel="noopener">Accidental Tech Podcast</a> a very long time ago I used to chat to Marco on IRC. I stumbled upon this podcast after remembering they built Tumblr and wondering what they were up to now.
-            </li>
-            <li>
-                <a href="https://developertea.com/" rel="noopener">Developer Tea</a> I began listening to Jonathan's words of wisdom with his very first episode in 2015. I can't say I have listened to them all, but I still dip in from time to time.
-            </li>
-        </ul>
+
+        <script>
+          onhashchange = () => {
+            const hash = window.location.hash.substring(1);
+
+            const folders = document.getElementsByClassName('folder');
+            const pullOuts = document.getElementsByClassName('folderContent');
+
+            const folder = document.getElementById(hash);
+            const detailsPullOut = document.getElementById(`${hash}-details`);
+
+            for (const el of folders) {
+              el.classList.remove('active-tool');
+            }
+
+            for (const el of pullOuts) {
+              el.classList.remove('active');
+            }
+
+            folder.classList.add('active-tool');
+            detailsPullOut.classList.add('active');
+          };
+        </script>
+
+        <style>
+            .jaf-container {
+                position: relative;
+                padding-top: 2rem;
+            }
+
+            .jaf-row {
+                /*zoom: 1;*/
+                min-width: 320px;
+            }
+
+            .folder {
+                position: relative;
+                float: left;
+                box-sizing: border-box;
+                width: 25%;
+                height: 235px;
+                padding: 3% 3% 10px 3%;
+                cursor: pointer;
+            }
+
+            .folder::before {
+                position: absolute;
+                bottom: -1px;
+                left: 50%;
+                content: '';
+                width: 0;
+                height: 0;
+                margin-left: 7px;
+                border-left: 0 solid transparent;
+                border-right: 0 solid transparent;
+                border-bottom: 0 solid transparent;
+                -webkit-transition: bottom 0.2s ease-in;
+                -moz-transition: bottom 0.2s ease-in;
+                transition: bottom 0.2s ease-in;
+            }
+
+            .folder::after {
+                position: absolute;
+                bottom: -1px;
+                left: 50%;
+                content: '';
+                width: 0;
+                height: 0;
+                margin-left: 6px;
+                border-left: 0 solid transparent;
+                border-right: 0 solid transparent;
+                border-bottom: 0 solid transparent;
+                -webkit-transition: bottom 0.2s ease-in;
+                -moz-transition: bottom 0.2s ease-in;
+                transition: bottom 0.2s ease-in;
+            }
+
+            .folder a {
+                text-decoration: none;
+            }
+
+            .folder img {
+                position: relative;
+                margin-top: 0;
+                margin-left: 0;
+                max-width: 100%;
+                background-color: #888;
+                border: 1px solid #888;
+                box-shadow: 2px 2px 5px #aaa;
+                -webkit-transition: all 0.2s ease-in;
+                -moz-transition: all 0.2s ease-in;
+                transition: all 0.2s ease-in;
+            }
+
+            .album-name {
+                font-weight: bold;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin: 0;
+                font-size: 13px;
+                text-decoration: underline;
+                /*	-webkit-transition: all 0.2s ease-in;
+                    -moz-transition: all 0.2s ease-in;
+                    transition: all 0.2s ease-in;*/
+            }
+
+            .artist-name {
+                opacity: 1;
+                margin: 0 0 2px 0;
+                color: #888;
+                font-size: 12px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-transition: all 0.2s ease-in;
+                -moz-transition: all 0.2s ease-in;
+                transition: all 0.2s ease-in;
+            }
+
+            .app-folders-container {
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .active-tool {
+                z-index: 10;
+            }
+
+            .active-tool::before {
+                bottom: -1px;
+                margin-left: -7px;
+                border-left: 12px solid transparent;
+                border-right: 12px solid transparent;
+                border-bottom: 12px solid rgba(0,0,0,0.3);
+                -webkit-transition: all 0.2s ease-in;
+                -moz-transition: all 0.2s ease-in;
+                transition: all 0.2s ease-in;
+            }
+
+            .active-tool::after {
+                bottom: -1px;
+                margin-left: -6px;
+                border-left: 11px solid transparent;
+                border-right: 11px solid transparent;
+                border-bottom: 11px solid transparent;
+                -webkit-transition: all 0.2s ease-in;
+                -moz-transition: all 0.2s ease-in;
+                transition: all 0.2s ease-in;
+            }
+
+            .active-tool img {
+                max-width: 110%;
+                margin-top: -5%;
+                margin-left: -5%;
+                -webkit-transition: all 0.2s ease-in;
+                -moz-transition: all 0.2s ease-in;
+                transition: all 0.2s ease-in;
+            }
+
+            .active-tool .album-name {
+                padding-bottom: 6px;
+                -webkit-transition: all 0.2s ease-in;
+                -moz-transition: all 0.2s ease-in;
+                transition: all 0.2s ease-in;
+            }
+
+            .active-tool .artist-name {
+                opacity: 0;
+                height: 2px;
+                -webkit-transition: all 0.2s ease-in;
+                -moz-transition: all 0.2s ease-in;
+                transition: all 0.2s ease-in;
+            }
+
+            .folderContent {
+                display: none;
+                position: relative;
+                padding: 20px 0 0 0;
+
+                z-index: 0;
+                box-sizing: border-box;
+                min-width: 320px;
+                border-color: rgba(0,0,0,0.3);
+                border-width: 1px 0;
+                background-color: var(--album-background-colour, var(--background));
+
+                transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                overflow: hidden;
+            }
+
+            .folderContent.active {
+                display: block;
+                grid-column: full-width;
+            }
+
+            .folderContent ol {
+                margin: 0;
+            }
+
+            .folderContent h2{
+                margin-bottom: 0;
+            }
+
+            .folderContent h3{
+                margin-top: 0;
+                font-size: 0.9em;
+            }
+
+            .folderContent p {
+                font-size: 0.9em;
+                padding-right: 4em;
+            }
+
+            .folderContent .primary-color {
+                color: var(--album-primary-colour);
+            }
+
+            .folderContent .secondary-color {
+                color: var(--album-secondary-colour);
+            }
+
+            .folderContent a:hover {
+                text-decoration: underline;
+            }
+
+            .folderContent .close {
+                position: absolute;
+                font-size: 1em;
+                width: 1.2em;
+                height: 1.2em;
+                line-height: 1;
+                top: 15px;
+                left: 10px;
+                padding: 1px 5px 3px;
+                border-radius: 100%;
+                background-color: rgba(0,0,0,0.3);
+                color: rgba(255,255,255,0.5);
+                font-weight: bold;
+                text-decoration: none;
+                text-align: center;
+                border: 0;
+            }
+
+            .folderContent .close:hover {
+                text-decoration: none;
+                background-color: rgba(0,0,0,0.6);
+                color: rgba(255,255,255,0.5);
+            }
+
+            .multi {
+                -webkit-column-count: 2;
+                -moz-column-count: 2;
+                column-count: 2;
+                font-size: 0.7em;
+                margin: 30px 0;
+            }
+
+            .art-wrap {
+                float: right;
+                text-align: right;
+                /*width: 30%;*/
+            }
+
+            .art-wrap img {
+                position: relative;
+                z-index: -2;
+                display: block;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .clear {
+                clear: both;
+            }
+
+            @media (max-width: 480px){
+
+                .folder {
+                    height: 145px;
+                }
+
+                .folderContent {
+                    padding: 20px 40px;
+                    width: 100%;
+                }
+
+            }
+
+            @media (min-width: 481px) and (max-width: 768px){
+
+                .folder {
+                    height: 210px;
+                }
+            }
+
+            @media (max-width: 768px){
+
+                .multi {
+                    -webkit-column-count: 1;
+                    -moz-column-count: 1;
+                    column-count: 1;
+                }
+
+                .art-wrap {
+                    display: none;
+                }
+            }
+
+            @media (min-width: 769px){
+
+                .jaf-row {
+                    width: 800px;
+                }
+            }
+        </style>
+
+        <!-- TODO: Split podcasts into groups of four items -->
+        {% for item in podcasts %}
+            {% if loop.first %}<div class="jaf-row jaf-container">{% endif %}
+            {% include "components/expanding-album/podcast.njk" %}
+            {% if loop.last %}<br class="clear"/></div>{% endif %}
+        {% endfor %}
+        {% asyncEach item in podcasts %}
+            {% include "components/expanding-album/podcast-details.njk" %}
+        {% endeach %}
     </section>
 
     <section>

@@ -1,4 +1,5 @@
-const filters = require('./lib/filters')
+const filters = require('./lib/filters');
+const asyncFilters = require('./lib/async-filters');
 const collections = require('./lib/collections');
 const {slugify} = require('./lib/filters');
 const shortcodes = require('./lib/shortcodes');
@@ -98,6 +99,10 @@ module.exports = function (eleventyConfig) {
 
   Object.keys(filters).forEach((filterName) => {
     eleventyConfig.addFilter(filterName, filters[filterName])
+  });
+
+  Object.keys(asyncFilters).forEach((filterName) => {
+    eleventyConfig.addAsyncFilter(filterName, asyncFilters[filterName]);
   });
 
   for (const [name, collection] of Object.entries(collections(eleventyConfig))) {
