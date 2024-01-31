@@ -1,0 +1,22 @@
+{% extends "./page.njk" %}
+
+{% set ogtype = 'project' %}
+
+{% block content %}
+    <article class="content-grid">
+        <h1 class="with-sub-title">
+            {{ title }}
+        </h1>
+        <p>{{ subTitle or description }}</p>
+        <span>
+            {% if git %}<a href="{{ git }}" title="Visit git repository for {{ title }}" target="_blank">git</a>{% endif %}
+            {% if packagist %}<a href="{{ packagist }}" title="Visit on packagist" target="_blank">packagist</a>{% endif %}
+            {% if npm %}<a href="{{ npm }}" title="Visit on npm" target="_blank">npm</a>{% endif %}
+            {% if url %}<a href="{{ url }}" title="Visit {{ title }} homepage" target="_blank">www</a>{% endif %}
+        </span>
+        <section>
+            {{ content | safe }}
+        </section>
+        {% include "components/backlinks.njk" %}
+    </article>
+{% endblock %}

@@ -1,5 +1,5 @@
 module.exports = {
-  layout: "layouts/project.njk",
+  layout: "layouts/page-project.njk",
   contentType: 'project',
   permalinkBase: 'projects',
   language: null,
