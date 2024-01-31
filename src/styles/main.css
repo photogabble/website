@@ -444,11 +444,11 @@ ul.alphabet {
   flex-wrap: wrap;
 }
 
-p.down-the-rabbit-hole .margin-note {
+.down-the-rabbit-hole {
   position: relative;
 }
 
-p.down-the-rabbit-hole .margin-note img {
+.down-the-rabbit-hole img {
   position: absolute;
   top: -200px;
 }

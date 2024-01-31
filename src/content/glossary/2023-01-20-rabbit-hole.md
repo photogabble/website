@@ -1,14 +1,11 @@
 ---
 title: "Rabbit Hole"
+aliases:
+  - "rabbit holes"
 tags: ["Programming"]
 growthStage: seedling
+secondColumn: components/down-the-rabbit-hole.njk
 ---
-
-<p class="down-the-rabbit-hole">
-  <span class="margin-note">
-    <img src="/img/alice-down-the-rabbit-hole.png" alt="Alice falling down the rabbit hole.">
-  </span>
-</p>
 
 > Down, down, down. Would the fall never come to an end! "I wonder how many miles I've fallen by this time?"
 

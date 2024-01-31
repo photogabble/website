@@ -35,9 +35,18 @@
         </section>
     {% endif %}
 
-    <section class="full-width">
-        {{ content | safe }}
-    </section>
+    {% if secondColumn %}
+        <section class="two-columns two-columns__paragraph breakout">
+            <div>
+                {{ content | safe }}
+            </div>
+            {% include secondColumn %}
+        </section>
+    {% else %}
+        <section class="full-width">
+            {{ content | safe }}
+        </section>
+    {% endif %}
 
     {% if tags | includesTag('wayback machine') %}
         <hr/>
