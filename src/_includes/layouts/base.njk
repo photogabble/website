@@ -7,7 +7,7 @@
 
     <!-- Feeds -->
     <link rel="alternate" href="{{ metadata.feedUrl }}" type="application/atom+xml" title="Simon Dann's Digital Garden">
-    
+
     <!-- Mastodon Verification -->
     <link rel="me" href="https://notacult.social/@carbontwelve" title="Mastodon: Not A Cult"/>
     <link rel="me" href="https://phpc.social/@carbontwelve" title="Mastodon: PHPC"/>
@@ -79,6 +79,7 @@
     <link rel="preload" href="/fonts/iosevka-etoile-bolditalic.subset.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/iosevka-etoile-italic.subset.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/styles/main.css"/>
+    {% block stylesheet %}{% endblock %}
     <script data-goatcounter="https://photogabble.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
     <script src="/main.js"></script>
 </head>
@@ -106,8 +107,8 @@
     </nav>
 </aside>
 
-<header id="jumbo-nav">
-    <div class="container">
+<header id="jumbo-nav" class="content-grid">
+    <div class="breakout">
         {% block header %}
             {{ header | safe }}
         {% endblock %}
@@ -115,14 +116,14 @@
     {% include "../components/jumbo-nav.njk" %}
 </header>
 
-<main class="container">
+<main {{ ('class="'+ mainClass +'"') | safe if mainClass }}>
     {% block content %}
         {{ content | safe }}
     {% endblock %}
 </main>
-<footer>
-    <nav>
-        <div class="container">
+<footer class="content-grid">
+    <nav class="full-width">
+        <div class="breakout">
             <dl>
                 <dt><a href="/forest" title="Return to the forest" class="no-underline">🌱</a> Simon Dann</dt>
                 <dd><a href="/topic" title="All topics in use">Topics</a></dd>
@@ -140,7 +141,7 @@
         </div>
     </nav>
 
-    <nav class="container">
+    <nav class="breakout">
         <dl>
             <dt>Me</dt>
             <dd><a href="/about/" title="About me">About Me</a></dd>
@@ -200,7 +201,7 @@
         </dl>
     </nav>
 
-    <nav class="container">
+    <nav class="breakout">
         <p>
             © {{ build.timestamp | dateToFormat('yyyy') }} Simon Dann. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="Licensed CC BY-NC 4.0">CC BY-NC-SA 4.0</a> | <a href="https://github.com/photogabble/website">src</a> | <a href="/legal/privacy">cookies &amp; privacy</a>.<br/>
             <small>

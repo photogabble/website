@@ -10,7 +10,7 @@
 {% block pageContent %}
     {% for year, items in postsByYear %}
         <section>
-            <header>
+            <header class="breakout">
                 <h3>{{ year }}</h3>
                 <nav>
                     {% set postsByMonth = items | groupByMonth %}

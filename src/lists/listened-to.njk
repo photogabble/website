@@ -7,7 +7,7 @@ subTitle: What I have been listening to recently
 {% extends "layouts/page.njk" %}
 
 {% block pageContent %}
-    <section>
+    <section class="full-width">
         <header><h2>Podcasts</h2></header>
 
         <script>
@@ -337,10 +337,21 @@ subTitle: What I have been listening to recently
         {% endeach %}
     </section>
 
-    <section>
-        <header><h2>Music</h2></header>
-        <p>Coming <em>soon</em> with a last.fm integration...</p>
-    </section>
+{# DISABLED UNTIL I MAKE MY MIND UP #}
+{#    <section class="full-width">#}
+{#        <header><h2>Music</h2></header>#}
+{#        <p>Like dunes in a desert my taste in music changes over time, over the past three months I have enjoyed tracks from these albums:</p>#}
+{#        {% for chunks in lastfm.topAlbums | limit(8) | chunkArray(4) %}#}
+{#            {% for item in chunks %}#}
+{#                {% if loop.first %}<div class="jaf-row jaf-container">{% endif %}#}
+{#                {% include "components/expanding-album/album.njk" %}#}
+{#                {% if loop.last %}<br class="clear"/></div>{% endif %}#}
+{#            {% endfor %}#}
+{#            {% asyncEach item in chunks %}#}
+{#                {% include "components/expanding-album/album-details.njk" %}#}
+{#            {% endeach %}#}
+{#        {% endfor %}#}
+{#    </section>#}
 
     <hr/>
 

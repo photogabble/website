@@ -19,7 +19,7 @@
 {% endblock %}
 
 {% block content %}
-    <article {{ ('class="'+ headingClass +'"') | safe if headingClass }}>
+    <article class="content-grid {{ headingClass | safe }}">
         <header>
             <div>
                 {% block pageHeaderBefore %}

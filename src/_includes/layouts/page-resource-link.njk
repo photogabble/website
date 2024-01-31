@@ -28,11 +28,23 @@
 {% endblock %}
 
 {% block pageContent %}
-    <section>
+    <section class="two-columns breakout">
         <div>
-            <aside style="padding: 1em; margin: 1em 0; background: var(--background-muted);">
-                <p style="text-align: left; margin: 0; width: 100%; font-size: 0.9em;">
-                    Bookmark #{{ index + 1 }}/{{ bookmarks.length }}{% if previousLink %}, previous link: <a href="{{ previousLink.url }}">{{ previousLink.data.title }}</a>{% endif %}{% if nextLink %}, next link: <a href="{{ nextLink.url }}">{{ nextLink.data.title }}</a>{% endif %}.
+            {% if dead %}
+                {% set href = wayback or '#' %}
+            {% else %}
+                {% set href = cite.href %}
+            {% endif %}
+
+            <p><a href="{{ href }}" class="bookmark-link">{{ cite.href }}</a></p>
+            {{ content | safe }}
+
+            {% include "components/backlinks.njk" %}
+        </div>
+        <div class="meta">
+            <aside>
+                <p>
+                    Bookmark #{{ index + 1 }}/{{ bookmarks.length }}{% if previousLink %},<br/>previous link: <a href="{{ previousLink.url }}">{{ previousLink.data.title }}</a>{% endif %}{% if nextLink %}, next link: <a href="{{ nextLink.url }}">{{ nextLink.data.title }}</a>{% endif %}.
                 </p>
             </aside>
 
@@ -41,7 +53,7 @@
             {% endif %}
 
             {% if not dead %}
-            <img class="preview" src="{% screenshot cite.href, page.fileSlug %}" aria-hidden="true" alt="Screenshot of web page." />
+                <img class="preview" src="{% screenshot cite.href, page.fileSlug %}" aria-hidden="true" alt="Screenshot of web page." />
             {% endif %}
 
             {% if button %}
@@ -60,57 +72,46 @@
             {% endif %}
 
             {% if feed or src or pages %}
-            <nav style="padding: 0 1em; margin: 1em 0;">
-                <h4 style="margin-bottom: 0.5em;font-size: 0.9em;">Pages of interest</h4>
+                <nav style="padding: 0 1em; margin: 1em 0;">
+                    <h4 style="margin-bottom: 0.5em;font-size: 0.9em;">Pages of interest</h4>
 
-                <ul>
-                {% if feed and feed.rss %}
-                    <li><a href="{{ feed.rss }}" target="_blank" rel="noopener">RSS</a></li>
-                {% endif %}
-                {% if feed and feed.atom %}
-                    <li><a href="{{ feed.atom }}" target="_blank" rel="noopener">Atom</a></li>
-                {% endif %}
-                {% if src %}
-                    <li><a href="{{ src.href }}" target="_blank" rel="noopener">{{ src.name }}</a></li>
-                {% endif %}
-                {% if pages and pages.bookmarks %}
-                    <li><a href="{{ pages.bookmarks }}" target="_blank" rel="noopener">Bookmarks</a></li>
-                {% endif %}
-                {% if pages and pages.blogroll %}
-                    <li><a href="{{ pages.blogroll }}" target="_blank" rel="noopener">Blogroll</a></li>
-                {% endif %}
-                {% if pages and pages.links %}
-                    <li><a href="{{ pages.links }}" target="_blank" rel="noopener">Links</a></li>
-                {% endif %}
-                {% if pages and pages.buttons %}
-                    <li><a href="{{ pages.buttons }}" target="_blank" rel="noopener">Button Board</a></li>
-                {% endif %}
-                {% if pages and pages.books %}
-                    <li><a href="{{ pages.books }}" target="_blank" rel="noopener">Bookshelf</a></li>
-                {% endif %}
-                {% if pages and pages.uses %}
-                    <li><a href="{{ pages.uses }}" target="_blank" rel="noopener">/uses</a></li>
-                {% endif %}
-                {% if pages and pages.now %}
-                    <li><a href="{{ pages.now }}" target="_blank" rel="noopener">/now</a></li>
-                {% endif %}
-                {% if pages and pages.stats %}
-                    <li><a href="{{ pages.stats }}" target="_blank" rel="noopener">Stats</a></li>
-                {% endif %}
-                </ul>
-            </nav>
+                    <ul>
+                        {% if feed and feed.rss %}
+                            <li><a href="{{ feed.rss }}" target="_blank" rel="noopener">RSS</a></li>
+                        {% endif %}
+                        {% if feed and feed.atom %}
+                            <li><a href="{{ feed.atom }}" target="_blank" rel="noopener">Atom</a></li>
+                        {% endif %}
+                        {% if src %}
+                            <li><a href="{{ src.href }}" target="_blank" rel="noopener">{{ src.name }}</a></li>
+                        {% endif %}
+                        {% if pages and pages.bookmarks %}
+                            <li><a href="{{ pages.bookmarks }}" target="_blank" rel="noopener">Bookmarks</a></li>
+                        {% endif %}
+                        {% if pages and pages.blogroll %}
+                            <li><a href="{{ pages.blogroll }}" target="_blank" rel="noopener">Blogroll</a></li>
+                        {% endif %}
+                        {% if pages and pages.links %}
+                            <li><a href="{{ pages.links }}" target="_blank" rel="noopener">Links</a></li>
+                        {% endif %}
+                        {% if pages and pages.buttons %}
+                            <li><a href="{{ pages.buttons }}" target="_blank" rel="noopener">Button Board</a></li>
+                        {% endif %}
+                        {% if pages and pages.books %}
+                            <li><a href="{{ pages.books }}" target="_blank" rel="noopener">Bookshelf</a></li>
+                        {% endif %}
+                        {% if pages and pages.uses %}
+                            <li><a href="{{ pages.uses }}" target="_blank" rel="noopener">/uses</a></li>
+                        {% endif %}
+                        {% if pages and pages.now %}
+                            <li><a href="{{ pages.now }}" target="_blank" rel="noopener">/now</a></li>
+                        {% endif %}
+                        {% if pages and pages.stats %}
+                            <li><a href="{{ pages.stats }}" target="_blank" rel="noopener">Stats</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
             {% endif %}
         </div>
-
-        {% if dead %}
-            {% set href = wayback or '#' %}
-        {% else %}
-            {% set href = cite.href %}
-        {% endif %}
-
-        <p><a href="{{ href }}">{{ cite.href }}</a></p>
-        {{ content | safe }}
     </section>
-
-    {% include "components/backlinks.njk" %}
 {% endblock %}

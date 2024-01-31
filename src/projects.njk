@@ -1,11 +1,10 @@
 {% extends "layouts/page.njk" %}
 
+{% set titlePrefix = 'Index' %}
 {% set title = 'Projects' %}
 {% set projects = collections.contentTypes | findBySlug('projects') | values('items') %}
 
-{% block content %}
-    <h1>Projects</h1>
-
+{% block pageContent %}
     <section>
         <h2>Featured</h2>
         <ul>

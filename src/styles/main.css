@@ -148,12 +148,6 @@ main {
   flex-grow: 1;
 }
 
-main p,
-main ul {
-  width: 85%;
-  max-width: 864px;
-}
-
 article > header {
   padding: 2em 0 1em 0;
 }
@@ -186,12 +180,9 @@ article.resource.bookmark aside + h1 {
   font-size: 3rem;
 }
 
-article section {
-  margin: 2em 0;
-}
-
 article p {
   text-align: justify;
+  text-align-last: left;
   text-justify: inter-word;
 }
 
@@ -233,14 +224,6 @@ article.resource.bookmark header > aside li {
   display: inline-block;
 }
 
-article.resource.bookmark > section > div {
-  float: right;
-  max-width: 40%;
-  min-width: auto;
-  margin-left: 2rem;
-  margin-bottom: 2rem;
-}
-
 article.resource.bookmark img.preview {
   border: 2px solid var(--background-muted);
   border-radius: 3px;
@@ -248,7 +231,7 @@ article.resource.bookmark img.preview {
   height: auto;
 }
 
-article.resource.bookmark > section div > nav ul {
+article.resource.bookmark div.meta ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -257,7 +240,20 @@ article.resource.bookmark > section div > nav ul {
   gap: 1rem;
 }
 
-article.resource.bookmark > section > p:first-of-type {
+article.resource.bookmark div.meta aside {
+  padding: 1em;
+  margin: 1em 0;
+  background: var(--background-muted);
+}
+
+article.resource.bookmark div.meta p {
+  text-align: left;
+  margin: 0;
+  width: 100%;
+  font-size: 0.9em;
+}
+
+article.resource.bookmark .bookmark-link {
   font-size: 1.4em;
   line-break: anywhere;
 }
@@ -466,10 +462,5 @@ p.down-the-rabbit-hole .margin-note img {
 
   body > header > div.container{
     margin-top: 40px;
-  }
-
-  main p,
-  main ul {
-    width: 100%;
   }
 }

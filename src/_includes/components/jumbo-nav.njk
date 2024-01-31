@@ -6,8 +6,8 @@
 {% set read = bookwyrm | whereKeyEquals('shelf', 'read') %}
 {% set resources = collections.resources | groupByKey('resourceType') %}
 
-<section class="jumbo-nav">
-    <nav class="container">
+<section class="jumbo-nav breakout">
+    <nav>
         <dl>
             <dt>Writing</dt>
             <dd><a href="/essays"><span>{{ grouped.get('essay').length }}</span><span>Essays</span></a></dd>

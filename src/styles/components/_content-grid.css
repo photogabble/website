@@ -5,8 +5,12 @@
 
 :root {
     --padding-inline: 1rem;
+    --paragraph-max-width: 864px;
     --content-max-width: 1400px;
 
+    --content-size: calc(
+            (var(--content-max-width) - var(--paragraph-max-width))
+    );
 }
 
 .content-grid {
@@ -14,30 +18,78 @@
     grid-template-columns:
     [full-width-start] minmax(var(--padding-inline), 16rem)
     [breakout-start] 0
-    [content-start] min(
-      100% - (var(--padding-inline) * 2),
-      var(--content-max-width)
-    )
-    [content-end]
-    minmax(0, 1fr) [breakout-end]
-    minmax(var(--padding-inline), 16rem) [full-width-end];
+    [content-start] 0
+    [paragraph-start]
+        min(
+          100% - (var(--padding-inline) * 2),
+          var(--paragraph-max-width)
+        )
+    [paragraph-end]
+    minmax(0, var(--content-size))[content-end]
+    minmax(0, 7rem) [breakout-end]
+    minmax(var(--padding-inline), 1fr) [full-width-end];
 }
 
-.content-grid > :not(.breakout, .full-width),
-.full-width > :not(.breakout, .full-width) {
+.content-grid > *,
+.full-width > *,
+article.content-grid section > * {
     grid-column: content;
 }
 
-
+.content-grid > .paragraph,
+.full-width > .paragraph,
+article.content-grid section:not(.two-columns) > .paragraph {
+    grid-column: paragraph;
+}
 
 .content-grid > .breakout,
-.full-width > .breakout {
+.full-width > .breakout,
+article.content-grid section:not(.two-columns) > .breakout {
     grid-column: breakout;
 }
 
-.content-grid > .full-width {
+.content-grid > .full-width,
+article.content-grid section:not(.two-columns) {
     grid-column: full-width;
 
     display: grid;
     grid-template-columns: inherit;
+}
+
+/*
+ * List of article elements that must be paragraph width
+ */
+article.content-grid p,
+article.content-grid ul {
+    grid-column: paragraph;
+}
+
+/*
+ * List of article elements that must be breakout width
+ */
+article.content-grid pre {
+    grid-column: breakout;
+}
+
+.two-columns {
+    grid-column: content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.two-columns__paragraph {
+    grid-template-columns: minmax(auto, var(--paragraph-max-width)) 1fr;
+}
+
+.two-columns > *,
+article.content-grid section.two-columns > * {
+    grid-column: auto;
+}
+
+@media (max-width: 864px) {
+    .two-columns {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
 }
