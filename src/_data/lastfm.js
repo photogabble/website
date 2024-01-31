@@ -272,6 +272,6 @@ module.exports = async function () {
   );
 
   return {
-     topAlbums: await api.getTopAlbums(),
+     //topAlbums: await api.getTopAlbums(),
   }
 };
