@@ -61,6 +61,11 @@ module.exports = {
     description: 'Websites designed with a Windows aesthetic in mind, mostly windows 98 but some 3.11 too!',
   },
 
+  'list/terminal-websites': {
+    title: 'Terminal Websites',
+    description: 'Websites that are navigated via an emulated terminal interface',
+  },
+
   'list/digital-pets': {
     title: "Digital Pets & Adoptables",
     description: 'List of virtual pets and adoptables',
