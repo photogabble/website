@@ -1,0 +1,44 @@
+{% set colours = item.image | imgColours %}
+<style>
+    .folder#{{ item.id }}::after {
+        border-bottom-color: rgb({{ colours.primary.join(',') }});
+    }
+    .folderContent.{{ item.id }} {
+        --album-background-colour: rgb({{ colours.primary.join(',') }});
+        --album-primary-colour: rgb({{ colours.inverse.primary.join(',') }});
+        --album-secondary-colour: rgb({{ colours.inverse.secondary.join(',') }});
+    }
+    .folderContent.{{ item.id }} .art-wrap {
+        box-shadow: inset 12px 15px 20px rgb({{ colours.primary.join(',') }}), inset -1px -1px 150px rgb({{ colours.primary.join(',') }});
+    }
+</style>
+<div id="{{ item.id }}-details" class="folderContent {{ item.id }} full-width">
+    <div class="jaf-container content-grid">
+        <div>
+            <div class="art-wrap"><img width="250" height="250" src="{{ item.image }}"></div>
+            <h2><a href="{{ item.url }}" target="_blank" rel="noopener" class="primary-color">{{ item.name | safe }}</a></h2>
+            <h3 class="secondary-color">{{ item.artist | joinList }} {% if item.year %}({{ item.year }}){% endif %}</h3>
+            {% if item.description %}
+            <p class="primary-color">{{ item.description }}</p>
+            {% endif %}
+{#            <div class="multi">#}
+{#                <ol class="secondary-color">#}
+{#                    <li><a href="https://itunes.apple.com/us/album/ok-computer/id696736813?i=696737042&amp;uo=4&amp;at=1l3v7Hz" target="_blank" class="primary-color">Airbag</a></li>#}
+{#                    <li><a href="https://itunes.apple.com/us/album/ok-computer/id696736813?i=696737042&amp;uo=4&amp;at=1l3v7Hz" target="_blank" class="primary-color">Paranoid Android</a></li>#}
+{#                    <li><a href="https://itunes.apple.com/us/album/ok-computer/id696736813?i=696737042&amp;uo=4&amp;at=1l3v7Hz" target="_blank" class="primary-color">Subterranean Homesick Alien</a></li>#}
+{#                    <li><a href="https://itunes.apple.com/us/album/ok-computer/id696736813?i=696737042&amp;uo=4&amp;at=1l3v7Hz" target="_blank" class="primary-color">Exit Music (For a Film)</a></li>#}
+{#                    <li><a href="https://itunes.apple.com/us/album/ok-computer/id696736813?i=696737042&amp;uo=4&amp;at=1l3v7Hz" target="_blank" class="primary-color">Let Down</a></li>#}
+{#                    <li><a href="https://itunes.apple.com/us/album/ok-computer/id696736813?i=696737042&amp;uo=4&amp;at=1l3v7Hz" target="_blank" class="primary-color">Karma Police</a></li>#}
+{#                    <li><a href="https://itunes.apple.com/us/album/ok-computer/id696736813?i=696737042&amp;uo=4&amp;at=1l3v7Hz" target="_blank" class="primary-color">Fitter Happier</a></li>#}
+{#                    <li><a href="https://itunes.apple.com/us/album/ok-computer/id696736813?i=696737042&amp;uo=4&amp;at=1l3v7Hz" target="_blank" class="primary-color">Electioneering</a></li>#}
+{#                    <li><a href="https://itunes.apple.com/us/album/ok-computer/id696736813?i=696737042&amp;uo=4&amp;at=1l3v7Hz" target="_blank" class="primary-color">Climbing Up the Walls</a></li>#}
+{#                    <li><a href="https://itunes.apple.com/us/album/ok-computer/id696736813?i=696737042&amp;uo=4&amp;at=1l3v7Hz" target="_blank" class="primary-color">No Surprises</a></li>#}
+{#                    <li><a href="https://itunes.apple.com/us/album/ok-computer/id696736813?i=696737042&amp;uo=4&amp;at=1l3v7Hz" target="_blank" class="primary-color">Lucky</a></li>#}
+{#                    <li><a href="https://itunes.apple.com/us/album/ok-computer/id696736813?i=696737042&amp;uo=4&amp;at=1l3v7Hz" target="_blank" class="primary-color">The Tourist</a></li>#}
+{#                </ol>#}
+{#            </div>#}
+        </div>
+        <br class="clear">
+    </div>
+    <a href="#" class="close">&times;</a>
+</div>

@@ -2,7 +2,7 @@ module.exports = [
   {
     id: 'developer-tea',
     type: 'podcast',
-    album: 'Developer Tea',
+    name: 'Developer Tea',
     artist: 'Jonathan Cutrell',
     image: '/img/listening/podcasts/developer-tea.jpeg',
     url: 'https://developertea.com/',
@@ -12,7 +12,7 @@ module.exports = [
   {
     id: 'accidental-tech-podcast',
     type: 'podcast',
-    album: 'Accidental Tech Podcast',
+    name: 'Accidental Tech Podcast',
     artist: ['Marco Arment', 'Casey Liss', 'John Siracusa'],
     image: '/img/listening/podcasts/accidental-tech-podcast.png',
     url: 'https://atp.fm/',
@@ -22,7 +22,7 @@ module.exports = [
   {
     id: 'infinite-monkey-cage',
     type: 'podcast',
-    album: 'The Infinite Monkey Cage',
+    name: 'The Infinite Monkey Cage',
     artist: ['Brian Cox', 'Robin Ince'],
     image: '/img/listening/podcasts/infinite-monkey-cage.jpeg',
     url: 'https://www.bbc.co.uk/programmes/b00snr0w',
@@ -32,7 +32,7 @@ module.exports = [
   {
     id: 'multimedia-hyperguide',
     type: 'podcast',
-    album: 'Multimedia HyperGuide:<br/> Windows 3.1, Mac and MS-DOS Gaming in the 90s',
+    name: 'Multimedia HyperGuide:<br/> Windows 3.1, Mac and MS-DOS Gaming in the 90s',
     artist: 'Super VGA',
     image: '/img/listening/podcasts/multimedia-hyperguide.png',
     url: 'https://podcast.vga256.com/',
