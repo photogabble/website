@@ -1,39 +1,73 @@
 {% if changes and changes.length > 0 %}
-  <h3>Git History</h3>
-  <ol class="changes" id="changesList">
-    {% for c in changes %}
-      <li class="change" style="{% if loop.index0 >= 5 %}display: none;{% endif %}">
-        <a href="{{ c.url }}">
-          <span class="change__title">{{ c.message }}</span>
-        </a>
-        <hr/>
-        <time>{{ c.date }}</time>
-      </li>
-    {% endfor %}
-  </ol>
 
-  {% if changes.length > 5 %}
-    <button id="showMoreButton" onclick="showMoreChanges()">Show All</button>
+  {% if changes.length === 1 %}
+    {% set amendedTimes = '' %}
+  {% elseif changes.length === 2 %}
+    {% set amendedTimes = ' and has since been amended once' %}
+  {% elseif changes.length === 3 %}
+    {% set amendedTimes = ' and has since been amended twice' %}
+  {% else %}
+    {% set amendedTimes = ' and has since been amended ' + (changes.length - 1) + ' times' %}
   {% endif %}
-{% endif %}
 
-<script>
-let showAll = true;
-function showMoreChanges() {
-  const changesList = document.getElementById('changesList');
-  const showMoreButton = document.getElementById('showMoreButton');
+  {% set first = changes | reverse | first %}
+  <section class="page-meta content-grid">
+    <a href="#page-info" class="pull-tab"><small>Page History</small></a>
+    <div id="page-info">
+      <p>
+        This page was first added to the repository on {{ first.date }} in commit <a href="{{ first.url }}">{{ first.hash.substring(0, 8) }}</a>{{ amendedTimes }}. <a href="https://github.com/photogabble/website/blob/main/{{ page.inputPath }}" target="_blank">View the source on GitHub</a>.
+      </p>
 
-  Array.from(changesList.children).forEach((entry, index) => {
-    if(showAll) {
-      entry.style.display = 'flex';
-    } else if(!showAll && index >= 5) {
-      entry.style.display = 'none';
+      {% if changes.length > 1 %}
+        <ol class="changes" id="changesList">
+          {% for c in changes %}
+            <li class="change" style="{% if loop.index0 >= 5 %}display: none;{% endif %}">
+              <a href="{{ c.url }}">
+                <span class="change__title">{{ c.message }}</span>
+              </a>
+              <hr/>
+              <time>{{ c.date }}</time>
+            </li>
+          {% endfor %}
+        </ol>
+      {% endif %}
+
+      {% if changes.length > 5 %}
+        <button id="showMoreButton" onclick="showMoreChanges()">Show All</button>
+      {% endif %}
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      function hashChangeHandler() {
+        const link = document.querySelector('.pull-tab');
+        link.href = window.location.hash === '#page-info'
+          ? '#page-close'
+          : '#page-info';
+      }
+
+      addEventListener('hashchange', hashChangeHandler);
+      hashChangeHandler();
+    })();
+
+    let showAll = true;
+    function showMoreChanges() {
+      const changesList = document.getElementById('changesList');
+      const showMoreButton = document.getElementById('showMoreButton');
+
+      Array.from(changesList.children).forEach((entry, index) => {
+        if(showAll) {
+          entry.style.display = 'flex';
+        } else if(!showAll && index >= 5) {
+          entry.style.display = 'none';
+        }
+      });
+
+      if(showAll) showMoreButton.innerHTML = 'Show Less'
+      else showMoreButton.innerHTML = 'Show All'
+
+      showAll = !showAll
     }
-  });
-
-  if(showAll) showMoreButton.innerHTML = 'Show Less'
-  else showMoreButton.innerHTML = 'Show All'
-
-  showAll = !showAll
-}
-</script>
+  </script>
+{% endif %}

@@ -146,6 +146,7 @@ header {
 main {
   font-size: 1.2em;
   flex-grow: 1;
+  margin-bottom: 2em;
 }
 
 article > header {
@@ -451,6 +452,37 @@ ul.alphabet {
 .down-the-rabbit-hole img {
   position: absolute;
   top: -200px;
+}
+
+.page-meta{
+  position: relative;
+  background-color: var(--background-muted);
+  border-top: 3px solid var(--accent);
+  margin-top: 3rem;
+}
+
+.page-meta > div {
+  max-height: 0;
+  overflow: hidden;
+  display: none;
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 1rem 0;
+}
+
+.page-meta > div:target {
+  display: block;
+  max-height: 9999px;
+}
+
+.page-meta .pull-tab {
+  background-color: var(--background-muted);
+  position: absolute;
+  top: -2.5rem;
+  padding: 0 0.5rem;
+  height: 2.5rem;
+  border-top: 3px solid var(--accent);
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 864px) {

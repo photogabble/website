@@ -1,6 +1,5 @@
 footer {
     background-color: var(--background-muted);
-    margin-top: 2em;
     padding-bottom: 1em;
     display:flex;
     flex-direction: column;
