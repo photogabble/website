@@ -15,7 +15,8 @@ I can be found in the following online communities:
 * <a href="https://news.ycombinator.com/user?id=c12">Hacker News</a>,
 * <a href="https://www.youtube.com/channel/UCgyw5PRS1DAhL8fk4_he6fQ">YouTube</a>,
 * <a href="https://github.com/carbontwelve">GitHub</a>,
-* <a href="https://mltshp.com/">Mltshop</a>.
+* <a href="https://mltshp.com/">Mltshop</a>,
+* <a href="https://status.cafe/users/carbontwelve">status.cafe</a>.
 
 I have accounts on the following platforms, but I <em>infrequently</em> visit them:
 
