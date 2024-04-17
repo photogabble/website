@@ -11,4 +11,4 @@ dead: true
 button: theqbee.net.gif
 ---
 
-I used to frequent The Quilting Bee from time to time back in its heyday.
+I used to frequent The Quilting Bee from time to time back in its heyday. It was one of the first pixel-cliques that I discovered and became a big inspiration for my getting into pixel art.
