@@ -2,6 +2,7 @@
 title: Daniels Network
 tags:
   - list/button-board
+  - list/digital-graveyard
 cite:
   href: http://danielsnet.net
 button: 
