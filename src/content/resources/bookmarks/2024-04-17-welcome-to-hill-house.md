@@ -10,7 +10,7 @@ cite:
 button: 
   - hillhouse.neocities.png
   - hillhouse.neocities.2.png
-  - hillhouse.neocities.3.png
+  - hillhouse.neocities.3.gif
 feed:
   rss: https://journal.miso.town/atom?url=https://hillhouse.neocities.org/_parts/updates
 pages:
