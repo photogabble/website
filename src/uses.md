@@ -9,6 +9,11 @@ folder: about
 A somewhat complete list of tools, applications, hardware and services that I used on a day-to-day basis. Make sure to check out <a href="https://uses.tech">uses.tech</a> for a list of other peoples <code>/uses</code> pages!
 
 ## Hardware
+* Main PC
+  * **Processor**: AMD Ryzen 7 7700 @ 3.8-5.3GHz
+  * **Memory**: 32GB Corsair Vengeance PC5-48000
+  * **Motherboard**: ASUS ROG Strix AMD B650E-I mini-ITX
+  * **Case**: NZXT H1 v2
 * Lenovo x230 ThinkPad
   * **Processor**: Intel i7-3520M @ 2.90Ghz
   * **Memory**: 16GB 1600Mhz DDR3
