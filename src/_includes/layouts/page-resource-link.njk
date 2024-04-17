@@ -109,6 +109,9 @@
                         {% if pages and pages.stats %}
                             <li><a href="{{ pages.stats }}" target="_blank" rel="noopener">Stats</a></li>
                         {% endif %}
+                        {% if pages and pages.changelog %}
+                            <li><a href="{{ pages.changelog }}" target="_blank" rel="noopener">Changelog</a></li>
+                        {% endif %}
                     </ul>
                 </nav>
             {% endif %}
