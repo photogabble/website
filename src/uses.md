@@ -10,27 +10,27 @@ A somewhat complete list of tools, applications, hardware and services that I us
 
 ## Hardware
 * Lenovo x230 ThinkPad
-  * **Processor**: Intel i7-3520m @ 2.90Ghz
+  * **Processor**: Intel i7-3520M @ 2.90Ghz
   * **Memory**: 16GB 1600Mhz DDR3
 * Apple 16" 2019 MacBook Pro
-  * **Processor**: Intel Core i7 @ 2.6 GHz
+  * **Processor**: Intel Core i7-9750H @ 2.6 GHz
   * **Memory**: 16GB 2667MHz DDR4
 * ~~Apple 16" 2017 MacBook Pro~~
-  * ~~**Processor**: Intel Core i7 @ 2.8 GHz~~
+  * ~~**Processor**: Intel Core i7-7820HQ @ 2.8 GHz~~
   * ~~**Memory**: 16GB 2133MHz LPDDR3~~
 * ~~iPhone SE (32GB)~~
 * iPhone 12 Mini (64GB)
 
 ## Software
 * Chrome/Firefox/Safari
-* Obsidian.md
+* Obsidian.md (see [[My publishing workflow]])
 * intelliJ PHPStorm and Goland
 
 ### Windows Specific
 * Putty
 * WinSCP
 * HeidiSQL
-* Vagrant &amp; VirtualBox
+* Vagrant & VirtualBox
 
 ### OSX Specific
 * Table Plus
@@ -59,6 +59,8 @@ For personal projects and self-hosting I use:
 For work, in addition to the above (excluding the hosting providers) I use:
 * AWS
   * SQS
+  * RDS
+  * Elastic Beanstalk
   * API Gateway
   * Lambda
   * S3
