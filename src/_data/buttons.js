@@ -62,4 +62,10 @@ module.exports = [
   // Sourced from https://dead.garden/
   'clickhereforfree.png',
   'naptime.png',
+
+  // Sourced from https://strangesite.neocities.org/
+  'smeter.gif',
+
+  // Sourced from https://divergentrays.com/
+  'hell0.gif'
 ];
