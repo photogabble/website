@@ -9,6 +9,7 @@ cite:
 pages:
   bookmarks: https://www.trovster.com/links
   books: https://www.trovster.com/books
+  changelog: https://www.trovster.com/changelog
 feed:
   rss: https://www.trovster.com/blog/posts.xml
 ---
