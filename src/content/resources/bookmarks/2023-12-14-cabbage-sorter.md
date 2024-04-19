@@ -10,7 +10,7 @@ button:
   - cabbagesorter.neocities.gif
   - cabbagesorter.neocities.2.gif
 pages:
-  bookmarks: https://cabbagesorter.neocities.org/buttons
+  buttons: https://cabbagesorter.neocities.org/buttons
 ---
 
 Hosted on [[Neocities]], this website reminds me of the #OldWeb and I especially like their [book reviews](https://cabbagesorter.neocities.org/books) and [button collection](https://cabbagesorter.neocities.org/buttons) pages.
