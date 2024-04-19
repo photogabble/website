@@ -5,5 +5,7 @@ tags:
 cite:
   name: Lune
   href: https://cloverbell.neocities.org/
-button: cloverbell.neocities.gif
+button: 
+  - cloverbell.neocities.gif
+  - cloverbell.neocities.2.gif
 ---
