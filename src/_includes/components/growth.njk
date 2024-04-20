@@ -2,6 +2,10 @@
     {% set growthIcon = '👩‍🌾' %}
     {% set growthTitle = 'Stubs are placeholders for pages I will be publishing soon.' %}
     {% set growthText = 'Stub' %}
+{% elif growthStage === 'ephemeral' %}
+    {% set growthIcon = '📓' %}
+    {% set growthTitle = 'Ephemeral entires are fixed in time commentary that is unlikley to be updated.' %}
+    {% set growthText = 'Journal' %}
 {% elif growthStage === 'seedling' %}
     {% set growthIcon = '🌱' %}
     {% set growthTitle = 'Seedlings are rough and early ideas, they need further work and are likely to change often' %}
