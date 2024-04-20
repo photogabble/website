@@ -23,6 +23,11 @@ module.exports = {
     description: 'List of clubs that group together websites under a single banner',
   },
 
+  'list/banner-network': {
+    title: 'Banner Networks',
+    description: 'List of banner networks, mostly Small Web related',
+  },
+
   'list/e-magazine': {
     title: 'Online Magazines',
     description: 'List of digital magazines that interest me',
