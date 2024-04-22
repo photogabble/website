@@ -9,10 +9,12 @@
     "build": "cross-env ELEVENTY_ENV=production eleventy",
     "build:dev": "cross-env ELEVENTY_ENV=development eleventy",
     "og-images": "node ./bin/create-og-images.js",
-    "make:bookmark": "node ./bin/add-bookmark.js"
+    "make:bookmark": "node ./bin/add-bookmark.js",
+    "make:week-in-review": "node ./bin/add-week-in-review.js"
   },
   "bin": {
     "add-bookmark": "./bin/add-bookmark.js",
+    "add-week-in-review": "./bin/add-week-in-review.js",
     "gen-og-images": "./bin/create-og-images.js"
   },
   "keywords": [
@@ -56,6 +58,7 @@
   },
   "dependencies": {
     "@11ty/eleventy-img": "^3.1.8",
+    "@inquirer/editor": "^2.1.4",
     "cheerio": "^1.0.0-rc.12",
     "colorthief": "^2.4.0",
     "enquirer": "^2.3.6",

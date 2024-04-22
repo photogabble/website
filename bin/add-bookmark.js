@@ -172,3 +172,7 @@ const options = yargs
   .argv;
 
 main(options).then(code => process.exit(code));
+
+module.exports = {
+  fetchUrl,
+}
