@@ -1,7 +1,7 @@
 ---
 title: '>>LONELYJULY<<'
-alias:
-  - LonelyJuly
+aliases:
+  - "LonelyJuly"
 tags:
   - list/button-board
   - list/windows-interface
