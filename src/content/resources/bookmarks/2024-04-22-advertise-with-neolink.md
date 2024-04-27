@@ -10,4 +10,4 @@ NeoLink is a small web banner exchange by [[Googol]], at one point it was quite 
 
 <iframe width="300" height="250" style="border:none" src="https://googol.neocities.org/neolink/embed.html" name="neolink"></iframe>
 
-Refresh the page to see more banners from the NeoLink network above.
+Refresh the page to see more banners from the _NeoLink network_ above.
