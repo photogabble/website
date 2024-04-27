@@ -67,5 +67,8 @@ module.exports = [
   'smeter.gif',
 
   // Sourced from https://divergentrays.com/
-  'hell0.gif'
+  'hell0.gif',
+
+  // Sourced from https://web.archive.org/web/19981206053423/http://www2.stpt.com/general/submit.html
+  'use-submit-it.gif',
 ];
