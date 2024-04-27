@@ -4,7 +4,7 @@ tags:
   - list/blogroll
 cite:
   name: Xe Iaso
-  href: https://christine.website/
+  href: https://xeiaso.net/
 src:
   name: Github
   href: https://github.com/Xe/site
