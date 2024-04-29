@@ -1,10 +1,10 @@
 ---
 title: Copy my Copywork
-description:
+description: "It's okay to steal inspiration, learn what the code does and why it works."
 growthStage: budding
 ---
 
-I few months ago I was asked _why_ I publish the [source code to this website](https://github.com/photogabble/website) for all to see and honestly up until that point I hadn't really put that much thought into it. I *had* been inspired by seeing [[Xe Iaso's Blog|Xe Iaso]] linking the most recent git commit in each pages footer to do so myself and _that_ required having a public repository; but none of my previous website repositories are public so why this one?
+A few months ago I was asked _why_ I publish the [source code to this website](https://github.com/photogabble/website) for all to see and honestly up until that point I hadn't really put that much thought into it. I *had* been inspired by seeing [[Xe Iaso's Blog|Xe Iaso]] linking the most recent git commit in each pages footer to do so myself and _that_ required having a public repository; but none of my previous website repositories are public so why this one?
 
 This website was originally generated using [Tapestry](https://www.tapestry.cloud/) a SSG of my own creation written in PHP but I wanted to give Netlify a go due to a recommendation by [[Cassidy Williams]] and because I had read a couple of articles by  [Andy Bell](https://piccalil.li/) on using #11ty I decided to give it a go.
 
