@@ -24,11 +24,10 @@ folder: writing
                 <h4 id="{{ letter }}">{{ letter }}</h4>
                 <ul>
                     {%- for term in terms %}
-                        <li><a href="{{ term.url }}">{{ term.data.title }} <small>({{ term.data.backlinks.length }})</small></a></li>
+                        <li><a href="{{ term.url }}">{{ term.data.title }} {%- if term.data.backlinks.length > 0 %} <small>({{ term.data.backlinks.length }})</small>{%- endif %}</a></li>
                     {%- endfor %}
                 </ul>
             {% endif %}
         {%- endfor %}
     </section>
-
 {% endblock %}
