@@ -1,5 +1,5 @@
 ---
-title: "Build This 8-Bit Home Computer With Just 5 Chips\P"
+title: "Build This 8-Bit Home Computer With Just 5 Chips"
 tags:
   - Notable Articles
 cite:
