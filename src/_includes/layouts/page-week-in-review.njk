@@ -1,0 +1,48 @@
+{% extends "./page.njk" %}
+{% set ogtype = 'article' %}
+{% set readingTime = content | wordStats %}
+{% set headingClass = 'note' %}
+{% set titlePrefix %}
+    {% include "components/growth.njk" %} {{ contentType }}
+{% endset %}
+
+{% set subTitle %}
+    {% if growthStage === 'stub' %}scheduled for {% else %}planted on {% endif %}
+    <time datetime="{{ page.date.toISOString() }}">{{ page.date | dateToFormat("DDD") }}</time>
+    in: {% include "../components/tag-list.njk" %}.
+    {% if modified %}
+        modified on <time datetime="{{ modified.toISOString() }}">{{ modified | dateToFormat("DDD") }}</time>
+    {% endif %}
+    <br/>{{ readingTime.text if readingTime.words > 0 }}.
+{% endset %}
+
+{% block pageContent %}
+    <section class="full-width">
+        {{ content | safe }}
+    </section>
+
+    {% set week = page.date | dateToFormat("W") %}
+    {% set year = page.date | dateToFormat("kkkk") %}
+
+    {% set tagged = 'Notable Articles' %}
+    {% set featuredCite = false %}
+    {% set featuredTitle = 'Notable Articles Read' %}
+    {% include "components/week-in-review-links.njk" %}
+
+    {% set tagged = 'list/youtube-video' %}
+    {% set featuredCite = true %}
+    {% set featuredTitle = 'Notable Videos Watched' %}
+    {% include "components/week-in-review-links.njk" %}
+
+    {% set tagged = 'Nifty Show and Tell' %}
+    {% set featuredCite = false %}
+    {% set featuredTitle = 'Cool things from around the Internet' %}
+    {% include "components/week-in-review-links.njk" %}
+
+    {% if tags | includesTag('wayback machine') %}
+        <hr/>
+        {% include "components/wayback-machine.njk" %}
+    {% endif %}
+
+    {% include "components/backlinks.njk" %}
+{% endblock %}

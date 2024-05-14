@@ -1,0 +1,9 @@
+{% set items = collections.resources | whereKeyEquals('resourceType', 'bookmarks') | onlyTagged(tagged) | inWeek(week, year) | trackBacklink(page, title) %}
+{% if items.length > 0 %}
+<h2>{{ featuredTitle }}</h2>
+<ul>
+    {% for item in items %}
+        <li><a href="{{ item.data.cite.href }}" rel="noopener">{% if featuredCite and item.data.cite.name %}<strong>{{ item.data.cite.name }}:</strong> {% endif %}{{ item.data.title }}</a> &mdash; {{ item | excerpt | safe }} <a href="{{ item.url }}">My notes</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
