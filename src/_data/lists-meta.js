@@ -106,6 +106,11 @@ module.exports = {
     description: 'List of channels I enjoy watching',
   },
 
+  'list/youtube-video': {
+    title: 'YouTube Videos',
+    description: 'List of videos I recommend'
+  },
+
   'list/forum': {
     title: 'Forums & Communities',
     description: 'List of Forums, communities and online hubs'
