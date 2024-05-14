@@ -191,7 +191,7 @@ article.note img:not(.btn-88x31) {
 }
 
 article.note > header h1 {
-  font-size: 6rem;
+  font-size: clamp(2rem, 6vw, 6rem);
 }
 
 article.book > header h1 + h2 {
