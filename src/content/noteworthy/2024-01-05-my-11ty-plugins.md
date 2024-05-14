@@ -5,7 +5,7 @@ tags:
   - 11ty
 ---
 
-This is an [[Anchor page]] for listing [eleventy.js](https://www.11ty.dev/) plugins that I have written.
+This is an [[Anchor Page]] for listing [eleventy.js](https://www.11ty.dev/) plugins that I have written.
 
 ## [[Eleventy.js Interlink Plugin]]
 [view on npm](https://www.npmjs.com/package/@photogabble/eleventy-plugin-interlinker) | [view on GitHub](https://github.com/photogabble/eleventy-plugin-interlinker)
