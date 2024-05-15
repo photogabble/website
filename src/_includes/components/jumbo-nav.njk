@@ -50,7 +50,11 @@
                 </dd>
                 <dd>
                     {%- for item in buttonBoard.items | randomItems(4) -%}
-                        {% set href = item.data.cite.href or item.url %}
+                        {% if not item.data.dead %}
+                            {% set href = item.data.cite.href or item.url %}
+                        {% else %}
+                            {% set href = item.url %}
+                        {% endif %}
                         <a href="{{ href }}" class="no-ext btn-88x31" rel="noopener" title="Visit {{ item.data.title }}">
                             <img width="88" height="31" src="/img/88x31/{{ item.data.button | firstBtn }}" alt="88x31 button for {{ item.data.title }}" aria-hidden="true" />
                         </a>
