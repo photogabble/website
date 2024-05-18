@@ -9,25 +9,24 @@
     --content-max-width: 1400px;
 
     --content-size: calc(
-            (var(--content-max-width) - var(--paragraph-max-width))
+        (var(--content-max-width) - var(--paragraph-max-width))
     );
 }
 
 .content-grid {
     display: grid;
+    overflow: hidden;
+    text-wrap: balance;
     grid-template-columns:
-    [full-width-start] minmax(var(--padding-inline), 16rem)
-    [breakout-start] 0
-    [content-start] 0
-    [paragraph-start]
-        min(
-          100% - (var(--padding-inline) * 2),
-          var(--paragraph-max-width)
-        )
-    [paragraph-end]
-    minmax(0, var(--content-size))[content-end]
-    minmax(0, 7rem) [breakout-end]
-    minmax(var(--padding-inline), 1fr) [full-width-end];
+        [full-width-start] minmax(var(--padding-inline), 16rem)
+        [breakout-start] 0
+        [content-start] 0
+        [paragraph-start]
+        min(100% - (var(--padding-inline) * 2), var(--paragraph-max-width))
+        [paragraph-end]
+        minmax(0, var(--content-size)) [content-end]
+        minmax(0, 7rem) [breakout-end]
+        minmax(var(--padding-inline), 1fr) [full-width-end];
 }
 
 .content-grid > *,
