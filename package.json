@@ -1,6 +1,6 @@
 {
   "name": "@photogabble/website",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Source code for photogabble.co.uk",
   "main": "index.js",
   "scripts": {
@@ -66,5 +66,9 @@
     "outdent": "^0.8.0",
     "simple-git": "^3.20.0",
     "yargs": "^17.7.2"
+  },
+  "engines": {
+    "npm": ">=10.0.0 <11.0.0",
+    "node": ">=20.0.0 <21.0.0"
   }
 }
