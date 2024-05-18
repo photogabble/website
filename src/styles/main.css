@@ -16,6 +16,7 @@
 @import "components/_changes.css";
 @import "components/_jumbo.css";
 @import "components/_stats.css";
+@import "components/_terminal-tau.css";
 
 * {
   box-sizing: border-box;

@@ -1,0 +1,29 @@
+/* A touch of whimsy from https://bytemoth.nfshost.com/cd5k-net/tau/
+   Pi is dead, but Tau continues its legacy */
+.terminal-tau {
+    animation: zzttext 1s 0s linear infinite;
+}
+
+@keyframes zzttext {
+    0% {
+        color: #5f5
+    }
+    14% {
+        color: #55f
+    }
+    29% {
+        color: #fff
+    }
+    43% {
+        color: #ff5
+    }
+    57% {
+        color: #f5f
+    }
+    71% {
+        color: #f55
+    }
+    86% {
+        color: #5ff
+    }
+}
