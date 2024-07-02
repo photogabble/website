@@ -1,25 +1,18 @@
 ---
-folder: lists
+title: The Antilibrary
+subtitle: Books I like the idea of having read
+layout: layouts/page-post.njk
+navigation_component: reading-view-toggle
+sidebar_component: books
+sidebar_shelves: ['to-read']
+folder: [lists]
+hide_meta: true
 ---
-{% extends "layouts/page.njk" %}
 
-{% set title = 'Antilibrary' %}
-{% set titlePrefix = 'Reading' %}
-{% set books = bookwyrm | whereKeyEquals('shelf', 'to-read') %}
-{% set subTitle %}
-    {{ books.length }} books that I intend to read eventually.
-{% endset %}
+{% blockquote "Bjørn Stærk", "lessons from the antilibrary", "https://bearstrong.net/articles/2007/05/17/lessons-from-the-anti-library.html" %}
+    Taleb introduces the Hayekian and almost taoistic metaphor of the anti-library: A library of the books you haven't read, of the things you don't know. A massive collection of unknowledge, the anti-library contains all the books that may still change your life.
+{% endblockquote %}
 
-{% block pageContent %}
-    <section>
-        <blockquote>
-            Taleb introduces the Hayekian and almost taoistic metaphor of the anti-library: A library of the books you haven't read, of the things you don't know. A massive collection of <em>unknowledge</em>, the anti-library contains all the books that may still change your life.
-            <br/><small>&mdash; Bjørn Stærk | <a href="https://bearstrong.net/articles/2007/05/17/lessons-from-the-anti-library.html">lessons from the antilibrary</a></small>
-        </blockquote>
-        {% include "components/book-grid.njk" %}
-    </section>
+Inspired by [Maggie Appleton's Antilibrary](https://maggieappleton.com/antilibrary) and my general magpie tendency to collect things I added this list of books that I like the idea of reading.
 
-    <hr/>
-
-    {% include "components/book-layout-inspiration.njk" %}
-{% endblock %}
+Whenever I am out and find a book that I like the idea of reading, instead of bringing it home to my full bookcases I instead add it to my [bookwyrm.social profile](https://bookwyrm.social/user/carbontwelve) where it automatically makes its way to this page.
