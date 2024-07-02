@@ -1,30 +1,46 @@
+---js
+{
+    pagination: {
+        data: "collections",
+        size: 1,
+        alias: "topic",
+        before(paginationData, fullData) {
+            const excluded = (fullData.collections['type/topic'] ?? [])
+                .reduce((carry, item) => {
+                    const value = item.data?.topic ?? item.data.title;
+                    if (value) carry.add(value);
+                    return carry;
+                }, new Set(['all']));
+
+            return paginationData.filter((topic) => {
+                return (topic.includes('/') || excluded.has(topic)) === false;
+            });
+        }
+    },
+    permalink: "/topic/{{ topic | slugify }}/",
+    folder: ['writing', 'topic'],
+}
 ---
-title: All Topics
-titlePrefix: Index
-folder: [writing]
----
-{% extends "layouts/page.njk" %}
+{% extends "layouts/base.njk" %}
 
-{% block pageContent %}
-<nav class="tags-list">
-    <ul style="display: grid;">
-        {% for tag in collections.contentTags %}
-            <li>
-                <a href="/topic/{{ tag.slug }}/"> {{ tag.name }} <small>({{ tag.items.length }})</small></a>
-            </li>
+{% block sidebar %}
+    {% set sidebar_title = 'Writing tagged as “' + topic + '”' %}
+    {% set sidebar_topic = topic %}
+    {% include "components/side-bars/topic.njk" %}
+{% endblock %}
+
+{% block content %}
+    <article>
+        <header>
+            <h1>{{ topic }}</h1>
+        </header>
+        <section>
+            <p>Hello world</p>
+        </section>
+    </article>
+    <div>
+        {% for topic in nakedTopics %}
+            <p>{{ topic }}</p>
         {% endfor %}
-    </ul>
-</nav>
-
-<hr/>
-
-<nav>
-    <h1>All Content</h1>
-    <ul>
-        {% for type in collections.contentTypes %}
-            <li><a href="/{{ type.slug }}/">{{ type.name }} <small>({{ type.items.length }})</small></a></li>
-        {% endfor %}
-    </ul>
-</nav>
-
+    </div>
 {% endblock %}
