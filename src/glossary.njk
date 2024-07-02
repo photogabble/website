@@ -1,33 +1,10 @@
 ---
-folder: writing
+title: Glossary
+sub_title: Colloquialisms, phrases and sayings used on this website
+layout: layouts/page-post.njk
+sidebar_component: alphabetised
+sidebar_title: Glossary Terms
+sidebar_topic: 'type/glossary'
+hide_meta: true
+folder: [writing]
 ---
-
-{% extends "layouts/page.njk" %}
-
-{% set title = 'Glossary' %}
-{% set titlePrefix = 'Writing' %}
-{% set subTitle = 'Brief descriptions of colloqualisms in use on this website:'%}
-{% set alphabetSortedTerms = collections.contentTypes | findBySlug('glossary') | values('items') | alphabetSort %}
-
-{% block pageContent %}
-    <nav>
-        <ul class="alphabet">
-            {%- for letter, terms in alphabetSortedTerms %}
-                <li><a {{ 'href=#' + letter if terms.length else '' }}>{{ letter }}</a></li>
-            {%- endfor %}
-        </ul>
-    </nav>
-
-    <section>
-        {%- for letter, terms in alphabetSortedTerms -%}
-            {% if terms.length > 0 %}
-                <h4 id="{{ letter }}">{{ letter }}</h4>
-                <ul>
-                    {%- for term in terms %}
-                        <li><a href="{{ term.url }}">{{ term.data.title }} {%- if term.data.backlinks.length > 0 %} <small>({{ term.data.backlinks.length }})</small>{%- endif %}</a></li>
-                    {%- endfor %}
-                </ul>
-            {% endif %}
-        {%- endfor %}
-    </section>
-{% endblock %}
