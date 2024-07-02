@@ -1,22 +1,32 @@
 @import "../../node_modules/normalize.css/normalize.css";
-@import "../../node_modules/prismjs/themes/prism-tomorrow.min.css";
-@import "../../node_modules/prismjs/plugins/treeview/prism-treeview.css";
+/*@import "../../node_modules/prismjs/themes/prism-tomorrow.min.css";*/
+/*@import "../../node_modules/prismjs/plugins/treeview/prism-treeview.css";*/
+
+@import "_root.css";
+@import "_layout.css";
+@import "_article.css";
+@import "_lists.css";
+@import "_mainnav.css";
+@import "_jumbonav.css";
+
+/* TODO: Refactor all of below into above files, or extra ones */
+/* TODO: Move main.css into src folder
 
 /* Components */
-@import "components/_content-grid.css";
-@import "components/_fonts.css";
-@import "components/_themes.css";
-@import "components/_post-list.css";
-@import "components/_button.css";
-@import "components/_table.css";
-@import "components/_figure.css";
-@import "components/_books.css";
-@import "components/_footer.css";
-@import "components/_review_list.css";
-@import "components/_changes.css";
-@import "components/_jumbo.css";
-@import "components/_stats.css";
-@import "components/_terminal-tau.css";
+/*@import "components/_content-grid.css";*/
+/*@import "components/_fonts.css";*/
+/*@import "components/_themes.css";*/
+/*@import "components/_post-list.css";*/
+/*@import "components/_button.css";*/
+/*@import "components/_table.css";*/
+/*@import "components/_figure.css";*/
+/*@import "components/_books.css";*/
+/*@import "components/_footer.css";*/
+/*@import "components/_review_list.css";*/
+/*@import "components/_changes.css";*/
+/*@import "components/_jumbo.css";*/
+/*@import "components/_stats.css";*/
+/*@import "components/_terminal-tau.css";*/
 
 * {
   box-sizing: border-box;
