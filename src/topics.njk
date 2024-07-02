@@ -1,33 +1,11 @@
 ---
-pagination:
-  data: collections.contentPaginatedByTopic
-  size: 1
-  alias: topic
-permalink: /{{ topic.slug }}/index.html
+title: All Topics
+sub_title: A Hazelnut in Every Bite
+layout: layouts/page-post.njk
+sidebar_component: topics
+hide_meta: true
 folder: [writing, topic]
+permalink: /topic/
 ---
 
-{% extends "layouts/page.njk" %}
-
-{% set title = topic.title %}
-{% set titlePrefix = 'Topic' %}
-
-{% block pageContent %}
-  <section>
-    {% set postsList = topic.items %}
-    {% set displayContentType = true %}
-    {% include "components/post-list.njk" %}
-  </section>
-
-  {% if topic.totalPages > 1 %}
-    <nav>
-      <p>
-        Viewing page {{ topic.pageNumber }} of {{ topic.totalPages }},
-        {% if topic.pageSlugs.previous %}<a href="/{{ topic.pageSlugs.previous }}/">Previous Page</a>{% endif %}
-        {% if topic.pageSlugs.next %}<a href="/{{ topic.pageSlugs.next }}/">Next Page</a>{% endif %}
-      </p>
-    </nav>
-  {% endif %}
-
-  {% include 'components/hot-topics.njk' %}
-{% endblock %}
+For the longest time I constrained my writing to a handful of categories: [Programming](/topic/programming/), [Games](/topic/games/), [Tutorials](/tutorials/), [Blogging](/topic/blogging/), [Tools & Resources](/topic/tools-and-resources/) and [Pixel Art](/topic/pixel-art/). When converting PhotoGabble into a [[Digital Garden]] I decided to drop that restriction and allow a variety of topics to be discussed.
