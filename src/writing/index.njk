@@ -1,28 +1,11 @@
-{% extends "layouts/page.njk" %}
+---
+title: Writing
+sub_title: Items published since April 20, 2007
+layout: layouts/page-post.njk
+sidebar_component: writing
+navigation_component: writing-view-toggle
+hide_meta: true
+folder: [writing]
+---
 
-{% set allPosts = collections.post | excludeStubs | excludeTypes(['mirror', 'resource', 'project']) | reverse %}
-{% set postsByYear = allPosts | groupByYear %}
-{% set titlePrefix = 'Index' %}
-{% set title = 'Writing Archive' %}
-{% set subTitle = '<strong>' + allPosts.length +'</strong> items published since April 20, 2007' %}
-{% set headingClass = 'writing-index' %}
-
-{% block pageContent %}
-    {% for year, items in postsByYear %}
-        <section>
-            <header class="breakout">
-                <h3>{{ year }}</h3>
-                <nav>
-                    {% set postsByMonth = items | groupByMonth %}
-                    {% set year = year %}
-                    {% include 'components/months-of-year.njk' %}
-                </nav>
-            </header>
-            {% set displayContentType = true %}
-            {% set postsList = items %}
-            {% include "components/post-list.njk" %}
-        </section>
-    {% endfor %}
-
-    {% include 'components/hot-topics.njk' %}
-{% endblock %}
+Hello world.
