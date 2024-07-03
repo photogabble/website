@@ -3,11 +3,29 @@
         <h3>Previous <code>/now</code> entries</h3>
     </header>
     <ol class="post-list__chronological">
-        <li><span><a href="#" title="Read ...">Current <code>/now</code> entry</a></span><hr><small>April 27, 2024</small></li>
-        <li><span><a href="#" title="Read ...">February 2023</a></span><hr><small>April 27, 2024</small></li>
-        <li><span><a href="#" title="Read ...">January 2023</a></span><hr><small>April 27, 2024</small></li>
-        <li><span><a href="#" title="Read ...">June 2022</a></span><hr><small>April 27, 2024</small></li>
-        <li><span><a href="#" title="Read ...">May 2022</a></span><hr><small>April 27, 2024</small></li>
+        {% set current = collections.nowUpdates | reverse | first %}
+        {% for update in collections.nowUpdates | reverse %}
+            {% if update.fileSlug == current.fileSlug %}
+                <li>
+                        <span>
+                            {% if isNow %}»{% endif %}
+                            <a href="/now" title="Go to current now page">Current</a>
+                        </span>
+                    <hr/>
+                    {{ update.date | dateToFormat("DDD") }}
+                </li>
+            {% else %}
+                {% set updateTitle = update.date | dateToFormat("LLLL yyyy") %}
+                <li>
+                        <span>
+                            {% if page and page.url === update.url %}»{% endif %}
+                            <a href="{{ update.url }}" title="Read {{ updateTitle }}">{{ updateTitle }}</a>
+                        </span>
+                    <hr/>
+                    {{ update.date | dateToFormat("DDD") }}
+                </li>
+            {% endif %}
+        {% endfor %}
     </ol>
     <footer>
         <nav><a href="https://nownownow.com/about">What is a now page?</a> | <a href="https://nownownow.com/"><code>/now</code> page directory</a></nav>
