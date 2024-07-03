@@ -261,7 +261,7 @@ const movies = [
   // },
 ];
 
-module.exports = movies.map(movie => {
+export default movies.map(movie => {
   return {...movie, watchedDate: new Date(Date.parse(movie.watchedDate))};
 }) .sort((a, b) => {
   return b.watchedDate - a.watchedDate;

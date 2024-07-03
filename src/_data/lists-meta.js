@@ -3,7 +3,7 @@
 // my collection of lists. This data is consumed
 // by the lists collection for each list in use.
 //
-module.exports = {
+export default {
 
   // Collections of things
 

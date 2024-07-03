@@ -5,7 +5,8 @@ layout: layouts/page-post.njk
 sidebar_component: writing
 navigation_component: writing-view-toggle
 hide_meta: true
-folder: [writing]
+folder:
+  - {title: 'writing'}
 ---
 
 Hello world.

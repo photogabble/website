@@ -1,0 +1,11 @@
+{% set topics = collections | tagsInCollection(['writing'], ['stage/stub']) %}
+<section class="post-list post-list__topics">
+    <header class="post-list__inline-header">
+        <h3>All Topics ({{ topics.length }})</h3>
+    </header>
+    <ol>
+        {% for topic in topics %}
+        <li><a href="/topic/{{ topic.name | slugify }}">{{ topic.name }}</a> ({{ topic.usages }})</li>
+        {% endfor %}
+    </ol>
+</section>

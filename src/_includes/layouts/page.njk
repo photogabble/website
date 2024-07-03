@@ -3,7 +3,13 @@
 {% block header %}
     <nav>
         {% if breadcrumbs %}
-            {% for crumb in breadcrumbs %}<a href="{{ crumb.href }}" title="{{ crumb.title }}">{{ crumb.text }}</a>/{% endfor %}
+            {%- for crumb in breadcrumbs -%}
+                {%- if crumb.href -%}
+                <a href="{{ crumb.href }}" title="{{ crumb.title }}">{{ crumb.text }}</a>/
+                {%- else -%}
+                <span>{{ crumb.title }}</span>
+                {%- endif -%}
+            {%- endfor -%}
         {% else %}
             <a href="/">~</a>/
         {% endif %}

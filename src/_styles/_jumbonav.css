@@ -1,0 +1,121 @@
+.jumbo-toggle {
+    display: inline;
+    border: none;
+    background: none;
+    color: var(--sidebar-anchor-color);
+    font-family: inherit;
+    text-decoration: underline;
+    padding: 0;
+    cursor: pointer;
+    font-size: 0.8rem;
+    line-height: 1.54;
+}
+
+#jumbo-nav {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 4rem 1.5rem 1.5rem;
+    background: var(--jumbo-nav-background-color);
+    color: var(--jumbo-nav-text-color);
+}
+
+#jumbo-nav.jumbo-nav__open {
+    display: block;
+}
+
+#jumbo-nav nav {
+    display: grid;
+    column-gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+
+    color: var(--jumbo-nav-text-color);
+    font-size: .9rem;
+}
+
+#jumbo-nav dl:not(.community) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#jumbo-nav dl:not(.community) dt {
+    border-bottom: 1px solid;
+    margin-bottom: 0.5rem;
+}
+
+#jumbo-nav dl.community dd:first-of-type{
+    margin-bottom: 1rem;
+}
+
+#jumbo-nav dl.community dd:nth-of-type(2) a {
+    text-decoration: none;
+    display: inline-block;
+    height: 31px;
+    width: 88px;
+}
+
+#jumbo-nav dl.community dd:nth-of-type(2) a:hover{
+    box-shadow: 0 0 10rem var(--jumbo-nav-anchor-color);
+}
+
+#jumbo-nav dt {
+    text-transform: uppercase;
+    font-size: 80%;
+}
+
+#jumbo-nav dt,
+#jumbo-nav .footer {
+    grid-column: span 2;
+}
+
+#jumbo-nav .footer {
+    margin-top: .5rem;
+}
+
+#jumbo-nav dd {
+    margin: 0;
+}
+
+#jumbo-nav dd a {
+    text-decoration: none;
+    color: var(--jumbo-nav-text-color);
+}
+
+#jumbo-nav dd span:first-child {
+    color: var(--jumbo-nav-anchor-color);
+    margin-right: 0.3rem;
+    font-size: smaller;
+}
+
+#jumbo-nav dd span:nth-child(2) {
+    border-bottom: 1px solid var(--jumbo-nav-anchor-color);
+}
+
+#jumbo-nav dd a:hover span:first-child {
+    color: var(--jumbo-nav-anchor-hover-color);
+}
+
+#jumbo-nav dd a:hover span:nth-child(2) {
+    border-bottom-color: var(--jumbo-nav-anchor-hover-color);
+}
+
+#jumbo-nav div {
+    grid-column-end: span 2;
+    border-top: 1px solid;
+    margin-top: 1rem;
+}
+
+
+#jumbo-nav div a {
+    color: var(--jumbo-nav-anchor-color);
+    text-decoration: underline;
+}
+
+@media (max-width: 425px) {
+    #jumbo-nav nav {
+        grid-template-columns: 1fr;
+    }
+}

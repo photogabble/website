@@ -1,4 +1,5 @@
-module.exports = [
+// TODO: (RL2024) Refactor into bookmarks
+export default [
     {
         title: 'WebAssembly Search Tools for Static Sites',
         href: 'https://healeycodes.com/webassembly-search-tools-for-static-websites/',

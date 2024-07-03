@@ -1,0 +1,6 @@
+<li>
+    {%- if page and page.url === item.url -%}»&nbsp;{%- endif -%}
+    <a href="{{ item.url }}">{{ item.data.title }}</a>
+    <small>{{ item.data.tags | specialTagValue('language') }}</small>
+    {%- if item.data.lastCommitDate -%}, last updated {{ item.data.lastCommitDate | dateToAgo }}{%- endif -%}
+</li>

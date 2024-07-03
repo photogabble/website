@@ -1,63 +1,86 @@
-const filters = require('./lib/filters');
-const asyncFilters = require('./lib/async-filters');
-const collections = require('./lib/collections');
-const {slugify} = require('./lib/filters');
-const shortcodes = require('./lib/shortcodes');
-const transforms = require('./lib/transforms');
-const ObjectCache = require("./lib/helpers/cache");
+// import interlinker from '@photogabble/eleventy-plugin-interlinker';
+import wordstats from '@photogabble/eleventy-plugin-word-stats';
+import blogtimes from '@photogabble/eleventy-plugin-blogtimes';
+import screenshot from './lib/helpers/screenshot.js';
+import rss from '@11ty/eleventy-plugin-rss';
+import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
+import postGraph from '@rknightuk/eleventy-plugin-post-graph';
+import postcss from '@jgarber/eleventy-plugin-postcss';
+import hashtags from './lib/helpers/hashtags.js';
+import markdown from './lib/helpers/markdown.js';
+import {registerShortcodes} from "./lib/shortcodes.js";
+import {registerFilters} from "./lib/filters.js";
+import {registerCollections} from "./lib/collections.js";
 
-module.exports = function (eleventyConfig) {
+export default async function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
 
   //
   // Install Plugins
   //
 
-  eleventyConfig.addPlugin(require('@rknightuk/eleventy-plugin-post-graph'), {
-    boxColor: 'var(--background-muted)',
-    highlightColor: 'var(--accent)',
-    textColor: 'var(--foreground)',
+  /**
+   * @rknightuk/eleventy-plugin-post-graph
+   * @see https://www.npmjs.com/package/@rknightuk/eleventy-plugin-post-graph
+   */
+  eleventyConfig.addPlugin(postGraph, {
+    boxColor: 'var(--darker-color)',
+    highlightColor: 'var(--key-color)',
+    textColor: 'var(--light-color)',
   });
 
-  eleventyConfig.addPlugin(require('./lib/helpers/screenshot'));
+  // TODO: REL2024, should this be its own external plugin? Are there alternatives to use?
+  // TODO: Disabled until fixed as part of REL2024
+  eleventyConfig.addPlugin(screenshot);
 
-  eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-interlinker'), {
-    defaultLayout: 'layouts/embed.liquid',
-  });
+  /**
+   * @todo disabled until build working for REL2024
+   * @photogabble/eleventy-plugin-interlinker
+   * @see https://www.npmjs.com/package/@photogabble/eleventy-plugin-interlinker
+   */
+  // eleventyConfig.addPlugin(interlinker, {
+  //   defaultLayout: 'layouts/embed.liquid',
+  // });
 
-  eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-font-subsetting'), {
-    srcFiles: [
-      `./public/fonts/iosevka-etoile-regular.woff2`,
-      `./public/fonts/iosevka-etoile-italic.woff2`,
-      `./public/fonts/iosevka-etoile-bold.woff2`,
-      `./public/fonts/iosevka-etoile-bolditalic.woff2`,
-    ],
-    dist: './src/fonts',
-    enabled: process.env.ELEVENTY_ENV !== 'production',
-    cache: new ObjectCache('font-subsetting'),
-  });
-
-  eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-tag-normaliser'), {
+  /**
+   * Plugin normalises hashtags being converted into page tags.
+   * @photogabble/eleventy-plugin-tag-normaliser
+   * @see https://www.npmjs.com/package/@photogabble/eleventy-plugin-tag-normaliser
+   */
+  eleventyConfig.addPlugin(hashtags, {
     ignore: ['PHP', 'JavaScript', 'DOScember'],
     similar: {
+      'Old Web': ['OldWeb'],
       'Game Development': ['GameDev'],
       'Retro Computing': ['RetroComputing'],
       'Node JS': ['Node'],
       '365 Day Project': ['365DayProject']
     },
-    slugify,
   });
 
-  eleventyConfig.addPlugin(require("eleventy-plugin-postcss"));
+  /**
+   * Plugin registers PostCSS as a renderer for .css files.
+   * @jgarber/eleventy-plugin-postcss
+   * @see https://www.npmjs.com/package/@jgarber/eleventy-plugin-postcss
+   */
+  eleventyConfig.addPlugin(postcss);
 
-  eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-blogtimes'), {
+  /**
+   * @photogabble/eleventy-plugin-blogtimes
+   * @see https://www.npmjs.com/package/@photogabble/eleventy-plugin-blogtimes
+   */
+  eleventyConfig.addPlugin(blogtimes, {
     generateHTML: (outputUrl, options) => `<img alt="Blogtimes histogram" width="${options.width}" height="${options.height}" src="${outputUrl}" style="min-width: auto;" />`,
     lastXDays: 180,
   });
 
+  /**
+   * @photogabble/eleventy-plugin-word-stats
+   * @see https://www.npmjs.com/package/@photogabble/eleventy-plugin-word-stats
+   */
   const numberFormat = new Intl.NumberFormat('en-GB');
 
-  eleventyConfig.addPlugin(require('@photogabble/eleventy-plugin-word-stats'), {
+  eleventyConfig.addPlugin(wordstats, {
     output: (stats) => {
       const words = numberFormat.format(stats.words);
       return {
@@ -68,54 +91,30 @@ module.exports = function (eleventyConfig) {
     }
   });
 
-  eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"));
+  /**
+   * @11ty/eleventy-plugin-rss
+   * Provides helper functions for creating RSS Feeds
+   * @see https://www.11ty.dev/docs/plugins/rss/
+   */
+  eleventyConfig.addPlugin(rss);
 
-  eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-syntaxhighlight"), {
-    init: ({Prism}) => {
-      require('prismjs/plugins/treeview/prism-treeview.js')
-      require('prismjs/components/prism-clike')
-      require('prismjs/components/prism-markup')
-      require('prismjs/components/prism-markup-templating')
-      require('prismjs/components/prism-ini')
-      require('prismjs/components/prism-css')
-      require('prismjs/components/prism-bash')
-      require('prismjs/components/prism-powershell')
-      require('prismjs/components/prism-yaml')
-      require('prismjs/components/prism-javascript')
-      require('prismjs/components/prism-sql')
-      require('prismjs/components/prism-twig')
-      require('prismjs/components/prism-php')
-      require('prismjs/components/prism-php-extras')
-      require('prismjs/components/prism-markdown')
-      require('prismjs/components/prism-basic')
-      require('prismjs/components/prism-go')
-      require('prismjs/components/prism-regex')
-    }
+  /**
+   * @11ty/eleventy-plugin-syntaxhighlight
+   * Provides build time transformation of code blocks using PrismJS syntax highlighting
+   * @todo check highlighting of tree and other special languages I had set before still works
+   * @see https://www.11ty.dev/docs/plugins/syntaxhighlight/
+   */
+  eleventyConfig.addPlugin(syntaxHighlight.configFunction, {
+    preAttributes: { tabindex: 0 }
   });
 
   //
   // Filters, Collections, Transformers and Shortcodes
   //
 
-  Object.keys(filters).forEach((filterName) => {
-    eleventyConfig.addFilter(filterName, filters[filterName])
-  });
-
-  Object.keys(asyncFilters).forEach((filterName) => {
-    eleventyConfig.addAsyncFilter(filterName, asyncFilters[filterName]);
-  });
-
-  for (const [name, collection] of Object.entries(collections(eleventyConfig))) {
-    eleventyConfig.addCollection(name, collection);
-  }
-
-  Object.keys(transforms).forEach((transformName) => {
-    eleventyConfig.addTransform(transformName, transforms[transformName])
-  });
-
-  Object.keys(shortcodes).forEach((shortCodeName) => {
-    eleventyConfig.addShortcode(shortCodeName, shortcodes[shortCodeName]);
-  });
+  registerShortcodes(eleventyConfig);
+  registerFilters(eleventyConfig);
+  registerCollections(eleventyConfig);
 
   //
   // Pass through
@@ -135,13 +134,23 @@ module.exports = function (eleventyConfig) {
   // Markdown-It && Plugins
   //
 
-  eleventyConfig.setLibrary('md', require('./lib/helpers/markdown'));
+  eleventyConfig.setLibrary('md', markdown());
 
   return {
+    templateFormats: [
+      "md",
+      "njk",
+      "html",
+      "liquid",
+    ],
+
+    markdownTemplateEngine: "liquid",
+
+    htmlTemplateEngine: "liquid",
+
     dir: {
       input: "src",
       output: "_site"
     }
   };
-
 };

@@ -1,0 +1,41 @@
+{%- if sidebar_shelves -%}
+    {% set books = bookwyrm | whereKeyEquals('shelf', sidebar_shelves) %}
+    <section class="book-list">
+        {% for book in books %}
+            {% set review = collections.all | whereKeyEquals('openlibraryKey', book.openlibraryKey) | first %}
+            {% if review %}
+                {% set href = review.url %}
+                {% set label = 'View' + book.title + ' review' %}
+            {% else %}
+                {% set href = book.id %}
+                {% set label = 'View' + book.title + ' on bookwyrm.social' %}
+            {% endif %}
+
+
+            <a href="{{ href }}" aria-label="{{ label }}" class="book">
+                <div class="cover{% if not book.cover %} cover__placeholder" aria-hidden="true{% endif %}">
+                    {% if book.cover %}
+                    <img src="{{ book.cover.url }}" alt="{{ book.cover.name }}" />
+                    {% else %}
+                        <div class="img-placeholder" aria-hidden="true">
+                            <h3>{{ book.title }}</h3>
+                            <p>
+                                {% for author in book.authors %}
+                                    {{ author.name }}{{ "," if not loop.last }}
+                                {% endfor %}
+                            </p>
+                        </div>
+                    {% endif %}
+                </div>
+                <h3>{{ book.title }}</h3>
+                <p>
+                    {% for author in book.authors %}
+                        {{ author.name }}{{ "," if not loop.last }}
+                    {% endfor %}
+                </p>
+                <p>★★★★★</p>
+                <p>Finished: 23 Jun 2021</p>
+            </a>
+        {% endfor %}
+    </section>
+{%- endif -%}

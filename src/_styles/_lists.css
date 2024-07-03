@@ -1,0 +1,195 @@
+.post-list__topics ol {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.post-list header {
+    display: flex;
+    flex-direction: column;
+}
+
+ul.alphabet {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 0.5em;
+    flex-wrap: wrap;
+}
+
+.post-list header.post-list__inline-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post-list header:not(.post-list__inline-header) h3{
+    margin-bottom: 0;
+}
+.post-list header:not(.post-list__inline-header) p {
+    margin-top: 0.5rem;
+}
+
+.post-list footer {
+    margin-top: 1rem;
+    text-align: right;
+}
+
+.post-list ol {
+    list-style: none;
+    padding: 0;
+}
+
+.post-list__alphabetised > li {
+    display: grid;
+    grid-template-columns: 1.5rem 1fr;
+    margin-bottom: 1rem;
+}
+
+.post-list__alphabetised > li > ul {
+    padding: 0;
+    list-style-position: inside;
+}
+
+.post-list__alphabetised > li > ul li {
+    margin-bottom: 0.3rem;
+}
+
+.post-list__chronological li {
+    display: flex;
+    margin-bottom: 1rem;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.post-list__chronological hr {
+    flex-grow: 1;
+    margin: 0;
+    display: block;
+    border: 0;
+    border-bottom: 3px double;
+}
+
+.project-list header {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.project-list header h3 {
+    margin-bottom: 0;
+}
+
+.project-list header p {
+    margin-top:0.5rem;
+}
+
+.project-list ul li {
+    margin: .5rem 0;
+}
+
+/*
+ * Library / Anti Library
+ */
+
+.book-list {
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.book {
+    display: block;
+    text-decoration: none;
+}
+
+.book .cover{
+    display: block;
+    background: #CCC;
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 1 / 1.5;
+}
+.book .cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 150ms;
+}
+
+.book .cover.cover__placeholder{
+    background: transparent;
+    border: 1px solid;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.book h3 {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.book p {
+    font-size: 0.75rem;
+    margin: 0.5rem 0;
+}
+
+/*
+ * Listened To
+ */
+
+.album-list {
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* five in a row by default
+    TODO: change for different viewports
+ */
+.album{
+    width: calc(100% / 5);
+    aspect-ratio: 1;
+    padding: 0.5rem;
+}
+
+/* one plus the number per row */
+.album:first-child,
+.album:nth-child(6){
+    padding-left: 0;
+}
+
+.album:nth-child(5) {
+    padding-right: 0;
+}
+
+.album .inner{
+    display: block;
+    background: #CCC;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.album .inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 150ms;
+}
+
+.album .inner:hover img {
+    width: 110%;
+    height: 110%;
+    margin-left: -5%;
+    margin-top: -5%;
+}
+
+.album.album__detail .inner{
+    background: transparent;
+    border: 1px solid #CCC;
+    padding:1rem;
+}

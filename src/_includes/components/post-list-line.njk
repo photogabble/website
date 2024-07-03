@@ -1,7 +1,9 @@
+{# TODO: move into ./navigation folder #}
 <li>
     <span>
+        {% if page and page.url === post.url %}»{% endif %}
         {% if post.data.draft %}
-        <span style="color: red">(D)</span>
+            <span style="color: red">(D)</span>
         {% endif %}
         <a href="{{ post.url }}" title="Read {{ post.data.title }}">{{ post.data.title }}</a>
         {% if displayContentType %}

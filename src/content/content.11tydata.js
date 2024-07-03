@@ -1,21 +1,75 @@
-const {getChanges} = require("../../lib/helpers/get-git-changes");
-const {slugify, ogImageFromSlug} = require('../../lib/filters');
+import {notTagged, specialTagValue} from "../../lib/filters.js";
+//import {getChanges} from '../../lib/helpers/get-git-changes';
 
-module.exports = {
+export default {
+  show_related: true,
   featured: false,
   draft: false,
   excludeFromFeed: false,
+  tags: [],
   layout: 'layouts/page-post.njk',
   growthStage: 'seedling', // seedling, budding, evergreen
   contentType: 'thought', // thought, noteworthy, essay, tutorial, project
-  folder: ['writing'],
   eleventyComputed: {
-    changes: data => getChanges(data),
+    //changes: data => getChanges(data),
     permalink(data) {
       const path = data?.permalinkBase ?? data.contentType;
       const slug = data?.slug ?? this.slugify(data.title);
       return `${path}/${slug}/`;
     },
-    ogImageHref: (data) => ogImageFromSlug(slugify(data.title)),
+    // TODO: special consideration for previous/next of `type/topic`
+    // TODO: filter out stubs
+    previousPost(data) {
+      const type = specialTagValue(data.tags, 'type');
+      const collection = data?.collections[`type/${type}`] ?? [];
+      if (collection.length === 0) return undefined;
+
+      const idx = collection.findIndex((item) => item.inputPath === data.page.inputPath);
+      if (idx < 1) return undefined;
+
+      return collection[idx - 1];
+    },
+    nextPost(data) {
+      const type = specialTagValue(data.tags, 'type');
+      const collection = data?.collections[`type/${type}`] ?? [];
+      if (collection.length === 0) return undefined;
+
+      const idx = collection.findIndex((item) => item.inputPath === data.page.inputPath);
+      if (idx === collection.length - 1) return undefined;
+
+      return collection[idx + 1];
+    },
+    related(data) {
+      const tags = data.tags;
+      const items = notTagged((data?.collections.writing ?? []), 'stage/stub');
+      if (items.length === 0) return [];
+
+      // loop over all files tagged as `writing` and create a list of files
+      // related to this one based upon similar tags.
+
+      return items.reduce((carry, item) => {
+        if (item.inputPath === data.page.inputPath) return carry;
+        if ((item.data?.tags ?? []).length === 0) return carry;
+
+        const score = item.data.tags
+          .map(tag => tags.includes(tag) ? 1 : 0)
+          .reduce((count, current) => {
+            count += current;
+            return count;
+          });
+
+        if (score === 0) return carry;
+
+        carry.push({
+          score,
+          page: item,
+        });
+
+        return carry;
+      }, []).sort((a, b) => {
+        // TODO: if score is equal, sort by last modified
+        return b.score - a.score; // DESC order of score
+      }).map(item => item.page);
+    },
   }
 };

@@ -1,5 +1,5 @@
-module.exports = {
-  layout: "layouts/book.njk",
+export default {
+  tags: ['resource/books'],
   eleventyComputed: {
     book(data) {
       // @see https://www.11ty.dev/docs/data-computed/#declaring-your-dependencies
@@ -13,5 +13,5 @@ module.exports = {
     permalink(data) {
       return (!data.page) ? '' : `resources/books/${data.page.fileSlug}/`;
     },
-  }
+  },
 }

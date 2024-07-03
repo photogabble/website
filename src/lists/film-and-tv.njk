@@ -1,12 +1,21 @@
 ---
 title: Film and TV Series
-titlePrefix: List
-folder: lists
 subTitle: What I have been watching lately
+titlePrefix: List
+folder: [lists]
+navigation_links:
+  - title: 'Watched'
+    href: '/lists/film-and-tv/'
+  - title: 'Watchlist'
+    href: '/lists/to-watch/'
 ---
-{% extends "layouts/page.njk" %}
+{% extends "layouts/page-post.njk" %}
 
-{% block pageContent %}
+{% block sidebar %}
+    {% include "components/side-bars/lists.njk" %}
+{% endblock %}
+
+{% block content %}
     <section>
         <ol role="list" class="review-list">
         {% for movie in movies %}

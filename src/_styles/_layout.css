@@ -1,0 +1,36 @@
+/* Main page layouts */
+main {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 50vw 50vw
+}
+
+#left {
+    position: relative;
+
+    font-size: 0.8rem;
+    line-height: 1.54;
+    letter-spacing: -0.02em;
+
+    padding: 1.5rem;
+    background: var(--sidebar-background-color);
+    color: var(--sidebar-color);
+    font-family: monospace;
+
+    overflow-y: auto;
+    max-height: 100vh;
+    box-sizing: border-box;
+}
+
+#left a,
+#left h1 {
+    color: var(--sidebar-anchor-color);
+}
+
+#right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    max-height: 100vh;
+}

@@ -1,0 +1,30 @@
+{% set postsByYear = collections.writing | notTagged(['type/project', 'type/resource', 'stage/stub', 'type/glossary', 'type/changelog']) | reverse | groupByYear %}
+
+{% for year, items in postsByYear %}
+<section class="post-list">
+    <header class="post-list__inline-header">
+        <h3>{{ year }}</h3>
+        {% set postsByMonth = items | groupByMonth %}
+        {% set year = year %}
+        <nav>{% include 'components/months-of-year.njk' %}</nav>
+    </header>
+    <ol class="post-list__chronological">
+        {% for post in items %}
+            {% include "components/post-list-line.njk" %}
+        {% endfor %}
+    </ol>
+</section>
+{% endfor %}
+
+<hr/>
+
+{% set contentTypes = collections | specialTagsInCollection('type', ['type/resource', 'type/project', 'type/topic', 'stage/stub']) %}
+<section>
+    <nav>
+        {% for contentType in contentTypes %}
+            {% set isContentType = tags | includes(contentType.name) %}
+            {% set currentContentType = metadata.contentTypes[contentType.name] %}
+            <a href="{{ contentType.permalink }}">{{ contentType.title or contentType.name }} ({{ contentType.usages }}){% if isContentType %}*{% endif %}</a>
+        {% endfor %}
+    </nav>
+</section>

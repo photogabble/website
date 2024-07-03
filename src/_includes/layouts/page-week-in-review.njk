@@ -24,17 +24,17 @@
     {% set week = page.date | dateToFormat("W") %}
     {% set year = page.date | dateToFormat("kkkk") %}
 
-    {% set tagged = 'Notable Articles' %}
+    {% set tagged = ['resource/bookmarks', 'Notable Articles'] %}
     {% set featuredCite = false %}
     {% set featuredTitle = 'Notable Articles Read' %}
     {% include "components/week-in-review-links.njk" %}
 
-    {% set tagged = 'list/youtube-video' %}
+    {% set tagged = ['resource/bookmarks', 'list/youtube-video'] %}
     {% set featuredCite = true %}
     {% set featuredTitle = 'Notable Videos Watched' %}
     {% include "components/week-in-review-links.njk" %}
 
-    {% set tagged = 'Nifty Show and Tell' %}
+    {% set tagged = ['resource/bookmarks', 'Nifty Show and Tell'] %}
     {% set featuredCite = false %}
     {% set featuredTitle = 'Cool things from around the Internet' %}
     {% include "components/week-in-review-links.njk" %}

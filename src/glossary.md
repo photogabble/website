@@ -6,5 +6,7 @@ sidebar_component: alphabetised
 sidebar_title: Glossary Terms
 sidebar_topic: 'type/glossary'
 hide_meta: true
-folder: [writing]
+folder: 
+  - writing
+  - {title: 'glossary'}
 ---
