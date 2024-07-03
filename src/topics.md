@@ -4,7 +4,7 @@ sub_title: A Hazelnut in Every Bite
 layout: layouts/page-post.njk
 sidebar_component: topics
 hide_meta: true
-folder: [writing, topic]
+folder: [topic]
 permalink: /topic/
 ---
 
