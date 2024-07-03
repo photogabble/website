@@ -2,8 +2,10 @@
 layout: layouts/page-post.njk
 title: "/uses"
 titlePrefix: "Me"
-sub_title: "Last updated July 2nd, 2024."
+sub_title: "What's in my big bag of tools"
+sidebar_component: uses
 folder: [about]
+modified: 2024-07-02
 ---
 
 A somewhat complete list of tools, applications, hardware and services that I used on a day-to-day basis. Make sure to check out <a href="https://uses.tech">uses.tech</a> for a list of other peoples <code>/uses</code> pages!
