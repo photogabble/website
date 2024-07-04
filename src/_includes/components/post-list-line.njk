@@ -19,6 +19,6 @@
     <hr/>
     <small>
         {% if post.data.growthStage === 'stub' %}Due {% endif %}
-        {{ post.date | dateToFormat("DDD") }}
+        {{ post.data.niceDate or post.date | dateToFormat("DDD") }}
     </small>
 </li>

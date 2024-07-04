@@ -1,4 +1,4 @@
-import {notTagged, specialTagValue} from "../../lib/filters.js";
+import {dateToFormat, notTagged, specialTagValue} from "../../lib/filters.js";
 //import {getChanges} from '../../lib/helpers/get-git-changes';
 
 export default {
@@ -12,6 +12,8 @@ export default {
   contentType: 'thought', // thought, noteworthy, essay, tutorial, project
   eleventyComputed: {
     //changes: data => getChanges(data),
+    // niceDate: stops dateToFormat being hit hundreds of thousands of times
+    niceDate: data => dateToFormat(data.page.date, 'DDD'),
     permalink(data) {
       const path = data?.permalinkBase ?? data.contentType;
       const slug = data?.slug ?? this.slugify(data.title);
