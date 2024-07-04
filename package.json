@@ -31,6 +31,7 @@
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@fullhuman/postcss-purgecss": "^4.1.3",
+    "@jgarber/eleventy-plugin-postcss": "^0.3.3",
     "@photogabble/eleventy-plugin-blogtimes": "^1.0.0",
     "@photogabble/eleventy-plugin-interlinker": "git+ssh://git@github.com/photogabble/eleventy-plugin-interlinker.git#v1.1.0",
     "@photogabble/eleventy-plugin-tag-normaliser": "^1.0.0",
@@ -40,7 +41,6 @@
     "chalk": "^4.1.1",
     "characterset": "^2.0.0",
     "cross-env": "^7.0.3",
-    "@jgarber/eleventy-plugin-postcss": "^0.3.3",
     "flat-cache": "^3.0.4",
     "html-minifier": "^4.0.0",
     "luxon": "^3.4.4",
@@ -64,10 +64,11 @@
     "colorthief": "^2.4.0",
     "enquirer": "^2.3.6",
     "js-yaml": "^4.1.0",
+    "memoize": "^10.0.0",
+    "node-html-parser": "^6.1.13",
     "outdent": "^0.8.0",
     "simple-git": "^3.20.0",
-    "yargs": "^17.7.2",
-    "node-html-parser": "^6.1.13"
+    "yargs": "^17.7.2"
   },
   "engines": {
     "npm": ">=10.0.0 <11.0.0",
