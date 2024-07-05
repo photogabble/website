@@ -1,26 +1,4 @@
-{% extends "layouts/base.njk" %}
-
-{% block navigation %}
-    {%- if navigation_component -%}
-        {%- set navigation_component_include = 'components/navigation/' + navigation_component + '.njk' -%}
-        {%- include navigation_component_include -%}
-    {%- elseif navigation_links -%}
-        {%- for link in navigation_links -%}
-            <a href="{{ link.href }}" class="{%- if page.url === link.href -%}nav__on{%- else -%}nav__off{%- endif -%}">{{ link.title }}</a><span>|</span>
-        {%- endfor -%}
-    {%- else -%}
-        <a href="#">Graph</a><span>|</span>
-    {%- endif -%}
-{% endblock %}
-
-{% block sidebar %}
-    {% if sidebar_component %}
-        {% set sidebar_component_include = 'components/side-bars/' + sidebar_component + '.njk' %}
-        {% include sidebar_component_include %}
-    {% else %}
-        {% include "components/side-bars/writing.njk" %}
-    {% endif %}
-{% endblock %}
+{% extends "layouts/page.njk" %}
 
 {% block content %}
     {% include "components/page-article.njk" %}

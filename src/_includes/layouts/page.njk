@@ -1,46 +1,23 @@
-{% extends "./base.njk" %}
+{% extends "layouts/base.njk" %}
 
-{% block header %}
-    <nav>
-        {% if breadcrumbs %}
-            {%- for crumb in breadcrumbs -%}
-                {%- if crumb.href -%}
-                <a href="{{ crumb.href }}" title="{{ crumb.title }}">{{ crumb.text }}</a>/
-                {%- else -%}
-                <span>{{ crumb.title }}</span>
-                {%- endif -%}
-            {%- endfor -%}
-        {% else %}
-            <a href="/">~</a>/
-        {% endif %}
-    </nav>
-    <div class="action-buttons">
-        <button class="jumbo-nav__trigger" onclick="toggleJumboMenu()">Menu</button>
-        <button class="icon" aria-label="Change Theme" onclick="toggleThemePicker()">
-            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" data-slot="icon" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m15 11.25 1.5 1.5.75-.75V8.758l2.276-.61a3 3 0 1 0-3.675-3.675l-.61 2.277H12l-.75.75 1.5 1.5M15 11.25l-8.47 8.47c-.34.34-.8.53-1.28.53s-.94.19-1.28.53l-.97.97-.75-.75.97-.97c.34-.34.53-.8.53-1.28s.19-.94.53-1.28L12.75 9M15 11.25 12.75 9" />
-            </svg>
-        </button>
-    </div>
+{% block navigation %}
+    {%- if navigation_component -%}
+        {%- set navigation_component_include = 'components/navigation/' + navigation_component + '.njk' -%}
+        {%- include navigation_component_include -%}
+    {%- elseif navigation_links -%}
+        {%- for link in navigation_links -%}
+            <a href="{{ link.href }}" class="{%- if page.url === link.href -%}nav__on{%- else -%}nav__off{%- endif -%}">{{ link.title }}</a><span>|</span>
+        {%- endfor -%}
+    {%- else -%}
+        <a href="#">Graph</a><span>|</span>
+    {%- endif -%}
 {% endblock %}
 
-{% block content %}
-    <article class="content-grid {{ headingClass | safe }}">
-        <header>
-            <div>
-                {% block pageHeaderBefore %}
-                    {% if titlePrefix %}<small><span>{{ titlePrefix | safe }}</span></small>{% endif %}
-                {% endblock %}
-                {% if title or headerTitle %}<h1>{{ (title or headerTitle) }}</h1>{% endif %}
-                {% if subTitle %}<h2>{{ subTitle | safe }}</h2>{% endif %}
-            </div>
-            {% block pageHeaderAfter %}{% endblock %}
-        </header>
-
-        <span>&mdash;</span>
-
-        {% block pageContent %}
-            {{ content | safe }}
-        {% endblock %}
-    </article>
+{% block sidebar %}
+    {% if sidebar_component %}
+        {% set sidebar_component_include = 'components/side-bars/' + sidebar_component + '.njk' %}
+        {% include sidebar_component_include %}
+    {% else %}
+        {% include "components/side-bars/writing.njk" %}
+    {% endif %}
 {% endblock %}

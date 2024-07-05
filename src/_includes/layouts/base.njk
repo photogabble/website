@@ -105,11 +105,11 @@
 
 <main>
     <div id="left" class="side-bar">
-        {% include "components/navigation/jumbo-nav.njk" %}
         <header id="main-nav" class="main-nav">
             <nav>{% for crumb in folder | breadcrumbs %}{% if crumb.href %}<a href="{{ crumb.href }}" title="{{ crumb.title }}">{{ crumb.text }}</a>{% else %}<span>{{ crumb.title }}</span>{% endif %}<span>/</span>{% endfor %}</nav>
             <div><form><input placeholder="search" /></form><span>|</span>{% block navigation %}{% endblock %}<button class="jumbo-toggle" onclick="toggleJumboMenu()">Menu</button></div>
         </header>
+        {% include "components/navigation/jumbo-nav.njk" %}
         {% block sidebar %}{% endblock %}
     </div>
 

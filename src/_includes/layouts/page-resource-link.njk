@@ -1,120 +1,131 @@
-{% extends "./page.njk" %}
+{% extends "layouts/page.njk" %}
 {% set ogtype = 'article' %}
 {% set author = people | whereKeyEquals('name', cite.name) | values(0) %}
-{% set bookmarks = collections.resources | whereKeyEquals('resourceType', 'bookmarks') | reverse %}
+{% set bookmarks = collections['resource/bookmark'] | notTagged(['stage/stub']) | reverse %}
 {% set previousLink = bookmarks | getPreviousCollectionItem %}
 {% set nextLink = bookmarks | getNextCollectionItem %}
 {% set index = bookmarks | getCollectionItemIndex %}
-{% set subTitle %}
-    planted on <time datetime="{{ page.date.toISOString() }}">{{ page.date | dateToFormat("DDD") }}</time> in: {% include "../components/tag-list.njk" %}.
-{% endset %}
 
-{% block pageHeaderBefore %}
-    {% if dead %}
-        {% set titlePrefix = 'Dead Link' %}
-    {% else %}
-    {% endif %}
-    <aside>
-        <small><span>{{ titlePrefix | safe }}</span></small>
-        <span>{{ cite.name }}</span>
-        {% if author and author.socials %}
-        <ul>
-            {% for name, social in author.socials %}
-            <li><a href="{{ social.href }}" aria-label="{{ social.nick }} on {{ name }}" rel="noopener">{{ name }}</a></li>
-            {% endfor %}
-        </ul>
+{% block content %}
+<article>
+    <header>
+        <span style="font-size: 0.8rem">Bookmarked <time datetime="{{ page.date.toISOString() }}">{{ page.date | dateToFormat("DDD") }}</time>{% if modified %}, modified <time datetime="{{ modified.toISOString() }}">{{ modified | dateToFormat("DDD") }}</time>{% endif %}{% if lastCommitDate %}, last commit <time datetime="{{ lastCommitDate.toISO() }}">{{ lastCommitDate | dateToFormat("DDD") }}</time>{% endif %}</span>
+        <h1>{{ title }}</h1>
+    </header>
+    <section>
+        {% if dead %}
+            {% set href = wayback or '#' %}
+        {% else %}
+            {% set href = cite.href %}
         {% endif %}
-    </aside>
-{% endblock %}
-
-{% block pageContent %}
-    <section class="two-columns breakout">
-        <div>
-            {% if dead %}
-                {% set href = wayback or '#' %}
-            {% else %}
-                {% set href = cite.href %}
+        <figure>
+            <a href="{{ href }}" class="no-ext">
+                {% include "components/partials/bookmark-image.njk" %}
+            </a>
+            {% if cite.name %}
+                <cite>Authored by {{ cite.name }}</cite>
             {% endif %}
+        </figure>
 
-            <p><a href="{{ href }}" class="bookmark-link">{{ cite.href }}</a></p>
-            {{ content | safe }}
+        <p><a href="{{ href }}" class="bookmark-link">{{ cite.href }}</a></p>
 
-            {% include "components/backlinks.njk" %}
-        </div>
-        <div class="meta">
-            <aside>
-                <p>
-                    Bookmark #{{ index + 1 }}/{{ bookmarks.length }}{% if previousLink %},<br/>previous link: <a href="{{ previousLink.url }}">{{ previousLink.data.title }}</a>{% endif %}{% if nextLink %}, next link: <a href="{{ nextLink.url }}">{{ nextLink.data.title }}</a>{% endif %}.
-                </p>
-            </aside>
-
-            {% if dead and wayback %}
-                <img class="preview" src="{% screenshot wayback, page.fileSlug %}" aria-hidden="true" alt="Screenshot of web page." />
-            {% endif %}
-
-            {% if not dead %}
-                <img class="preview" src="{% screenshot cite.href, page.fileSlug %}" aria-hidden="true" alt="Screenshot of web page." />
-            {% endif %}
-
-            {% if button %}
-                <div class="btn-list" aria-hidden="true">
-                    <h4>88x31 buttons</h4>
-                    <ul>
-                        {% if button | isArray %}
-                            {% for single in button %}
-                                <li><img class="btn-88x31" width="88" height="31" src="/img/88x31/{{ single }}" alt="88x31 button for {{ title }}" /></li>
-                            {% endfor %}
-                        {% else %}
-                            <li><img class="btn-88x31" width="88" height="31" src="/img/88x31/{{ button }}" alt="88x31 button for {{ title }}" /></li>
-                        {% endif %}
-                    </ul>
-                </div>
-            {% endif %}
-
-            {% if feed or src or pages %}
-                <nav style="padding: 0 1em; margin: 1em 0;">
-                    <h4 style="margin-bottom: 0.5em;font-size: 0.9em;">Pages of interest</h4>
-
-                    <ul>
-                        {% if feed and feed.rss %}
-                            <li><a href="{{ feed.rss }}" target="_blank" rel="noopener">RSS</a></li>
-                        {% endif %}
-                        {% if feed and feed.atom %}
-                            <li><a href="{{ feed.atom }}" target="_blank" rel="noopener">Atom</a></li>
-                        {% endif %}
-                        {% if src %}
-                            <li><a href="{{ src.href }}" target="_blank" rel="noopener">{{ src.name }}</a></li>
-                        {% endif %}
-                        {% if pages and pages.bookmarks %}
-                            <li><a href="{{ pages.bookmarks }}" target="_blank" rel="noopener">Bookmarks</a></li>
-                        {% endif %}
-                        {% if pages and pages.blogroll %}
-                            <li><a href="{{ pages.blogroll }}" target="_blank" rel="noopener">Blogroll</a></li>
-                        {% endif %}
-                        {% if pages and pages.links %}
-                            <li><a href="{{ pages.links }}" target="_blank" rel="noopener">Links</a></li>
-                        {% endif %}
-                        {% if pages and pages.buttons %}
-                            <li><a href="{{ pages.buttons }}" target="_blank" rel="noopener">Button Board</a></li>
-                        {% endif %}
-                        {% if pages and pages.books %}
-                            <li><a href="{{ pages.books }}" target="_blank" rel="noopener">Bookshelf</a></li>
-                        {% endif %}
-                        {% if pages and pages.uses %}
-                            <li><a href="{{ pages.uses }}" target="_blank" rel="noopener">/uses</a></li>
-                        {% endif %}
-                        {% if pages and pages.now %}
-                            <li><a href="{{ pages.now }}" target="_blank" rel="noopener">/now</a></li>
-                        {% endif %}
-                        {% if pages and pages.stats %}
-                            <li><a href="{{ pages.stats }}" target="_blank" rel="noopener">Stats</a></li>
-                        {% endif %}
-                        {% if pages and pages.changelog %}
-                            <li><a href="{{ pages.changelog }}" target="_blank" rel="noopener">Changelog</a></li>
-                        {% endif %}
-                    </ul>
-                </nav>
-            {% endif %}
-        </div>
+        {% set footnotes = content | extractFootnotes %}
+        {{ content | withoutFootnotes | safe }}
     </section>
+
+    <footer>
+        {% if button %}
+            <section aria-hidden="true">
+                <h3>88x31 buttons</h3>
+                <ul class="button-board">
+                    {% if button | isArray %}
+                        {% for single in button %}
+                            <li><img class="btn-88x31" width="88" height="31" src="/img/88x31/{{ single }}" alt="88x31 button for {{ title }}" /></li>
+                        {% endfor %}
+                    {% else %}
+                        <li><img class="btn-88x31" width="88" height="31" src="/img/88x31/{{ button }}" alt="88x31 button for {{ title }}" /></li>
+                    {% endif %}
+                </ul>
+            </section>
+        {% endif %}
+
+        {% if tags and tags.length > 0 %}
+            <section>
+                <h3>Taxonomy</h3>
+                {% include "components/tag-list.njk" %}
+            </section>
+        {% endif %}
+
+        {% if feed or src or pages %}
+            <section class="links-list">
+                <h3>Pages of interest</h3>
+                <ul>
+                    {% if feed and feed.rss %}
+                        <li><a href="{{ feed.rss }}" target="_blank" rel="noopener">RSS</a></li>
+                    {% endif %}
+                    {% if feed and feed.atom %}
+                        <li><a href="{{ feed.atom }}" target="_blank" rel="noopener">Atom</a></li>
+                    {% endif %}
+                    {% if src %}
+                        <li><a href="{{ src.href }}" target="_blank" rel="noopener">{{ src.name }}</a></li>
+                    {% endif %}
+                    {% if pages and pages.bookmarks %}
+                        <li><a href="{{ pages.bookmarks }}" target="_blank" rel="noopener">Bookmarks</a></li>
+                    {% endif %}
+                    {% if pages and pages.blogroll %}
+                        <li><a href="{{ pages.blogroll }}" target="_blank" rel="noopener">Blogroll</a></li>
+                    {% endif %}
+                    {% if pages and pages.links %}
+                        <li><a href="{{ pages.links }}" target="_blank" rel="noopener">Links</a></li>
+                    {% endif %}
+                    {% if pages and pages.buttons %}
+                        <li><a href="{{ pages.buttons }}" target="_blank" rel="noopener">Button Board</a></li>
+                    {% endif %}
+                    {% if pages and pages.books %}
+                        <li><a href="{{ pages.books }}" target="_blank" rel="noopener">Bookshelf</a></li>
+                    {% endif %}
+                    {% if pages and pages.uses %}
+                        <li><a href="{{ pages.uses }}" target="_blank" rel="noopener">/uses</a></li>
+                    {% endif %}
+                    {% if pages and pages.now %}
+                        <li><a href="{{ pages.now }}" target="_blank" rel="noopener">/now</a></li>
+                    {% endif %}
+                    {% if pages and pages.stats %}
+                        <li><a href="{{ pages.stats }}" target="_blank" rel="noopener">Stats</a></li>
+                    {% endif %}
+                    {% if pages and pages.changelog %}
+                        <li><a href="{{ pages.changelog }}" target="_blank" rel="noopener">Changelog</a></li>
+                    {% endif %}
+                </ul>
+            </section>
+        {% endif %}
+
+        {% if footnotes.length %}{{ footnotes | safe }}{% endif %}
+        <section>
+            <h3>Bookmark #{{ index + 1 }}/{{ bookmarks.length }}</h3>
+            <nav class="related-notes related-notes__next-previous">
+                {% ifAsync previousLink %}
+                    <a href="{{ previousLink.url }}">
+                        {% set bookmark = previousLink %}
+                        {% include "components/partials/bookmark-image.njk" %}
+                        <small>&larr; Previous</small>
+                        <h4>{{ previousLink.data.title }}</h4>
+                    </a>
+                {% else %}
+                    <span>&nbsp;</span>
+                {% endif %}
+                {% ifAsync nextLink %}
+                    <a href="{{ nextLink.url }}">
+                        {% set bookmark = nextLink %}
+                        {% include "components/partials/bookmark-image.njk" %}
+                        <small>Next &rarr;</small>
+                        <h4>{{ nextLink.data.title }}</h4>
+                    </a>
+                {% else %}
+                    <span>&nbsp;</span>
+                {% endif %}
+            </nav>
+        </section>
+    </footer>
+</article>
 {% endblock %}

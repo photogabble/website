@@ -74,6 +74,12 @@ article ol {
     margin: 1rem 0;
 }
 
+article footer p,
+article footer ul,
+article footer ol {
+    width: auto;
+}
+
 article p > code {
     font-size: 1rem;
     background: lightgrey;
@@ -108,6 +114,15 @@ article footer section h3 {
     border-bottom: 1px solid var(--dark-color);
     text-transform: uppercase;
     padding-bottom: 0.5rem;
+}
+
+.links-list ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .footnotes-list {
