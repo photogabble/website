@@ -5,6 +5,7 @@
         {% if post.data.draft %}
             <span style="color: red">(D)</span>
         {% endif %}
+        {% if post.data.tags and post.data.tags | includesTag('list/digital-graveyard') %}🪦{% endif %}
         <a href="{{ post.url }}" title="Read {{ post.data.title }}">{{ post.data.title }}</a>
         {% if displayContentType %}
             <small class="content-type">{{ post.data.contentType }}</small>
