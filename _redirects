@@ -96,3 +96,7 @@
 /forrest /forest/
 /lists/button-board/ /button-board/
 /dad-jokes/ /resources/jokes/
+
+# Moved Mirrored into Snippets Resource
+/mirrored/mirror-of-b2blogtimephp-by-sanjay-sheth/ /resources/snippets/mirror-of-b2blogtimephp-by-sanjay-sheth/
+/mirrored/mirror-of-blogtimesphp-by-matt-mullenweg/ /resources/snippets/mirror-of-blogtimesphp-by-matt-mullenweg/
