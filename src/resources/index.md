@@ -1,32 +1,13 @@
 ---
-pagination:
-  data: collections.resources
-  size: 10
-  alias: postsList
-permalink: "resources/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+title: Resources
+sub_title: My collection of shiny
+layout: layouts/page-post.njk
+sidebar_component: resources
+hide_meta: true
+folder:
+  - {title: 'resources'}
 ---
 
-{% extends "layouts/page.njk" %}
+A few years ago I stumbled upon [Winnie Lim's Library](https://winnielim.org/library/) containing their collections and resources. I liked the concept and was inspired to create both here as [lists](/lists/) and this resources section.
 
-{% set title = 'Resources' %}
-{% set titlePrefix = 'Index' %}
-
-{% block pageContent %}
-
-  <section>
-    {% set displayResourceType = true %}
-    {% include "components/post-list.njk" %}
-  </section>
-
-  {% if pagination.pages.length > 1 %}
-    <nav>
-      <p>
-        Viewing page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }},
-        {% if pagination.href.previous %}<a href="{{ pagination.href.previous}}">Previous Page</a>{% endif %}
-        {% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next Page</a>{% endif %}
-      </p>
-    </nav>
-  {% endif %}
-
-{#  {% include '_includes/components/hot-topics.njk' %}#}
-{% endblock %}
+So far the majority of my resources have been _bookmarked_ links, but they can be anything that I’ve learned something from. I have curated some resources into various themed collections such as [the Antilibrary](/antilibrary/) and my collection of [forums and communities](/lists/forum/).
