@@ -6,7 +6,7 @@
 {% set read = bookwyrm | whereKeyEquals('shelf', 'read') %}
 {% set resources = collections | groupBySpecialTag('resource', 'stage/stub') %}
 
-<aside id="jumbo-nav">
+<aside id="jumbo-nav" tabindex="-1">
     <nav>
         <dl>
             <dt>Writing</dt>
