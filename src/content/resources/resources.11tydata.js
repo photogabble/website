@@ -8,6 +8,7 @@ const getPageResourceType = (page) => getPageFolders(page).split('/')[0];
 export default {
   excludeFromFeed: true,
   tags: ['type/resource'],
+  sidebar_component: 'resources',
   eleventyComputed: {
     permalink(data) {
       const folders = getPageFolders(data.page);

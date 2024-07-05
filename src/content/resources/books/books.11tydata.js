@@ -1,5 +1,7 @@
 export default {
   tags: ['resource/books'],
+  sidebar_component: 'books',
+  sidebar_shelves: ['read'],
   eleventyComputed: {
     book(data) {
       // @see https://www.11ty.dev/docs/data-computed/#declaring-your-dependencies
