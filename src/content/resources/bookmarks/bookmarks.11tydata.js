@@ -2,7 +2,8 @@ export default {
   embedLayout: 'layouts/bookmark-embed.liquid',
   embedLayoutLanguage: 'liquid',
   titlePrefix: 'Link',
-  layout: 'layouts/page-resource-link.njk',
+  //layout: 'layouts/page-resource-link.njk',
   headingClass: 'resource bookmark',
-  tags: ['resource/bookmarks'],
+  tags: ['resource/bookmark'],
+  sidebar_resource: 'resource/bookmark'
 }
