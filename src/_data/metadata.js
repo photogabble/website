@@ -45,6 +45,14 @@ export default {
     'type/mirror': {
       title: 'Mirrored Code Snippets',
       permalink: '/mirrored/',
-    }
+    },
+    'type/resource': {
+      title: 'Resources',
+      permalink: '/resources/'
+    },
+    'resource/bookmark': {
+      title: 'Bookmark',
+      permalink: '/resources/bookmarks/'
+    },
   },
 }
