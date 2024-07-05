@@ -8,10 +8,10 @@
         {% if post.data.tags and post.data.tags | includesTag('list/digital-graveyard') %}🪦{% endif %}
         <a href="{{ post.url }}" title="Read {{ post.data.title }}">{{ post.data.title }}</a>
         {% if displayContentType %}
-            <small class="content-type">{{ post.data.contentType }}</small>
+            <small class="content-type">{{ post.data.tags | specialTagValue('type') }}</small>
         {% endif %}
-        {% if displayResourceType and post.data.contentType == 'resource' %}
-            <small class="content-type">{{ post.data.resourceType }}</small>
+        {% if displayResourceType and post.data.tags | includesTag('type/resource') %}
+            <small class="content-type">{{ post.data.tags | specialTagValue('resource') }}</small>
         {% endif %}
         {% if post.data.rating %}
             {{ post.data.rating | ratingToStars }}
