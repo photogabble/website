@@ -5,6 +5,8 @@ sidebar_component: topic
 sidebar_title: Longform Writing
 sidebar_topic: 'type/essay'
 hide_meta: true
+tags:
+  - 'type/index'
 folder: 
   - writing
   - {title: 'essays'}

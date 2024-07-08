@@ -6,6 +6,8 @@ sidebar_component: topic
 sidebar_title: Works in Progress
 sidebar_topic: 'stage/stub'
 hide_meta: true
+tags:
+  - 'type/index'
 folder: 
   - writing
   - {title: 'stubs'}

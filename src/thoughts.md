@@ -6,6 +6,8 @@ sidebar_component: topic
 sidebar_title: Thoughtful Thoughts
 sidebar_topic: 'type/thought'
 hide_meta: true
+tags:
+  - 'type/index'
 folder: 
   - writing
   - {title: 'thoughts'}

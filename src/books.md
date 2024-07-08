@@ -7,6 +7,8 @@ sidebar_component: books
 sidebar_shelves: ['read']
 folder: [lists]
 hide_meta: true
+tags:
+  - 'type/index'
 ---
 When I first added this page to my website I had intended to read at least 12 books a year, in the several years since I have yet to hit that number in total.
 

@@ -7,6 +7,8 @@ sidebar_component: books
 sidebar_shelves: ['to-read']
 folder: [lists]
 hide_meta: true
+tags:
+  - 'type/index'
 ---
 
 {% blockquote "Bjørn Stærk", "lessons from the antilibrary", "https://bearstrong.net/articles/2007/05/17/lessons-from-the-anti-library.html" %}

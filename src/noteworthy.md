@@ -6,6 +6,8 @@ sidebar_component: topic
 sidebar_title: Noteworthy items
 sidebar_topic: 'type/noteworthy'
 hide_meta: true
+tags:
+  - 'type/index'
 folder: 
   - writing
   - {title: 'noteworthy'}
