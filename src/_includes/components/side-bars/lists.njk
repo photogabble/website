@@ -4,11 +4,11 @@
         <p>Lists of things I have read, watched or listened to.</p>
     </header>
     <ul>
-        <li><a href="/books/">My Bookshelf</a>: A list of books that I have read and written a review about</li>
-        <li><a href="/antilibrary/">The Antilibrary</a>: A list of books that I intend to read</li>
-        <li><a href="/lists/film-and-tv/">Films/TV Series</a>: an incomplete, infrequently updated list of things I have watched</li>
-        <li><a href="/lists/watchlist/">Watchlist</a>: a list of films and tv series that have interested me enough to want to watch</li>
-        <li><a href="/lists/listened-to/">Listened To</a>: A list of music I have recently listened to (if I get last.fm integration working)</li>
+        <li>{%- if page and page.url === '/books/' -%}»&nbsp;{%- endif -%}<a href="/books/">My Bookshelf</a>: A list of books that I have read and written a review about</li>
+        <li>{%- if page and page.url === '/antilibrary/' -%}»&nbsp;{%- endif -%}<a href="/antilibrary/">The Antilibrary</a>: A list of books that I intend to read</li>
+        <li>{%- if page and page.url === '/lists/film-and-tv/' -%}»&nbsp;{%- endif -%}<a href="/lists/film-and-tv/">Films/TV Series</a>: an incomplete, infrequently updated list of things I have watched</li>
+        <li>{%- if page and page.url === '/lists/watchlist/' -%}»&nbsp;{%- endif -%}<a href="/lists/watchlist/">Watchlist</a>: a list of films and tv series that have interested me enough to want to watch</li>
+        <li>{%- if page and page.url === '/lists/listened-to/' -%}»&nbsp;{%- endif -%}<a href="/lists/listened-to/">Listened To</a>: A list of music I have recently listened to (if I get last.fm integration working)</li>
     </ul>
 </section>
 {%- set allLists = collections.lists -%}
@@ -19,7 +19,7 @@
     <ul>
         {%- if allLists|length -%}
             {%- for list in allLists -%}
-                <li><a href="{{ list.permalink }}">{{ list.title }}</a>: {{ list.description }}</li>
+                <li>{%- if page and page.url === list.permalink -%}»&nbsp;{%- endif -%}<a href="{{ list.permalink }}">{{ list.title }}</a>: {{ list.description }}</li>
             {%- endfor -%}
         {%- else -%}
             <li>No collections found.</li>
