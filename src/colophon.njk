@@ -12,6 +12,15 @@ navigation_links:
     {% set sidebar_topic = 'type/changelog' %}
     {% set sidebar_title  = 'Release Notes / Changelog' %}
     {% include "components/side-bars/topic.njk" %}
+
+    <section class="post-list post-list__todo">
+        <header class="post-list__inline-header">
+            <h3>TODO</h3>
+        </header>
+        <ol class="post-list__chronological post-list__chronological-thin">
+            {% renderFile "./src/_todo.md" %}
+        </ol>
+    </section>
 {% endblock %}
 
 {% block content %}

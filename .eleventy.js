@@ -11,6 +11,9 @@ import markdown from './lib/helpers/markdown.js';
 import {registerShortcodes} from "./lib/shortcodes.js";
 import {registerFilters} from "./lib/filters.js";
 import {registerCollections} from "./lib/collections.js";
+import * as Eleventy from '@11ty/eleventy';
+const {EleventyRenderPlugin} = Eleventy;
+
 
 export default async function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
@@ -18,6 +21,12 @@ export default async function (eleventyConfig) {
   //
   // Install Plugins
   //
+
+  /**
+   * 11ty Render Plugin
+   * @see https://www.11ty.dev/docs/plugins/render/
+   */
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
 
   /**
    * @rknightuk/eleventy-plugin-post-graph
