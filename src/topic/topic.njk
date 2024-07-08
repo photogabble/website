@@ -26,6 +26,7 @@
 {% block sidebar %}
     {% set sidebar_title = 'Writing tagged as “' + topic + '”' %}
     {% set sidebar_topic = topic %}
+    {% set displayContentType = true %}
     {% include "components/side-bars/topic.njk" %}
 {% endblock %}
 
