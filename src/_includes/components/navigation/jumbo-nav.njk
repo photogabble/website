@@ -5,6 +5,7 @@
 {% set antilibrary = bookwyrm | whereKeyEquals('shelf', 'to-read') %}
 {% set read = bookwyrm | whereKeyEquals('shelf', 'read') %}
 {% set resources = collections | groupBySpecialTag('resource', 'stage/stub') %}
+{% set topics = collections | tagsInCollection(['writing'], ['stage/stub']) %}
 
 <aside id="jumbo-nav" tabindex="-1">
     <nav>
@@ -25,6 +26,7 @@
             <dd><a href="/lists/listened-to/"><span>*</span><span>Listened To</span></a></dd>
             <dd><a href="/books/"><span>{{ read.length }}</span><span>My Bookshelf</span></a></dd>
             <dd><a href="/antilibrary/"><span>{{ antilibrary.length }}</span><span><em>The</em> Antilibrary</span></a></dd>
+            <dd><a href="/topic/"><span>{{ topics.length }}</span><span>Topics</span></a></dd>
             <dd class="footer"><a href="/lists/" title="View all lists and collections (archive)"><small>View all <span aria-hidden="true">→</span></small></a></dd>
         </dl>
         <dl>
