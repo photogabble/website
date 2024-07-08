@@ -47,6 +47,17 @@
     margin-right: 0;
 }
 
+a.skip-content {
+    left: -9999px;
+    position: absolute;
+    top: 0;
+}
+
+a.skip-content:focus {
+    left: auto;
+    position: relative;
+}
+
 /*#main-nav.jumbo-nav__open {*/
 /*    color: var(--jumbo-nav-text-color);*/
 /*}*/
