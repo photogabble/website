@@ -63,12 +63,21 @@ ul.alphabet {
     align-items: center;
 }
 
+.post-list__todo ul > li,
+.post-list__chronological-thin li {
+    margin-bottom: 0.3rem;
+}
+
 .post-list__chronological hr {
     flex-grow: 1;
     margin: 0;
     display: block;
     border: 0;
     border-bottom: 3px double;
+}
+
+.post-list__todo ul {
+    padding-left: 0;
 }
 
 .project-list header {
