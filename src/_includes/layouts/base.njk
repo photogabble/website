@@ -107,7 +107,7 @@
     <div id="left" class="side-bar">
         <header id="main-nav" class="main-nav">
             <nav>{% for crumb in folder | breadcrumbs %}{% if crumb.href %}<a href="{{ crumb.href }}" title="{{ crumb.title }}">{{ crumb.text }}</a>{% else %}<span>{{ crumb.title }}</span>{% endif %}<span>/</span>{% endfor %}</nav>
-            <div><form><input placeholder="search" /></form><span>|</span>{% block navigation %}{% endblock %}<button class="jumbo-toggle" onclick="toggleJumboMenu()">Menu</button></div>
+            <div><form><input placeholder="search" /></form><span>|</span>{% block navigation %}{% endblock %}<button id="jumbo-toggle">Menu</button></div>
         </header>
         {% include "components/navigation/jumbo-nav.njk" %}
         <a class="skip-content" href="#right">Skip to Content (Press Enter)</a>
@@ -119,19 +119,71 @@
     </div>
 </main>
 
-<script src="https://unpkg.com/htmx.org@1.9.12/dist/htmx.js" integrity="sha384-qbtR4rS9RrUMECUWDWM2+YGgN3U4V4ZncZ0BvUcg9FGct0jqXz3PUdVpU1p0yrXS" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/htmx.org@1.9.12/dist/htmx.js"
+        integrity="sha384-qbtR4rS9RrUMECUWDWM2+YGgN3U4V4ZncZ0BvUcg9FGct0jqXz3PUdVpU1p0yrXS"
+        crossorigin="anonymous"></script>
 <script>
-  function toggleJumboMenu() {
-    const jumboMenu = document.querySelector('#jumbo-nav');
-    const mainMenu = document.querySelector('#main-nav');
-    if (jumboMenu.classList.contains('jumbo-nav__open')) {
-      jumboMenu.classList.remove('jumbo-nav__open');
-      mainMenu.classList.remove('jumbo-nav__open');
-    } else {
-      jumboMenu.classList.add('jumbo-nav__open');
-      mainMenu.classList.add('jumbo-nav__open');
+  // See: https://anothercodingguy.hashnode.dev/focus-trapping-focus-looping
+  const FOCUSABLES = 'a[href]:not([disabled]), area[href]:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, [tabindex="0"], [contenteditable]';
+
+  const jumboMenu = document.querySelector('#jumbo-nav');
+  const mainMenu = document.querySelector('#main-nav');
+  const jumboToggle = document.querySelector('#jumbo-toggle');
+
+  let focusableItems;
+
+  const trappedNavigationEventHandler = (e) => {
+    if (e.key.toLowerCase() === 'escape') {
+      closeJumboMenu();
+      return;
+    }
+
+    if (e.key.toLowerCase() !== 'tab') return;
+    if (e.target === focusableItems[0] && e.shiftKey) {
+      e.preventDefault();
+      focusableItems[focusableItems.length-1].focus();
+    } else if (!e.shiftKey && e.target === focusableItems[focusableItems.length-1]) {
+      e.preventDefault();
+      focusableItems[0].focus();
     }
   }
+
+  function closeJumboMenu() {
+    jumboMenu.classList.remove('jumbo-nav__open');
+    mainMenu.classList.remove('jumbo-nav__open');
+
+    for (const item of focusableItems) {
+      item.removeEventListener('keydown', trappedNavigationEventHandler);
+    }
+
+    jumboToggle.focus();
+    focusableItems = undefined;
+  }
+
+  function openJumboMenu() {
+    jumboMenu.classList.add('jumbo-nav__open');
+    mainMenu.classList.add('jumbo-nav__open');
+
+    // Add keydown handler to all tabbable items within jumboMenu and mainMenu
+    focusableItems = [
+      ...mainMenu.querySelectorAll(FOCUSABLES),
+      ...jumboMenu.querySelectorAll(FOCUSABLES)
+    ];
+
+    for (const item of focusableItems) {
+      item.addEventListener('keydown', trappedNavigationEventHandler);
+    }
+  }
+
+  jumboToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (jumboMenu.classList.contains('jumbo-nav__open')) {
+      closeJumboMenu();
+    } else {
+      openJumboMenu();
+    }
+  });
 
   document.addEventListener("DOMContentLoaded", function () {
     console.log('HELLO THERE')
