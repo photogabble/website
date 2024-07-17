@@ -1,13 +1,15 @@
+{% set readingTime = content | wordStats %}
 <article>
     <header>
         {% set type = tags | specialTagValue('type') %}
 
         {%- if hide_meta !== true %}
-            {% if type %}<a href="/{{ type }}">{{ type }}</a>{% endif %}
+            <span>{% include "components/tag-list.njk" %}</span>
             <span style="font-size: 0.8rem">Planted <time datetime="{{ page.date.toISOString() }}">{{ page.date | dateToFormat("DDD") }}</time>{% if modified %}, modified <time datetime="{{ modified.toISOString() }}">{{ modified | dateToFormat("DDD") }}</time>{% endif %}{% if lastCommitDate %}, last commit <time datetime="{{ lastCommitDate.toISO() }}">{{ lastCommitDate | dateToFormat("DDD") }}</time>{% endif %}</span>
         {% endif %}
         <h1>{{ title }}</h1>
         {%- if sub_title %}<h2>{{ sub_title }}</h2>{% endif %}
+        {%- if hide_meta !== true and readingTime.words > 0 -%}<span style="margin-top: 2rem">{{ readingTime.text }}</span>{%-endif -%}
     </header>
     <section>
         {% set footnotes = content | extractFootnotes %}
@@ -18,6 +20,13 @@
         {% if footnotes.length %}
             {{ footnotes | safe }}
         {% endif %}
+
+        {%- if hide_meta !== true -%}
+            <section>
+                <h3>Page History</h3>
+                <p>This page was first added to the repository on April 27, 2024 in commit <a href="#">0284b856</a> and has since been amended once. <a href="#">View the source on GitHub</a>.</p>
+            </section>
+        {%- endif -%}
 
         {% if show_related and related.length %}
             <section>
@@ -64,17 +73,5 @@
         {#        <section>#}
         {#            <h3>Linking Here</h3>#}
         {#        </section>#}
-
-        {%- if hide_meta !== true -%}
-            <section>
-                <h3>Taxonomy</h3>
-                <p>{{ tags }}</p>
-            </section>
-
-            <section>
-                <h3>Page History</h3>
-                <p>This page was first added to the repository on April 27, 2024 in commit <a href="#">0284b856</a> and has since been amended once. <a href="#">View the source on GitHub</a>.</p>
-            </section>
-        {%- endif -%}
     </footer>
 </article>

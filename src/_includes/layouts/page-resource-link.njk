@@ -9,6 +9,7 @@
 {% block content %}
 <article>
     <header>
+        <span>{% include "components/tag-list.njk" %}</span>
         <span style="font-size: 0.8rem">Bookmarked <time datetime="{{ page.date.toISOString() }}">{{ page.date | dateToFormat("DDD") }}</time>{% if modified %}, modified <time datetime="{{ modified.toISOString() }}">{{ modified | dateToFormat("DDD") }}</time>{% endif %}{% if lastCommitDate %}, last commit <time datetime="{{ lastCommitDate.toISO() }}">{{ lastCommitDate | dateToFormat("DDD") }}</time>{% endif %}</span>
         <h1>{{ title }}</h1>
     </header>
@@ -46,13 +47,6 @@
                         <li><img class="btn-88x31" width="88" height="31" src="/img/88x31/{{ button }}" alt="88x31 button for {{ title }}" /></li>
                     {% endif %}
                 </ul>
-            </section>
-        {% endif %}
-
-        {% if tags and tags.length > 0 %}
-            <section>
-                <h3>Taxonomy</h3>
-                {% include "components/tag-list.njk" %}
             </section>
         {% endif %}
 
@@ -101,6 +95,7 @@
         {% endif %}
 
         {% if footnotes.length %}{{ footnotes | safe }}{% endif %}
+
         <section>
             <h3>Bookmark #{{ index + 1 }}/{{ bookmarks.length }}</h3>
             <nav class="related-notes related-notes__next-previous">
