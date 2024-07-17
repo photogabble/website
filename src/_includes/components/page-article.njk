@@ -21,6 +21,10 @@
             {{ footnotes | safe }}
         {% endif %}
 
+        {% if tags | includesTag('wayback machine') %}
+            {% include "components/wayback-machine.njk" %}
+        {% endif %}
+
         {%- if hide_meta !== true -%}
             <section>
                 <h3>Page History</h3>

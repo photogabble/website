@@ -187,3 +187,19 @@ article footer section h3 {
 .related-notes__next-previous a:nth-child(2) {
     text-align: right;
 }
+
+article aside {
+    background: #6c1732;
+    padding: 1rem;
+    color: white;
+    margin: 1rem 0;
+    border-left: 10px solid #ffc107;
+}
+
+article aside p {
+    margin: 0;
+}
+
+article aside a {
+    color: #ffe8a5;
+}
