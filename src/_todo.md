@@ -5,3 +5,4 @@
 - [ ] Fill `/uses` sidebar with photos of kit
 - [ ] Site-wide search with [pagefind](https://github.com/cloudcannon/pagefind)
 - [ ] For all bookmarked YouTube channels/videos update screenshot with a better image
+- [ ] Standardise updated/modified in frontmatter
