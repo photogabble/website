@@ -9,7 +9,7 @@ series: Space Mines Build
 
 In the Summer of 2022 I set about beginning to work on a project that has been on my mind for close to a decade: a modern re-imagination of a rather simple #BASIC game called Space Mines; thus started my [[Space Mines|Space Mines Project]].
 
-{% figure "/img/happy-fiftyth-birthday-basic-4.png" "The BASIC source that spawned this obsession" "Space Mines BASIC source code listing in Usborne Computer Space Games book" %}
+{% figure "/img/happy-fiftyth-birthday-basic-4.png", "The BASIC source that spawned this obsession", "Space Mines BASIC source code listing in Usborne Computer Space Games book" %}
 
 In August (2022) I wrote [[PHP Space Mines: Introduction]] which can be considered the pretext to this introduction. That article investigated if the BASIC version of Space Mines could translate well into a browser game and discussed the original game mechanics, it does but in doing so it would feel quite limited and unbalanced; the original game is after all only supposed to play for a maximum of ten turns.
 

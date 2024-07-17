@@ -17,7 +17,7 @@ I am aware of solutions such as [ElasticSearch](https://github.com/elastic/elast
 ## Algolia
 It feels as though [Algolia](https://www.algolia.com/) is used to power the search functionality for a _lot_ of websites; I most often use it to find what I am looking for in the [Laravel documentation](https://laravel.com/) and actually the majority of the time I use search provided by Algolia it's on various projects documentation something I think is due to [Algolia's Docsearch product](https://docsearch.algolia.com/) being offered for free.
 
-{% figure "/img/static-site-search-providers-1.png" "Fig 1. Very clean, very nice" "Search interface shown as a pop-up modal." %}
+{% figure "/img/static-site-search-providers-1.png", "Fig 1. Very clean, very nice", "Search interface shown as a pop-up modal." %}
 
 Algolia is "Search as a Service" (SaaS) and as such comes with a fair free usage tier. It's very plug and play with many tutorials already available if you want to go down that route. I honestly prefer a minimalist approach to how many third party services I use - *the fewer, the better* - and so Algolia isn't the best solution for my needs.
 
@@ -25,7 +25,7 @@ Algolia is "Search as a Service" (SaaS) and as such comes with a fair free usage
 ## Stork Search
 [Stork](https://stork-search.net/) is an open source library written by [James Little](https://jameslittle.me/) for creating fast and accurate full-text search interfaces. At the time of writing its most recent version v1.6.0 was released only a couple of days ago on the 11th January making it visibly maintained.
 
-{% figure "/img/static-site-search-providers-2.png" "Fig 2. Stork Search feels  Algolia inspired" "Search interface showing a scrollable pop down display of search results. Each result is shown as the page title and the appropriate excerpt with the search term highlighted." %}
+{% figure "/img/static-site-search-providers-2.png", "Fig 2. Stork Search feels  Algolia inspired", "Search interface showing a scrollable pop down display of search results. Each result is shown as the page title and the appropriate excerpt with the search term highlighted." %}
 
 Stork's search interface is fast, minimalist but also incredibly functional. It feels similar to Algolia but distantly so. I was very close to implementing Stock into this website, it's documentation even dedicates a page to [Building a Search Index on every Netlify Deploy](https://stork-search.net/docs/stork-and-netlify) which it does so for #11ty. However, the one thing that put me off using Stork was that it requires downloading a binary to generate your index.
 
@@ -35,7 +35,7 @@ This is because Stork is made up of two parts: a **command-line tool** written i
 ## lunr.js
 [Lunr](https://lunrjs.com/) positions itself as _"a bit like [Solr](https://solr.apache.org/), but much smaller and not as bright."_ Unlike Stork Search where the indexing and searching are split into separate tasks, Lunr does it all in one. You provide Lunr a json file containing your "index" and a search term and it returns an array of matching documents with a score of how closely they match the search query.
 
-{% figure "/img/static-site-search-providers-3.png" "Fig 3. A more traditional search interface" "Webpage with a search bar, something has been entered into the search bar and the page's content has been filtered to only show entries that match with the search term highlighted" %}
+{% figure "/img/static-site-search-providers-3.png", "Fig 3. A more traditional search interface", "Webpage with a search bar, something has been entered into the search bar and the page's content has been filtered to only show entries that match with the search term highlighted" %}
 
 The [lunr.js demo](https://olivernn.github.io/moonwalkers/) shows a rather traditional approach to a search interface. Unlike with Stork or Algolia, Lunr's example usage is much more familiar to how most websites do search. Initially I thought while tinkering with its demo that it's search algorithm isn't that accurate, for example it would return for "Richard" but not for "Rich". However, I then realised that it's not doing fuzzy search by default and "Rich*" indeed returned what I was expecting it to return for "Rich".
 

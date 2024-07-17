@@ -13,7 +13,7 @@ The problem with font choice is that it's huge and a lot of the font's that I en
 
 Given my preference for monospace I settled for using Iosevka; it provides two quasi-proportional families: _Iosevka Aile_ and _Iosevka Etoile_ which have been made for documents and feel more readable to my eyes than the default `monospace` I had been using *while* retaining the distinctive feel that I like in monospaced fonts.
 
-{% figure "/img/font-subsetting-with-eleventyjs-1.png" "**Fig 1.** Using [wakamaifondue](https://wakamaifondue.com/) we can see a lot of supported glyphs that I'm not going to be using..." "TrueType font with 5278 characters, it has 162 layout features." %}
+{% figure "/img/font-subsetting-with-eleventyjs-1.png", "**Fig 1.** Using [wakamaifondue](https://wakamaifondue.com/) we can see a lot of supported glyphs that I'm not going to be using...", "TrueType font with 5278 characters, it has 162 layout features." %}
 
 I finally settled upon using the quasi-proportional slab-serif Etoile, however out of the box the woff2 file is 1.3MB in size and as you can see in *fig 1* above this is because it contains an impressive number of glyphs, support for languages and layout features - a lot of which will go unused on this website.
 
@@ -48,7 +48,7 @@ css = "normal"
 
 After a couple of minutes of processing the result was a woff2 file weighing 349KB. A 71.73% decrease in filesize is impressive but 349KB is still to heavy for my liking and checking the built font using [wakamaifondue](https://wakamaifondue.com/)  shows it contains a lot of Glyphs that _again_ I don't necessarily need.
 
-{% figure "/img/font-subsetting-with-eleventyjs-2.png" "**Fig 2.** A large reduction in size but still too heavy for my liking" "TrueType font with 5278 characters, it has 32 layout features." %}
+{% figure "/img/font-subsetting-with-eleventyjs-2.png", "**Fig 2.** A large reduction in size but still too heavy for my liking", "TrueType font with 5278 characters, it has 32 layout features." %}
 
 Above I have only built the regular typeface however for this website I will need four typefaces: regular, italic, bold and bold-italic. If serving one 249KB font file doesn't go against my mantra of [[Minimalism|minimalism]] serving four of them certainly does. I needed to find a way of reducing the filesize further. Enter stage right, subsetting!
 

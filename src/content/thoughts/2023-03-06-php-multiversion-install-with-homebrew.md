@@ -8,7 +8,7 @@ growthStage: budding
 ## Preface
 I use [Homebrew](https://brew.sh/) on my Macbook Pro to install PHP via the [Homebrew PHP Formula](https://formulae.brew.sh/formula/php). For many good reasons Homebrew by default installs the current stable version of PHP and quickly depreciates support for older versions, ultimately removing them. 
 
-{% figure "/img/php-multiversion-with-homebrew-1.png" "Fig.1. 7.2-7.4 are end of life, 8.0 is security fixes only and 8.1-8.2 are in active support" "Histogram of PHP support over time, shows PHP 7.2 to 7.4 are no longer supported, 8.0 is only receiving security patches, 8.1 and 8.2 are actively supported" %}
+{% figure "/img/php-multiversion-with-homebrew-1.png", "Fig.1. 7.2-7.4 are end of life, 8.0 is security fixes only and 8.1-8.2 are in active support", "Histogram of PHP support over time, shows PHP 7.2 to 7.4 are no longer supported, 8.0 is only receiving security patches, 8.1 and 8.2 are actively supported" %}
 
 For example at time of writing the php stable version is *8.2.3* and Homebrew supports installing `php@8.1` for version *8.1.15* and will allow installing `php@8.0` but with a depreciation warning. This largely looks to keep in line with PHP's active support timeline.
 
