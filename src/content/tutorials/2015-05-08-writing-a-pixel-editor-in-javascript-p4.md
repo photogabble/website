@@ -3,11 +3,12 @@ title: Writing a pixel editor in javascript - Part four
 tags:
   - Programming
   - JavaScript
+  - stage/evergreen
 cover_image: /img/javascript-pixel-paint-11.png
-growthStage: evergreen
 aliases:
-  - "Stage four: Adding a palette selector"
+  - 'Stage four: Adding a palette selector'
 ---
+
 
 ![Pixel Editor](/img/javascript-pixel-paint-9.png "Pixel Editor")
 

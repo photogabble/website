@@ -1,8 +1,11 @@
 ---
 title: "Adding Wiki Links to 11ty"
-tags: [Blogging, 11ty, "Wiki Links"]
+tags: 
+  - Blogging
+  - 11ty
+  - Wiki Links
+  - stage/seedling
 aliases: [wiki-links]
-growthStage: seedling
 ---
 
 I use [Obsidian.md](https://obsidian.md/) to draft my posts before they are published on PhotoGabble. One feature of #Obsidian that I love is interlinking between notes and being able to see the connectivity graph of each note.

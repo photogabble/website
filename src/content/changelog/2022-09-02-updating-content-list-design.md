@@ -1,7 +1,8 @@
 ---
 title: "Updated Content List Layouts"
-tags: [Blogging]
-growthStage: evergreen
+tags: 
+  - Blogging
+  - stage/evergreen
 ---
 
 I'm unsure how but, today I serendipitously stumbled upon [Luke Mitchell's Blog: interroban.gg](https://www.interroban.gg/). Luke's Blog is wonderfully minimalist and is, in my mind the best example of what I love to see in minimalist website design.

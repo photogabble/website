@@ -1,11 +1,12 @@
 ---
 title: 14 of 365, thoughts on privacy
-tags: 
+tags:
   - list/365-writing
   - 365DayProject
-growthStage: seedling
+  - stage/seedling
 canonical: https://wordsmith.social/carbontwelve/14-365-thoughts-on-privacy
 ---
+
 
 This is day fourteen of my attempt to write something, anything, every day for 365 days in a row.
 

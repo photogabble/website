@@ -1,7 +1,10 @@
 ---
 title: "Defrag like its 1992"
-tags: ["DOS", "Retro Computing", Wayback Machine]
-growthStage: budding
+tags: 
+  - DOS
+  - Retro Computing
+  - Wayback Machine
+  - stage/budding
 ---
 
 > If you let it run to completion your web browser will run slightly faster for a while.

@@ -1,8 +1,12 @@
 ---
 title: Static Site Search Providers
-tags: ["Blogging", "StaticSites", "11ty"]
-growthStage: budding
+tags:
+  - Blogging
+  - StaticSites
+  - 11ty
+  - stage/budding
 ---
+
 
 ## Preface
 The very first issue for `@photogabble/website` was  posted on March 31st, 2021 titled: [Service: Static site search provider](https://github.com/photogabble/website/issues/1) and for nearly three years it sat there with only the url for [Stork Search's Roadmap](https://stork-search.net/roadmap) and no other comments.

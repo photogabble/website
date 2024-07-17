@@ -3,7 +3,7 @@ title: "Addition of a Button Board and changes to bookmarks"
 tags:
   - Indie Web
   - Old Web
-growthStage: budding
+  - stage/budding
 ---
 
 In December last year I began exploring the vast expanses of [[ Map of the Indie Web | The Indie Web ]] and in doing so reignited my love of 88x31 button banners and the [[ Button Boards ]] that people display them on. After adding [my own button board](/button-board/) I became a [[Digital Magpie]] and over multiple [[Digital Spelunking]] sessions began filling out my own board with little images that bring me joy.

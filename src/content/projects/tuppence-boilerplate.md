@@ -4,11 +4,10 @@ title: Tuppence Boilerplate
 description: 
 git: https://github.com/photogabble/tuppence-boilerplate
 packagist: https://packagist.org/packages/photogabble/tuppence-boilerplate
-status: abandoned
-language: PHP
 tags:
-  - PHP 
-  - Abandoned
+  - status/featured
+  - language/PHP
+  - Tuppence
 ---
 
 This boilerplate wraps [Tuppence](https://github.com/photogabble/tuppence) with some project structure and includes a service provider for the [Plates PHP](http://platesphp.com/) template system and [Docrtine ORM](http://www.doctrine-project.org/projects/orm.html).

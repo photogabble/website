@@ -1,5 +1,4 @@
 ---
-
 title: A "review" of the GodVille Game
 draft: false
 cover_image: /img/featured-images/a-review-of-the-godville-game.png
@@ -8,7 +7,7 @@ tags:
   - Games
   - Review
   - Idle Game
-growthStage: budding
+  - stage/budding
 ---
 
 [GodVille](https://godvillegame.com) is a weird game, that on the surface feels like a stupid idea that should not work. It falls into what is called the "zero-player" genre of games by being entirely passive and requiring literally no input for events in the game to progress.

@@ -1,5 +1,7 @@
 ---
-title: "Why Netlify"
-tags: [WebHosting, JAMStack]
-growthStage: stub
+title: Why Netlify
+tags:
+  - WebHosting
+  - JAMStack
+  - stage/stub
 ---

@@ -1,7 +1,9 @@
 ---
 title: "Alphabetising Glossary Terms"
-tags: [Blogging, HowTo]
-growthStage: budding
+tags:
+  - Blogging
+  - HowTo
+  - stage/budding
 ---
 
 In January, I added the [Glossary](/glossary/) content type to this #DigitalGarden as a way of storing short-form descriptions on colloquialisms that I use which may not be well known to the reader.

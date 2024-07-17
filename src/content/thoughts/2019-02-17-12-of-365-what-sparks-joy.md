@@ -1,11 +1,12 @@
 ---
 title: 12 of 365, What sparks joy?
-tags: 
+tags:
   - list/365-writing
   - 365DayProject
-growthStage: seedling
+  - stage/seedling
 canonical: https://wordsmith.social/carbontwelve/12-365-what-sparks-joy
 ---
+
 
 This is day twelve of my attempt to write something, anything, every day for 365 days in a row.
 

@@ -1,11 +1,12 @@
 ---
 title: 22 of 365, Grievances with WriteFreely
-tags: 
+tags:
   - list/365-writing
   - 365DayProject
-growthStage: seedling
+  - stage/seedling
 canonical: https
 ---
+
 
 This is day twenty-two of my attempt to write something, anything, every day for 365 days in a row; not that I have been very consistent.
 

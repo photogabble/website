@@ -10,7 +10,7 @@ tags:
   - Quick BASIC
   - Go
   - Retro
-growthStage: evergreen
+  - stage/evergreen
 ---
 
 I recently spent a little time going down memory lane and reminiscing about my first experiences with programming. I even wrote a [short article](/blog/2017/05/02/happy-fiftyth-birthday-basic/) of the journey during which I wished BASIC a happy 53rd birthday. 

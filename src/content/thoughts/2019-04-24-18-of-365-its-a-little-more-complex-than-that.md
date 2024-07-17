@@ -1,11 +1,13 @@
 ---
 title: 18 of 365, It's a little more complicated than that
-tags: 
+tags:
   - list/365-writing
   - 365DayProject
-growthStage: seedling
-canonical: https://wordsmith.social/carbontwelve/18-365-its-a-little-more-complicated-than-that
+  - stage/seedling
+canonical: >-
+  https://wordsmith.social/carbontwelve/18-365-its-a-little-more-complicated-than-that
 ---
+
 
 This is day eighteen of my attempt to write something, anything, every day for 365 days in a row.
 

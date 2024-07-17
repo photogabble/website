@@ -5,18 +5,19 @@ subTitle: Bringing Blogtimes to 11ty
 description: A direct port from PHP of the WordPress plugin Blogtimes, which was itself ported to WordPress by Matt Mullenweg from b2 in 2003.
 git: https://github.com/photogabble/eleventy-plugin-blogtimes
 npm: https://www.npmjs.com/package/@photogabble/eleventy-plugin-blogtimes
-featured: true
-language: JS
-tags: [11ty, JavaScript]
+tags:
+  - status/featured
+  - language/JS
+  - 11ty
 ---
 
 Blogtimes is a plugin for the Eleventy static site generator, written in JavaScript. Given a directory with a valid git repository it will generate a histogram of commit times over 24 hours defaulting to within the past 30 days.
 
-{% figure "/img/11ty-blogtimes.png" "Look at all those late nights..." "A black and white histogram showing 24 hours with vertical lines showing when edits where made. The lines have a transparency and so the darker lines show more edits during that time." %}
+{% figure "/img/11ty-blogtimes.png", "Look at all those late nights...", "A black and white histogram showing 24 hours with vertical lines showing when edits where made. The lines have a transparency and so the darker lines show more edits during that time." %}
 
 It's a direct port from PHP of the [[Blogtimes: A trip down memory lane|WordPress plugin Blogtimes]], which was itself ported to WordPress by Matt Mullenweg from b2 in 2003.
 
-You can read [[Writing Blogtimes for Eleventy.js]] to find out why this exists, suffice to say, it's a _hommage_ to a simpler time.
+You can read [[Writing Blogtimes for Eleventy.js]] to find out why this exists, suffice to say, it's a _homage_ to a simpler time.
 
 ## Install
 

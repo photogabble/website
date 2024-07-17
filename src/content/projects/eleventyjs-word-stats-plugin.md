@@ -5,12 +5,13 @@ subTitle: Reading Time + Word Count for 11ty
 description: A lightweight wrapper for making available reading-time to the Eleventy Static Site Generator.
 git: https://github.com/photogabble/eleventy-plugin-word-stats
 npm: https://www.npmjs.com/package/@photogabble/eleventy-plugin-word-stats
-featured: true
-language: JS
-tags: [11ty, JavaScript]
+tags:
+  - status/featured
+  - language/JS
+  - 11ty
 ---
 
-This plugin provides a lightweight wrapper for making available [reading-time](https://www.npmjs.com/package/reading-time) to the [Eleventy](https://www.11ty.dev/) Static Site Generator.
+This #plugin provides a lightweight wrapper for making available [reading-time](https://www.npmjs.com/package/reading-time) to the [Eleventy](https://www.11ty.dev/) Static Site Generator.
 
 ## Install
 

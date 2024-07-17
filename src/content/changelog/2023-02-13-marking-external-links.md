@@ -1,7 +1,9 @@
 ---
 title: "Marking external links"
-tags: [Blogging, CSS]
-growthStage: budding
+tags:
+  - Blogging
+  - CSS
+  - stage/budding
 ---
 
 Up until [[Adding Wiki Links to 11ty]] the majority of links on this website where external. With increasing usage of Wiki Links however, it soon became obvious that I needed a way to differentiate between internal and external linking, thus [issue #174: Make external links easier to identify](https://github.com/photogabble/website/issues/174) was opened.

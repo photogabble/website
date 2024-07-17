@@ -2,8 +2,8 @@
 title: Review of Broccoli Pentad, an old school dungeon crawler
 tags: 
   - Review
+  - stage/stub
 description: "Broccoli Pentad is an old school dungeon crawler with cosmic horror elements being made for the Dungeon Crawler Jam 2024"
-growthStage: stub
 ---
 
 [[ Broccoli Pentad by Disastrophism ]] is an old school dungeon crawler with cosmic horror elements being made for the [[Dungeon Crawler Jam 2024]].

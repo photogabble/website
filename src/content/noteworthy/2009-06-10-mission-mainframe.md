@@ -1,9 +1,12 @@
 ---
 title: Mission Mainframe
-tags: [Games, Revived, Review, DOS]
-featured: true
+tags: 
+  - Games
+  - Revived
+  - Review
+  - DOS
+  - stage/evergreen
 cover_image: /img/featured-images/mission-mainframe.png
-growthStage: evergreen
 ---
 
 ![Mission Mainframe Start Up](/img/mission-mainframe-1.png "Mission Mainframe Start Up")

@@ -3,8 +3,9 @@ title: A revival of Photogabble... the post-mortem
 tags:
   - Blogging
   - PhotoGabble
-growthStage: evergreen
+  - stage/evergreen
 ---
+
 
 In December last year after a lengthy hiatus from blogging I wrote my first post titled [Keep Blogging Fun!](http://www.photogabble.co.uk/blog/2014/12/31/keep-blogging-fun/). In my mind at the time that blog post was the first of 
 many to come and marked the revival of this website, photogabble, a project that I have now stuck with for over a *decade* something which by any measurement is a long time; to put that into perspective it's one seventh of the 

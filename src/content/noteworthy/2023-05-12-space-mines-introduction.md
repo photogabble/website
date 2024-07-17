@@ -1,8 +1,9 @@
 ---
 title: "Space Mines, Introduction"
-tags: [Space Mines, "series:Space Mines Build"]
-growthStage: budding
-series: Space Mines Build
+tags: 
+  - Space Mines
+  - series/Space Mines Build
+  - stage/budding
 ---
 
 ## Preface

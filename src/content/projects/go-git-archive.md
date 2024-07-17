@@ -3,11 +3,9 @@ date: 2017-10-17
 title: Go Git Archive
 description: A small command line tool for zipping all files changed between two git commits.
 git: https://github.com/photogabble/go-git-archive
-status: tinkering
-language: Go
 tags:
-  - Tinkering
-  - Go
+  - status/tinkering
+  - language/Go
 ---
 
 This was written as a learning exercise while I was learning to program in Go. It solves a problem that I faced at the time which was that we needed to upload just the files changed between commit versions as a zip to an FTP endpoint for deployment.

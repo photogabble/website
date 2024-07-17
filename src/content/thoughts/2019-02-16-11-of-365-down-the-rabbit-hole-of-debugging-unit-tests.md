@@ -1,11 +1,13 @@
 ---
 title: 11 of 365, Down the rabbit hole of debugging unit tests
-tags: 
+tags:
   - list/365-writing
   - 365DayProject
-growthStage: seedling
-canonical: https://wordsmith.social/carbontwelve/11-365-down-the-rabbit-hole-of-debugging-unit-tests
+  - stage/seedling
+canonical: >-
+  https://wordsmith.social/carbontwelve/11-365-down-the-rabbit-hole-of-debugging-unit-tests
 ---
+
 
 This is day eleven of my attempt to write something, anything, every day for 365 days in a row.
 

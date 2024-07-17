@@ -1,8 +1,11 @@
 ---
 title: Font Subsetting with Eleventy.js
-tags: ["11ty", "Typography"]
-growthStage: evergreen
+tags:
+  - 11ty
+  - Typography
+  - stage/evergreen
 ---
+
 
 For a while now PhotoGabble has used the default `monospace` system font for all typography; this was initially a stop-gap measure in order to quickly ship the blog and ever since I have wanted to update with a more bespoke font choice that enhances readability[^1].
 

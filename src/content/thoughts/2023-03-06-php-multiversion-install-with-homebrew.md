@@ -1,9 +1,12 @@
 ---
-title: "PHP multi-version install with Homebrew"
-modified: 2023-12-15
-tags: ["PHP", "Homebrew"]
-growthStage: budding
+title: PHP multi-version install with Homebrew
+modified: 2023-12-15T00:00:00.000Z
+tags:
+  - PHP
+  - Homebrew
+  - stage/budding
 ---
+
 
 ## Preface
 I use [Homebrew](https://brew.sh/) on my Macbook Pro to install PHP via the [Homebrew PHP Formula](https://formulae.brew.sh/formula/php). For many good reasons Homebrew by default installs the current stable version of PHP and quickly depreciates support for older versions, ultimately removing them. 

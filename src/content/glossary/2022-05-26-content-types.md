@@ -1,7 +1,8 @@
 ---
 title: "Content Types"
-tags: ["DigitalGarden"]
-growthStage: budding
+tags: 
+  - DigitalGarden
+  - stage/budding
 ---
 
 In converting PhotoGabble into a Digital Garden from being a traditional Blog with taxonomy made up of Categories I have settled

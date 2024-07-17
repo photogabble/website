@@ -1,5 +1,10 @@
 ---
 title: "Blogtimes, the second WordPress Plugin"
-tags: [WordPress, Histograms, Programming]
-growthStage: stub
+tags:
+  - WordPress
+  - Histograms
+  - Programming
+  - stage/stub
 ---
+
+...

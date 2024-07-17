@@ -1,7 +1,10 @@
 ---
-title: "Where did all the webrings go?"
+title: "Where did all the WebRings go?"
 aliases: [webrings]
-tags: ["Computing History", "Old Web"]
-growthStage: stub
+tags: 
+  - ComputingHistory
+  - OldWeb
+  - stage/stub
 ---
 
+...

@@ -1,5 +1,4 @@
 ---
-
 title: Think with Google, revisiting Google's website speed testing tool.
 draft: false
 cover_image: /img/featured-images/revisiting-google-page-speed-tool.png
@@ -9,7 +8,7 @@ tags:
   - Google
   - Testing
   - Website Optimisation
-growthStage: evergreen
+  - stage/evergreen
 ---
 
 Just over a year ago I reviewed [testmysite.withgoogle.com](https://testmysite.withgoogle.com) ([here](/blog/tools-and-resources/think-with-google-test-my-site/)) which was at that time making the rounds around various blogger groups. My conclusion then was that the new "tool" has a distinctively dodgy feel to it and felt as though it was largely a marketing funnel designed to ensnare non-technical savvy middle management types.

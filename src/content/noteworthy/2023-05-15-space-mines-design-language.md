@@ -1,8 +1,9 @@
 ---
 title: "Space Mines, Design Language"
-tags: [Space Mines, "series:Space Mines Build"]
-growthStage: stub
-series: Space Mines Build
+tags: 
+  - Space Mines
+  - series/Space Mines Build
+  - stage/stub
 ---
 
 Last year I spent a large amount of time researching retro future interfaces and after being heavily inspired by the visual aesthetic and interface design found in the films [Alien (1979)](https://www.imdb.com/title/tt0078748/), [Outland (1981)](https://www.imdb.com/title/tt0082869/) and [Oblivion (2013)](https://www.imdb.com/title/tt1483013/) I went to work on my own.

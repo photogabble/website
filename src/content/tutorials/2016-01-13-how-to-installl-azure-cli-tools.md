@@ -5,8 +5,9 @@ tags:
   - Azure
   - Cloud Hosting
   - Power Shell
-growthStage: budding
+  - stage/budding
 ---
+
 
 ![Azure CLI Tool](/img/azure-cli-1.png "Azure CLI Tool")
 

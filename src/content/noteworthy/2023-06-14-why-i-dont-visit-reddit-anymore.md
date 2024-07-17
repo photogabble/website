@@ -1,7 +1,9 @@
 ---
 title: Why I don't go to Reddit anymore
-tags: [Social Media, accessibility]
-growthStage: seedling
+tags: 
+  - Social Media
+  - accessibility
+  - stage/seedling
 ---
 
 For several years it was rare that I would go a day without spending several hours browsing Reddit, that stopped almost entirely in 2015 with then CEO Pao's questionable sacking of Victoria Taylor. In solidarity with the uproar from the moderator community I stopped browsing Reddit and started looking for communities elsewhere. I found them in forums and Twitter (although if your reading this around the time I write this, you will already know [[Why I don't go to Twitter anymore|why I no longer use Twitter]].) Having found my people _elsewhere_ I then largely forgot about Reddit, much in the same way we all did with Digg.

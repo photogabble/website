@@ -8,6 +8,7 @@ export default {
   excludeFromFeed: false,
   tags: [],
   layout: 'layouts/page-post.njk',
+  // TODO: (RC2024) remove growthStage and contentType
   growthStage: 'seedling', // seedling, budding, evergreen
   contentType: 'thought', // thought, noteworthy, essay, tutorial, project
   eleventyComputed: {

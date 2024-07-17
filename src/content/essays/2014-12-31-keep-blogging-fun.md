@@ -1,9 +1,9 @@
 ---
 title: Keep blogging fun!
-growthStage: evergreen
 tags:
   - Blogging
   - PhotoGabble
+  - stage/evergreen
 ---
 
 Howdy! It sure is nice to see a visitor to this website. Having registered this domain in 2004 it is a surprise to me that given the grave yard of abandoned blogs and dead links in my favourites bar, I am still writing after a decade of operating this domain; I believe the reason for all the abandoned blogs is that for a lot of people they burn out or lose interest.
@@ -16,9 +16,9 @@ Things where *fun* having the limitations of a [Motorola 68040](http://en.wikipe
 
 For several years I kept blogging as a fun aside to my usual activities, writing about anything that interested me that I could write for more than five minutes about, all-the-while learning a lot about web development. Eventually the Macintosh Quadra 950 was replaced by a second hand workstation and a few years later by an Intel Atom based system (*fun*) that I built for the soul purpose of hosting photogabble.
 
-By this point photogabble had already gone though several re-designs (at least once per year), two hard drive failures and one case of severe database corruption due to a thunderstorm and inadequate surge protection; but it still stood with the majority of its legacy content, still alive thanks to backups and my preference to write posts in notepad on my computer before copying into Wordpress to layout and publish.
+By this point photogabble had already gone through several re-designs (at least once per year), two hard drive failures and one case of severe database corruption due to a thunderstorm and inadequate surge protection; but it still stood with the majority of its legacy content, still alive thanks to backups and my preference to write posts in notepad on my computer before copying into Wordpress to layout and publish.
 
-Looking back at the post archive there is a distinct time line where you can see the most articles being written in the lead up to and during my time as a student of Coventry University, during which, at some point the *fun* was tragically lost.
+Looking back at the post archive there is a distinct timeline where you can see the most articles being written in the lead up to and during my time as a student of Coventry University, during which, at some point the *fun* was tragically lost.
 
 ### Blogging shouldn't feel like work unless you're getting paid[^1]
 

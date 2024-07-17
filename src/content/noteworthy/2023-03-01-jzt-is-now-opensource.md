@@ -1,7 +1,9 @@
 ---
 title: JZT is now open source
-tags: ["Text Mode", "ZZT"]
-growthStage: seedling
+tags:
+  - Text Mode
+  - ZZT
+  - stage/seedling
 ---
 
 Back in 2016 I wrote about [[JZT, an awesome homage to the DOS era adventure game ZZT]]; in the years since I have kept an eye on [JZT (jzt.xyz)](http://jzt.xyz/) and played through it a few times. I'm honestly surprised that over the past seven years [Mark McIntyre](https://github.com/markmcintyre) (the guy behind JZT) has continued to work on it, proving updates through a [JZT Community page on Facebook](https://www.facebook.com/jzt.community)[^1]

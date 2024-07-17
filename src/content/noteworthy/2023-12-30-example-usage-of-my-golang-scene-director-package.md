@@ -4,7 +4,7 @@ tags:
   - Programming
   - GameDev
   - Go
-growthStage: evergreen
+  - stage/evergreen
 ---
 
 About four years ago I got the itch to write a game engine based upon _libtcod_ in #Golang, suffice to say that side project never had much time off the shelf but over the years I did return to it. I most recently took a look four months ago because I wanted to make use of the scene director I had written, which I actually partitioned off into [go-rogue/scenes](https://github.com/go-rogue/scenes).

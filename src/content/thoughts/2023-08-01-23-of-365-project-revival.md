@@ -1,10 +1,11 @@
 ---
 title: 23 of 365, Project revival
-tags: 
+tags:
   - list/365-writing
   - 365DayProject
-growthStage: seedling
+  - stage/seedling
 ---
+
 
 This is day twenty-three of my attempt to write something, anything, every day for 365 days in a row; the project paused in December 2019, this is a **revival**.
 
