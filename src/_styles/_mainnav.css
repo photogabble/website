@@ -1,6 +1,16 @@
 #main-nav.jumbo-nav__open {
     --sidebar-color: var(--jumbo-nav-text-color);
     --sidebar-anchor-color: var(--jumbo-nav-anchor-color);
+    --sidebar-background-color: var(--jumbo-nav-background-color);
+
+    /* When the jumbo nav is open, its container should be scrollable in case the
+       viewport is too short to display the whole menu. */
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.jumbo-nav__open #jumbo-toggle{
+    font-weight: bold;
 }
 
 .main-nav {
@@ -10,7 +20,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    padding: 1.5rem;
 }
 
 .main-nav a {

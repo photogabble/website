@@ -1,14 +1,29 @@
 /*
- * On desktop view (screen width > 900px) the website presents two columns with
- * the main content being found in the right column and related information in
- * the left. Also in the left column is the pages header and footer navigation.
+ * In the DOM the content flow is as such:
+ * <main>
+ *   <header/>
+ *   <div class="side-bar">
+ *     <aside/>
+ *     <footer/>
+ *   </div>
+ *   <article/>
+ * </main>
+ *
+ * Main is a CSS Grid made up of two columns and two rows.
+ *
+ * On desktop view (screen width > 900px) the website presents two columns, the <header/>
+ * sits in the top left with the <div> containing the sidebar and footer taking the bottom left.
+ * The remaining <article/> therefore takes the top right grid placement but has a row span of
+ * two so that it fills the page height.
+ *
+ * On mobile view (screen width <= 900px) the website presents as one column.
  */
 
 main {
     flex-grow: 1;
     display: grid;
     grid-template-columns: 50vw 50vw;
-    /*grid-template-rows: auto 1fr;*/
+    grid-template-rows: auto 1fr;
     transition: 300ms;
 }
 
@@ -16,9 +31,9 @@ main.sidebar__closed {
     grid-template-columns: 5vw 95vw;
 }
 
-#left {
-    position: relative;
-
+/* Main Page Header and sidebar share the same prose formatting */
+main > header,
+.side-bar {
     font-size: 0.8rem;
     line-height: 1.54;
     letter-spacing: -0.02em;
@@ -27,37 +42,35 @@ main.sidebar__closed {
     background: var(--sidebar-background-color);
     color: var(--sidebar-color);
     font-family: monospace;
-
-    overflow-y: auto;
-    max-height: 100vh;
-    box-sizing: border-box;
 }
 
-#left a,
-#left h1 {
+/* Main Page Header doesn't need padding, its applied to it's children. */
+main > header {
+    padding: 0;
+    grid-row: 1;
+}
+
+.side-bar {
+    overflow-y: auto;
+    max-height: calc(100vh - 60px);
+    box-sizing: border-box;
+
+    grid-row: 2;
+}
+
+.side-bar a,
+.side-bar h1 {
     color: var(--sidebar-anchor-color);
 }
 
-#right {
+#content {
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
     max-height: 100vh;
-}
 
-#right #navigation {
-    width: 100%;
-    position: relative;
-    font-size: 0.8rem;
-    line-height: 1.54;
-    letter-spacing: -0.02em;
-    padding: 1.5rem;
-    font-family: monospace;
-}
-
-#right #jumbo-toggle {
-    color: var(--sidebar-background-color);
+    grid-row: span 2;
 }
 
 /* On screens too small for two columns to look nice, lets make it look nice. */
@@ -68,19 +81,21 @@ main.sidebar__closed {
     }
 
     main {
-        display: flex;
-        flex-flow: column-reverse;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
         overflow: auto;
     }
 
-    main #left{
+    .side-bar{
         overflow-y: visible;
         max-height: initial;
+        grid-row: 3;
     }
 
-    main #right{
+    #content{
         overflow-y: visible;
         max-height: initial;
         flex-grow: 1;
+        grid-row: 2;
     }
 }

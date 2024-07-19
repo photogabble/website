@@ -13,12 +13,11 @@
 
 #jumbo-nav {
     display: none;
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
 
-    padding: 4rem 1.5rem 1.5rem;
+    padding: 1.5rem;
     background: var(--jumbo-nav-background-color);
     color: var(--jumbo-nav-text-color);
 }

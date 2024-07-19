@@ -104,20 +104,26 @@
 {#</aside>#}
 
 <main>
-    <div id="left" class="side-bar">
-        <div id="navigation">
-            <header id="main-nav" class="main-nav">
-                <nav>{% for crumb in folder | breadcrumbs %}{% if crumb.href %}<a href="{{ crumb.href }}" title="{{ crumb.title }}">{{ crumb.text }}</a>{% else %}<span>{{ crumb.title }}</span>{% endif %}<span>/</span>{% endfor %}</nav>
-                <div><form><input placeholder="search" /></form><span>|</span>{% block navigation %}{% endblock %}<button id="jumbo-toggle">Menu</button></div>
-            </header>
-            {% include "components/navigation/jumbo-nav.njk" %}
+    <header id="main-nav">
+        <div class="main-nav">
+            <nav>{% for crumb in folder | breadcrumbs %}{% if crumb.href %}<a href="{{ crumb.href }}" title="{{ crumb.title }}">{{ crumb.text }}</a>{% else %}<span>{{ crumb.title }}</span>{% endif %}<span>/</span>{% endfor %}</nav>
+            <div><form><input placeholder="search" /></form><span>|</span>{% block navigation %}{% endblock %}<button id="jumbo-toggle">Menu</button></div>
         </div>
-        <a class="skip-content" href="#right">Skip to Content (Press Enter)</a>
-        {% block sidebar %}{% endblock %}
+        {% include "components/navigation/jumbo-nav.njk" %}
+    </header>
+
+    <div id="content">
+        {% block content %}{{ content | safe }}{% endblock %}
     </div>
 
-    <div id="right">
-        {% block content %}{{ content | safe }}{% endblock %}
+    <div class="side-bar">
+        <aside>
+            <a class="skip-content" href="#content">Skip to Content (Press Enter)</a>
+            {% block sidebar %}{% endblock %}
+        </aside>
+        <footer>
+            Page footer...
+        </footer>
     </div>
 </main>
 
@@ -202,15 +208,14 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth <= 900) {
-      identifyFirstFocus();
+      // identifyFirstFocus();
 
       // Move navbar out of left column on mobile
-      const nav = document.getElementById('navigation');
-      const right = document.getElementById('right');
-      console.log(nav, right);
-
-      right.prepend(nav);
-
+      // const nav = document.getElementById('navigation');
+      // const right = document.getElementById('right');
+      // console.log(nav, right);
+      //
+      // right.prepend(nav);
     }
   });
 </script>
