@@ -1,8 +1,19 @@
-/* Main page layouts */
+/*
+ * On desktop view (screen width > 900px) the website presents two columns with
+ * the main content being found in the right column and related information in
+ * the left. Also in the left column is the pages header and footer navigation.
+ */
+
 main {
     flex-grow: 1;
     display: grid;
-    grid-template-columns: 50vw 50vw
+    grid-template-columns: 50vw 50vw;
+    /*grid-template-rows: auto 1fr;*/
+    transition: 300ms;
+}
+
+main.sidebar__closed {
+    grid-template-columns: 5vw 95vw;
 }
 
 #left {
@@ -33,4 +44,43 @@ main {
     align-items: center;
     overflow-y: scroll;
     max-height: 100vh;
+}
+
+#right #navigation {
+    width: 100%;
+    position: relative;
+    font-size: 0.8rem;
+    line-height: 1.54;
+    letter-spacing: -0.02em;
+    padding: 1.5rem;
+    font-family: monospace;
+}
+
+#right #jumbo-toggle {
+    color: var(--sidebar-background-color);
+}
+
+/* On screens too small for two columns to look nice, lets make it look nice. */
+
+@media only screen and (max-width: 900px) {
+    body {
+        overflow: auto;
+    }
+
+    main {
+        display: flex;
+        flex-flow: column-reverse;
+        overflow: auto;
+    }
+
+    main #left{
+        overflow-y: visible;
+        max-height: initial;
+    }
+
+    main #right{
+        overflow-y: visible;
+        max-height: initial;
+        flex-grow: 1;
+    }
 }

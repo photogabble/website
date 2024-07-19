@@ -105,11 +105,13 @@
 
 <main>
     <div id="left" class="side-bar">
-        <header id="main-nav" class="main-nav">
-            <nav>{% for crumb in folder | breadcrumbs %}{% if crumb.href %}<a href="{{ crumb.href }}" title="{{ crumb.title }}">{{ crumb.text }}</a>{% else %}<span>{{ crumb.title }}</span>{% endif %}<span>/</span>{% endfor %}</nav>
-            <div><form><input placeholder="search" /></form><span>|</span>{% block navigation %}{% endblock %}<button id="jumbo-toggle">Menu</button></div>
-        </header>
-        {% include "components/navigation/jumbo-nav.njk" %}
+        <div id="navigation">
+            <header id="main-nav" class="main-nav">
+                <nav>{% for crumb in folder | breadcrumbs %}{% if crumb.href %}<a href="{{ crumb.href }}" title="{{ crumb.title }}">{{ crumb.text }}</a>{% else %}<span>{{ crumb.title }}</span>{% endif %}<span>/</span>{% endfor %}</nav>
+                <div><form><input placeholder="search" /></form><span>|</span>{% block navigation %}{% endblock %}<button id="jumbo-toggle">Menu</button></div>
+            </header>
+            {% include "components/navigation/jumbo-nav.njk" %}
+        </div>
         <a class="skip-content" href="#right">Skip to Content (Press Enter)</a>
         {% block sidebar %}{% endblock %}
     </div>
@@ -185,8 +187,31 @@
     }
   });
 
+  // When on mobile the usage of flex-flow column-reverse means there is a disconnect between the keyboard nav
+  // and how the page displays. In the off chance that someone is viewing this on a device that triggers the
+  // mobile view and has a keyboard used for navigation then the keyboard focus must begin on the first
+  // focusable in the right column.
+
+  // TODO: (RC2024): This is partially complete, need to do the same focus trapping as on the jumbo menu
+  //       so that when focus exits the right hand side it begins on the left hand side
+
+  const identifyFirstFocus = () => {
+    const list = document.getElementById('right').querySelectorAll(FOCUSABLES);
+    if (list[0]) list[0].focus();
+  };
+
   document.addEventListener("DOMContentLoaded", function () {
-    console.log('HELLO THERE')
+    if (window.innerWidth <= 900) {
+      identifyFirstFocus();
+
+      // Move navbar out of left column on mobile
+      const nav = document.getElementById('navigation');
+      const right = document.getElementById('right');
+      console.log(nav, right);
+
+      right.prepend(nav);
+
+    }
   });
 </script>
 

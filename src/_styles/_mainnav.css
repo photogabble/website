@@ -58,16 +58,10 @@ a.skip-content:focus {
     position: relative;
 }
 
-/*#main-nav.jumbo-nav__open {*/
-/*    color: var(--jumbo-nav-text-color);*/
-/*}*/
+/* Skip content link doesn't make sense on mobile view */
 
-/*#main-nav.jumbo-nav__open a,*/
-/*#main-nav.jumbo-nav__open button{*/
-/*    color: var(--jumbo-nav-anchor-color);*/
-/*}*/
-
-/*#main-nav.jumbo-nav__open a:hover,*/
-/*#main-nav.jumbo-nav__open button:hover{*/
-/*    color: var(--jumbo-nav-anchor-hover-color);*/
-/*}*/
+@media only screen and (max-width: 900px) {
+    a.skip-content {
+        visibility: hidden;
+    }
+}
