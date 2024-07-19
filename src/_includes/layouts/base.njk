@@ -122,7 +122,14 @@
             {% block sidebar %}{% endblock %}
         </aside>
         <footer>
-            Page footer...
+            <p>
+                © {{ build.timestamp | dateToFormat('yyyy') }} Simon Dann. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="Licensed CC BY-NC 4.0">CC BY-NC-SA 4.0</a> | <a href="https://github.com/photogabble/website">src</a> | <a href="/legal/privacy">cookies &amp; privacy</a>.<br/>
+                <small>
+                    Any and all opinions listed here are my own and not representative of my employers; future, past and present.<br/> I may earn a portion of sales from
+                    products that are purchased through this site as part of <a href="/legal/affiliate-partnerships/" title="Disclosure of affiliate partnerships">Affiliate Partnerships</a> with retailers.<br/>
+                    <small>Page built {% if metadata.commit.ref %} from <a href="{{ metadata.commit.url }}/commit/{{ metadata.commit.ref }}">{{ metadata.commit.ref | limit(7) }}</a> {% endif %} on {{ build.timestamp | dateToFormat('DDDD') }} at {{ build.timestamp | dateToFormat('TT') }} by <a href="https://www.netlify.com/">Netlify Elves</a>.</small>
+                </small>
+            </p>
         </footer>
     </div>
 </main>

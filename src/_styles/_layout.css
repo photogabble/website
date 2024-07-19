@@ -56,11 +56,26 @@ main > header {
     box-sizing: border-box;
 
     grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
 }
 
 .side-bar a,
 .side-bar h1 {
     color: var(--sidebar-anchor-color);
+}
+
+.side-bar aside {
+    flex-grow: 1;
+}
+
+.side-bar footer {
+    margin-top: 1rem;
+}
+
+.side-bar footer p {
+    margin-bottom: 0;
 }
 
 #content {
