@@ -32,7 +32,6 @@ ul.alphabet {
 
 .post-list footer {
     margin-top: 1rem;
-    text-align: right;
 }
 
 .post-list ol {
@@ -58,9 +57,7 @@ ul.alphabet {
 .post-list__chronological li {
     display: flex;
     margin-bottom: 1rem;
-    flex-direction: row;
-    gap: 1rem;
-    align-items: center;
+    flex-direction: column;
 }
 
 .post-list__todo ul > li,
@@ -69,11 +66,7 @@ ul.alphabet {
 }
 
 .post-list__chronological hr {
-    flex-grow: 1;
-    margin: 0;
-    display: block;
-    border: 0;
-    border-bottom: 3px double;
+    display: none;
 }
 
 .post-list__todo ul {
@@ -201,4 +194,26 @@ ul.alphabet {
     background: transparent;
     border: 1px solid #CCC;
     padding:1rem;
+}
+
+/* Do not display the bar decoration on smaller screen sizes as it causes the
+   content to wrap and look terrible. */
+@media only screen and (min-width: 500px) {
+    .post-list__chronological hr {
+        flex-grow: 1;
+        margin: 0;
+        display: block;
+        border: 0;
+        border-bottom: 3px double;
+    }
+
+    .post-list__chronological li {
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .post-list footer {
+        text-align: right;
+    }
 }
