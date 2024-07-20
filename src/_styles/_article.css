@@ -72,6 +72,7 @@ article ol {
     line-height: 1.4em;
     width: 83%;
     margin: 1rem 0;
+    line-break: anywhere;
 }
 
 article footer p,
