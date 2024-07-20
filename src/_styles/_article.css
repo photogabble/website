@@ -81,6 +81,10 @@ article footer ol {
     width: auto;
 }
 
+article figure {
+    margin: 0;
+}
+
 article p > code {
     font-size: 1rem;
     background: lightgrey;
@@ -203,4 +207,13 @@ article aside p {
 
 article aside a {
     color: #ffe8a5;
+}
+
+@media only screen and (min-width: 500px) {
+    article figure {
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 40px;
+        margin-inline-end: 40px;
+    }
 }
