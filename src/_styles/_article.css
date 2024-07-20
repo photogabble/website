@@ -62,6 +62,7 @@ article hr {
 
 article a {
     color: var(--light-key-color);
+    line-break: anywhere;
 }
 
 article p,
@@ -72,7 +73,6 @@ article ol {
     line-height: 1.4em;
     width: 83%;
     margin: 1rem 0;
-    line-break: anywhere;
 }
 
 article footer p,
