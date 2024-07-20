@@ -18,6 +18,8 @@
     z-index: 2;
     color: var(--sidebar-color);
     display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem;
@@ -30,6 +32,8 @@
 .main-nav > div {
     display: flex;
     align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 0.5rem;
 }
 
@@ -70,8 +74,14 @@ a.skip-content:focus {
 
 /* Skip content link doesn't make sense on mobile view */
 
-@media only screen and (max-width: 900px) {
+@media only screen and (min-width: 900px) {
     a.skip-content {
         visibility: hidden;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    .main-nav {
+        flex-direction: row;
     }
 }
