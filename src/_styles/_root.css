@@ -96,3 +96,13 @@ table tfoot {
 th, td {
     text-align: left
 }
+
+.ascii-art{
+    white-space: pre;
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: unset;
+    transform: unset;
+    overflow-y: hidden;
+}
