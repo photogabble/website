@@ -27,7 +27,7 @@
   "license": "CC BY-NC-SA 4.0",
   "type": "module",
   "devDependencies": {
-    "@11ty/eleventy": "3.0.0-alpha.14",
+    "@11ty/eleventy": "3.0.0-alpha.17",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@fullhuman/postcss-purgecss": "^4.1.3",
