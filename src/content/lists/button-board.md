@@ -1,31 +1,16 @@
-<p>
-    Welcome to my button board, below is a list of websites from my <a href="/resources/bookmarks/">bookmarks</a> which have pretty buttons.
-</p>
+---
+title: Button Board
+description: Like a blogroll but via the medium of 88x21 gifs
+permalink: '/button-board/'
+---
 
-<nav class="button-board">
-    {%- for item in list.items -%}
-        {% if not item.data.dead %}
-            {% set href = item.data.cite.href or item.url %}
-            {% set title = item.data.title %}
-            {% set button = item.data.button | firstBtn %}
-            {% include "../components/88x31-button-list.njk" %}
-        {% endif %}
-    {%- endfor -%}
-</nav>
+Welcome to my button board, below is a list of websites from my [bookmarks](/resources/bookmarks/) which have pretty buttons.
 
-<p>
-    When I first added this button board it was primarily to include the buttons of websites I had added to my <a href="/resources/bookmarks/">bookmarks</a>; however being the digital magpie that I am I quickly began collecting buttons of long since dead websites, or buttons that don't have a webpage to link to.
-</p>
+{% buttonBoard items %}
 
-<p>
-    Some of the below link through to a note giving details of what they used to belong to.
-</p>
+When I first added this button board it was primarily to include the buttons of websites I had added to my [bookmarks](/resources/bookmarks/); however being the digital magpie that I am I quickly began collecting buttons of long since dead websites, or buttons that don't have a webpage to link to.
 
-<nav class="button-board">
-    {%- for item in list.items | whereKeyEquals('dead', true) -%}
-        {% set href = item.url %}
-        {% set title = item.data.title %}
-        {% set button = item.data.button | firstBtn %}
-        {% include "../components/88x31-button-list.njk" %}
-    {%- endfor -%}
-</nav>
+Some of the below link through to a note giving details of what they used to belong to.
+
+{% assign dead = items | whereKeyEquals: 'dead', true %}
+{% buttonBoard dead %}
