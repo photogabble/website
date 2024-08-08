@@ -1,28 +1,17 @@
-<section class="project-list">
-    <header>
-        <h3>Media</h3>
-        <p>Lists of things I have read, watched or listened to.</p>
-    </header>
-    <ul>
-        <li>{%- if page and page.url === '/books/' -%}»&nbsp;{%- endif -%}<a href="/books/">My Bookshelf</a>: A list of books that I have read and written a review about</li>
-        <li>{%- if page and page.url === '/antilibrary/' -%}»&nbsp;{%- endif -%}<a href="/antilibrary/">The Antilibrary</a>: A list of books that I intend to read</li>
-        <li>{%- if page and page.url === '/lists/film-and-tv/' -%}»&nbsp;{%- endif -%}<a href="/lists/film-and-tv/">Films/TV Series</a>: an incomplete, infrequently updated list of things I have watched</li>
-        <li>{%- if page and page.url === '/lists/watchlist/' -%}»&nbsp;{%- endif -%}<a href="/lists/watchlist/">Watchlist</a>: a list of films and tv series that have interested me enough to want to watch</li>
-        <li>{%- if page and page.url === '/lists/listened-to/' -%}»&nbsp;{%- endif -%}<a href="/lists/listened-to/">Listened To</a>: A list of music I have recently listened to (if I get last.fm integration working)</li>
-    </ul>
-</section>
-{%- set allLists = collections.lists -%}
-<section class="project-list">
-    <header>
-        <h3>Collections</h3>
-    </header>
-    <ul>
-        {%- if allLists|length -%}
-            {%- for list in allLists -%}
-                <li>{%- if page and page.url === list.permalink -%}»&nbsp;{%- endif -%}<a href="{{ list.permalink }}">{{ list.title }}</a>: {{ list.description }}</li>
+{%- set groups = collections.lists | groupByKey('list_category') -%}
+{%- for groupName, groupMeta in metadata.listGroups -%}
+    {% set groupItems = groups.get(groupName) %}
+    {%- if groupItems|length -%}
+    <section class="project-list">
+        <header>
+            <h3>{{ groupMeta.title }}</h3>
+            {%- if groupMeta.description -%}<p>{{ groupMeta.description }}</p>{%- endif -%}
+        </header>
+        <ul>
+            {%- for list in groupItems -%}
+                <li>{%- if page and page.url === list.url -%}»&nbsp;{%- endif -%}<a href="{{ list.url }}">{{ list.title }}</a>: {{ list.description }}</li>
             {%- endfor -%}
-        {%- else -%}
-            <li>No collections found.</li>
-        {%- endif -%}
-    </ul>
-</section>
+        </ul>
+    </section>
+    {%- endif -%}
+{%- endfor -%}

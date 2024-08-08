@@ -55,4 +55,17 @@ export default {
       permalink: '/resources/bookmarks/'
     },
   },
+  listGroups: {
+    media: {
+      title: 'Media',
+      description: 'Lists of things I have read, watched or listened to.'
+    },
+    community: {
+      title: 'Small Web Community',
+      description: 'Lists of community paraphernalia related to the Small Web'
+    },
+    collection: {
+      title: 'Collections'
+    },
+  },
 }
