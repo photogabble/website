@@ -1,4 +1,5 @@
 {% set buttonBoard = collections.lists | whereKeyEquals('slug', 'button-board') | first %}
+{% set watched = collections.lists | whereKeyEquals('slug', 'watched') | first %}
 {% set writing = collections | groupBySpecialTag('type', 'stage/stub') %}
 {% set stubs = collections.writing | onlyTagged('stage/stub') %}
 {% set weekInReview = collections['Week In Review'] %}
@@ -22,7 +23,7 @@
         <dl>
             <dt>Lists/Collections</dt>
             <dd><a href="/topic/week-in-review/"><span>{{ weekInReview.length }}</span><span>Week In Review</span></a></dd>
-            <dd><a href="/lists/film-and-tv/"><span>{{ movies.length }}</span><span>Films & TV Series</span></a></dd>
+            <dd><a href="/lists/film-and-tv/"><span>{{ watched.items.length }}</span><span>Films & TV Series</span></a></dd>
             <dd><a href="/lists/listened-to/"><span>*</span><span>Listened To</span></a></dd>
             <dd><a href="/books/"><span>{{ read.length }}</span><span>My Bookshelf</span></a></dd>
             <dd><a href="/antilibrary/"><span>{{ antilibrary.length }}</span><span><em>The</em> Antilibrary</span></a></dd>
