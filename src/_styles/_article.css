@@ -17,7 +17,7 @@ article > header a {
 /* https://www.smashingmagazine.com/2022/01/modern-fluid-typography-css-clamp/ */
 article > header h1 {
     margin-bottom: 0;
-    font-size: clamp(1.4rem, 6vw, 4rem);
+    font-size: clamp(2.6rem, 6vw, 4rem);
     font-weight: lighter;
 }
 
@@ -82,7 +82,19 @@ article footer ol {
 }
 
 article figure {
-    margin: 0;
+    width: 100%;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    margin-bottom: .9rem;
+}
+
+article figure figcaption p {
+    width: 100%;
+    font-size: .75rem;
+    margin-top: .25rem;
+    margin-bottom: 0;
 }
 
 article p > code {
@@ -207,13 +219,4 @@ article aside p {
 
 article aside a {
     color: #ffe8a5;
-}
-
-@media only screen and (min-width: 500px) {
-    article figure {
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 40px;
-        margin-inline-end: 40px;
-    }
 }

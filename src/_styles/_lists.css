@@ -120,7 +120,8 @@ ul.alphabet {
     transition: all 150ms;
 }
 
-.book .cover.cover__placeholder{
+.book .cover.cover__placeholder,
+.book-list > h3{
     background: transparent;
     border: 1px solid;
     padding: 1rem;
@@ -128,6 +129,12 @@ ul.alphabet {
     flex-direction: column;
     text-align: center;
     justify-content: center;
+}
+
+.book-list > h3 {
+    aspect-ratio: 1 / 1.5;
+    border: 4px white double;
+    margin: 0;
 }
 
 .book h3 {
