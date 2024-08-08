@@ -8,6 +8,7 @@ sidebar_component: books
 sidebar_shelves: ['read']
 folder: [lists]
 hide_meta: true
+permalink: /books/
 tags:
   - 'type/index'
 ---
