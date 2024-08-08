@@ -2,12 +2,10 @@
 title: The Antilibrary
 sub_title: Books I like the idea of having read
 description: A list of books that I intend to read
-layout: layouts/page-post.njk
 navigation_component: reading-view-toggle
 sidebar_component: books
 sidebar_shelves: ['to-read']
-folder: [lists]
-hide_meta: true
+list_category: media
 permalink: /antilibrary/
 tags:
   - 'type/index'

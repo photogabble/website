@@ -2,12 +2,10 @@
 title: Library Bookshelf
 sub_title: What I have been reading
 description: A list of books that I have read and written a review about
-layout: layouts/page-post.njk
 navigation_component: reading-view-toggle
 sidebar_component: books
 sidebar_shelves: ['read']
-folder: [lists]
-hide_meta: true
+list_category: media
 permalink: /books/
 tags:
   - 'type/index'
