@@ -1,6 +1,7 @@
 ---
 title: The Antilibrary
-subtitle: Books I like the idea of having read
+sub_title: Books I like the idea of having read
+description: A list of books that I intend to read
 layout: layouts/page-post.njk
 navigation_component: reading-view-toggle
 sidebar_component: books

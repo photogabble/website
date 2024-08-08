@@ -1,6 +1,7 @@
 ---
 title: Library Bookshelf
-subtitle: What I have been reading
+sub_title: What I have been reading
+description: A list of books that I have read and written a review about
 layout: layouts/page-post.njk
 navigation_component: reading-view-toggle
 sidebar_component: books
