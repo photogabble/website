@@ -147,11 +147,4 @@ export default [
         reason: 'I love their Windows 95 theme.',
     },
 
-    {
-        title: "David Schütz Blog",
-        href: 'https://xdavidhu.me/',
-        tags: ['Programmer', 'Blog', 'Minimalist'],
-        reason: 'I really like their post page style.',
-    },
-
 ];
