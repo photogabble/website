@@ -1,4 +1,4 @@
-{% set items = collections.resources | onlyTagged(tagged) | inWeek(week, year) | trackBacklink(page, title) %}
+{% set items = collections['type/resource'] | onlyTagged(tagged) | inWeek(week, year) | trackBacklink(page, title) %}
 {% if items.length > 0 %}
 <h2>{{ featuredTitle }}</h2>
 <ul>
