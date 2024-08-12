@@ -1,11 +1,16 @@
-#!/usr/bin/env node
+import {AddBookmark} from "../lib/actions/add-bookmark.js";
+import fs from 'node:fs';
+import {DateTime} from "luxon";
+import yaml from 'js-yaml';
+import editor from '@inquirer/editor';
 
-const {AddBookmark} = require("../lib/actions/add-bookmark");
-const yargs = require("yargs");
-const {DateTime} = require("luxon");
-const fs = require('fs');
-const yaml = require("js-yaml");
-const editor = require('@inquirer/editor').default;
+export const command = 'add:weeknote';
+export const desc = 'plant a new week-note, defaults to this week';
+
+export const builder = (yargs) => {
+  yargs.option("w", {alias: "week", describe: "Week of year, defaults to this week", type: "number", demandOption: false});
+  yargs.option("y", {alias: "year", describe: "Year, defaults to this year", type: "number", demandOption: false});
+};
 
 // Started with #33 on 2nd April 2023 but that was a double entry and so
 // to simplify the math for this "brute force approach" lets start from
@@ -83,8 +88,7 @@ async function bookmarksInput(message, moment, defaultTopics = []) {
   return bookmarkAdder.added.map(item => `[[${item.title}]]`);
 }
 
-const main = async (argv) => {
-  let {week, year} = argv;
+export const handler = async ({week, year}) => {
   const today = DateTime.now();
 
   if (typeof year === 'undefined') year = today.weekYear;
@@ -175,11 +179,3 @@ ${story}
 
   return 0;
 };
-
-const options = yargs
-  .usage("Usage: -w <week> -y <year>")
-  .option("w", {alias: "week", describe: "Week of year, defaults to this week", type: "number", demandOption: false})
-  .option("y", {alias: "year", describe: "Year, defaults to this year", type: "number", demandOption: false})
-  .argv;
-
-main(options).then(code => process.exit(code));
