@@ -7,6 +7,8 @@ export default {
 
   // Collections of things
 
+  // TODO: (RL2024) replace both `layout` and `permalink` attributes with a file in `/content/lists/*`
+
   'list/blogroll': {
     title: 'Blogroll',
     prefix: 'Community',
