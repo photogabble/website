@@ -30,5 +30,9 @@ module.exports = [
     {
         id: 'blue',
         title: 'Blue',
+    },
+    {
+        id: 'playful-retro',
+        title: 'Playful Retro',
     }
 ];

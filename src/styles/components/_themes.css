@@ -83,3 +83,11 @@ html.theme-blue, .theme-picker li.theme-blue {
     --foreground-muted: #bdc5ad;
     --accent: #fbbc55;
 }
+
+html.theme-playful-retro, .theme-picker li.theme-playful-retro {
+  --background: #ffe08a;
+  --background-muted: #78d1e9;
+  --foreground: #1a1a1a;
+  --foreground-muted: #6c45b3;
+  --accent: #ff3b30;
+}
