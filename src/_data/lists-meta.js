@@ -63,6 +63,10 @@ export default {
     permalink: '/button-board/',
   },
 
+  'list/favourites': {
+    title: 'Favourites'
+  },
+
   'list/windows-interface': {
     title: 'Windows98 Aesthetic',
     description: 'Websites designed with a Windows aesthetic in mind, mostly windows 98 but some 3.11 too!',
