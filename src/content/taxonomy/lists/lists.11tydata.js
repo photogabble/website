@@ -19,6 +19,9 @@ export default {
   // Current valid values are: media or collection.
   list_category: 'collection',
 
+  // Most lists use the list page layout
+  layout: 'layouts/page-list.njk',
+
   eleventyComputed: {
     permalink(data) {
       return (data.permalink === '')

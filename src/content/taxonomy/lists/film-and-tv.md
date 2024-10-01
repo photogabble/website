@@ -4,6 +4,7 @@ sub_title: What I have been watching lately
 description: an incomplete, infrequently updated list of things I have watched
 list_category: media
 list_slug: watched
+list_style: none
 sidebar_component: watched
 navigation_links:
   - title: 'Watched'

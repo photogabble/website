@@ -6,6 +6,7 @@ navigation_component: reading-view-toggle
 sidebar_component: books
 sidebar_shelves: ['read']
 list_category: media
+list_style: none
 permalink: /books/
 tags:
   - 'type/index'

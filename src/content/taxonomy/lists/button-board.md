@@ -2,6 +2,7 @@
 title: Button Board
 description: Like a blogroll but via the medium of 88x21 gifs
 list_category: community
+list_style: none
 permalink: '/button-board/'
 ---
 
