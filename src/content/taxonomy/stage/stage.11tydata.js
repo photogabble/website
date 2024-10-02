@@ -17,7 +17,9 @@ export default {
 
   eleventyComputed: {
     permalink(data) {
-      return `stage/${data.page.fileSlug}/`;
+      return (data.permalink === '')
+        ? `/growth/${data.page.fileSlug}/`
+        : data.permalink;
     },
   },
 }
