@@ -1,4 +1,6 @@
-{% if sidebar_topic === 'stage/stub' %}
+{% if sidebar_items %}
+    {% set items = sidebar_items %}
+{% elseif sidebar_topic === 'stage/stub' %}
     {% set items = collections[sidebar_topic] | reverse %}
 {% else %}
     {% set items = collections[sidebar_topic] | notTagged('stage/stub') | reverse %}
