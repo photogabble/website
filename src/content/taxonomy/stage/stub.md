@@ -2,15 +2,13 @@
 title: Stub Posts
 sub_title: Like drafts, but public
 layout: layouts/page-post.njk
-sidebar_component: topic
 sidebar_title: Works in Progress
 sidebar_topic: 'stage/stub'
-hide_meta: true
-tags:
-  - 'type/index'
 folder: 
   - writing
   - {title: 'stubs'}
+eleventyComputed:
+  permalink: /stubs/
 ---
 Stubs are the precursor to future content often times little more than a collection of ideas and therefore hidden by default from the rest of this digital garden. Most have been created in order to allow interlinking from other pages via backlinks.
 
