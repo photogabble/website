@@ -61,7 +61,7 @@
                             {% set href = item.url %}
                         {% endif %}
                         <a href="{{ href }}" class="no-ext btn-88x31" rel="noopener" title="Visit {{ item.data.title }}">
-                            <img width="88" height="31" src="/img/88x31/{{ item.data.button | firstBtn }}" alt="88x31 button for {{ item.data.title }}" aria-hidden="true" />
+                            <img width="88" height="31" src="/img/88x31/{{ item.data.button | firstBtn }}" alt="88x31 button for {{ item.data.title }}" aria-hidden="true" loading="lazy" />
                         </a>
                     {%- endfor -%}
                 </dd>
