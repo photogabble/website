@@ -6,9 +6,9 @@ sidebar_title: Works in Progress
 sidebar_topic: 'stage/stub'
 folder: 
   - writing
+  - {title: 'growth', href: '/growth/'}
   - {title: 'stubs'}
-eleventyComputed:
-  permalink: /stubs/
+permalink: /stubs/
 ---
 Stubs are the precursor to future content often times little more than a collection of ideas and therefore hidden by default from the rest of this digital garden. Most have been created in order to allow interlinking from other pages via backlinks.
 
