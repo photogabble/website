@@ -106,7 +106,7 @@
 <main>
     <header id="main-nav">
         <div class="main-nav">
-            <nav>{% for crumb in folder | breadcrumbs %}{% if crumb.href %}<a href="{{ crumb.href }}" title="{{ crumb.title }}">{{ crumb.text }}</a>{% else %}<span>{{ crumb.title }}</span>{% endif %}<span>/</span>{% endfor %}</nav>
+            <nav>{% for crumb in folder | breadcrumbs %}{% if crumb.href %}<a href="{{ crumb.href }}" title="{{ crumb.title }}">{{ crumb.text or crumb.title }}</a>{% else %}<span>{{ crumb.title }}</span>{% endif %}<span>/</span>{% endfor %}</nav>
             <div><form><input placeholder="search" /></form><span>|</span>{% block navigation %}{% endblock %}<button id="jumbo-toggle">Menu</button></div>
         </div>
         {% include "components/navigation/jumbo-nav.njk" %}
