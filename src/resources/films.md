@@ -5,6 +5,8 @@ layout: layouts/page-post.njk
 sidebar_component: resources
 sidebar_resource: 'resource/film'
 hide_meta: true
+tags:
+  - type/index
 folder: 
   - resource
   - {title: 'films'}

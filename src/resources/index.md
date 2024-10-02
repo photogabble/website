@@ -4,6 +4,9 @@ sub_title: My collection of shiny
 layout: layouts/page-post.njk
 sidebar_component: resources
 hide_meta: true
+tags:
+  - type/index
+topic: type/resource
 folder:
   - {title: 'resources'}
 ---
