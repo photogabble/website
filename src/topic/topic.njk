@@ -1,31 +1,24 @@
 ---js
 {
     pagination: {
-        data: "collections",
+        data: "collections.topics",
         size: 1,
         alias: "topic",
         before(paginationData, fullData) {
-            const excluded = (fullData.collections['type/topic'] ?? [])
-                .reduce((carry, item) => {
-                    const value = item.data?.topic ?? item.data.title;
-                    if (value) carry.add(value);
-                    return carry;
-                }, new Set(['all']));
-
             return paginationData.filter((topic) => {
-                return (topic.includes('/') || excluded.has(topic)) === false;
+                return typeof topic.page === 'undefined';
             });
         }
     },
-    permalink: "/topic/{{ topic | slugify }}/",
+    permalink: "{{ topic.permalink }}/",
     folder: ['topic'],
 }
 ---
 {% extends "layouts/base.njk" %}
 
 {% block sidebar %}
-    {% set sidebar_title = 'Writing tagged as “' + topic + '”' %}
-    {% set sidebar_topic = topic %}
+    {% set sidebar_title = 'Writing tagged as “' + topic.name + '”' %}
+    {% set sidebar_items = topic.items %}
     {% set displayContentType = true %}
     {% include "components/side-bars/topic.njk" %}
 {% endblock %}
@@ -33,7 +26,7 @@
 {% block content %}
     <article>
         <header>
-            <h1>{{ topic }}</h1>
+            <h1>{{ topic.name }}</h1>
         </header>
         <section>
             <p>Hello world</p>
