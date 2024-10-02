@@ -16,7 +16,9 @@ export default {
 
   // Do not display page meta data
   hide_meta: true,
-  folder: ['series'],
+  folder: ['writing', {title: 'series', href: '/series/'}],
+
+  sidebar_component: 'topic',
 
   // TODO: complete eleventy computed data to be volume aware?
   eleventyComputed: {
