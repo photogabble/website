@@ -1,7 +1,7 @@
 ---
 title: 28 of 365, Static Site Generation, why I wrote Tapestry
 tags:
-  - list/365-writing
+  - series/365-writing
   - 365DayProject
   - stage/seedling
 ---

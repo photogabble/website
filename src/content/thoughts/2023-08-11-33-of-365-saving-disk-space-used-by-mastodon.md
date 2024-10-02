@@ -1,7 +1,7 @@
 ---
 title: 33 of 365, Saving disk-space used by Mastodon
 tags:
-  - list/365-writing
+  - series/365-writing
   - 365DayProject
   - Mastodon
   - stage/seedling

@@ -1,7 +1,7 @@
 ---
 title: 11 of 365, Down the rabbit hole of debugging unit tests
 tags:
-  - list/365-writing
+  - series/365-writing
   - 365DayProject
   - stage/seedling
 canonical: >-

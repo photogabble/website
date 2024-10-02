@@ -1,7 +1,7 @@
 ---
 title: 19 of 365, HTML is by design accessible
 tags:
-  - list/365-writing
+  - series/365-writing
   - 365DayProject
   - stage/seedling
 canonical: https://wordsmith.social/carbontwelve/19-365-html-is-by-design-accessible

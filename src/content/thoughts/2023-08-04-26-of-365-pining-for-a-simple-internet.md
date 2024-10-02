@@ -1,7 +1,7 @@
 ---
 title: 26 of 365, Pining for a simple internet
 tags:
-  - list/365-writing
+  - series/365-writing
   - 365DayProject
   - stage/seedling
 ---

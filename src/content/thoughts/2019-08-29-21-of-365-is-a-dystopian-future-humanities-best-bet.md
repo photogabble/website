@@ -1,7 +1,7 @@
 ---
 title: 21 of 365, Is a Dystopian future Humanities best bet?
 tags:
-  - list/365-writing
+  - series/365-writing
   - 365DayProject
   - stage/seedling
 canonical: >-

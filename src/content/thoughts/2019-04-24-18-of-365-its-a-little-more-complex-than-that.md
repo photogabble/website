@@ -1,7 +1,7 @@
 ---
 title: 18 of 365, It's a little more complicated than that
 tags:
-  - list/365-writing
+  - series/365-writing
   - 365DayProject
   - stage/seedling
 canonical: >-

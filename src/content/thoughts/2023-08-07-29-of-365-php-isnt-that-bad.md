@@ -1,7 +1,7 @@
 ---
 title: 29 of 365, PHP isn’t that bad
 tags:
-  - list/365-writing
+  - series/365-writing
   - 365DayProject
   - stage/seedling
 ---

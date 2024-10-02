@@ -1,7 +1,7 @@
 ---
 title: 4 of 365, it's a van life for me?
 tags:
-  - list/365-writing
+  - series/365-writing
   - 365DayProject
   - stage/seedling
 canonical: https://wordsmith.social/carbontwelve/4-365-its-a-van-life-for-me
