@@ -3,6 +3,7 @@ import {dateToFormat, notTagged, specialTagValue} from "../../lib/filters.js";
 
 export default {
   show_related: true,
+  show_prev_next: true,
   featured: false,
   draft: false,
   excludeFromFeed: false,
@@ -11,6 +12,7 @@ export default {
   // TODO: (RC2024) remove growthStage and contentType
   growthStage: 'seedling', // seedling, budding, evergreen
   contentType: 'thought', // thought, noteworthy, essay, tutorial, project
+
   eleventyComputed: {
     //changes: data => getChanges(data),
     // niceDate: stops dateToFormat being hit hundreds of thousands of times

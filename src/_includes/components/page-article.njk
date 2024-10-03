@@ -47,7 +47,8 @@
                 </nav>
             </section>
         {% endif %}
-        {% if previousPost or nextPost %}
+
+        {% if show_prev_next and (previousPost or nextPost) %}
             <section>
                 <h3>Next in this series</h3>
                 <nav class="related-notes related-notes__next-previous">
