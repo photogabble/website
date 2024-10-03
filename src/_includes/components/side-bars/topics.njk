@@ -5,7 +5,7 @@
     <ol>
         {% for topic in collections.topics %}
             {% if topic.isSpecialTag === false %}
-            <li><a href="{{ topic.permalink }}">{{ topic.name }}</a> ({{ topic.items.length }})</li>
+            <li><a href="{{ topic.permalink }}">{{ topic.name }}</a> (<span {% if topic.page %}style="text-decoration: underline;"{% endif %}>{{ topic.items.length }}</span>)</li>
             {% endif %}
         {% endfor %}
     </ol>
