@@ -1,7 +1,7 @@
 ---
 title: 24 of 365, LK-99 I want to believe
 tags:
-  - list/365-writing
+  - series/365-writing
   - 365DayProject
   - stage/seedling
 ---

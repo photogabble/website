@@ -1,1 +1,3 @@
-{% for tag in tags | withoutTags(['writing']) | excludeSpecialTags(['type', 'resource']) | formatTagList %}<a href="{{ tag.permalink }}" title="Visit {{ tag.title }} index">{{ tag.title }}</a>{{ ' and ' if loop.revindex == 2 }}{{ ', ' if loop.revindex > 2 }}{% endfor %}
+{% for tag in tags | withoutTags(['writing']) | excludeSpecialTags(['type', 'resource']) | formatTagList(collections.topics) %}
+    <a href="{{ tag.permalink }}" title="Visit {{ tag.name }} index">{{ tag.name }}</a>{{ ' and ' if loop.revindex == 2 }}{{ ', ' if loop.revindex > 2 }}
+{% endfor %}

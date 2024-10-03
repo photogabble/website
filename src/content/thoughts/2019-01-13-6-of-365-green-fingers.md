@@ -1,7 +1,7 @@
 ---
 title: 6 of 365, Green fingers
 tags:
-  - list/365-writing
+  - series/365-writing
   - 365DayProject
   - stage/seedling
 canonical: https://wordsmith.social/carbontwelve/6-365-green-fingers

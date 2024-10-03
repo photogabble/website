@@ -6,6 +6,7 @@ hide_meta: true
 folder: [project]
 tags:
   - 'type/index'
+topic: type/project
 ---
 
 Over the past few decades I have managed to collect an ever-growing pile of personal projects which are now distributed across several organisations on GitHub with the most notable being:

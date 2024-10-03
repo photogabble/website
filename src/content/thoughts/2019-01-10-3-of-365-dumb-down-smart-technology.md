@@ -1,7 +1,7 @@
 ---
 title: 3 of 365, Dumb-down Smart Technology
 tags:
-  - list/365-writing
+  - series/365-writing
   - 365DayProject
   - stage/seedling
 canonical: https://wordsmith.social/carbontwelve/3-365-dumb-down-smart-technology

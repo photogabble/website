@@ -1,7 +1,7 @@
 ---
 title: 32 of 365, Cultivation deflates the magic
 tags:
-  - list/365-writing
+  - series/365-writing
   - 365DayProject
   - stage/seedling
 ---

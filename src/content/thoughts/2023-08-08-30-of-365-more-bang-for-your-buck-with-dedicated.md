@@ -1,7 +1,7 @@
 ---
 title: 30 of 365, More bang for your buck with dedicated hosting
 tags:
-  - list/365-writing
+  - series/365-writing
   - 365DayProject
   - stage/seedling
 ---

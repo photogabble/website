@@ -1,7 +1,7 @@
 ---
 title: 23 of 365, Project revival
 tags:
-  - list/365-writing
+  - series/365-writing
   - 365DayProject
   - stage/seedling
 ---

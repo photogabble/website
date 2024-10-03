@@ -1,7 +1,7 @@
 ---
 title: 15 of 365, What happened to March?
 tags:
-  - list/365-writing
+  - series/365-writing
   - 365DayProject
   - stage/seedling
 canonical: https://wordsmith.social/carbontwelve/15-365-what-happened-to-march

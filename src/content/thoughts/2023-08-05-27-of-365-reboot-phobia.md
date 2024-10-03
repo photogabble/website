@@ -1,7 +1,7 @@
 ---
 title: 27 of 365, Reboot-phobia
 tags:
-  - list/365-writing
+  - series/365-writing
   - 365DayProject
   - stage/seedling
 ---

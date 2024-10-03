@@ -1,7 +1,7 @@
 ---
 title: '16 of 365, Mega Drive: The Addams Family'
 tags:
-  - list/365-writing
+  - series/365-writing
   - 365DayProject
   - stage/seedling
 canonical: https://wordsmith.social/carbontwelve/16-365-mega-drive-the-addams-family

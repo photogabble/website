@@ -1,7 +1,7 @@
 ---
 title: 22 of 365, Grievances with WriteFreely
 tags:
-  - list/365-writing
+  - series/365-writing
   - 365DayProject
   - stage/seedling
 canonical: https

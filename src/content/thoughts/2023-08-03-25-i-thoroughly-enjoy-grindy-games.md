@@ -1,7 +1,7 @@
 ---
 title: 25 of 365, I thoroughly enjoy grindy games
 tags:
-  - list/365-writing
+  - series/365-writing
   - 365DayProject
   - stage/seedling
 ---
