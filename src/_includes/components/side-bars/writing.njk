@@ -4,13 +4,12 @@
 
 <hr/>
 
-{% set contentTypes = collections | specialTagsInCollection('type', ['type/resource', 'type/project', 'type/topic', 'stage/stub']) %}
+{% set contentTypes = collections.topics | whereKeyEquals('topic', 'type/*') %}
 <section>
     <nav>
         {% for contentType in contentTypes %}
-            {% set isContentType = tags | includes(contentType.name) %}
-            {% set currentContentType = metadata.contentTypes[contentType.name] %}
-            <a href="{{ contentType.permalink }}">{{ contentType.title or contentType.name }} ({{ contentType.usages }}){% if isContentType %}*{% endif %}</a>
+            {% set isContentType = tags | includes(contentType.topic) %}
+            <a href="{{ contentType.permalink }}">{{ contentType.title or contentType.name }}{% if isContentType %}*{% endif %}</a>
         {% endfor %}
     </nav>
 </section>
