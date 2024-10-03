@@ -20,6 +20,9 @@ export default {
   sidebar_component: 'topic',
 
   eleventyComputed: {
+    statistics_collection(data) {
+      return data.collections.topics.find(({topic}) => topic === (data.topic ?? data.title));
+    },
     permalink(data) {
       return `topic/${data.page.fileSlug}/`;
     },
