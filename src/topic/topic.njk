@@ -28,13 +28,9 @@
         <header>
             <h1>{{ topic.name }}</h1>
         </header>
-        <section>
-            <p>Hello world</p>
-        </section>
+        <footer>
+            {% set stats = topic.items | collectionStats %}
+            {% include "components/partials/article-footer-statistics.njk" %}
+        </footer>
     </article>
-    <div>
-        {% for topic in nakedTopics %}
-            <p>{{ topic }}</p>
-        {% endfor %}
-    </div>
 {% endblock %}

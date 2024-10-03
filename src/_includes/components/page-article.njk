@@ -15,7 +15,6 @@
         {% set footnotes = content | extractFootnotes %}
         {{ content | withoutFootnotes | safe }}
     </section>
-
     <footer>
         {% if footnotes.length %}
             {{ footnotes | safe }}
@@ -75,6 +74,12 @@
                 </nav>
             </section>
         {% endif %}
+
+        {% if statistics_collection %}
+            {% set stats = statistics_collection.items | collectionStats %}
+            {% include "components/partials/article-footer-statistics.njk" %}
+        {% endif %}
+
         {#        <section>#}
         {#            <h3>Linking Here</h3>#}
         {#        </section>#}
