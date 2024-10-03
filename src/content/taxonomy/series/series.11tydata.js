@@ -8,6 +8,11 @@
  *
  */
 export default {
+  // Do not show related notes
+  show_related: false,
+  // Do not show prev/next links
+  show_prev_next: false,
+
   // Do not include in RSS Feed
   excludeFromFeed: true,
 
