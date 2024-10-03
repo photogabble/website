@@ -14,6 +14,9 @@
 {% endblock %}
 
 {% block sidebar %}
+    {% if tags | includesSpecialTag('series') %}
+        {% include 'components/side-bars/series.njk' %}
+    {% endif %}
     {% if sidebar_component %}
         {% set sidebar_component_include = 'components/side-bars/' + sidebar_component + '.njk' %}
         {% include sidebar_component_include %}
