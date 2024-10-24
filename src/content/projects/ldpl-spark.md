@@ -3,11 +3,9 @@ date: 2019-03-05
 title: LDPL Spark
 description: ▁▂▃▅▂▇ in your shell, ported from bash to LDPL.
 git: https://github.com/photogabble/ldpl-spark
-status: tinkering
-language: LDPL
 tags:
-  - Tinkering
-  - LDPL
+  - status/tinkering
+  - language/LDPL
 ---
 
 This is a port to LDPL of the [BASH Shell script spark](https://github.com/holman/spark). It doesn't 100% duplicate the functionality because you can't pipe values in nor will it accept comer delimited input (yet?)

@@ -2,7 +2,7 @@
 title: "Generating random numbers over a range in Go"
 tags:
   - GoLang
-growthStage: budding
+  - stage/budding
 ---
 
 Included in the Go standard library is support for generating pseudo-random numbers using the [math/rand](https://pkg.go.dev/math/rand) package. While unsuitable for security-sensitive work these generators are good for #GameDev.

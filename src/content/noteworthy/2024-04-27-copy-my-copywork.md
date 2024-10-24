@@ -1,7 +1,8 @@
 ---
 title: Copy my Copywork
 description: "It's okay to steal inspiration, learn what the code does and why it works."
-growthStage: budding
+tags:
+  - stage/budding
 ---
 
 A few months ago I was asked _why_ I publish the [source code to this website](https://github.com/photogabble/website) for all to see and honestly up until that point I hadn't really put that much thought into it. I *had* been inspired by seeing [[Xe Iaso's Blog|Xe Iaso]] linking the most recent git commit in each pages footer to do so myself and _that_ required having a public repository; but none of my previous website repositories are public so why this one?

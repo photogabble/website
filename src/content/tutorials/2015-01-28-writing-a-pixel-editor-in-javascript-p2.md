@@ -3,11 +3,12 @@ title: Writing a pixel editor in javascript - Part two
 tags:
   - Programming
   - JavaScript
+  - stage/evergreen
 cover_image: /img/javascript-pixel-paint-7.png
-growthStage: evergreen
 aliases:
-  - "Stage two: 1-bit drawing to a 16x16 pixel canvas"
+  - 'Stage two: 1-bit drawing to a 16x16 pixel canvas'
 ---
+
 
 ![Pixel Editor](/img/javascript-pixel-paint-3.png "Pixel Editor")
 

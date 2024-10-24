@@ -4,9 +4,10 @@ title: Tuppence
 description: Incredibly small PSR-7 framework
 git: https://github.com/photogabble/tuppence
 packagist: https://packagist.org/packages/photogabble/tuppence
-featured: true
-language: PHP
-tags: [PHP, MicroFramework]
+tags:
+  - status/featured
+  - language/PHP
+  - Tuppence
 ---
 
 Tuppence is a _very small_ micro framework that brings together a [powerful PSR-11 dependency injection container](http://container.thephpleague.com/), a [fast PSR-7 router supporting PSR-15 middleware](http://route.thephpleague.com/) and a [simple and effective PSR-14 event dispatcher](http://event.thephpleague.com/3.0/) all provided by _The League of Extraordinary Packages_.

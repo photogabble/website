@@ -1,8 +1,11 @@
 ---
-title: "Thinking about #DOScember 2022"
-tags: ["DOS", "DOScember"]
-growthStage: seedling
+title: 'Thinking about #DOScember 2022'
+tags:
+  - DOS
+  - DOScember
+  - stage/seedling
 ---
+
 
 Early in 2021 I attempted to take part in the [DOS Games Spring Jam 2021](https://itch.io/jam/dos-games-spring-jam-2021) with my enhanced version of the Usborne Space Mines game. However, due to extreme work conditions I was unable to complete my project, and it remained dormant on my laptop until December the same year when I discovered the #DOScember hashtag on Twitter.
 

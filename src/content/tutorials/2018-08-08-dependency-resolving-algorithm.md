@@ -6,8 +6,9 @@ tags:
   - PHP
   - Tapestry
   - Algorithms
-growthStage: evergreen
+  - stage/evergreen
 ---
+
 
 While writing version two of my static site generator [Tapestry](https://www.tapestry.cloud) I begun researching various data structures and complementary algorithms that would aid in optimising the build process. To improve how Tapestry build projects I would need to utilise both dependency resolution and an Abstract Syntax Tree.
 

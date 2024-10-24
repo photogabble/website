@@ -1,9 +1,11 @@
 ---
-title: How to programmatically add tags to posts in 11ty 
-tags: ["11ty"]
-growthStage: evergreen
+title: How to programmatically add tags to posts in 11ty
+tags:
+  - 11ty
+  - stage/evergreen
 draft: true
 ---
+
 
 I use [Obsidian.md](https://obsidian.md/) to draft my posts before they are published on PhotoGabble. One feature of #Obsidian that I love is its ability to autolink hashtags and this is something I want to teach #11ty how to do.
 

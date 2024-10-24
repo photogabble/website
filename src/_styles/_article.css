@@ -1,0 +1,222 @@
+/* Article typography plus some styles used in the left column */
+article {
+    width: 92%;
+    max-width: 1000px;
+}
+
+article > header {
+    text-align: center;
+}
+
+article > header a {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    margin-bottom: 0.3rem;
+}
+
+/* https://www.smashingmagazine.com/2022/01/modern-fluid-typography-css-clamp/ */
+article > header h1 {
+    margin-bottom: 0;
+    font-size: clamp(2.6rem, 6vw, 4rem);
+    font-weight: lighter;
+}
+
+article > header h2 {
+    font-size: clamp(0.85rem, 3vw, 1.9rem);
+    font-weight: lighter;
+}
+
+article > * {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 2rem;
+    margin-top: 1.5em;
+}
+
+article > section > h2,
+article > section > h3,
+article > section > h4,
+article > section > h5,
+article > section > h6 {
+    margin: 2.5rem 0;
+}
+
+article > section > h2:first-child,
+article > section > h3:first-child,
+article > section > h4:first-child,
+article > section > h5:first-child,
+article > section > h6:first-child {
+    margin-top: 1rem;
+}
+
+article hr {
+    border: none;
+    width: 50px;
+    height: 1px;
+    border-top: 4px double;
+}
+
+article a {
+    color: var(--light-key-color);
+    line-break: anywhere;
+}
+
+article p,
+article ul,
+article ol {
+    font-family: serif;
+    font-size: 1.2rem;
+    line-height: 1.4em;
+    width: 83%;
+    margin: 1rem 0;
+}
+
+article footer p,
+article footer ul,
+article footer ol {
+    width: auto;
+}
+
+article figure {
+    width: 100%;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    margin-bottom: .9rem;
+}
+
+article figure figcaption p {
+    width: 100%;
+    font-size: .75rem;
+    margin-top: .25rem;
+    margin-bottom: 0;
+}
+
+article p > code {
+    font-size: 1rem;
+    background: lightgrey;
+    padding: 0.1rem;
+    border-radius: 0.2rem;
+}
+
+article blockquote p {
+    width: 100%;
+    font-size: 1.6rem;
+}
+
+article blockquote p:first-child {
+    margin-top: 0;
+}
+
+span.new-thought {
+    font-variant: small-caps;
+    font-size: 1.4em;
+}
+
+article pre {
+    width: calc(83% + 80px);
+}
+
+article footer section {
+    width: 83%;
+}
+
+article footer section h3 {
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--dark-color);
+    text-transform: uppercase;
+    padding-bottom: 0.5rem;
+}
+
+.links-list ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.footnotes-list {
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.footnotes-list,
+.footnotes-list p {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.footnotes-list__annotations {
+    list-style: none;
+    padding: 0;
+}
+
+.related-notes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1rem;
+}
+
+.related-notes a {
+    color: var(--dark-color);
+    text-decoration: none;
+}
+
+.related-notes a:hover {
+    text-decoration: underline;
+}
+
+.related-notes img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.related-notes small {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+}
+
+.related-notes h4 {
+    font-size: 0.9rem;
+    font-weight: normal;
+    margin: 0.4rem 0;
+}
+
+.related-notes__next-previous {
+    grid-template-columns: 1fr 1fr;
+}
+
+.related-notes__next-previous img {
+    aspect-ratio: auto;
+    max-height: 120px;
+    width: 100%;
+}
+
+.related-notes__next-previous a:nth-child(2) {
+    text-align: right;
+}
+
+article aside {
+    background: #6c1732;
+    padding: 1rem;
+    color: white;
+    margin: 1rem 0;
+    border-left: 10px solid #ffc107;
+}
+
+article aside p {
+    margin: 0;
+}
+
+article aside a {
+    color: #ffe8a5;
+}

@@ -3,11 +3,12 @@ title: Writing a pixel editor in javascript - Part three
 tags:
   - Programming
   - JavaScript
+  - stage/evergreen
 cover_image: /img/javascript-pixel-paint-9.png
-growthStage: evergreen
 aliases:
-  - "Stage three: Adding a preview"
+  - 'Stage three: Adding a preview'
 ---
+
 
 ![Pixel Editor](/img/javascript-pixel-paint-7.png "Pixel Editor")
 

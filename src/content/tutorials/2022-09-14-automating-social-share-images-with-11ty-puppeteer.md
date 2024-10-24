@@ -1,8 +1,12 @@
 ---
 title: Using Puppeteer with 11ty to automate generating social share images
-tags: [Programming, JavaScript, 11ty]
-growthStage: evergreen
+tags:
+  - Programming
+  - JavaScript
+  - 11ty
+  - stage/evergreen
 ---
+
 
 I recently added social sharing images to this website (see [[Adding enhanced opengraph meta]]) and initially found it difficult to find tutorials automating the process of image generation without using a paid for third party solution like [Dynapictures](https://dynapictures.com/).
 

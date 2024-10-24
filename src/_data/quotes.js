@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   {
     blockquote: "Everything not saved will be lost",
     cite: 'Nintendo Quit Screen',

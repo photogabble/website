@@ -1,7 +1,9 @@
-{% extends "./page.njk" %}
+{% extends "./base.njk" %}
 
-{% set headerTitle = '/now' %}
-{% set titlePrefix = 'Me' %}
+{% block sidebar %}
+    {% include "components/side-bars/now.njk" %}
+{% endblock %}
+
 {% if isNow %}
     {% set subTitle %}
         Last updated {{ page.date | dateToFormat("dd LLL yyyy") }}
@@ -12,33 +14,24 @@
     {% endset %}
 {% endif %}
 
-{% block pageContent %}
-    <section>
-        <p>
-            This “now page” offers a big picture glimpse into my what I’m focused on at this point in my life.
-            <a href="https://nownownow.com/about">What is a now page?</a>
-        </p>
+{% block content %}
+    <article>
+        <header>
+            <h1>/now</h1>
+            <h2>{{ subTitle }}</h2>
+        </header>
+        <section>
+            <p>
+                This “now page” offers a big picture glimpse into my what I’m focused on at this point in my life.
+                <a href="https://nownownow.com/about">What is a now page?</a>
+            </p>
 
-        {{ content | safe }}
+            {{ content | safe }}
 
-        <p>
-            You can see my bookshelf at <a href="https://bookwyrm.social/user/carbontwelve">bookwyrm.social</a> or
-            at <a href="https://openlibrary.org/people/carbontwelve">openlibrary.org</a>.
-        </p>
-    </section>
-
-    <nav>
-        <h3>Update History</h3>
-        <ul>
-            {% set current = collections.nowUpdates | reverse | first %}
-            {% for update in collections.nowUpdates | reverse %}
-                {% if update.fileSlug == current.fileSlug %}
-                    <li><a href="/now" title="Go to current now page">Current</a></li>
-                {% else %}
-                    {% set updateTitle = update.date | dateToFormat("LLLL yyyy") %}
-                    <li><a href="{{ update.url }}" title="Read {{ updateTitle }}">{{ updateTitle }}</a></li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-    </nav>
+            <p>
+                You can see my bookshelf at <a href="https://bookwyrm.social/user/carbontwelve">bookwyrm.social</a> or
+                at <a href="https://openlibrary.org/people/carbontwelve">openlibrary.org</a>.
+            </p>
+        </section>
+    </article>
 {% endblock %}

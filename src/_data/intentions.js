@@ -2,7 +2,7 @@
  * Based upon https://tiana.computer/sunday_sites/2024.html
  */
 
-module.exports = [
+export default [
   {
     year: 2024,
     months: {

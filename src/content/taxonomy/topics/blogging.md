@@ -1,0 +1,9 @@
+---
+title: Blogging
+---
+
+... first began blogging on b2/cafelog in around 2003 and then moved onto WordPress which remained my main blogging platform until 2015 when I began using [Sculpin](https://sculpin.io/) in a revival of PhotoGabble after the server I had hosted it on vanished ...
+
+... wrote [[Tapestry]] to replace Sculpin and a few years ago switched to #11ty ...
+
+... have been blogging on-and-off for over 20 years ...

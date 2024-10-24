@@ -1,0 +1,25 @@
+<section class="post-list post-list__topics">
+    <header class="post-list__inline-header">
+        <h3>All Topics ({{ collections.topics.length }})</h3>
+    </header>
+    <ol>
+        {% for topic in collections.topics %}
+            {% if topic.isSpecialTag === false %}
+            <li><a href="{{ topic.permalink }}">{{ topic.name }}</a> (<span {% if topic.page %}style="text-decoration: underline;"{% endif %}>{{ topic.items.length }}</span>)</li>
+            {% endif %}
+        {% endfor %}
+    </ol>
+</section>
+
+<section class="post-list post-list__topics">
+    <header class="post-list__inline-header">
+        <h3>All Topics ({{ collections.topics.length }})</h3>
+    </header>
+    <ol>
+        {% for topic in collections.topics %}
+            {% if topic.isSpecialTag %}
+                <li><a href="{{ topic.permalink }}">{{ topic.name }}</a> ({{ topic.items.length }})</li>
+            {% endif %}
+        {% endfor %}
+    </ol>
+</section>

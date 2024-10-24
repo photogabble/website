@@ -7,7 +7,7 @@ tags:
   - Pixel Art
   - Review
   - Roguelike
-growthStage: budding
+  - stage/budding
 ---
 
 ![Freezetime JavaScript game by Patrick Seeber](/img/freezetime-gameplay-img-1.png "Freezetime JavaScript game by Patrick Seeber")

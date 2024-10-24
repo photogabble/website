@@ -4,7 +4,7 @@ tags:
   - PHP
   - Blogtimes
   - Wayback Machine
-growthStage: budding
+  - stage/budding
 ---
 
 ![blogtimes.png, a histogram view of blog posts by hours of the day over the past 30 days](/img/blogtimes.png)

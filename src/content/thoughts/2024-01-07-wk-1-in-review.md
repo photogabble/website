@@ -1,8 +1,10 @@
 ---
 title: 2024, Week 1 in Review
-tags: ["Week In Review"]
-growthStage: evergreen
+tags:
+  - Week In Review
+  - stage/evergreen
 ---
+
 
 ![[weekly-quote-74]]
 

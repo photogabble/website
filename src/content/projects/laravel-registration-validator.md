@@ -4,10 +4,9 @@ title: Laravel Registration Validator
 description: Solid credential validation for Laravel >= 5.5
 git: https://github.com/photogabble/laravel-registration-validator
 packagist: https://packagist.org/packages/photogabble/laravel-registration-validator
-featured: true
-language: PHP
 tags:
-  - PHP
+  - status/featured
+  - language/PHP
   - Laravel
 ---
 

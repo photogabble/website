@@ -2,8 +2,9 @@
 title: Serendipity
 aliases:
   - serendipitously
-tags: ["DigitalGarden"]
-growthStage: seedling
+tags: 
+  - DigitalGarden
+  - stage/seedling
 ---
 
 **Serendipity** is an unplanned fortunate discovery, the word is also quite possibly my favourite.

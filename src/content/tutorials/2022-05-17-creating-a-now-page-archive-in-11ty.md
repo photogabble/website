@@ -3,8 +3,9 @@ title: Creating a now page archive with 11ty
 tags:
   - JavaScript
   - 11ty
-growthStage: budding
+  - stage/budding
 ---
+
 
 I first added a `/now` page[^1] to PhotoGabble in March 2021, and in the tradition that is blogging I promptly forgot about it and failed to update its content until today. In an attempt at keeping this section of my website updated I have set a monthly timer to at least prompt me to give it a fresh look twelve times a year.
 

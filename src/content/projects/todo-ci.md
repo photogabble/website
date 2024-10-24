@@ -3,9 +3,9 @@ date: 2020-07-13
 title: TodoCI
 description: 
 git: https://github.com/photogabble/todo
-status: wip
-draft: true
-language: Node
+tags:
+  - status/idea
+  - language/Node
 ---
 
 This project acts to provide a CI service that can scrape source files for `todo` items and provide a tracked list of items added/removed by the current commit as well as providing an overall list of todo items for the project as a whole.

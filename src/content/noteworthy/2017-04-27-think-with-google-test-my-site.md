@@ -7,7 +7,7 @@ tags:
   - Google
   - Testing
   - Website Optimisation
-growthStage: evergreen
+  - stage/evergreen
 ---
 
 Google has released a new tool called [Mobile Website Speed Testing Tool](https://testmysite.thinkwithgoogle.com/); on the surface, next to competing tools such as [webpagetest.org](http://www.webpagetest.org), it looks visually attractive and given the name I assumed that it would be providing the same level if not better reporting. Plus its by Google and it would be nice to have a tool that provided official insight into how they view web content.

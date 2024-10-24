@@ -1,0 +1,117 @@
+/*
+ * In the DOM the content flow is as such:
+ * <main>
+ *   <header/>
+ *   <div class="side-bar">
+ *     <aside/>
+ *     <footer/>
+ *   </div>
+ *   <article/>
+ * </main>
+ *
+ * Main is a CSS Grid made up of two columns and two rows.
+ *
+ * On desktop view (screen width > 900px) the website presents two columns, the <header/>
+ * sits in the top left with the <div> containing the sidebar and footer taking the bottom left.
+ * The remaining <article/> therefore takes the top right grid placement but has a row span of
+ * two so that it fills the page height.
+ *
+ * On mobile view (screen width <= 900px) the website presents as one column.
+ */
+
+main {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: auto 1fr;
+    transition: 300ms;
+    max-height: 100vh;
+}
+
+main.sidebar__closed {
+    grid-template-columns: 5vw 95vw;
+}
+
+/* Main Page Header and sidebar share the same prose formatting */
+main > header,
+.side-bar {
+    font-size: 0.8rem;
+    line-height: 1.54;
+    letter-spacing: -0.02em;
+
+    padding: 1.5rem;
+    background: var(--sidebar-background-color);
+    color: var(--sidebar-color);
+    font-family: monospace;
+}
+
+/* Main Page Header doesn't need padding, its applied to it's children. */
+main > header {
+    padding: 0;
+    grid-row: 1;
+}
+
+.side-bar {
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+}
+
+.side-bar a,
+.side-bar h1 {
+    color: var(--sidebar-anchor-color);
+}
+
+.side-bar aside {
+    flex-grow: 1;
+}
+
+.side-bar footer {
+    margin-top: 1rem;
+}
+
+.side-bar footer p {
+    margin-bottom: 0;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    max-height: 100vh;
+
+    grid-row: span 2;
+    max-width: 100vw;
+}
+
+/* On screens too small for two columns to look nice, lets make it look nice. */
+
+@media only screen and (max-width: 900px) {
+    body {
+        overflow: auto;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+        overflow: auto;
+    }
+
+    .side-bar{
+        overflow-y: visible;
+        max-height: initial;
+        grid-row: 3;
+    }
+
+    #content{
+        overflow-y: visible;
+        max-height: initial;
+        flex-grow: 1;
+        grid-row: 2;
+    }
+}

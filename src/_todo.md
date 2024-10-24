@@ -1,0 +1,8 @@
+- [ ] Create `type/series` section, if a post belongs to a series then it's sidebar is the series listing
+- [ ] Create series listing sidebar
+- [ ] Link book entries up to book reviews
+- [ ] Convert hardcoded blog-roll items into bookmarks with correct date
+- [ ] Fill `/uses` sidebar with photos of kit
+- [ ] Site-wide search with [pagefind](https://github.com/cloudcannon/pagefind)
+- [ ] For all bookmarked YouTube channels/videos update screenshot with a better image
+- [ ] Standardise updated/modified in frontmatter

@@ -5,7 +5,7 @@ tags:
   - Programming
   - BASIC
   - PHP
-growthStage: evergreen
+  - stage/evergreen
 ---
 
 I vividly remember first typing into QuickBasic the Space Mines program from a then already old Usborne book titled [[Computer spacegames]]. That very BASIC game totals around 100LoC but is able to simulate running a mining colony with the goal being to survive ten turns.

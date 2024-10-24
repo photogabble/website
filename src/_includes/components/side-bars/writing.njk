@@ -1,0 +1,15 @@
+{% set itemsByYear = collections.writing | notTagged(['type/project', 'type/resource', 'stage/stub', 'type/glossary', 'type/changelog']) | reverse | groupByYear %}
+
+{% include 'components/partials/post-list-by-year.njk' %}
+
+<hr/>
+
+{% set contentTypes = collections.topics | whereKeyEquals('topic', 'type/*') %}
+<section>
+    <nav>
+        {% for contentType in contentTypes %}
+            {% set isContentType = tags | includes(contentType.topic) %}
+            <a href="{{ contentType.permalink }}">{{ contentType.title or contentType.name }}{% if isContentType %}*{% endif %}</a>
+        {% endfor %}
+    </nav>
+</section>

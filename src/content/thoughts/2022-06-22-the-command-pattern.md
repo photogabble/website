@@ -6,8 +6,9 @@ tags:
   - Jetstream
   - Intertia
   - PHP
-growthStage: seedling
+  - stage/seedling
 ---
+
 After installing [Laravel Jetstream](https://jetstream.laravel.com/) I noticed the creation of a new `App\Actions` folder containing a handful of classes. Intrigued I had a poke around and saw that each class has a short action based name such as `CreateNewUser` and contains a single public method for the action being requested e.g `create(...)`.
 
 This feels like felt like an implementation of the [Command pattern](https://en.wikipedia.org/wiki/Command_pattern) which is similar but not the same as how I often use [Laravel's custom form requests](https://laravel.com/docs/9.x/validation#form-request-validation).

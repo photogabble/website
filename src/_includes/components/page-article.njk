@@ -1,0 +1,87 @@
+{% set readingTime = content | wordStats %}
+<article>
+    <header>
+        {% set type = tags | specialTagValue('type') %}
+
+        {%- if hide_meta !== true %}
+            <span>{% include "components/tag-list.njk" %}</span>
+            <span style="font-size: 0.8rem">Planted <time datetime="{{ page.date.toISOString() }}">{{ page.date | dateToFormat("DDD") }}</time>{% if modified %}, modified <time datetime="{{ modified.toISOString() }}">{{ modified | dateToFormat("DDD") }}</time>{% endif %}{% if lastCommitDate %}, last commit <time datetime="{{ lastCommitDate.toISO() }}">{{ lastCommitDate | dateToFormat("DDD") }}</time>{% endif %}</span>
+        {% endif %}
+        <h1>{{ title }}</h1>
+        {%- if sub_title %}<h2>{{ sub_title }}</h2>{% endif %}
+        {%- if hide_meta !== true and readingTime.words > 0 -%}<span style="margin-top: 2rem">{{ readingTime.text }}</span>{%-endif -%}
+    </header>
+    <section>
+        {% set footnotes = content | extractFootnotes %}
+        {{ content | withoutFootnotes | safe }}
+    </section>
+    <footer>
+        {% if footnotes.length %}
+            {{ footnotes | safe }}
+        {% endif %}
+
+        {% if tags | includesTag('wayback machine') %}
+            {% include "components/wayback-machine.njk" %}
+        {% endif %}
+
+        {%- if hide_meta !== true -%}
+            <section>
+                <h3>Page History</h3>
+                <p>This page was first added to the repository on April 27, 2024 in commit <a href="#">0284b856</a> and has since been amended once. <a href="#">View the source on GitHub</a>.</p>
+            </section>
+        {%- endif -%}
+
+        {% if show_related and related.length %}
+            <section>
+                <h3>Similar Stories</h3>
+                <nav class="related-notes">
+                    {% for item in related | limit(3) %}
+                        <a href="{{ item.url }}">
+                            {# TODO: add article images #}
+                            <img src="/img/sebastian-huber-CTT1DbhGhA8-unsplash.jpg">
+                            <small>{{ item.data.tags | specialTagValue('type') }}</small>
+                            <h4>{{ item.data.title }}</h4>
+                        </a>
+                    {% endfor %}
+                </nav>
+            </section>
+        {% endif %}
+
+        {% if show_prev_next and (previousPost or nextPost) %}
+            <section>
+                <h3>Next in this series</h3>
+                <nav class="related-notes related-notes__next-previous">
+                    {% if previousPost %}
+                        <a href="{{ previousPost.url }}">
+                            {# TODO: add article images #}
+                            {# <img src="/img/sebastian-huber-CTT1DbhGhA8-unsplash.jpg">#}
+                            <small>&larr; Previous</small>
+                            <h4>{{ previousPost.data.title }}</h4>
+                        </a>
+                    {% else %}
+                        <span>&nbsp;</span>
+                    {% endif %}
+                    {% if nextPost %}
+                        <a href="{{ nextPost.url }}">
+                            {# TODO: add article images #}
+                            {# <img src="/img/sebastian-huber-CTT1DbhGhA8-unsplash.jpg">#}
+                            <small>Next &rarr;</small>
+                            <h4>{{ nextPost.data.title }}</h4>
+                        </a>
+                    {% else %}
+                        <span>&nbsp;</span>
+                    {% endif %}
+                </nav>
+            </section>
+        {% endif %}
+
+        {% if statistics_collection %}
+            {% set stats = statistics_collection.items | collectionStats %}
+            {% include "components/partials/article-footer-statistics.njk" %}
+        {% endif %}
+
+        {#        <section>#}
+        {#            <h3>Linking Here</h3>#}
+        {#        </section>#}
+    </footer>
+</article>

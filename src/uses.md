@@ -1,9 +1,11 @@
 ---
-layout: layouts/page.njk
+layout: layouts/page-post.njk
 title: "/uses"
 titlePrefix: "Me"
-subTitle: "Last updated June 21st, 2021."
-folder: about
+sub_title: "What's in my big bag of tools"
+sidebar_component: uses
+folder: [about]
+modified: 2024-07-02
 ---
 
 A somewhat complete list of tools, applications, hardware and services that I used on a day-to-day basis. Make sure to check out <a href="https://uses.tech">uses.tech</a> for a list of other peoples <code>/uses</code> pages!
@@ -26,30 +28,34 @@ A somewhat complete list of tools, applications, hardware and services that I us
 * ~~iPhone SE (32GB)~~
 * iPhone 12 Mini (64GB)
 
+## Camera Hardware
+- [Canon EOS 70D](https://www.canon.co.uk/for_home/product_finder/cameras/digital_slr/eos_70d/)
+- Canon EF 40mm f2.8 STM Lens
+- Canon EF 75-300mm f4-5.6 II Lens
+
 ## Software
 * Chrome/Firefox/Safari
-* Obsidian.md (see [[My publishing workflow]])
-* intelliJ PHPStorm and Goland
+* [Obsidian.md](http://Obsidian.md) (see [[My publishing workflow]])
+* intelliJ [PHPStorm](https://www.jetbrains.com/phpstorm/) and [Goland](https://www.jetbrains.com/go/)
 
 ### Windows Specific
-* Putty
-* WinSCP
-* HeidiSQL
-* Vagrant & VirtualBox
+* [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/)
+* [WinSCP](https://winscp.net/)
+* [HeidiSQL](https://www.heidisql.com/)
+* Vagrant & [VirtualBox](https://www.virtualbox.org/)
 
 ### OSX Specific
-* Table Plus
-* DBngin
-* [Laravel Valet](https://laravel.com/docs/10.x/valet)
-* Docker[^1]
-* Homebrew
-  * [shivammathur/php tap for PHP 5.6 to 8.3](https://github.com/shivammathur/homebrew-php)[^2]
-* Z shell (zsh)[^3]
+* [Table Plus](https://tableplus.com/), not as free as HeidiSQL but just as functional
+* [DBngin](https://dbngin.com/)
+* [Laravel Valet](https://laravel.com/docs/11.x/valet)
+* [Docker](https://www.docker.com/)[^1]
+* [Homebrew](https://brew.sh/), largely for installing PHP with [shivammathur/php](https://github.com/shivammathur/homebrew-php)[^2]
+* [Z shell (zsh)](https://www.zsh.org/)[^3]
 
-## Languages
+## Programming Languages (in order of preference)
 * PHP[^4]
-* Node (TypeScript)
 * Golang
+* Node (TypeScript)
 
 ## Stacks
 For personal projects and self-hosting I use:

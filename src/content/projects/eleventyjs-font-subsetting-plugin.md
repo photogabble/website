@@ -5,9 +5,10 @@ subTitle: Font Subsetting made easier...
 description: 
 git: https://github.com/photogabble/eleventy-plugin-font-subsetting
 npm: https://www.npmjs.com/package/@photogabble/eleventy-plugin-font-subsetting
-featured: true
-language: JS
-tags: [11ty, JavaScript]
+tags:
+  - status/featured
+  - language/JS
+  - 11ty
 ---
 
 While adding fonts to PhotoGabble and seeking smaller assets to support people with low-bandwidth connections I began learning about Font Subsetting which I wrote about in [[Font Subsetting with Eleventy.js]].
@@ -85,7 +86,7 @@ The above configuration will take two font source files, subset them and output 
 
 I choose to run subsetting in development builds because it's something that infrequently needs to do work and the result can be committed to the code repository.
 
-{% figure '/img/eleventyjs-font-subsetting-plugin-1.png' 'This is going to take a few minutes...' 'Console output from subsetting, shows 152 unique glyphs found and progress on subsetting four font files' %}
+{% figure '/img/eleventyjs-font-subsetting-plugin-1.png', 'This is going to take a few minutes...', 'Console output from subsetting, shows 152 unique glyphs found and progress on subsetting four font files' %}
 
 ## Known Caveats
 - In order to make it most performant the method used for obtaining unique characters is very brute-force and isn't yet aware of [HTML Entities](https://developer.mozilla.org/en-US/docs/Glossary/Entity).

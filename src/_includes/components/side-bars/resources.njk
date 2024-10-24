@@ -1,0 +1,7 @@
+{% if sidebar_resource %}
+    {% set itemsByYear = collections[sidebar_resource] | notTagged(['stage/stub']) | reverse | groupByYear %}
+{% else %}
+    {% set itemsByYear = collections['type/resource'] | notTagged(['stage/stub']) | reverse | groupByYear %}
+{% endif %}
+
+{% include 'components/partials/post-list-by-year.njk' %}

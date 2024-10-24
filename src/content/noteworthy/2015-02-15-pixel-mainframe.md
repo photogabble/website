@@ -4,8 +4,8 @@ updated: 2022-03-17
 tags:
   - Retro Computing
   - Pixel Art
+  - stage/budding
 cover_image: /img/chickenstreet-iampixeltier-mainframe-1.png
-growthStage: budding
 ---
 
 ![Pixel Mainframes](/img/composited-mainframe-computers.png "Pixel Mainframes")

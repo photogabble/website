@@ -1,0 +1,17 @@
+{%- set groups = collections.lists | groupByKey('list_category') -%}
+{%- for groupName, groupMeta in metadata.listGroups -%}
+    {% set groupItems = groups.get(groupName) %}
+    {%- if groupItems|length -%}
+    <section class="project-list">
+        <header>
+            <h3>{{ groupMeta.title }}</h3>
+            {%- if groupMeta.description -%}<p>{{ groupMeta.description }}</p>{%- endif -%}
+        </header>
+        <ul>
+            {%- for list in groupItems -%}
+                <li>{%- if page and page.url === list.url -%}»&nbsp;{%- endif -%}<a href="{{ list.url }}">{{ list.title }}</a>: {{ list.description }}</li>
+            {%- endfor -%}
+        </ul>
+    </section>
+    {%- endif -%}
+{%- endfor -%}

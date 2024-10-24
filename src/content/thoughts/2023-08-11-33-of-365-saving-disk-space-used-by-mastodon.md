@@ -1,11 +1,12 @@
 ---
 title: 33 of 365, Saving disk-space used by Mastodon
-tags: 
-  - list/365-writing
+tags:
+  - series/365-writing
   - 365DayProject
   - Mastodon
-growthStage: seedling
+  - stage/seedling
 ---
+
 
 This is day thirty-three of my attempt to write something, anything, every day for 365 days in a row; currently 9.04% complete with an eleven-day streak.
 

@@ -1,5 +1,4 @@
 ---
-
 title: Zero config, rapid Vue.js development with Parcel
 draft: false
 cover_image: /img/featured-images/zero-config-vue-development-with-parcel-js.png
@@ -8,8 +7,9 @@ tags:
   - JavaScript
   - Vue.js
   - Parcel
-growthStage: budding
+  - stage/budding
 ---
+
 
 I was recently pointed towards [ParcelJS](https://parceljs.org/) a _zero configuration_ web application bundler while looking for something with less setup that could replace webpack for small projects and tinkering. Having used Parcel for a while to quickly get project prototypes built I noticed in the documentation that it supports vue.js.
 

@@ -7,7 +7,7 @@ tags:
   - BASIC
   - Quick BASIC
   - Retro
-growthStage: budding
+  - stage/budding
 ---
 
 Writing my [happy 53rd birthday to BASIC article](/blog/2017/05/02/happy-fiftyth-birthday-basic) brought up fond childhood memories of programming on my Toshiba T3100e. As a teenager I often spent the evenings basking in the orange glow from its plasma display and tapping away at its keyboard, entering programs into my copy of Quick Basic.

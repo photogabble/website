@@ -1,6 +1,6 @@
 // This is a list of misc 88x31 buttons that I want to include on my webste but do not require their own
 // bookmark because they do not link to anything.
-module.exports = [
+export default [
   // The below four came from https://debtdeath.neocities.org/buttons
   'debtdeath-neocities.png',
   'debtdeath-mobilefriendly.png',

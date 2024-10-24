@@ -1,8 +1,12 @@
 ---
 title: A time_since function for PHP
 description: A simple time since function for PHP
-tags: [Programming, PHP, Revived, Wayback Machine]
-growthStage: budding
+tags:
+  - Programming
+  - PHP
+  - Revived
+  - Wayback Machine
+  - stage/budding
 ---
 
 I found it incredibly difficult to find any form of time_since function in #PHP so to save anyone else the trouble to hunting through hundreds of useless websites here is the function you may want to use, written by [Natalie Downe](https://web.archive.org/web/20110424153613/http://natbat.net/2007/Jan/27/timesince/)[^1] (you don't want to know how long it took to hunt it down). It takes the input in the form of the unix time stamp.

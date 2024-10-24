@@ -1,8 +1,10 @@
 ---
 title: Running Amazon Linux 2023 within VirtualBox
-tags: ["AL2023"]
-growthStage: evergreen
+tags:
+  - AL2023
+  - stage/evergreen
 ---
+
 
 This week I have been battling with getting a Laravel application deploying on #AWS Elastic Beanstalk and one of the issues I had was installing [php-gRPC](https://grpc.io/) via [pecl](https://pecl.php.net/) was taking _way_ too long due to it compiling from source thus timing out the deploy.
 

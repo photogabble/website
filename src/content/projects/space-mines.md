@@ -4,15 +4,16 @@ title: Space Mines
 description: Multiplayer mining outpost simulator
 git: https://github.com/photogabble/space-mines
 url: http://www.moonminer.space
-status: wip
-featured: true
-language: PHP
-tags: [Game Development, Space Mines]
+tags:
+  - status/idea
+  - language/PHP
+  - Space Mines
+  - Game Development
 ---
 
 In the Summer of 2022 I set about beginning to work on a project that has been on my mind for close to a decade: a modern re-imagination of a rather simple #BASIC game called Space Mines.
 
-{% figure "/img/happy-fiftyth-birthday-basic-4.png" "The BASIC source that spawned this obsession" "Space Mines BASIC source code listing in Usborne Computer Space Games book" %}
+{% figure "/img/happy-fiftyth-birthday-basic-4.png", "The BASIC source that spawned this obsession", "Space Mines BASIC source code listing in Usborne Computer Space Games book" %}
 
 Originally published in the [[Computer Spacegames a retrospective|1982 Usborne book: Computer Spacegames]], Space Mines is a rather simple BASIC program consisting of little more than one hundred lines of code. However, something about it captured my imagination and I have ended up using it as my go to **"Hello World"** program for when I am learning a new programming language and have previously discussed [[Porting BASIC Space Mines Game to Go|porting it to Golang]] and [[LDPL Space Mines|LDPL]].
 

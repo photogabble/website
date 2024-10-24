@@ -1,7 +1,9 @@
-module.exports = {
+export default {
   embedLayout: 'layouts/bookmark-embed.liquid',
   embedLayoutLanguage: 'liquid',
   titlePrefix: 'Link',
   layout: 'layouts/page-resource-link.njk',
-  headingClass: 'resource bookmark'
+  headingClass: 'resource bookmark',
+  tags: ['resource/bookmark'],
+  sidebar_resource: 'resource/bookmark'
 }

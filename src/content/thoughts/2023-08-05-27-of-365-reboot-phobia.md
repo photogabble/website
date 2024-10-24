@@ -1,10 +1,11 @@
 ---
 title: 27 of 365, Reboot-phobia
-tags: 
-  - list/365-writing
+tags:
+  - series/365-writing
   - 365DayProject
-growthStage: seedling
+  - stage/seedling
 ---
+
 
 This is day twenty-seven of my attempt to write something, anything, every day for 365 days in a row; currently 7.40% complete with a five day streak.
 

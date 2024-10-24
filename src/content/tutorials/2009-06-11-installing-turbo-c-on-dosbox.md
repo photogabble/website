@@ -1,10 +1,14 @@
 ---
 title: Installing Turbo C on DOSBOX
-tags: [Revived, DOS, Turbo C]
+tags:
+  - Revived
+  - DOS
+  - Turbo C
+  - stage/evergreen
 featured: false
 cover_image: /img/featured-images/installing-turbo-c-on-dosbox.png
-growthStage: evergreen
 ---
+
 
 > Hi there, this article was first published in 2009 and the information within was accurate at that time. I revived it in 2018 at the request of Twitter user [FlowingLily](https://twitter.com/FlowingLily) so why not go give them a thanks for prompting the republishing :) I even managed to dig out the original [TURBOCAPP.zip](/files/TURBOCAPP.zip) from my deep archive backup.
 

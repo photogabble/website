@@ -1,8 +1,10 @@
 ---
 title: Normalising Tags
-tags: ["11ty"]
-growthStage: stub
+tags:
+  - 11ty
+  - stage/stub
 ---
+
 
 ## Preface
 

@@ -1,11 +1,13 @@
 ---
 title: 21 of 365, Is a Dystopian future Humanities best bet?
-tags: 
-  - list/365-writing
+tags:
+  - series/365-writing
   - 365DayProject
-growthStage: seedling
-canonical: https://wordsmith.social/carbontwelve/21-365-is-a-dystopian-future-humanities-best-bet
+  - stage/seedling
+canonical: >-
+  https://wordsmith.social/carbontwelve/21-365-is-a-dystopian-future-humanities-best-bet
 ---
+
 
 This is day twenty-one of my attempt to write something, anything, every day for 365 days in a row. _I haven't been very good at the continuous posting this year..._
 

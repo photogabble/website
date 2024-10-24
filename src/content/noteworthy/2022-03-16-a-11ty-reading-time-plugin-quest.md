@@ -4,7 +4,7 @@ tags:
   - Tools and Resources
   - JavaScript
   - 11ty
-growthStage: budding
+  - stage/budding
 ---
 
 While going through the stages of rebuilding this blog I thought a nice addition would be a measure of reading time presented in each posts header much like how services such as Medium seem to do.

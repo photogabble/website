@@ -4,9 +4,10 @@ tags:
   - Tools and Resources
   - LESS
   - Node JS
+  - stage/evergreen
 cover_image: /img/lessc-version.png
-growthStage: evergreen
 ---
+
 
 ![Installing lessc on windows via npm](/img/lessc-version.png "Installing lessc on windows via npm")
 

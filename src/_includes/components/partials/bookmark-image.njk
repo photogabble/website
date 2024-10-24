@@ -1,0 +1,21 @@
+{% if bookmark %}
+    {% set bookmarkFileSlug = bookmark.fileSlug %}
+    {% if bookmark.data.dead and bookmark.data.wayback %}
+        {% set bookmarkHref = bookmark.data.wayback %}
+    {% elseif not bookmark.data.dead %}
+        {% set bookmarkHref = bookmark.data.cite.href %}
+    {% endif %}
+{% else %}
+    {% set bookmarkFileSlug = page.fileSlug %}
+    {% if dead and wayback %}
+        {% set bookmarkHref = wayback %}
+    {% elseif not dead %}
+        {% set bookmarkHref = cite.href %}
+    {% endif %}
+{% endif %}
+
+{% if bookmarkHref and bookmarkFileSlug %}
+    <img class="preview" src="{% screenshot bookmarkHref, bookmarkFileSlug %}" aria-hidden="true" alt="Screenshot of web page." />
+{% else %}
+    {# TODO: if dead and no wayback, show default image? #}
+{% endif %}

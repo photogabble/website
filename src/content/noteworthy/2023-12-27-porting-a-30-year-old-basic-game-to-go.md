@@ -6,7 +6,7 @@ tags:
   - Quick BASIC
   - Go
   - Retro
-growthStage: evergreen
+  - stage/evergreen
 ---
 
 Many years ago I found a copy of the Usborne book [Computer Space-games](https://archive.org/details/Computer_Space_Games), first published in 1982 this book contained a number of space themed games written in #BASIC. One of these, "Space Mines" found on pages 24 and 25 of the book stuck with me and six years ago I [[Porting BASIC Space Mines Game to Go|ported it to Golang]].

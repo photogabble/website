@@ -5,10 +5,9 @@ subTitle: Laravel uploaded file middleware
 description: Laravel Middleware and helper for remembering file uploads during validation redirects
 git: https://github.com/photogabble/laravel-remember-uploads
 packagist: https://packagist.org/packages/photogabble/laravel-remember-uploads
-featured: true
-language: PHP
 tags:
-  - PHP
+  - status/featured
+  - language/PHP
   - Laravel
 ---
 

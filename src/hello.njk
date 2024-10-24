@@ -1,0 +1,30 @@
+---
+title: Hello
+---
+{% extends "layouts/base.njk" %}
+
+{% block sidebar %}
+
+<section class="post-list">
+    {# TODO: insert image of me that has been reduced to something like 2-bit colour depth #}
+</section>
+
+{% endblock %}
+
+{% block content %}
+    <article>
+        <header>
+            <h1>Hello!</h1>
+        </header>
+        <section>
+            <p>This is my <a href="https://alastairjohnston.com/introducing-hello-pages/">Hello page</a> where you can learn how I like to keep in touch. Consider this a <a href="https://www.kalzumeus.com/standing-invitation/">standing invitation</a> to get in touch if you have something to share or would like to chat.</p>
+            <ul>
+                <li><a href="https://notacult.social/@carbontwelve">Mastodon</a> is likely your best bet, it goes straight through to my phone</li>
+                <li><a href="https://www.linkedin.com/in/simondann/">LinkedIn</a> is good for work but only checked a couple of times per month</li>
+            </ul>
+            <p>
+                While I am found <a href="/elsewhere/">in many communities elsewhere</a> I don't expect to be contacted directly through them and therefore rarely check (on average once a year).
+            </p>
+        </section>
+    </article>
+{% endblock %}

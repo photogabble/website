@@ -1,0 +1,108 @@
+/* Root styles that are used everywhere */
+:root {
+    --darker-color: rgba(0, 0, 0, 0.3);
+    --dark-color: #2d2524;
+    --light-color: #fef9ed;
+    --key-color: #f3c400;
+    --light-key-color: #009688;
+
+    /* TODO refactor the above into better variable names so it can be themed */
+
+    --sidebar-background-color: #2d2524;
+    --sidebar-color: #fef9ed;
+    --sidebar-anchor-color: #f3c400;
+    --sidebar-line-color: #fef9ed;
+
+    --article-background-color: #fef9ed;
+    --article-color: #3f3f3f;
+    --article-anchor-color: #009688;
+
+    --jumbo-nav-background-color: #001d21;
+    --jumbo-nav-text-color: white;
+    --jumbo-nav-accent-color: rgb(205 203 255);
+    --jumbo-nav-anchor-color: rgb(205 203 255);
+    --jumbo-nav-anchor-hover-color: #ff353f;
+}
+
+/* Colours from https://wingolog.org/ */
+body.theme__pink {
+    --sidebar-background-color: #ecc;
+    --sidebar-color: #33a;
+    --sidebar-anchor-color: #6c1732;
+
+    --jumbo-nav-background-color: #93445f;
+    --jumbo-nav-anchor-color: #310425;
+    --jumbo-nav-anchor-hover-color: #ffc107;
+}
+
+/* Colours from Win3.1 Hot Dog Stand Theme */
+body.theme__hot-dog {
+    /* TODO */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    overflow: hidden;
+    min-height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+    transition: background-color 300ms, color 200ms;
+}
+
+.nav__off{
+    text-decoration: none;
+}
+
+.nav__on {
+    font-weight: bold;
+}
+
+figure {
+    margin-bottom: 0.9rem;
+}
+
+figure img {
+    max-width: 100%;
+}
+
+figure figcaption {
+    font-size: small;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.4em;
+}
+
+table tbody th {
+    margin-right: 1rem
+}
+
+table tfoot {
+    border-top: 4px double;
+}
+
+th, td {
+    text-align: left
+}
+
+.ascii-art{
+    white-space: pre;
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: unset;
+    transform: unset;
+    overflow-y: hidden;
+}

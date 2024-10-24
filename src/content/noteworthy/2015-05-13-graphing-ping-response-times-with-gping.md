@@ -3,8 +3,8 @@ title: Graphing ping response times in Windows with GPING
 tags:
   - Tools and Resources
   - Graphing
+  - stage/budding
 cover_image: /img/gping-graphical-ping-for-windows.png
-growthStage: budding
 ---
 
 ![Graphing ping response times with gping](/img/gping-graphical-ping-for-windows.png "Graphing ping response times with gping")

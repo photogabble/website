@@ -1,10 +1,11 @@
 ---
 title: 29 of 365, PHP isn’t that bad
-tags: 
-  - list/365-writing
+tags:
+  - series/365-writing
   - 365DayProject
-growthStage: seedling
+  - stage/seedling
 ---
+
 
 This is day twenty-nine of my attempt to write something, anything, every day for 365 days in a row; currently 7.95% complete with a seven-day streak.
 

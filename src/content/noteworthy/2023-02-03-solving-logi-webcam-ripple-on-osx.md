@@ -1,7 +1,9 @@
 ---
 title: "Solving Logi webcam ripple on OSX"
-tags: [Tips, OSX]
-growthStage: budding
+tags: 
+  - Tips
+  - OSX
+  - stage/budding
 issueUri: https://github.com/photogabble/website/issues/206
 ---
 

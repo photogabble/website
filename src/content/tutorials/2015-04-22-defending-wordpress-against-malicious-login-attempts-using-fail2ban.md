@@ -4,10 +4,11 @@ tags:
   - Blogging
   - PHP
   - Linux
-  - Wordpress
+  - WordPress
+  - stage/budding
 cover_image: /img/fail2ban-regex.png
-growthStage: budding
 ---
+
 
 ![WordPress Jetpack malicious login attempts](/img/wordpress-jetpack-malicious-login-attempts.png "Wordpress Jetpack malicious login attempts")
 

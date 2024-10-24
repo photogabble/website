@@ -2,7 +2,7 @@
 title: Why I don't go to Twitter anymore
 tags:
   - Social Media
-growthStage: seedling
+  - stage/seedling
 ---
 
 I used to spend an extortionate amount of time on Twitter, upwards of three hours a day scrolling what was mostly a feed of noise. It wasn't all unproductive though, I did relish interacting with the Vintage Computing and Retro Gaming communities on there but alas even their appeal wasn't enough to entice me to stay once Twitter became entirely possessed by the Devil.

@@ -4,10 +4,10 @@ tags:
   - Programming
   - GameDev
   - Go
-growthStage: evergreen
+  - stage/evergreen
 ---
 
-About four years ago I got the itch to write a game engine based upon _libtcod_ in #Golang, suffice to say that side project never had much time off the shelf but over the years I did return to it. I most recently took a look four months ago because I wanted to make use of the scene director I had written, which I actually partitioned off into [go-rogue/scenes](https://github.com/go-rogue/scenes).
+About four years ago I got the itch to write a game engine based upon _libtcod_ in #GoLang, suffice to say that side project never had much time off the shelf but over the years I did return to it. I most recently took a look four months ago because I wanted to make use of the scene director I had written, which I actually partitioned off into [go-rogue/scenes](https://github.com/go-rogue/scenes).
 
 In game development, a scene director (or _scene manager_) is a stack that your various scenes get pushed onto, with the scene at the top of the stack being the current one being executed. Think about a pause menu, your player pauses the game and the `PauseScene` gets pushed onto the stack, your `MainGame` scene is still there, in memory but as it's not the top of the stack anymore its effectively halted until the `PauseScene` is popped off the stack.
 
