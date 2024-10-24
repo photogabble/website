@@ -14,8 +14,8 @@ started: 2023-01-01
 modified: 2024-10-02
 ---
 
-<p>
-    {% image 'public/img/growth.png' 'Planting a seed and watching it grow.' %}
+<p style="text-align: center">
+    {% image 'img/growth.png' 'Planting a seed and watching it grow.' %}
 </p>
 
 Inspired by Maggie's _Six Patterns of Gardening_ from her essay: [[ A Brief History & Ethos of the Digital Garden ]], I added growth stages to this Digital Garden as a way of describing how polished I consider a piece of writing. 
