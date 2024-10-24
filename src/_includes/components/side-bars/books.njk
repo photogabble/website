@@ -2,7 +2,7 @@
     {% set books = bookwyrm | whereKeyEquals('shelf', sidebar_shelves) %}
     <section class="book-list">
         {% for book in books %}
-            {% set review = collections.all | whereKeyEquals('openlibraryKey', book.openlibraryKey) | first %}
+            {% set review = collections.all | whereKeyEquals('fileSlug', book.openlibraryKey) | first %}
             {% if review %}
                 {% set href = review.url %}
                 {% set label = 'View' + book.title + ' review' %}
@@ -10,7 +10,6 @@
                 {% set href = book.id %}
                 {% set label = 'View' + book.title + ' on bookwyrm.social' %}
             {% endif %}
-
 
             <a href="{{ href }}" aria-label="{{ label }}" class="book">
                 <div class="cover{% if not book.cover %} cover__placeholder" aria-hidden="true{% endif %}">
@@ -33,8 +32,10 @@
                         {{ author.name }}{{ "," if not loop.last }}
                     {% endfor %}
                 </p>
-                <p>★★★★★</p>
-                <p>Finished: 23 Jun 2021</p>
+                {% if review %}
+                <p>{{ review.data.rating | ratingToStars }}</p>
+                <p>Finished: {{ review.data.progress.finished | dateToFormat("dd LLL yyyy") }}</p>
+                {% endif %}
             </a>
         {% endfor %}
     </section>
