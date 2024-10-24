@@ -62,7 +62,7 @@
     "@inquirer/editor": "^2.1.22",
     "cheerio": "^1.0.0-rc.12",
     "cli-table": "^0.3.11",
-    "colorthief": "^2.4.0",
+    "colorthief": "^2.6.0",
     "enquirer": "^2.4.1",
     "js-yaml": "^4.1.0",
     "markdown-it-task-lists": "^2.1.1",
