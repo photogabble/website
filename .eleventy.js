@@ -1,4 +1,4 @@
-// import interlinker from '@photogabble/eleventy-plugin-interlinker';
+import interlinker from '@photogabble/eleventy-plugin-interlinker';
 import wordstats from '@photogabble/eleventy-plugin-word-stats';
 import blogtimes from '@photogabble/eleventy-plugin-blogtimes';
 import screenshot from './lib/helpers/screenshot.js';
@@ -47,9 +47,9 @@ export default async function (eleventyConfig) {
    * @photogabble/eleventy-plugin-interlinker
    * @see https://www.npmjs.com/package/@photogabble/eleventy-plugin-interlinker
    */
-  // eleventyConfig.addPlugin(interlinker, {
-  //   defaultLayout: 'layouts/embed.liquid',
-  // });
+  eleventyConfig.addPlugin(interlinker, {
+    defaultLayout: 'layouts/embed.liquid',
+  });
 
   /**
    * Plugin normalises hashtags being converted into page tags.
