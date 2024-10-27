@@ -1,6 +1,8 @@
 ---
 title: Essays
 layout: layouts/page-post.njk
+aliases:
+  - Essay
 sidebar_component: topic
 sidebar_title: Longform Writing
 sidebar_topic: 'type/essay'

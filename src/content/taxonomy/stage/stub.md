@@ -1,5 +1,7 @@
 ---
 title: Stub Posts
+aliases: 
+  - Stubs
 sub_title: Like drafts, but public
 layout: layouts/page-post.njk
 sidebar_title: Works in Progress
