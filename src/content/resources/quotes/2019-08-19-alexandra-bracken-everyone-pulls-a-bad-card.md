@@ -4,7 +4,7 @@ tags:
   - Quote
 cite:
     name: Alexandra Bracken
-    href: http://www.alexandrabracken.com/the-darkest-legacy
+    href: https://www.alexandrabracken.com/darkestlegacy
     in: The Darkest Legacy
 ---
 
