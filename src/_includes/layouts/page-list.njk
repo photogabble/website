@@ -1,0 +1,46 @@
+{% extends "layouts/page.njk" %}
+
+{% block content %}
+<article>
+    <header>
+        <h1>{{ title }}</h1>
+        {%- if sub_title %}<h2>{{ sub_title }}</h2>{% endif %}
+    </header>
+    <section>
+        {% set footnotes = content | extractFootnotes %}
+        {{ content | withoutFootnotes | safe }}
+    </section>
+    {#
+        Some lists handle their own output such as reading in the
+        sidebar and button board within the main page content. In
+        those cases the list section must be disabled.
+
+        TODO: Add pixels list type for collection of pixel shinys
+    #}
+    {% if list_style != 'none' %}
+    <section class="items-list">
+        <ul>
+            {% asyncEach item in items %}
+            <li>
+                {% set bookmark = item %}
+                {% if item.data.dead %}
+                    {% set href = item.data.wayback or '#' %}
+                {% else %}
+                    {% set href = item.data.cite.href %}
+                {% endif %}
+                <a href="{{ href }}" class="no-ext">
+                    {% include "components/partials/bookmark-image.njk" %}
+                </a>
+                <p><a href="{{ href }}" class="no-ext">{{ item.data.title }}</a> <small><a href="{{ item.url }}">[My Notes]</a></small></p>
+            </li>
+            {% endeach %}
+        </ul>
+    </section>
+    {% endif %}
+    <footer>
+        {% if footnotes.length %}
+            {{ footnotes | safe }}
+        {% endif %}
+    </footer>
+</article>
+{% endblock %}

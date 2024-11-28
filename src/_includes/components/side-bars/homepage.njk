@@ -1,0 +1,13 @@
+<section class="post-list">
+    <header class="post-list__inline-header">
+        <h3>Recent Writing</h3>
+    </header>
+    <ol class="post-list__chronological">
+        {%- for post in collections.writing | notTagged('stage/stub') | reverse | limit(10) -%}
+            {% include "components/post-list-line.njk" %}
+        {%- endfor -%}
+    </ol>
+    <footer>
+        <nav>Subscribe to the <a href="#">RSS Feed</a> or view the <a href="/writing/">entire archive</a> for more.</nav>
+    </footer>
+</section>

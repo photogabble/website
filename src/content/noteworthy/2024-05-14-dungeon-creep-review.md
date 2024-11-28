@@ -2,8 +2,8 @@
 title: Review of Dungeon Creep, an old school dungeon crawler
 tags: 
   - Review
+  - stage/stub
 description: "Dungeon Creep is an old school dungeon crawler with cosmic horror elements being made for the Dungeon Crawler Jam 2024"
-growthStage: stub
 ---
 
 [[ Dungeon Creep by JollyGoodFriend, erikudo123 and Sir Drentalken IV ]] is an old school dungeon crawler with cosmic horror elements being made for the [[Dungeon Crawler Jam 2024]].

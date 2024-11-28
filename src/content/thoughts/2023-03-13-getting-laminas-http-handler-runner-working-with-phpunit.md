@@ -1,8 +1,10 @@
 ---
 title: Getting Laminas HttpHandlerRunner to play nice with PHPUnit
-tags: ["PHP"]
-growthStage: budding
+tags:
+  - PHP
+  - stage/budding
 ---
+
 
 ## Preface
 At the beginning of this month I de-mothballed both my [[Tuppence|PHP microfamework: Tuppence]] project and the related [[Tuppence Boilerplate|Tuppence Boilerplate Project]]. In doing so started encountering the `Laminas\HttpHandlerRunner\Emitter\SapiEmitter` class throwing a `EmitterException` when invoked within PHPUnit:

@@ -1,7 +1,8 @@
 ---
 title: "Adding favicon"
-tags: [Blogging]
-growthStage: evergreen
+tags:
+  - Blogging
+  - stage/evergreen
 ---
 
 Today I closed issue [#30: Add Favicon](https://github.com/photogabble/website/issues/30). This has embarrassingly been open since October 2021 after having rewritten PhotoGabble for 11ty.

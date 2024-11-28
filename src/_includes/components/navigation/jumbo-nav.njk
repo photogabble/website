@@ -1,0 +1,79 @@
+{% set buttonBoard = collections.lists | whereKeyEquals('slug', 'button-board') | first %}
+{% set watched = collections.lists | whereKeyEquals('slug', 'watched') | first %}
+{% set writing = collections | groupBySpecialTag('type', 'stage/stub') %}
+{% set stubs = collections.writing | onlyTagged('stage/stub') %}
+{% set weekInReview = collections['Week In Review'] %}
+{% set antilibrary = bookwyrm | whereKeyEquals('shelf', 'to-read') %}
+{% set read = bookwyrm | whereKeyEquals('shelf', 'read') %}
+{% set resources = collections | groupBySpecialTag('resource', 'stage/stub') %}
+{% set topics = collections | tagsInCollection(['writing'], ['stage/stub']) %}
+
+<aside id="jumbo-nav" tabindex="-1">
+    <nav>
+        <dl>
+            <dt>Writing</dt>
+            <dd><a href="/essays/"><span>{{ writing.get('essay').usages }}</span><span>Essays</span></a></dd>
+            <dd><a href="/tutorials/"><span>{{ writing.get('tutorial').usages }}</span><span>Tutorials</span></a></dd>
+            <dd><a href="/noteworthy/"><span>{{ writing.get('noteworthy').usages }}</span><span>Noteworthy</span></a></dd>
+            <dd><a href="/thoughts/"><span>{{ writing.get('thought').usages }}</span><span>Thoughts</span></a></dd>
+            <dd><a href="/glossary/"><span>{{ writing.get('glossary').usages }}</span><span>Glossary</span></a></dd>
+            <dd><a href="/stubs/"><span>{{ stubs.length }}</span><span>Stubs</span></a></dd>
+            <dd class="footer"><a href="/writing/" title="View all Writing (archive)"><small>View all <span aria-hidden="true">→</span></small></a></dd>
+        </dl>
+        <dl>
+            <dt>Lists/Collections</dt>
+            <dd><a href="/topic/week-in-review/"><span>{{ weekInReview.length }}</span><span>Week In Review</span></a></dd>
+            <dd><a href="/lists/film-and-tv/"><span>{{ watched.items.length }}</span><span>Films & TV Series</span></a></dd>
+            <dd><a href="/lists/listened-to/"><span>*</span><span>Listened To</span></a></dd>
+            <dd><a href="/books/"><span>{{ read.length }}</span><span>My Bookshelf</span></a></dd>
+            <dd><a href="/antilibrary/"><span>{{ antilibrary.length }}</span><span><em>The</em> Antilibrary</span></a></dd>
+            <dd><a href="/topic/"><span>{{ topics.length }}</span><span>Topics</span></a></dd>
+            <dd class="footer"><a href="/lists/" title="View all lists and collections (archive)"><small>View all <span aria-hidden="true">→</span></small></a></dd>
+        </dl>
+        <dl>
+            <dt>Resources</dt>
+            <dd><a href="/resources/bookmarks/"><span>{{ resources.get('bookmark').usages }}</span><span>Bookmarks</span></a></dd>
+            <dd><a href="/resources/quotes/"><span>{{ resources.get('quotes').usages }}</span><span>Quotes</span></a></dd>
+            <dd><a href="/resources/jokes/"><span>{{ resources.get('jokes').usages }}</span><span>Jokes</span></a></dd>
+            <dd class="footer"><a href="/resources/" title="View all Resources (archive)"><small>View all <span aria-hidden="true">→</span></small></a></dd>
+        </dl>
+        <dl>
+            <dt>Personal</dt>
+            <dd><a href="/about/"><span>About</span></a></dd>
+            <dd><a href="/colophon/"><span>Colophon</span></a></dd>
+            <dd><a href="/elsewhere/"><span>Elsewhere</span></a></dd>
+            <dd><a href="/projects/"><span>My Projects</span></a></dd>
+            <dd><a href="/now/"><span>/now</span></a></dd>
+            <dd><a href="/uses/"><span>/uses</span></a></dd>
+        </dl>
+
+        <div>
+            <dl class="community">
+                <dt>Button Board</dt>
+                <dd>
+                    <small>A random selection from my <a href="/button-board">Button Board</a>:</small>
+                </dd>
+                <dd>
+                    {%- for item in buttonBoard.items | randomItems(9) -%}
+                        {% if not item.data.dead %}
+                            {% set href = item.data.cite.href or item.url %}
+                        {% else %}
+                            {% set href = item.url %}
+                        {% endif %}
+                        <a href="{{ href }}" class="no-ext btn-88x31" rel="noopener" title="Visit {{ item.data.title }}">
+                            <img width="88" height="31" src="/img/88x31/{{ item.data.button | firstBtn }}" alt="88x31 button for {{ item.data.title }}" aria-hidden="true" loading="lazy" />
+                        </a>
+                    {%- endfor -%}
+                </dd>
+            </dl>
+            <dl class="community">
+                <dt>Community</dt>
+                <dd>
+                    <a href="/links/"><span>Blogroll</span></a>
+                    <a href="https://webring.xxiivv.com/"><span>WebRing</span></a>
+                    <a href="https://notacult.social"><span>notacult.social</span></a>
+                </dd>
+            </dl>
+        </div>
+    </nav>
+</aside>

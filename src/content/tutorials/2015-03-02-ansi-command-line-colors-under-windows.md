@@ -5,9 +5,10 @@ tags:
   - ANSI
   - Windows
   - Command Line
+  - stage/evergreen
 cover_image: /img/ansicon-install-cmd.png
-growthStage: evergreen
 ---
+
 
 Coming from a linux and osx background, the one thing that I missed the most when using windows was ANSI command line colours within the command prompt. ANSI escape sequences are supported in at least in one form or another in most terminal emulators except for the win32 console component of Microsoft Windows. Fortunately there is a project on github [adoxa/ansicon](https://github.com/adoxa/ansicon) that adds support for ANSI escape sequences to the Windows console by wrapping it and adding interpreting the ANSI sequences.
 

@@ -1,12 +1,15 @@
 ---
 title: Writing a pixel editor in javascript - Part one
-tags: [Programming, JavaScript]
+tags:
+  - Programming
+  - JavaScript
+  - stage/evergreen
 cover_image: /img/javascript-pixel-paint-3.png
 featured: false
-growthStage: evergreen
 aliases:
-  - "Stage one: Setting up the application loop and listening to mouse input"
+  - 'Stage one: Setting up the application loop and listening to mouse input'
 ---
+
 
 ![Pixel Editor](/img/javascript-pixel-paint-2.png "Pixel Editor")
 [![Pixel Editor](/img/github.png "Github")](https://github.com/photogabble/pixel-editor-tutorial)

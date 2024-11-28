@@ -2,8 +2,8 @@
 title: Review of Cyclopean, an old school dungeon crawler
 tags: 
   - Review
+  - stage/stub
 description: "Cyclopean is an old school dungeon crawler with cosmic horror elements being made for the Dungeon Crawler Jam 2024"
-growthStage: stub
 ---
 
 [[ Cyclopean by Schmidt Workshops ]] is an old school dungeon crawler with cosmic horror elements being made for the [[Dungeon Crawler Jam 2024]].

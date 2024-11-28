@@ -1,7 +1,9 @@
 ---
 title: "Adding statistics to 11ty"
-tags: [Blogging, 11ty]
-growthStage: seedling
+tags:
+  - Blogging
+  - 11ty
+  - stage/seedling
 ---
 
 Last month I stumbled upon [Tim Hårek Andreassen's blog stats page](https://timharek.no/stats/) and thought it cool enough to open issue [#148](https://github.com/photogabble/website/issues/148) as a reminder to add the same to PhotoGabble.

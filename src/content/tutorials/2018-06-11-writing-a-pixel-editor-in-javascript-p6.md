@@ -3,12 +3,13 @@ title: Writing a pixel editor in javascript - Part six
 tags:
   - Programming
   - JavaScript
+  - stage/budding
 cover_image: /img/javascript-pixel-paint-12.png
 draft: false
-growthStage: budding
 aliases:
-  - "Stage six: Webpack, Linting and ES6"
+  - 'Stage six: Webpack, Linting and ES6'
 ---
+
 
 ![Pixel Editor](/img/javascript-pixel-paint-12.png "Pixel Editor")
 

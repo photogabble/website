@@ -1,0 +1,22 @@
+{% if sidebar_items %}
+    {% set items = sidebar_items %}
+{% elseif sidebar_topic === 'stage/stub' %}
+    {% set items = collections[sidebar_topic] | reverse %}
+{% else %}
+    {% set items = collections[sidebar_topic] | notTagged('stage/stub') | reverse %}
+{% endif %}
+
+{% if not sidebar_title %}
+    {% set sidebar_title = metadata.specialTags[sidebar_topic].sidebar_title %}
+{% endif %}
+
+<section class="post-list">
+    <header class="post-list__inline-header">
+        <h3>{{ sidebar_title }}</h3> {{ items.length }} {% if items.length > 1 %}items{% else %}item{% endif %}
+    </header>
+    <ol class="post-list__chronological">
+        {%- for post in items -%}
+            {% include "components/post-list-line.njk" %}
+        {%- endfor -%}
+    </ol>
+</section>

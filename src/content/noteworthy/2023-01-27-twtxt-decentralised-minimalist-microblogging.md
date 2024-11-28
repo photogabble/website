@@ -1,7 +1,11 @@
 ---
 title: "twtxt: the decentralised, minimalist microblog in a file"
-tags: ["Tools and Resources", "Decentralisation", "Social Media", Wayback Machine]
-growthStage: seedling
+tags: 
+  - Tools and Resources
+  - Decentralisation
+  - Social Media
+  - Wayback Machine
+  - stage/seedling
 ---
 
 ## Preface

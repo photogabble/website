@@ -1,3 +1,4 @@
+{# TODO move to navigation folder #}
 {% for month in range(0, 12) | reverse %}
     {% set label = (month+1) | padStart(2, '0')  %}
     {% if postsByMonth.get(month).length > 0 %}

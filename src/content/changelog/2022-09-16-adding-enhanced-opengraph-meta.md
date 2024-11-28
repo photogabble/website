@@ -1,7 +1,8 @@
 ---
 title: "Adding enhanced opengraph meta"
-tags: [Blogging]
-growthStage: evergreen
+tags:
+  - Blogging
+  - stage/evergreen
 ---
 
 September seems to be this website's month of catching up with old issues; I have just closed two:

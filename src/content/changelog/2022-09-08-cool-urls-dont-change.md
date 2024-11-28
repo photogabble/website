@@ -1,7 +1,8 @@
 ---
 title: "Cool URls don't change"
-tags: [Blogging]
-growthStage: budding
+tags:
+  - Blogging
+  - stage/budding
 ---
 
 Earlier this year I reorganised PhotoGabble into being more of a Digital Garden than a Blog. As a result, the majority of the existing url structure changed which resulted in a lot of old links becoming dead.

@@ -1,7 +1,9 @@
 ---
 title: "Minimalism"
-tags: [Programming, Methodology]
-growthStage: seedling
+tags: 
+  - Programming
+  - Methodology
+  - stage/seedling
 issueUri: https://github.com/photogabble/website/issues/208
 ---
 

@@ -1,4 +1,5 @@
-module.exports = [
+// TODO: RL2024 Remove
+export default [
   'I only know 25 letters of the alphabet. I don\'t know y.',
   'Why did the invisible man turn down the job offer? He couldn\'t see himself doing it.',
   '<strong>Question:</strong> What does a lemon say when it answers the phone?<br/><strong>Answer:</strong> Yellow!',

@@ -3,12 +3,13 @@ title: Writing a pixel editor in javascript - Part five
 tags:
   - Programming
   - JavaScript
+  - stage/budding
 cover_image: /img/javascript-pixel-paint-12.png
 draft: false
-growthStage: budding
 aliases:
-  - "Stage five: Saving of images"
+  - 'Stage five: Saving of images'
 ---
+
 
 ![Pixel Editor](/img/javascript-pixel-paint-11.png "Pixel Editor")
 

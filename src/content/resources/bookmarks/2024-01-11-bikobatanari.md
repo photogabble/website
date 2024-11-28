@@ -11,4 +11,4 @@ pages:
   links: https://bikobatanari.art/neighbourhood
 ---
 
-Author of the [[ Lonering ]], I found Biko's website interesting to explore and was exited to visit their [digital garden](https://bikobatanari.art/garden) which is presented in an interesting way.
+Author of the [[ LoneRing ]], I found Biko's website interesting to explore and was excited to visit their [digital garden](https://bikobatanari.art/garden) which is presented in an interesting way.

@@ -5,7 +5,7 @@ tags:
   - Review
   - Stock Photography
   - Tools and Resources
-growthStage: budding
+  - stage/budding
 ---
 
 With my new 2016 layout for Photogabble containing a grid of articles, each displaying that articles featured image, I suddenly had a minor problem with what to actually display as the featured image. Unlike other types of blog content, programming and tutorial based discussions do not tend to lend themselves to having featured images. I did originally place a colourful rectangle with the posts category within but that began to look weird and boring when there were several within the same grid.

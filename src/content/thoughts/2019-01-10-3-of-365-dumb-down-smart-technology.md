@@ -1,11 +1,12 @@
 ---
 title: 3 of 365, Dumb-down Smart Technology
-tags: 
-  - list/365-writing
+tags:
+  - series/365-writing
   - 365DayProject
-growthStage: seedling
+  - stage/seedling
 canonical: https://wordsmith.social/carbontwelve/3-365-dumb-down-smart-technology
 ---
+
 
 This is day three of my attempt to write something, anything, every day for 365 days in a row.
 

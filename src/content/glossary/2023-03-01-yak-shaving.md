@@ -1,7 +1,8 @@
 ---
 title: "Yak Shaving"
-tags: ["Programming"]
-growthStage: seedling
+tags: 
+  - Programming
+  - stage/seedling
 ---
 
 > When you're up to your neck in alligators, it's hard to remember that your initial objective was to drain the swamp

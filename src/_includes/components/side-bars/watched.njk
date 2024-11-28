@@ -1,0 +1,21 @@
+{% set itemsByYear = items | groupByYear %}
+
+<section class="book-list">
+    {% for year, items in itemsByYear %}
+        <h3>Watched in {{ year }}</h3>
+        {% for item in items %}
+            <a href="{{ item.url }}" class="book">
+                <div class="cover{% if not item.data.cover %} cover__placeholder" aria-hidden="true{% endif %}">
+                   {% if item.data.cover %}
+                    <img src="{{ item.data.cover }}" alt="..." />
+                   {% else %}
+                   <div class="img-placeholder" aria-hidden="true">
+                       <h3>{{ item.data.title }}</h3>
+                   </div>
+                    {% endif %}
+                </div>
+                <p>{{ item.data.rating | ratingToStars }}</p>
+            </a>
+        {% endfor %}
+    {% endfor %}
+</section>

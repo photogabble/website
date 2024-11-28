@@ -2,7 +2,7 @@
 title: "Refactored page git log section"
 tags:
   - 11ty
-growthStage: budding
+  - stage/budding
 ---
 
 In December last year with help from a PR raised by Belmin Began([@MaNemoj01](https://github.com/MaNemoj01)) I [[Addition of Git Log|added a git log]] to the content pages of this website, Belmin's contribution aside from being wrapped by caching has remained unchanged until today. I _like_ the addition of page history meta however, I do not want it to take over the page and in the case of some regularly updated pages that was beginning to happen.

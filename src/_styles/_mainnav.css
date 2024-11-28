@@ -1,0 +1,87 @@
+#main-nav.jumbo-nav__open {
+    --sidebar-color: var(--jumbo-nav-text-color);
+    --sidebar-anchor-color: var(--jumbo-nav-anchor-color);
+    --sidebar-background-color: var(--jumbo-nav-background-color);
+
+    /* When the jumbo nav is open, its container should be scrollable in case the
+       viewport is too short to display the whole menu. */
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.jumbo-nav__open #jumbo-toggle{
+    font-weight: bold;
+}
+
+.main-nav {
+    position: relative;
+    z-index: 2;
+    color: var(--sidebar-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.main-nav a {
+    color: var(--sidebar-anchor-color);
+}
+
+.main-nav > div {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.main-nav input {
+    border: none;
+    border-bottom: 1px solid var(--sidebar-anchor-color);
+    background: transparent;
+    color: var(--sidebar-anchor-color);
+    margin-bottom: 1px;
+}
+
+.main-nav input::placeholder {
+    color: var(--sidebar-anchor-color);
+}
+
+.main-nav nav > * {
+    margin: 0 0.2rem
+}
+
+.main-nav nav > *:first-child {
+    margin-left: 0;
+}
+
+.main-nav nav > *:last-child {
+    margin-right: 0;
+}
+
+a.skip-content {
+    left: -9999px;
+    position: absolute;
+    top: 0;
+}
+
+a.skip-content:focus {
+    left: auto;
+    position: relative;
+}
+
+/* Skip content link doesn't make sense on mobile view */
+
+@media only screen and (min-width: 900px) {
+    a.skip-content {
+        visibility: hidden;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    .main-nav {
+        flex-direction: row;
+    }
+}

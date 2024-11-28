@@ -1,0 +1,49 @@
+{% set items = collections['type/project'] | reverse %}
+
+<section class="project-list">
+    <header>
+        <h3>Featured Projects</h3>
+        <p>These are projects that I am genuinely proud of.</p>
+    </header>
+    <ul>
+        {% for item in items | onlyTagged('status/featured') %}
+            {% include "components/navigation/project-list-line.njk" %}
+        {% endfor %}
+    </ul>
+</section>
+
+<section class="project-list">
+    <header>
+        <h3>Tinkering / Toys</h3>
+        <p>These are small toy projects I have written while learning something new.</p>
+    </header>
+    <ul>
+        {% for item in items | onlyTagged('status/tinkering') %}
+            {% include "components/navigation/project-list-line.njk" %}
+        {% endfor %}
+    </ul>
+</section>
+
+<section class="project-list">
+    <header>
+        <h3>Abandoned or Shelved</h3>
+        <p>I'll likely not work on these again, but want to share what I learned</p>
+    </header>
+    <ul>
+        {% for item in items | onlyTagged('status/abandoned') %}
+            {% include "components/navigation/project-list-line.njk" %}
+        {% endfor %}
+    </ul>
+</section>
+
+<section class="project-list">
+    <header>
+        <h3>Ideas</h3>
+        <p>I might start these one day, or not.</p>
+    </header>
+    <ul>
+        {% for item in items | onlyTagged('status/idea') %}
+            {% include "components/navigation/project-list-line.njk" %}
+        {% endfor %}
+    </ul>
+</section>

@@ -5,18 +5,15 @@ const getPageFolders = (page) => page.filePathStem.substring(
 
 const getPageResourceType = (page) => getPageFolders(page).split('/')[0];
 
-module.exports = {
-  layout: "layouts/page-resource.njk",
-  titlePrefix: 'Resource',
-  headingClass: 'resource',
-  contentType: 'resource',
+export default {
   excludeFromFeed: true,
+  tags: ['type/resource'],
+  sidebar_component: 'resources',
   eleventyComputed: {
     permalink(data) {
       const folders = getPageFolders(data.page);
       return `resources/${folders}/${this.slugify(data.title)}/`
     },
-
     folder(data) {
       const resourceType = getPageResourceType(data.page);
 
@@ -35,4 +32,4 @@ module.exports = {
       return getPageResourceType(data.page);
     },
   }
-};
+}

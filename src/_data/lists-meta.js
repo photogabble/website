@@ -3,9 +3,11 @@
 // my collection of lists. This data is consumed
 // by the lists collection for each list in use.
 //
-module.exports = {
+export default {
 
   // Collections of things
+
+  // TODO: (RL2024) replace both `layout` and `permalink` attributes with a file in `/content/lists/*`
 
   'list/blogroll': {
     title: 'Blogroll',
@@ -59,6 +61,10 @@ module.exports = {
     description: 'Like a blogroll but via the medium of 88x21 gifs',
     layout: 'layouts/list-button-board.njk',
     permalink: '/button-board/',
+  },
+
+  'list/favourites': {
+    title: 'Favourites'
   },
 
   'list/windows-interface': {

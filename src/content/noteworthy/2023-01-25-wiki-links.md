@@ -1,8 +1,11 @@
 ---
 title: "Adding Wiki Links to 11ty"
-tags: [Blogging, 11ty, "Wiki Links"]
+tags: 
+  - Blogging
+  - 11ty
+  - Wiki Links
+  - stage/seedling
 aliases: [wiki-links]
-growthStage: seedling
 ---
 
 I use [Obsidian.md](https://obsidian.md/) to draft my posts before they are published on PhotoGabble. One feature of #Obsidian that I love is interlinking between notes and being able to see the connectivity graph of each note.
@@ -168,7 +171,7 @@ Once done you will begin seeing any wikilinks you use get converted into links a
 
 ## The Post Relationship Graph
 
-{% figure "/img/adding-wiki-links-to-11ty-1.png" "It's satisfying to see interconnected ideas" "A giant node graph showing hundreds of interconnected circles each one an article." %}
+{% figure "/img/adding-wiki-links-to-11ty-1.png", "It's satisfying to see interconnected ideas", "A giant node graph showing hundreds of interconnected circles each one an article." %}
 
 A lovely side effect of adding backlink support is that you now have a map of post relationships that could be exported to json and made available to the frontend for displaying as a pretty node graph much like how Obsidian does.
 

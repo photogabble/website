@@ -1,10 +1,11 @@
 ---
 title: 24 of 365, LK-99 I want to believe
-tags: 
-  - list/365-writing
+tags:
+  - series/365-writing
   - 365DayProject
-growthStage: seedling
+  - stage/seedling
 ---
+
 
 This is day twenty-four of my attempt to write something, anything, every day for 365 days in a row; currently 6.58% complete with a two-day streak.
 
