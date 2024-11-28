@@ -9,8 +9,10 @@
     /* TODO refactor the above into better variable names so it can be themed */
 
     --sidebar-background-color: #2d2524;
+    --sidebar-background-color-muted: #795548;
     --sidebar-color: #fef9ed;
     --sidebar-anchor-color: #f3c400;
+    --sidebar-anchor-color-muted: rgba(243, 196, 0, 0.3);
     --sidebar-line-color: #fef9ed;
 
     --article-background-color: #fef9ed;

@@ -59,6 +59,14 @@ main > header {
     display: flex;
     flex-direction: column;
     padding-top: 0;
+
+    scrollbar-color: var(--article-background-color) var(--sidebar-background-color);
+    scrollbar-width: thin;
+}
+
+#content {
+    scrollbar-color: var(--sidebar-background-color) var(--article-background-color);
+    scrollbar-width: thin;
 }
 
 .side-bar a,

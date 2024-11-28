@@ -118,8 +118,19 @@ span.new-thought {
     font-size: 1.4em;
 }
 
-article pre {
-    width: calc(83% + 80px);
+article pre{
+    /*width: calc(83% + 80px);*/
+    width: 100%;
+}
+
+article pre:not([class*="language-"]) {
+    background: var(--sidebar-background-color);
+    color: var(--sidebar-anchor-color);
+    padding: 1rem;
+    overflow: auto;
+    border-radius: 0.3em;
+    scrollbar-color: var(--sidebar-anchor-color) var(--sidebar-background-color-muted);
+    scrollbar-width: thin;
 }
 
 article footer section {
