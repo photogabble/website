@@ -97,6 +97,110 @@ figure blockquote + figcaption {
     margin-inline-end: 2.5em;
 }
 
+figure.conversation {
+    background-color: #fff;
+    border: 1px solid #e5e5ea;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25rem;
+    margin: 0 auto 1rem;
+    max-width: 83%;
+    padding: 0.5rem 1.5rem;
+
+    p {
+        border-radius: 1.15rem;
+        line-height: 1.25;
+        max-width: 75%;
+        padding: 0.5rem .875rem;
+        position: relative;
+        word-wrap: break-word;
+        font-family: sans-serif;
+        font-size: 1rem;
+    }
+    p::before,
+    p::after {
+        bottom: -0.1rem;
+        content: "";
+        height: 1rem;
+        position: absolute;
+    }
+
+    p.from-me {
+        align-self: flex-end;
+        background-color: #248bf5;
+        color: #fff;
+    }
+
+    p.from-me::before {
+        border-bottom-left-radius: 0.8rem 0.7rem;
+        border-right: 1rem solid #248bf5;
+        right: -0.35rem;
+        transform: translate(0, -0.1rem);
+    }
+
+    p.from-me::after {
+        background-color: #fff;
+        border-bottom-left-radius: 0.5rem;
+        right: -40px;
+        transform: translate(-30px, -2px);
+        width: 10px;
+    }
+
+    p[class^="from-"] {
+        margin: 0.5rem 0;
+        width: fit-content;
+    }
+
+    p[class^="from-"].no-tail {
+        margin-bottom: 0;
+    }
+
+    p.from-me ~ p.from-me,
+    p.from-them ~ p.from-them {
+        margin: 0.25rem 0 0;
+    }
+
+    p.from-me ~ p.from-me:not(:last-child),
+    p.from-them ~ p.from-them:not(:last-child){
+        margin: 0.25rem 0 0;
+    }
+
+    p.from-me ~ p.from-me:last-child,
+    p.from-them ~ p.from-them:last-child{
+        margin-bottom: 0.5rem;
+    }
+
+    p.from-them {
+        align-items: flex-start;
+        background-color: #e5e5ea;
+        color: #000;
+    }
+
+    p.from-them:before {
+        border-bottom-right-radius: 0.8rem 0.7rem;
+        border-left: 1rem solid #e5e5ea;
+        left: -0.35rem;
+        transform: translate(0, -0.1rem);
+    }
+
+    p.from-them::after {
+        background-color: #fff;
+        border-bottom-right-radius: 0.5rem;
+        left: 20px;
+        transform: translate(-30px, -2px);
+        width: 10px;
+    }
+
+    .no-tail::before {
+        display: none;
+    }
+
+    p.from-me + p.from-them{
+        margin-top: 1rem !important;
+    }
+}
+
 blockquote {
     display: block;
     margin-block-start: 1em;
