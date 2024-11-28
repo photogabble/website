@@ -60,13 +60,13 @@ blockquote {
 }
 
 aside.citation {
-    border-left: 3px solid var(--foreground-muted);
-    padding-left: 1em;
+  border-left: 3px solid var(--foreground-muted);
+  padding-left: 1em;
 }
 
 aside.citation blockquote {
-    border-left: none;
-    padding-left: 0;
+  border-left: none;
+  padding-left: 0;
 }
 
 pre {
@@ -148,6 +148,12 @@ main {
   font-size: 1.2em;
   flex-grow: 1;
   margin-bottom: 2em;
+}
+
+main > section {
+  text-wrap: balance;
+  text-wrap: pretty;
+  overflow: hidden;
 }
 
 article > header {
@@ -284,7 +290,6 @@ article.resource.bookmark .btn-list ul {
 article.resource.bookmark .btn-list li {
   height: 31px;
 }
-
 
 .tags-list ul {
   display: grid;
@@ -453,7 +458,7 @@ ul.alphabet {
   top: -200px;
 }
 
-.page-meta{
+.page-meta {
   position: relative;
   background-color: var(--background-muted);
   border-top: 3px solid var(--accent);
@@ -491,7 +496,7 @@ ul.alphabet {
     padding: 0 1em;
   }
 
-  body > header > div.container{
+  body > header > div.container {
     margin-top: 40px;
   }
 }
