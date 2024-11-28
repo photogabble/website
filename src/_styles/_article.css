@@ -81,36 +81,12 @@ article footer ol {
     width: auto;
 }
 
-article figure {
-    width: 100%;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-    margin-bottom: .9rem;
-}
-
-article figure figcaption p {
-    width: 100%;
-    font-size: .75rem;
-    margin-top: .25rem;
-    margin-bottom: 0;
-}
-
 article p > code {
     font-size: 1rem;
-    background: lightgrey;
-    padding: 0.1rem;
+    background: #2d2524;
+    padding: 0.1rem 0.4rem;
     border-radius: 0.2rem;
-}
-
-article blockquote p {
-    width: 100%;
-    font-size: 1.6rem;
-}
-
-article blockquote p:first-child {
-    margin-top: 0;
+    color: #FFC107;
 }
 
 span.new-thought {
