@@ -1,6 +1,7 @@
 ---
 title: "Weekly Quote #73"
-tags: [Quote]
+tags:
+  - Quote
 cite:
     name: Meredith Ethington
     href: https://perfectionpending.net/firsts-and-lasts/
