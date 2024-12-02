@@ -31,7 +31,7 @@ Seems it might be time to dust off my dSLR and begin taking some snaps!
 - ![[ Running a multi-purpose server, part 0: what? ]]
 - ![[ The One Billion Row Challenge ]]
 - ![[ Hiew Hex Editor ]]
-- ![[ Building a self-contained game in C# under 2 kilobytes ]]
+- ![[ Building a self-contained game in C/# under 2 kilobytes ]]
 - ![[ Turn Your Code Into Pixel Art ]], reminded me of executable images
 - ![[ Columnarised Highlights ]], I thought this to be a fantastic way of displaying large bodies of text in a small area. I wonder what the bee movie would look like?
 
