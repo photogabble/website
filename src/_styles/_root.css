@@ -92,6 +92,12 @@ figure {
 
 figure img {
     max-width: 100%;
+    height: auto;
+}
+
+figure picture {
+    display: flex;
+    justify-content: center;
 }
 
 figure picture + figcaption,
