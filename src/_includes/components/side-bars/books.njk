@@ -34,7 +34,7 @@
                 </p>
                 {% if review %}
                 <p>{{ review.data.rating | ratingToStars }}</p>
-                <p>Finished: {{ review.data.progress.finished | dateToFormat("dd LLL yyyy") }}</p>
+                {% if review.data.progress.finished %}<p>Finished: {{ review.data.progress.finished | dateToFormat("dd LLL yyyy") }}</p>{% endif %}
                 {% endif %}
             </a>
         {% endfor %}
