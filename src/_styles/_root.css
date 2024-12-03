@@ -24,6 +24,14 @@
     --jumbo-nav-accent-color: rgb(205 203 255);
     --jumbo-nav-anchor-color: rgb(205 203 255);
     --jumbo-nav-anchor-hover-color: #ff353f;
+
+    /* Markdown Alert Colours */
+    --color-note: #0969da;
+    --color-tip: #1a7f37;
+    --color-warning: #9a6700;
+    --color-severe: #bc4c00;
+    --color-caution: #d1242f;
+    --color-important: #8250df;
 }
 
 /* Colours from https://wingolog.org/ */

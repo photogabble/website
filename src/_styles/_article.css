@@ -75,6 +75,15 @@ article ol {
     margin: 1rem 0;
 }
 
+article .markdown-alert {
+    width: 83%;
+    margin: 1rem 0;
+
+    p {
+        width: 100%;
+    }
+}
+
 article footer p,
 article footer ul,
 article footer ol {

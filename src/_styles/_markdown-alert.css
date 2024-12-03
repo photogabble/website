@@ -1,0 +1,61 @@
+.markdown-alert {
+    width: 83%;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    border-left: .25em solid #888;
+
+    >:first-child,
+    >:last-child {
+        margin-bottom: 0;
+    }
+
+    .markdown-alert-title {
+        display: flex;
+        font-weight: 500;
+        align-items: center;
+        line-height: 1;
+
+        .octicon {
+            margin-right: 0.5rem;
+            display: inline-block;
+            overflow: visible !important;
+            vertical-align: text-bottom;
+            fill: currentColor;
+        }
+    }
+
+    &.markdown-alert-note {
+        border-left-color: var(--color-note);
+        .markdown-alert-title {
+            color: var(--color-note);
+        }
+    }
+
+    &.markdown-alert-important {
+        border-left-color: var(--color-important);
+        .markdown-alert-title {
+            color: var(--color-important);
+        }
+    }
+
+    &.markdown-alert-warning {
+        border-left-color: var(--color-warning);
+        .markdown-alert-title {
+            color: var(--color-warning);
+        }
+    }
+
+    &.markdown-alert-tip {
+        border-left-color: var(--color-tip);
+        .markdown-alert-title {
+            color: var(--color-tip);
+        }
+    }
+
+    &.markdown-alert-caution {
+        border-left-color: var(--color-caution);
+        .markdown-alert-title {
+            color: var(--color-caution);
+        }
+    }
+}
