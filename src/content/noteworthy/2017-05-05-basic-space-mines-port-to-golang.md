@@ -17,7 +17,7 @@ I recently spent a little time going down memory lane and reminiscing about my f
 
 While writing that article I also sat down and ported a BASIC game called Space Mines to Go. Now I am far from an expert in Golang, and would actually call myself a beginner. However, I found it remarkably easy to port the game and wanted to document my thoughts while doing so &ndash; so lets talk about that.
 
-![Space Mines BASIC](/img/happy-fiftyth-birthday-basic-4.png "Space Mines BASIC")
+![Space Mines BASIC source code listing in Usborne Computer Space Games book](/img/happy-fiftyth-birthday-basic-4.png "The BASIC source that spawned this obsession")
 
 Space Mines is a command line strategy/management game. It was published in 1982 by Usborne as BASIC source code within the book [[Computer spacegames]]. In the same year it was also released on tape for the ZX Spectrum 16K, for more information on that release [click here](http://www.worldofspectrum.org/infoseekid.cgi?id=0019122).
 
@@ -373,6 +373,6 @@ The BASIC version comes in at 71 lines in total, with the Go port having 144 mor
 
 For some reason this game has stuck in my mind, it could be because the book that I found it in has very pretty illustrations that captured my imagination the first time I typed this out into my Toshiba T3100e all those years ago.
 
-![Space Mines MS-DOS](/img/basic-space-mines-port-to-golang-1.png "Space Mines MS-DOS")
- 
+![Space Mines running from the Windows command prompt](/img/basic-space-mines-port-to-golang-1.png)
+
 I have in the past seen other peoples ports to languages such as C++ where they have extended it with additional end games as well as refining the satisfaction and food mechanism. I have made my port available on [github here](https://github.com/carbontwelve/go-space-mines) and would very much appreciate a fork if you would like to add your own spin on this text based game from the 80s.

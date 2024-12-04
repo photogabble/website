@@ -8,10 +8,13 @@ tags:
 cover_image: /img/lessc-version.png
 ---
 
+![Installing lessc on windows via npm](/img/lessc-version.png)
 
-![Installing lessc on windows via npm](/img/lessc-version.png "Installing lessc on windows via npm")
+To install less via node package manager (npm) at the command line run:
 
-To install less via node package manager (npm) at the command line run `npm install less -g`
+```
+npm install less -g
+```
 
 Once installed type `lessc --version` to check that it was successfully installed.
 
@@ -19,7 +22,7 @@ Next we set up a file watcher in PHPStorm. Open project settings (File -> Settin
 
 A window called *New Watcher* will pop up, there are a few important bits of information we need to enter here, the most important of which is the *Program* field, this is where we tell the LESS watcher the location of the `lessc` tool that we installed. PHPStorm requires an absolute path to the program and to find that we run `where lessc` on the command line.
 
-![Finding where lessc is on your computer](/img/lessc-where.png "Finding where lessc is on your computer")
+![Finding where lessc is on your computer](/img/lessc-where.png)
 
 Having done so you should see the above output in your command line, PHPStorm needs the path referencing `lessc.cmd` so copy that line into the *Program* field.
 

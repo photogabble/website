@@ -9,4 +9,4 @@ tags:
   - list/watched
 ---
 
-{% figure "/img/films/media/space-sweepers.jpg", '...', "..." %}
+![](/img/films/media/space-sweepers.jpg)

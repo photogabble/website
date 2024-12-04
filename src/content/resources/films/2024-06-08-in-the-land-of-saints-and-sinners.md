@@ -7,5 +7,3 @@ imdb: https://www.imdb.com/title/tt15782690/
 tags:
   - list/watched
 ---
-
-{% figure "/img/films/media/the-lost-city.jpg", '...', "..." %}

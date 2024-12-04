@@ -10,7 +10,7 @@ cover_image: /img/fail2ban-regex.png
 ---
 
 
-![WordPress Jetpack malicious login attempts](/img/wordpress-jetpack-malicious-login-attempts.png "Wordpress Jetpack malicious login attempts")
+![WordPress Jetpack malicious login attempts](/img/wordpress-jetpack-malicious-login-attempts.png)
 
 Day to day I quite often develop for and work with self hosted WordPress installs, a number of which I host myself; all of the installs that I manage have the Jetpack plugin by Automattic installed which alongside the many beneficial features it provides, also tells you in your dashboard how many malicious login attempts have been blocked.
 
@@ -86,7 +86,7 @@ To use `fail2ban-regex` on the sample log file shown above with the new `wordpre
 
 The length of time that the test takes will be dependant upon the size of the log file being tested against, if you do not already do so, I would *recommend* the setting up of logrotate for your log files. Once the test is complete you will see output on your terminal looking something like the below:
 
-![fail2ban-regex output](/img/fail2ban-regex.png "fail2ban-regex output")
+![fail2ban-regex output](/img/fail2ban-regex.png)
 
 So long as the output finishes with *"Success, the total number of match is"* followed by the number of any matches, then the filter has passed the test. You can always, if you havent already do a failed log in to your wordpress install to see the count of matches increase; however so long as the test finishes with a success there is no need.
 

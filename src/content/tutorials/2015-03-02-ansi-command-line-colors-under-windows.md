@@ -14,9 +14,9 @@ Coming from a linux and osx background, the one thing that I missed the most whe
 
 As of writting version 1.66 is the *latest*[^1] release of ANSICON and can be obtained from the [github repository here](https://github.com/adoxa/ansicon/releases). There have been 16 commits to the master repository since the 1.66 release and if you know how to compile the project from source then you will be able to run with version 1.70[^2].
 
-![Installing Ansicon](/img/ansicon-install.png "Installing Ansicon")
+![Installing Ansicon...](/img/ansicon-install.png "Installing *Ansicon*")
 
-To begin download and extract the ansi166.zip from [github](https://github.com/adoxa/ansicon/releases). Then, if you have a 32-bit version of Windows copy the `x86` directory to `C:\` or `x64` if you have 64-bit Windows. Next rename the copied directory to `ansicon` then with it selected in file explorer hold the [shift] key and right click on the `ansicon` directory to bring up the context menu. From the menu click *open command window here*[^3].
+To begin download and extract the ansi166.zip from [GitHub](https://github.com/adoxa/ansicon/releases). Then, if you have a 32-bit version of Windows copy the `x86` directory to `C:\` or `x64` if you have 64-bit Windows. Next rename the copied directory to `ansicon` then with it selected in file explorer hold the [shift] key and right click on the `ansicon` directory to bring up the context menu. From the menu click *open command window here*[^3].
 
 Running `ansicon.exe -i` from the newly opened command window will install ansicon into your system[^4]; it can just as easily be un-installed by running with the `-u` flag like so `ansicon.exe -u`. 
 

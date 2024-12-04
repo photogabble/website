@@ -9,7 +9,7 @@ tags:
 ---
 
 
-![Azure CLI Tool](/img/azure-cli-1.png "Azure CLI Tool")
+![Azure CLI Tool](/img/azure-cli-1.png)
 
 I initially attempted to install the Windows Azure Powershell, having followed the official documentation [available here](https://azure.microsoft.com/en-gb/documentation/articles/powershell-install-configure/) which due to my computer only having Windows PowerShell[^1] version 2.0 meant upgrading it to at least 3.0 or greater (at the time of writing, version 4.0 is available and can be installed from [here](https://www.microsoft.com/en-us/download/details.aspx?id=40855). However once installed I couldn't get half the cmdlets on the install test documentation to work so I switched gears and decided to give the Azure CLI a bash instead.
 

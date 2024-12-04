@@ -9,4 +9,4 @@ tags:
   - list/watched
 ---
 
-{% figure "/img/films/media/enola-holmes.jpg", 'Not the usual suspects', "..." %}
+![An aged photo of the films cast stood on a stage](/img/films/media/enola-holmes.jpg "Not the usual suspects")

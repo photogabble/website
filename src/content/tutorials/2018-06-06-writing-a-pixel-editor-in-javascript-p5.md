@@ -10,8 +10,7 @@ aliases:
   - 'Stage five: Saving of images'
 ---
 
-
-![Pixel Editor](/img/javascript-pixel-paint-11.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-11.png)
 
 In [[Writing a pixel editor in javascript - Part four|part four]] we finished adding the pallet and colour selector to our pixel editor. In this, the fifth part, we shall be cleaning up the code, placing it within its own IIFE and making it strict mode compliant followed by adding the ability to save the images that are created with it.
 
@@ -21,7 +20,7 @@ In [[Writing a pixel editor in javascript - Part four|part four]] we finished ad
 * [[Writing a pixel editor in javascript - Part two|Stage two: 1-bit drawing to a 16x16 pixel canvas]]
 * [[Writing a pixel editor in javascript - Part three|Stage three: Adding a preview]]
 * [[Writing a pixel editor in javascript - Part four|Stage four: Adding a palette selector]]
-* [[Writing a pixel editor in javascript - Part five|Stage five: Saving of images]]
+* **[[Writing a pixel editor in javascript - Part five|Stage five: Saving of images]]**
 * [[Writing a pixel editor in javascript - Part six|Stage six: Webpack, Linting and ES6]]
 * Stage seven: Adding a paint bucket tool and undo history
 * Stage eight: Writing a PHP backend to create a public library of images
@@ -143,11 +142,11 @@ The above code belongs within the `$(document).ready(function(){` block of your 
 
 For security reasons if we do not set the `download` property on the temporary link. Chrome (and likely all other modern browsers) will log the following error _"Not allowed to navigate top frame to data URL:"_.
 
-![Pixel Editor](/img/javascript-pixel-paint-12.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-12.png)
 
 Now upon refreshing `index.html` in your browser, you should see the above, and upon clicking the save button your browser should prompt to download a png image.
 
-Thank you so much for reading this tutorial, next in part six, we will refactor the JavaScript into ES6 and use [Webpack](https://webpack.js.org/) to build the project.
+Thank you so much for reading this tutorial, next in [[Writing a pixel editor in javascript - Part six|part six]], we will refactor the JavaScript into ES6 and use [Webpack](https://webpack.js.org/) to build the project.
 
 [^1]: Source: [MDN - Strict Mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 [^2]: Immediately-invoked function expression, for more information [read this article by Ben Alman](http://benalman.com/news/2010/11/immediately-invoked-function-expression/)

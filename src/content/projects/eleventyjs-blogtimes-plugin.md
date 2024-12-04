@@ -13,7 +13,7 @@ tags:
 
 Blogtimes is a plugin for the Eleventy static site generator, written in JavaScript. Given a directory with a valid git repository it will generate a histogram of commit times over 24 hours defaulting to within the past 30 days.
 
-{% figure "/img/11ty-blogtimes.png", "Look at all those late nights...", "A black and white histogram showing 24 hours with vertical lines showing when edits where made. The lines have a transparency and so the darker lines show more edits during that time." %}
+![A black and white histogram showing 24 hours with vertical lines showing when edits where made. The lines have a transparency and so the darker lines show more edits during that time.](/img/11ty-blogtimes.png "Look at all those late nights...")
 
 It's a direct port from PHP of the [[Blogtimes: A trip down memory lane|WordPress plugin Blogtimes]], which was itself ported to WordPress by Matt Mullenweg from b2 in 2003.
 

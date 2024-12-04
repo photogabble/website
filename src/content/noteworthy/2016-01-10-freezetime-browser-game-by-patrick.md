@@ -10,7 +10,7 @@ tags:
   - stage/budding
 ---
 
-![Freezetime JavaScript game by Patrick Seeber](/img/freezetime-gameplay-img-1.png "Freezetime JavaScript game by Patrick Seeber")
+![Freezetime JavaScript game by Patrick Seeber](/img/freezetime-gameplay-img-1.png)
 
 Two genres that I am absolutely in love with are *indie game development* and *pixel art*; as a result a large number of the people that I follow on Twitter fall into those two categories as developers, artists or both. Having such a talented group of people to follow I often find my twitter feed saturated in absolutely amazing work and today one such piece stood out to me above all others. That thing is a small work-in-progress browser game, written in JavaScript called [Freezetime (click to play)](http://www.scriptology.de/games/freezetime) with gameplay by Patrick Seeber aka [@rubikow](https://twitter.com/Rubikow) and design by Chris Early aka [@ChrisWEarly](https://twitter.com/ChrisWEarly).
 

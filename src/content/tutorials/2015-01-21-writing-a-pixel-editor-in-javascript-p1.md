@@ -10,9 +10,7 @@ aliases:
   - 'Stage one: Setting up the application loop and listening to mouse input'
 ---
 
-
-![Pixel Editor](/img/javascript-pixel-paint-2.png "Pixel Editor")
-[![Pixel Editor](/img/github.png "Github")](https://github.com/photogabble/pixel-editor-tutorial)
+!["Pixel Editor"](/img/javascript-pixel-paint-2.png "This is what we shall be building")
 
 Recently during a conversation with a colleague I was reminded about a small side project that I once maintained called "pixels." It was essentially a 1-bit pallete 16x16 on-line image creator where you could create a tiny image and post it to a gallery. I had written it a number of years ago at a time when I decided that I would start learning JavaScript.
 
@@ -22,7 +20,7 @@ Due to the amount of detail that I have gone into, the tutorial is quite lengthy
 
 **Contents**
 
-* [[Writing a pixel editor in javascript - Part one|Stage one: Setting up the application loop and listening to mouse input]]
+* **[[Writing a pixel editor in javascript - Part one|Stage one: Setting up the application loop and listening to mouse input]]**
 * [[Writing a pixel editor in javascript - Part two|Stage two: 1-bit drawing to a 16x16 pixel canvas]]
 * [[Writing a pixel editor in javascript - Part three|Stage three: Adding a preview]]
 * [[Writing a pixel editor in javascript - Part four|Stage four: Adding a palette selector]]
@@ -234,11 +232,13 @@ if ( Mouse.previousEvents.mouseButton !== Mouse.events.mouseButton )
     console.log('Mouse Button Event Changed');
 }
 ```
+![Pixel Editor Stage 1 Conclusion](/img/pixel-paint-stage-1-conclusion.png "It's not much, but progress is progress")
 
-![Pixel Editor Stage 1 Conclusion](/img/pixel-paint-stage-1-conclusion.png "Pixel Editor Stage 1 Conclusion")
+If all went well then your console should fill up with messages similar to those depicted above &ndash; if so, congratulations you have now laid the groundwork for out pixel editor.
 
-If all went well then your console should fill up with messages similar to those depicted above &ndash; if so, congratulations you have now laid the ground work for out pixel editor.
+> [!TIP]
+> The [source code for this tutorial is available on GitHub](https://github.com/photogabble/pixel-editor-tutorial), feel free to fork the project or raise issues if you have questions.
 
-[Click here to continue to the next stage of the tutorial](/blog/2015/01/28/writing-a-pixel-editor-in-javascript-p2/) where we shall use the mouse input to draw on a 16x16 grid of pixels.
+[[Writing a pixel editor in javascript - Part two|Continue to the next stage of the tutorial]] where we shall use the mouse input to draw on a 16x16 grid of pixels.
 
-[^1]: The use of jQuery is purely as a short cut because it includes a lot of multi-browser support out of the box.
+[^1]: The use of jQuery is purely as a shortcut because it includes a lot of multi-browser support out of the box.

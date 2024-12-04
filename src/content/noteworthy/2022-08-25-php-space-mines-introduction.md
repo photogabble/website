@@ -10,7 +10,7 @@ tags:
 
 I vividly remember first typing into QuickBasic the Space Mines program from a then already old Usborne book titled [[Computer spacegames]]. That very BASIC game totals around 100LoC but is able to simulate running a mining colony with the goal being to survive ten turns.
 
-![Space Mines BASIC](/img/happy-fiftyth-birthday-basic-4.png "Space Mines BASIC")
+![Space Mines BASIC source code listing in Usborne Computer Space Games book](/img/happy-fiftyth-birthday-basic-4.png "The BASIC source that spawned this obsession")
 
 Since first typing in and playing it; this game has stuck with me over the years as being my goto program to port when learning a new language. For five years or so I have had the idea to turn it into a traditional, yet basic, turn based browser game.
 

@@ -16,19 +16,19 @@ This didn't stop me from using the [MS-DOS `defrag` command](https://www.compute
 
 I had forgotten that memory until stumbling upon this [hacker news post titled: Defrag like its 1992](https://news.ycombinator.com/item?id=29585654) way back in December 2021[^1].
 
-{% figure "/img/defrag-like-its-1992-1.png", "Fig 1. A close approximation to the real thing...", "An HTML reproduction of the Text Based UI (TUI) of the MS-DOS Defrag command. It's made up of a selection of ASCII box characters to show sections of the disk that are used/unused. Other characters are used to denote status of disk blocks: r for reading, W for writing, B for bad and X for unmovable." %}
+![An HTML reproduction of the Text Based UI (TUI) of the MS-DOS Defrag command. It's made up of a selection of ASCII box characters to show sections of the disk that are used/unused. Other characters are used to denote status of disk blocks: r for reading, W for writing, B for bad and X for unmovable.](/img/defrag-like-its-1992-1.png "Fig 1. A close approximation to the real thing...")
 
 [Defrag - By ShipLift LLC](https://defrag.shiplift.dev/) as pictured above (_fig 1_) gives me a nostalgic sense of satisfaction, it's akin to a kinetic sculpture or those flowing sand paintings; useless, yet nice to look at.
 
-{% figure "/img/defrag-like-its-1992-2.png", "Fig 2. I can almost hear the rampant clicking of my old 2GB hard drive", "Similar text based UI to Fig 1. This looks much closer to the Defrag I remember using." %}
+![Similar text based UI to Fig 1. This looks much closer to the Defrag I remember using.](/img/defrag-like-its-1992-2.png "Fig 2. I can almost hear the rampant clicking of my old 2GB hard drive")
 
 In the years since I first saw this I have found a handful of others: [J. Román ( **Manz** )](https://manz.dev/) created a more [faithful reproduction of the MS-DOS `defrag` command available on codepen](https://codepen.io/manz/pen/MdErww) (_fig 2_) it gives me the same amount of joy as the version by Andrew LeTourneau and Conner McCall from ShipLift LLC but gets extra points for being closer to the memory I have of running defrag on my Toshiba.
 
-{% figure "/img/defrag-like-its-1992-3.png", "Fig 3. I have always found this applications icon to be very pretty uWu", "An HTML reproduction of the Windows 98 defragment drive interface." %}
+![An HTML reproduction of the Windows 98 defragment drive interface.](/img/defrag-like-its-1992-3.png "Fig 3. I have always found this applications icon to be very pretty uWu")
 
 The last computer I personally ran defrag on was running Windows98; I found this five-year-old [lobsters post titled Windows 95 Defrag Simulator (makes noise)](https://lobste.rs/s/cuoth6/windows_95_defrag_simulator_makes_noise) however the domain is no longer active and has in the years since been squatted. Once again the [Wayback Machine](https://archive.org/web/) comes to our rescue with an [archived copy of their Windows 95 Defrag Simulator](https://web.archive.org/web/20170312133201/http://hultbergs.org/defrag/) (_fig 3_).
 
-I'm unsure why but this one doesn't render correctly on my computer, it does enough that you can see the simulation even though it appears to be simulating erasing data rather than repositioning it.
+I'm unsure why but this one does not render correctly on my computer, it does enough that you can see the simulation even though it appears to be simulating erasing data rather than repositioning it.
 
 Out of the three simulations I found this one is the only one to have HDD activity noise, albeit a recording on loop, it does add something, however it's a little disappointing that it's not synthesized based on simulated disk activity.
 

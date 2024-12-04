@@ -11,7 +11,7 @@ aliases:
 ---
 
 
-![Pixel Editor](/img/javascript-pixel-paint-12.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-12.png)
 
 This part comes three years after the first couple of parts were written and in that time ES6 has become regularly used and tools such as webpack have become synonymous with front end development.
 
@@ -24,7 +24,7 @@ In [[Writing a pixel editor in javascript - Part five|part five]] we tidied up t
 * [[Writing a pixel editor in javascript - Part three|Stage three: Adding a preview]]
 * [[Writing a pixel editor in javascript - Part four|Stage four: Adding a palette selector]]
 * [[Writing a pixel editor in javascript - Part five|Stage five: Saving of images]]
-* [[Writing a pixel editor in javascript - Part six|Stage six: Webpack, Linting and ES6]]
+* **[[Writing a pixel editor in javascript - Part six|Stage six: Webpack, Linting and ES6]]**
 * Stage seven: Adding a paint bucket tool and undo history
 * Stage eight: Writing a PHP backend to create a public library of images
 

@@ -13,6 +13,9 @@ tags:
 
 I was recently pointed towards [ParcelJS](https://parceljs.org/) a _zero configuration_ web application bundler while looking for something with less setup that could replace webpack for small projects and tinkering. Having used Parcel for a while to quickly get project prototypes built I noticed in the documentation that it supports vue.js.
 
+> [!TIP]
+> The [source code for this tutorial is available on GitHub](https://github.com/photogabble/parcel-vue-js-zero-config-project-skeleton), feel free to fork the project or raise issues if you have questions.
+
 If you're unaware, _the_ canonical method for building and bundling a Vue.js application is with [webpack](https://webpack.js.org/) and all the configuration plus boilerplate that comes with it.  There is an official [vue-cli](https://github.com/vuejs/vue-cli) project for zero config, rapid prototyping. However at time of writing it is still in beta and comes with the warning to _do not use in production yet unless you are adventurous._
 
 So lets see how to set up ParcelJS for developing a Vue.js app.
@@ -134,5 +137,3 @@ Once built you will notice a number of build/development related folders that yo
 dist
 node_modules
 ```
-
-[![Parcel Zero Config VueJS Project Skeleton](/img/github.png "Github")](https://github.com/photogabble/parcel-vue-js-zero-config-project-skeleton)

@@ -17,19 +17,23 @@ When you request composer to install a package globally such as: `composer globa
 
 The absolute path that you use will be the following, replacing **USERNAME** with your user name:
 
-> C:\Users\\**USERNAME**\AppData\Roaming\Composer\vendor\bin
+```
+C:\Users\{username}\AppData\Roaming\Composer\vendor\bin
+```
 
 To add the absolute path to your `%PATH%` variable go to *User Accounts* under your `Control Panel` and then with your user account selected, click on *Change my environment variables*. Doing so will open up a box similar to the one below:
 
-![Windows Environment Variables](/img/windows-environment-variables.png "Windows Environment Variables")
+![Windows Environment Variables](/img/windows-environment-variables.png)
 
 As you can see I already have a *PATH* variable set up for my user, with the Folding at home client, if you do not already have one set up for your user then you can click New and add it with the variable name being `PATH` and the variable value being the absolute path to your composer bin directory.
 
 If you, as I do, already have a *PATH* variable set up in your users environment then you need to edit the existing one and append a `;` to previous value followed by the path to your composer bin directory as shown below:
 
-> **;**C:\Users\\**USERNAME**\AppData\Roaming\Composer\vendor\bin
+```
+**;**C:\Users\{username}\AppData\Roaming\Composer\vendor\bin
+```
 
-If you do not end the previous value with a semi-colon then bad things will happen. Once you have updated your `%PATH%`, the changes are imediate, however you need to restart any applications that might have been using it as they will have loaded the old variable before it was changed.
+If you do not end the previous value with a semicolon then bad things will happen. Once you have updated your `%PATH%`, the changes are imediate, however you need to restart any applications that might have been using it as they will have loaded the old variable before it was changed.
 
 To test that your path has been updated you can open a new command window (`cmd`) and type `echo %path%`. This will output a half dozen lines of text to your terminal, the very end of which will be your amendments. 
 

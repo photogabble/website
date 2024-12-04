@@ -9,15 +9,14 @@ aliases:
   - 'Stage two: 1-bit drawing to a 16x16 pixel canvas'
 ---
 
-
-![Pixel Editor](/img/javascript-pixel-paint-3.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-3.png)
 
 In [[Writing a pixel editor in javascript - Part one|part one]] we set the stage to begin writing our 16x16 pixel editor, if all went well you will hopefully be looking at something very similar to the above, a rather unassuming white square on a grey background. While it may not look like much, it is certainly progress and a excellent foundation on which to continue.
 
 **Contents**
 
 * [[Writing a pixel editor in javascript - Part one|Stage one: Setting up the application loop and listening to mouse input]]
-* [[Writing a pixel editor in javascript - Part two|Stage two: 1-bit drawing to a 16x16 pixel canvas]]
+* **[[Writing a pixel editor in javascript - Part two|Stage two: 1-bit drawing to a 16x16 pixel canvas]]**
 * [[Writing a pixel editor in javascript - Part three|Stage three: Adding a preview]]
 * [[Writing a pixel editor in javascript - Part four|Stage four: Adding a palette selector]]
 * [[Writing a pixel editor in javascript - Part five|Stage five: Saving of images]]
@@ -221,9 +220,10 @@ if(
 
 Upon refreshing `index.html` you will now notice that the message "ImageCanvas has focus!" will be printed to your console any time the `(x,y)` position of the mouse relative to the top left of the `<canvas>` element is within the area earmarked for the `ImageCanvas`. 
 
->**NOTE**: The additional `(Mouse.x > 0 && Mouse.y > 0)` at the begining of the `if statement` "fixes" the statement evaluating `TRUE` when the mouse is outside the vacinity of the `<canvas>` &ndash; this is known as a "[hammy fix](http://en.wikipedia.org/wiki/Quick-and-dirty)" and is something we will be coming back to later on in the series.
+> [!NOTE]
+> The additional `(Mouse.x > 0 && Mouse.y > 0)` at the begining of the `if statement` "fixes" the statement evaluating `TRUE` when the mouse is outside the vacinity of the `<canvas>` &ndash; this is known as a "[hammy fix](http://en.wikipedia.org/wiki/Quick-and-dirty)" and is something we will be coming back to later on in the series.
 
-#### Identifing which pixel if any that the cursor has been placed over:
+#### Identifying which pixel if any that the cursor has been placed over:
 
 Now that we have identified when our `ImageCanvas` has focus we need to also identify which, if any 20x20px "pixel" has the cursor over it. This is done within the `ImageCanvas.update` method by looping over each pixel within its `private.pixels` object and checking if the `(x,y)` co-ordinate stored within the `Mouse` object are within any of their area.
 
@@ -285,7 +285,7 @@ context.fillRect(1,1, (private.cWidth - 2), (private.cHeight - 2));
 
 Pasting the above code into your `ImageCanvas.render` method should result in you seeing something similar to the below image when you refresh `index.html` in your browser. While these four lines of code quickly provide us with the borders that we desire, we shall use the second method to draw the grid lines over the top of this box.
 
-![Pixel Editor](/img/javascript-pixel-paint-4.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-4.png)
 
 Drawing the border and all the lines for the grid on each render pass is horribly inefficient, so we shall do it just once when the `ImageCanvas` object is initiated and cache the result so that it is only rendered once in total.
 
@@ -298,7 +298,8 @@ private.cContext = private.cCanvas.get(0).getContext("2d");
 
 On the first line we create a new `<canvas>` DOM element using jQuery and assign it to the `private.cCanvas` property. Then on the second line we assign the canvases 2D context to the `private.cContext` property.
 
-> **NOTE:** Because jQuery exposes the actual DOM element in numeric indexes we have to use `get(0)` before we can `getContext("2d")` from `private.cCanvas` had we used raw JavaScript to assign the `private.cCanvas` property this would not have been necessary[^2].
+> [!NOTE]
+> Because jQuery exposes the actual DOM element in numeric indexes we have to use `get(0)` before we can `getContext("2d")` from `private.cCanvas` had we used raw JavaScript to assign the `private.cCanvas` property this would not have been necessary[^2].
 
 ```javascript
 // Border
@@ -341,7 +342,7 @@ context.putImageData( private.cGrid, 0, 0 );
 
 To see the fruit of our efforts so far, paste the above code into your `ImageCanvas.render` method and refresh `index.html` in your browser and you should see the bellow:
 
-![Pixel Editor](/img/javascript-pixel-paint-5.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-5.png)
 
 #### Drawing the pixels
 
@@ -349,7 +350,8 @@ We now have everything in place to draw the pixels; we shall be doing this direc
 
 Drawing of the pixels requires code that is surprisingly simple, it involves two nested `for` loops counting from 1 to 16 (`private.xPixels` & `private.yPixels`) getting the pixel state from `private.pixels` for each pixel `(x,y)` co-ordinate and then first: drawing a black square at the pixels `(x,y)` co-ordinate if the pixel is *"switched on"* and secondly drawing a transparent grey square at the same location if the pixels mouse over state is `true`.
 
->**NOTE:** Each pixel's width and height (`private.pixelW` & `private.pixelH`) is 20, and the border is (rightly or wrongly) included within that size, so when we draw the square we have to first make sure its `(x,y)` co-ordinates are each offset by `+1` and that the width and height are each reduced by `-1`.
+> [!NOTE]
+> Each pixel's width and height (`private.pixelW` & `private.pixelH`) is 20, and the border is (rightly or wrongly) included within that size, so when we draw the square we have to first make sure its `(x,y)` co-ordinates are each offset by `+1` and that the width and height are each reduced by `-1`.
 
 ```javascript
 for (var y = 1; y <= private.yPixels; y+= 1)
@@ -375,7 +377,7 @@ for (var y = 1; y <= private.yPixels; y+= 1)
 
 Appending the above to your `ImageCanvas.render` method and refreshing `index.html` in your browser should now mean that when you place the mouse cursor over a "pixel" within the grid that it will turn light grey and clicking that pixel will switch its state between black (`on`) and white ('off') &ndash; much like the image below.
 
-![Pixel Editor](/img/javascript-pixel-paint-6.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-6.png)
 
 ### Bugs!
 You may or may not have noticed three potential bugs in the code above, these are the ones I know about[^3] and were intentionally written in for the purpose of this section. Before continuing you may like to take some time looking for possible bugs yourself and attempt to fix them.
@@ -465,9 +467,9 @@ if ( Mouse.x >= (private.offset.x + currentPixel.x) && Mouse.x <= (private.offse
 
 Doing so should result in you seeing similar[^5] to the below when refreshing `index.html` in your browser and nicely brings us to the end of the second part of this five part tutorial.
 
-![Pixel Editor](/img/javascript-pixel-paint-7.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-7.png)
 
-Thank you for reading, next in [part three](/blog/2015/02/04/writing-a-pixel-editor-in-javascript-p3/) we add a live preview to our interface and tidy some of the code up.
+Thank you for reading, next in [[Writing a pixel editor in javascript - Part three|part three]] we add a live preview to our interface and tidy some of the code up.
 
 [^1]: I chose to introduce focus detection without mentioning `(x,y)` offsets as they are discussed later on in this tutorial.
 [^2]: This is something we will re-visit towards the end of the series when we tidy things up.

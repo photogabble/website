@@ -74,7 +74,7 @@ var animals = [
 
 This can be visualised as a stacked graph with each element filling an area that is proportionate to their weight:
 
-![Weighted Pool Pick Example](/img/weighted-random-number-picking-1.png "Weighted Pool Pick Example")
+![Weighted Pool Pick Example](/img/weighted-random-number-picking-1.png)
 
 Now you have a pool of elements, each with a distribution value that is proportionate to their weight; to randomly select a item weighted by its distribution value you pick a random number between 0 and 1 called the _selector_ and loop through each element in the pool subtracting their distribution value from the selector until it becomes a negative number at which point you have the element to return.
  

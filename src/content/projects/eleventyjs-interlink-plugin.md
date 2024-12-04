@@ -74,7 +74,7 @@ Aliases provide you a way of referencing a file using different names, use the `
 
 Embedding files allows you to reuse content across your website while tracking what pages have used it.
 
-To embed a file add an exclamation mark (`!`) in front of any wiki link for example: `![Artificial Intelligence]`. The embedded file will be rendered using 11ty's Template Engine. If you have defined a default embedding layout through `defaultLayout` or the page being embedded has front matter keyed as `layoutKey` then the embed will be rendered wrapped with the discovered template.
+To embed a file add an exclamation mark (`!`) in front of any wiki link for example: `![[Artificial Intelligence]]`. The embedded file will be rendered using 11ty's Template Engine. If you have defined a default embedding layout through `defaultLayout` or the page being embedded has front matter keyed as `layoutKey` then the embed will be rendered wrapped with the discovered template.
 
 ### Back Links
 

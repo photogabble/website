@@ -32,25 +32,25 @@ $ mount a: /Users/<username>/Desktop/turboc
 $ mount c: /Users/<username>/dos
 ```
 
-Once that has been completed your ready to install Turbo C into Dosbox. When you enter the command `a:` into Dosbox it should move to the virtual mount point you set for the a drive which should be our turboc directory with all the install files included within. Once there just enter `INSTALL` and you should be presented with the following screen.
+Once that has been completed your ready to install Turbo C into Dosbox. When you enter the command `a:` into Dosbox it should move to the virtual mount point you set for the `a` drive which should be our turboc directory with all the install files included within. Once there just enter `INSTALL` and you should be presented with the following screen.
 
-![Install Turbo C on Dosbox - Step 1](/img/installing-turbo-c-on-dosbox-1.png "Install Turbo C on Dosbox - Step 1")
+![Install Turbo C on Dosbox - Step 1](/img/installing-turbo-c-on-dosbox-1.png)
 
 Once at this screen press Enter to go to the next step, the next screen as shown below will ask for the source drive which is the one with the install files on it. The default is A which is why we have already mounted the install files directory as A and the destination directory as C all you need to do is just press enter again here.
 
-![Install Turbo C on Dosbox - Step 2](/img/installing-turbo-c-on-dosbox-2.png "Install Turbo C on Dosbox - Step 2")
+![Install Turbo C on Dosbox - Step 2](/img/installing-turbo-c-on-dosbox-2.png)
 
 Once you have followed the previous step you should be seeing the following screen shown below, select _"Install Turbo C onto a Hard Drive,"_ and press enter to go to the next step.
 
-![Install Turbo C on Dosbox - Step 3](/img/installing-turbo-c-on-dosbox-3.png "Install Turbo C on Dosbox - Step 3")
+![Install Turbo C on Dosbox - Step 3](/img/installing-turbo-c-on-dosbox-3.png)
 
 Once you have selected the hard disk as destination make sure that the Turbo C directory is `C:\TC` as shown below which should be the default. If this is so then you should be able to press the down key until "Start Installation" is selected and press return.
 
-![Install Turbo C on Dosbox - Step 4](/img/installing-turbo-c-on-dosbox-4.png "Install Turbo C on Dosbox - Step 4")
+![Install Turbo C on Dosbox - Step 4](/img/installing-turbo-c-on-dosbox-4.png)
 
 Now if everything has been done right the install app will begin installing Turbo C into the `C:\TC` directory as shown below and should complete with zero errors.
 
-![Install Turbo C on Dosbox - Step 5](/img/installing-turbo-c-on-dosbox-5.png "Install Turbo C on Dosbox - Step 5")
+![Install Turbo C on Dosbox - Step 5](/img/installing-turbo-c-on-dosbox-5.png)
 
 You should then be able to press any key to quit the install app at which point typing the following commands will show you the newly installed copy of Turbo C on your Dosbox system:
 
@@ -64,13 +64,13 @@ c: cd TC
 c: tc
 ```
 
-![Install Turbo C on Dosbox - Step 6](/img/installing-turbo-c-on-dosbox-6.png "Install Turbo C on Dosbox - Step 6")
+![Install Turbo C on Dosbox - Step 6](/img/installing-turbo-c-on-dosbox-6.png)
 
 Congratulations, if you see the above screen then you have successfully installed Turbo C onto your Dosbox emulated dos machine. From now on you can create your own programs which will run natively under dos and even go so far as to compile them. This basic install comes with a readme package and some example scripts to learn from. To boot up the readme you just need to type in `readme` instead of `tc` to load the help app.
 
 ## Downloads
 
-I have produced an easy to use package for those of you whom use osx. It contains Dosbox 0.72 and an install of Turbo C ready to go, it will open up just like any other application with one click as though you are running Turbo C native under osx. I hope it makes someones day at least, the icon for this app package came from [here](http://www.freeiconsdownload.com/Free_Downloads.asp?id=573).
+I have produced an easy-to-use package for those of you whom use osx. It contains Dosbox 0.72 and an install of Turbo C ready to go, it will open up just like any other application with one click as though you are running Turbo C native under osx. I hope it makes someones day at least, the icon for this app package came from [here](http://www.freeiconsdownload.com/Free_Downloads.asp?id=573).
 
 * [Download packaged osx TURBOCAPP.zip](/files/turbocapp.zip) &ndash; 3,845KB
 * [Download Turbo C installer tc201.zip](/files/tc201.zip) &ndash; 1,075KB

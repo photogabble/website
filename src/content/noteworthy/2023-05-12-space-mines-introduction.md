@@ -10,7 +10,7 @@ tags:
 
 In the Summer of 2022 I set about beginning to work on a project that has been on my mind for close to a decade: a modern re-imagination of a rather simple #BASIC game called Space Mines; thus started my [[Space Mines|Space Mines Project]].
 
-{% figure "/img/happy-fiftyth-birthday-basic-4.png", "The BASIC source that spawned this obsession", "Space Mines BASIC source code listing in Usborne Computer Space Games book" %}
+![Space Mines BASIC source code listing in Usborne Computer Space Games book](/img/happy-fiftyth-birthday-basic-4.png "The BASIC source that spawned this obsession")
 
 In August (2022) I wrote [[PHP Space Mines: Introduction]] which can be considered the pretext to this introduction. That article investigated if the BASIC version of Space Mines could translate well into a browser game and discussed the original game mechanics, it does but in doing so it would feel quite limited and unbalanced; the original game is after all only supposed to play for a maximum of ten turns.
 
@@ -30,7 +30,7 @@ I was recently introduced to the [Space Traders API](https://spacetraders.io/), 
 Painfully this is the same conclusion I came to August last year (2022) it's just taken some beating around the bush to finally concede that it _is_ the best way to get this project launched!
 
 ## Game Mechanics
-To begin with there will be a one to one relationship between the player and their outpost, in the future I would like to expand the game by adding exploration so that players might navigate the universe and start new outposts.
+To begin with there will be a one-to-one relationship between the player and their outpost, in the future I would like to expand the game by adding exploration so that players might navigate the universe and start new outposts.
 
 Once completed the game will have the following mechanics:
 

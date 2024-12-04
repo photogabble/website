@@ -8,6 +8,7 @@ tags:
 ---
 
 ![blogtimes.png, a histogram view of blog posts by hours of the day over the past 30 days](/img/blogtimes.png)
+{style="background: white; padding: 4rem 2rem; text-align:center"}
 
 Many years ago, during a previous incarnation of this website I displayed the above histogram representation of blogs posted by hour of the day over the past thirty days. I was reminded of this recently when the topic of blogging came up in conversation. I could remember originally getting the idea from Matt Mullenweg's blog over a decade ago but not the exact timeframe, nor could I remember what the code was named.
 

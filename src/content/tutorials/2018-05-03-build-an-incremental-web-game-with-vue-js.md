@@ -76,7 +76,7 @@ data () {
 }
 ```
 
-![Such webdesign, such wow!](/img/build-an-incremental-web-game-with-vue-js-1.png "Such webdesign, such wow!")
+![Such webdesign, such wow!](/img/build-an-incremental-web-game-with-vue-js-1.png)
 
 Now upon running `parcel` in your project directory and visiting [http://localhost:1234/](http://localhost:1234/) you should be presented with the text `Ore Reserves: 0` in a _lovely_ red colour and an ugly button saying "Mine ore" that disappointingly does nothing when clicked.
 
@@ -198,7 +198,7 @@ mounted: function() {
 
 Eventually the amount of food in your mining colony will reduce to zero and we can imagine that all 12 of the colonists hard at work each with empty bellies. This should affect their performance in some way and in the original _BASIC_ game this was conveyed to the player as a _satisfaction_ rating.
 
-![Your colonists are now starving...](/img/build-an-incremental-web-game-with-vue-js-2.png "Your colonists are now starving...")
+![Your colonists are now starving...](/img/build-an-incremental-web-game-with-vue-js-2.png)
 
 Our satisfaction rating will be a float with a value between zero and one and for the time being will be influenced by the amount of food in the stores. To begin we add a `satisfaction` variable to our data function like so:
 
@@ -425,7 +425,7 @@ What we have done here is use our new `Resource`[^1] component as an output for 
 
 In it's current state the game is ugly but "playable" and incorporates the majority of the mechanics that the original _BASIC_ game had. However there is a lot missing for example if you stop selling ore to buy food then you will eventually run out of food and colonists and in its present state you can only have one mine.
 
-![I cant get no satisfaction...](/img/build-an-incremental-web-game-with-vue-js-3.png "I cant get no satisfaction...")
+![I cant get no satisfaction...](/img/build-an-incremental-web-game-with-vue-js-3.png)
 
 In part two we will work on adding the incremental mechanics to our game as well as adding more detail to both mines and colonists. 
 

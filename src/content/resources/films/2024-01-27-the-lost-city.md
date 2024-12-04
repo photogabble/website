@@ -8,4 +8,4 @@ tags:
   - list/watched
 ---
 
-{% figure "/img/films/media/the-lost-city.jpg", '...', "..." %}
+![](/img/films/media/the-lost-city.jpg)

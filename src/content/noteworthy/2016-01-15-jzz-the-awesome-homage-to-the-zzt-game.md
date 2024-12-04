@@ -13,13 +13,13 @@ One of the several games that would result in me spending many an evening starin
 
 I had honestly all but forgotten about ZZT and the many fun filled evenings that the game had once provided me with, that was until I stumbled upon the subreddit [/r/roguelikes](https://www.reddit.com/r/roguelikes/). Looking up at the predominantly ASCII based games I was suddenly reminded of ZZT and went searching on Google to see if a copy of it still existed. Eventually one click lead to another and I ended up stumbling upon the website of [JZT (jzt.xyz)](http://jzt.xyz/). 
 
-![Get ready, because here comes the nostalgia wave](/img/jzz-game-2.png "Get ready, because here comes the nostalgia wave")
+![Two screenshots from JZT showing the intro screen and gameplay](/img/jzz-game-2.png "Get ready, because here comes the nostalgia wave")
 
 JZT is an in-browser game, developed in an identical style to ZZT as a homage to the DOS-era adventure game. The incredible thing is that JZT not only gives you a massive nostalgia hit, but also excitingly comes with its own [game world editor](http://jzt.xyz/blog/editor-progress) (albeit in beta stage at current[^2].)
 
 I had originally planned a couple of hours of my evening to write up some ideas for articles, but instead I ended up playing JZT the majority of that time; and while I did discover two small bugs in the process, one was fixed within a few minutes of my reporting it and the second I feel is a throw back to the limitations of how the ZZT scripting engine works.
 
-![JZZ, save often is all I can say](/img/jzz-game-1.png "JZZ, save often is all I can say")
+![JZZ Gameplay](/img/jzz-game-1.png "JZZ, save often is all I can say")
 
 The game is as you would expect from an adventure game rather linear in its story line and it tends to nicely ease you into how to interact with the game world - often reminding you that you really should be saving often lest you get stuck and loose half an hours progress. 
 

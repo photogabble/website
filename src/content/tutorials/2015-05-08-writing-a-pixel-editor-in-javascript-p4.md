@@ -9,8 +9,7 @@ aliases:
   - 'Stage four: Adding a palette selector'
 ---
 
-
-![Pixel Editor](/img/javascript-pixel-paint-9.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-9.png)
 
 In [[Writing a pixel editor in javascript - Part three|part three]] we finished adding a preview to our pixel editor. In this, the fourth part, we shall be adding the palette selector. As always, you can grab all the files from this tutorial series [here at github](https://github.com/photogabble/pixel-editor-tutorial).
 
@@ -19,7 +18,7 @@ In [[Writing a pixel editor in javascript - Part three|part three]] we finished 
 * [[Writing a pixel editor in javascript - Part one|Stage one: Setting up the application loop and listening to mouse input]]
 * [[Writing a pixel editor in javascript - Part two|Stage two: 1-bit drawing to a 16x16 pixel canvas]]
 * [[Writing a pixel editor in javascript - Part three|Stage three: Adding a preview]]
-* [[Writing a pixel editor in javascript - Part four|Stage four: Adding a palette selector]]
+* **[[Writing a pixel editor in javascript - Part four|Stage four: Adding a palette selector]]**
 * [[Writing a pixel editor in javascript - Part five|Stage five: Saving of images]]
 * [[Writing a pixel editor in javascript - Part six|Stage six: Webpack, Linting and ES6]]
 * Stage seven: Adding a paint bucket tool and undo history
@@ -165,7 +164,7 @@ Paste the following code into your `Palette` objects `render` method:
 
 I have added as many informative comments as I feel are necessary to the above code. We could use the `private.paletteMousePositions.length` property instead of the `private.palette.length` that has ultimately made it into this version; and this is likely something that I will focus on in the last chapter of this series[^2] - with the above pasted into your `Palette` objects public `render` method, refreshing `index.html` in your browser should result in you seeing the below[^3]:
 
-![Pixel Editor](/img/javascript-pixel-paint-10.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-10.png)
 
 Currently clicking on the pallet will achieve nothing because the `update` method is not keeping track of user input; to make it do so, paste the following commented code into your `Palette` objects `update` method:
 
@@ -305,9 +304,9 @@ Once the above is complete and upon refreshing `index.html` you will notice that
 ```
 Having inserted the above amend refreshing your `index.html` should now result in you being able to select the current colour from the pallet and draw with that colour on the drawing canvas area. With the preview displaying a true 16x16 pixel representation of your image.
 
-![Pixel Editor](/img/javascript-pixel-paint-11.png "Pixel Editor")
+![Pixel Editor](/img/javascript-pixel-paint-11.png)
 
-Thank you for reading, next in [part five](/blog/tutorials/writing-a-pixel-editor-in-javascript-p5/) we shall build in saving images that are created and finally making the JavaScript strict mode compliant before packaging it up as a self contained library dependant only on jQuery. If you have any comments, questions or suggestions please leave them below in the comment form, or drop me a tweet [@carbontwelve](https://twitter.com/carbontwelve).
+Thank you for reading, next in [[Writing a pixel editor in javascript - Part five|part five]] we shall build in saving images that are created and finally making the JavaScript strict mode compliant before packaging it up as a self contained library dependant only on jQuery. If you have any comments, questions or suggestions please leave them below in the comment form, or drop me a tweet [@carbontwelve](https://twitter.com/carbontwelve).
 
 [^1]: Because it is a private method it has the privilege to be able to view private properties
 [^2]: Using the `private.paletteMousePositions` property here would allow you to dynamically update the `private.palette` through some public setter method allowing for pallets to be saved and loaded, however that is beyond the scope of this tutorial (feel free to attempt it yourself as an extra exercise)

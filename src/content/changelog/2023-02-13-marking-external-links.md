@@ -8,7 +8,7 @@ tags:
 
 Up until [[Adding Wiki Links to 11ty]] the majority of links on this website where external. With increasing usage of Wiki Links however, it soon became obvious that I needed a way to differentiate between internal and external linking, thus [issue #174: Make external links easier to identify](https://github.com/photogabble/website/issues/174) was opened.
 
-{% figure "/img/marking-external-links-wikipedia.png", "The external link icon seems to be as universal as the pdf icon", "Screenshot of a Wikipedia page showing its references, all external links have an icon next to them showing they are external in nature." %}
+![Screenshot of a Wikipedia page showing its references, all external links have an icon next to them showing they are external in nature.](/img/marking-external-links-wikipedia.png "The external link icon seems to be as universal as the PDF icon")
 
 Keeping with the theme of Wiki, I checked out how Wikipedia marks external links: 
 

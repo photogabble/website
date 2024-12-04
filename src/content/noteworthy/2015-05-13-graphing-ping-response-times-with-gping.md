@@ -7,7 +7,7 @@ tags:
 cover_image: /img/gping-graphical-ping-for-windows.png
 ---
 
-![Graphing ping response times with gping](/img/gping-graphical-ping-for-windows.png "Graphing ping response times with gping")
+![Graphing ping response times with gping](/img/gping-graphical-ping-for-windows.png)
 
 The windows tool [GPING](http://sourceforge.net/projects/gping/) [^1] brought to you by naafay, is an incredibly useful tool for monitoring ping responses from multiple hosts over a period of time from five minutes to hours, days, weeks, months and beyond.
 
@@ -17,7 +17,7 @@ Compared to the alternatives GPING looks to be the most rounded and complete of 
 
 ### Minor Issues
 
-![gping application error](/img/gping-application-error.png "gping application error")
+![gping application error](/img/gping-application-error.png)
 
 Given GPINGS rounded appearance it is sad to note that there is currently one bug and a few minor issues that hinder its appeal, these affect its ability to save graph data while hosts are being pinged, every time I attempt to do this I get the above application error usually resulting in having to restart GPING to get graphing working again and thus loosing all previously collected data points. However if you configure the save location before you tell GPING to start pinging hosts it saves the first time with no problem, but the next time will result in an application error.
 

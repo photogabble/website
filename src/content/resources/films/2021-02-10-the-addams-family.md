@@ -8,5 +8,5 @@ tags:
   - list/watched
 ---
 
-{% figure "/img/films/media/addams-family.jpg", 'A normal family.', "..." %}
+![](/img/films/media/addams-family.jpg "A normal family.")
 
