@@ -90,12 +90,20 @@ article footer ol {
     width: auto;
 }
 
-article p > code {
-    font-size: 1rem;
-    background: #2d2524;
-    padding: 0.1rem 0.4rem;
-    border-radius: 0.2rem;
-    color: #FFC107;
+article :not(pre) > code {
+    font-size: 0.9rem;
+    background: var(--sidebar-background-color);
+    border-width: 1px;
+    padding: 0.125rem 0.2rem;
+    border-radius: .125rem;
+    color: var(--sidebar-anchor-color);
+}
+
+article a > code {
+    --sidebar-anchor-color: #f8f8ea;
+    --sidebar-background-color: #009688;
+    padding-bottom: 0;
+    padding-top: 1px;
 }
 
 span.new-thought {
