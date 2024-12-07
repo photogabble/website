@@ -51,8 +51,8 @@ users:
 ssh_authorized_keys:
   - {ssh-key}
 ```
-
-> ℹ️ You can read more about the `user-data` format in [user data format documentation for cloud-init](https://cloudinit.readthedocs.io/en/23.4.1/explanation/format.html).
+> [!TIP]
+> You can read more about the `user-data` format in [user data format documentation for cloud-init](https://cloudinit.readthedocs.io/en/23.4.1/explanation/format.html).
 
 In the absence of a `network-config` file in the cloud-init configuration, Amazon Linux 2023 will default to DHCP on the first available interface. If you want to customise this see the [cloud-init networking config documentation](https://cloudinit.readthedocs.io/en/23.4.1/reference/network-config-format-v2.html) for details on how.
 
@@ -67,8 +67,6 @@ On Linux you will likely have `mkisofs` or `genisoimage` available to you. For `
 ```shell
 mkisofs -output seed.iso -volid cidata -joliet -rock user-data meta-data
 ```
-
-—
 
 With the main disk image in the right format for VirtualBox and a `seed.iso` for the NoCloud `cloud-init` first boot you can now create a new virtual machine in VirtualBox.
 
