@@ -65,6 +65,20 @@ article a {
     line-break: anywhere;
 }
 
+article a.note {
+    font-size: small;
+    text-transform: uppercase;
+    font-family: monospace;
+    background: #0d24a4; /* TODO: add variable for styling */
+    padding: 1px 6px;
+    border-radius: 3px;
+    color: var(--article-background-color);
+}
+
+article a.note:hover {
+    background: var(--light-key-color);
+}
+
 article p,
 article ul,
 article ol {
@@ -209,18 +223,6 @@ article footer section h3 {
     text-align: right;
 }
 
-article aside {
-    background: #6c1732;
-    padding: 1rem;
-    color: white;
-    margin: 1rem 0;
-    border-left: 10px solid #ffc107;
-}
-
 article aside p {
     margin: 0;
-}
-
-article aside a {
-    color: #ffe8a5;
 }
