@@ -24,6 +24,11 @@
 
 #jumbo-nav.jumbo-nav__open {
     display: block;
+    overflow-y: scroll;
+    height: calc(100vh - 4.25rem);
+    position: absolute;
+    top: 4.25rem;
+    scrollbar-width: thin;
 }
 
 #jumbo-nav nav {
