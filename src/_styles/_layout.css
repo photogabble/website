@@ -34,6 +34,7 @@ main.sidebar__closed {
 
 /* Main Page Header and sidebar share the same prose formatting */
 main > header,
+main.full-width #content,
 .side-bar {
     font-size: 0.8rem;
     line-height: 1.54;
@@ -86,7 +87,7 @@ main > header {
     margin-bottom: 0;
 }
 
-#content {
+main.two-columns #content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -95,6 +96,64 @@ main > header {
 
     grid-row: span 2;
     max-width: 100vw;
+}
+
+/*
+ * FULL WIDTH LAYOUT
+ *
+ * These pages do not have a sidebar and #content shares the same colour scheme as
+ * the navigation does.
+ */
+
+main.full-width {
+    grid-template-columns: 100vw;
+}
+
+main.full-width #content {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+main.full-width #content p {
+    max-width: 1000px;
+}
+
+main.full-width #content a {
+    color: var(--sidebar-anchor-color);
+}
+
+.kanban__column {
+    margin-right: 8px;
+    width: 350px;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    border-radius: 6px;
+    border: 1px solid var(--sidebar-line-color);
+}
+
+.kanban__column header{
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    padding: 8px 16px 4px;
+}
+
+.kanban__column header h2 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.kanban__column header span {
+    display: inline-block;
+    padding: 0.125rem 0.375rem;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    border-radius: 20px;
+    background-color: var(--sidebar-anchor-color-muted);
+    color: var(--sidebar-anchor-color);
 }
 
 /* On screens too small for two columns to look nice, lets make it look nice. */

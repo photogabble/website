@@ -3,10 +3,15 @@
     --sidebar-anchor-color: var(--jumbo-nav-anchor-color);
     --sidebar-background-color: var(--jumbo-nav-background-color);
 
-    /* When the jumbo nav is open, its container should be scrollable in case the
-       viewport is too short to display the whole menu. */
+    scrollbar-color: var(--sidebar-anchor-color) var(--sidebar-background-color);
+    scrollbar-width: thin;
+}
+
+/* In two column layouts; when the jumbo nav is open, its container should be
+   scrollable in case the viewport is too short to display the whole menu. */
+main.two-columns #main-nav.jumbo-nav__open {
     height: 100vh;
-    overflow-y: scroll;
+    position: relative;
 }
 
 .jumbo-nav__open #jumbo-toggle{

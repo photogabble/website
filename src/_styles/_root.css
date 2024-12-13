@@ -15,8 +15,8 @@
     --sidebar-anchor-color-muted: rgba(243, 196, 0, 0.3);
     --sidebar-line-color: #fef9ed;
 
-    --article-background-color: #fef9ed;
-    --article-color: #3f3f3f;
+    --article-background-color: #f8f8ea; /* #fef9ed */
+    --article-color: #171717;
     --article-anchor-color: #009688;
 
     --jumbo-nav-background-color: #001d21;
@@ -66,6 +66,9 @@ body {
     font-size: 16px;
     text-rendering: optimizeLegibility;
     transition: background-color 300ms, color 200ms;
+
+    background: var(--article-background-color);
+    color: var(--article-color);
 }
 
 .nav__off{

@@ -1,4 +1,4 @@
-{% extends "layouts/page.njk" %}
+{% extends "layouts/fullwidth-base.njk" %}
 
 {% set title = "My intentions for 2024" %}
 
@@ -35,13 +35,22 @@
         .intentions-grid p {
             font-size: 0.9em;
         }
-        .intentions-grid-about > h2 {
-            margin-top: 0;
-        }
     </style>
 {% endblock %}
 
-{% block pageContent %}
+{% block content %}
+
+    <h1>Intentions</h1>
+
+    <h2>What is this?</h2>
+    <p>
+        This grid was inspired by this <a href="https://tiana.computer/sunday_sites/2024.html"><em>sunday site</em></a> created by <a href="https://tiana.computer/">Tiana Dueck's</a>. It gives a very brief breakdown of my main intention by month and will act as a companion to my <a href="/noteworthy/2024-roadmap/">2024 Roadmap</a>.
+    </p>
+    <hr />
+    <p>
+        You should go and check out <a href="https://tiana.computer/sunday.html">Tiana's other sunday sites</a> or head over to <a href="https://sundaysites.cafe/">Sunday Sites Cafe</a> to find out what a <em>"sunday site"</em> is.
+    </p>
+
     {% for intention in intentions %}
         <section class="two-columns">
             <div class="intentions-grid">
@@ -52,17 +61,6 @@
                     </div>
                 {% endfor %}
             </div>
-
-            <aside class="intentions-grid-about">
-                <h2>What is this?</h2>
-                <p>
-                    This grid was inspired by this <a href="https://tiana.computer/sunday_sites/2024.html"><em>sunday site</em></a> created by <a href="https://tiana.computer/">Tiana Dueck's</a>. It gives a very brief breakdown of my main intention by month and will act as a companion to my <a href="/noteworthy/2024-roadmap/">2024 Roadmap</a>.
-                </p>
-                <hr />
-                <p>
-                    You should go and check out <a href="https://tiana.computer/sunday.html">Tiana's other sunday sites</a> or head over to <a href="https://sundaysites.cafe/">Sunday Sites Cafe</a> to find out what a <em>"sunday site"</em> is.
-                </p>
-            </aside>
         </section>
     {% endfor %}
 {% endblock %}

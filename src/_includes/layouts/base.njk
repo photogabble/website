@@ -103,7 +103,7 @@
 {#    </nav>#}
 {#</aside>#}
 
-<main>
+<main class="two-columns">
     <header id="main-nav">
         <div class="main-nav">
             <nav>{% for crumb in folder | breadcrumbs %}{% if crumb.href %}<a href="{{ crumb.href }}" title="{{ crumb.title }}">{{ crumb.text or crumb.title }}</a>{% else %}<span>{{ crumb.title }}</span>{% endif %}<span>/</span>{% endfor %}</nav>

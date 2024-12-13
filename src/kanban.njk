@@ -1,0 +1,60 @@
+{% extends "layouts/fullwidth-base.njk" %}
+{% set title = 'Kanban' %}
+
+{% block content %}
+    <h1>Work in progress</h1>
+    <p>
+        Being a digital garden this website can end up with a lot of moving parts in various stages of
+        development. To help me better get a handle on them, I have written this <em>kanban</em> inspired
+        display of my current backlog, with additional columns for: todo, in progress and staged for release.
+    </p>
+    <p>
+        I have restricted myself to queueing up no more than ten tasks within the <strong>todo</strong> state
+        and no more than five tasks are to be <strong>in progress</strong> at any one time. The <strong>staged
+        for release</strong> column contains tasks that have been finished but not published.
+    </p>
+    <p>
+        This works by using the following tags on notes: <strong>status/backlog</strong>, <strong>status/todo</strong>,
+        <strong>status/in-progress</strong> and <strong>status/staged</strong>.
+    </p>
+    <p>For an overview of my intentions this year</p>
+
+    <div style="display: flex; width:100vw">
+        <div class="kanban__column">
+            {% set backlog = collections['status/backlog'] %}
+            <header><h2>Backlog</h2><span>{{ backlog.length or 0 }}</span></header>
+            <ul>
+                {% for item in backlog %}
+                    {% include "components/navigation/kanban-list-line.njk" %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="kanban__column">
+            {% set todo = collections['status/todo'] %}
+            <header><h2>Todo</h2><span>{{ todo.length or 0 }}/10</span></header>
+            <ul>
+                {% for item in todo %}
+                    {% include "components/navigation/kanban-list-line.njk" %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="kanban__column">
+            {% set inProgress = collections['status/in-progress'] %}
+            <header><h2>In Progress</h2><span>{{ inProgress.length or 0 }}/5</span></header>
+            <ul>
+                {% for item in inProgress %}
+                    {% include "components/navigation/kanban-list-line.njk" %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="kanban__column">
+            {% set staged = collections['status/staged'] %}
+            <header><h2>Staged for release</h2><span>{{ staged.length or 0 }}</span></header>
+            <ul>
+                {% for item in staged %}
+                    {% include "components/navigation/kanban-list-line.njk" %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
