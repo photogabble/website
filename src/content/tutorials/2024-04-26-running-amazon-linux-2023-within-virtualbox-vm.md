@@ -1,5 +1,6 @@
 ---
 title: Running Amazon Linux 2023 within VirtualBox
+reviewed: 2024-12-13
 tags:
   - AL2023
   - stage/evergreen
@@ -15,7 +16,7 @@ Finding disk images for Amazon Linux 2 was easy however, aws have hidden away th
 
 https://cdn.amazonlinux.com/al2023/os-images/2023.4.20240416.0/
 
-—
+---
 
 Rotan noted in January 2024 that aws didn't provide VirtualBox disk images. I can confirm that hasn't changed as of April 2024. This means that, at time of writing, Rotan's instructions are the best method for getting Amazon Linux 2023 booting within VirtualBox.
 
@@ -74,8 +75,11 @@ Amazon Linux is _like_ Fedora and so I set the operating system as Linux Fedora 
 
 Before powering the machine on for the first time open its settings and set the network adapter to _"Bridged Adapter"_ and attach the `seed.iso` as an IDE storage device.
 
-—
+---
 
-Once the machine had booted I was able to remote into it by running `ssh ec2-user@al2023`
+Once the machine had booted I was able to remote into it by running the following: 
+```shell
+ssh ec2-user@al2023
+```
 
 At this point you will now have Amazon Linux 2023 running within VirtualBox. You can unmount the `seed.iso` as it's no longer needed and I recommend creating a snapshot now so you can revert back to a fresh install easily in the future without having to repeat all these steps.
