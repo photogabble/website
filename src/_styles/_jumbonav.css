@@ -1,43 +1,28 @@
-#jumbo-toggle {
-    display: inline;
-    border: none;
-    background: none;
-    color: var(--sidebar-anchor-color);
-    font-family: inherit;
-    text-decoration: underline;
-    padding: 0;
-    cursor: pointer;
-    font-size: 0.8rem;
-    line-height: 1.54;
-}
-
 #jumbo-nav {
     display: none;
-    top: 0;
-    left: 0;
     width: 100%;
 
-    padding: 1.5rem;
-    background: var(--jumbo-nav-background-color);
-    color: var(--jumbo-nav-text-color);
+    font-family: var(--monospaced-font-stack);
 }
 
-#jumbo-nav.jumbo-nav__open {
+.jumbo-nav__open #jumbo-nav{
     display: block;
-    overflow-y: scroll;
-    height: calc(100vh - 4.25rem);
-    position: absolute;
-    top: 4.25rem;
-    scrollbar-width: thin;
+    padding-top: var(--spacing);
 }
 
 #jumbo-nav nav {
     display: grid;
     column-gap: 1rem;
+    row-gap: var(--spacing);
     grid-template-columns: repeat(2, 1fr);
 
     color: var(--jumbo-nav-text-color);
     font-size: .9rem;
+
+    padding: 0 var(--gutter);
+    margin: 0 auto;
+    max-width: 1472px;
+    width: 100%;
 }
 
 #jumbo-nav dl:not(.community) {
@@ -48,6 +33,11 @@
 #jumbo-nav dl:not(.community) dt {
     border-bottom: 1px solid;
     margin-bottom: 0.5rem;
+    height: 20px;
+}
+
+#jumbo-nav dl.community {
+    margin-top: 0.5rem;
 }
 
 #jumbo-nav dl.community dd:first-of-type{
@@ -109,7 +99,6 @@
 #jumbo-nav div {
     grid-column-end: span 2;
     border-top: 1px solid;
-    margin-top: 1rem;
 }
 
 

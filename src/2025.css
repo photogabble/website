@@ -1,3 +1,5 @@
+@import "_styles/_jumbonav.css";
+
 html:root, html[data-theme="classic"], [data-theme="classic"] {
     --spacing: 1.5rem;
     --gutter: 40px;
@@ -10,6 +12,12 @@ html:root, html[data-theme="classic"], [data-theme="classic"] {
     --page-key-colour: #ff353f;
     --category-background: #4a3677;
     --category-text-colour: #fff1e0;
+
+    --jumbo-nav-background-color: #001d21;
+    --jumbo-nav-text-color: #fff1e0;
+    --jumbo-nav-accent-color: rgb(205 203 255);
+    --jumbo-nav-anchor-color: rgb(205 203 255);
+    --jumbo-nav-anchor-hover-color: #ff353f;
 
     /* #ff353f14 */
 
@@ -142,13 +150,15 @@ a:hover {
  */
 
 .header-main {
-    padding: 0 var(--gutter);
-    margin: 0 auto;
-    max-width: 1472px;
-    width: 100%;
+    background: transparent;
     padding-top: 1ch;
 
     > div {
+        padding: 0 var(--gutter);
+        margin: 0 auto;
+        max-width: 1472px;
+        width: 100%;
+
         display: flex;
         justify-content: space-between;
     }
@@ -172,6 +182,13 @@ a:hover {
 
 .header-main__menu {
     gap: 1ch;
+}
+
+.jumbo-nav__open .header-main {
+    --page-border-colour: var(--jumbo-nav-text-color);
+
+    background: var(--jumbo-nav-background-color);
+    color: var(--jumbo-nav-text-color);
 }
 
 /*
@@ -334,6 +351,16 @@ body.theme-picker__visible .theme-picker {
     }
 }
 
+ol.list__alphabet,
+ul.list__alphabet {
+    margin: 0;
+    padding:0;
+    list-style: none;
+    display: flex;
+    gap: 0.5em;
+    flex-wrap: wrap;
+}
+
 .article-section__content {
     font-size: 1.3rem;
     line-height: 1.3;
@@ -482,10 +509,14 @@ body.theme-picker__visible .theme-picker {
         max-width: 1472px;
 
         h1 {
-            grid-area: title;
-            grid-column: 1;
             font-size: clamp(2rem, 6vw, 6rem);
             line-height: 1;
+        }
+
+        h2 {
+            margin-top: var(--spacing);
+            font-size: clamp(1rem, 6vw, 2rem);
+            line-height: 1.25;
         }
 
         hr {
@@ -497,6 +528,11 @@ body.theme-picker__visible .theme-picker {
             margin-top: 2rem;
             margin-bottom: calc(var(--spacing) / 2);
         }
+    }
+
+    .article-header__title{
+        grid-area: title;
+        grid-column: 1;
     }
 
     .article-header__category {
@@ -687,6 +723,20 @@ body.theme-picker__visible .theme-picker {
             color: var(--highlight-color-caution);
         }
     }
+}
+
+/*
+ * Page Type: List
+ * List pages use the abstract font size for the main content.
+ */
+
+.page__list .article-section__content {
+    grid-template-areas: "article references";
+}
+
+.page__list .article-section__content-content {
+    font-size: clamp(1rem, 6vw, 2rem);
+    line-height: 1.25;
 }
 
 /*
