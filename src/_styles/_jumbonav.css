@@ -1,13 +1,12 @@
 #jumbo-nav {
     display: none;
     width: 100%;
-
     font-family: var(--monospaced-font-stack);
 }
 
 .jumbo-nav__open #jumbo-nav{
     display: block;
-    padding-top: var(--spacing);
+    padding: var(--spacing) 0;
 }
 
 #jumbo-nav nav {
@@ -49,6 +48,10 @@
     display: inline-block;
     height: 31px;
     width: 88px;
+}
+
+#jumbo-nav dl.community:last-child dd:first-of-type {
+    margin-bottom: 0;
 }
 
 #jumbo-nav dl.community dd:nth-of-type(2) a:hover{
