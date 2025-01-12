@@ -108,7 +108,7 @@
 <body class="{{ page_class or 'page__default' }}">
 
 <aside class="theme-picker">
-    <p class="theme-picker__title">Theme Picker</p>
+    <p class="theme-picker__title">Theme Picker ({{ page_class }})</p>
     <ul>
         {% for theme in themes %}<li>
             <button onclick="setTheme('classic')" class="theme-selector-btn" data-theme="{{ theme.id }}">
