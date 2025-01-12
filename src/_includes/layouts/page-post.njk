@@ -1,12 +1,12 @@
 {% extends "layouts/page.njk" %}
 
-{% block content %}
-    {% include "components/page-article.njk" %}
-{% endblock %}
+{% set page_class = 'page__article' %}
+{% set ogtype = 'article' %}
+{% set readingTime = content | wordStats %}
+{% set filteredTags = tags | withoutTags('writing') | excludeSpecialTags(['type', 'resource']) | formatTagList(collections.topics) %}
+{% set type = tags | specialTagValue('type') %}
+{% set footnotes = content | extractFootnotes %}
 
-{#{% extends "./page.njk" %}#}
-{#{% set ogtype = 'article' %}#}
-{#{% set readingTime = content | wordStats %}#}
 {#{% set headingClass = 'note' %}#}
 {#{% set titlePrefix %}#}
 {#    {% include "components/growth.njk" %} {{ contentType }}#}
@@ -22,7 +22,7 @@
 {#    <br/>{{ readingTime.text if readingTime.words > 0 }}.#}
 {#{% endset %}#}
 
-{#{% block pageContent %}#}
+{% block content %}
 {#    {% if growthStage === 'stub' %}#}
 {#    <section>#}
 {#        <blockquote>#}
@@ -40,24 +40,64 @@
 {#            </details>#}
 {#        </section>#}
 {#    {% endif %}#}
+<article>
+    <header>
+        <div class="article-header__category filled-boxes">
+            <span><a href="#">{{ type }}</a></span>
+            <span>Featured</span>
+        </div>
+        <div class="article-header__meta">
+            <span>Words planted in:</span>
+            <div>
+                {% include "components/tag-list.njk" %}
+            </div>
+        </div>
 
-{#    {% if secondColumn %}#}
-{#        <section class="two-columns two-columns__paragraph breakout">#}
-{#            <div>#}
-{#                {{ content | safe }}#}
-{#            </div>#}
-{#            {% include secondColumn %}#}
-{#        </section>#}
-{#    {% else %}#}
-{#        <section class="full-width">#}
-{#            {{ content | safe }}#}
-{#        </section>#}
-{#    {% endif %}#}
+        <div class="article-header__date">
+            <time datetime="{{ page.date | dateToFormat('iso') }}">{{ page.date | dateToFormat('DDD') }}</time>
+        </div>
 
-{#    {% if tags | includesTag('wayback machine') %}#}
-{#        <hr/>#}
-{#        {% include "components/wayback-machine.njk" %}#}
-{#    {% endif %}#}
+        <h1 class="article-header__title">{{ title }}</h1>
 
-{#    {% include "components/backlinks.njk" %}#}
-{#{% endblock %}#}
+        <hr/>
+
+        {% if readingTime.words > 0 %}
+            <div class="article-header__stats">
+                <span>{{ readingTime.text }}</span>
+            </div>
+        {% endif %}
+    </header>
+
+    <section class="article-section__content">
+        {% if abstract %}<p class="article-section__content-abstract">{{ abstract }}</p>{% endif %}
+        <div class="article-section__content-content">{{ content | withoutFootnotes | safe }}</div>
+        <aside id="sidenote-column-right" class="article-section__content-ref">
+            <div style="margin-top:1rem">
+                First Published: {{ page.date | dateToFormat('DDD') }} in commit <a href="#">########</a>.<br/>
+                Updated: Never<br/>
+                {% if reviewed %}Reviewed: {{ reviewed | dateToFormat('DDD') }}{% endif %}
+            </div>
+        </aside>
+        {% if footnotes.length or backlinks.length %}
+            <footer class="article-section__content-footer">
+                {{ footnotes | safe }}
+
+                {#    {% if tags | includesTag('wayback machine') %}#}
+                {#        <hr/>#}
+                {#        {% include "components/wayback-machine.njk" %}#}
+                {#    {% endif %}#}
+
+                {#    {% include "components/backlinks.njk" %}#}
+
+                {% if backlinks.length %}
+                    <section id="backlinks">
+                        <h3>Pages Linking Here <a class="header-anchor" href="#backlinks">¶</a></h3>
+                        <ul>{% for link in backlinks %}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{% endfor %}</ul>
+                    </section>
+                {% endif %}
+            </footer>
+        {% endif %}
+    </section>
+
+</article>
+{% endblock %}
