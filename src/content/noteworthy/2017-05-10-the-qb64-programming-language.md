@@ -46,7 +46,7 @@ Aside from rebooting old BASIC and Quick BASIC projects from times of yore, QB64
 
 QB64 has re-ignited a spark that I thought time had extinguished; I am certainly going to revisit some of my old code in the modernised IDE and tinker with some of the community developed tools.
 
-If you would like to download and play with QB64, go visit the [official unofficial website here](http://www.qb64.org/) and share with the community your experience of Quick Basic and any old projects you manage to execute in the modernised IDE.
+If you would like to download and play with QB64, go visit the [official unofficial website here](https://qb64.com/) and share with the community your experience of Quick Basic and any old projects you manage to execute in the modernised IDE.
 
 [^1]: [View this forum thread](http://www.qb64.net/forum/index.php?board=15.0) for a list of commands awaiting implementation and for reasons why certain commands cant be implemented.
 [^2]: I have come back to this page in 2024 and discovered that the original link to `https://retrowl.wordpress.com/whispers-in-the-moss/` no longer exists and hasn't been archived by the Way Back Machine. I'm unsure of the link between Retrowl Studios and Uncultured Games but [Whispers in the Moss can be bought on Steam](https://store.steampowered.com/app/1944310/Whispers_in_the_Moss/)
