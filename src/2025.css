@@ -730,12 +730,31 @@ ul.list__alphabet {
  */
 
 .page__list .article-section__content {
-    grid-template-areas: "article references";
+    grid-template-columns: minmax(0, 1fr) 250px;
+    grid-template-areas:"article references";
+    row-gap: 0;
+}
+
+.page__list .list-section {
+    grid-area: list;
 }
 
 .page__list .article-section__content-content {
-    font-size: clamp(1rem, 6vw, 2rem);
+    font-size: clamp(1rem, 6vw, 1.5rem);
+}
+
+.page__list .article-section__content-content > * {
+    padding-right: var(--left-margin);
+}
+
+.page__list .article-section__content-content p:first-child {
+    font-size: clamp(1.2rem, 6vw, 2rem);
     line-height: 1.25;
+    padding-right: 0;
+}
+
+.page__list .article-section__content-footer {
+    margin-left: 0;
 }
 
 /*
