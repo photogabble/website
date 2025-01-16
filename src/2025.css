@@ -189,8 +189,6 @@ hr {
 }
 
 .jumbo-nav__open .header-main {
-    --page-border-colour: var(--jumbo-nav-text-color);
-
     background: var(--jumbo-nav-background-color);
     color: var(--jumbo-nav-text-color);
 }
@@ -388,7 +386,6 @@ ul.list__alphabet {
         padding: 0;
         height: 1.5px;
         background: var(--page-text-colour);
-        border: none;
     }
 
     figcaption {
@@ -583,11 +580,10 @@ ul.list__alphabet {
     .article-section__content {
         display: grid;
         grid-template-areas:
-                "abstract ."
-                "article references"
-                "footer references"
-                "related related";
-        grid-template-columns: minmax(0, 1fr) 250px;
+                "abstract abstract ."
+                "toc article references"
+                "toc footer references";
+        grid-template-columns: var(--left-margin) minmax(0, 1fr) 250px;
         row-gap: var(--gutter);
         column-gap: calc(var(--gutter) / 2);
     }
@@ -614,11 +610,25 @@ ul.list__alphabet {
         font-size: 0.8rem;
     }
 
+    .article-section__content-toc,
     .article-section__content-ref {
         font-family: var(--monospaced-font-stack);
         font-size: 0.8rem;
         margin-top: 5px;
+        padding-top: 1rem;
         border-top: 1px solid var(--page-border-colour);
+    }
+
+    .article-section__content-toc {
+        grid-area: toc;
+    }
+
+    .article-section__content-toc > div {
+        position: sticky;
+        top: var(--gutter);
+    }
+
+    .article-section__content-ref {
         grid-area: references;
     }
 
@@ -626,7 +636,6 @@ ul.list__alphabet {
         grid-area: footer;
         border-top: 1px solid var(--page-border-colour);
         padding-top: var(--spacing);
-        margin-left: calc(var(--left-margin) + var(--gutter));
     }
 }
 
@@ -634,27 +643,10 @@ ul.list__alphabet {
  *  Page Type: Article, List
  */
 
-.page__article {
-    .article-section__content-content {
-        &::before {
-            position: relative;
-            display: block;
-            content: '';
-            width: var(--left-margin);
-            border-top: 1px solid var(--page-border-colour);
-            top: 5px;
-        }
-
-        > * {
-            margin-left: calc(var(--left-margin) + var(--gutter));
-        }
-    }
-}
-
 .markdown-alert {
     font-size: 1.2rem;
-    margin: 1rem 0 1rem calc(var(--left-margin) + var(--gutter) - 1.25rem);
-    padding: 1rem !important;
+    margin: var(--spacing) 0;
+    padding: var(--spacing) !important;
     border-left: .25em solid var(--page-key-colour);
 
     p {
