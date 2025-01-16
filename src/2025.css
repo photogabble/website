@@ -452,6 +452,9 @@ ul.list__alphabet {
 #backlinks ul{
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    font-family: var(--monospaced-font-stack);
+    font-size: 0.9rem;
+    list-style-position: inside;
 }
 
 /*
