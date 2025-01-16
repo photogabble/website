@@ -14,6 +14,10 @@ export default {
   // Tagged as special topic type, these aren't regular pages
   tags: ['type/stage'],
 
+  // Stage is a list of posts
+  // TODO: does this need setting at the taxonomy folder level?
+  layout: 'layouts/page-index.njk',
+
   // Do not display page meta data
   hide_meta: true,
   folder: ['series'],

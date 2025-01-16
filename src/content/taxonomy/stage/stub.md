@@ -2,8 +2,7 @@
 title: Stub Posts
 aliases: 
   - Stubs
-sub_title: Like drafts, but public
-layout: layouts/page-post.njk
+sub_title: Like drafts, but public.
 sidebar_title: Works in Progress
 sidebar_topic: 'stage/stub'
 folder: 
