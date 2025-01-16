@@ -528,10 +528,6 @@ ul.list__alphabet {
 
         hr {
             grid-area: seperator;
-            height: 1px;
-            width: 100%;
-            border: none;
-            background: var(--page-border-colour);
             margin-top: 2rem;
             margin-bottom: calc(var(--spacing) / 2);
         }
