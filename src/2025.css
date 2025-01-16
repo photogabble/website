@@ -145,6 +145,12 @@ a:hover {
     text-decoration: none;
 }
 
+hr {
+    height: 1px;
+    border: none;
+    background: var(--page-border-colour);
+}
+
 /*
  * Main Header
  */
@@ -165,9 +171,6 @@ a:hover {
 
     hr {
         margin-top: 1ch;
-        border: none;
-        height: 1px;
-        background: var(--page-border-colour);
     }
 
     svg {
@@ -571,6 +574,10 @@ ul.list__alphabet {
 
     article > section {
         padding: calc(var(--gutter) / 2) var(--gutter);
+    }
+
+    article > hr {
+        margin: calc(var(--gutter) / 2) var(--gutter);
     }
 
     .article-section__content {
