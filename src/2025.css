@@ -157,7 +157,8 @@ hr {
 
 .header-main {
     background: transparent;
-    padding-top: 1ch;
+    padding: 1ch 0;
+    border-bottom: 1px solid;
 
     > div {
         padding: 0 var(--gutter);
