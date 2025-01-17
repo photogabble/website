@@ -494,13 +494,13 @@ ul.list__alphabet {
  */
 .page__list,
 .page__article {
-    article {
+    main > article {
         margin: 60px auto;
         max-width: 1472px;
         width: 100%;
     }
 
-    article > header {
+    main > article > header {
         display: grid;
         grid-template-areas:
                 "category category"
@@ -623,7 +623,7 @@ ul.list__alphabet {
         grid-area: toc;
     }
 
-    .article-section__content-toc > div {
+    .article-section__content-toc > nav {
         position: sticky;
         top: var(--gutter);
     }
@@ -737,6 +737,50 @@ ul.list__alphabet {
 
 .page__list .list-section {
     grid-area: list;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--gutter);
+}
+
+.page__list .list-section article {
+    display: block;
+    background: bisque;
+    padding: 1ch;
+
+    > div {
+        border: 1px solid var(--page-border-colour);
+        min-height: 250px;
+        display: grid;
+        grid-template-rows: 110px 1fr 30px;
+    }
+
+    small{
+        font-family: var(--monospaced-font-stack);
+        color: var(--page-text-colour);
+    }
+
+    header {
+        align-self: flex-end;
+        padding: 1ch;
+
+        h3{
+            font-size: 1.4rem;
+            margin-bottom: 0;
+        }
+    }
+
+    footer{
+        display: flex;
+        align-items: center;
+        border-top: 1px solid var(--page-border-colour);
+        padding: 0 1ch;
+    }
+}
+
+.page__list .list-section .featured {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    height: 100%;
 }
 
 .page__list .article-section__content-content {

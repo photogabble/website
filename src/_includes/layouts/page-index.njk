@@ -3,6 +3,14 @@
 {% set page_class = 'page__list' %}
 {% set type = tags | specialTagValue('type') %}
 
+{% if sidebar_items %}
+    {% set items = sidebar_items %}
+{% elseif sidebar_topic === 'stage/stub' %}
+    {% set items = collections[sidebar_topic] | reverse %}
+{% else %}
+    {% set items = collections[sidebar_topic] | notTagged('stage/stub') | reverse %}
+{% endif %}
+
 {% block content %}
 <article>
     <header>
@@ -11,7 +19,7 @@
         </div>
 
         <div class="article-header__meta">
-            <span>0 items,</span> last updated on 1st Jan, 2025
+            <span>{{ items.length }} items,</span> last updated on 1st Jan, 2025
         </div>
 
         <h1 class="article-header__title">{{ title }}</h1>
@@ -39,7 +47,21 @@
     {% endif %}
 
     <section class="list-section">
-        LIST
+        {%- for post in items -%}
+            <article>
+                <div>
+                    <header>
+                        <h3><a href="{{ post.url }}" title="Read {{ post.data.title }}">{{ post.data.title }}</a></h3>
+                        <small>~267 words, about a 2 min read</small>
+                    </header>
+                    <div></div>
+                    <footer>
+                        <small>{% if post.data.growthStage === 'stub' %}Due {% else %}Planted {% endif %}{{ post.data.niceDate or post.date | dateToFormat("DDD") }}</small>
+                    </footer>
+                </div>
+            </article>
+        {%- endfor -%}
+{#        {% include "components/side-bars/topic.njk" %}#}
     </section>
 
     <hr>
@@ -52,6 +74,5 @@
             </div>
         {% endif %}
     </footer>
-
 </article>
 {% endblock %}
