@@ -55,6 +55,7 @@ This website is a static generated site, built using [Eleventy](https://www.11ty
     * [@photogabble/eleventy-plugin-tag-normaliser](https://www.npmjs.com/package/@photogabble/eleventy-plugin-tag-normaliser) <small>MIT</small>
     * [@rknightuk/eleventy-plugin-post-graph](https://www.npmjs.com/package/@rknightuk/eleventy-plugin-post-graph) <small>MIT</small>
     * [@11ty/eleventy-img](https://www.npmjs.com/package/@11ty/eleventy-img) <small>MIT</small>
+    * [@uncenter/eleventy-plugin-toc](https://github.com/uncenter/eleventy-plugin-toc) <small>MIT</small>
 * [postcss](https://github.com/postcss/postcss) <small>MIT</small> & plugins:
     * [postcss-import](https://www.npmjs.com/package/postcss-import) <small>MIT</small>
     * [postcss-minify](https://www.npmjs.com/package/postcss-minify) <small>MIT</small>

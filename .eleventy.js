@@ -12,6 +12,7 @@ import {registerShortcodes} from "./lib/shortcodes.js";
 import {registerFilters} from "./lib/filters.js";
 import {registerCollections} from "./lib/collections.js";
 import * as Eleventy from '@11ty/eleventy';
+import ToCPlugin from '@uncenter/eleventy-plugin-toc';
 const {EleventyRenderPlugin} = Eleventy;
 
 
@@ -21,6 +22,14 @@ export default async function (eleventyConfig) {
   //
   // Install Plugins
   //
+
+  /**
+   * Table of Contents Plugin
+   * @see https://github.com/uncenter/eleventy-plugin-toc
+   */
+  eleventyConfig.addPlugin(ToCPlugin, {
+    ignoredElements: ['a']
+  });
 
   /**
    * 11ty Render Plugin
