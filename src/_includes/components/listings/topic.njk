@@ -1,22 +1,18 @@
-{% if sidebar_items %}
-    {% set items = sidebar_items %}
-{% elseif sidebar_topic === 'stage/stub' %}
-    {% set items = collections[sidebar_topic] | reverse %}
-{% else %}
-    {% set items = collections[sidebar_topic] | notTagged('stage/stub') | reverse %}
-{% endif %}
-
-{% if not sidebar_title %}
-    {% set sidebar_title = metadata.specialTags[sidebar_topic].sidebar_title %}
-{% endif %}
-
-<section class="post-list">
-    <header class="post-list__inline-header">
-        <h3>{{ sidebar_title }}</h3> {{ items.length }} {% if items.length > 1 %}items{% else %}item{% endif %}
-    </header>
-    <ol class="post-list__chronological">
-        {%- for post in items -%}
-            {% include "components/post-list-line.njk" %}
-        {%- endfor -%}
-    </ol>
+<section class="list-section">
+    {%- for post in items -%}
+    {# {% include "components/post-list-line.njk" %} #}
+        <article>
+            <div>
+                <header>
+                    <h3><a href="{{ post.url }}" title="Read {{ post.data.title }}">{{ post.data.title }}</a></h3>
+                    <small>~267 words, about a 2 min read</small>
+                </header>
+                <div></div>
+                <footer>
+                    <small>{% if post.data.growthStage === 'stub' %}Due {% else %}Planted {% endif %}{{ post.data.niceDate or post.date | dateToFormat("DDD") }}</small>
+                </footer>
+            </div>
+        </article>
+    {%- endfor -%}
+    {#        {% include "components/side-bars/topic.njk" %}#}
 </section>

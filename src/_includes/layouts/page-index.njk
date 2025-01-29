@@ -7,8 +7,10 @@
     {% set items = sidebar_items %}
 {% elseif sidebar_topic === 'stage/stub' %}
     {% set items = collections[sidebar_topic] | reverse %}
-{% else %}
+{% elseif sidebar_topic %}
     {% set items = collections[sidebar_topic] | notTagged('stage/stub') | reverse %}
+{% else %}
+    {% set items = collections.writing | notTagged(['type/project', 'type/resource', 'stage/stub', 'type/glossary', 'type/changelog']) | reverse %}
 {% endif %}
 
 {% block content %}
@@ -27,7 +29,11 @@
         <hr/>
 
         <div class="article-header__stats">
-            <a href="/stubs">Stubs</a>, Seedlings, Budding, Evergreen, Ephemeral
+            <a href="/stubs/" {% if page.url === '/stubs/' %}class="active"{% endif %}>Stubs</a>,
+            <a href="/growth/seedling/" {% if page.url === '/growth/seedling/' %}class="active"{% endif %}>Seedlings</a>,
+            <a href="/growth/budding/" {% if page.url === '/growth/budding/' %}class="active"{% endif %}>Budding</a>,
+            <a href="/growth/evergreen/" {% if page.url === '/growth/evergreen/' %}class="active"{% endif %}>Evergreen</a>,
+            <a href="/growth/ephemeral/" {% if page.url === '/growth/ephemeral/' %}class="active"{% endif %}>Ephemeral</a>
         </div>
     </header>
 
@@ -46,23 +52,19 @@
     <hr>
     {% endif %}
 
-    <section class="list-section">
-        {%- for post in items -%}
-            <article>
-                <div>
-                    <header>
-                        <h3><a href="{{ post.url }}" title="Read {{ post.data.title }}">{{ post.data.title }}</a></h3>
-                        <small>~267 words, about a 2 min read</small>
-                    </header>
-                    <div></div>
-                    <footer>
-                        <small>{% if post.data.growthStage === 'stub' %}Due {% else %}Planted {% endif %}{{ post.data.niceDate or post.date | dateToFormat("DDD") }}</small>
-                    </footer>
-                </div>
-            </article>
-        {%- endfor -%}
-{#        {% include "components/side-bars/topic.njk" %}#}
+    <section>
+        <ul>
+            <li><pre>sidebar_topic: {{ sidebar_topic }}</pre></li>
+            <li><pre>sidebar_component: components/side-bars/{{ sidebar_component }}</pre></li>
+        </ul>
     </section>
+
+    {% if sidebar_component %}
+        {% set list_component_include = 'components/listings/' + sidebar_component + '.njk' %}
+        {% include list_component_include %}
+    {% else %}
+        {# {% include "components/side-bars/writing.njk" %} #}
+    {% endif %}
 
     <hr>
 

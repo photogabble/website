@@ -1,4 +1,4 @@
-{% set itemsByYear = collections.writing | notTagged(['type/project', 'type/resource', 'stage/stub', 'type/glossary', 'type/changelog']) | reverse | groupByYear %}
+{% set itemsByYear = items | groupByYear %}
 
 {% include 'components/partials/post-list-by-year.njk' %}
 
