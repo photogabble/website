@@ -1,7 +1,7 @@
 ---
 title: Changelog
 sub_title: Changes over time
-layout: layouts/page-post.njk
+layout: layouts/page-index.njk
 sidebar_component: topic
 sidebar_title: Release Notes / Changelog
 sidebar_topic: 'type/changelog'

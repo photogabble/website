@@ -16,7 +16,8 @@ export default {
   // Do not display page meta data
   hide_meta: true,
   folder: ['topic'],
-
+  // TODO: does this need setting at the taxonomy folder level?
+  layout: 'layouts/page-index.njk',
   sidebar_component: 'topic',
 
   eleventyComputed: {

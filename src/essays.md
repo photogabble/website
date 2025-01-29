@@ -1,6 +1,6 @@
 ---
 title: Essays
-layout: layouts/page-post.njk
+layout: layouts/page-index.njk
 aliases:
   - Essay
 sidebar_component: topic

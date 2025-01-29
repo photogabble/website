@@ -1,7 +1,7 @@
 ---
 title: Thoughts
 sub_title: A collection of pondering
-layout: layouts/page-post.njk
+layout: layouts/page-index.njk
 sidebar_component: topic
 sidebar_title: Thoughtful Thoughts
 sidebar_topic: 'type/thought'

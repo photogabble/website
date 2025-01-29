@@ -1,7 +1,7 @@
 ---
 title: Tutorials
 sub_title: How-to guides and tutorial series
-layout: layouts/page-post.njk
+layout: layouts/page-index.njk
 sidebar_component: topic
 sidebar_title: How-to guides and tutorial series
 sidebar_topic: 'type/tutorial'
