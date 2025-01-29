@@ -30,7 +30,7 @@ Weirdly enough I didn't post another entry after [[22 of 365, Grievances with Wr
 
 —
 
-That is not to say that I stopped writing entirely; there are a good two dozen drafts in various forms of completion with all but two being [[Evergreen Content|evergreen]] subjects. Now 1,328 days after my last post I am reviving the project and will be using these posts as a starting point.
+That is not to say that I stopped writing entirely; there are a good two dozen drafts in various forms of completion with all but two being [[Evergreen|evergreen]] subjects. Now 1,328 days after my last post I am reviving the project and will be using these posts as a starting point.
 
 I have gone through all 22 previous posts and updated their preface to track the streaks and will likely be writing some functionality into this website to track that for me.
 
