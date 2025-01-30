@@ -71,7 +71,10 @@
     <section class="article-section__content">
         {% if abstract %}<p class="article-section__content-abstract">{{ abstract }}</p>{% endif %}
         <aside class="article-section__content-toc">{{ content | toc | safe }}</aside>
-        <div class="article-section__content-content">{{ content | withoutFootnotes | safe }}</div>
+        <div class="article-section__content-content">
+            {{ content | withoutFootnotes | safe }}
+            {% block content_extra %}{% endblock %}
+        </div>
         <aside id="sidenote-column-right" class="article-section__content-ref">
             <div style="margin-top:1rem">
                 First Published: {{ page.date | dateToFormat('DDD') }} in commit <a href="#">########</a>.<br/>
