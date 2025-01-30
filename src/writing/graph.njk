@@ -4,41 +4,14 @@ folder: [writing, graph]
 ---
 {% extends "layouts/base.njk" %}
 
-{% block style %}
-    <style>
-        #graph {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
-{% endblock %}
-
-{% block navigation %}
-    {% include "components/navigation/writing-view-toggle.njk" %}
-{% endblock %}
-
-{% block sidebar %}
-    <div id="graph">{ graph goes here }</div>
-{% endblock %}
-
 {% block content %}
-<article>
-    <header>
-        <h1>Connection Graph</h1>
-    </header>
-    <section>
-        <p>
-            This connection graph takes its roots from the <a href="https://obsidian.md">Obsidian.md</a> writing app. Using data provided by the <a href="#">@photogabble/interlinker</a> plugin it's able to generate a node graph showing the <em>connectedness</em> of every page of this website.
-        </p>
-        <p>
-            It contains {{ collections.all.length }} nodes connected by x edges. xx% of pages on this website connect to another internal page.
-        </p>
-        <p>
-            For more <em>interesting</em> statistics, why not visit the <a href="/stats/">stats page</a>.
-        </p>
-    </section>
-</article>
+    <p>
+        This connection graph takes its roots from the <a href="https://obsidian.md">Obsidian.md</a> writing app. Using data provided by the <a href="#">@photogabble/interlinker</a> plugin it's able to generate a node graph showing the <em>connectedness</em> of every page of this website.
+    </p>
+    <p>
+        It contains {{ collections.all.length }} nodes connected by x edges. xx% of pages on this website connect to another internal page.
+    </p>
+    <p>
+        For more <em>interesting</em> statistics, why not visit the <a href="/stats/">stats page</a>.
+    </p>
 {% endblock %}
