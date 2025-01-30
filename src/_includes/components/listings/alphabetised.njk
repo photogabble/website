@@ -1,0 +1,17 @@
+{% set grouped = items | alphabetSort %}
+
+<section class="post-list">
+    <ol class="post-list__alphabetised">
+        {%- for letter, terms in grouped -%}
+            {% if terms.length > 0 %}
+                <li id="{{ letter }}">{{ letter }}
+                    <ul>
+                        {%- for term in terms %}
+                            <li>{% if page and page.url === term.url %}»{% endif %} <a href="{{ term.url }}">{{ term.data.title }} {%- if term.data.backlinks.length > 0 %} <small>({{ term.data.backlinks.length }})</small>{%- endif %}</a></li>
+                        {%- endfor %}
+                    </ul>
+                </li>
+            {% endif %}
+        {%- endfor -%}
+    </ol>
+</section>
