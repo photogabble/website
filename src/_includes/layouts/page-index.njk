@@ -29,11 +29,12 @@
         <hr/>
 
         <div class="article-header__stats">
-            <a href="/stubs/" {% if page.url === '/stubs/' %}class="active"{% endif %}>Stubs</a>,
-            <a href="/growth/seedling/" {% if page.url === '/growth/seedling/' %}class="active"{% endif %}>Seedlings</a>,
-            <a href="/growth/budding/" {% if page.url === '/growth/budding/' %}class="active"{% endif %}>Budding</a>,
-            <a href="/growth/evergreen/" {% if page.url === '/growth/evergreen/' %}class="active"{% endif %}>Evergreen</a>,
-            <a href="/growth/ephemeral/" {% if page.url === '/growth/ephemeral/' %}class="active"{% endif %}>Ephemeral</a>
+            {% if index_navigation %}
+                {% set index_navigation_include = 'components/navigation/' + index_navigation + '.njk' %}
+                {% include index_navigation_include %}
+            {% else %}
+                {% include 'components/navigation/growth-stages.njk' %}
+            {% endif %}
         </div>
     </header>
 
