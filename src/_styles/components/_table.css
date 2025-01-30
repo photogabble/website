@@ -1,10 +1,16 @@
 table {
+    font-family: var(--monospaced-font-stack);
     border-collapse: collapse;
     width: 100%;
+    font-size: 1rem;
 }
 
 table tbody th {
     margin-right: 1rem;
+}
+
+table tfoot {
+    border-top: 4px double;
 }
 
 th, td {

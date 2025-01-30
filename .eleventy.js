@@ -42,9 +42,9 @@ export default async function (eleventyConfig) {
    * @see https://www.npmjs.com/package/@rknightuk/eleventy-plugin-post-graph
    */
   eleventyConfig.addPlugin(postGraph, {
-    boxColor: 'var(--darker-color)',
-    highlightColor: 'var(--key-color)',
-    textColor: 'var(--light-color)',
+    boxColor: 'var(--page-background-offset)',
+    highlightColor: 'var(--page-key-colour)',
+    textColor: 'var(--page-text-colour)',
   });
 
   // TODO: REL2024, should this be its own external plugin? Are there alternatives to use?

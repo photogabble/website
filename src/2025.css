@@ -1,4 +1,6 @@
 @import "_styles/_jumbonav.css";
+@import "_styles/components/_table.css";
+@import "_styles/components/_stats.css";
 
 html:root, html[data-theme="classic"], [data-theme="classic"] {
     --spacing: 1.5rem;
@@ -10,6 +12,7 @@ html:root, html[data-theme="classic"], [data-theme="classic"] {
     --page-text-colour: #26075e;
     --page-border-colour: #292823;
     --page-key-colour: #ff353f;
+    --page-key-colour-contrast: #990054;
     --category-background: #4a3677;
     --category-text-colour: #fff1e0;
 
@@ -143,6 +146,10 @@ a {
 
 a:hover {
     text-decoration: none;
+}
+
+a.nav__on {
+    color: var(--page-key-colour-contrast);
 }
 
 hr {
@@ -369,12 +376,16 @@ ul.list__alphabet {
 }
 
 .article-section__content-content {
+    h2,h3,h4,h5,h6{
+        margin-top: calc(var(--spacing)* 2);
+    }
+
     > * {
         margin-bottom: var(--spacing);
     }
 
-    h2,h3,h4,h5,h6{
-        margin-top: calc(var(--spacing)* 2);
+    > :first-child {
+        margin-top: 0;
     }
 
     > ul, > ol {
@@ -513,7 +524,7 @@ ul.list__alphabet {
         max-width: 1472px;
 
         h1 {
-            font-size: clamp(2rem, 6vw, 6rem);
+            font-size: clamp(2rem, 6vw, 5rem);
             line-height: 1;
         }
 

@@ -15,6 +15,18 @@
     flex-grow: 1;
 }
 
+.epg{
+    font-family: var(--monospaced-font-stack);
+}
+
+.epg__year{
+    font-size: 1rem;
+}
+
+.epg__months{
+    font-size: 0.8rem;
+}
+
 
 @media (min-width: 864px){
     .stats__header > header {
