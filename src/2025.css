@@ -16,6 +16,9 @@ html:root, html[data-theme="classic"], [data-theme="classic"] {
     --category-background: #4a3677;
     --category-text-colour: #fff1e0;
 
+    --stats-box: #ecdbc6;
+    --stats-box-highlight: #33439b;
+
     --jumbo-nav-background-color: #001d21;
     --jumbo-nav-text-color: #fff1e0;
     --jumbo-nav-accent-color: rgb(205 203 255);

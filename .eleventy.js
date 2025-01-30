@@ -42,8 +42,8 @@ export default async function (eleventyConfig) {
    * @see https://www.npmjs.com/package/@rknightuk/eleventy-plugin-post-graph
    */
   eleventyConfig.addPlugin(postGraph, {
-    boxColor: 'var(--page-background-offset)',
-    highlightColor: 'var(--page-key-colour)',
+    boxColor: 'var(--stats-box)',
+    highlightColor: 'var(--stats-box-highlight)',
     textColor: 'var(--page-text-colour)',
   });
 
