@@ -1,0 +1,8 @@
+{% set grouped = items | alphabetSort %}
+<nav>
+    <ul class="list__alphabet">
+        {%- for letter, terms in grouped %}
+            <li><a {{ 'href=#' + letter if terms.length else '' }}>{{ letter }}</a></li>
+        {%- endfor %}
+    </ul>
+</nav>
