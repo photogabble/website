@@ -41,32 +41,7 @@
 {#        </section>#}
 {#    {% endif %}#}
 <article>
-    <header>
-        <div class="article-header__category filled-boxes">
-            <span><a href="#">{{ type }}</a></span>
-            <span>Featured</span>
-        </div>
-        <div class="article-header__meta">
-            <span>Words planted in:</span>
-            <div>
-                {% include "components/tag-list.njk" %}
-            </div>
-        </div>
-
-        <div class="article-header__date">
-            <time datetime="{{ page.date | dateToFormat('iso') }}">{{ page.date | dateToFormat('DDD') }}</time>
-        </div>
-
-        <h1 class="article-header__title">{{ title }}</h1>
-
-        <hr/>
-
-        {% if readingTime.words > 0 %}
-            <div class="article-header__stats">
-                <span>{{ readingTime.text }}</span>
-            </div>
-        {% endif %}
-    </header>
+    {% include "components/partials/article-header.njk" %}
 
     <section class="article-section__content">
         {% if abstract %}<p class="article-section__content-abstract">{{ abstract }}</p>{% endif %}
