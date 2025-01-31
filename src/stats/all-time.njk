@@ -1,15 +1,31 @@
 ---
+title: Content Stats, all time
 folder: [writing, stats]
 ---
 {% extends "layouts/page.njk" %}
+{% set page_class = 'page__article' %}
+{% set index_navigation = 'stats' %}
 
-{% set title = 'Content Stats, all time' %}
-{% set titlePrefix = 'Writing' %}
-{% set subTitle = 'Day by day breakdown of when I published' %}
-{% set headingClass = 'stats__header' %}
+{% block content %}
+<article>
+    {% include "components/partials/article-header.njk" %}
+    <section class="article-section__content">
 
-{% block pageHeaderAfter %}
-    {% blogtimes %}
+        <aside class="article-section__content-toc"></aside>
+
+        <div class="article-section__content-content">
+            {% blogtimes %}
+        </div>
+
+        <aside id="sidenote-column-right" class="article-section__content-ref">
+            <div style="margin-top:1rem">
+                First Published: {{ page.date | dateToFormat('DDD') }} in commit <a href="#">########</a>.<br/>
+                Updated: Never<br/>
+                {% if reviewed %}Reviewed: {{ reviewed | dateToFormat('DDD') }}{% endif %}
+            </div>
+        </aside>
+    </section>
+</article>
 {% endblock %}
 
 {% block pageContent %}
