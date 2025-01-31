@@ -6,43 +6,7 @@ folder: [writing, stats]
 {% set page_class = 'page__article' %}
 
 {% set postStats = collections.writing | notTagged(['type/project', 'type/resource', 'stage/stub', 'type/glossary', 'type/changelog'])  | collectionStats %}
-
-{% block sidebar %}
-    <section class="stats__post-graphs">
-        <header>
-            <h2>Activity: This Year Vs Previous</h2>
-            <a href="/changelog/addition-of-post-graphs-to-stats-page/">About</a>
-            <a href="/stats/all-time">View all years</a>
-        </header>
-        {% postGraph collections.writing, {sort: 'desc', limit: 2} %}
-    </section>
-
-    <section>
-        <h2>Posts/words per year</h2>
-
-        <table>
-            <thead>
-            <tr>
-                <th>Year</th>
-                <th>No. of posts</th>
-                <th>Words</th>
-                <th>Avg. words</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for year in postStats.byYear %}
-                <tr>
-                    <td>{{ year.year }}</td>
-                    <td>{{ year.totalItems }}</td>
-                    <td>{{ year.totalWords }}</td>
-                    <td>{{ year.avgWords }}</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    </section>
-{% endblock %}
-
+{% set index_navigation = 'stats' %}
 
 {% block content %}
 <article>
