@@ -23,6 +23,7 @@ export default {
   hide_meta: true,
   folder: ['writing', {title: 'series', href: '/series/'}],
 
+  layout: 'layouts/page-index.njk',
   sidebar_component: 'topic',
 
   // TODO: complete eleventy computed data to be volume aware?
