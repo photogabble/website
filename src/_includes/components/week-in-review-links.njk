@@ -1,10 +1,12 @@
 {% set items = collections['type/resource'] | onlyTagged(tagged) | inWeek(week, year) | trackBacklink(page, title) %}
 {% if items.length > 0 %}
-<h2>{{ featuredTitle }}</h2>
-<ul>
-    {% for item in items %}
-        {% set text = item | excerpt %}
-        <li><a href="{{ item.data.cite.href }}" rel="noopener">{% if featuredCite and item.data.cite.name %}<strong>{{ item.data.cite.name }}:</strong> {% endif %}{{ item.data.title }}</a>{% if text %} &mdash; {{ text | safe }}{% endif %} <a href="{{ item.url }}" class="note">My notes</a></li>
-    {% endfor %}
-</ul>
+<section>
+    <h2>{{ featuredTitle }}</h2>
+    <ul>
+        {% for item in items %}
+            {% set text = item | excerpt %}
+            <li><a href="{{ item.data.cite.href }}" rel="noopener">{% if featuredCite and item.data.cite.name %}<strong>{{ item.data.cite.name }}:</strong> {% endif %}{{ item.data.title }}</a>{% if text %} &mdash; {{ text | safe }}{% endif %} <a href="{{ item.url }}" class="note">My notes</a></li>
+        {% endfor %}
+    </ul>
+</section>
 {% endif %}
