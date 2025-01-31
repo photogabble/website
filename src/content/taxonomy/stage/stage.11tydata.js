@@ -17,6 +17,7 @@ export default {
   // Stage is a list of posts
   // TODO: does this need setting at the taxonomy folder level?
   layout: 'layouts/page-index.njk',
+  index_navigation: 'growth-stages',
 
   // Do not display page meta data
   hide_meta: true,
