@@ -1,6 +1,6 @@
 ---
 title: Colophon
-layout: 'layouts/page-article'
+layout: 'layouts/page-post.njk'
 abstract: No website is an island, they are all built upon the combined effort of that which came before. If they are lucky, they will inspire the next generation.
 ---
 
