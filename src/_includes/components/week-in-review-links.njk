@@ -1,7 +1,7 @@
 {% set items = collections['type/resource'] | onlyTagged(tagged) | inWeek(week, year) | trackBacklink(page, title) %}
 {% if items.length > 0 %}
 <section>
-    <h2>{{ featuredTitle }}</h2>
+    <h2 id="{{ featuredTitle | slug }}">{{ featuredTitle }} <a class="header-anchor" href="#{{ featuredTitle | slug }}">¶</a></h2>
     <ul>
         {% for item in items %}
             {% set text = item | excerpt %}
