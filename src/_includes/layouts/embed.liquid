@@ -2,9 +2,9 @@
     {{ content }}
     {%- if cite -%}
         <figcaption>{%- if cite.href -%}
-            <small>&mdash; <a href="{{ cite.href }}">{{ cite.name }}</a> | <a href="{{ page.url }}">notes</a></small>
+            <span>&mdash; <a href="{{ cite.href }}">{{ cite.name }}</a> | <a href="{{ page.url }}">notes</a></span>
         {%- else -%}
-            <small>&mdash; {{ cite.name }} | <a href="{{ page.url }}">my notes</a></small>
+            <span>&mdash; {{ cite.name }} | <a href="{{ page.url }}">my notes</a></span>
         {%- endif -%}
         </figcaption>
     {%- endif -%}
