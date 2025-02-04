@@ -402,15 +402,6 @@ ul.list__alphabet {
         background: var(--page-text-colour);
     }
 
-    figcaption {
-        font-size: 1rem;
-        margin-top: 0.5rem;
-
-        &::before {
-            content: '[↑] ';
-        }
-    }
-
     picture > img {
         height: auto;
     }
@@ -650,6 +641,37 @@ ul.list__alphabet {
         grid-area: footer;
         border-top: 1px solid var(--page-border-colour);
         padding-top: var(--spacing);
+    }
+}
+
+/**
+ * Quotes
+ */
+
+figure.citation blockquote {
+    font-size: 2rem;
+    line-height: 1.2;
+
+    border-left: 6px solid;
+    padding-left: 1rem;
+}
+
+figure.citation figcaption {
+    font-family: var(--monospaced-font-stack);
+    padding-left: calc(1rem + 6px);
+    font-size: 1rem;
+    margin-top: 0.5rem;
+
+    &::before {
+        content: '↑';
+        font-weight: bold;
+        margin-right: 1ch;
+        background: var(--page-border-colour);
+        color: var(--page-background);
+        aspect-ratio: 1;
+        display: inline-block;
+        width: 2ch;
+        text-align: center;
     }
 }
 
