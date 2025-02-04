@@ -1,6 +1,6 @@
 {% extends "layouts/page-post.njk" %}
 
-{% block content_extra %}
+{% set content_extra %}
     {% set week = page.date | dateToFormat("W") %}
     {% set year = page.date | dateToFormat("kkkk") %}
 
@@ -81,4 +81,4 @@
     {#            #}{#            <h3>Linking Here</h3>#}
     {#            #}{#        </section>#}
     {#        </footer>#}
-{% endblock %}
+{% endset %}
