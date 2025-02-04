@@ -699,10 +699,11 @@ figure.citation figcaption {
     }
 
     .markdown-alert-title {
-        display: flex;
+        display: inline-flex;
+        color: var(--page-background);
         align-items: center;
-        font-weight: bold;
         line-height: 1;
+        padding: 1px 4px;
         margin-bottom: calc(var(--spacing) / 2);
 
         .octicon {
@@ -715,46 +716,66 @@ figure.citation figcaption {
     }
 
     &.markdown-alert-note {
-        border-left-color: var(--highlight-color-note);
+        border-color: var(--highlight-color-note);
         background: var(--background-color-note);
 
         .markdown-alert-title {
+            background: var(--highlight-color-note);
+        }
+
+        a {
             color: var(--highlight-color-note);
         }
     }
 
     &.markdown-alert-important {
-        border-left-color: var(--highlight-color-important);
+        border-color: var(--highlight-color-important);
         background: var(--background-color-important);
 
         .markdown-alert-title {
+            background: var(--highlight-color-important);
+        }
+
+        a {
             color: var(--highlight-color-important);
         }
     }
 
     &.markdown-alert-warning {
-        border-left-color: var(--highlight-color-warning);
+        border-color: var(--highlight-color-warning);
         background: var(--background-color-warning);
 
         .markdown-alert-title {
+            background: var(--highlight-color-warning);
+        }
+
+        a {
             color: var(--highlight-color-warning);
         }
     }
 
     &.markdown-alert-tip {
-        border-left-color: var(--highlight-color-tip);
+        border-color: var(--highlight-color-tip);
         background: var(--background-color-tip);
 
         .markdown-alert-title {
+            background: var(--highlight-color-tip);
+        }
+
+        a {
             color: var(--highlight-color-tip);
         }
     }
 
     &.markdown-alert-caution {
-        border-left-color: var(--highlight-color-caution);
+        border-color: var(--highlight-color-caution);
         background: var(--background-color-caution);
 
         .markdown-alert-title {
+            background: var(--highlight-color-caution);
+        }
+
+        a {
             color: var(--highlight-color-caution);
         }
     }
