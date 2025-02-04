@@ -20,15 +20,13 @@
     <generator uri="https://www.11ty.dev/">Eleventy.js</generator>
     {%- for post in postsList | reverse %}
         {%- if loop.index0 "<" 10 -%}
-            {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+            {% set absolutePostUrl %}{{ post.url | htmlBaseUrl(metadata.url) }}{% endset %}
             <entry>
                 <title>{{ post.data.title }}</title>
                 <link href="{{ absolutePostUrl }}"/>
                 <updated>{{ post.date | dateToRfc3339 }}</updated>
                 <id>{{ absolutePostUrl }}</id>
-                <content type="html">
-                    {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}
-                </content>
+                <content type="html">{{ post.content | renderTransforms(post.data.page, metadata.url) }}</content>
             </entry>
         {%- endif -%}
     {%- endfor %}
