@@ -5,6 +5,12 @@
 {% set readingTime = content | wordStats %}
 {% set filteredTags = tags | withoutTags('writing') | excludeSpecialTags(['type', 'resource']) | formatTagList(collections.topics) %}
 {% set type = tags | specialTagValue('type') %}
+
+{% if content_extra %}
+    {% set content = [content, content_extra] | join %}
+{% endif %}
+
+{% set abstract = content | extractMarkedAbstractContent %}
 {% set footnotes = content | extractFootnotes %}
 
 {#{% set headingClass = 'note' %}#}
@@ -47,8 +53,7 @@
         {% if abstract %}<p class="article-section__content-abstract">{{ abstract }}</p>{% endif %}
         <aside class="article-section__content-toc">{{ content | toc | safe }}</aside>
         <div class="article-section__content-content">
-            {{ content | withoutFootnotes | safe }}
-            {% block content_extra %}{% endblock %}
+            {{ content | withoutMarkedAbstractContent| withoutFootnotes | safe }}
         </div>
         <aside id="sidenote-column-right" class="article-section__content-ref">
             <div style="margin-top:1rem">
