@@ -633,6 +633,21 @@ ul.list__alphabet {
         top: var(--gutter);
     }
 
+    .article-series__content ol {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0;
+
+        li {
+            margin-bottom: 0.5rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+
     .article-section__content-ref {
         grid-area: references;
     }
