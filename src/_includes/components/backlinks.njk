@@ -1,12 +1,6 @@
-{% if backlinks.length > 0 %}
-    <span>&mdash;</span>
-
-    <nav>
-        <h3>Linking here</h3>
-        <ul>
-            {%- for link in backlinks %}
-                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-            {%- endfor %}
-        </ul>
-    </nav>
+{% if backlinks.length %}
+    <section>
+        <h2 id="backlinks">Pages Linking Here <a class="header-anchor" href="#backlinks">¶</a></h2>
+        <ul>{% for link in backlinks %}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{% endfor %}</ul>
+    </section>
 {% endif %}

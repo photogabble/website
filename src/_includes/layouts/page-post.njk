@@ -64,7 +64,7 @@
         <aside id="sidenote-column-right" class="article-section__content-ref">
             <div style="margin-top:1rem">
                 First Published: {{ page.date | dateToFormat('DDD') }} in commit <a href="#">########</a>.<br/>
-                Updated: Never<br/>
+                Updated: {% if modified %}<time datetime="{{ modified.toISOString() }}">{{ modified | dateToFormat("DDD") }}</time>{% else %}Never{% endif %}<br/>
                 {% if reviewed %}Reviewed: {{ reviewed | dateToFormat('DDD') }}{% endif %}
             </div>
         </aside>
@@ -77,14 +77,7 @@
                 {#        {% include "components/wayback-machine.njk" %}#}
                 {#    {% endif %}#}
 
-
-                {#    {% include "components/backlinks.njk" %}#}
-                {% if backlinks.length %}
-                    <section>
-                        <h2 id="backlinks">Pages Linking Here <a class="header-anchor" href="#backlinks">¶</a></h2>
-                        <ul>{% for link in backlinks %}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{% endfor %}</ul>
-                    </section>
-                {% endif %}
+                {% include "components/backlinks.njk" %}
             </footer>
         {% endif %}
     </section>
