@@ -1,0 +1,10 @@
+{% if previousPost or nextPost %}
+<nav style="margin-top: 1rem;" class="related-notes__next-previous">
+    {% if previousPost %}
+        <strong>Previous</strong>: <a href="{{ previousPost.url }}" title="Visit previous post: {{ previousPost.data.title }}"> {{ previousPost.data.title }}</a>
+    {% endif %}
+    {% if nextPost %}
+        <strong>Next</strong>: <a href="{{ nextPost.url }}" title="Visit next post: {{ nextPost.data.title }}">{{ nextPost.data.title }}</a>
+    {% endif %}
+</nav>
+{% endif %}
