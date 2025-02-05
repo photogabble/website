@@ -11,7 +11,7 @@
     </div>
 
     <div class="article-header__date">
-        <time datetime="{{ page.date | dateToFormat('iso') }}">{{ page.date | dateToFormat('DDD') }}</time>
+        {% if growthStage === 'stub' %}Schedueld for {% endif %}<time datetime="{{ page.date | dateToFormat('iso') }}">{{ page.date | dateToFormat('DDD') }}</time>
     </div>
 
     <h1 class="article-header__title">{{ title }}</h1>
