@@ -610,6 +610,10 @@ ul.list__alphabet {
         }
     }
 
+    .article-section__content-content > *:first-child:not(p) {
+        margin-top: 5px;
+    }
+
     .footnote-ref {
         font-family: var(--monospaced-font-stack);
         font-size: 0.8rem;
