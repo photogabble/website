@@ -50,8 +50,24 @@
     {% include "components/partials/article-header.njk" %}
 
     <section class="article-section__content">
-        {% if abstract %}<p class="article-section__content-abstract">{{ abstract }}</p>{% endif %}
-        <aside class="article-section__content-toc">{{ content | toc | safe }}</aside>
+        {% if abstract %}<div class="article-section__content-abstract">{{ abstract | safe }}</div>{% endif %}
+        <aside class="article-section__content-toc">
+            {% if backlinks.length %}
+                {% set toc_headings = (toc_headings or []).push({id: 'backlinks', text: 'Pages Linking Here'}) %}
+            {% endif %}
+
+            {% set toc_content = content | withHeadings(toc_headings) | toc %}
+
+            {% if toc_content %}
+                <h4>Table of contents</h4>
+                {{ toc_content | safe }}
+                <hr style="margin-top: 1rem" />
+            {% endif %}
+
+            {% include "components/side-bars/series.njk" %}
+
+            {% include "components/side-bars/prev-next.njk" %}
+        </aside>
         <div class="article-section__content-content">
             {{ content | withoutMarkedAbstractContent| withoutFootnotes | safe }}
         </div>
@@ -62,7 +78,7 @@
                 {% if reviewed %}Reviewed: {{ reviewed | dateToFormat('DDD') }}{% endif %}
             </div>
         </aside>
-        {% if footnotes.length or backlinks.length %}
+        {% if footnotes.length or backlinks.length%}
             <footer class="article-section__content-footer">
                 {{ footnotes | safe }}
 
@@ -71,11 +87,11 @@
                 {#        {% include "components/wayback-machine.njk" %}#}
                 {#    {% endif %}#}
 
-                {#    {% include "components/backlinks.njk" %}#}
 
+                {#    {% include "components/backlinks.njk" %}#}
                 {% if backlinks.length %}
-                    <section id="backlinks">
-                        <h3>Pages Linking Here <a class="header-anchor" href="#backlinks">¶</a></h3>
+                    <section>
+                        <h2 id="backlinks">Pages Linking Here <a class="header-anchor" href="#backlinks">¶</a></h2>
                         <ul>{% for link in backlinks %}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{% endfor %}</ul>
                     </section>
                 {% endif %}
