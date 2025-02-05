@@ -5,6 +5,7 @@
 {% set readingTime = content | wordStats %}
 {% set filteredTags = tags | withoutTags('writing') | excludeSpecialTags(['type', 'resource']) | formatTagList(collections.topics) %}
 {% set type = tags | specialTagValue('type') %}
+{% set growthStage = tags | specialTagValue('stage') %}
 
 {% if content_extra %}
     {% set content = [content, content_extra] | join %}
