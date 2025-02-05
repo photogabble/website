@@ -23,7 +23,7 @@
             {% if index_navigation %}
                 {% set index_navigation_include = 'components/navigation/' + index_navigation + '.njk' %}
                 {% include index_navigation_include %}
-            {% else %}
+            {% elseif readingTime.words > 0 %}
                 <span>{{ readingTime.text }}</span>
             {% endif %}
         </div>
