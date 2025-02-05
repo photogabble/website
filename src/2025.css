@@ -698,7 +698,8 @@ figure.citation figcaption {
     font-size: 1.2rem;
     margin: var(--spacing) 0;
     padding: var(--spacing) !important;
-    border-left: .25em solid var(--page-key-colour);
+    border: 1px solid var(--page-key-colour);
+    border-left-width: .25em;
 
     p {
         font-size: 1em;
