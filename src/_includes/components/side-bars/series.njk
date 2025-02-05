@@ -1,16 +1,17 @@
 {% set seriesId = tags | specialTagValue('series') %}
-{% set seriesMeta = collections.topics | whereKeyEquals('topic', 'series/' + seriesId) | first %}
-
-<section class="post-list">
-    <header class="post-list__inline-header">
-        <h3>{{ seriesMeta.name }}</h3> {{ seriesMeta.items.length }} {% if seriesMeta.items.length > 1 %}items{% else %}item{% endif %}
-    </header>
-    <ol class="post-list__chronological">
-        {%- for post in seriesMeta.items -%}
-            {% include "components/post-list-line.njk" %}
-        {%- endfor -%}
-    </ol>
-    <footer>
-        <nav><a href="{{ seriesMeta.permalink }}">{{ seriesMeta.name }} Overview</a> | <a href="/series/">All Series</a></nav>
-    </footer>
-</section>
+{% if seriesId %}
+    {% set seriesMeta = collections.topics | whereKeyEquals('topic', 'series/' + seriesId) | first %}
+    {% set idx = seriesMeta.items | ixdInCollection(page) %}
+    <nav class="article-series__content" style="margin-top: 1rem">
+        <h4>Part of series <a href="{{ seriesMeta.permalink }}">{{ seriesMeta.name }}</a></h4>
+        <ol>
+            {%- for post in seriesMeta.items | neighbours(idx, 3) | reverse -%}
+                <li><a href="{{ post.url }}" title="Read {{ post.data.title }}">{{ post.data.title }}</a></li>
+            {%- endfor -%}
+        </ol>
+        {% if seriesMeta.items.length > 6 %}
+            <a href="{{ seriesMeta.permalink }}">More&hellip;</a>
+        {% endif %}
+    </nav>
+    <hr style="margin-top: 1rem;" />
+{% endif %}
