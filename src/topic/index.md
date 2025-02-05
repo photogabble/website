@@ -1,7 +1,7 @@
 ---
 title: All Topics
 sub_title: A Hazelnut in Every Bite
-layout: layouts/page-post.njk
+layout: layouts/page-index.njk
 tags: 
   - type/index
 sidebar_component: topics

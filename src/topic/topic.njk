@@ -14,23 +14,13 @@
     folder: ['topic'],
 }
 ---
-{% extends "layouts/base.njk" %}
+{% extends "layouts/page-index.njk" %}
 
-{% block sidebar %}
-    {% set sidebar_title = 'Writing tagged as “' + topic.name + '”' %}
-    {% set sidebar_items = topic.items %}
-    {% set displayContentType = true %}
-    {% include "components/side-bars/topic.njk" %}
-{% endblock %}
+{% set title = topic.name %}
+{% set sidebar_items = topic.items | reverse %}
+{% set sidebar_component = 'topic' %}
+{% set stats = topic.items | collectionStats %}
 
-{% block content %}
-    <article>
-        <header>
-            <h1>{{ topic.name }}</h1>
-        </header>
-        <footer>
-            {% set stats = topic.items | collectionStats %}
-            {% include "components/partials/article-footer-statistics.njk" %}
-        </footer>
-    </article>
-{% endblock %}
+{% set content %}
+    {% include "components/partials/article-footer-statistics.njk" %}
+{% endset %}
