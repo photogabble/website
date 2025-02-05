@@ -30,13 +30,6 @@
 {#{% endset %}#}
 
 {% block content %}
-{#    {% if growthStage === 'stub' %}#}
-{#    <section>#}
-{#        <blockquote>#}
-{#            <p>Note: This is a stub post to be filled out in the future. It has been created for the purpose of interlinking feel free to check out what links here from the list below to find related pages.</p>#}
-{#        </blockquote>#}
-{#    </section>#}
-{#    {% endif %}#}
 <article>
     {% include "components/partials/article-header.njk" %}
 
@@ -60,6 +53,12 @@
             {% include "components/side-bars/prev-next.njk" %}
         </aside>
         <div class="article-section__content-content">
+            {% if growthStage === 'stub' %}
+                <div class="markdown-alert markdown-alert-caution">
+                    <p class="markdown-alert-title">Note</p>
+                    <p>This is a stub post to be filled out in the future. It has been created for the purpose of interlinking feel free to check out what links here from the list below to find related pages.</p>
+                </div>
+            {% endif %}
             {{ content | withoutMarkedAbstractContent| withoutFootnotes | safe }}
         </div>
         <aside id="sidenote-column-right" class="article-section__content-ref">
