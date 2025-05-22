@@ -122,7 +122,7 @@ export default async function (eleventyConfig) {
    * @todo check highlighting of tree and other special languages I had set before still works
    * @see https://www.11ty.dev/docs/plugins/syntaxhighlight/
    */
-  eleventyConfig.addPlugin(syntaxHighlight.configFunction, {
+  eleventyConfig.addPlugin(syntaxHighlight, {
     preAttributes: { tabindex: 0 }
   });
 
