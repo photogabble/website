@@ -1,6 +1,6 @@
-const {dateToFormat} = require("../../lib/filters");
+import {dateToFormat} from "../../lib/filters";
 
-module.exports = {
+export default {
   "draft": false,
   "layout": "layouts/now.njk",
   eleventyComputed: {

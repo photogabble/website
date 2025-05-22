@@ -1,5 +1,5 @@
-const {getChanges} = require("../../lib/helpers/get-git-changes");
-const {slugify, ogImageFromSlug} = require('../../lib/filters');
+import {getChanges} from "../../lib/helpers/get-git-changes";
+import {slugify, ogImageFromSlug} from '../../lib/filters';
 
 module.exports = {
   featured: false,
