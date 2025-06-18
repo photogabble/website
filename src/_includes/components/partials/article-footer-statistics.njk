@@ -1,10 +1,5 @@
 {% if stats %}
-<section>
-    <h3>Statistics</h3>
-    <blockquote>
-        <p>
-            Since first published in <strong>{{ stats.firstItem.date | dateToFormat('yyyy') }}</strong> there have been <strong>{{ stats.totalItems }}</strong> notes added to this topic, containing an average of <strong>~{{ stats.avgWords }}</strong> words each for an overall total of <strong>{{ stats.totalWords }}</strong> words.
-        </p>
-    </blockquote>
-</section>
+    <p>
+        Since first published in <strong>{{ stats.firstItem.date | dateToFormat('yyyy') }}</strong> there have been <strong>{{ stats.totalItems }}</strong> notes added to this topic, containing an average of <strong>~{{ stats.avgWords }}</strong> words each for an overall total of <strong>{{ stats.totalWords }}</strong> words.
+    </p>
 {% endif %}
