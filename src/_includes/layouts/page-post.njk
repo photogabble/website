@@ -32,7 +32,6 @@
 {% block content %}
 <article>
     {% include "components/partials/article-header.njk" %}
-
     <section class="article-section__content">
         {% if abstract %}<div class="article-section__content-abstract">{{ abstract | safe }}</div>{% endif %}
         <aside class="article-section__content-toc">
@@ -81,6 +80,22 @@
             </footer>
         {% endif %}
     </section>
+
+    {% if related.length %}
+        <section class="article-section__related">
+            <h3>Similar Stories</h3>
+            <nav class="related-notes">
+                {% for item in related | limit(3) %}
+                    <a href="{{ item.url }}">
+                         TODO: add article images
+                        <img src="/img/sebastian-huber-CTT1DbhGhA8-unsplash.jpg">
+                        <small>{{ item.data.tags | specialTagValue('type') }}</small>
+                        <h4>{{ item.data.title }}</h4>
+                    </a>
+                {% endfor %}
+            </nav>
+        </section>
+    {% endif %}
 
 </article>
 {% endblock %}
