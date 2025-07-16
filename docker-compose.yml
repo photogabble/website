@@ -1,0 +1,12 @@
+services:
+  website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: node-base
+      
+    volumes:
+      - ./:/usr/src/app
+    entrypoint: [ "/bin/bash" ]
+    stdin_open: true
+    tty: true
