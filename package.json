@@ -4,8 +4,8 @@
   "description": "Source code for photogabble.co.uk",
   "main": "index.js",
   "scripts": {
-    "serve:dev": "rm -rf _site && cross-env ELEVENTY_ENV=development eleventy --serve",
-    "serve:prod": "rm -rf _site && cross-env ELEVENTY_ENV=production eleventy --serve",
+    "serve:dev": "rm -rf _site/* && cross-env ELEVENTY_ENV=development eleventy --serve",
+    "serve:prod": "rm -rf _site/* && cross-env ELEVENTY_ENV=production eleventy --serve",
     "build": "cross-env ELEVENTY_ENV=production eleventy",
     "build:dev": "cross-env ELEVENTY_ENV=development eleventy",
     "og-images": "node ./bin/create-og-images.js",
@@ -78,7 +78,7 @@
     "yargs": "^17.7.2"
   },
   "engines": {
-    "npm": ">=10.0.0 <11.0.0",
+    "npm": ">=10.0.0",
     "node": ">=20.0.0 <21.0.0"
   }
 }
