@@ -4,9 +4,16 @@ services:
       context: .
       dockerfile: Dockerfile
       target: node-base
-      
     volumes:
       - ./:/usr/src/app
+      - node_modules:/usr/src/app/node_modules # Using named volumes means these do not sync with the host but do have persistence
+      - build_cache:/usr/src/app/.cache
+      - /usr/src/app/_site                     # Anonymous volume excludes _site from syncing back to host
     entrypoint: [ "/bin/bash" ]
+    ports:
+      - "8080:8080"
     stdin_open: true
     tty: true
+volumes:
+  node_modules:
+  build_cache:
