@@ -1,11 +1,12 @@
 - `2025.x`
-  - [ ] Create `type/series` section, if a post belongs to a series, then it's sidebar is the series listing
-  - [ ] Create a series-listing sidebar
-  - [ ] Link book entries up to book reviews
-  - [ ] Convert hardcoded blogroll items into bookmarks with the correct date
-  - [ ] Fill `/uses` sidebar with photos of kit
-  - [ ] Site-wide search with [pagefind](https://github.com/cloudcannon/pagefind)
-  - [ ] For all bookmarked YouTube channels/videos update the screenshot with a better image
-  - [ ] Standardise updated/modified in frontmatter
-  - [ ] Change from using deprecated markdown-it-anchor permalink options, see [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor#permalinks)
-  - [ ] Add an Easter Egg page based upon https://ake.neocities.org/dump/
+  - [ ] FEATURE: Create `type/series` section, if a post belongs to a series, then it's sidebar is the series listing
+  - [ ] FEATURE: Create a series-listing sidebar
+  - [ ] FEATURE: Link book entries up to book reviews
+  - [ ] CHORE: Convert hardcoded blogroll items into bookmarks with the correct date
+  - [ ] CHORE: Fill `/uses` sidebar with photos of kit
+  - [ ] FEATURE: Site-wide search with [pagefind](https://github.com/cloudcannon/pagefind)
+  - [ ] CHORE: For all bookmarked YouTube channels/videos update the screenshot with a better image
+  - [ ] REFACTOR: Standardise updated/modified in frontmatter
+  - [ ] BUGFIX: Change from using deprecated markdown-it-anchor permalink options, see [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor#permalinks)
+  - [ ] FEATURE: Add an Easter Egg page based upon https://ake.neocities.org/dump/
+  - [ ] BUGFIX: Fix table of contents crashing into next/previous link in sidebar
