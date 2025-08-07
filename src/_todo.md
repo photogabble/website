@@ -1,3 +1,4 @@
+- `2025.x`
 - [ ] Create `type/series` section, if a post belongs to a series then it's sidebar is the series listing
 - [ ] Create series listing sidebar
 - [ ] Link book entries up to book reviews
@@ -6,3 +7,5 @@
 - [ ] Site-wide search with [pagefind](https://github.com/cloudcannon/pagefind)
 - [ ] For all bookmarked YouTube channels/videos update screenshot with a better image
 - [ ] Standardise updated/modified in frontmatter
+- [ ] Change from using deprecated markdown-it-anchor permalink option, see [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor#permalinks)
+- [ ] Add an Easter Egg page based upon https://ake.neocities.org/dump/
