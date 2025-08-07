@@ -55,7 +55,7 @@
 
     <section>
         <ul>
-            <li><pre>index_navigation: {{ index_navigation }}</pre></li>
+            <li><pre>index_navigation: {% if index_navigation %}{{ index_navigation }}{% else %}(growth-stages){% endif %}</pre></li>
             <li><pre>sidebar_topic: {{ sidebar_topic }}</pre></li>
             <li><pre>sidebar_component: components/side-bars/{{ sidebar_component }}</pre></li>
         </ul>

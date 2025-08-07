@@ -1,15 +1,50 @@
 {% extends "layouts/page.njk" %}
 
+{% set page_class = 'page__list' %}
+{% set type = tags | specialTagValue('type') %}
+
 {% block content %}
 <article>
     <header>
-        <h1>{{ title }}</h1>
-        {%- if sub_title %}<h2>{{ sub_title }}</h2>{% endif %}
+        <div class="article-header__category filled-boxes">
+            <span><a href="#">{{ type }}</a></span>
+        </div>
+
+        <div class="article-header__meta">
+            <span>{{ items.length }} items,</span> last updated on 1st Jan, 2025
+        </div>
+
+        <h1 class="article-header__title">{{ title }}</h1>
+
+        <hr/>
+
+        <div class="article-header__stats">
+            {% if index_navigation %}
+                {% set index_navigation_include = 'components/navigation/' + index_navigation + '.njk' %}
+                {% include index_navigation_include %}
+            {% else %}
+                {% include 'components/navigation/growth-stages.njk' %}
+            {% endif %}
+        </div>
     </header>
-    <section>
-        {% set footnotes = content | extractFootnotes %}
-        {{ content | withoutFootnotes | safe }}
-    </section>
+
+    {% set footnotes = content | extractFootnotes %}
+
+    {% if content.length > 0 %}
+        <section class="article-section__content">
+            {% if abstract %}<p class="article-section__content-abstract">{{ abstract }}</p>{% endif %}
+            <div class="article-section__content-content">{{ content | withoutFootnotes | safe }}</div>
+    {#            <aside id="sidenote-column-right" class="article-section__content-ref">#}
+    {#                <div>#}
+    {#                    First Published: {{ page.date | dateToFormat('DDD') }} in commit <a href="#">########</a>.<br/>#}
+    {#                    Updated: Never<br/>#}
+    {#                    {% if reviewed %}Reviewed: {{ reviewed | dateToFormat('DDD') }}{% endif %}#}
+    {#                </div>#}
+    {#            </aside>#}
+        </section>
+        <hr>
+    {% endif %}
+
     {#
         Some lists handle their own output such as reading in the
         sidebar and button board within the main page content. In
