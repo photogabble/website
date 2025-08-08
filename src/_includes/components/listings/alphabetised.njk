@@ -1,3 +1,15 @@
+{#
+    # Alphabetised listing of items
+    Used to display a list of items grouped by the first letter of their titles.
+
+    Variables:
+    - `items`: Array of items to be listed.
+    - `page`: Current 11ty page object, used to highlight current item.
+    - `alphabetSort`: Custom filter to sort items alphabetically by title.
+
+    Used by:
+    - src/content/glossary/glossary.11tydata.js
+#}
 {% set grouped = items | alphabetSort %}
 
 <section class="post-list">

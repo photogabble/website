@@ -1,3 +1,13 @@
+{#
+    # Default Topics Listing Template
+    Used by topics index page to display a list of all topics, including special tags.
+
+    Variables:
+    - `collections.topics`: Collection of topics to be displayed.
+
+    Used by:
+    - src/topic/index.md
+#}
 <section class="post-list post-list__topics">
     <header class="post-list__inline-header">
         <h3>All Topics ({{ collections.topics.length }})</h3>

@@ -1,3 +1,21 @@
+{#
+    # Topic item listing
+    Used to display a list of topic items, such as posts or articles, with their titles, dates, and other metadata.
+
+    Variables:
+    - `items`: Array of topic items to be listed.
+
+    Used by:
+    - src/changelog.md
+    - src/essays.md
+    - src/growth.md
+    - src/noteworthy.md
+    - src/series.md
+    - src/thoughts.md
+    - src/tutorials.md
+
+    TODO: word count and read time are hardcoded, should be dynamic.
+#}
 <section class="list-section">
     {%- for post in items -%}
     {# {% include "components/post-list-line.njk" %} #}

@@ -1,3 +1,15 @@
+{#
+    # Writing listing
+    Used to display a list of writing items, such as essays, thoughts and tutorials by the main writing index page.
+
+    Variables:
+    - `items`: Array of writing items to be listed defined by the calling template.
+    - `tags`: Array of tags for the current page, used to highlight active content type.
+
+    Used by:
+    - src/writing/index.md
+
+#}
 {% set itemsByYear = items | groupByYear %}
 
 {% include 'components/partials/post-list-by-year.njk' %}
