@@ -21,21 +21,30 @@
                 {% set label = 'View' + book.title + ' on bookwyrm.social' %}
             {% endif %}
 
-            <a href="{{ href }}" aria-label="{{ label }}" class="book">
-                <div class="cover{% if not book.cover %} cover__placeholder" aria-hidden="true{% endif %}">
-                    {% if book.cover %}
-                    <img src="{{ book.cover.url }}" alt="{{ book.cover.name }}" />
-                    {% else %}
-                        <div class="img-placeholder" aria-hidden="true">
-                            <h3>{{ book.title }}</h3>
-                            <p>
-                                {% for author in book.authors %}
-                                    {{ author.name }}{{ "," if not loop.last }}
-                                {% endfor %}
-                            </p>
-                        </div>
-                    {% endif %}
+            <a href="{{ href }}" aria-label="{{ label }}">
+                <div class="book-item">
+                    <div class="book">
+                        {% if book.cover %}
+                            <div class="cover" style="background-image:url('{{ book.cover.url }}')" aria-hidden="true">
+                                <div class="effect"></div>
+                                <div class="light"></div>
+                            </div>
+                        {% else %}
+                            <div class="cover cover__placeholder" aria-hidden="true">
+                                <div class="img-placeholder" aria-hidden="true">
+                                    <h3>{{ book.title }}</h3>
+                                    <p>
+                                        {% for author in book.authors %}
+                                            {{ author.name }}{{ "," if not loop.last }}
+                                        {% endfor %}
+                                    </p>
+                                </div>
+                            </div>
+                        {% endif %}
+                        <div class="book-inside"></div>
+                    </div>
                 </div>
+
                 <h3>{{ book.title }}</h3>
                 <p>
                     {% for author in book.authors %}
