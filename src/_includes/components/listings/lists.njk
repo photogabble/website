@@ -1,3 +1,16 @@
+{#
+    # Default Listing Template
+    Used by list index page to display a list of *lists* grouped by their category.
+
+    Variables:
+    - `collections.lists`: Collection of lists to be displayed.
+    - `metadata.listGroups`: Metadata for each group of lists, including title and description.
+
+    Used by:
+    - src/lists/index.md
+
+    TODO: should this be using the `project-list` CSS class?
+#}
 {%- set groups = collections.lists | groupByKey('list_category') -%}
 {%- for groupName, groupMeta in metadata.listGroups -%}
     {% set groupItems = groups.get(groupName) %}
