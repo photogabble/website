@@ -52,6 +52,14 @@
 
         TODO: Add pixels list type for collection of pixel shinys
     #}
+
+    {% if sidebar_component %}
+        {% set list_component_include = 'components/listings/' + sidebar_component + '.njk' %}
+        {% include list_component_include %}
+    {% else %}
+        {# {% include "components/side-bars/writing.njk" %} #}
+    {% endif %}
+
     {% if list_style != 'none' %}
     <section class="items-list">
         <ul>

@@ -1,3 +1,13 @@
+{#
+    # Book Cover Listing
+    Used by the antilibary and read books pages to display a list of books.
+
+    TODO: rename sidebar_shelves
+
+    Used by:
+    - src/content/taxonomy/lists/antilibrary.md
+    - src/resources/books.md
+#}
 {%- if sidebar_shelves -%}
     {% set books = bookwyrm | whereKeyEquals('shelf', sidebar_shelves) %}
     <section class="book-list">
