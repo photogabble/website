@@ -21,8 +21,8 @@
                 {% set label = 'View' + book.title + ' on bookwyrm.social' %}
             {% endif %}
 
-            <a href="{{ href }}" aria-label="{{ label }}">
-                <div class="book-item">
+            <a href="{{ href }}" aria-label="{{ label }}" class="book-item">
+                <div class="book-wrap">
                     <div class="book">
                         {% if book.cover %}
                             <div class="cover" style="background-image:url('{{ book.cover.url }}')" aria-hidden="true">
