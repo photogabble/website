@@ -19,12 +19,7 @@
         <hr/>
 
         <div class="article-header__stats">
-            {% if index_navigation %}
-                {% set index_navigation_include = 'components/navigation/' + index_navigation + '.njk' %}
-                {% include index_navigation_include %}
-            {% else %}
-                {% include 'components/navigation/growth-stages.njk' %}
-            {% endif %}
+            {% include "components/partials/navigation.njk" %}
         </div>
     </header>
 

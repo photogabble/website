@@ -1,0 +1,10 @@
+{%- if index_navigation -%}
+    {% set index_navigation_include = 'components/navigation/' + index_navigation + '.njk' %}
+    {% include index_navigation_include %}
+{%- elseif navigation_links -%}
+    {%- for link in navigation_links -%}
+        <a href="{{ link.href }}" class="{%- if page.url === link.href -%}nav__on{%- else -%}nav__off{%- endif -%}">{{ link.title }}</a>{%- if not loop.last -%}&nbsp;<span>|</span>&nbsp;{%- endif -%}
+    {%- endfor -%}
+{%- else -%}
+    {% include 'components/navigation/growth-stages.njk' %}
+{%- endif -%}
