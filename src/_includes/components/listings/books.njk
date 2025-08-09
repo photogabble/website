@@ -8,54 +8,51 @@
     - src/content/taxonomy/lists/antilibrary.md
     - src/resources/books.md
 #}
-{%- if sidebar_shelves -%}
-    {% set books = bookwyrm | whereKeyEquals('shelf', sidebar_shelves) %}
-    <section class="book-list">
-        {% for book in books %}
-            {% set review = collections.all | whereKeyEquals('fileSlug', book.openlibraryKey) | first %}
-            {% if review %}
-                {% set href = review.url %}
-                {% set label = 'View' + book.title + ' review' %}
-            {% else %}
-                {% set href = book.id %}
-                {% set label = 'View' + book.title + ' on bookwyrm.social' %}
-            {% endif %}
+<section class="book-list">
+    {% for book in items %}
+        {% set review = collections.all | whereKeyEquals('fileSlug', book.openlibraryKey) | first %}
+        {% if review %}
+            {% set href = review.url %}
+            {% set label = 'View' + book.title + ' review' %}
+        {% else %}
+            {% set href = book.id %}
+            {% set label = 'View' + book.title + ' on bookwyrm.social' %}
+        {% endif %}
 
-            <a href="{{ href }}" aria-label="{{ label }}" class="book-item">
-                <div class="book-wrap">
-                    <div class="book">
-                        {% if book.cover %}
-                            <div class="cover" style="background-image:url('{{ book.cover.url }}')" aria-hidden="true">
-                                <div class="effect"></div>
-                                <div class="light"></div>
+        <a href="{{ href }}" aria-label="{{ label }}" class="book-item">
+            <div class="book-wrap">
+                <div class="book">
+                    {% if book.cover %}
+                        <div class="cover" style="background-image:url('{{ book.cover.url }}')" aria-hidden="true">
+                            <div class="effect"></div>
+                            <div class="light"></div>
+                        </div>
+                    {% else %}
+                        <div class="cover cover__placeholder" aria-hidden="true">
+                            <div class="img-placeholder" aria-hidden="true">
+                                <h3>{{ book.title }}</h3>
+                                <p>
+                                    {% for author in book.authors %}
+                                        {{ author.name }}{{ "," if not loop.last }}
+                                    {% endfor %}
+                                </p>
                             </div>
-                        {% else %}
-                            <div class="cover cover__placeholder" aria-hidden="true">
-                                <div class="img-placeholder" aria-hidden="true">
-                                    <h3>{{ book.title }}</h3>
-                                    <p>
-                                        {% for author in book.authors %}
-                                            {{ author.name }}{{ "," if not loop.last }}
-                                        {% endfor %}
-                                    </p>
-                                </div>
-                            </div>
-                        {% endif %}
-                        <div class="book-inside"></div>
-                    </div>
+                        </div>
+                    {% endif %}
+                    <div class="book-inside"></div>
                 </div>
+            </div>
 
-                <h3>{{ book.title }}</h3>
-                <p>
-                    {% for author in book.authors %}
-                        {{ author.name }}{{ "," if not loop.last }}
-                    {% endfor %}
-                </p>
-                {% if review %}
-                <p>{{ review.data.rating | ratingToStars }}</p>
-                {% if review.data.progress.finished %}<p>Finished: {{ review.data.progress.finished | dateToFormat("dd LLL yyyy") }}</p>{% endif %}
-                {% endif %}
-            </a>
-        {% endfor %}
-    </section>
-{%- endif -%}
+            <h3>{{ book.title }}</h3>
+            <p>
+                {% for author in book.authors %}
+                    {{ author.name }}{{ "," if not loop.last }}
+                {% endfor %}
+            </p>
+            {% if review %}
+            <p>{{ review.data.rating | ratingToStars }}</p>
+            {% if review.data.progress.finished %}<p>Finished: {{ review.data.progress.finished | dateToFormat("dd LLL yyyy") }}</p>{% endif %}
+            {% endif %}
+        </a>
+    {% endfor %}
+</section>

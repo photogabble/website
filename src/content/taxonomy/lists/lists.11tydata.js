@@ -3,6 +3,7 @@
  * The file slug becomes the list's identifier e.g test.md will reference all posts tagged as `list/test`. This
  * allows writing custom copy for each list as well as easily deciding which layout to use.
  */
+import {whereKeyEquals} from "../../../../lib/filters.js";
 
 export default {
   // Do not include in RSS Feed
@@ -29,6 +30,11 @@ export default {
         : data.permalink;
     },
     items(data) {
+      // If sidebar_component is `books` then origin is `bookwyrm` data source and not the `lists` collection.
+      if (data.sidebar_component === 'books' && data.sidebar_shelves) {
+          return data.bookwyrm ? whereKeyEquals(data.bookwyrm, 'shelf', data.sidebar_shelves) : [];
+      }
+
       if (!data.collections.lists) return [];
       const slug = data.list_slug ?? data.page.fileSlug;
       const list = data.collections.lists.find(list => list.slug === slug);
