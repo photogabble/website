@@ -2,7 +2,7 @@
 title: The Antilibrary
 sub_title: Books I like the idea of having read
 description: A list of books that I intend to read
-navigation_component: reading-view-toggle
+index_navigation: reading-view-toggle
 sidebar_component: books
 sidebar_shelves: ['to-read']
 list_category: media

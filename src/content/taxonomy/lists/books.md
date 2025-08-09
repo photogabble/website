@@ -2,7 +2,7 @@
 title: Library Bookshelf
 sub_title: What I have been reading
 description: A list of books that I have read and written a review about
-navigation_component: reading-view-toggle
+index_navigation: reading-view-toggle
 sidebar_component: books
 sidebar_shelves: ['read']
 list_category: media
