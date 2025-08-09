@@ -6,7 +6,7 @@ This repository contains the source code for [www.photogabble.co.uk](https://www
 
 ## Prerequisites
 
-- Node.js v16+
+- Node.js v20+
 
 ## Getting Started
 You will need to install the required packages using `npm install`. There are three commands for building:
@@ -15,8 +15,8 @@ You will need to install the required packages using `npm install`. There are th
 - `npm run serve:dev` to build and serve with eleventy in development environment
 - `npm run serve:prod` to build and serve with eleventy in production environment (drafts filtered)
 
-## Contributing
+## 🤖 Contributing
 If you notice something wrong or broken, please let me know by opening an issue, or better yet, a pull request with how you think it should be fixed.
 
-## License
-Unless otherwise stated the source code is released under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. See [LICENSE](https://creativecommons.org/licenses/by-nc-sa/4.0/). There are certain exemptions to this, explicitly to code snippets I have mirrored, which each contain their license terms where available.
+## 🪪 License
+Unless otherwise stated, the source code is released under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. See [LICENSE](https://creativecommons.org/licenses/by-nc-sa/4.0/). There are certain exemptions to this, explicitly to code snippets I have mirrored, which each contain their license terms where available.
