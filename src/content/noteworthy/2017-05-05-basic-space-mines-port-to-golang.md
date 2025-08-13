@@ -13,9 +13,11 @@ tags:
   - stage/evergreen
 ---
 
+::: abstract
 I recently spent a little time going down memory lane and reminiscing about my first experiences with programming. I even wrote a [short article](/blog/2017/05/02/happy-fiftyth-birthday-basic/) of the journey during which I wished BASIC a happy 53rd birthday. 
+:::
 
-While writing that article I also sat down and ported a BASIC game called Space Mines to Go. Now I am far from an expert in Golang, and would actually call myself a beginner. However, I found it remarkably easy to port the game and wanted to document my thoughts while doing so &ndash; so lets talk about that.
+While writing that article, I also sat down and ported a BASIC game called Space Mines to Go. Now I am far from an expert in Golang, and would actually call myself a beginner. However, I found it remarkably easy to port the game and wanted to document my thoughts while doing so &ndash; so lets talk about that.
 
 ![Space Mines BASIC source code listing in Usborne Computer Space Games book](/img/happy-fiftyth-birthday-basic-4.png "The BASIC source that spawned this obsession")
 
