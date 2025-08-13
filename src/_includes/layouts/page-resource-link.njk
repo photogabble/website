@@ -30,8 +30,8 @@
 
         <p><a href="{{ href }}" class="bookmark-link">{{ cite.href }}</a></p>
 
-        {% set footnotes = content | extractFootnotes %}
-        {{ content | withoutFootnotes | safe }}
+        {% set footnotes = content | extractElementByQuery('section.footnotes') %}
+        {{ content | withoutElementsByQuery('section.footnotes') | safe }}
     </section>
 
     <footer>

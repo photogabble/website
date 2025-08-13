@@ -23,12 +23,12 @@
         </div>
     </header>
 
-    {% set footnotes = content | extractFootnotes %}
+    {% set footnotes = content | extractElementByQuery('section.footnotes') %}
 
     {% if content.length > 0 %}
         <section class="article-section__content">
             {% if abstract %}<p class="article-section__content-abstract">{{ abstract }}</p>{% endif %}
-            <div class="article-section__content-content">{{ content | withoutFootnotes | safe }}</div>
+            <div class="article-section__content-content">{{ content | withoutElementsByQuery('section.footnotes') | safe }}</div>
     {#            <aside id="sidenote-column-right" class="article-section__content-ref">#}
     {#                <div>#}
     {#                    First Published: {{ page.date | dateToFormat('DDD') }} in commit <a href="#">########</a>.<br/>#}

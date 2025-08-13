@@ -12,8 +12,8 @@
         {%- if hide_meta !== true and readingTime.words > 0 -%}<span style="margin-top: 2rem">{{ readingTime.text }}</span>{%-endif -%}
     </header>
     <section>
-        {% set footnotes = content | extractFootnotes %}
-        {{ content | withoutFootnotes | safe }}
+        {% set footnotes = content | extractElementByQuery('section.footnotes') %}
+        {{ content | withoutElementsByQuery('section.footnotes') | safe }}
     </section>
     <footer>
         {% if footnotes.length %}
