@@ -2,7 +2,7 @@
 {% if seriesId %}
     {% set seriesMeta = collections.topics | whereKeyEquals('topic', 'series/' + seriesId) | first %}
     {% set idx = seriesMeta.items | ixdInCollection(page) %}
-    <nav class="article-series__content" style="margin-top: 1rem">
+    <nav class="article-series__content">
         <h4>Part of series <a href="{{ seriesMeta.permalink }}">{{ seriesMeta.name }}</a></h4>
         <ol>
             {%- for post in seriesMeta.items | neighbours(idx, 3) | reverse -%}

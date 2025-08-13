@@ -645,6 +645,7 @@ main > article, .page-content {
         font-size: 1.3rem;
         line-height: 1.3;
         max-width: 1472px;
+        padding-right: calc(var(--gutter) / 2);
 
         .full-width {
             margin-left: 0;
@@ -671,6 +672,9 @@ main > article, .page-content {
 
     .article-section__content-toc {
         grid-area: toc;
+        gap: 1rem;
+        display: flex;
+        flex-direction: column;
     }
 
     .article-section__content-toc > nav {

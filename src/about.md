@@ -8,7 +8,9 @@ minimal_header: true
 I'm a "full stack" web developer from the UK currently building interesting things with Vue.js, PHP, Golang and Node.
 :::
 
+::: sidebar
 ![Headshot of Simon Dann](/img/headshot.jpg "**Top** It's me, Simon Dann")
+:::
 
 I started playing with computers on an old Toshiba 386 luggable in the mid-nineties and have since been making websites for about 21 years.
 

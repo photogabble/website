@@ -11,8 +11,9 @@
     {% set content = [content, content_extra] | join %}
 {% endif %}
 
-{% set abstract = content | extractMarkedAbstractContent %}
-{% set footnotes = content | extractFootnotes %}
+{% set abstract = content | extractElementByQuery('.abstract') %}
+{% set footnotes = content | extractElementByQuery('section.footnotes') %}
+{% set sidebar = content | extractElementByQuery('.sidebar') %}
 
 {#{% set headingClass = 'note' %}#}
 {#{% set titlePrefix %}#}
@@ -44,7 +45,11 @@
             {% if toc_content %}
                 <h4>Table of contents</h4>
                 {{ toc_content | safe }}
-                <hr style="margin-top: 1rem" />
+                <hr />
+            {% endif %}
+
+            {% if sidebar %}
+                {{ sidebar | safe }}
             {% endif %}
 
             {% include "components/side-bars/series.njk" %}
@@ -58,7 +63,7 @@
                     <p>This is a stub post to be filled out in the future. It has been created for the purpose of interlinking feel free to check out what links here from the list below to find related pages.</p>
                 </div>
             {% endif %}
-            {{ content | withoutMarkedAbstractContent| withoutFootnotes | safe }}
+            {{ content | withoutElementsByQuery('.sidebar, .abstract, section.footnotes') | safe }}
         </div>
         <aside id="sidenote-column-right" class="article-section__content-ref">
             <div style="margin-top:1rem">
