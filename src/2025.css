@@ -401,7 +401,7 @@ ul.list__alphabet {
     }
 
     > ul, > ol {
-        padding-left: 0;
+        padding-left: var(--spacing);
     }
 
     hr {
