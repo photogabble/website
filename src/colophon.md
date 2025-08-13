@@ -1,8 +1,11 @@
 ---
 title: Colophon
 layout: 'layouts/page-post.njk'
-abstract: No website is an island, they are all built upon the combined effort of that which came before. If they are lucky, they will inspire the next generation.
 ---
+
+::: abstract
+No website is an island, they are all built upon the combined effort of that which came before. If they are lucky, they will inspire the next generation.
+:::
 
 I began writing this version of the website in December 2024, having already spent the majority of the previous eight months rebuilding the website as a two column layout inspired by [Untapped Journal](https://www.untappedjournal.com/).
 
