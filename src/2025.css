@@ -118,6 +118,7 @@ html {
 
 body {
     font-family: var(--serif-font-stack);
+    font-size: clamp(1rem, .9583rem + .1667vw, 1.125rem);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     background: var(--page-background);
@@ -161,6 +162,12 @@ hr {
     height: 1px;
     border: none;
     background: var(--page-border-colour);
+}
+
+figcaption {
+    font-family: var(--monospaced-font-stack);
+    font-size: 1rem;
+    margin-top: 0.5rem;
 }
 
 /*
@@ -710,10 +717,7 @@ figure.citation blockquote {
 }
 
 figure.citation figcaption {
-    font-family: var(--monospaced-font-stack);
     padding-left: calc(1rem + 6px);
-    font-size: 1rem;
-    margin-top: 0.5rem;
 
     &::before {
         content: '↑';
