@@ -1,18 +1,20 @@
 <header>
-    <div class="article-header__category filled-boxes">
-        <span><a href="#">{{ type }}</a></span>
-        <span>Featured [{{ sidebar_component }}]</span>
-    </div>
-    <div class="article-header__meta">
-        <span>Words planted in:</span>
-        <div>
-            {% include "components/tag-list.njk" %}
+    {% if not minimal_header %}
+        <div class="article-header__category filled-boxes">
+            <span><a href="#">{{ type }}</a></span>
+            <span>Featured [{{ sidebar_component }}]</span>
         </div>
-    </div>
+        <div class="article-header__meta">
+            <span>Words planted in:</span>
+            <div>
+                {% include "components/tag-list.njk" %}
+            </div>
+        </div>
 
-    <div class="article-header__date">
-        {% if growthStage === 'stub' %}Schedueld for {% endif %}<time datetime="{{ page.date | dateToFormat('iso') }}">{{ page.date | dateToFormat('DDD') }}</time>
-    </div>
+        <div class="article-header__date">
+            {% if growthStage === 'stub' %}Schedueld for {% endif %}<time datetime="{{ page.date | dateToFormat('iso') }}">{{ page.date | dateToFormat('DDD') }}</time>
+        </div>
+    {% endif %}
 
     <h1 class="article-header__title">{{ title }}</h1>
 
