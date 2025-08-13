@@ -429,6 +429,7 @@ ul.list__alphabet {
     pre[class*="language-"] {
         padding-top: 1rem;
         padding-bottom: 1rem;
+        margin: var(--spacing) 0;
     }
 
     pre:not([class*="language-"]) {
