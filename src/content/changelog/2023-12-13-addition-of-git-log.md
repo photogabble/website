@@ -4,6 +4,7 @@ tags:
   - Blogging
   - 11ty
   - stage/budding
+version: 23.50.0
 ---
 
 With a huge thank-you to Belmin Began([@MaNemoj01](https://github.com/MaNemoj01)) for their [PR implementing git history for pages](https://github.com/photogabble/website/pull/302) this website now has a git history on each writing page. It's been a few months since I last checked the repo for this website and had this week begun working on [refactoring the repositories directory structure](https://github.com/photogabble/website/issues/304) when I noticed Belmin's PR.

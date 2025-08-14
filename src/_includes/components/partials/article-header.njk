@@ -1,8 +1,11 @@
 <header>
     {% if not minimal_header %}
         <div class="article-header__category filled-boxes">
-            <span><a href="#">{{ type }}</a></span>
-            <span>Featured [{{ sidebar_component }}]</span>
+            {% for crumb in folder | breadcrumbs %}
+                <span>
+                    {% if crumb.href %}<a href="{{ crumb.href }}" title="{{ crumb.title }}">{{ crumb.text or crumb.title }}</a>{% else %}{{ crumb.text or crumb.title }}{% endif %}
+                </span>
+            {% endfor %}
         </div>
         <div class="article-header__meta">
             <span>Words planted in:</span>

@@ -4,6 +4,7 @@ tags:
   - Indie Web
   - Old Web
   - stage/budding
+version: 24.02.0
 ---
 
 In December last year I began exploring the vast expanses of [[ Map of the Indie Web | The Indie Web ]] and in doing so reignited my love of 88x31 button banners and the [[ Button Boards ]] that people display them on. After adding [my own button board](/button-board/) I became a [[Digital Magpie]] and over multiple [[Digital Spelunking]] sessions began filling out my own board with little images that bring me joy.

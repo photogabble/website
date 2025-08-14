@@ -3,6 +3,7 @@ title: "Adding enhanced opengraph meta"
 tags:
   - Blogging
   - stage/evergreen
+version: 22.37.0
 ---
 
 September seems to be this website's month of catching up with old issues; I have just closed two:

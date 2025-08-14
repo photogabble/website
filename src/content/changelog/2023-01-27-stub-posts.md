@@ -3,6 +3,7 @@ title: "Adding stub posts"
 tags:
   - Blogging
   - stage/seedling
+version: 23.04.0
 ---
 
 A while back as part of converting into a #DigitalGarden I added [[Wiki links|Wiki Links]] support to PhotoGabble's #11ty build. In doing so I also made it very easy for me to interlink between pages and most importantly copy posts directly from Obsidian into markdown files in this websites repository without having to change anything.

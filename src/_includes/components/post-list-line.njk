@@ -16,6 +16,9 @@
         {% if post.data.rating %}
             {{ post.data.rating | ratingToStars }}
         {% endif %}
+        {% if post.data.version %}
+            <code class="version">{{ post.data.version }}</code>
+        {% endif %}
     </span>
     <hr/>
     <small>

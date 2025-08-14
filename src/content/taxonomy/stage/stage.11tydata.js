@@ -19,7 +19,7 @@ export default {
   layout: 'layouts/page-index.njk',
   index_navigation: 'growth-stages',
 
-  // Do not display page meta data
+  // Do not display page metadata
   hide_meta: true,
   folder: ['series'],
 

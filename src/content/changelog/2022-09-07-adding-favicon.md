@@ -3,9 +3,12 @@ title: "Adding favicon"
 tags:
   - Blogging
   - stage/evergreen
+version: 22.36.0
 ---
 
+::: abstract
 Today I closed issue [#30: Add Favicon](https://github.com/photogabble/website/issues/30). This has embarrassingly been open since October 2021 after having rewritten PhotoGabble for 11ty.
+:::
 
 In the history of this website, it has always had a favicon in the form of a `.ico` file loaded thus:
 

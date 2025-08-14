@@ -4,6 +4,7 @@ tags:
   - Blogging
   - HowTo
   - stage/budding
+version: 23.11.0
 ---
 
 In January, I added the [Glossary](/glossary/) content type to this #DigitalGarden as a way of storing short-form descriptions on colloquialisms that I use which may not be well known to the reader.

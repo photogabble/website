@@ -8,4 +8,8 @@ export default {
   folder: ['writing', 'changelog'],
   tags: ['writing', 'type/changelog'],
   navigation_links: [{title: 'Colophon', href: '/colophon/'}],
+
+  eleventyComputed: {
+    folder: data => ['changelog', data.version ? {text: `v${data.version}`} : undefined].filter(e => e)
+  }
 };

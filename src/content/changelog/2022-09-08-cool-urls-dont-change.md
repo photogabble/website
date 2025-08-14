@@ -3,9 +3,12 @@ title: "Cool URls don't change"
 tags:
   - Blogging
   - stage/budding
+version: 22.36.1
 ---
 
+::: abstract
 Earlier this year I reorganised PhotoGabble into being more of a Digital Garden than a Blog. As a result, the majority of the existing url structure changed which resulted in a lot of old links becoming dead.
+:::
 
 There are obvious [negative impacts to SEO that come with URL structure changes](https://www.loudmouth-media.com/blog/why-changing-your-url-structure-is-bad-for-seo) however, at the time of making the change this wasn't a concern of mine. PhotoGabble's target audience is very small, mostly my future self and others with overlapping interests in the same things I have worked on. At the time of making hundreds of URLs resolve to a 404 I didn't think the impact would be huge, I was wrong.
 

@@ -1,8 +1,8 @@
 ---
-title: Changelog
+title: CHANGELOG
 sub_title: Changes over time
 layout: layouts/page-index.njk
-sidebar_component: topic
+sidebar_component: list-table
 sidebar_title: Release Notes / Changelog
 sidebar_topic: 'type/changelog'
 hide_meta: true

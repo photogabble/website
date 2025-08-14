@@ -4,9 +4,12 @@ tags:
   - Blogging
   - 11ty
   - stage/seedling
+version: 23.03.0
 ---
 
+::: abstract
 Last month I stumbled upon [Tim Hårek Andreassen's blog stats page](https://timharek.no/stats/) and thought it cool enough to open issue [#148](https://github.com/photogabble/website/issues/148) as a reminder to add the same to PhotoGabble.
+:::
 
 Tim's blog uses the [Zola](https://www.getzola.org/) static site generator and therefore made use of the filters built into Zola for discovering the following statistics:
 
