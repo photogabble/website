@@ -6,7 +6,7 @@ sub_title: "What's in my big bag of tools"
 sidebar_component: uses
 index_navigation: slash-pages
 hide_header_date: true
-folder: [about]
+folder: [me]
 modified: 2025-08-14
 ---
 

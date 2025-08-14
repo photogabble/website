@@ -1,7 +1,8 @@
 ---
 layout: layouts/page.njk
 title: "Elsewhere"
-titlePrefix: "Me"
+folder: [me]
+index_navigation: slash-pages
 ---
 
 I can be found in the following online communities:
