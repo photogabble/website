@@ -603,6 +603,7 @@ main > article, .page-content {
         align-self: end;
         justify-self: end;
         margin-bottom: var(--spacing);
+        padding-bottom: calc(var(--spacing) / 2);
     }
 
     .article-header__stats {

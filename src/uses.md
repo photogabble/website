@@ -4,19 +4,28 @@ title: "/uses"
 titlePrefix: "Me"
 sub_title: "What's in my big bag of tools"
 sidebar_component: uses
+index_navigation: slash-pages
+hide_header_date: true
 folder: [about]
-modified: 2024-07-02
+modified: 2025-08-14
 ---
 
+::: abstract
 A somewhat complete list of tools, applications, hardware and services that I used on a day-to-day basis. Make sure to check out <a href="https://uses.tech">uses.tech</a> for a list of other peoples <code>/uses</code> pages!
+:::
 
 ## Hardware
 * Main PC
   * **Processor**: AMD Ryzen 7 7700 @ 3.8-5.3GHz
   * **Memory**: 32GB Corsair Vengeance PC5-48000
   * **Motherboard**: ASUS ROG Strix AMD B650E-I mini-ITX
+  * **Graphics**: NVIDIA GeForce RTX 970 4GB
   * **Case**: NZXT H1 v2
-* Lenovo x230 ThinkPad
+* [[Lenovo ThinkPad P15 Gen 1]]
+  * **Processor**: Intel i7-10850H @ 2.70GHz
+  * **Memory**: 64GB 2933MHz DDR4
+  * **Graphics**: NVIDIA Quadro T1000 4GB
+* [[Lenovo x230 ThinkPad]]
   * **Processor**: Intel i7-3520M @ 2.90Ghz
   * **Memory**: 16GB 1600Mhz DDR3
 * Apple 16" 2019 MacBook Pro
