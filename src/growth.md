@@ -4,7 +4,8 @@ layout: layouts/page-post.njk
 sidebar_component: topic
 sidebar_title: Growth Stages
 sidebar_topic: 'type/stage'
-hide_meta: true
+hide_header_date: true
+index_navigation: growth-stages
 tags:
   - 'type/index'
 folder:
@@ -14,11 +15,13 @@ started: 2023-01-01
 modified: 2024-10-02
 ---
 
-<p style="text-align: center">
+:::sidebar
     {% image 'img/growth.png' 'Planting a seed and watching it grow.' %}
-</p>
+:::
 
+::: abstract
 Inspired by Maggie's _Six Patterns of Gardening_ from her essay: [[ A Brief History & Ethos of the Digital Garden ]], I added growth stages to this Digital Garden as a way of describing how polished I consider a piece of writing. 
+:::
 
 Within that essay Maggie talks about _imperfection and learning in public_ which is something that resonated with me. For a number of years now I have been an advocate of #BuildInPublic to the point where the majority of the projects I work on are open source.
 
