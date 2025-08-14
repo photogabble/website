@@ -43,7 +43,7 @@
             {% set toc_content = content | withHeadings(toc_headings) | toc %}
 
             {% if toc_content %}
-                <h4>Table of contents</h4>
+                <h4>On this page</h4>
                 {{ toc_content | safe }}
                 <hr />
             {% endif %}
