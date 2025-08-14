@@ -597,6 +597,7 @@ main > article, .page-content {
 
     .article-header__stats {
         font-family: var(--monospaced-font-stack);
+        font-size: 0.9rem;
         grid-area: reading-time;
         align-self: end;
         justify-self: end;
