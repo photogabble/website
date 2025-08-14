@@ -1,0 +1,6 @@
+{% for crumb in folder | breadcrumbs %}
+    {% if loop.first or loop.index == 2 %}<span>{% endif %}
+    {% if crumb.href %}<a href="{{ crumb.href }}" title="{{ crumb.title }}">{{ crumb.text or crumb.title }}</a>{% else %}{{ crumb.text or crumb.title }}{% endif %}
+    {% if loop.length > 2 and not loop.first and not loop.last %}/{% endif %}
+    {% if loop.first or loop.last %}</span>{% endif %}
+{% endfor %}

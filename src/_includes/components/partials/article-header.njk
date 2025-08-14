@@ -1,11 +1,7 @@
 <header>
     {% if not minimal_header %}
         <div class="article-header__category filled-boxes">
-            {% for crumb in folder | breadcrumbs %}
-                <span>
-                    {% if crumb.href %}<a href="{{ crumb.href }}" title="{{ crumb.title }}">{{ crumb.text or crumb.title }}</a>{% else %}{{ crumb.text or crumb.title }}{% endif %}
-                </span>
-            {% endfor %}
+            {% include "components/partials/breadcrumbs.njk" %}
         </div>
         <div class="article-header__meta">
             <span>Words planted in:</span>

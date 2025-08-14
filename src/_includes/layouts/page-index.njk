@@ -18,11 +18,7 @@
     <header>
         <div class="article-header__category filled-boxes">
             {% if folder %}
-                {% for crumb in folder | breadcrumbs %}
-                    <span>
-                        {% if crumb.href %}<a href="{{ crumb.href }}" title="{{ crumb.title }}">{{ crumb.text or crumb.title }}</a>{% else %}{{ crumb.text or crumb.title }}{% endif %}
-                    </span>
-                {% endfor %}
+                {% include "components/partials/breadcrumbs.njk" %}
             {% else %}
                 <span>{{ type }}</span>
             {% endif %}
