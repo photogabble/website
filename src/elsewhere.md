@@ -1,5 +1,6 @@
 ---
-layout: layouts/page.njk
+layout: 'layouts/page-post.njk'
+hide_header_date: true
 title: "Elsewhere"
 folder: [me]
 index_navigation: slash-pages
