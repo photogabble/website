@@ -1070,6 +1070,136 @@ figure.citation figcaption {
 }
 
 /*
+ * Component: Post Listing
+ * Displays a table listing of posts.
+ */
+
+.post-list__chronological {
+    list-style: none;
+    padding: 0;
+
+    h2 {
+        text-decoration-line: underline;
+        color: var(--page-key-colour);
+        font-size: 1em;
+    }
+
+    li a {
+        position: relative;
+        /*padding: 8px;*/
+        gap: 0.5rem;
+        min-height: calc(var(--spacing) * 2);
+        isolation: isolate;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        font-size: clamp(1rem, 6vw, 1.5rem);
+        text-decoration: none;
+        color: inherit;
+    }
+
+    li a:hover h2 {
+        text-decoration-color: var(--category-background);
+    }
+
+    .title{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        flex-shrink: 0;
+        gap: 0.5rem;
+    }
+
+    .summary{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-shrink: 0;
+        width: 100%;
+        gap: 0.5rem;
+        font-size: 1rem;
+
+        .extra {
+            display: flex;
+        }
+
+        .summary__content{
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .summary__content > * {
+            height: 18px;
+            font-size: 0.7rem;
+            padding: 0 0.25rem;
+            width: fit-content;
+            font-family: var(--monospaced-font-stack);
+            border: 1px solid var(--category-background);
+            background: var(--category-background);
+            color: var(--category-text-colour);
+        }
+
+        .summary__content::after {
+            content: '|';
+            line-height: 1;
+            margin-top: -2px;
+        }
+
+        .summary__date{
+            font-family: var(--monospaced-font-stack);
+        }
+    }
+
+    hr, .title .extra {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .post-list__chronological {
+        li a {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .title {
+            align-items: center;
+        }
+
+        .title .extra {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            gap: 0.5rem;
+        }
+
+        .title .extra::before {
+            content: '|';
+            display: inline-block;
+        }
+
+        .title .extra .subtitle{
+            text-transform: uppercase;
+            font-family: var(--monospaced-font-stack);
+        }
+
+        .summary{
+            width: fit-content;
+            .extra {
+                display: none;
+            }
+        }
+
+        hr {
+            display: flex;
+            width: 100%;
+        }
+    }
+}
+
+/*
  * Misc
  */
 

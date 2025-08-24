@@ -1,5 +1,53 @@
 {# TODO: move into ./navigation folder #}
-<li>
+
+    {% set showSummary = post.data.version or post.data.rating or displayResourceType or displayContentType %}
+    {% set isDead = post.data.tags and post.data.tags | includesTag('list/digital-graveyard') %}
+    {% set showExtra = post.data.draft or isDead %}
+
+    <li>
+        <a href="{{ post.url }}" title="Read {{ post.data.title }}">
+            <div class="title">
+                <h2>{{ post.data.title }}</h2>
+                {% if showExtra %}
+                <div class="extra">
+                    {% if post.data.draft %}
+                    <span class="subtitle">DRAFT</span>
+                    {% elseif isDead %}
+                        🪦 RIP
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+
+            <hr/>
+
+            <div class="summary">
+                {% if showExtra %}
+                <div class="extra">
+                    <!-- draft / dead badges -->
+                </div>
+                {% endif %}
+                {% if showSummary %}
+                <div class="summary__content">
+                    {% if post.data.rating %}
+                        {{ post.data.rating | ratingToStars }}
+                    {% elseif post.data.version %}
+                        <code class="version">{{ post.data.version }}</code>
+                    {% elseif displayResourceType %}
+                        <span>{{ post.data.tags | specialTagValue('resource') }}</span>
+                    {% elseif displayContentType %}
+                        <span>{{ post.data.tags | specialTagValue('type') }}</span>
+                    {% endif %}
+                </div>
+                {% endif %}
+                <span class="summary__date">
+                    {{ post.data.niceDate or post.date | dateToFormat("DDD") }}
+                </span>
+            </div>
+        </a>
+    </li>
+
+    <!--
     <span>
         {% if page and page.url === post.url %}»{% endif %}
         {% if post.data.draft %}
@@ -26,3 +74,4 @@
         {{ post.data.niceDate or post.date | dateToFormat("DDD") }}
     </small>
 </li>
+-->
