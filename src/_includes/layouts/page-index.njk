@@ -25,6 +25,7 @@
         </div>
 
         <div class="article-header__meta">
+            {# TODO: last updated date #}
             <span>{{ items.length }} items,</span> last updated on 1st Jan, 2025
         </div>
 
@@ -52,20 +53,18 @@
     <hr>
     {% endif %}
 
-    <section>
-        <ul>
-            <li><pre>index_navigation: {% if index_navigation %}{{ index_navigation }}{% else %}(growth-stages){% endif %}</pre></li>
-            <li><pre>sidebar_topic: {{ sidebar_topic }}</pre></li>
-            <li><pre>sidebar_component: components/listings/{{ sidebar_component }}</pre></li>
-            <li><pre>navigation_component: {{ navigation_component or '(none)' }}</pre></li>
-        </ul>
-    </section>
+{#    <section>#}
+{#        <ul>#}
+{#            <li><pre>index_navigation: {% if index_navigation %}{{ index_navigation }}{% else %}(growth-stages){% endif %}</pre></li>#}
+{#            <li><pre>sidebar_topic: {{ sidebar_topic }}</pre></li>#}
+{#            <li><pre>sidebar_component: components/listings/{{ sidebar_component }}</pre></li>#}
+{#            <li><pre>navigation_component: {{ navigation_component or '(none)' }}</pre></li>#}
+{#        </ul>#}
+{#    </section>#}
 
     {% if sidebar_component %}
         {% set list_component_include = 'components/listings/' + sidebar_component + '.njk' %}
         {% include list_component_include %}
-    {% else %}
-        {# {% include "components/side-bars/writing.njk" %} #}
     {% endif %}
 
     <hr>
