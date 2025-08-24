@@ -1,0 +1,11 @@
+{#
+    # Item listing grouped by year in table format
+
+    Variables:
+    - `items`: Array of topic items to be listed.
+
+    Used by:
+#}
+
+{% set itemsByYear = items | groupByYear %}
+{% include 'components/partials/post-list-by-year.njk' %}
