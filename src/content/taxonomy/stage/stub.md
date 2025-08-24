@@ -4,7 +4,9 @@ aliases:
   - Stubs
 sub_title: Like drafts, but public.
 sidebar_title: Works in Progress
+sidebar_component: list-table
 sidebar_topic: 'stage/stub'
+displayContentType: true
 folder: 
   - writing
   - {title: 'growth', href: '/growth/'}
