@@ -16,14 +16,6 @@
 {% block content %}
 <article>
     <header>
-        <div class="article-header__category filled-boxes">
-            {% if folder %}
-                {% include "components/partials/breadcrumbs.njk" %}
-            {% else %}
-                <span>{{ type }}</span>
-            {% endif %}
-        </div>
-
         <div class="article-header__meta">
             {# TODO: last updated date #}
             <span>{{ items.length }} items,</span> last updated on 1st Jan, 2025
