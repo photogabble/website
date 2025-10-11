@@ -7,6 +7,7 @@ This repository contains the source code for [www.photogabble.co.uk](https://www
 ## Prerequisites
 
 - Node.js v20+
+- Screenshots require Chromium dependencies to be available, I had to install `libnss3` via `apt install libnss3`
 
 ## Getting Started
 You will need to install the required packages using `npm install`. There are three commands for building:

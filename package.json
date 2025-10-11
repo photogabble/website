@@ -54,7 +54,8 @@
     "postcss": "^8.4.41",
     "postcss-import": "^16.1.0",
     "postcss-minify": "^1.1.0",
-    "puppeteer": "^23.0.1"
+    "@sparticuz/chromium": "^126.0.0",
+    "puppeteer-core": "^22.13.1"
   },
   "dependencies": {
     "@11ty/eleventy-fetch": "^4.0.1",
