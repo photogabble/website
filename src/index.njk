@@ -2,15 +2,18 @@
 {% extends "layouts/base.njk" %}
 
 {% block content %}
-  <article>
-    <header>
-      <h1><a href="/hello/">Hello!</a> I'm Simon,</h1>
-      <h2>welcome to my digital garden.</h2>
-    </header>
-    <section>
-      <p>I'm a <a href="https://github.com/carbontwelve">"full stack" web developer</a> and proud father of two. My interests include vintage computing, astrophysics and game development. I currently work as a senior developer for Wefix.</p>
+  <article style="margin-bottom: 0">
+    <section style="padding-bottom: 0">
+      <p>Hi there, I'm Simon and this is my <strong>Digital Garden</strong>.</p>
+      <p>I'm a <a href="https://github.com/carbontwelve"><em>"full stack"</em> web developer</a> and proud father of two. My interests include vintage computing, astrophysics and game development. I currently work as a senior developer for Wefix.</p>
       <p>In my spare time I maintain a number of <a href="/projects/">Open Source Projects</a> and can be found on <a href="/elsewhere/">various online platforms &amp; communities</a>.</p>
       <p>You can find out more <a href="/about/">about me</a>, what I <a href="/uses/">use</a>, the books that I <a href="/books/">have been reading</a> and what I am up to <a href="/now/">now</a>.</p>
+      <p>If you share my interests, I'd love to hear from you, why not say <a href="/hello/">Hello</a>?</p>
     </section>
   </article>
+  <div style="background: var(--page-text-colour); color: var(--page-background);">
+      <section class="page-content" style="padding: 4rem var(--gutter);">
+          <p><strong>Recent Notes</strong></p>
+      </section>
+  </div>
 {% endblock %}

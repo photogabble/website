@@ -1,8 +1,5 @@
 <header>
     {% if not minimal_header %}
-        <div class="article-header__category filled-boxes">
-            {% include "components/partials/breadcrumbs.njk" %}
-        </div>
         {% if tags | withoutTags(['writing']) | excludeSpecialTags(['type', 'resource']) | length > 0 %}
         <div class="article-header__meta">
             <span>Words planted in:</span>

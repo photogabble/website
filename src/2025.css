@@ -1,3 +1,4 @@
+@import "_styles/components/_fonts.css";
 @import "_styles/_jumbonav.css";
 @import "_styles/components/_table.css";
 @import "_styles/components/_stats.css";
@@ -40,10 +41,6 @@ html:root, html[data-theme="classic"], [data-theme="classic"] {
     --background-color-caution: rgba(255, 53, 63, 0.1);
     --highlight-color-important: #8250df;
     --background-color-important: rgba(130, 80, 223, 0.1);
-
-    --serif-font-stack: 'Source Serif', serif;
-    --sans-serif-font-stack: sans-serif;
-    --monospaced-font-stack: monospace;
 }
 
 html[data-theme="chocolate-thunda"], [data-theme="chocolate-thunda"] {
@@ -79,24 +76,6 @@ html[data-theme="blush"], [data-theme="blush"] {
     --category-text-colour: #eddad1;
 }
 
-@font-face {
-    font-family: 'Source Serif';
-    font-weight: 400;
-    font-display: swap;
-    font-style: normal;
-    font-stretch: normal;
-    src: url('fonts/SourceSerif4-Regular.ttf.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Source Serif';
-    font-weight: 400;
-    font-display: swap;
-    font-style: italic;
-    font-stretch: normal;
-    src: url('fonts/SourceSerif4-It.ttf.woff2') format('woff2');
-}
-
 html {
     scrollbar-width: thin;
     scrollbar-color: var(--page-text-colour) var(--page-background);
@@ -117,7 +96,11 @@ html {
 }
 
 body {
-    font-family: var(--serif-font-stack);
+    font-family: "Iosevka Etoile", monospace;
+    letter-spacing: -0.02em;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
+    font-variant-ligatures: contextual;
     font-size: clamp(1rem, .9583rem + .1667vw, 1.125rem);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -165,7 +148,6 @@ hr {
 }
 
 figcaption {
-    font-family: var(--monospaced-font-stack);
     font-size: 1rem;
     margin-top: 0.5rem;
 }
@@ -177,7 +159,6 @@ figcaption {
 .header-main {
     background: transparent;
     padding: 1ch 0;
-    border-bottom: 1px solid;
 
     > div {
         padding: 0 var(--gutter);
@@ -199,8 +180,8 @@ figcaption {
     }
 }
 
-.header-main__logo {
-
+.header-main__logo > * {
+    color: inherit;
 }
 
 .header-main__menu {
@@ -217,7 +198,6 @@ figcaption {
  */
 
 .theme-picker {
-    font-family: var(--monospaced-font-stack);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -264,7 +244,7 @@ figcaption {
             transition: transform .2s cubic-bezier(.4, 0, .2, 1);
             position: relative;
 
-            &:hover{
+            &:hover {
                 transform: scale(1.05);
             }
         }
@@ -310,15 +290,19 @@ figcaption {
     .background-offset {
         background-color: var(--page-background-offset);
     }
+
     .text {
         background-color: var(--page-text-colour);
     }
+
     .border {
         background-color: var(--page-border-colour);
     }
+
     .key {
         background-color: var(--page-key-colour);
     }
+
     .category {
         background-color: var(--category-background);
     }
@@ -333,9 +317,9 @@ body.theme-picker__visible .theme-picker {
  * Styles shared between Page Types
  */
 
+/* TODO: remove .filled-boxes ?? */
 .filled-boxes {
     display: flex;
-    font-family: var(--monospaced-font-stack);
     font-size: .875rem;
     letter-spacing: .0725rem;
 
@@ -375,21 +359,16 @@ body.theme-picker__visible .theme-picker {
 ol.list__alphabet,
 ul.list__alphabet {
     margin: 0;
-    padding:0;
+    padding: 0;
     list-style: none;
     display: flex;
     gap: 0.5em;
     flex-wrap: wrap;
 }
 
-.article-section__content {
-    font-size: 1.3rem;
-    line-height: 1.3;
-}
-
 .article-section__content-content {
-    h2,h3,h4,h5,h6{
-        margin-top: calc(var(--spacing)* 2);
+    h2, h3, h4, h5, h6 {
+        margin-top: calc(var(--spacing) * 2);
     }
 
     > * {
@@ -416,9 +395,10 @@ ul.list__alphabet {
     }
 
     :not(pre) > code {
-        font-family: var(--monospaced-font-stack);
-        font-size: 1rem;
-        color: var(--page-border-colour);
+        font-size: 0.9em;
+        background: var(--page-text-colour);
+        color: var(--page-background);
+        padding: 0 0.3em;
     }
 
     pre {
@@ -426,6 +406,7 @@ ul.list__alphabet {
     }
 
     /* Overwrite padding set by Prism */
+
     pre[class*="language-"] {
         padding-top: 1rem;
         padding-bottom: 1rem;
@@ -440,7 +421,6 @@ ul.list__alphabet {
 
     small {
         font-size: 60%;
-        font-family: var(--monospaced-font-stack);
     }
 
     li {
@@ -449,22 +429,23 @@ ul.list__alphabet {
 }
 
 .article-section__content-footer {
-    h3{
+    h3 {
         margin-bottom: var(--spacing);
     }
+
     ol, ul {
         font-size: 1rem;
         padding-left: 0;
     }
+
     li {
         margin-bottom: calc(var(--spacing) / 4);
     }
 }
 
-#backlinks ul{
+#backlinks ul {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    font-family: var(--monospaced-font-stack);
     font-size: 0.9rem;
     list-style-position: inside;
 }
@@ -476,34 +457,8 @@ main > article, .page-content {
 }
 
 .page__homepage {
-    article {
-        margin-top: 10rem;
-    }
-    article > header {
-        padding: 0 var(--gutter);
-
-        h1, h2 {
-            line-height: 1;
-        }
-
-        h1 {
-            font-size: clamp(2rem, 6vw, 10rem);
-            a{
-                color: inherit;
-                &:hover {
-                    color: var(--page-key-colour);
-                }
-            }
-        }
-
-        h2 {
-            font-size: clamp(1rem, 6vw, 5rem);
-        }
-    }
-
     article > section {
-        padding: 4rem var(--gutter);
-        font-size: 1.6rem;
+        padding: 0 var(--gutter);
         line-height: 1.3;
 
         > * {
@@ -587,7 +542,7 @@ main > article, .page-content {
         }
     }
 
-    .article-header__title{
+    .article-header__title {
         grid-area: title;
         grid-column: 1;
     }
@@ -598,7 +553,6 @@ main > article, .page-content {
     }
 
     .article-header__date {
-        font-family: var(--monospaced-font-stack);
         grid-area: date;
         align-self: end;
         justify-self: end;
@@ -607,7 +561,6 @@ main > article, .page-content {
     }
 
     .article-header__stats {
-        font-family: var(--monospaced-font-stack);
         font-size: 0.9rem;
         grid-area: reading-time;
         align-self: end;
@@ -615,7 +568,6 @@ main > article, .page-content {
     }
 
     .article-header__meta {
-        font-family: var(--monospaced-font-stack);
         grid-area: meta;
         display: grid;
         gap: 10px;
@@ -655,8 +607,6 @@ main > article, .page-content {
 
     .article-section__content-content {
         grid-area: article;
-        font-size: 1.3rem;
-        line-height: 1.3;
         max-width: 1472px;
         padding-right: calc(var(--gutter) / 2);
 
@@ -670,13 +620,11 @@ main > article, .page-content {
     }
 
     .footnote-ref {
-        font-family: var(--monospaced-font-stack);
         font-size: 0.8rem;
     }
 
     .article-section__content-toc,
     .article-section__content-ref {
-        font-family: var(--monospaced-font-stack);
         font-size: 0.8rem;
         margin-top: 5px;
         padding-top: 1rem;
@@ -886,8 +834,7 @@ figure.citation figcaption {
         grid-template-rows: 110px 1fr 30px;
     }
 
-    small{
-        font-family: var(--monospaced-font-stack);
+    small {
         color: var(--page-text-colour);
     }
 
@@ -895,13 +842,13 @@ figure.citation figcaption {
         align-self: flex-end;
         padding: 1ch;
 
-        h3{
+        h3 {
             font-size: 1.4rem;
             margin-bottom: 0;
         }
     }
 
-    footer{
+    footer {
         display: flex;
         align-items: center;
         border-top: 1px solid var(--page-border-colour);
@@ -944,16 +891,23 @@ figure.citation figcaption {
  */
 
 .book-list {
-    font-family: var(--monospaced-font-stack);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: var(--gutter);
 
-    a{ text-decoration: none; }
-    a:hover h3{ text-decoration: underline; }
-    p { color: var(--page-text-colour); }
+    a {
+        text-decoration: none;
+    }
 
-    .book-wrap{
+    a:hover h3 {
+        text-decoration: underline;
+    }
+
+    p {
+        color: var(--page-text-colour);
+    }
+
+    .book-wrap {
         padding: 5rem 1rem;
         background: #d7673c14;
         border-radius: 0.5rem;
@@ -979,9 +933,8 @@ figure.citation figcaption {
         background-size: cover;
         background-position: center;
         border-radius: 3px;
-        box-shadow:
-                inset 4px 1px 3px #ffffff60,
-                inset 0 -1px 2px #00000080;
+        box-shadow: inset 4px 1px 3px #ffffff60,
+        inset 0 -1px 2px #00000080;
         transition: all 0.5s ease-in-out;
         -webkit-transition: all 0.5s ease-in-out;
     }
@@ -1032,10 +985,9 @@ figure.citation figcaption {
             -webkit-transform: perspective(2000px) rotateY(-30deg);
             transform-style: preserve-3d;
             -webkit-transform-style: preserve-3d;
-            box-shadow:
-                    inset 4px 1px 3px #ffffff60,
-                    inset 0 -1px 2px #00000080,
-                    10px 0 10px -5px #00000030;
+            box-shadow: inset 4px 1px 3px #ffffff60,
+            inset 0 -1px 2px #00000080,
+            10px 0 10px -5px #00000030;
         }
 
         .effect {
@@ -1056,16 +1008,15 @@ figure.citation figcaption {
         border: 1px solid grey;
         border-radius: 3px;
         background: white;
-        box-shadow:
-                10px 40px 40px -10px #00000030,
-                inset -2px 0 0 grey,
-                inset -3px 0 0 #dbdbdb,
-                inset -4px 0 0 white,
-                inset -5px 0 0 #dbdbdb,
-                inset -6px 0 0 white,
-                inset -7px 0 0 #dbdbdb,
-                inset -8px 0 0 white,
-                inset -9px 0 0 #dbdbdb;
+        box-shadow: 10px 40px 40px -10px #00000030,
+        inset -2px 0 0 grey,
+        inset -3px 0 0 #dbdbdb,
+        inset -4px 0 0 white,
+        inset -5px 0 0 #dbdbdb,
+        inset -6px 0 0 white,
+        inset -7px 0 0 #dbdbdb,
+        inset -8px 0 0 white,
+        inset -9px 0 0 #dbdbdb;
     }
 }
 
@@ -1074,6 +1025,21 @@ figure.citation figcaption {
  * Displays a table listing of posts.
  */
 
+.post-list__inline-header {
+    display: flex;
+    align-items: center;
+
+    h3 {
+        font-size: 2.5rem;
+        flex-grow: 1;
+    }
+
+    span {
+        font-family: monospace;
+        font-weight: bold;
+    }
+}
+
 .post-list__chronological {
     list-style: none;
     padding: 0;
@@ -1081,7 +1047,7 @@ figure.citation figcaption {
     h2 {
         text-decoration-line: underline;
         color: var(--page-key-colour);
-        font-size: 1em;
+        font-size: 1.2rem;
     }
 
     li a {
@@ -1103,7 +1069,7 @@ figure.citation figcaption {
         text-decoration-color: var(--category-background);
     }
 
-    .title{
+    .title {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
@@ -1111,7 +1077,7 @@ figure.citation figcaption {
         gap: 0.5rem;
     }
 
-    .summary{
+    .summary {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -1124,7 +1090,7 @@ figure.citation figcaption {
             display: flex;
         }
 
-        .summary__content{
+        .summary__content {
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -1135,7 +1101,6 @@ figure.citation figcaption {
             font-size: 0.7rem;
             padding: 0 0.25rem;
             width: fit-content;
-            font-family: var(--monospaced-font-stack);
             border: 1px solid var(--category-background);
             background: var(--category-background);
             color: var(--category-text-colour);
@@ -1145,10 +1110,6 @@ figure.citation figcaption {
             content: '|';
             line-height: 1;
             margin-top: -2px;
-        }
-
-        .summary__date{
-            font-family: var(--monospaced-font-stack);
         }
     }
 
@@ -1180,13 +1141,13 @@ figure.citation figcaption {
             display: inline-block;
         }
 
-        .title .extra .subtitle{
+        .title .extra .subtitle {
             text-transform: uppercase;
-            font-family: var(--monospaced-font-stack);
         }
 
-        .summary{
+        .summary {
             width: fit-content;
+
             .extra {
                 display: none;
             }
