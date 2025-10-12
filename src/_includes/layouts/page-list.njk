@@ -17,10 +17,6 @@
         <h1 class="article-header__title">{{ title }}</h1>
 
         <hr/>
-
-        <div class="article-header__stats">
-            {% include "components/partials/navigation.njk" %}
-        </div>
     </header>
 
     {% set footnotes = content | extractElementByQuery('section.footnotes') %}

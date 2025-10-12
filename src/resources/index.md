@@ -9,6 +9,10 @@ tags:
 topic: type/resource
 folder:
   - {title: 'resources'}
+navigation_links:
+  - {title: 'Bookmarks', href: '/resources/bookmarks/'}
+  - {title: 'Quotes', href: '/resources/quotes/'}
+  - {title: 'Jokes', href: '/resources/jokes/'}
 ---
 
 A few years ago I stumbled upon [Winnie Lim's Library](https://winnielim.org/library/) containing their collections and resources. I liked the concept and was inspired to create both here as [lists](/lists/) and this resources section.

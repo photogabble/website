@@ -11,7 +11,7 @@ tags:
   - 'type/index'
 folder: 
   - writing
-  - {title: 'changelog'}
+  - {title: 'CHANGELOG'}
 navigation_links: 
   - {title: 'Colophon', href: '/colophon/'}
 ---

@@ -1,6 +1,6 @@
-{% set crumbs = folder | breadcrumbs %}
-{% if crumbs.length > 0 %} / {% endif %}
-{% for crumb in crumbs %}
-    {% if crumb.href %}<a href="{{ crumb.href }}" title="{{ crumb.title }}">{{ crumb.text or crumb.title }}</a>{% else %}{{ crumb.text or crumb.title }}{% endif %}
-    {% if not loop.last %}/{% endif %}
-{% endfor %}
+{%- set crumbs = folder | breadcrumbs -%}
+{%- if crumbs.length > 0 -%}<span>/</span>{% endif -%}
+{%- for crumb in crumbs -%}
+    {%- if crumb.href -%}<a href="{{ crumb.href }}" title="{{ crumb.title }}">{{ crumb.text or crumb.title }}</a>{%- else -%}{{ crumb.text or crumb.title }}{%- endif -%}
+    {%- if not loop.last -%}<span>/</span>{%- endif -%}
+{%- endfor -%}

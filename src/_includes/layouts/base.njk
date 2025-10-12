@@ -128,11 +128,14 @@
 <header class="header-main">
     <div>
         <div class="header-main__logo">
-            {% set type = tags | specialTagValue('type') %}
-            <a href="/">~/photogabble</a>
-            {% if folder %}
-                {% include "components/partials/breadcrumbs.njk" %}
-            {% endif %}
+            <div>
+                {% set type = tags | specialTagValue('type') %}
+                <a href="/">~/photogabble</a>
+                {% if folder %}
+                    {% include "components/partials/breadcrumbs.njk" %}
+                {% endif %}
+            </div>
+            {% include "components/partials/navigation.njk" %}
         </div>
         <div class="header-main__menu filled-boxes">
             {# TODO: Add search field and styled navigation block that works with .filled-boxes #}

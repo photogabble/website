@@ -161,6 +161,8 @@ figcaption {
     padding: 1ch 0;
 
     > div {
+        /* height includes both rows of the per page navigation (breadcrumbs and menu) */
+        height: 3em;
         padding: 0 var(--gutter);
         margin: 0 auto;
         max-width: 1472px;
@@ -180,8 +182,17 @@ figcaption {
     }
 }
 
-.header-main__logo > * {
+.header-main__logo a:not(.nav__on) {
     color: inherit;
+
+    &:hover {
+        color: var(--page-key-colour);
+    }
+}
+
+.header-main__logo > div {
+    display: flex;
+    gap: 1ch;
 }
 
 .header-main__menu {
@@ -362,7 +373,7 @@ ul.list__alphabet {
     padding: 0;
     list-style: none;
     display: flex;
-    gap: 0.5em;
+    gap: 1ch;
     flex-wrap: wrap;
 }
 
