@@ -20,14 +20,9 @@
 
     <hr/>
 
-    {% if readingTime.words > 0 or index_navigation %}
+    {% if readingTime.words > 0 %}
         <div class="article-header__stats">
-            {% if index_navigation %}
-                {% set index_navigation_include = 'components/navigation/' + index_navigation + '.njk' %}
-                {% include index_navigation_include %}
-            {% elseif readingTime.words > 0 %}
-                <span>{{ readingTime.text }}</span>
-            {% endif %}
+            <span>{{ readingTime.text }}</span>
         </div>
     {% endif %}
 </header>
