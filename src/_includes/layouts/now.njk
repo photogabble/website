@@ -14,13 +14,13 @@
 {% endif %}
 
 {% block content %}
-    <article>
+    <article data-pagefind-meta="type:now">
         <header>
             <div class="article-header__meta">
                 <span>{{ collections.nowUpdates.length }} entries,</span> {{ subTitle }}
             </div>
 
-            <div class="article-header__date">
+            <div class="article-header__date" data-pagefind-meta="date:{{ page.date | dateToFormat('DDD') }}">
                 <time datetime="{{ page.date | dateToFormat('iso') }}">{{ page.date | dateToFormat('DDD') }}</time>
             </div>
 

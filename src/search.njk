@@ -1,0 +1,26 @@
+---
+title: Search
+---
+
+{% set page_class = 'page__list' %}
+{% extends "layouts/page.njk" %}
+
+{% block content %}
+    <article>
+        <header>
+            <div class="article-header__meta">
+                <span id="search-results-count"></span>
+            </div>
+            <h1 class="article-header__title">Search</h1>
+            <hr/>
+        </header>
+
+        <section class="article-section__content">
+            <p>Search provided by <a href="https://pagefind.app/">Pagefind</a>.</p>
+        </section>
+
+        <hr>
+
+        <section id="search-results" class="post-list"></section>
+    </article>
+{% endblock %}

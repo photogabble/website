@@ -2,6 +2,7 @@
 layout: layouts/page-post.njk
 title: "Styleguide"
 titlePrefix: Etc
+tags: ['type/info']
 ---
 
 This page was adopted from the [Poor Man's Styleguide](https://poormansstyleguide.com/) which I discovered through [Branden Higby's website](https://www.higby.io/styleguide/).

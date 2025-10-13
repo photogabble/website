@@ -3,6 +3,7 @@ layout: layouts/page.njk
 title: "Cookie Policy"
 titlePrefix: "Info"
 subTitle: "Effective date: May 15, 2018"
+tags: ['type/info']
 ---
 
 Photogabble ("us", "we", or "our") uses cookies on the [https://www.photogabble.co.uk](https://www.photogabble.co.uk) website (the "Service"). By using the Service, you consent to the use of cookies.

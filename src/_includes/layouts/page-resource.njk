@@ -3,7 +3,7 @@
 {% set subTitle %}
     planted on <time datetime="{{ page.date.toISOString() }}">{{ page.date | dateToFormat("DDD") }}</time> in: {% include "../components/tag-list.njk" %}.
 {% endset %}
-
+{# TODO data-pagefind-meta="type:resource" #}
 {% block pageContent %}
     <section>
         {{ content | safe }}

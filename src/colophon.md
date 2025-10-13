@@ -3,6 +3,7 @@ title: Colophon
 layout: 'layouts/page-post.njk'
 minimal_header: true
 index_navigation: about
+tags: ['type/info']
 ---
 
 ::: abstract

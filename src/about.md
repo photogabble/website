@@ -3,6 +3,7 @@ title: About
 layout: 'layouts/page-post.njk'
 minimal_header: true
 index_navigation: about
+tags: ['type/info']
 ---
 
 ::: abstract

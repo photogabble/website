@@ -10,7 +10,7 @@
         {% endif %}
 
         {% if not hide_header_date %}
-        <div class="article-header__date">
+        <div class="article-header__date" data-pagefind-meta="date:{{ page.date | dateToFormat('DDD') }}">
             {% if growthStage === 'stub' %}Schedueld for {% endif %}<time datetime="{{ page.date | dateToFormat('iso') }}">{{ page.date | dateToFormat('DDD') }}</time>
         </div>
         {% endif %}
@@ -21,7 +21,7 @@
     <hr/>
 
     {% if readingTime.words > 0 %}
-        <div class="article-header__stats">
+        <div class="article-header__stats" data-pagefind-ignore>
             <span>{{ readingTime.text }}</span>
         </div>
     {% endif %}

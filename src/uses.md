@@ -7,6 +7,7 @@ sidebar_component: uses
 index_navigation: slash-pages
 hide_header_date: true
 folder: [me]
+tags: ['type/info']
 modified: 2025-08-14
 ---
 
