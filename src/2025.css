@@ -158,12 +158,9 @@ figcaption {
 
 .header-main {
     background: transparent;
-    padding: 1ch 0;
 
     > div {
-        /* height includes both rows of the per page navigation (breadcrumbs and menu) */
-        height: 3em;
-        padding: 0 var(--gutter);
+        padding: 1ch var(--gutter);
         margin: 0 auto;
         max-width: 1472px;
         width: 100%;
@@ -196,7 +193,13 @@ figcaption {
 }
 
 .header-main__menu {
+    display: flex;
+    align-items: flex-start;
     gap: 1ch;
+
+    button, input {
+        height: 30px;
+    }
 }
 
 .jumbo-nav__open .header-main {
@@ -336,6 +339,9 @@ body.theme-picker__visible .theme-picker {
 
     span, button {
         width: fit-content;
+        height: 30px;
+        display: flex;
+        align-items: center;
         border: 1px solid var(--category-background);
         background: var(--category-background);
         color: var(--category-text-colour);

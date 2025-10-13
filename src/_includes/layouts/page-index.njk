@@ -1,7 +1,7 @@
 {% extends "layouts/page.njk" %}
 
 {% set page_class = 'page__list' %}
-{% set type = tags | specialTagValue('type') %}
+{% set type = tags | specialTagValue('type') or page_type %}
 
 {% if sidebar_items %}
     {% set items = sidebar_items %}
@@ -14,9 +14,9 @@
 {% endif %}
 
 {% block content %}
-<article>
+<article data-pagefind-meta="type:{{ type or 'index' }}">
     <header>
-        <div class="article-header__meta">
+        <div class="article-header__meta" data-pagefind-meta="items:{{ items.length }}">
             {# TODO: last updated date #}
             <span>{{ items.length }} items,</span> last updated on 1st Jan, 2025
         </div>

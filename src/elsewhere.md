@@ -4,6 +4,7 @@ hide_header_date: true
 title: "Elsewhere"
 folder: [me]
 index_navigation: slash-pages
+tags: ['type/info']
 ---
 
 I can be found in the following online communities:

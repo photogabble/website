@@ -3,6 +3,7 @@ layout: layouts/page.njk
 title: "GDPR/Privacy Policy"
 titlePrefix: "Info"
 subTitle: "Effective date: May 15, 2018"
+tags: ['type/info']
 ---
 
 

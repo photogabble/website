@@ -31,7 +31,7 @@
 {#{% endset %}#}
 
 {% block content %}
-<article>
+<article data-pagefind-meta="type:{{ type }}" data-pagefind-filter="post">
     {% include "components/partials/article-header.njk" %}
     <section class="article-section__content">
         {% if abstract %}<div class="article-section__content-abstract">{{ abstract | safe }}</div>{% endif %}
@@ -65,8 +65,8 @@
             {% endif %}
             {{ content | withoutElementsByQuery('.sidebar, .abstract, section.footnotes') | safe }}
         </div>
-        <aside id="sidenote-column-right" class="article-section__content-ref">
-            <div style="margin-top:1rem">
+        <aside id="sidenote-column-right" class="article-section__content-ref" data-pagefind-meta="date:{{ page.date | dateToFormat('DDD') }}">
+            <div style="margin-top:1rem" data-pagefind-ignore>
                 First Published: {{ page.date | dateToFormat('DDD') }} in commit <a href="#">########</a>.<br/>
                 Updated: {% if modified %}<time datetime="{{ modified.toISOString() }}">{{ modified | dateToFormat("DDD") }}</time>{% else %}Never{% endif %}<br/>
                 {% if reviewed %}Reviewed: {{ reviewed | dateToFormat('DDD') }}{% endif %}
@@ -87,7 +87,7 @@
     </section>
 
     {% if related.length %}
-        <section class="article-section__related">
+        <section class="article-section__related" data-pagefind-ignore>
             <h3>Similar Stories</h3>
             <nav class="related-notes">
                 {% for item in related | limit(3) %}

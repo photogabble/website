@@ -5,6 +5,7 @@ description: A list of books that I intend to read
 index_navigation: reading-view-toggle
 sidebar_component: books
 sidebar_shelves: ['to-read']
+folder: [{title: 'reading'}]
 list_category: media
 list_style: none
 permalink: /antilibrary/
