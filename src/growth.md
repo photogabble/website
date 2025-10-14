@@ -1,9 +1,6 @@
 ---
 title: Growth Stages
 layout: layouts/page-post.njk
-sidebar_component: topic
-sidebar_title: Growth Stages
-sidebar_topic: 'type/stage'
 hide_header_date: true
 index_navigation: growth-stages
 tags:

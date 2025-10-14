@@ -2,7 +2,7 @@
 title: Thoughts
 sub_title: A collection of pondering
 layout: layouts/page-index.njk
-sidebar_component: topic
+sidebar_component: list-table-grouped
 sidebar_title: Thoughtful Thoughts
 sidebar_topic: 'type/thought'
 hide_meta: true
