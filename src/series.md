@@ -1,10 +1,11 @@
 ---
 title: Series
 layout: layouts/page-index.njk
-sidebar_component: topic
+sidebar_component: list-table
 sidebar_title: Serialised Notes
 sidebar_topic: 'type/series'
 hide_meta: true
+index_navigation: writing-categories
 tags: 
   - 'type/index'
 folder: 

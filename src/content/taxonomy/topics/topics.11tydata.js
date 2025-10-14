@@ -18,7 +18,7 @@ export default {
   folder: ['topic'],
   // TODO: does this need setting at the taxonomy folder level?
   layout: 'layouts/page-index.njk',
-  sidebar_component: 'topic',
+  sidebar_component: 'list-table-grouped',
 
   eleventyComputed: {
     statistics_collection(data) {

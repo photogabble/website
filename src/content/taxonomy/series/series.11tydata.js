@@ -24,7 +24,7 @@ export default {
   folder: ['writing', {title: 'series', href: '/series/'}],
 
   layout: 'layouts/page-index.njk',
-  sidebar_component: 'topic',
+  sidebar_component: 'list-table',
 
   // TODO: complete eleventy computed data to be volume aware?
   eleventyComputed: {
