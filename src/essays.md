@@ -7,6 +7,7 @@ sidebar_component: topic
 sidebar_title: Longform Writing
 sidebar_topic: 'type/essay'
 hide_meta: true
+index_navigation: writing-categories
 tags:
   - 'type/index'
 folder: 

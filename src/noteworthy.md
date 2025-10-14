@@ -5,6 +5,7 @@ layout: layouts/page-index.njk
 sidebar_component: topic
 sidebar_title: Noteworthy items
 sidebar_topic: 'type/noteworthy'
+index_navigation: writing-categories
 hide_meta: true
 tags:
   - 'type/index'
