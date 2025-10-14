@@ -5,6 +5,7 @@ sidebar_component: topic
 sidebar_title: Serialised Notes
 sidebar_topic: 'type/series'
 hide_meta: true
+index_navigation: writing-categories
 tags: 
   - 'type/index'
 folder: 
