@@ -504,8 +504,7 @@ main > article, .page-content {
             line-height: 1;
         }
         section {
-            font-size: clamp(1rem, 6vw, 1.1rem);
-            line-height: 1.25;
+            font-size: clamp(1rem, 6vw, 1.2rem);
 
             > :first-child{
                 font-size: clamp(1.2rem, 6vw, 1.4rem);
@@ -636,6 +635,7 @@ main > article, .page-content {
         margin: calc(var(--gutter) / 2) var(--gutter);
     }
 
+    /* TODO: #124 replace grid with flex... or something that allows me to have images and pre tags expand into the right column (float?) */
     .article-section__content {
         display: grid;
         grid-template-areas:
