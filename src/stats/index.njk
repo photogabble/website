@@ -3,7 +3,7 @@ title: Writing Stats
 folder: [writing, {title: 'stats'}]
 tags: ['type/info']
 ---
-{% extends "layouts/page.njk" %}
+{% extends "layouts/base.njk" %}
 {% set page_class = 'page__article' %}
 
 {% set postStats = collections.writing | notTagged(['type/project', 'type/resource', 'stage/stub', 'type/glossary', 'type/changelog'])  | collectionStats %}
