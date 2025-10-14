@@ -4,6 +4,7 @@ export default {
   draft: false,
   layout: "layouts/now.njk",
   folder: ['Me'],
+  index_navigation: 'slash-pages',
   eleventyComputed: {
     title: (data) => (!data?.page?.date)
       ? '/now'
