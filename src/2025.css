@@ -824,6 +824,7 @@ figure.citation figcaption {
 /*
  * Page Type: List
  * List pages use the abstract font size for the main content.
+ * @deprecated this component is no longer used as per c06a3dc4
  */
 
 .page__list .article-section__content {
