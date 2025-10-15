@@ -1,4 +1,4 @@
-{% extends "layouts/page.njk" %}
+{% extends "layouts/base.njk" %}
 {% set ogtype = 'article' %}
 {% set author = people | whereKeyEquals('name', cite.name) | values(0) %}
 {% set bookmarks = collections['resource/bookmark'] | notTagged(['stage/stub']) | reverse %}

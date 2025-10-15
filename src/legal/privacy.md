@@ -6,7 +6,6 @@ subTitle: "Effective date: May 15, 2018"
 tags: ['type/info']
 ---
 
-
 Photogabble ("us", "we", or "our") operates the [https://www.photogabble.co.uk](https://www.photogabble.co.uk) website (the "Service").
 
 This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data. This Privacy Policy for Photogabble is powered by TermsFeed.

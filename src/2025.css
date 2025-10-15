@@ -492,33 +492,63 @@ main > article, .page-content {
 /*
  * Page Type: Default
  */
-
-.page__default {
+.page__default, .page__homepage {
     article {
-        margin: var(--gutter) 0;
-        display: grid;
-        grid-template-columns: auto var(--gutter) 300px 50px minmax(auto, 1042px) var(--gutter) auto;
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--gutter) * 2);
+        padding-block: var(--gutter);
 
-        > header,
-        .article-section__content {
-            grid-column: 5 / 6;
+        h1 {
+            font-size: clamp(2rem, 6vw, 5rem);
+            line-height: 1;
         }
+        section {
+            font-size: clamp(1rem, 6vw, 1.2rem);
 
-        header {
-            margin-bottom: var(--spacing);
-        }
+            > :first-child{
+                font-size: clamp(1.2rem, 6vw, 1.4rem);
+            }
 
-        .article-image {
-            position: relative;
-            grid-column: 1 / 4;
-            grid-row: 1 / 4;
-
-            img {
-                position: absolute;
-                left: 0;
-                object-fit: cover;
+            > * {
+                margin-bottom: var(--spacing);
+                max-width: 1000px;
                 width: 100%;
-                height: 100%;
+            }
+
+            ul {
+                margin-left: var(--spacing);
+            }
+        }
+    }
+}
+
+/*
+ * Page Type: Homepage
+ * Only difference to page__default is this has two columns
+ */
+.page__homepage {
+    article {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: calc(var(--gutter) * 2);
+        padding-block: var(--gutter);
+
+        h1 {
+            font-size: clamp(2rem, 6vw, 5rem);
+            line-height: 1;
+
+            strong {
+                color: #35ff88;
+            }
+        }
+
+        section {
+            font-size: clamp(1.2rem, 6vw, 1.6rem);
+            line-height: 1.25;
+
+            > :first-child {
+                font-size: clamp(1.2rem, 6vw, 2rem);
             }
         }
     }
@@ -605,6 +635,7 @@ main > article, .page-content {
         margin: calc(var(--gutter) / 2) var(--gutter);
     }
 
+    /* TODO: #124 replace grid with flex... or something that allows me to have images and pre tags expand into the right column (float?) */
     .article-section__content {
         display: grid;
         grid-template-areas:
@@ -824,6 +855,7 @@ figure.citation figcaption {
 /*
  * Page Type: List
  * List pages use the abstract font size for the main content.
+ * @deprecated this component is no longer used as per c06a3dc4
  */
 
 .page__list .article-section__content {
