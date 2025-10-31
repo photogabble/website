@@ -1,5 +1,8 @@
 <header>
-    {% if not minimal_header %}
+    {% if minimal_header %}
+        {# This ensures spacing is consistent when meta and date are hidden #}
+        <div class="article-header__date" aria-hidden="true">&nbsp;</div>
+    {% else %}
         {% if tags | withoutTags(['writing']) | excludeSpecialTags(['type', 'resource']) | length > 0 %}
         <div class="article-header__meta">
             <span>Words planted in:</span>
@@ -24,5 +27,8 @@
         <div class="article-header__stats" data-pagefind-ignore>
             <span>{{ readingTime.text }}</span>
         </div>
+    {% else %}
+        {# This ensures spacing is consistent when reading time is hidden #}
+        <div class="article-header__stats" aria-hidden="true">&nbsp;</div>
     {% endif %}
 </header>
