@@ -57,19 +57,20 @@
                 {% if reviewed %}Reviewed: {{ reviewed | dateToFormat('DDD') }}{% endif %}
             </div>
         </aside>
-        {% if footnotes.length or backlinks.length%}
-            <footer class="article-section__content-footer">
-                {{ footnotes | safe }}
-
-                {#    {% if tags | includesTag('wayback machine') %}#}
-                {#        <hr/>#}
-                {#        {% include "components/wayback-machine.njk" %}#}
-                {#    {% endif %}#}
-
-                {% include "components/backlinks.njk" %}
-            </footer>
-        {% endif %}
     </section>
+
+    {% if footnotes.length or backlinks.length %}
+        <footer class="article-section__content-footer">
+            {{ footnotes | safe }}
+
+            {#    {% if tags | includesTag('wayback machine') %}#}
+            {#        <hr/>#}
+            {#        {% include "components/wayback-machine.njk" %}#}
+            {#    {% endif %}#}
+
+            {% include "components/backlinks.njk" %}
+        </footer>
+    {% endif %}
 
     {% if related.length %}
         <section class="article-section__related" data-pagefind-ignore>
