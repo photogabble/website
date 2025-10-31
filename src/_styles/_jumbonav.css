@@ -1,12 +1,11 @@
 #jumbo-nav {
     display: none;
     width: 100%;
-    font-family: var(--monospaced-font-stack);
 }
 
 .jumbo-nav__open #jumbo-nav{
     display: block;
-    padding: var(--spacing) 0;
+    padding-bottom: var(--spacing);
 }
 
 #jumbo-nav nav {
@@ -19,8 +18,6 @@
     font-size: .9rem;
 
     padding: 0 var(--gutter);
-    margin: 0 auto;
-    max-width: 1472px;
     width: 100%;
 }
 
