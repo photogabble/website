@@ -15,25 +15,10 @@
 {% set footnotes = content | extractElementByQuery('section.footnotes') %}
 {% set sidebar = content | extractElementByQuery('.sidebar') %}
 
-{#{% set headingClass = 'note' %}#}
-{#{% set titlePrefix %}#}
-{#    {% include "components/growth.njk" %} {{ contentType }}#}
-{#{% endset %}#}
-
-{#{% set subTitle %}#}
-{#    {% if growthStage === 'stub' %}scheduled for {% else %}planted on {% endif %}#}
-{#    <time datetime="{{ page.date.toISOString() }}">{{ page.date | dateToFormat("DDD") }}</time>#}
-{#    in: {% include "../components/tag-list.njk" %}.#}
-{#    {% if modified %}#}
-{#    modified on <time datetime="{{ modified.toISOString() }}">{{ modified | dateToFormat("DDD") }}</time>#}
-{#    {% endif %}#}
-{#    <br/>{{ readingTime.text if readingTime.words > 0 }}.#}
-{#{% endset %}#}
-
 {% block content %}
 <article data-pagefind-meta="type:{{ type }}" data-pagefind-filter="post">
     {% include "components/partials/article-header.njk" %}
-    <section class="article-section__content">
+    <section class="article-section__content{% if not abstract %} no-abstract{% endif %}">
         {% if abstract %}<div class="article-section__content-abstract">{{ abstract | safe }}</div>{% endif %}
         <aside class="article-section__content-toc">
             {% if backlinks.length %}
@@ -66,7 +51,7 @@
             {{ content | withoutElementsByQuery('.sidebar, .abstract, section.footnotes') | safe }}
         </div>
         <aside id="sidenote-column-right" class="article-section__content-ref" data-pagefind-meta="date:{{ page.date | dateToFormat('DDD') }}">
-            <div style="margin-top:1rem" data-pagefind-ignore>
+            <div data-pagefind-ignore>
                 First Published: {{ page.date | dateToFormat('DDD') }} in commit <a href="#">########</a>.<br/>
                 Updated: {% if modified %}<time datetime="{{ modified.toISOString() }}">{{ modified | dateToFormat("DDD") }}</time>{% else %}Never{% endif %}<br/>
                 {% if reviewed %}Reviewed: {{ reviewed | dateToFormat('DDD') }}{% endif %}
