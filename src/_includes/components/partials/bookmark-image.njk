@@ -15,7 +15,7 @@
 {% endif %}
 
 {% if bookmarkHref and bookmarkFileSlug %}
-    <img class="preview" src="{% screenshot bookmarkHref, bookmarkFileSlug %}" aria-hidden="true" alt="Screenshot of web page." />
+    <img class="preview" src="{% screenshot bookmarkHref, bookmarkFileSlug %}" aria-hidden="true" alt="Screenshot of web page." loading="lazy"/>
 {% else %}
     {# TODO: if dead and no wayback, show default image? #}
 {% endif %}
