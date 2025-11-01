@@ -1,7 +1,7 @@
 {% extends "layouts/base.njk" %}
 
 {% set page_class = 'page__list' %}
-{% set type = tags | specialTagValue('type') or page_type %}
+{% set type = page_type or tags | specialTagValue('type') %}
 
 {% if sidebar_items %}
     {% set items = sidebar_items %}
