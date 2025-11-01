@@ -8,10 +8,14 @@ html:root, html[data-theme="classic"], [data-theme="classic"] {
     --gutter: 40px;
     --left-margin: 330px;
 
-    --page-background: #fff1e0;
+    --page-background: #1b1a1d;
     --page-background-offset: #7e6a51;
-    --page-text-colour: #26075e;
-    --page-border-colour: #292823;
+    --page-text-colour: #fff1e0;
+    --page-border-colour: #fff1e0;
+
+    /* Block elements such as <pre> or any tag that needs a colour blocking. */
+    --page-block-colour: #230520;
+
     --page-key-colour: #ff353f;
     --page-key-colour-contrast: #990054;
     --category-background: #4a3677;
@@ -106,11 +110,21 @@ body {
     -webkit-font-smoothing: antialiased;
     background: var(--page-background);
     color: var(--page-text-colour);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
+main {
+    flex-grow: 1;
+    color: var(--page-text-colour);
+    inline-size: clamp(80vw, 100vw, 80rem);
+    padding-inline: var(--gutter);
+    padding-block: var(--gutter);
+    margin-inline: auto;
+    border-image-slice: 0 fill;
+    border-image-outset: 0 0 0 100vw;
+    border-image-source: conic-gradient(#34252f 0 0);
 }
 
 input, button, textarea, select {
@@ -152,21 +166,26 @@ figcaption {
     margin-top: 0.5rem;
 }
 
+figure img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
 /*
  * Main Header
  */
 
 .header-main {
     background: transparent;
+    inline-size: clamp(80vw, 100vw, 80rem);
+    margin-inline: auto;
 
     > div {
-        padding: 1ch var(--gutter);
-        margin: 0 auto;
-        max-width: 1472px;
-        width: 100%;
-
+        padding: calc(var(--gutter) / 2) var(--gutter);
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 
     hr {
@@ -205,6 +224,11 @@ figcaption {
 .jumbo-nav__open .header-main {
     background: var(--jumbo-nav-background-color);
     color: var(--jumbo-nav-text-color);
+
+    /* fill in the left side with colour */
+    border-image-slice: 0 fill;
+    border-image-outset: 0 0 0 100vw;
+    border-image-source: conic-gradient(var(--jumbo-nav-background-color) 0 0);
 }
 
 /*
@@ -425,14 +449,19 @@ ul.list__alphabet {
     /* Overwrite padding set by Prism */
 
     pre[class*="language-"] {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding-block: 1rem;
+        padding-left: 0;
         margin: var(--spacing) 0;
+
+        border-image-slice: 0 fill;
+        border-image-outset: 0 0 0 100vw;
+        border-image-source: conic-gradient(#0f091b 0 0);
+        scrollbar-color: #faf1e0 #0d091a;
     }
 
     pre:not([class*="language-"]) {
-        background: var(--page-border-colour);
-        color: var(--page-background);
+        background: var(--page-block-colour);
+        color: var(--page-text-colour);
         padding: 1rem;
     }
 
@@ -465,28 +494,6 @@ ul.list__alphabet {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     font-size: 0.9rem;
     list-style-position: inside;
-}
-
-main > article, .page-content {
-    margin: 60px auto;
-    max-width: 1472px;
-    width: 100%;
-}
-
-.page__homepage {
-    article > section {
-        padding: 0 var(--gutter);
-        line-height: 1.3;
-
-        > * {
-            margin-bottom: var(--spacing);
-            max-width: 800px;
-        }
-
-        ul {
-            margin-left: var(--spacing);
-        }
-    }
 }
 
 /*
@@ -528,6 +535,13 @@ main > article, .page-content {
  * Only difference to page__default is this has two columns
  */
 .page__homepage {
+    /* https://www.gradientmagic.com/collection/subtlegrid/gradient/1577121168721 */
+    background-image: repeating-linear-gradient(0deg, hsla(83,0%,53%,0.03) 0px, hsla(83,0%,53%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(67.5deg, hsla(83,0%,53%,0.03) 0px, hsla(83,0%,53%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(157.5deg, hsla(83,0%,53%,0.03) 0px, hsla(83,0%,53%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(112.5deg, hsla(83,0%,53%,0.03) 0px, hsla(83,0%,53%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(22.5deg, hsla(83,0%,53%,0.03) 0px, hsla(83,0%,53%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(0deg, hsla(83,0%,53%,0.03) 0px, hsla(83,0%,53%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(112.5deg, hsla(83,0%,53%,0.03) 0px, hsla(83,0%,53%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(22.5deg, hsla(83,0%,53%,0.03) 0px, hsla(83,0%,53%,0.03) 1px,transparent 1px, transparent 12px),linear-gradient(90deg, rgb(27,26,29),rgb(52,37,47));
+
+    main {
+        box-shadow: 0 5px 50px #1b1a1d82;
+    }
+
     article {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -568,8 +582,6 @@ main > article, .page-content {
                 "seperator seperator"
                 ". reading-time";
         grid-template-columns: minmax(0, 1fr) max-content;
-        padding: 0 var(--gutter);
-        max-width: 1472px;
 
         h1 {
             font-size: clamp(2rem, 6vw, 5rem);
@@ -585,7 +597,7 @@ main > article, .page-content {
         hr {
             grid-area: seperator;
             margin-top: 2rem;
-            margin-bottom: calc(var(--spacing) / 2);
+            margin-bottom: calc(var(--gutter) / 2);
         }
     }
 
@@ -628,62 +640,62 @@ main > article, .page-content {
     }
 
     article > section {
-        padding: calc(var(--gutter) / 2) var(--gutter);
+        padding-block: var(--gutter);
     }
 
     article > hr {
-        margin: calc(var(--gutter) / 2) var(--gutter);
+        margin-block: calc(var(--gutter) / 2);
     }
 
-    /* TODO: #124 replace grid with flex... or something that allows me to have images and pre tags expand into the right column (float?) */
     .article-section__content {
-        display: grid;
-        grid-template-areas:
-                "abstract abstract ."
-                "toc article references"
-                "toc footer references";
-        grid-template-columns: var(--left-margin) minmax(0, 1fr) 250px;
-        row-gap: var(--gutter);
-        column-gap: calc(var(--gutter) / 2);
+        display: flex;
+        flex-wrap: wrap;
+        gap: calc(var(--gutter) / 2);
+        padding-top: calc(var(--gutter) / 2);
     }
 
     .article-section__content-abstract {
+        width: 100%;
+        padding-right: var(--left-margin);
+        margin-bottom: var(--gutter);
         font-size: clamp(1rem, 6vw, 2rem);
-        grid-area: abstract;
         line-height: 1.25;
     }
 
     .article-section__content-content {
-        grid-area: article;
-        max-width: 1472px;
-        padding-right: calc(var(--gutter) / 2);
+        flex: 1 1 0;
+        min-width: 0; /* Allows flex item to shrink below content size */
+        max-width: 100%;
 
+        figure:not(.citation) {
+            margin-right: 0;
+            max-width: 100%;
+        }
+
+        /* Allow certain elements to expand into reference column */
         .full-width {
-            margin-left: 0;
+            margin-right: calc(-250px - var(--gutter) / 2);
+            max-width: calc(100% + 250px + var(--gutter) / 2);
         }
     }
 
-    .article-section__content-content > *:first-child:not(p) {
-        margin-top: 5px;
-    }
-
-    .footnote-ref {
-        font-size: 0.8rem;
-    }
-
-    .article-section__content-toc,
     .article-section__content-ref {
+        flex: 0 0 250px;
         font-size: 0.8rem;
-        margin-top: 5px;
         padding-top: 1rem;
         border-top: 1px solid var(--page-border-colour);
+        order: 2;
     }
 
     .article-section__content-toc {
-        grid-area: toc;
-        gap: 1rem;
+        flex: 0 0 var(--left-margin);
+        font-size: 0.8rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--page-border-colour);
         display: flex;
         flex-direction: column;
+        gap: 1rem;
+        order: 3;
     }
 
     .article-section__content-toc > nav {
@@ -691,29 +703,48 @@ main > article, .page-content {
         top: var(--gutter);
     }
 
-    .article-series__content ol {
-        list-style: none;
-        padding: 0;
-        margin: 1rem 0;
-
-        li {
-            margin-bottom: 0.5rem;
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-    }
-
-
-    .article-section__content-ref {
-        grid-area: references;
-    }
-
     .article-section__content-footer {
-        grid-area: footer;
+        flex: 1 1 0;
+        min-width: 0;
         border-top: 1px solid var(--page-border-colour);
         padding-top: var(--spacing);
+    }
+}
+
+/* Mobile responsive breakpoints */
+@media (max-width: 1200px) {
+    .page__list,
+    .page__article {
+        .article-section__content-abstract {
+            padding-right: 0;
+        }
+
+        .article-section__content-content {
+            figure:not(.citation),
+            pre[class*="language-"],
+            .full-width {
+                margin-right: 0;
+                max-width: 100%;
+            }
+        }
+
+        .article-section__content-toc {
+            display: none; /* Hide TOC on medium screens */
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .page__list,
+    .page__article {
+        .article-section__content {
+            flex-direction: column;
+        }
+
+        .article-section__content-ref {
+            order: 4;
+            flex: 1 1 auto;
+        }
     }
 }
 
@@ -854,61 +885,10 @@ figure.citation figcaption {
 
 /*
  * Page Type: List
- * List pages use the abstract font size for the main content.
- * @deprecated this component is no longer used as per c06a3dc4
  */
 
 .page__list .article-section__content {
-    grid-template-columns: minmax(0, 1fr) 250px;
-    grid-template-areas:"article references";
-    row-gap: 0;
-}
-
-.page__list .list-section {
-    grid-area: list;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--gutter);
-}
-
-.page__list .list-section article {
-    display: block;
-    background: bisque;
-    padding: 1ch;
-
-    > div {
-        border: 1px solid var(--page-border-colour);
-        min-height: 250px;
-        display: grid;
-        grid-template-rows: 110px 1fr 30px;
-    }
-
-    small {
-        color: var(--page-text-colour);
-    }
-
-    header {
-        align-self: flex-end;
-        padding: 1ch;
-
-        h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0;
-        }
-    }
-
-    footer {
-        display: flex;
-        align-items: center;
-        border-top: 1px solid var(--page-border-colour);
-        padding: 0 1ch;
-    }
-}
-
-.page__list .list-section .featured {
-    grid-column: 1 / span 2;
-    grid-row: 1 / span 2;
-    height: 100%;
+    padding-block: calc(var(--gutter) / 2);
 }
 
 .page__list .article-section__content-content {
@@ -923,6 +903,10 @@ figure.citation figcaption {
     font-size: clamp(1.2rem, 6vw, 2rem);
     line-height: 1.25;
     padding-right: 0;
+}
+
+.page__list .article-section__content-content :last-child {
+    margin-bottom: 0;
 }
 
 .page__list .article-section__content-footer {
