@@ -30,11 +30,6 @@ export default {
         : data.permalink;
     },
     items(data) {
-      // If sidebar_component is `books` then origin is `bookwyrm` data source and not the `lists` collection.
-      if (data.sidebar_component === 'books' && data.sidebar_shelves) {
-          return data.bookwyrm ? whereKeyEquals(data.bookwyrm, 'shelf', data.sidebar_shelves) : [];
-      }
-
       if (!data.collections.lists) return [];
       const slug = data.list_slug ?? data.page.fileSlug;
       const list = data.collections.lists.find(list => list.slug === slug);
