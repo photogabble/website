@@ -1,6 +1,6 @@
 <section>
     <ul class="bookmark-grid">
-        {% asyncEach item in items %}
+        {% for item in items %}
         <li>
             {% set bookmark = item %}
             {% if item.data.dead %}
@@ -13,6 +13,6 @@
             </a>
             <p><a href="{{ href }}" class="no-ext">{{ item.data.title }}</a> <small><a href="{{ item.url }}">[My Notes]</a></small></p>
         </li>
-        {% endeach %}
+        {% endfor %}
     </ul>
 </section>
