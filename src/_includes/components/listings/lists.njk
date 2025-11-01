@@ -20,7 +20,7 @@
         </header>
         <ul>
             {%- for list in groupItems -%}
-                <li>{%- if page and page.url === list.url -%}»&nbsp;{%- endif -%}<a href="{{ list.url }}">{{ list.title }}</a>: {{ list.description }}</li>
+                <li>{%- if page and page.url === list.url -%}»&nbsp;{%- endif -%}<a href="{{ list.url }}">{{ list.title }}</a> <small>({{ list.items.length }})</small>: {{ list.description }}</li>
             {%- endfor -%}
         </ul>
     </section>
