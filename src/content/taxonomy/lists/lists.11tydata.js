@@ -13,8 +13,8 @@ export default {
   // Do not display page meta data
   hide_meta: true,
   folder: ['lists'],
-
-  sidebar_component: 'lists',
+  // Defaulting to grid of bookmarks as most lists will be of this type.
+  sidebar_component: 'bookmark-grid',
 
   // This is used by the lists sidebar component to group lists.
   // Current valid values are: media or collection.

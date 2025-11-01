@@ -1,0 +1,18 @@
+<section>
+    <ul class="bookmark-grid">
+        {% asyncEach item in items %}
+        <li>
+            {% set bookmark = item %}
+            {% if item.data.dead %}
+                {% set href = item.data.wayback or '#' %}
+            {% else %}
+                {% set href = item.data.cite.href %}
+            {% endif %}
+            <a href="{{ href }}" class="no-ext">
+                {% include "components/partials/bookmark-image.njk" %}
+            </a>
+            <p><a href="{{ href }}" class="no-ext">{{ item.data.title }}</a> <small><a href="{{ item.url }}">[My Notes]</a></small></p>
+        </li>
+        {% endeach %}
+    </ul>
+</section>

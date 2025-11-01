@@ -7,6 +7,7 @@
 <article data-pagefind-meta="type:{{ type }}" data-pagefind-filter="list">
     <header>
         <div class="article-header__meta" data-pagefind-meta="items:{{ items.length }}">
+            {# TODO: last updated date #}
             <span>{{ items.length }} items,</span> last updated on 1st Jan, 2025
         </div>
 
@@ -21,13 +22,6 @@
         <section class="article-section__content">
             {% if abstract %}<p class="article-section__content-abstract">{{ abstract }}</p>{% endif %}
             <div class="article-section__content-content">{{ content | withoutElementsByQuery('section.footnotes') | safe }}</div>
-    {#            <aside id="sidenote-column-right" class="article-section__content-ref">#}
-    {#                <div>#}
-    {#                    First Published: {{ page.date | dateToFormat('DDD') }} in commit <a href="#">########</a>.<br/>#}
-    {#                    Updated: Never<br/>#}
-    {#                    {% if reviewed %}Reviewed: {{ reviewed | dateToFormat('DDD') }}{% endif %}#}
-    {#                </div>#}
-    {#            </aside>#}
         </section>
         <hr>
     {% endif %}
@@ -40,40 +34,25 @@
         TODO: Add pixels list type for collection of pixel shinys
     #}
 
-    <section>
-        <ul>
-            <li><pre>index_navigation: {% if index_navigation %}{{ index_navigation }}{% else %}(growth-stages){% endif %}</pre></li>
-            <li><pre>sidebar_topic: {{ sidebar_topic }}</pre></li>
-            <li><pre>sidebar_component: components/listings/{{ sidebar_component }}</pre></li>
-            <li><pre>navigation_component: {{ navigation_component or '(none)' }}</pre></li>
-        </ul>
-    </section>
+{#    <section>#}
+{#        <ul>#}
+{#            <li><pre>index_navigation: {% if index_navigation %}{{ index_navigation }}{% else %}(growth-stages){% endif %}</pre></li>#}
+{#            <li><pre>sidebar_topic: {{ sidebar_topic }}</pre></li>#}
+{#            <li><pre>sidebar_component: components/listings/{{ sidebar_component }}</pre></li>#}
+{#            <li><pre>navigation_component: {{ navigation_component or '(none)' }}</pre></li>#}
+{#        </ul>#}
+{#    </section>#}
 
     {% if sidebar_component %}
         {% set list_component_include = 'components/listings/' + sidebar_component + '.njk' %}
-        {% include list_component_include %}
+    {% else %}
+        {% set list_component_include = 'components/listings/bookmark-grid.njk' %}
     {% endif %}
 
-    {% if list_style != 'none' %}
-    <section class="items-list">
-        <ul>
-            {% asyncEach item in items %}
-            <li>
-                {% set bookmark = item %}
-                {% if item.data.dead %}
-                    {% set href = item.data.wayback or '#' %}
-                {% else %}
-                    {% set href = item.data.cite.href %}
-                {% endif %}
-                <a href="{{ href }}" class="no-ext">
-                    {% include "components/partials/bookmark-image.njk" %}
-                </a>
-                <p><a href="{{ href }}" class="no-ext">{{ item.data.title }}</a> <small><a href="{{ item.url }}">[My Notes]</a></small></p>
-            </li>
-            {% endeach %}
-        </ul>
-    </section>
-    {% endif %}
+    {% include list_component_include %}
+
+    <hr>
+
     <footer>
         {% if footnotes.length %}
             {{ footnotes | safe }}

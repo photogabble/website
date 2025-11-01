@@ -776,10 +776,6 @@ figure.citation figcaption {
     }
 }
 
-/*
- *  Page Type: Article, List
- */
-
 .markdown-alert {
     font-size: 1.2rem;
     margin: var(--spacing) 0;
@@ -911,6 +907,30 @@ figure.citation figcaption {
 
 .page__list .article-section__content-footer {
     margin-left: 0;
+}
+
+/*
+ * Component: Bookmark Grid
+ *
+ * Similar to Book Listing except fewer columns.
+ */
+ul.bookmark-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--gutter);
+
+    padding: 0;
+    margin: 0;
+
+    li {
+        list-style: none;
+    }
+
+    img{
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
 }
 
 /*
@@ -1057,7 +1077,6 @@ figure.citation figcaption {
  * Component: Post Listing
  * Displays a table listing of posts.
  */
-
 .post-list__inline-header {
     display: flex;
     align-items: center;

@@ -8,14 +8,12 @@
 
     Used by:
     - src/lists/index.md
-
-    TODO: should this be using the `project-list` CSS class?
 #}
 {%- set groups = collections.lists | groupByKey('list_category') -%}
 {%- for groupName, groupMeta in metadata.listGroups -%}
     {% set groupItems = groups.get(groupName) %}
     {%- if groupItems|length -%}
-    <section class="project-list">
+    <section>
         <header>
             <h3>{{ groupMeta.title }}</h3>
             {%- if groupMeta.description -%}<p>{{ groupMeta.description }}</p>{%- endif -%}
