@@ -3,18 +3,20 @@
 {% set page_class = 'page__list' %}
 {% set type = page_type or tags | specialTagValue('type') %}
 
-{% if sidebar_items %}
-    {% set items = sidebar_items %}
-{% elseif sidebar_topic === 'stage/stub' %}
-    {% set items = collections[sidebar_topic] | reverse %}
-{% elseif sidebar_topic %}
-    {% set items = collections[sidebar_topic] | notTagged('stage/stub') | reverse %}
-{% else %}
-    {% set items = collections.writing | notTagged(['type/project', 'type/resource', 'stage/stub', 'type/glossary', 'type/changelog']) | reverse %}
+{% if not items %}
+    {% if sidebar_items %}
+        {% set items = sidebar_items %}
+    {% elseif sidebar_topic === 'stage/stub' %}
+        {% set items = collections[sidebar_topic] | reverse %}
+    {% elseif sidebar_topic %}
+        {% set items = collections[sidebar_topic] | notTagged('stage/stub') | reverse %}
+    {% else %}
+        {% set items = collections.writing | notTagged(['type/project', 'type/resource', 'stage/stub', 'type/glossary', 'type/changelog']) | reverse %}
+    {% endif %}
 {% endif %}
 
 {% block content %}
-<article data-pagefind-meta="type:{{ type or 'index' }}">
+<article data-pagefind-meta="type:{{ type or 'index' }}"{% if type == 'list' %} data-pagefind-filter="list"{% endif %}>
     <header>
         <div class="article-header__meta" data-pagefind-meta="items:{{ items.length }}">
             {# TODO: last updated date #}
@@ -26,10 +28,12 @@
         <hr/>
     </header>
 
+    {% set footnotes = content | extractElementByQuery('section.footnotes') %}
+
     {% if content.length > 0 %}
     <section class="article-section__content">
         {% if abstract %}<p class="article-section__content-abstract">{{ abstract }}</p>{% endif %}
-        <div class="article-section__content-content">{{ content | safe }}</div>
+        <div class="article-section__content-content">{{ content | withoutElementsByQuery('section.footnotes') | safe }}</div>
     </section>
     <hr>
     {% endif %}
@@ -42,6 +46,7 @@
     <hr>
 
     <footer>
+        {{ footnotes | safe if footnotes.length}}
         {% if backlinks.length %}
             <div id="backlinks">
                 <h3>Pages Linking Here <a class="header-anchor" href="#backlinks">¶</a></h3>

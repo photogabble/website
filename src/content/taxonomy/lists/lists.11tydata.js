@@ -21,7 +21,7 @@ export default {
   list_category: 'collection',
 
   // Most lists use the list page layout
-  layout: 'layouts/page-list.njk',
+  layout: 'layouts/page-index.njk',
 
   eleventyComputed: {
     permalink(data) {
