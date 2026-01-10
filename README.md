@@ -9,6 +9,9 @@ This repository contains the source code for [www.photogabble.co.uk](https://www
 - Node.js v20+
 - Screenshots require Chromium dependencies to be available, I had to install `libnss3` via `apt install libnss3`
 
+## Installing on Windows
+This project has a dependency on [`node-canvas`](https://github.com/Automattic/node-canvas) which itself is dependant upon both `node-gyp` and `GTK 2` being installed. See the [node-canvas installation guide for Windows](https://github.com/Automattic/node-canvas/wiki/Installation:-Windows) for information on how to install those dependencies; npm will not install until they are met.
+
 ## Getting Started
 You will need to install the required packages using `npm install`. There are three commands for building:
 
