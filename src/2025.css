@@ -2,6 +2,7 @@
 @import "_styles/_jumbonav.css";
 @import "_styles/components/_table.css";
 @import "_styles/components/_stats.css";
+@import "_styles/components/_button.css";
 
 html:root, html[data-theme="classic"], [data-theme="classic"] {
     --spacing: 1.5rem;
@@ -673,10 +674,12 @@ ul.list__alphabet {
         }
 
         /* Allow certain elements to expand into reference column */
+        /* NOTE: I do not think this is used, and have removed for now.
         .full-width {
             margin-right: calc(-250px - var(--gutter) / 2);
             max-width: calc(100% + 250px + var(--gutter) / 2);
         }
+        */
     }
 
     .article-section__content-ref {
@@ -891,7 +894,7 @@ figure.citation figcaption {
     font-size: clamp(1rem, 6vw, 1.5rem);
 }
 
-.page__list .article-section__content-content > * {
+.page__list .article-section__content-content > *:not(.full-width) {
     padding-right: var(--left-margin);
 }
 
