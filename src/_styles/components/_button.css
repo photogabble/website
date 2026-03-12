@@ -1,35 +1,7 @@
-.btn {
-    border: 2px solid var(--foreground);;
-    background: transparent;
-    display: inline-block;
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    text-align: center;
-    position: relative;
-    color: var(--background);
-    cursor: pointer;
-}
-
-.btn:before {
-    content: '';
-    background: var(--accent);
-    border-radius: 8px;
-    position: absolute;
-    left: -8px;
-    top: 6px;
-    right: 4px;
-    bottom: -8px;
-    z-index: -1;
-    transition: all .2s;
-}
-
-.btn:hover:before {
-    border-radius: 0;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
+.button-board {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em;
 }
 
 .btn-88x31 img,
@@ -37,4 +9,5 @@ img.btn-88x31{
     max-width: 88px;
     min-width: 88px;
     max-height: 31px;
+    display: block;
 }
