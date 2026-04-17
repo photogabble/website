@@ -1,0 +1,296 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body > div, body > footer {
+    --padding: calc(var(--line-size) * 2);
+    --gap: var(--padding);
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-rows: auto;
+    justify-content: stretch;
+    align-items: start;
+    min-height: 100%;
+    gap: var(--gap);
+    padding: var(--padding);
+    transition: grid-template-columns .25s ease-in-out, gap .25s ease-in-out, padding .25s ease-in-out;
+}
+
+/* Make content wrapping div stretch to fill in vertical space, pushing footer to bottom */
+body > div {
+    flex-grow: 1;
+    --sidebar: 10rem;
+}
+
+body > footer {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+}
+
+section:not(:last-child) {
+    margin-bottom: calc(var(--line-size) * 4);
+}
+
+.sidebar{
+    ol {
+        list-style: none;
+        padding: 0;
+        font-size: var(--font-size-small);
+        line-height: var(--line-height-small);
+        margin: 0 0 0 0.85rem;
+
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: var(--line-size);
+
+        li ol {
+            display: none;
+
+            li:first-child {
+                position: relative;
+            }
+
+            li:first-child::before {
+                content: '↪';
+                display: block;
+                width: 1ch;
+                position: absolute;
+                left: -1.75ch;
+            }
+        }
+    }
+}
+
+.recent-posts {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: calc(var(--line-size) * 4);
+    row-gap: var(--line-size);
+
+    .list {
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--line-size) * 2);
+    }
+}
+
+.current-projects ul {
+    column-gap: calc(var(--line-size) * 4);
+    row-gap: calc(var(--line-size) * 2);
+    margin: var(--line-size) 0 0;
+
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-title); /*clamp(1rem, 1vw, var(--font-size-title));*/
+    line-height: var(--line-height-title);
+    margin: 0;
+    hyphens: auto;
+}
+
+.link-heading {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: var(--font-size-heading);
+    line-height: var(--line-height-heading);
+    color: var(--color-text);
+    margin-bottom: var(--line-size);
+}
+
+.seperator {
+    justify-self: stretch;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+
+    * {
+        color: var(--color-text-light);
+        font-family: var(--font-body);
+        font-weight: 500;
+        font-size: var(--font-size-small);
+        line-height: var(--line-height-small);
+        margin: 0;
+    }
+
+    hr {
+        flex: 1;
+        height: 1px;
+        border: none;
+        background-color: var(--color-border);
+    }
+}
+
+@media (min-width: 720px) {
+    .current-projects ul {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 960px) {
+    body > div, body > footer  {
+        --padding: calc(var(--line-size) * 4);
+        grid-template-columns: var(--sidebar) auto;
+    }
+
+    .sidebar ol {
+        flex-direction: column;
+        gap: initial;
+
+        li ol {
+            display: flex;
+        }
+    }
+
+    .recent-posts {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-auto-flow: column;
+    }
+}
+
+@media (min-width: 1200px) {
+    body > div, body > footer  {
+        --gap: calc(var(--padding) * 2);
+        --sidebar: 10rem;
+    }
+
+    .current-projects ul {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.page__note {
+    article {
+        --sidebar: 18.75rem;
+        display: grid;
+        column-gap: var(--gap);
+        grid-template-columns: 1fr;
+
+        > div {
+            grid-column: 1;
+
+            p code {
+                background: var(--color-code-inline);
+                padding: 0.125ch 0.25ch;
+                font-size: 0.95rem;
+            }
+        }
+
+        > footer {
+            grid-column: 1 / -1;
+            margin-top: calc(var(--line-size) * 3);
+        }
+
+        figure {
+            margin: calc(var(--line-size) * 2) 0;
+            > div {
+                display: flex;
+                flex-direction: column;
+                gap: var(--padding);
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+            figcaption {
+                font-size: var(--font-size-small);
+                line-height: var(--line-height-small);
+                padding-top: 1ch;
+            }
+
+            &.full-width {
+                grid-template-columns: 1fr;
+
+                figcaption {
+                    grid-column: 1;
+                    padding-left: 0;
+                }
+            }
+        }
+
+        header {
+            margin-bottom: var(--padding);
+        }
+
+        header h1, header h2 {
+            margin-bottom: var(--line-size);
+        }
+
+        header > span {
+            text-transform: uppercase;
+            font-size: var(--font-size-small);
+            font-weight: bold;
+            background: var(--color-accent);
+            color: var(--color-background);
+            padding: 0.5ch 0.75ch;
+            border-radius: 5px;
+            line-height: 1;
+            display: inline-block;
+            margin-bottom: var(--line-size);
+        }
+
+        header h2 {
+            font-family: var(--font-body);
+        }
+    }
+}
+
+@media (min-width: 480px) {
+    .page__note article figure > div {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 960px) {
+    .page__note article {
+        /** Makes paragraphs look nice when among figures and code blocks. **/
+        > div {
+            > * {
+                padding-left: var(--padding);
+            }
+
+            > pre, > figure, > header, > footer {
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .page__note article {
+        grid-template-columns: minmax(auto, 65ch) var(--sidebar);
+
+        /* Moves the code block to touch the left side of the view port
+           and expands to fill up to the right hand sidebar. */
+        > div pre[class*="language-"] {
+            --offset:calc(calc(var(--padding) * 2) + 10rem + var(--padding));
+            position: relative;
+            left: calc(var(--offset) * -1);
+            width: calc(100% + var(--offset));
+
+            background: #0d091a;
+            scrollbar-color: #faf1e0 #0d091a;
+            border-radius: 0;
+            font-size: var(--font-size-small);
+            line-height: var(--line-height-small);
+            padding: var(--padding);
+            padding-right: 0;
+        }
+
+        aside {
+            padding-left: 0;
+            grid-column: 2;
+            grid-row: 2;
+        }
+    }
+}

@@ -1,6 +1,6 @@
-{% extends "layouts/base.njk" %}
+{% extends "layouts/base-2026.njk" %}
 
-{% set page_class = 'page__article' %}
+{% set page_class = 'page__note' %}
 {% set ogtype = 'article' %}
 {% set readingTime = content | wordStats %}
 {% set filteredTags = tags | withoutTags('writing') | excludeSpecialTags(['type', 'resource']) | formatTagList(collections.topics) %}
@@ -17,76 +17,101 @@
 
 {% block content %}
 <article data-pagefind-meta="type:{{ type }}" data-pagefind-filter="post">
-    {% include "components/partials/article-header.njk" %}
-    <section class="article-section__content{% if not abstract %} no-abstract{% endif %}">
-        {% if abstract %}<div class="article-section__content-abstract">{{ abstract | safe }}</div>{% endif %}
-        <aside class="article-section__content-toc">
-            {% if backlinks.length %}
-                {% set toc_headings = (toc_headings or []).push({id: 'backlinks', text: 'Pages Linking Here'}) %}
+
+    <header>
+        <span>Writing</span>
+        <h1 class="title">{{ title }}</h1>
+        {% if abstract %}
+            <h2>{{ abstract | safe }}</h2>
+        {% endif %}
+        <div class="seperator">
+            {% if not hide_header_date %}
+            <time data-pagefind-meta="date:{{ page.date | dateToFormat('DDD') }}" datetime="{{ page.date | dateToFormat('iso') }}">{% if growthStage === 'stub' %}Schedueld for {% endif %}{{ page.date | dateToFormat('DDD') }}</time>
             {% endif %}
-
-            {% set toc_content = content | withHeadings(toc_headings) | toc %}
-
-            {% if toc_content %}
-                <h4>On this page</h4>
-                {{ toc_content | safe }}
-                <hr />
+            <hr class="bar" />
+            {% if tags | withoutTags(['writing']) | excludeSpecialTags(['type', 'resource']) | length > 0 %}
+            <p aria-label="Topics">
+                {% include "components/tag-list.njk" %}
+            </p>
+            <!--<ol class="topics" aria-label="Topics">
+                <li>🏷️</li>
+                <li><a href="#">Something</a></li>
+                <li><a href="#">Something Else</a></li>
+            </ol>-->
             {% endif %}
-
-            {% if sidebar %}
-                {{ sidebar | safe }}
-            {% endif %}
-
-            {% include "components/side-bars/series.njk" %}
-
-            {% include "components/side-bars/prev-next.njk" %}
-        </aside>
-        <div class="article-section__content-content">
-            {% if growthStage === 'stub' %}
-                <div class="markdown-alert markdown-alert-caution">
-                    <p class="markdown-alert-title">Note</p>
-                    <p>This is a stub post to be filled out in the future. It has been created for the purpose of interlinking feel free to check out what links here from the list below to find related pages.</p>
-                </div>
-            {% endif %}
-            {{ content | withoutElementsByQuery('.sidebar, .abstract, section.footnotes') | safe }}
         </div>
-        <aside id="sidenote-column-right" class="article-section__content-ref" data-pagefind-meta="date:{{ page.date | dateToFormat('DDD') }}">
-            <div data-pagefind-ignore>
-                First Published: {{ page.date | dateToFormat('DDD') }} in commit <a href="#">########</a>.<br/>
-                Updated: {% if modified %}<time datetime="{{ modified.toISOString() }}">{{ modified | dateToFormat("DDD") }}</time>{% else %}Never{% endif %}<br/>
-                {% if reviewed %}Reviewed: {{ reviewed | dateToFormat('DDD') }}{% endif %}
+    </header>
+
+    {% if backlinks.length %}
+        {% set toc_headings = (toc_headings or []).push({id: 'backlinks', text: 'Pages Linking Here'}) %}
+    {% endif %}
+
+    {% set toc_content = content | withHeadings(toc_headings) | toc %}
+
+    <aside>
+        {% if toc_content %}
+        <nav aria-label="Table of contents">
+            <h3>On this page</h3>
+            {{ toc_content | safe }}
+        </nav>
+        {% endif %}
+
+        <!--
+        <div data-pagefind-ignore>
+            First Published: {{ page.date | dateToFormat('DDD') }} in commit <a href="#">########</a>.<br/>
+            Updated: {% if modified %}<time datetime="{{ modified.toISOString() }}">{{ modified | dateToFormat("DDD") }}</time>{% else %}Never{% endif %}<br/>
+            {% if reviewed %}Reviewed: {{ reviewed | dateToFormat('DDD') }}{% endif %}
+        </div>
+        -->
+
+        {% if sidebar %}
+            {{ sidebar | safe }}
+        {% endif %}
+
+        {% include "components/side-bars/series.njk" %}
+
+        {% include "components/side-bars/prev-next.njk" %}
+    </aside>
+
+    <div>
+        {% if growthStage === 'stub' %}
+            <div class="markdown-alert markdown-alert-caution">
+                <p class="markdown-alert-title">Note</p>
+                <p>This is a stub post to be filled out in the future. It has been created for the purpose of interlinking feel free to check out what links here from the list below to find related pages.</p>
             </div>
-        </aside>
-    </section>
+        {% endif %}
 
-    {% if footnotes.length or backlinks.length %}
-        <footer class="article-section__content-footer">
-            {{ footnotes | safe }}
+        {{ content | withoutElementsByQuery('.sidebar, .abstract, section.footnotes') | safe }}
+    </div>
 
-            {#    {% if tags | includesTag('wayback machine') %}#}
-            {#        <hr/>#}
-            {#        {% include "components/wayback-machine.njk" %}#}
-            {#    {% endif %}#}
+    <footer>
+        {{ footnotes | safe }}
 
+        {#    {% if tags | includesTag('wayback machine') %}#}
+        {#        <hr/>#}
+        {#        {% include "components/wayback-machine.njk" %}#}
+        {#    {% endif %}#}
+
+        {% if footnotes.length or backlinks.length %}
             {% include "components/backlinks.njk" %}
-        </footer>
-    {% endif %}
+        {% endif %}
 
-    {% if related.length %}
-        <section class="article-section__related" data-pagefind-ignore>
-            <h3>Similar Stories</h3>
-            <nav class="related-notes">
-                {% for item in related | limit(3) %}
-                    <a href="{{ item.url }}">
-                         TODO: add article images
-                        <img src="/img/sebastian-huber-CTT1DbhGhA8-unsplash.jpg">
-                        <small>{{ item.data.tags | specialTagValue('type') }}</small>
-                        <h4>{{ item.data.title }}</h4>
-                    </a>
-                {% endfor %}
-            </nav>
-        </section>
-    {% endif %}
+        {% if related.length %}
+            <section class="article-section__related" data-pagefind-ignore>
+                <h3>Similar Stories</h3>
+                <nav class="related-notes">
+                    {% for item in related | limit(3) %}
+                        <a href="{{ item.url }}">
+                            TODO: add article images
+                            <img src="/img/sebastian-huber-CTT1DbhGhA8-unsplash.jpg">
+                            <small>{{ item.data.tags | specialTagValue('type') }}</small>
+                            <h4>{{ item.data.title }}</h4>
+                        </a>
+                    {% endfor %}
+                </nav>
+            </section>
+        {% endif %}
+    </footer>
 
 </article>
 {% endblock %}

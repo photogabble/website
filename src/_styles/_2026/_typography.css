@@ -1,0 +1,61 @@
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    margin-bottom: var(--line-size);
+}
+
+code {
+    font-family: var(--font-mono);
+}
+
+a {
+    color: inherit;
+    transition: color .25s ease, text-decoration-color .25s ease;
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+/* NOTE: I am not sure about this, have a think and remove if still unsure */
+.sidebar a {
+    --basic-link-primary: var(--color-highlight);
+    --basic-link-secondary: var(--color-highlight-hover);
+    text-decoration: none;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,var(--basic-link-secondary),var(--basic-link-secondary)),linear-gradient(to bottom,var(--basic-link-primary),var(--basic-link-primary));
+    background-repeat: no-repeat;
+    background-size: 100% 35%,100% 8%;
+    background-position: bottom;
+    transition: background-size .05s ease-out;
+    &:hover,&:focus-visible,&[aria-current=page] {
+        color: var(--color-text);
+        background-size: 100% 100%,100% 8%;
+        text-decoration-color: var(--basic-link-primary)
+    }
+}
+
+
+
+p {
+    margin: calc(var(--line-size) * 2) 0;
+}
+
+p:first-child {
+    margin-top: 0
+}
+
+p:last-child {
+    margin-bottom: 0
+}
+
+.no-underline {
+    text-decoration: none;
+}

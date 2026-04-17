@@ -1,0 +1,39 @@
+@import '_styles/_2026/_reset.css';
+@import '_styles/_2026/_variables.css';
+@import '_styles/_2026/_typography.css';
+
+/** Page Components **/
+@import '_styles/_2026/components/_timeline.css';
+@import '_styles/_jumbonav.css';
+
+/** Page Layouts **/
+@import '_styles/_2026/layouts/_default.css';
+
+/** Overrides **/
+#jumbo-nav {
+    display: block;
+    --jumbo-nav-text-color: var(--color-background);
+    --jumbo-nav-anchor-color: var(--color-border);
+    --jumbo-nav-anchor-hover-color: var(--color-text);
+
+    nav {
+        column-gap: calc(var(--line-size) * 4);
+        row-gap: var(--line-size);
+        font-size: inherit;
+
+        dd span:first-child {
+            display: inline-block;
+            min-width: 3ch;
+        }
+
+        dl:not(.community) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        dl:not(.community) dt {
+            grid-column: span 3;
+            line-height: inherit;
+            height: auto;
+        }
+    }
+}

@@ -29,6 +29,7 @@
 #jumbo-nav dl:not(.community) dt {
     border-bottom: 1px solid;
     margin-bottom: 0.5rem;
+    line-height: 1.5;
     height: 20px;
 }
 
@@ -49,10 +50,6 @@
 
 #jumbo-nav dl.community:last-child dd:first-of-type {
     margin-bottom: 0;
-}
-
-#jumbo-nav dl.community dd:nth-of-type(2) a:hover{
-    box-shadow: 0 0 10rem var(--jumbo-nav-anchor-color);
 }
 
 #jumbo-nav dt {

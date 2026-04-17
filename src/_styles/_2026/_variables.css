@@ -1,0 +1,43 @@
+:root {
+    --font-heading: 'Besley', ui-serif, Georgia, Cambria, 'Times New Roman', serif;
+    --font-body: 'Rethink Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+    --line-size: .75rem;
+
+    --font-size-body: 1.125rem;
+    --font-size-small: .875rem;
+    --font-size-heading: 2.25rem;
+    --font-size-title: 4.5rem;
+
+    --line-height-title: calc(var(--line-size) * 6);
+    --line-height-heading: calc(var(--line-size) * 3);
+    --line-height-body: calc(var(--line-size) * 2.5);
+    --line-height-small: calc(var(--line-size) * 2);
+    --padding: calc(var(--line-size) * 4);
+
+    --color-text: #3F333B;
+    --color-text-light: #6C716F;
+    --color-accent: #AB4646;
+    --color-background: #fffaef;
+    --color-border: #D4C3AF;
+    --color-code-inline: #ffeec8;
+    --color-highlight: #AB4646;
+    --color-highlight-hover: #AB464633;
+}
+
+body.theme-1 {
+    --color-1: #3F333B;
+    --color-2: #AB4646;
+    --color-3: #fffaef;
+    --color-4: #D4C3AF;
+    --color-5: #527969;
+}
+
+body.theme-2 {
+    --color-1: #34252F;
+    --color-2: #FFF1E0;
+    --color-3: #C1BFA9;
+    --color-4: #7B7C72;
+    --color-5: #474F4B;
+}

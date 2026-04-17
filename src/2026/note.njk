@@ -1,0 +1,75 @@
+{% set page_class = 'page__note' %}
+{% extends "layouts/base-2026.njk" %}
+
+{% block title %}Note{% endblock %}
+{% block content %}
+    <article>
+        <header>
+            <span>Writing</span>
+            <h1 class="title">Note Title</h1>
+            <h2>No website is an island, they are all built upon the combined effort of that which came before. If they are lucky, they will inspire the next generation.</h2>
+            <div class="seperator">
+                <time datetime="2026-04-15T12:00:00.000Z">📅 15th April 2026</time>
+                <hr class="bar" />
+                <ol class="topics" aria-label="Topics">
+                    <li>🏷️</li>
+                    <li><a href="#">Something</a></li>
+                    <li><a href="#">Something Else</a></li>
+                </ol>
+            </div>
+        </header>
+        <nav aria-label="Table of contents">
+            <h3>Table of Contents</h3>
+            <ol>
+                <li><a href="#">A descriptive title</a></li>
+                <li><a href="#">Something interesting here...</a></li>
+                <li><a href="#">Another title of some sort</a></li>
+                <li><a href="#">References</a></li>
+                <li><a href="#">Linking here</a></li>
+            </ol>
+        </nav>
+
+        <p>A few months ago I was asked why I <a href="#">publish the source</a> code to this website for all to see and honestly up until that point I hadn't really put that much thought into it. I had been inspired by seeing Xe Iaso linking the most recent git commit in each pages footer to do so myself and that required having a public repository; but none of my previous website repositories are public so why this one?</p>
+        <p>This website was originally generated using Tapestry a SSG of my own creation written in PHP but I wanted to give Netlify a go due to a recommendation by Cassidy Williams and because I had read a couple of articles by Andy Bell on using #11ty I decided to give it a go.</p>
+
+        <figure class="three">
+            <div>
+                <picture><source type="image/webp" srcset="/img/optimised/a8PwWCW9zw-400.webp 400w, /img/optimised/a8PwWCW9zw-800.webp 800w, /img/optimised/a8PwWCW9zw-1280.webp 1280w" sizes="100vw">
+                    <source type="image/jpeg" srcset="/img/optimised/a8PwWCW9zw-400.jpeg 400w, /img/optimised/a8PwWCW9zw-800.jpeg 800w, /img/optimised/a8PwWCW9zw-1280.jpeg 1280w" sizes="100vw"><img src="/img/optimised/a8PwWCW9zw-1280.webp" width="1280" height="1280" alt="Top-down view of a Toshiba T5100, its a grey square computer with many vents" loading="lazy" decoding="async"></picture>
+                <picture><source type="image/webp" srcset="/img/optimised/ddc2p-PC0F-400.webp 400w, /img/optimised/ddc2p-PC0F-800.webp 800w, /img/optimised/ddc2p-PC0F-1280.webp 1280w" sizes="100vw">
+                    <source type="image/jpeg" srcset="/img/optimised/ddc2p-PC0F-400.jpeg 400w, /img/optimised/ddc2p-PC0F-800.jpeg 800w, /img/optimised/ddc2p-PC0F-1280.jpeg 1280w" sizes="100vw"><img src="/img/optimised/ddc2p-PC0F-1280.webp" width="1280" height="1280" alt="Opened view of a Toshiba T5100, you can see the keyboard and screen. It's not powered on" loading="lazy" decoding="async"></picture>
+            </div>
+            <figcaption>The first computer that was <em>mine</em></figcaption>
+        </figure>
+
+        <p>A few months ago I was asked why I <a href="#">publish the source</a> code to this website for all to see and honestly up until that point I hadn't really put that much thought into it. I had been inspired by seeing Xe Iaso linking the most recent git commit in each pages footer to do so myself and that required having a public repository; but none of my previous website repositories are public so why this one?</p>
+        <h2>A title of some sort</h2>
+        <p>This website was originally generated using Tapestry a SSG of my own creation written in PHP but I wanted to give Netlify a go due to a recommendation by Cassidy Williams and because I had read a couple of articles by Andy Bell on using #11ty I decided to give it a go.</p>
+        <p>A few months ago I was asked why I <a href="#">publish the source</a> code to this website for all to see and honestly up until that point I hadn't really put that much thought into it. I had been inspired by seeing Xe Iaso linking the most recent git commit in each pages footer to do so myself and that required having a public repository; but none of my previous website repositories are public so why this one?</p>
+        <p>This website was originally generated using Tapestry a SSG of my own creation written in PHP but I wanted to give Netlify a go due to a recommendation by Cassidy Williams and because I had read a couple of articles by Andy Bell on using #11ty I decided to give it a go.</p>
+
+
+        <figure class="full-width">
+            <div>
+                <picture><source type="image/webp" srcset="/img/optimised/EGC4M_SPtX-400.webp 400w, /img/optimised/EGC4M_SPtX-800.webp 800w, /img/optimised/EGC4M_SPtX-1080.webp 1080w" sizes="100vw">
+                    <source type="image/jpeg" srcset="/img/optimised/EGC4M_SPtX-400.jpeg 400w, /img/optimised/EGC4M_SPtX-800.jpeg 800w, /img/optimised/EGC4M_SPtX-1080.jpeg 1080w" sizes="100vw"><img src="/img/optimised/EGC4M_SPtX-1080.webp" width="1080" height="1080" alt="Rear view of the Toshiba T5100, you can see rust on the interface card" loading="lazy" decoding="async"></picture>
+            </div>
+            <figcaption>My heart sunk the first time I saw the rust</figcaption>
+        </figure>
+
+        <footer>
+            <section>
+                <h2>References</h2>
+            </section>
+            <section>
+                <h2>External links</h2>
+            </section>
+            <section>
+                <h2>Linking here</h2>
+            </section>
+            <section>
+                <h2>Related notes</h2>
+            </section>
+        </footer>
+    </article>
+{% endblock %}

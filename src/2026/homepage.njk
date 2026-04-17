@@ -1,0 +1,97 @@
+{% extends "layouts/base-2026.njk" %}
+
+{# https://thatshubham.com/ #}
+{# https://girlthi.ng/~thermia/ #}
+{# https://fungal.locahlo.st/88x31/ #}
+{# https://jakelazaroff.com/ #}
+{# https://brandur.org/two-phase-render #}
+{# https://vale.rocks/posts/traffic-analysis #}
+{# https://anil.recoil.org/ !!! #}
+
+{% block title %}Index{% endblock %}
+{% block content %}
+    <div>
+        {% set recent = collections.writing | notTagged(['Week In Review', 'type/project', 'type/resource', 'stage/stub', 'type/glossary', 'type/changelog']) | reverse %}
+        <section class="recent-posts">
+            <div class="seperator">
+                <h2>Latest note</h2>
+                <hr />
+            </div>
+
+            <article class="card">
+                <a href="{{ recent[0].url }}" class="title">{{ recent[0].data.title }}</a>
+                <p>{{ recent[0].data.description or recent[0].templateContent | striptags | truncate(250) | safe }}</p>
+            </article>
+
+            <div class="seperator">
+                <h2>Earlier Notes</h2>
+                <hr />
+            </div>
+
+            <div class="list">
+                <article class="card">
+                    <a href="{{ recent[1].url }}" class="link-heading">{{ recent[1].data.title }}</a>
+                    <p>{{ recent[1].data.description or recent[1].templateContent | striptags | truncate(200) | safe }}</p>
+                </article>
+
+                <article class="card">
+                    <a href="{{ recent[2].url }}" class="link-heading">{{ recent[2].data.title }}</a>
+                    <p>{{ recent[2].data.description or recent[2].templateContent | striptags | truncate(200) | safe }}</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="journal-timeline">
+            <header class="seperator">
+                <h2>Journal</h2>
+                <hr />
+            </header>
+
+            <!-- TODO: programmatically build timeline from 'Week In Review' and 'Journal' notes -->
+            {# https://codyhouse.co/demo/horizontal-timeline/index.html #}
+            <div class="timeline">
+                <div class="timeline-entries">
+                    <div class="timeline-entries__line">
+                        <ol>
+                            <li><a href="#0" class="timeline-entries__selected" style="left:120px">16th March</a></li>
+                            <li><a href="#1" class="timeline-entries__wk-review" style="left:320px">Wk 11 Review</a></li>
+                            <li><a href="#2" style="left:520px">15th March</a></li>
+                            <li><a href="#3" style="left:720px">14th March</a></li>
+                            <li><a href="#4" style="left:920px">13th March</a></li>
+                            <li><a href="#5" style="left:1120px">12th March</a></li>
+                            <li><a href="#6" style="left:1320px">11th March</a></li>
+                        </ol>
+                        <span class="timeline-entries__fill-line" aria-hidden="true" style="transform: scaleX(0.111);"></span>
+                    </div>
+                </div>
+                <ul class="timeline__navigation">
+                    <li><button class="timeline__navigation--prev" aria-label="Previous" disabled></button></li>
+                    <li><button class="timeline__navigation--next" aria-label="Next"></button></li>
+                </ul>
+            </div>
+
+            <div class="journal-timeline__preview">
+                <div class="journal-timeline__preview--extract">
+                    <a href="#" class="title">16th March, 2026</a>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. </p>
+                </div>
+                <img src="https://picsum.photos/640/480" style="width:100%" />
+            </div>
+        </section>
+
+        <section class="current-projects">
+            <header class="seperator">
+                <h2>Recently worked on</h2>
+                <hr />
+            </header>
+
+            <ul>
+                <li>
+                    <a href="#" class="link-heading">BlackNova Traders Next</a>
+                </li>
+                <li><a href="#" class="link-heading">Tuppence</a></li>
+                <li><a href="#" class="link-heading">Tapestry</a></li>
+            </ul>
+        </section>
+    </div>
+{% endblock %}

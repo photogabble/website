@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
+
+    <!-- SEO -->
+    <title>{{ title or metadata.title }}</title>
+    <meta name="description" content="{{ description or metadata.description }}"/>
+    <link rel="canonical" href="{{ canonical or page.url }}"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="generator" content="Eleventy 3">
+    {% block head %}{% endblock %}
+
+    <!-- Font Preload (stops the flash of default font) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;600&family=Rethink+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Besley:wght@400;600;700&family=Fustat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/2026.css"/>
+</head>
+<body class="{{ page_class or 'page__default' }}">
+    <div>
+        <nav class="sidebar" aria-label="Main Navigation">
+            <code>~/PhotoGabble</code>
+            <ol>
+                <li><a href="/garden/">Garden</a></li>
+                <li>
+                    <a href="/writing/">Journal</a>
+                    <ol>
+                        <li><a href="#">Essays</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Noteworthy</a></li>
+                        <li><a href="#">Thoughts</a></li>
+                        <li><a href="#">Series</a></li>
+                    </ol>
+                </li>
+                <li><a href="/lists/">Collections</a></li>
+                <li><a href="/now/"><code>/now</code></a></li>
+                <li><a href="/uses/"><code>/uses</code></a></li>
+                <li><a href="#">More...</a></li>
+            </ol>
+        </nav>
+        <main>{% block content %}{{ content | safe }}{% endblock %}</main>
+    </div>
+    <footer>
+        <div>
+            <p><a href="/forest/" title="Return to the forest" class="no-underline">🌱</a></p>
+        </div>
+        {% include "components/navigation/jumbo-nav.njk" %}
+    </footer>
+</body>
+</html>
