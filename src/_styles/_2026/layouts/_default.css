@@ -18,6 +18,10 @@ body > div, body > footer {
     transition: grid-template-columns .25s ease-in-out, gap .25s ease-in-out, padding .25s ease-in-out;
 }
 
+body > div > main {
+    min-width: 0;
+}
+
 /* Make content wrapping div stretch to fill in vertical space, pushing footer to bottom */
 body > div {
     flex-grow: 1;
@@ -176,17 +180,25 @@ section:not(:last-child) {
 
         > div {
             grid-column: 1;
+            min-width: 0;
 
             p code {
                 background: var(--color-code-inline);
                 padding: 0.125ch 0.25ch;
                 font-size: 0.95rem;
             }
+
+            pre {
+                overflow-x: auto;
+            }
         }
 
         > footer {
             grid-column: 1 / -1;
             margin-top: calc(var(--line-size) * 3);
+
+            display: grid;
+            grid-template-columns: 1fr;
         }
 
         figure {
@@ -263,6 +275,7 @@ section:not(:last-child) {
                 padding-left: 0;
             }
         }
+
     }
 }
 
@@ -285,6 +298,15 @@ section:not(:last-child) {
             line-height: var(--line-height-small);
             padding: var(--padding);
             padding-right: 0;
+        }
+
+        footer {
+            grid-template-columns: minmax(auto, 65ch) var(--sidebar);
+            column-gap: var(--gap);
+
+            .footnotes > * {
+                padding-left: var(--padding);
+            }
         }
 
         aside {
