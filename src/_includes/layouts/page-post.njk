@@ -14,30 +14,28 @@
 {% set abstract = content | extractElementByQuery('.abstract') %}
 {% set footnotes = content | extractElementByQuery('section.footnotes') %}
 {% set sidebar = content | extractElementByQuery('.sidebar') %}
+{% set toc_content = content | withHeadings(toc_headings) | toc %}
 
 {% block content %}
-<article data-pagefind-meta="type:{{ type }}" data-pagefind-filter="post">
-
+<article {% if toc_content %}class="has-toc" {% endif %}data-pagefind-meta="type:{{ type }}" data-pagefind-filter="post">
     <header>
-        <span>Writing</span>
+        <span>{{ type or 'Note' }}</span>
         <h1 class="title">{{ title }}</h1>
         {% if abstract %}
             <h2>{{ abstract | safe }}</h2>
         {% endif %}
         <div class="seperator">
-            {% if not hide_header_date %}
+            {%- if not hide_header_date -%}
             <time data-pagefind-meta="date:{{ page.date | dateToFormat('DDD') }}" datetime="{{ page.date | dateToFormat('iso') }}">{% if growthStage === 'stub' %}Schedueld for {% endif %}{{ page.date | dateToFormat('DDD') }}</time>
-            {% endif %}
+            {%- endif -%}
+            {%- if hide_meta !== true and readingTime.words > 0 -%}
+                <span>{{ readingTime.text }}</span>
+            {%- endif -%}
             <hr class="bar" />
             {% if tags | withoutTags(['writing']) | excludeSpecialTags(['type', 'resource']) | length > 0 %}
             <p aria-label="Topics">
                 {% include "components/tag-list.njk" %}
             </p>
-            <!--<ol class="topics" aria-label="Topics">
-                <li>🏷️</li>
-                <li><a href="#">Something</a></li>
-                <li><a href="#">Something Else</a></li>
-            </ol>-->
             {% endif %}
         </div>
     </header>
@@ -46,16 +44,15 @@
         {% set toc_headings = (toc_headings or []).push({id: 'backlinks', text: 'Pages Linking Here'}) %}
     {% endif %}
 
-    {% set toc_content = content | withHeadings(toc_headings) | toc %}
-
-    <aside>
-        {% if toc_content %}
+    {% if toc_content %}
+    <aside class="toc">
         <nav aria-label="Table of contents">
             <h3>On this page</h3>
             {{ toc_content | safe }}
         </nav>
-        {% endif %}
-
+    </aside>
+    {% endif %}
+    <aside data-pagefind-ignore>
         <!--
         <div data-pagefind-ignore>
             First Published: {{ page.date | dateToFormat('DDD') }} in commit <a href="#">########</a>.<br/>
@@ -102,8 +99,6 @@
                 <nav class="related-notes">
                     {% for item in related | limit(3) %}
                         <a href="{{ item.url }}">
-                            TODO: add article images
-                            <img src="/img/sebastian-huber-CTT1DbhGhA8-unsplash.jpg">
                             <small>{{ item.data.tags | specialTagValue('type') }}</small>
                             <h4>{{ item.data.title }}</h4>
                         </a>

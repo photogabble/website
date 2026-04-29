@@ -30,17 +30,24 @@
                 <li><a href="/garden/">Garden</a></li>
                 <li>
                     <a href="/writing/">Journal</a>
+                    {% if tags | includesTag('writing') %}
                     <ol>
-                        <li><a href="#">Essays</a></li>
-                        <li><a href="#">Tutorials</a></li>
-                        <li><a href="#">Noteworthy</a></li>
-                        <li><a href="#">Thoughts</a></li>
-                        <li><a href="#">Series</a></li>
+                        {% if tags %}
+                            {% set type = tags | specialTagValue('type') %}
+                        {% else %}
+                            {% set type = 'unknown' %}
+                        {% endif %}
+                        <li><a href="/essays/" {% if page.url === '/essays/' or type === 'essay' %}aria-current="page"{% endif %}>Essays</a> </li>
+                        <li><a href="/tutorials/" {% if page.url === '/tutorials/' or type === 'tutorial' %}aria-current="page"{% endif %}>Tutorials</a> </li>
+                        <li><a href="/noteworthy/" {% if page.url === '/noteworthy/' or type === 'noteworthy' %}aria-current="page"{% endif %}>Noteworthy</a> </li>
+                        <li><a href="/thoughts/" {% if page.url === '/thoughts/' or type === 'thought' %}aria-current="page"{% endif %}>Thoughts</a> </li>
+                        <li><a href="/series/" {% if page.url === '/series/' or type === 'series' %}aria-current="page"{% endif %}>Series</a></li>
                     </ol>
+                    {% endif %}
                 </li>
                 <li><a href="/lists/">Collections</a></li>
-                <li><a href="/now/"><code>/now</code></a></li>
-                <li><a href="/uses/"><code>/uses</code></a></li>
+                <li><a href="/now/" {% if page.url === '/now/' %}aria-current="page"{% endif %}><code>/now</code></a></li>
+                <li><a href="/uses/" {% if page.url === '/uses/' %}aria-current="page"{% endif %}><code>/uses</code></a></li>
                 <li><a href="#">More...</a></li>
             </ol>
         </nav>

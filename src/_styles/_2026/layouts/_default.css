@@ -171,74 +171,22 @@ section:not(:last-child) {
     }
 }
 
-.page__note {
-    article {
-        --sidebar: 18.75rem;
-        display: grid;
-        column-gap: var(--gap);
-        grid-template-columns: 1fr;
+.page__note article {
+    --sidebar: 18.75rem;
 
-        > div {
-            grid-column: 1;
-            min-width: 0;
+    display: grid;
+    column-gap: var(--gap);
+    grid-template-columns: 1fr;
 
-            p code {
-                background: var(--color-code-inline);
-                padding: 0.125ch 0.25ch;
-                font-size: 0.95rem;
-            }
+    > header {
+        order: 1;
+        margin-bottom: var(--padding);
 
-            pre {
-                overflow-x: auto;
-            }
-        }
-
-        > footer {
-            grid-column: 1 / -1;
-            margin-top: calc(var(--line-size) * 3);
-
-            display: grid;
-            grid-template-columns: 1fr;
-        }
-
-        figure {
-            margin: calc(var(--line-size) * 2) 0;
-            > div {
-                display: flex;
-                flex-direction: column;
-                gap: var(--padding);
-            }
-
-            img {
-                width: 100%;
-                height: auto;
-            }
-
-            figcaption {
-                font-size: var(--font-size-small);
-                line-height: var(--line-height-small);
-                padding-top: 1ch;
-            }
-
-            &.full-width {
-                grid-template-columns: 1fr;
-
-                figcaption {
-                    grid-column: 1;
-                    padding-left: 0;
-                }
-            }
-        }
-
-        header {
-            margin-bottom: var(--padding);
-        }
-
-        header h1, header h2 {
+        h1, h2 {
             margin-bottom: var(--line-size);
         }
 
-        header > span {
+        > span {
             text-transform: uppercase;
             font-size: var(--font-size-small);
             font-weight: bold;
@@ -251,8 +199,97 @@ section:not(:last-child) {
             margin-bottom: var(--line-size);
         }
 
-        header h2 {
+        h2 {
             font-family: var(--font-body);
+        }
+    }
+
+    /* if we have a toc then we will have more than one aside, it needs to be order 2,
+       else it's just the article sidebar in which case its order 4 placing it between
+       the content div container and the article footer.
+     */
+    > aside:nth-of-type(1) { order: 4;}
+    &.has-toc > aside:nth-of-type(1) { order: 2; } /* toc */
+
+
+    > div {
+        order: 3;
+        min-width: 0;
+        padding-bottom: var(--padding);
+
+        > ul, > ol {
+            margin-block-start: calc(var(--line-size) * 2);
+            margin-block-end: calc(var(--line-size) * 2);
+        }
+
+        li code, p code {
+            background: var(--color-code-inline);
+            padding: 0.125ch 0.25ch;
+            font-size: 0.95rem;
+        }
+
+        pre {
+            background: var(--color-pre-background);
+            color: var(--color-pre-text);
+            scrollbar-color: var(--color-pre-text) var(--color-pre-background);
+            border-radius: 0;
+            font-size: var(--font-size-small);
+            line-height: var(--line-height-small);
+
+            overflow-x: auto;
+        }
+    }
+
+    > aside:nth-of-type(2) {
+        order: 4;
+        padding-left: var(--padding);
+    } /* sidebar bits */
+
+    > aside {
+        margin-bottom: 1rem;
+    }
+
+    > footer {
+        order: 5;
+        /*margin-top: calc(var(--line-size) * 3);*/
+
+        border-top: 3px double #d4c3af40;
+        margin-left: 1ch;
+        margin-top: 0;
+        padding-top: var(--padding);
+
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    > * { grid-column: 1; grid-row: auto; } /* everything else */
+
+    figure {
+        margin: calc(var(--line-size) * 2) 0;
+        > div {
+            display: flex;
+            flex-direction: column;
+            gap: var(--padding);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        figcaption {
+            font-size: var(--font-size-small);
+            line-height: var(--line-height-small);
+            padding-top: 1ch;
+        }
+
+        &.full-width {
+            grid-template-columns: 1fr;
+
+            figcaption {
+                grid-column: 1;
+                padding-left: 0;
+            }
         }
     }
 }
@@ -264,16 +301,46 @@ section:not(:last-child) {
 }
 
 @media (min-width: 960px) {
+    main {
+        border-left: 3px double #d4c3af40;
+    }
+
     .page__note article {
+        > header {
+            padding-left: 1ch;
+        }
+
+        > footer section:not(.article-section__related) > * {
+            padding-left: var(--padding);
+        }
+
         /** Makes paragraphs look nice when among figures and code blocks. **/
         > div {
             > * {
                 padding-left: var(--padding);
             }
 
-            > pre, > figure, > header, > footer {
-                padding-left: 0;
+            > pre, > figure {
+                padding-left: 1ch;
             }
+        }
+
+        /* Moves the code block to touch the left side of the view port
+           and expands to fill up to the right hand sidebar.
+           NOTE: the 3px on the end is to counter the 3px border on <main>
+           */
+        > div pre{
+            --offset: calc(calc(var(--padding) * 2) + 7rem + var(--padding) + 3px);
+
+            position: relative;
+            left: calc(var(--offset) * -1);
+            width: calc(100% + var(--offset));
+
+            padding: var(--padding);
+            padding-right: 0;
+
+            border-top: 1ch solid var(--color-background);
+            border-bottom: 1ch solid var(--color-background);
         }
 
     }
@@ -282,37 +349,45 @@ section:not(:last-child) {
 @media (min-width: 1200px) {
     .page__note article {
         grid-template-columns: minmax(auto, 65ch) var(--sidebar);
+        grid-template-rows: auto auto 1fr auto;
 
-        /* Moves the code block to touch the left side of the view port
-           and expands to fill up to the right hand sidebar. */
-        > div pre[class*="language-"] {
-            --offset:calc(calc(var(--padding) * 2) + 10rem + var(--padding));
-            position: relative;
-            left: calc(var(--offset) * -1);
-            width: calc(100% + var(--offset));
-
-            background: #0d091a;
-            scrollbar-color: #faf1e0 #0d091a;
-            border-radius: 0;
-            font-size: var(--font-size-small);
-            line-height: var(--line-height-small);
-            padding: var(--padding);
-            padding-right: 0;
+        > header {
+            grid-column: 1 / -1;
+            grid-row: 1;
         }
 
-        footer {
-            grid-template-columns: minmax(auto, 65ch) var(--sidebar);
-            column-gap: var(--gap);
-
-            .footnotes > * {
-                padding-left: var(--padding);
-            }
+        > div {
+            grid-column: 1;
+            grid-row: 2 / 4;
         }
 
-        aside {
-            padding-left: 0;
+        /* toc */
+        > aside:nth-of-type(1) {
             grid-column: 2;
             grid-row: 2;
+        }
+
+        /* sidebar */
+        > aside:nth-of-type(2) {
+            grid-column: 2;
+            grid-row: 3;
+            padding: 0;
+        }
+
+        > aside {
+            padding-left: 0;
+        }
+
+        > footer {
+            grid-column: 1 / -1;
+            grid-row: 4;
+
+            grid-template-columns: minmax(auto, 65ch) var(--sidebar);
+            column-gap: var(--gap);
+        }
+
+        > div pre {
+            --offset:calc(calc(var(--padding) * 2) + 10rem + var(--padding) + 3px);
         }
     }
 }

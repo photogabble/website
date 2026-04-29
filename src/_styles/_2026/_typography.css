@@ -42,8 +42,6 @@ a:hover {
     }
 }
 
-
-
 p {
     margin: calc(var(--line-size) * 2) 0;
 }

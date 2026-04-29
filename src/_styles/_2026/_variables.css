@@ -24,6 +24,8 @@
     --color-code-inline: #ffeec8;
     --color-highlight: #AB4646;
     --color-highlight-hover: #AB464633;
+    --color-pre-background: #0d091a;
+    --color-pre-text: #faf1e0;
 }
 
 body.theme-1 {
