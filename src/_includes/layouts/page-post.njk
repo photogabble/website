@@ -4,7 +4,7 @@
 {% set ogtype = 'article' %}
 {% set readingTime = content | wordStats %}
 {% set filteredTags = tags | withoutTags('writing') | excludeSpecialTags(['type', 'resource']) | formatTagList(collections.topics) %}
-{% set type = tags | specialTagValue('type') %}
+{% set type = page_type or tags | specialTagValue('type') %}
 {% set growthStage = tags | specialTagValue('stage') %}
 
 {% if content_extra %}
