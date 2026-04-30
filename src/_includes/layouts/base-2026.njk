@@ -29,7 +29,7 @@
             <ol>
                 <li><a href="/garden/">Garden</a></li>
                 <li>
-                    <a href="/writing/">Journal</a>
+                    <a href="/writing/" {% if page.url === '/writing/' %}aria-current="page"{% endif %}>Journal</a>
                     {% if tags | includesTag('writing') %}
                     <ol>
                         {% if tags %}
