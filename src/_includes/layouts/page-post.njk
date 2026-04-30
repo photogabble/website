@@ -21,9 +21,7 @@
     <header>
         <span>{{ type or 'Note' }}</span>
         <h1 class="title">{{ title }}</h1>
-        {% if abstract %}
-            <h2>{{ abstract | safe }}</h2>
-        {% endif %}
+        {% if abstract %}{{ abstract | safe }}{% endif %}
         <div class="seperator">
             {%- if not hide_header_date -%}
             <time data-pagefind-meta="date:{{ page.date | dateToFormat('DDD') }}" datetime="{{ page.date | dateToFormat('iso') }}">{% if growthStage === 'stub' %}Schedueld for {% endif %}{{ page.date | dateToFormat('DDD') }}</time>
