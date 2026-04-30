@@ -81,6 +81,7 @@
         {{ content | withoutElementsByQuery('.sidebar, .abstract, section.footnotes') | safe }}
     </div>
 
+    {% if backlinks.length or footnotes.length or related.length %}
     <footer>
         {{ footnotes | safe }}
 
@@ -89,7 +90,7 @@
         {#        {% include "components/wayback-machine.njk" %}#}
         {#    {% endif %}#}
 
-        {% if footnotes.length or backlinks.length %}
+        {% if backlinks.length %}
             {% include "components/backlinks.njk" %}
         {% endif %}
 
@@ -107,6 +108,6 @@
             </section>
         {% endif %}
     </footer>
-
+    {% endif %}
 </article>
 {% endblock %}
