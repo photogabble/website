@@ -171,7 +171,7 @@ section:not(:last-child) {
     }
 }
 
-.page__note article {
+article{
     --sidebar: 18.75rem;
 
     display: grid;
@@ -184,6 +184,15 @@ section:not(:last-child) {
 
         h1, h2 {
             margin-bottom: var(--line-size);
+        }
+
+        .abstract {
+            max-width: 65ch;
+            margin: calc(var(--padding) / 2) 0;
+        }
+
+        .title {
+            margin-bottom: calc(var(--padding) / 2);
         }
 
         > span {
@@ -210,7 +219,6 @@ section:not(:last-child) {
      */
     > aside:nth-of-type(1) { order: 4;}
     &.has-toc > aside:nth-of-type(1) { order: 2; } /* toc */
-
 
     > div {
         order: 3;
@@ -295,7 +303,7 @@ section:not(:last-child) {
 }
 
 @media (min-width: 480px) {
-    .page__note article figure > div {
+    article figure > div {
         flex-direction: row;
     }
 }
@@ -305,7 +313,7 @@ section:not(:last-child) {
         border-left: 3px double #d4c3af40;
     }
 
-    .page__note article {
+    article {
         > header {
             padding-left: 1ch;
         }
@@ -342,12 +350,11 @@ section:not(:last-child) {
             border-top: 1ch solid var(--color-background);
             border-bottom: 1ch solid var(--color-background);
         }
-
     }
 }
 
 @media (min-width: 1200px) {
-    .page__note article {
+    article {
         grid-template-columns: minmax(auto, 65ch) var(--sidebar);
         grid-template-rows: auto auto 1fr auto;
 
