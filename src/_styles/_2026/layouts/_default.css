@@ -93,8 +93,8 @@ section:not(:last-child) {
 
 .title {
     font-family: var(--font-heading);
-    font-size: var(--font-size-title); /*clamp(1rem, 1vw, var(--font-size-title));*/
-    line-height: var(--line-height-title);
+    font-size: clamp(calc(var(--font-size-title) / 2), 6vw, var(--font-size-title));
+    line-height: clamp(calc(var(--line-height-title) / 1.5), 6vw, var(--line-height-title));
     margin: 0;
     hyphens: auto;
 }
