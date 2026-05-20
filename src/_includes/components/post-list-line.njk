@@ -6,7 +6,7 @@
 
     <li>
         <a href="{{ post.url }}" title="Read {{ post.data.title }}">
-            <div class="title">
+            <div>
                 <h2>{{ post.data.title }}</h2>
                 {% if showExtra %}
                 <div class="extra">
@@ -73,5 +73,5 @@
         {% if post.data.growthStage === 'stub' %}Due {% endif %}
         {{ post.data.niceDate or post.date | dateToFormat("DDD") }}
     </small>
-</li>
+</li>abstract
 -->

@@ -7,13 +7,29 @@
             {% set year = year %}
             <nav>{% include 'components/months-of-year.njk' %}</nav>
             {% else %}
-            <span>{{ items.length }} items</span>
+            <small>{{ items.length }} items</small>
             {% endif %}
         </header>
         <ol class="post-list__chronological">
             {% for post in items %}
                 {% set displayContentType = true %}
-                {% include "components/post-list-line.njk" %}
+                <li>
+                    <div class="post-list__title">
+                        <a href="{{ post.url }}" title="Read {{ post.data.title }}">
+                            {{ post.data.title }}
+                        </a>
+                        <time datetime="{{ post.date | dateToFormat("yyyy-LL-dd") }}">{{ post.date | dateToFormat("MMM d") }}</time>
+                    </div>
+                    <div class="post-list__excerpt">
+                        <p>{{ post.data.abstract }}</p>
+                    </div>
+                    <div>
+                        {% if post.data.rating %}
+                        {{ post.data.rating | ratingToStars }}
+                        {% endif %}
+                    </div>
+                </li>
+{#                {% include "components/post-list-line.njk" %}#}
             {% endfor %}
         </ol>
     </section>

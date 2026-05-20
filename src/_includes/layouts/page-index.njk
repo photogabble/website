@@ -1,4 +1,4 @@
-{% extends "layouts/base.njk" %}
+{% extends "layouts/base-2026.njk" %}
 
 {% set page_class = 'page__list' %}
 {% set type = page_type or tags | specialTagValue('type') %}
@@ -15,38 +15,43 @@
     {% endif %}
 {% endif %}
 
+{% set abstract = abstract or content | extractElementByQuery('.abstract') %}
+{% set footnotes = content | extractElementByQuery('section.footnotes') %}
+
 {% block content %}
 <article data-pagefind-meta="type:{{ type or 'index' }}"{% if type == 'list' %} data-pagefind-filter="list"{% endif %}>
-    <header>
-        <div class="article-header__meta" data-pagefind-meta="items:{{ items.length }}">
-            {# TODO: last updated date #}
-            <span>{{ items.length }} items,</span> last updated on 1st Jan, 2025
+    <header data-pagefind-meta="items:{{ items.length }}">
+        <span>{{ type or 'index' }}</span>
+        <h1 class="title">{{ title }}</h1>
+        {% if abstract %}{{ abstract | safe }}{% endif %}
+        <div class="seperator">
+            <span><strong>{{ items.length }} items</strong>, last updated 17th April 2026</span>
+            <hr class="bar" />
+            <a href="/stats">writing stats &rarr;</a>
         </div>
-
-        <h1 class="article-header__title">{{ title }}</h1>
-
-        <hr/>
     </header>
 
-    {% set footnotes = content | extractElementByQuery('section.footnotes') %}
+    <div class="content">
+        {{ content | withoutElementsByQuery('.abstract, section.footnotes') | safe }}
 
-    {% if content.length > 0 %}
-    <section class="article-section__content">
-        {% if abstract %}<p class="article-section__content-abstract">{{ abstract }}</p>{% endif %}
-        <div class="article-section__content-content">{{ content | withoutElementsByQuery('section.footnotes') | safe }}</div>
-    </section>
-    <hr>
-    {% endif %}
+        <!-- TODO: rename sidebar_component to something more appropriate! -->
+        {% if sidebar_component %}
+            <div class="listing">
+                {% set list_component_include = 'components/listings/' + sidebar_component + '.njk' %}
+                {% include list_component_include %}
+            </div>
+        {% endif %}
+    </div>
 
-    {% if sidebar_component %}
-        {% set list_component_include = 'components/listings/' + sidebar_component + '.njk' %}
-        {% include list_component_include %}
-    {% endif %}
+    <aside data-pagefind-ignore>
+        <div>
+            <h4>Frequently used topics</h4>
+        </div>
+    </aside>
 
-    <hr>
-
+    {% if footnotes.length or backlinks.length %}
     <footer>
-        {{ footnotes | safe if footnotes.length}}
+        {{ footnotes | safe if footnotes.length }}
         {% if backlinks.length %}
             <div id="backlinks">
                 <h3>Pages Linking Here <a class="header-anchor" href="#backlinks">¶</a></h3>
@@ -54,5 +59,6 @@
             </div>
         {% endif %}
     </footer>
+    {% endif %}
 </article>
 {% endblock %}
