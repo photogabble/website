@@ -220,7 +220,7 @@ article{
     > aside:nth-of-type(1) { order: 4;}
     &.has-toc > aside:nth-of-type(1) { order: 2; } /* toc */
 
-    > div {
+    > div.content {
         order: 3;
         min-width: 0;
         padding-bottom: var(--padding);
@@ -247,6 +247,13 @@ article{
             overflow-x: auto;
         }
     }
+
+    /*
+      first <aside> is sidebar, some pages have a second <aside> which sits below the first on
+      full screen sizes and below the main content on smaller screen sizes, while the first
+      <aside> sits above the main content on smaller screen sizes if the <article> has
+      a .has-toc class.
+    */
 
     > aside:nth-of-type(2) {
         order: 4;
@@ -323,7 +330,7 @@ article{
         }
 
         /** Makes paragraphs look nice when among figures and code blocks. **/
-        > div {
+        > div.content {
             > * {
                 padding-left: var(--padding);
             }
@@ -337,7 +344,7 @@ article{
            and expands to fill up to the right hand sidebar.
            NOTE: the 3px on the end is to counter the 3px border on <main>
            */
-        > div pre{
+        > div.content pre{
             --offset: calc(calc(var(--padding) * 2) + 7rem + var(--padding) + 3px);
 
             position: relative;
@@ -363,7 +370,7 @@ article{
             grid-row: 1;
         }
 
-        > div {
+        > div.content {
             grid-column: 1;
             grid-row: 2 / 4;
         }
@@ -393,7 +400,7 @@ article{
             column-gap: var(--gap);
         }
 
-        > div pre {
+        > div.content pre {
             --offset:calc(calc(var(--padding) * 2) + 10rem + var(--padding) + 3px);
         }
     }
