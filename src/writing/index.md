@@ -9,4 +9,7 @@ folder:
   - {title: 'writing'}
 ---
 
+::: abstract
 Hello world.
+:::
+
