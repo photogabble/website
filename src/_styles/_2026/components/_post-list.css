@@ -1,0 +1,39 @@
+/*
+ * Post List Component Styles
+ * Used by index pages for displaying a list of posts
+ */
+.post-list{
+    header {
+        display: flex;
+        align-items: center;
+        margin-bottom: var(--line-size);
+        border-bottom: 1px solid var(--color-border);
+
+        h3{
+            margin: 0;
+            flex-grow: 1;
+        }
+    }
+
+    ol {
+        list-style: none;
+        padding: 0;
+
+        li > div {
+            display: flex;
+            align-items: center;
+            gap: var(--line-size);
+
+            a{
+                min-width: 0;
+                flex-grow: 1;
+                flex-shrink: 1;
+            }
+
+            time {
+                flex-shrink: 0;
+                font-size: smaller;
+            }
+        }
+    }
+}
