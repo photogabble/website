@@ -228,6 +228,10 @@ article{
         > ul, > ol {
             margin-block-start: calc(var(--line-size) * 2);
             margin-block-end: calc(var(--line-size) * 2);
+
+            ul, ol {
+                padding-inline-start: 2ch;
+            }
         }
 
         li code, p code {
@@ -262,6 +266,11 @@ article{
 
     > aside {
         margin-bottom: 1rem;
+
+        h4{
+            margin-bottom: var(--line-size);
+            border-bottom: 1px solid var(--color-border);
+        }
     }
 
     > footer {
@@ -306,6 +315,17 @@ article{
                 padding-left: 0;
             }
         }
+    }
+}
+
+.page__note  article {
+
+}
+
+.page__list article {
+    > .listing {
+        grid-row: 4;
+        grid-column: 1 / -1;
     }
 }
 
