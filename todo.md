@@ -1,7 +1,7 @@
 - Version `2026.x`
   - [ ] Write functionality for frequently used topics sidebar component
   - [ ] Use 2026 layout
-    - [ ] for `/now/`
+    - [x] for `/now/`
   - [ ] Sidebar
     - [ ] Link `~/Photogabble` to home page
     - [ ] Link `More...` to sitemap page

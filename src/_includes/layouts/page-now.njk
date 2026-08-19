@@ -1,6 +1,6 @@
-{% extends "./base.njk" %}
+{% extends "layouts/base-2026.njk" %}
 
-{% set page_class = 'page__article' %}
+{% set page_class = 'page__note' %}
 
 {% if isNow %}
     {% set subTitle %}
@@ -15,40 +15,26 @@
 {% block content %}
     <article data-pagefind-meta="type:now">
         <header>
-            <div class="article-header__meta">
-                <span>{{ collections.nowUpdates.length }} entries,</span> {{ subTitle }}
-            </div>
-
-            <div class="article-header__date" data-pagefind-meta="date:{{ page.date | dateToFormat('DDD') }}">
-                <time datetime="{{ page.date | dateToFormat('iso') }}">{{ page.date | dateToFormat('DDD') }}</time>
-            </div>
-
-            <h1 class="article-header__title">/now</h1>
-            <hr/>
-
-            <div class="article-header__stats">
-                {% include "components/navigation/slash-pages.njk" %}
-            </div>
-        </header>
-        <section class="article-section__content">
-            <div class="article-section__content-abstract">
+            <span>Info</span>
+            <h1 class="title">/now</h1>
+            <div class="abstract">
                 <p>
                     This “now page” offers a big picture glimpse into my what I’m focused on at this point in my life.
                     <a href="https://nownownow.com/about">What is a now page?</a>
                 </p>
             </div>
-            <aside class="article-section__content-toc">
-                {% include "components/side-bars/now.njk" %}
-            </aside>
-            <div class="article-section__content-content">
-
-                {{ content | safe }}
-
-                <p>
-                    You can see my bookshelf at <a href="https://bookwyrm.social/user/carbontwelve">bookwyrm.social</a> or
-                    at <a href="https://openlibrary.org/people/carbontwelve">openlibrary.org</a>.
-                </p>
+            <div class="seperator">
+                <span>{{ collections.nowUpdates.length }} entries, {{ subTitle }}</span>
+                <hr class="bar">
             </div>
-        </section>
+        </header>
+
+        <aside class="toc">
+            {% include "components/side-bars/now.njk" %}
+        </aside>
+
+        <div class="content">
+            {{ content | safe }}
+        </div>
     </article>
 {% endblock %}
