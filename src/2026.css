@@ -5,6 +5,7 @@
 /** Page Components **/
 @import '_styles/_2026/components/_timeline.css';
 @import '_styles/_2026/components/_post-list.css';
+@import '_styles/_2026/components/_toc.css';
 @import '_styles/_jumbonav.css';
 
 /** Page Layouts **/
