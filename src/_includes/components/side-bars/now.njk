@@ -10,8 +10,6 @@
                         {% if isNow %}»{% endif %}
                         <a href="/now" title="Go to current now page">Current</a>
                     </span>
-                    <hr/>
-                    {{ update.date | dateToFormat("DDD") }}
                 </li>
             {% else %}
                 {% set updateTitle = update.date | dateToFormat("LLLL yyyy") %}
@@ -20,8 +18,6 @@
                         {% if page and page.url === update.url %}»{% endif %}
                         <a href="{{ update.url }}" title="Read {{ updateTitle }}">{{ updateTitle }}</a>
                     </span>
-                    <hr/>
-                    {{ update.date | dateToFormat("DDD") }}
                 </li>
             {% endif %}
         {% endfor %}
