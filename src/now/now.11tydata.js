@@ -2,7 +2,7 @@ import {dateToFormat} from "../../lib/filters.js";
 
 export default {
   draft: false,
-  layout: "layouts/now.njk",
+  layout: "layouts/page-now.njk",
   folder: ['Me'],
   index_navigation: 'slash-pages',
   eleventyComputed: {
