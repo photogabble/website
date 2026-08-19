@@ -1,4 +1,28 @@
-- `2025.x`
+- Version `2026.x`
+  - [ ] Write functionality for frequently used topics sidebar component
+  - [ ] Use 2026 layout
+    - [ ] for `/now/`
+  - [ ] Sidebar
+    - [ ] Link `~/Photogabble` to home page
+    - [ ] Link `More...` to sitemap page
+    - [ ] When on a "Journal" page, a submenu should display
+    - [ ] When on a "Lists" page, a submenu should display
+  - [ ] All Topics Index
+  - [x] Topic Detail Page
+    - [ ] Post List should have a way of showing if a line item is a note, bookmark, etc
+  - [ ] Resources
+    - [ ] Bookmark Index Page
+    - [ ] Bookmark Detail Page
+    - [ ] Quotes Index Page
+    - [ ] Quote Detail Page
+    - [ ] Jokes Index Page
+    - [ ] Joke Detail Page
+  - [ ] List / Collection Pages
+    - [ ] Library / The Antilibrary Bookshelf Index
+    - [ ] Library / The Antilibrary Bookshelf Detail
+    - [ ] Film and TV Series Index
+    - [ ] Film and TV Series Detail
+- Version `2025.x`
   - [ ] FEATURE: Create `type/series` section, if a post belongs to a series, then it's sidebar is the series listing
   - [ ] FEATURE: Create a series-listing sidebar
   - [ ] FEATURE: Link book entries up to book reviews
