@@ -37,6 +37,7 @@ section:not(:last-child) {
     margin-bottom: calc(var(--line-size) * 4);
 }
 
+/* Left sidebar */
 .sidebar{
     ol {
         list-style: none;
@@ -259,19 +260,27 @@ article{
       a .has-toc class.
     */
 
-    > aside:nth-of-type(2) {
-        order: 4;
-        padding-left: var(--padding);
-    } /* sidebar bits */
-
     > aside {
         margin-bottom: 1rem;
+        padding-left: var(--padding);
 
-        h4{
-            margin-bottom: var(--line-size);
-            border-bottom: 1px solid var(--color-border);
+        ol, ul {
+            padding: 0;
+
+            ol, ul {
+                padding-inline-start: 2ch;
+                border-left: 1px dotted var(--color-border);
+            }
+        }
+
+        ol, ul {
+            list-style: none;
         }
     }
+
+    > aside:nth-of-type(2) {
+        order: 4;
+    } /* sidebar bits */
 
     > footer {
         order: 5;
@@ -316,10 +325,6 @@ article{
             }
         }
     }
-}
-
-.page__note  article {
-
 }
 
 .page__list article {
@@ -383,6 +388,9 @@ article{
 @media (min-width: 1200px) {
     article {
         grid-template-columns: minmax(auto, 65ch) var(--sidebar);
+
+        /* NOTE: the purpose of these rows is to allow the toc to exist in the first row and the rest of the sidebar
+                 below it if set. */
         grid-template-rows: auto auto 1fr auto;
 
         > header {
@@ -395,7 +403,7 @@ article{
             grid-row: 2 / 4;
         }
 
-        /* toc */
+        /* toc (or sidebar if no toc) */
         > aside:nth-of-type(1) {
             grid-column: 2;
             grid-row: 2;
@@ -405,7 +413,6 @@ article{
         > aside:nth-of-type(2) {
             grid-column: 2;
             grid-row: 3;
-            padding: 0;
         }
 
         > aside {
