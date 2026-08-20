@@ -25,7 +25,7 @@ a:hover {
 }
 
 /* NOTE: I am not sure about this, have a think and remove if still unsure */
-.sidebar a {
+.sidebar ol a {
     --basic-link-primary: var(--color-highlight);
     --basic-link-secondary: var(--color-highlight-hover);
     text-decoration: none;

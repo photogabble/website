@@ -1,10 +1,9 @@
 - Version `2026.x`
   - [ ] Write functionality for frequently used topics sidebar component
-  - [ ] Use 2026 layout
-    - [x] for `/now/`
+  - [x] Use 2026 layout for `/now/`
   - [ ] Sidebar
-    - [ ] Link `~/Photogabble` to home page
-    - [ ] Link `More...` to sitemap page
+    - [x] Link `~/Photogabble` to home page
+    - [x] Link `More...` to sitemap page
     - [ ] When on a "Journal" page, a submenu should display
     - [ ] When on a "Lists" page, a submenu should display
   - [ ] All Topics Index
