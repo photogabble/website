@@ -113,11 +113,13 @@ section:not(:last-child) {
     justify-self: stretch;
     align-self: stretch;
     display: flex;
-    align-items: center;
-    gap: .75rem;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--color-border);
+    padding: 2ch;
+    margin-top: var(--padding);
 
     * {
-        color: var(--color-text-light);
         font-family: var(--font-body);
         font-weight: 500;
         font-size: var(--font-size-small);
@@ -125,17 +127,35 @@ section:not(:last-child) {
         margin: 0;
     }
 
-    hr {
-        flex: 1;
-        height: 1px;
-        border: none;
-        background-color: var(--color-border);
+    hr{
+        display: none;
     }
 }
 
 @media (min-width: 720px) {
     .current-projects ul {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .seperator {
+        flex-direction: row;
+        align-items: center;
+        gap: .75rem;
+        background: transparent;
+        padding: 0;
+        margin-top: 0;
+
+        * {
+            color: var(--color-text-light);
+        }
+
+        hr {
+            display: block;
+            flex: 1;
+            height: 1px;
+            border: none;
+            background-color: var(--color-border);
+        }
     }
 }
 
