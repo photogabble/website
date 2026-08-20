@@ -261,8 +261,7 @@ article{
     */
 
     > aside {
-        margin-bottom: 1rem;
-        padding-left: var(--padding);
+        margin-bottom: calc(var(--line-size) * 4);
 
         ol, ul {
             padding: 0;
@@ -276,6 +275,10 @@ article{
         ol, ul {
             list-style: none;
         }
+
+        p {
+            margin: var(--line-size) 0;
+        }
     }
 
     > aside:nth-of-type(2) {
@@ -287,7 +290,6 @@ article{
         /*margin-top: calc(var(--line-size) * 3);*/
 
         border-top: 3px double #d4c3af40;
-        margin-left: 1ch;
         margin-top: 0;
         padding-top: var(--padding);
 
@@ -350,7 +352,16 @@ article{
             padding-left: 1ch;
         }
 
-        > footer section:not(.article-section__related) > * {
+        > footer {
+            margin-left: 1ch;
+
+            > * {
+                margin-left: -1ch;
+                padding-left: var(--padding);
+            }
+        }
+
+        > aside {
             padding-left: var(--padding);
         }
 
@@ -422,9 +433,6 @@ article{
         > footer {
             grid-column: 1 / -1;
             grid-row: 4;
-
-            grid-template-columns: minmax(auto, 65ch) var(--sidebar);
-            column-gap: var(--gap);
         }
 
         > div.content pre {

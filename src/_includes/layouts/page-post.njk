@@ -68,6 +68,19 @@
 
         {% include "components/side-bars/series.njk" %}
 
+        {% if related.length %}
+            <section class="article-section__related" data-pagefind-ignore>
+                <h4>Similar Stories</h4>
+                <ol>
+                    {% for item in related | limit(3) %}
+                        <li><a href="{{ item.url }}">
+                            {{ item.data.title }}
+                        </a></li>
+                    {% endfor %}
+                </ol>
+            </section>
+        {% endif %}
+
         {% include "components/side-bars/prev-next.njk" %}
     </aside>
 
@@ -82,7 +95,7 @@
         {{ content | withoutElementsByQuery('.sidebar, .abstract, section.footnotes') | safe }}
     </div>
 
-    {% if backlinks.length or footnotes.length or related.length %}
+    {% if backlinks.length or footnotes.length %}
     <footer>
         {{ footnotes | safe }}
 
@@ -93,20 +106,6 @@
 
         {% if backlinks.length %}
             {% include "components/backlinks.njk" %}
-        {% endif %}
-
-        {% if related.length %}
-            <section class="article-section__related" data-pagefind-ignore>
-                <h3>Similar Stories</h3>
-                <nav class="related-notes">
-                    {% for item in related | limit(3) %}
-                        <a href="{{ item.url }}">
-                            <small>{{ item.data.tags | specialTagValue('type') }}</small>
-                            <h4>{{ item.data.title }}</h4>
-                        </a>
-                    {% endfor %}
-                </nav>
-            </section>
         {% endif %}
     </footer>
     {% endif %}
