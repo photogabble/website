@@ -14,6 +14,13 @@
 {% set abstract = content | extractElementByQuery('.abstract') %}
 {% set footnotes = content | extractElementByQuery('section.footnotes') %}
 {% set sidebar = content | extractElementByQuery('.sidebar') %}
+
+{% set toc_headings = toc_headings | default([]) %}
+
+{% if backlinks.length %}
+    {% set backlinks_heading = { id: 'backlinks', text: 'Pages Linking Here' } %}
+    {% set toc_headings = toc_headings | merge([backlinks_heading]) %}
+{% endif %}
 {% set toc_content = content | withHeadings(toc_headings) | toc %}
 
 {% block content %}
@@ -37,10 +44,6 @@
             {% endif %}
         </div>
     </header>
-
-    {% if backlinks.length %}
-        {% set toc_headings = (toc_headings or []).push({id: 'backlinks', text: 'Pages Linking Here'}) %}
-    {% endif %}
 
     {% if toc_content %}
     <aside class="toc">
