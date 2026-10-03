@@ -30,7 +30,7 @@
                 <li><a href="/garden/">Garden</a></li>
                 <li>
                     <a href="/writing/" {% if page.url === '/writing/' %}aria-current="page"{% endif %}>Journal</a>
-                    {% if tags | includesTag('writing') %}
+                    {% if page.url === '/writing/' or tags | includesTag('writing') or folder | includes('writing')  %}
                     <ol>
                         {% if tags %}
                             {% set type = tags | specialTagValue('type') %}
@@ -49,6 +49,7 @@
                 <li><a href="/now/" {% if page.url === '/now/' %}aria-current="page"{% endif %}><code>/now</code></a></li>
                 <li><a href="/uses/" {% if page.url === '/uses/' %}aria-current="page"{% endif %}><code>/uses</code></a></li>
                 <li><a href="/sitemap/">More...</a></li>
+                <li>Type: {{ type }}</li>
             </ol>
         </nav>
         <main>{% block content %}{{ content | safe }}{% endblock %}</main>

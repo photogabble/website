@@ -43,7 +43,7 @@
     "cross-env": "^7.0.3",
     "flat-cache": "^5.0.0",
     "html-minifier": "^4.0.0",
-    "luxon": "^3.5.0",
+    "luxon": "^3.7.2",
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^9.0.1",
     "markdown-it-footnote": "^4.0.0",
@@ -51,11 +51,11 @@
     "netlify-plugin-cache": "^1.0.3",
     "node-fetch": "^3.3.2",
     "normalize.css": "^8.0.1",
-    "postcss": "^8.4.41",
-    "postcss-import": "^16.1.0",
-    "postcss-minify": "^1.1.0",
-    "@sparticuz/chromium": "^126.0.0",
-    "puppeteer-core": "^22.13.1"
+    "postcss": "^8.5.28",
+    "postcss-import": "^17.0.0",
+    "postcss-minify": "^1.2.0",
+    "@sparticuz/chromium": "^149.0.0",
+    "puppeteer-core": "^25.9.0"
   },
   "dependencies": {
     "@11ty/eleventy-fetch": "^4.0.1",
@@ -77,9 +77,5 @@
     "outdent": "^0.8.0",
     "simple-git": "^3.25.0",
     "yargs": "^17.7.2"
-  },
-  "engines": {
-    "npm": ">=10.0.0",
-    "node": ">=22.0.0"
   }
 }
