@@ -15,8 +15,16 @@ import * as Eleventy from '@11ty/eleventy';
 import ToCPlugin from '@uncenter/eleventy-plugin-toc';
 const {EleventyRenderPlugin} = Eleventy;
 
+const isProduction = process.env.ELEVENTY_ENV === 'production';
 
 export default async function (eleventyConfig) {
+
+  // Drafts are visible when developing but never make it into a production build.
+  eleventyConfig.addPreprocessor('drafts', '*', (data) => {
+    if (data.draft && isProduction) return false;
+  });
+
+  // Don't use the .gitignore for ignoring paths
   eleventyConfig.setUseGitIgnore(false);
 
   //
@@ -52,7 +60,6 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(screenshot);
 
   /**
-   * @todo disabled until build working for REL2024
    * @photogabble/eleventy-plugin-interlinker
    * @see https://www.npmjs.com/package/@photogabble/eleventy-plugin-interlinker
    */
