@@ -1,13 +1,15 @@
 {
   "name": "@photogabble/website",
-  "version": "3.0.0",
+  "version": "2026.0.0",
   "description": "Source code for photogabble.co.uk",
-  "main": "index.js",
+  "type": "module",
+  "private": true,
   "scripts": {
-    "serve:dev": "rm -rf _site/* && cross-env ELEVENTY_ENV=development eleventy --serve",
-    "serve:prod": "rm -rf _site/* && cross-env ELEVENTY_ENV=production eleventy --serve",
+    "start": "cross-env ELEVENTY_ENV=development eleventy --serve --quiet",
+    "serve:prod": "cross-env ELEVENTY_ENV=production eleventy --serve --quiet",
     "build": "cross-env ELEVENTY_ENV=production eleventy",
     "build:dev": "cross-env ELEVENTY_ENV=development eleventy",
+    "clean": "rimraf _site",
     "og-images": "node ./bin/create-og-images.js",
     "make:bookmark": "node ./bin/add-bookmark.js",
     "make:week-in-review": "node ./bin/add-week-in-review.js"
@@ -17,17 +19,13 @@
     "add-week-in-review": "./bin/add-week-in-review.js",
     "gen-og-images": "./bin/create-og-images.js"
   },
-  "keywords": [
-    "PhotoGabble",
-    "DigitalGarden",
-    "Blog",
-    "11ty"
-  ],
   "author": "Simon Dann",
   "license": "CC BY-NC-SA 4.0",
-  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "devDependencies": {
-    "@11ty/eleventy": "v3",
+    "@11ty/eleventy": "^3.1.6",
     "@11ty/eleventy-plugin-rss": "^2.0.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@fullhuman/postcss-purgecss": "^6.0.0",
@@ -50,6 +48,7 @@
     "markdown-it-hashtag": "^0.4.0",
     "netlify-plugin-cache": "^1.0.3",
     "node-fetch": "^3.3.2",
+    "rimraf": "^6.1.3",
     "normalize.css": "^8.0.1",
     "postcss": "^8.5.28",
     "postcss-import": "^17.0.0",
