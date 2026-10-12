@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html dir="ltr" lang="en" data-theme="auto">
 <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
@@ -10,7 +10,7 @@
     <meta name="description" content="{{ description or metadata.description }}"/>
     <link rel="canonical" href="{{ canonical or page.url }}"/>
     <meta name="robots" content="index, follow"/>
-    <meta name="generator" content="Eleventy 3">
+    <meta name="generator" content="{{ eleventy.generator }}">
     {% block head %}{% endblock %}
 
     <!-- Font Preload (stops the flash of default font) -->
@@ -20,45 +20,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Besley:wght@400;600;700&family=Fustat:wght@400;600;700&display=swap" rel="stylesheet">
 
     <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="/2026.css"/>
+    <link rel="stylesheet" href="/2026-2.css"/>
 </head>
-<body class="{{ page_class or 'page__default' }}">
-    <div>
-        <nav class="sidebar" aria-label="Main Navigation">
-            <a href="/" title="Visit Homepage"><code>~/PhotoGabble</code></a>
-            <ol>
-                <li><a href="/garden/">Garden</a></li>
-                <li>
-                    <a href="/writing/" {% if page.url === '/writing/' %}aria-current="page"{% endif %}>Journal</a>
-                    {% if page.url === '/writing/' or tags | includesTag('writing') or folder | includes('writing')  %}
-                    <ol>
-                        {% if tags %}
-                            {% set type = tags | specialTagValue('type') %}
-                        {% else %}
-                            {% set type = 'unknown' %}
-                        {% endif %}
-                        <li><a href="/essays/" {% if page.url === '/essays/' or type === 'essay' %}aria-current="page"{% endif %}>Essays</a> </li>
-                        <li><a href="/tutorials/" {% if page.url === '/tutorials/' or type === 'tutorial' %}aria-current="page"{% endif %}>Tutorials</a> </li>
-                        <li><a href="/noteworthy/" {% if page.url === '/noteworthy/' or type === 'noteworthy' %}aria-current="page"{% endif %}>Noteworthy</a> </li>
-                        <li><a href="/thoughts/" {% if page.url === '/thoughts/' or type === 'thought' %}aria-current="page"{% endif %}>Thoughts</a> </li>
-                        <li><a href="/series/" {% if page.url === '/series/' or type === 'series' %}aria-current="page"{% endif %}>Series</a></li>
-                    </ol>
-                    {% endif %}
-                </li>
-                <li><a href="/lists/">Collections</a></li>
-                <li><a href="/now/" {% if page.url === '/now/' %}aria-current="page"{% endif %}><code>/now</code></a></li>
-                <li><a href="/uses/" {% if page.url === '/uses/' %}aria-current="page"{% endif %}><code>/uses</code></a></li>
-                <li><a href="/sitemap/">More...</a></li>
-                <li>Type: {{ type }}</li>
-            </ol>
-        </nav>
-        <main>{% block content %}{{ content | safe }}{% endblock %}</main>
-    </div>
-    <footer>
-        <div>
-            <p><a href="/forest/" title="Return to the forest" class="no-underline">🌱</a></p>
-        </div>
-        {% include "components/navigation/jumbo-nav.njk" %}
-    </footer>
+<body class="tint-{{ tint or 'paper' }}{% if body_class %} {{ body_class }}{% endif %}">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    {# TODO: header partial #}
+
+    <main id="main" class="site-main">
+        {% block content %}{{ content | safe }}{% endblock %}
+    </main>
+
+    {# TODO: footer partial #}
+{#    <footer>#}
+{#        <div>#}
+{#            <p><a href="/forest/" title="Return to the forest" class="no-underline">🌱</a></p>#}
+{#        </div>#}
+{#        {% include "components/navigation/jumbo-nav.njk" %}#}
+{#    </footer>#}
 </body>
 </html>

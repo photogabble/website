@@ -1,9 +1,28 @@
 ---
-folder: [Me]
+layout: layouts/base-2026.njk
+title: /now
+tint: sage
+permalink: /now/
+eleventyImport:
+  collections: ["now"]
 ---
-{% extends "layouts/page-now.njk" %}
 
-{% set title = '/now' %}
-{% set isNow = true %}
-{% set page = collections.nowUpdates | reverse | first %}
-{% set content = page.templateContent %}
+{% import "partials/components.njk" as ui %}
+{% set updates = collections.now | newest %}
+{% set latest = updates | first %}
+
+<div class="wrap" data-pagefind-meta="type:now">
+  {{ ui.hero('/now', 'What I am focused on at the moment, in the spirit of <a href="https://nownownow.com/about">nownownow.com</a>. Last updated <time datetime="' + (latest.date | dateToFormat('ymd')) + '">' + (latest.date | dateToFormat('long')) + '</time>.', 'currently') }}
+  <div class="page-layout page-layout--aside">
+    <div class="prose">{{ latest.content | safe }}</div>
+    <aside>
+      {{ ui.boxOpen('previously') }}
+        <ul class="box__list">
+          {% for update in updates %}
+            {% if not loop.first %}<li><a href="{{ update.url }}">{{ update.date | dateToFormat('monthYear') }}</a></li>{% endif %}
+          {% endfor %}
+        </ul>
+      {{ ui.boxClose() }}
+    </aside>
+  </div>
+</div>

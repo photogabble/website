@@ -1,0 +1,19 @@
+{#
+  Shared page components using nunjucks macros functionality. Import with:
+  {% import "partials/components.njk" as ui %} to use.
+#}
+
+{# Page Hero: Big title on the left with a monospace blurb on the right. Inspired by iamrob.in #}
+{% macro hero(title, description, kicker) %}
+    <header class="hero">
+        <div class="hero__title">
+            {% if kicker %}<p class="kicker">{{ kicker | safe }}</p>{% endif %}
+            <h1>{{ title }}</h1>
+        </div>
+        {% if description %}<div class="hero__blurb">{{ description | safe }}</div>{% endif %}
+    </header>
+{% endmacro %}
+
+{# Sidebar Box with terminal style heading. Inspired by anil.recoil.org #}
+{% macro boxOpen(title) %}<section class="box"><h2 class="box__title"><span class="prompt" aria-hidden="true">&gt;_</span> {{ title }}</h2>{% endmacro %}
+{% macro boxClose() %}</section>{% endmacro %}
