@@ -1,0 +1,185 @@
+/* ==========================================================================
+   1. Themes
+   ========================================================================== */
+
+:root {
+    --serif: 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+    --sans: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace;
+
+    --wrap: 68rem;
+    --wrap-narrow: 44rem;
+    --measure: 40rem;
+    --gutter: clamp(1rem, 4vw, 2.5rem);
+    --radius: 6px;
+
+    /* Light palette */
+    --ink: #1d1b17;
+    --ink-2: #4f4a42;
+    --ink-3: #857e72;
+    --rule: rgb(29 27 23 / 0.16);
+    --rule-strong: rgb(29 27 23 / 0.32);
+    --surface: rgb(255 255 255 / 0.5);
+    --surface-strong: rgb(255 255 255 / 0.8);
+    --accent: #b2441c;
+    --accent-ink: #fff;
+    --code-bg: #1e1d22;
+    --code-ink: #e9e6df;
+    --selection: rgb(178 68 28 / 0.2);
+
+    /* Section tints (iamrob.in) */
+    --tint-paper: #f6f3ec;
+    --tint-stone: #e9e7e2;
+    --tint-lilac: #ece1f3;
+    --tint-peach: #f3e2cc;
+    --tint-sage: #e6ebe0;
+
+    --bg: var(--tint-paper);
+    color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --ink: #ece8e1;
+        --ink-2: #b9b2a6;
+        --ink-3: #857e72;
+        --rule: rgb(236 232 225 / 0.14);
+        --rule-strong: rgb(236 232 225 / 0.3);
+        --surface: rgb(255 255 255 / 0.04);
+        --surface-strong: rgb(255 255 255 / 0.08);
+        --accent: #ef8a5f;
+        --accent-ink: #1a1410;
+        --code-bg: #0f0f12;
+        --selection: rgb(239 138 95 / 0.28);
+        --tint-paper: #161512;
+        --tint-stone: #171716;
+        --tint-lilac: #1a1720;
+        --tint-peach: #1d1813;
+        --tint-sage: #151914;
+        color-scheme: dark;
+    }
+}
+
+:root[data-theme="dark"] {
+    --ink: #ece8e1;
+    --ink-2: #b9b2a6;
+    --ink-3: #857e72;
+    --rule: rgb(236 232 225 / 0.14);
+    --rule-strong: rgb(236 232 225 / 0.3);
+    --surface: rgb(255 255 255 / 0.04);
+    --surface-strong: rgb(255 255 255 / 0.08);
+    --accent: #ef8a5f;
+    --accent-ink: #1a1410;
+    --code-bg: #0f0f12;
+    --selection: rgb(239 138 95 / 0.28);
+    --tint-paper: #161512;
+    --tint-stone: #171716;
+    --tint-lilac: #1a1720;
+    --tint-peach: #1d1813;
+    --tint-sage: #151914;
+    color-scheme: dark;
+}
+
+.tint-paper { --bg: var(--tint-paper); }
+.tint-stone { --bg: var(--tint-stone); }
+.tint-lilac { --bg: var(--tint-lilac); }
+.tint-peach { --bg: var(--tint-peach); }
+.tint-sage { --bg: var(--tint-sage); }
+
+/* ==========================================================================
+   2. Base
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-padding-top: 2rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 1rem/1.6 var(--sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color .2s ease;
+}
+
+/* TODO: add a paper grain background overlay like cypherpunkbooks.com */
+
+::selection { background: var(--selection); }
+
+img, svg, video { max-width: 100%; height: auto; }
+
+a {
+    color: inherit;
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--rule-strong);
+    text-underline-offset: .2em;
+    transition: text-decoration-color .15s ease, color .15s ease;
+}
+
+a:hover { text-decoration-color: currentColor; }
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--serif);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+    margin: 0;
+}
+
+p { margin: 0; }
+
+code, kbd, samp, pre { font-family: var(--mono); font-size: .875em; }
+
+.site-main {
+    flex: 1;
+    padding-block: clamp(2rem, 6vw, 4.5rem) clamp(3rem, 8vw, 6rem);
+}
+
+.wrap {
+    width: min(100% - 2 * var(--gutter), var(--wrap));
+    margin-inline: auto;
+}
+
+.wrap--narrow { width: min(100% - 2 * var(--gutter), var(--wrap-narrow)); }
+
+/* ==========================================================================
+   3. Page Chrome (header, navigation, footer)
+   ========================================================================== */
+
+/* ==========================================================================
+   4. Page furniture (hero, masthead, section heads, table rows, etc)
+   ========================================================================== */
+
+/* ==========================================================================
+   5. Articles (post layout, prose, toc and sidebar boxes)
+   ========================================================================== */
+
+/* ==========================================================================
+   6. Digital Garden (books, films, quotes, network, etc)
+   ========================================================================== */
+
+/* ==========================================================================
+   7. Utilities and Misc styles that don't fit in above
+   ========================================================================== */
+
