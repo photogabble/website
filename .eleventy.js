@@ -7,7 +7,7 @@ import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import postGraph from '@rknightuk/eleventy-plugin-post-graph';
 import postcss from '@jgarber/eleventy-plugin-postcss';
 import hashtags from './lib/helpers/hashtags.js';
-import markdown from './lib/helpers/markdown.js';
+import markdown from './lib/markdown.js';
 import {registerShortcodes} from "./lib/shortcodes.js";
 import {registerFilters} from "./lib/filters.js";
 import {registerCollections} from "./lib/collections.js";
@@ -142,7 +142,7 @@ export default async function (eleventyConfig) {
   registerCollections(eleventyConfig);
 
   //
-  // Pass through
+  // Static assets
   //
 
   eleventyConfig.addPassthroughCopy({
@@ -156,23 +156,16 @@ export default async function (eleventyConfig) {
   });
 
   //
-  // Markdown-It && Plugins
+  // Markdown-It
   //
 
   eleventyConfig.setLibrary('md', markdown());
 
   return {
-    templateFormats: [
-      "md",
-      "njk",
-      "html",
-      "liquid",
-    ],
-
-    markdownTemplateEngine: "liquid",
-
-    htmlTemplateEngine: "liquid",
-
+    templateFormats: ["md", "njk", "html"],
+    // Markdown is not pre-processed by a template engine: posts contain code samples with {{ }}.
+    markdownTemplateEngine: false,
+    htmlTemplateEngine: "njk",
     dir: {
       input: "src",
       output: "_site"
