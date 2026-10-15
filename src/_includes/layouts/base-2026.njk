@@ -25,7 +25,7 @@
 <body class="tint-{{ tint or 'paper' }}{% if body_class %} {{ body_class }}{% endif %}">
     <a class="skip-link" href="#main">Skip to content</a>
 
-    {# TODO: header partial #}
+    {% include "partials/header.njk" %}
 
     <main id="main" class="site-main">
         {% block content %}{{ content | safe }}{% endblock %}
