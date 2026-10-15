@@ -33,6 +33,7 @@ export default async function (eleventyConfig) {
 
   /**
    * Table of Contents Plugin
+   * @deprecated replaced by use toc_headings filter
    * @see https://github.com/uncenter/eleventy-plugin-toc
    */
   eleventyConfig.addPlugin(ToCPlugin, {
